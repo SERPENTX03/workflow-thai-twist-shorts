@@ -1,0 +1,107 @@
+{
+ "title": "ตัวอย่าง: เงาในกระจก",
+ "bpm": 75,
+ "beat": 0.8,
+ "total": 11.2,
+ "totalBeats": 14,
+ "shots": [
+  {
+   "i": 0,
+   "scene": "example-room",
+   "start": 0,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ตีสาม ในกระจก\nมีเงาดำยืนอยู่",
+   "style": "red"
+  },
+  {
+   "i": 1,
+   "scene": "door",
+   "start": 2.4,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "คุณเปิดประตูออกไปดู",
+   "style": "plain"
+  },
+  {
+   "i": 2,
+   "scene": "example-news",
+   "start": 4.8,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "ผู้เช่าคนนั้น คือคุณ",
+   "style": "red"
+  },
+  {
+   "i": 3,
+   "scene": "example-map",
+   "start": 8,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "คือคุณ\nที่ยังไม่รู้ตัว",
+   "style": "red"
+  }
+ ],
+ "scenes": [
+  {
+   "id": "example-room-0",
+   "scene": "example-room",
+   "file": "scene-example-room.html",
+   "start": 0,
+   "dur": 2.4,
+   "local": [
+    {
+     "shot": 0,
+     "at": 0,
+     "dur": 2.4,
+     "text": "ตีสาม ในกระจก\nมีเงาดำยืนอยู่"
+    }
+   ]
+  },
+  {
+   "id": "door-1",
+   "scene": "door",
+   "file": "_placeholder.html",
+   "start": 2.4,
+   "dur": 2.4,
+   "local": [
+    {
+     "shot": 1,
+     "at": 0,
+     "dur": 2.4,
+     "text": "คุณเปิดประตูออกไปดู"
+    }
+   ]
+  },
+  {
+   "id": "example-news-2",
+   "scene": "example-news",
+   "file": "scene-example-news.html",
+   "start": 4.8,
+   "dur": 3.2,
+   "local": [
+    {
+     "shot": 2,
+     "at": 0,
+     "dur": 3.2,
+     "text": "ผู้เช่าคนนั้น คือคุณ"
+    }
+   ]
+  },
+  {
+   "id": "example-map-3",
+   "scene": "example-map",
+   "file": "scene-example-map.html",
+   "start": 8,
+   "dur": 3.2,
+   "local": [
+    {
+     "shot": 3,
+     "at": 0,
+     "dur": 3.2,
+     "text": "คือคุณ\nที่ยังไม่รู้ตัว"
+    }
+   ]
+  }
+ ]
+}

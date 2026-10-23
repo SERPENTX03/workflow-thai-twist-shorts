@@ -1,0 +1,67 @@
+<!doctype html>
+<!-- EXAMPLE SCENE — night room, side view, with the mirror twist device.
+     Times are local to this clip (see timing.json → scenes[].local).
+     Copy it as a starting point; keep the layering order: wall → props → lamp light → people → night grade. -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #05070c; }
+        /* the camera: everything in the world moves together */
+        #room-world { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 900px; }
+        #room-wall { position: absolute; left: -200px; right: -200px; top: 0; height: 1240px;
+          background:
+            repeating-linear-gradient(90deg, rgba(255,255,255,0.025) 0 40px, transparent 40px 90px),
+            linear-gradient(180deg, var(--wall-1), var(--wall-0)); }
+        #room-trim { position: absolute; left: -200px; right: -200px; top: 1210px; height: 30px; background: #1c2838; }
+        #room-floor { position: absolute; left: -200px; right: -200px; top: 1240px; height: 900px;
+          background:
+            repeating-linear-gradient(90deg, rgba(0,0,0,0.18) 0 3px, transparent 3px 120px),
+            linear-gradient(180deg, var(--floor-0), var(--floor-1)); }
+        #room-window { position: absolute; left: 90px; top: 430px; width: 320px; height: 360px;
+          border: 16px solid #1a2433; background: linear-gradient(180deg, var(--sky-0), var(--sky-1)); }
+        #room-moon { position: absolute; left: 190px; top: 60px; width: 90px; height: 90px; border-radius: 50%;
+          background: var(--moon); box-shadow: 0 0 80px 20px rgba(244, 236, 212, 0.25); }
+        #room-mirror { position: absolute; left: 600px; top: 380px; width: 260px; height: 860px; border-radius: 130px;
+          border: 20px solid #3c2c22; background: linear-gradient(160deg, #4d6178, #22303f); overflow: hidden; }
+        #room-lamp-glow { position: absolute; left: -300px; top: 300px; width: 1100px; height: 1100px; border-radius: 50%;
+          background: radial-gradient(circle, rgba(255, 190, 120, 0.28), rgba(255, 190, 120, 0) 65%); mix-blend-mode: screen; }
+        #room-night { position: absolute; inset: 0; background: rgba(6, 10, 26, 0.55); }
+        #room-man { left: 250px; top: 520px; width: 270px; height: 702px; }
+        #room-reflection { left: 30px; top: 300px; transform-origin: 100px 520px; }
+        #room-ring { position: absolute; left: 600px; top: 380px; width: 260px; height: 860px; border-radius: 140px;
+          border: 6px dashed var(--red); }
+      </style>
+      <div id="root" data-composition-id="scene-example-room" data-width="1080" data-height="1920">
+        <div id="room-world" data-layout-allow-overflow>
+          <div id="room-wall" data-layout-allow-overflow></div>
+          <div id="room-trim" data-layout-allow-overflow></div>
+          <div id="room-floor" data-layout-allow-overflow></div>
+          <div id="room-window"><div id="room-moon"></div></div>
+          <div id="room-mirror">
+            <!-- the reflection is the same figure as .sil: it copies his pose, but has no face -->
+            <svg id="room-reflection" class="who sil" viewBox="0 0 200 520"><use href="#man-raise" /></svg>
+          </div>
+          <div id="room-lamp-glow"></div>
+          <svg id="room-man" class="who" viewBox="0 0 200 520"><use href="#man-raise" /></svg>
+          <!-- no .shadow-blob under him: he is the ghost -->
+          <div id="room-night"></div>
+          <div id="room-ring"></div>
+        </div>
+        <div id="room-hud" class="hud"><div class="hud-moon"></div>03:00</div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        // camera push-in across the whole clip
+        tl.fromTo("#room-world", { scale: 1 }, { scale: 1.12, duration: 2.4, ease: "power2.inOut" }, 0);
+        tl.fromTo("#room-hud", { y: -200 }, { y: 0, duration: 0.4, ease: "back.out(1.8)" }, 0);
+        // the reflection surfaces in the glass, then he notices
+        tl.fromTo("#room-reflection", { opacity: 0 }, { opacity: 0.95, duration: 0.8, ease: "power2.out" }, 0.3);
+        tl.fromTo("#room-ring", { scale: 0.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2)" }, 1.2);
+        window.__timelines["scene-example-room"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

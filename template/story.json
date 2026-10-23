@@ -1,0 +1,11 @@
+{
+  "title": "ตัวอย่าง: เงาในกระจก",
+  "bpm": 75,
+  "voice": "th-TH-NiwatNeural",
+  "shots": [
+    { "scene": "example-room", "beats": 3, "style": "red", "text": "ตีสาม ในกระจก\nมีเงาดำยืนอยู่", "mood": 0.8, "cues": [[0, "hit"], [1.5, "shriek"]] },
+    { "scene": "door", "beats": 3, "style": "plain", "text": "คุณเปิดประตูออกไปดู", "mood": 0.6, "cues": [[0.4, "creak"]] },
+    { "scene": "example-news", "beats": 4, "style": "red", "text": "ผู้เช่าคนนั้น คือคุณ", "mood": 1, "cues": [[0, "bighit"]] },
+    { "scene": "example-map", "beats": 4, "style": "red", "text": "คือคุณ\nที่ยังไม่รู้ตัว", "mood": 0.8, "music": true, "cues": [[0, "hit"], [2, "bell"]] }
+  ]
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<!-- EXAMPLE SCENE — top-down room map (the reference style's "god view").
+     Dots are people, dashed paths are movement, a dashed ring marks the thing that matters.
+     A solid dot is someone alive; a hollow dashed dot is the protagonist once the twist is known. -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #132033; }
+        #map-svg { position: absolute; left: 0; top: 0; width: 1080px; height: 1300px; }
+        #map-her-chip { left: 700px; top: 760px; }
+        #map-me-chip { left: 560px; top: 330px; }
+      </style>
+      <div id="root" data-composition-id="scene-example-map" data-width="1080" data-height="1920">
+        <svg id="map-svg" viewBox="0 0 1080 1300" data-layout-allow-overflow>
+          <!-- floor + walls -->
+          <rect x="140" y="200" width="800" height="900" fill="#3f3129" />
+          <g stroke="rgba(0,0,0,0.25)" stroke-width="3">
+            <path d="M220 200V1100M300 200V1100M380 200V1100M460 200V1100M540 200V1100M620 200V1100M700 200V1100M780 200V1100M860 200V1100" />
+          </g>
+          <rect x="140" y="200" width="800" height="900" fill="none" stroke="#0a0f18" stroke-width="28" />
+          <rect x="200" y="1086" width="160" height="30" fill="#3f3129" />
+          <path d="M200 1100 A160 160 0 0 1 360 940" fill="none" stroke="rgba(239,232,218,0.35)" stroke-width="4" stroke-dasharray="10 10" />
+          <rect x="340" y="186" width="260" height="28" fill="#6f8fb8" />
+          <!-- furniture -->
+          <rect x="620" y="250" width="280" height="400" rx="16" fill="#5d6f86" />
+          <rect x="650" y="270" width="220" height="80" rx="20" fill="#eee9de" />
+          <rect x="200" y="520" width="220" height="150" rx="14" fill="#6b4d3a" />
+          <circle cx="380" cy="560" r="18" fill="#f0d29e" />
+          <!-- her footsteps: path drawn on -->
+          <path id="map-path" d="M280 1080 C300 900 420 820 560 800 S760 820 800 880" fill="none"
+            stroke="rgba(239,232,218,0.75)" stroke-width="8" stroke-linecap="round" stroke-dasharray="1 26" />
+          <!-- the living tenant -->
+          <circle id="map-her" data-layout-allow-overflow cx="800" cy="880" r="34" fill="#d9c9a8" stroke="#fff" stroke-width="6" />
+          <!-- the protagonist, hollow -->
+          <circle id="map-me" cx="620" cy="440" r="30" fill="none" stroke="rgba(239,232,218,0.8)" stroke-width="6" stroke-dasharray="10 8" />
+          <circle id="map-ring" cx="620" cy="440" r="72" fill="none" stroke="#e5383b" stroke-width="7" stroke-dasharray="12 10" />
+        </svg>
+        <div id="map-her-chip" class="chip">คนเป็น</div>
+        <div id="map-me-chip" class="chip red">คุณ</div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#map-svg", { scale: 1.06 }, { scale: 1, duration: 2.4, ease: "power2.out" }, 0);
+        tl.fromTo("#map-path", { strokeDashoffset: 900, opacity: 0 }, { strokeDashoffset: 0, opacity: 1, duration: 0.9, ease: "power1.inOut" }, 0);
+        // SVG shapes grow by their radius, not by CSS scale (scale drifts off the dot inside a scaled <svg>)
+        tl.fromTo("#map-her", { attr: { r: 0 } }, { attr: { r: 34 }, duration: 0.35, ease: "back.out(2)" }, 0.7);
+        tl.fromTo("#map-her-chip", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 0.8);
+        tl.fromTo("#map-ring", { attr: { r: 20 }, opacity: 0 }, { attr: { r: 72 }, opacity: 1, duration: 0.35, ease: "back.out(2)" }, 1.0);
+        tl.fromTo("#map-me-chip", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 1.1);
+        tl.to("#map-me", { opacity: 0.25, duration: 1.2, ease: "power1.in" }, 2.6);
+        window.__timelines["scene-example-map"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

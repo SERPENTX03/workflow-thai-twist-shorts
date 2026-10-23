@@ -1,0 +1,542 @@
+{
+ "title": "ห้องเช่าเลขที่ 7",
+ "bpm": 75,
+ "beat": 0.8,
+ "total": 68.8,
+ "totalBeats": 86,
+ "shots": [
+  {
+   "i": 0,
+   "scene": "exterior",
+   "start": 0,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ห้อง 7\nค่าเช่าถูกผิดปกติ",
+   "style": "red"
+  },
+  {
+   "i": 1,
+   "scene": "exterior",
+   "start": 2.4,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "คุณไม่ถามเลยว่าทำไม",
+   "style": "plain"
+  },
+  {
+   "i": 2,
+   "scene": "room",
+   "start": 4.8,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ช่วงแรก ทุกอย่างปกติ",
+   "style": "plain"
+  },
+  {
+   "i": 3,
+   "scene": "room",
+   "start": 7.2,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "จนแก้วกาแฟ ย้ายที่เอง",
+   "style": "red"
+  },
+  {
+   "i": 4,
+   "scene": "night",
+   "start": 9.6,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ตีสาม มีเสียงฝีเท้า",
+   "style": "red"
+  },
+  {
+   "i": 5,
+   "scene": "night",
+   "start": 12,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ทั้งที่คุณอยู่คนเดียว",
+   "style": "plain"
+  },
+  {
+   "i": 6,
+   "scene": "night",
+   "start": 14.4,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "ในกระจก มีเงาดำยืนอยู่",
+   "style": "red"
+  },
+  {
+   "i": 7,
+   "scene": "map",
+   "start": 17.6,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ทุกคืน ของย้ายที่เอง",
+   "style": "plain"
+  },
+  {
+   "i": 8,
+   "scene": "map",
+   "start": 20,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "คุณเชื่อว่าห้องนี้มีผี",
+   "style": "red"
+  },
+  {
+   "i": 9,
+   "scene": "exorcist",
+   "start": 22.4,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "คุณเรียกหมอผีมาไล่",
+   "style": "plain"
+  },
+  {
+   "i": 10,
+   "scene": "map",
+   "start": 24.8,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "เขาเดินวนรอบห้อง",
+   "style": "plain"
+  },
+  {
+   "i": 11,
+   "scene": "map",
+   "start": 27.2,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ไม่พบวิญญาณสักดวง",
+   "style": "red"
+  },
+  {
+   "i": 12,
+   "scene": "exorcist",
+   "start": 29.6,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "แต่มี “คนเป็น”\nอาศัยอยู่ด้วย",
+   "style": "red"
+  },
+  {
+   "i": 13,
+   "scene": "exorcist",
+   "start": 32.8,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "คุณมองรอบห้อง ไม่เห็นใคร",
+   "style": "plain"
+  },
+  {
+   "i": 14,
+   "scene": "exorcist",
+   "start": 35.2,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "หมอผีไม่ได้พูดกับคุณ",
+   "style": "red"
+  },
+  {
+   "i": 15,
+   "scene": "exorcist",
+   "start": 37.6,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "เขาพูดกับผู้เช่าใหม่",
+   "style": "plain"
+  },
+  {
+   "i": 16,
+   "scene": "exorcist",
+   "start": 40,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ที่เพิ่งย้ายมาได้ไม่กี่วัน",
+   "style": "plain"
+  },
+  {
+   "i": 17,
+   "scene": "recap",
+   "start": 42.4,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "แก้วที่ย้าย คือเธอเก็บ",
+   "style": "plain"
+  },
+  {
+   "i": 18,
+   "scene": "map",
+   "start": 44.8,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "เสียงฝีเท้า คือเธอเดิน",
+   "style": "plain"
+  },
+  {
+   "i": 19,
+   "scene": "news",
+   "start": 47.2,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "ห้องถูก เพราะ\nผู้เช่าคนก่อนตายในห้อง",
+   "style": "red"
+  },
+  {
+   "i": 20,
+   "scene": "calendar",
+   "start": 50.4,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "เมื่อสามเดือนก่อน",
+   "style": "plain"
+  },
+  {
+   "i": 21,
+   "scene": "news",
+   "start": 52.8,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ผู้เช่าห้อง 7 เสียชีวิต",
+   "style": "plain"
+  },
+  {
+   "i": 22,
+   "scene": "news",
+   "start": 55.2,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "ผู้เช่าคนนั้น คือคุณ",
+   "style": "red"
+  },
+  {
+   "i": 23,
+   "scene": "mirror",
+   "start": 58.4,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "เงาดำในกระจก",
+   "style": "plain"
+  },
+  {
+   "i": 24,
+   "scene": "mirror",
+   "start": 60.8,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "คือตัวคุณเอง",
+   "style": "red"
+  },
+  {
+   "i": 25,
+   "scene": "mirror",
+   "start": 63.2,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ผีในห้อง 7 ไม่ใช่เธอ",
+   "style": "plain"
+  },
+  {
+   "i": 26,
+   "scene": "map",
+   "start": 65.6,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "คือคุณ\nที่ยังไม่รู้ตัว",
+   "style": "red"
+  }
+ ],
+ "scenes": [
+  {
+   "id": "exterior-0",
+   "scene": "exterior",
+   "file": "_placeholder.html",
+   "start": 0,
+   "dur": 4.8,
+   "local": [
+    {
+     "shot": 0,
+     "at": 0,
+     "dur": 2.4,
+     "text": "ห้อง 7\nค่าเช่าถูกผิดปกติ"
+    },
+    {
+     "shot": 1,
+     "at": 2.4,
+     "dur": 2.4,
+     "text": "คุณไม่ถามเลยว่าทำไม"
+    }
+   ]
+  },
+  {
+   "id": "room-1",
+   "scene": "room",
+   "file": "_placeholder.html",
+   "start": 4.8,
+   "dur": 4.8,
+   "local": [
+    {
+     "shot": 2,
+     "at": 0,
+     "dur": 2.4,
+     "text": "ช่วงแรก ทุกอย่างปกติ"
+    },
+    {
+     "shot": 3,
+     "at": 2.4,
+     "dur": 2.4,
+     "text": "จนแก้วกาแฟ ย้ายที่เอง"
+    }
+   ]
+  },
+  {
+   "id": "night-2",
+   "scene": "night",
+   "file": "_placeholder.html",
+   "start": 9.6,
+   "dur": 8,
+   "local": [
+    {
+     "shot": 4,
+     "at": 0,
+     "dur": 2.4,
+     "text": "ตีสาม มีเสียงฝีเท้า"
+    },
+    {
+     "shot": 5,
+     "at": 2.4,
+     "dur": 2.4,
+     "text": "ทั้งที่คุณอยู่คนเดียว"
+    },
+    {
+     "shot": 6,
+     "at": 4.8,
+     "dur": 3.2,
+     "text": "ในกระจก มีเงาดำยืนอยู่"
+    }
+   ]
+  },
+  {
+   "id": "map-3",
+   "scene": "map",
+   "file": "_placeholder.html",
+   "start": 17.6,
+   "dur": 4.8,
+   "local": [
+    {
+     "shot": 7,
+     "at": 0,
+     "dur": 2.4,
+     "text": "ทุกคืน ของย้ายที่เอง"
+    },
+    {
+     "shot": 8,
+     "at": 2.4,
+     "dur": 2.4,
+     "text": "คุณเชื่อว่าห้องนี้มีผี"
+    }
+   ]
+  },
+  {
+   "id": "exorcist-4",
+   "scene": "exorcist",
+   "file": "_placeholder.html",
+   "start": 22.4,
+   "dur": 2.4,
+   "local": [
+    {
+     "shot": 9,
+     "at": 0,
+     "dur": 2.4,
+     "text": "คุณเรียกหมอผีมาไล่"
+    }
+   ]
+  },
+  {
+   "id": "map-5",
+   "scene": "map",
+   "file": "_placeholder.html",
+   "start": 24.8,
+   "dur": 4.8,
+   "local": [
+    {
+     "shot": 10,
+     "at": 0,
+     "dur": 2.4,
+     "text": "เขาเดินวนรอบห้อง"
+    },
+    {
+     "shot": 11,
+     "at": 2.4,
+     "dur": 2.4,
+     "text": "ไม่พบวิญญาณสักดวง"
+    }
+   ]
+  },
+  {
+   "id": "exorcist-6",
+   "scene": "exorcist",
+   "file": "_placeholder.html",
+   "start": 29.6,
+   "dur": 12.8,
+   "local": [
+    {
+     "shot": 12,
+     "at": 0,
+     "dur": 3.2,
+     "text": "แต่มี “คนเป็น”\nอาศัยอยู่ด้วย"
+    },
+    {
+     "shot": 13,
+     "at": 3.2,
+     "dur": 2.4,
+     "text": "คุณมองรอบห้อง ไม่เห็นใคร"
+    },
+    {
+     "shot": 14,
+     "at": 5.6,
+     "dur": 2.4,
+     "text": "หมอผีไม่ได้พูดกับคุณ"
+    },
+    {
+     "shot": 15,
+     "at": 8,
+     "dur": 2.4,
+     "text": "เขาพูดกับผู้เช่าใหม่"
+    },
+    {
+     "shot": 16,
+     "at": 10.4,
+     "dur": 2.4,
+     "text": "ที่เพิ่งย้ายมาได้ไม่กี่วัน"
+    }
+   ]
+  },
+  {
+   "id": "recap-7",
+   "scene": "recap",
+   "file": "_placeholder.html",
+   "start": 42.4,
+   "dur": 2.4,
+   "local": [
+    {
+     "shot": 17,
+     "at": 0,
+     "dur": 2.4,
+     "text": "แก้วที่ย้าย คือเธอเก็บ"
+    }
+   ]
+  },
+  {
+   "id": "map-8",
+   "scene": "map",
+   "file": "_placeholder.html",
+   "start": 44.8,
+   "dur": 2.4,
+   "local": [
+    {
+     "shot": 18,
+     "at": 0,
+     "dur": 2.4,
+     "text": "เสียงฝีเท้า คือเธอเดิน"
+    }
+   ]
+  },
+  {
+   "id": "news-9",
+   "scene": "news",
+   "file": "_placeholder.html",
+   "start": 47.2,
+   "dur": 3.2,
+   "local": [
+    {
+     "shot": 19,
+     "at": 0,
+     "dur": 3.2,
+     "text": "ห้องถูก เพราะ\nผู้เช่าคนก่อนตายในห้อง"
+    }
+   ]
+  },
+  {
+   "id": "calendar-10",
+   "scene": "calendar",
+   "file": "_placeholder.html",
+   "start": 50.4,
+   "dur": 2.4,
+   "local": [
+    {
+     "shot": 20,
+     "at": 0,
+     "dur": 2.4,
+     "text": "เมื่อสามเดือนก่อน"
+    }
+   ]
+  },
+  {
+   "id": "news-11",
+   "scene": "news",
+   "file": "_placeholder.html",
+   "start": 52.8,
+   "dur": 5.6,
+   "local": [
+    {
+     "shot": 21,
+     "at": 0,
+     "dur": 2.4,
+     "text": "ผู้เช่าห้อง 7 เสียชีวิต"
+    },
+    {
+     "shot": 22,
+     "at": 2.4,
+     "dur": 3.2,
+     "text": "ผู้เช่าคนนั้น คือคุณ"
+    }
+   ]
+  },
+  {
+   "id": "mirror-12",
+   "scene": "mirror",
+   "file": "_placeholder.html",
+   "start": 58.4,
+   "dur": 7.2,
+   "local": [
+    {
+     "shot": 23,
+     "at": 0,
+     "dur": 2.4,
+     "text": "เงาดำในกระจก"
+    },
+    {
+     "shot": 24,
+     "at": 2.4,
+     "dur": 2.4,
+     "text": "คือตัวคุณเอง"
+    },
+    {
+     "shot": 25,
+     "at": 4.8,
+     "dur": 2.4,
+     "text": "ผีในห้อง 7 ไม่ใช่เธอ"
+    }
+   ]
+  },
+  {
+   "id": "map-13",
+   "scene": "map",
+   "file": "_placeholder.html",
+   "start": 65.6,
+   "dur": 3.2,
+   "local": [
+    {
+     "shot": 26,
+     "at": 0,
+     "dur": 3.2,
+     "text": "คือคุณ\nที่ยังไม่รู้ตัว"
+    }
+   ]
+  }
+ ]
+}

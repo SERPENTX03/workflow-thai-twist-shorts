@@ -1,0 +1,12 @@
+node_modules/
+.hyperframes/
+renders/
+*.log
+.DS_Store
+Thumbs.db
+
+# regenerated per episode (story.json is the source)
+episodes/*/assets/vo/
+episodes/*/assets/voice.wav
+episodes/*/assets/score.wav
+episodes/*/assets/score_raw.wav

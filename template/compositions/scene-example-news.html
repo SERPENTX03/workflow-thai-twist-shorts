@@ -1,0 +1,44 @@
+<!doctype html>
+<!-- EXAMPLE SCENE — evidence card (newspaper). The reveal device: a blurred photo that sharpens. -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #101826; }
+        #news-paper { position: absolute; left: 110px; top: 240px; width: 860px; height: 920px; background: var(--paper);
+          box-shadow: 0 20px 50px rgba(0,0,0,0.5); color: var(--ink); font-family: var(--font-ui); padding: 50px; }
+        #news-head { display: flex; justify-content: space-between; font-size: 34px; font-weight: 700;
+          border-bottom: 5px solid var(--ink); padding-bottom: 12px; }
+        #news-date { font-weight: 500; color: rgba(24,32,46,0.55); font-size: 30px; }
+        #news-title { font-family: var(--font-display); font-weight: 700; font-size: 64px; line-height: 1.25; margin: 30px 0; }
+        .news-t { display: block; }
+        #news-photo { position: absolute; left: 50px; top: 400px; width: 380px; height: 460px; background: #2a3646; overflow: hidden; }
+        #news-face { left: 90px; top: 40px; width: 200px; height: 520px; }
+        #news-lines { position: absolute; left: 470px; top: 400px; right: 50px; }
+        .news-l { height: 14px; background: rgba(24,32,46,0.35); margin-bottom: 26px; }
+        #news-ring { position: absolute; left: 90px; top: 410px; width: 300px; height: 300px; border-radius: 50%; border: 9px solid var(--red); }
+      </style>
+      <div id="root" data-composition-id="scene-example-news" data-width="1080" data-height="1920">
+        <div id="news-paper">
+          <div id="news-head"><span>ข่าวท้องถิ่น</span><span id="news-date">14 มีนาคม</span></div>
+          <div id="news-title"><span class="news-t">พบผู้เช่าห้อง 7</span><span class="news-t">เสียชีวิตในห้องพัก</span></div>
+          <div id="news-photo"><svg id="news-face" data-layout-allow-overflow class="who" viewBox="0 0 200 520"><use href="#man" /></svg></div>
+          <div id="news-lines">
+            <div class="news-l"></div><div class="news-l"></div><div class="news-l" style="width:60%"></div>
+            <div class="news-l"></div><div class="news-l"></div><div class="news-l" style="width:70%"></div>
+          </div>
+          <div id="news-ring"></div>
+        </div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#news-paper", { y: 900, rotation: 4 }, { y: 0, rotation: -1.5, duration: 0.45, ease: "back.out(1.4)" }, 0);
+        tl.fromTo("#news-face", { filter: "blur(22px)" }, { filter: "blur(0px)", duration: 0.7, ease: "power2.inOut" }, 0.9);
+        tl.fromTo("#news-ring", { scale: 0.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2)" }, 1.6);
+        window.__timelines["scene-example-news"] = tl;
+      </script>
+    </template>
+  </body>
+</html>
