@@ -20,7 +20,9 @@
 |---|---|---|
 | `title` | — | Shown in the build report and the HTML title. |
 | `bpm` | 75 | Beat grid. 75 BPM → 0.8 s per beat. Keep 75 unless the user asks for a faster cut. |
-| `voice` | `th-TH-NiwatNeural` | edge-tts voice. Thai options: `th-TH-NiwatNeural` (male), `th-TH-PremwadeeNeural` (female). |
+| `voice` | `th-TH-NiwatNeural` | edge-tts voice (`th-TH-NiwatNeural` male, `th-TH-PremwadeeNeural` female), or a Gemini voice as `gemini:<Name>` (key in `.env`). May be a role name from `voices`. |
+| `voices` | — | Role → voice id, e.g. `{"male":"gemini:Finn","female":"gemini:Leda"}`. A shot can set `"voice": "female"` to switch speaker for its line. |
+| `voiceStyle` | — | Gemini only: delivery instruction (e.g. calm everyday narration). `voiceRate`/`voicePitch` apply to edge-tts only. |
 | `voiceRate`, `voicePitch` | `-8%`, `-6Hz` | Slightly slower and lower reads as more ominous. |
 
 ## Shot

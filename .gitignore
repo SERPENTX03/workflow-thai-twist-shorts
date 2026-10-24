@@ -10,3 +10,6 @@ episodes/*/assets/vo/
 episodes/*/assets/voice.wav
 episodes/*/assets/score.wav
 episodes/*/assets/score_raw.wav
+
+# secrets
+.env

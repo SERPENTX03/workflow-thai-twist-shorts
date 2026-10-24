@@ -12,7 +12,7 @@
 |---|---|
 | Node.js 22+ | สคริปต์ทั้งหมด และ HyperFrames (`npx`) |
 | ffmpeg + ffprobe (อยู่ใน PATH) | ตัดต่อเสียง วัดความดัง |
-| Python 3 + `pip install edge-tts` | เสียงพากย์ไทย (บริการออนไลน์ของ Microsoft — ต้องต่อเน็ต และข้อความพากย์จะถูกส่งไปที่บริการนั้น) |
+| Python 3 + `pip install edge-tts google-genai` | เสียงพากย์ไทย: `edge-tts` = บริการออนไลน์ของ Microsoft (ไม่ต้องมีคีย์), `google-genai` = เสียง Gemini (ต้องมีคีย์ ดูหัวข้อ "เสียงพากย์") — ทั้งสองแบบต้องต่อเน็ต และข้อความพากย์จะถูกส่งไปที่บริการนั้น |
 | Google Chrome | HyperFrames ใช้เรนเดอร์ |
 | Claude Code (แนะนำ) | เดินเวิร์กโฟลว์ให้อัตโนมัติ |
 
@@ -21,6 +21,25 @@
 ```bash
 npx hyperframes skills update
 ```
+
+## เสียงพากย์ (Gemini)
+
+ค่าเริ่มต้นใช้เสียง Gemini: **ชาย = Finn, หญิง = Leda** (กำหนดไว้ใน `voices` ของ `story.json`)
+
+1. ขอ API key ฟรีที่ <https://aistudio.google.com/apikey>
+2. ก๊อป `.env.example` เป็น `.env` แล้วใส่คีย์: `GEMINI_API_KEY=คีย์ของคุณ` (`.env` อยู่ใน `.gitignore` ห้าม commit หรือแชร์ — ถ้าแชร์โปรเจกต์เป็น zip ให้ลบ `.env` ออกก่อน)
+3. `pip install google-genai`
+
+```json
+"voice": "male",
+"voices": { "male": "gemini:Finn", "female": "gemini:Leda" },
+"voiceStyle": "เล่าเรื่องด้วยน้ำเสียงปกติ เป็นธรรมชาติ ..."
+```
+
+- ช็อตที่อยากเปลี่ยนผู้พูด ใส่ `"voice": "female"` ในช็อตนั้น
+- `voiceStyle` คุมน้ำเสียง; `voiceRate`/`voicePitch` ใช้กับ edge-tts เท่านั้น
+- ระดับฟรีมีโควตาจำกัด ถ้าเต็มสคริปต์จะลองใหม่เอง หรือรอแล้วรัน `npm run voice` ซ้ำ
+- ไม่อยากใช้ Gemini: ตั้ง `"voice": "th-TH-NiwatNeural"` (หรือ `th-TH-PremwadeeNeural`) จะกลับไปใช้ edge-tts ซึ่งไม่ต้องมีคีย์
 
 ## เริ่มเร็ว
 

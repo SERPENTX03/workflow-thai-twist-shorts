@@ -1,7 +1,9 @@
 {
   "title": "ตัวอย่าง: เงาในกระจก",
   "bpm": 75,
-  "voice": "th-TH-NiwatNeural",
+  "voice": "male",
+  "voices": { "male": "gemini:Finn", "female": "gemini:Leda" },
+  "voiceStyle": "เล่าเรื่องด้วยน้ำเสียงปกติ เป็นธรรมชาติ เหมือนเพื่อนเล่าให้ฟัง จังหวะพอดี ไม่กระซิบ ไม่เว่อร์",
   "shots": [
     { "scene": "example-room", "beats": 3, "style": "red", "text": "ตีสาม ในกระจก\nมีเงาดำยืนอยู่", "mood": 0.8, "cues": [[0, "hit"], [1.5, "shriek"]] },
     { "scene": "door", "beats": 3, "style": "plain", "text": "คุณเปิดประตูออกไปดู", "mood": 0.6, "cues": [[0.4, "creak"]] },

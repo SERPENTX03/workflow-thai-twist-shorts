@@ -1,7 +1,9 @@
 {
   "title": "ห้องเช่าเลขที่ 7",
   "bpm": 75,
-  "voice": "th-TH-NiwatNeural",
+  "voice": "male",
+  "voices": { "male": "gemini:Finn", "female": "gemini:Leda" },
+  "voiceStyle": "เล่าเรื่องด้วยน้ำเสียงปกติ เป็นธรรมชาติ เหมือนเพื่อนเล่าให้ฟัง จังหวะพอดี ไม่กระซิบ ไม่เว่อร์",
   "shots": [
     { "scene": "exterior", "beats": 3, "style": "red", "text": "ห้อง 7\nค่าเช่าถูกผิดปกติ", "mood": 0.3, "music": true, "cues": [[0, "hit"], [0.6, "stamp"], [1.2, "scratch"]] },
     { "scene": "exterior", "beats": 3, "style": "plain", "text": "คุณไม่ถามเลยว่าทำไม", "mood": 0.3, "music": true, "cues": [[0.5, "creak"]] },
