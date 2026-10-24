@@ -13,3 +13,7 @@ episodes/*/assets/score_raw.wav
 
 # secrets
 .env
+
+# Studio caches
+episodes/*/.thumbnails/
+episodes/*/.waveform-cache/

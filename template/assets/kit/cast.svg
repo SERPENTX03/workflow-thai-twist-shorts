@@ -19,7 +19,9 @@
     <g id="head-short">
       <rect x="88" y="118" width="24" height="26" fill="var(--skin-d, #c98f6b)"/>
       <circle cx="100" cy="65" r="65" fill="var(--skin, #e7b38c)"/>
-      <path d="M33 62 A68 68 0 0 1 167 62 Q140 34 98 40 Q60 44 33 62Z" fill="var(--hair, #16161c)"/>
+      <!-- full short hair: crown, side-burns to the ears, a swept fringe (never a bare forehead) -->
+      <path d="M30 80 C20 14 66 -10 100 -10 C138 -10 182 14 170 80 C164 58 150 44 130 40 C112 54 86 52 70 38 C52 46 38 60 30 80Z" fill="var(--hair, #16161c)"/>
+      <circle cx="35" cy="78" r="10" fill="var(--skin-d, #c98f6b)"/><circle cx="165" cy="78" r="10" fill="var(--skin-d, #c98f6b)"/>
     </g>
     <g id="eyes-dot">
       <circle cx="77" cy="72" r="6" fill="var(--eye, #1a1a22)"/>
@@ -67,9 +69,82 @@
     <rect x="60" y="140" width="80" height="160" rx="30" fill="var(--top, #d9c9a8)"/>
     <rect x="89" y="118" width="22" height="26" fill="var(--skin-d, #c98f6b)"/>
     <circle cx="100" cy="68" r="60" fill="var(--skin, #e7b38c)"/>
-    <path d="M38 64 A64 64 0 0 1 162 64 Q120 30 70 44 Q48 52 38 64Z" fill="var(--hair, #2a1d18)"/>
+    <!-- centre-parted hair framing the face, over the long back hair -->
+    <path d="M34 90 C24 20 70 0 100 0 C134 0 178 20 166 90 C160 64 148 46 128 36 C116 52 108 56 100 56 C92 56 84 52 72 36 C52 46 40 64 34 90Z" fill="var(--hair, #2a1d18)"/>
     <circle cx="78" cy="76" r="6" fill="var(--eye, #1a1a22)"/><circle cx="122" cy="76" r="6" fill="var(--eye, #1a1a22)"/>
     <ellipse cx="100" cy="99" rx="8" ry="3" fill="var(--eye, #7a3b34)"/>
+  </symbol>
+
+  <!-- an older woman ("ป้า"): grey hair pulled into a bun, long sleeves; set --hair for the shade -->
+  <symbol id="auntie" viewBox="0 0 200 520" overflow="visible">
+    <rect x="72" y="380" width="24" height="125" rx="12" fill="var(--skin, #e7b38c)"/>
+    <rect x="104" y="380" width="24" height="125" rx="12" fill="var(--skin, #e7b38c)"/>
+    <rect x="62" y="494" width="40" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    <rect x="98" y="494" width="40" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    <path d="M60 290 H140 L156 400 H44Z" fill="var(--skirt, #3b4c5e)"/>
+    <line x1="60" y1="160" x2="54" y2="310" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/>
+    <line x1="140" y1="160" x2="146" y2="310" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/>
+    <circle cx="54" cy="318" r="18" fill="var(--skin, #e7b38c)"/><circle cx="146" cy="318" r="18" fill="var(--skin, #e7b38c)"/>
+    <rect x="60" y="140" width="80" height="160" rx="30" fill="var(--top, #d9c9a8)"/>
+    <rect x="89" y="118" width="22" height="26" fill="var(--skin-d, #c98f6b)"/>
+    <circle cx="100" cy="-6" r="30" fill="var(--hair, #9a9aa0)"/>
+    <circle cx="100" cy="68" r="60" fill="var(--skin, #e7b38c)"/>
+    <path d="M36 84 C30 26 68 8 100 8 C132 8 170 26 164 84 C158 62 146 46 128 38 C116 52 108 56 100 56 C92 56 84 52 72 38 C54 46 42 62 36 84Z" fill="var(--hair, #9a9aa0)"/>
+    <circle cx="78" cy="76" r="6" fill="var(--eye, #1a1a22)"/><circle cx="122" cy="76" r="6" fill="var(--eye, #1a1a22)"/>
+    <path d="M66 90 q12 8 24 0 M110 90 q12 8 24 0" stroke="rgba(0,0,0,0.18)" stroke-width="3" fill="none"/>
+    <ellipse cx="100" cy="102" rx="8" ry="3" fill="var(--eye, #7a3b34)"/>
+  </symbol>
+
+  <!-- lead in a hooded raincoat (--coat), e.g. ภูมิ in yellow -->
+  <symbol id="raincoat" viewBox="0 0 200 520" overflow="visible">
+    <use href="#legs-pants"/>
+    <line x1="56" y1="165" x2="48" y2="325" stroke="var(--coat, #f2c230)" stroke-width="40" stroke-linecap="round"/>
+    <line x1="144" y1="165" x2="152" y2="325" stroke="var(--coat, #f2c230)" stroke-width="40" stroke-linecap="round"/>
+    <circle cx="48" cy="334" r="20" fill="var(--skin, #e7b38c)"/><circle cx="152" cy="334" r="20" fill="var(--skin, #e7b38c)"/>
+    <path d="M54 140 H146 L160 370 H40Z" fill="var(--coat, #f2c230)"/>
+    <path d="M100 150 V365" stroke="rgba(0,0,0,0.18)" stroke-width="5"/>
+    <rect x="88" y="118" width="24" height="26" fill="var(--skin-d, #c98f6b)"/>
+    <path d="M26 72 A74 74 0 0 1 174 72 L170 130 Q100 150 30 130Z" fill="var(--coat-d, #d9a91c)"/>
+    <circle cx="100" cy="72" r="58" fill="var(--skin, #e7b38c)"/>
+    <path d="M42 80 C38 36 70 14 100 14 C132 14 162 36 158 80 C150 60 136 50 118 50 C104 60 88 58 78 50 C62 54 48 62 42 80Z" fill="var(--hair, #16161c)"/>
+    <use href="#eyes-dot"/>
+  </symbol>
+
+  <!-- animal companion: a round Thai street dog, side view facing right. Own frame: 320 x 220, paws on the bottom.
+       Use <svg class="who" viewBox="0 0 320 220"><use href="#dog"/></svg>. Colours: --fur --fur-patch --nose -->
+  <symbol id="dog" viewBox="0 0 320 220" overflow="visible">
+    <path d="M40 92 Q10 60 22 40" stroke="var(--fur, #f1ece2)" stroke-width="18" stroke-linecap="round" fill="none"/>
+    <rect x="70" y="150" width="26" height="66" rx="13" fill="var(--fur, #f1ece2)"/>
+    <rect x="190" y="150" width="26" height="66" rx="13" fill="var(--fur, #f1ece2)"/>
+    <ellipse cx="140" cy="122" rx="110" ry="62" fill="var(--fur, #f1ece2)"/>
+    <ellipse cx="110" cy="105" rx="48" ry="34" fill="var(--fur-patch, #23242b)"/>
+    <rect x="100" y="155" width="26" height="62" rx="13" fill="var(--fur, #f1ece2)"/>
+    <rect x="222" y="155" width="26" height="62" rx="13" fill="var(--fur, #f1ece2)"/>
+    <circle cx="250" cy="78" r="50" fill="var(--fur, #f1ece2)"/>
+    <path d="M222 40 L214 0 L246 30Z" fill="var(--fur-patch, #23242b)"/>
+    <path d="M262 32 L280 -4 L288 40Z" fill="var(--fur-patch, #23242b)"/>
+    <ellipse cx="292" cy="92" rx="30" ry="22" fill="var(--fur, #f1ece2)"/>
+    <circle cx="318" cy="86" r="10" fill="var(--nose, #1a1a22)"/>
+    <circle cx="262" cy="70" r="7" fill="var(--eye, #1a1a22)"/>
+  </symbol>
+  <!-- the same dog growling: ears back, teeth, raised hackles -->
+  <symbol id="dog-growl" viewBox="0 0 320 220" overflow="visible">
+    <path d="M40 92 Q20 100 14 120" stroke="var(--fur, #f1ece2)" stroke-width="18" stroke-linecap="round" fill="none"/>
+    <rect x="70" y="150" width="26" height="66" rx="13" fill="var(--fur, #f1ece2)"/>
+    <rect x="190" y="150" width="26" height="66" rx="13" fill="var(--fur, #f1ece2)"/>
+    <path d="M60 80 L72 50 L86 76 L100 44 L114 74 L128 42 L142 72 L156 46 L168 76Z" fill="var(--fur-patch, #23242b)"/>
+    <ellipse cx="140" cy="128" rx="110" ry="58" fill="var(--fur, #f1ece2)"/>
+    <ellipse cx="110" cy="110" rx="48" ry="32" fill="var(--fur-patch, #23242b)"/>
+    <rect x="100" y="155" width="26" height="62" rx="13" fill="var(--fur, #f1ece2)"/>
+    <rect x="222" y="155" width="26" height="62" rx="13" fill="var(--fur, #f1ece2)"/>
+    <circle cx="250" cy="92" r="50" fill="var(--fur, #f1ece2)"/>
+    <path d="M214 66 L184 40 L226 52Z" fill="var(--fur-patch, #23242b)"/>
+    <path d="M246 46 L232 16 L262 44Z" fill="var(--fur-patch, #23242b)"/>
+    <ellipse cx="292" cy="108" rx="32" ry="22" fill="var(--fur, #f1ece2)"/>
+    <path d="M266 118 H318" stroke="var(--nose, #1a1a22)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M272 118 l5 10 l5 -10 l5 10 l5 -10 l5 10 l5 -10 l5 10 l5 -10" stroke="#fff" stroke-width="4" fill="none"/>
+    <circle cx="320" cy="100" r="10" fill="var(--nose, #1a1a22)"/>
+    <path d="M254 80 L272 88" stroke="var(--eye, #1a1a22)" stroke-width="8" stroke-linecap="round"/>
   </symbol>
 
   <!-- elder / exorcist with a candle in the right hand -->

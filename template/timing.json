@@ -2,8 +2,8 @@
  "title": "ตัวอย่าง: เงาในกระจก",
  "bpm": 75,
  "beat": 0.8,
- "total": 11.2,
- "totalBeats": 14,
+ "total": 19.2,
+ "totalBeats": 24,
  "shots": [
   {
    "i": 0,
@@ -16,30 +16,57 @@
   },
   {
    "i": 1,
-   "scene": "door",
+   "scene": "example-rules",
    "start": 2.4,
    "dur": 2.4,
    "beats": 3,
-   "text": "คุณเปิดประตูออกไปดู",
+   "text": "กฎข้อแรก\n[อย่าวิ่ง]ตามเพื่อน",
    "style": "plain"
   },
   {
    "i": 2,
-   "scene": "example-news",
+   "scene": "example-rules",
    "start": 4.8,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "น้ำเหลือ[ไม่ถึงสามสิบลิตร]",
+   "style": "plain"
+  },
+  {
+   "i": 3,
+   "scene": "door",
+   "start": 7.2,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "คุณเปิดประตู{ออกไปดู}",
+   "style": "plain"
+  },
+  {
+   "i": 4,
+   "scene": "example-news",
+   "start": 9.6,
    "dur": 3.2,
    "beats": 4,
    "text": "ผู้เช่าคนนั้น คือคุณ",
    "style": "red"
   },
   {
-   "i": 3,
+   "i": 5,
    "scene": "example-map",
-   "start": 8,
+   "start": 12.8,
    "dur": 3.2,
    "beats": 4,
    "text": "คือคุณ\nที่ยังไม่รู้ตัว",
    "style": "red"
+  },
+  {
+   "i": 6,
+   "scene": "example-next",
+   "start": 16,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "",
+   "style": "plain"
   }
  ],
  "scenes": [
@@ -59,14 +86,35 @@
    ]
   },
   {
-   "id": "door-1",
-   "scene": "door",
-   "file": "_placeholder.html",
+   "id": "example-rules-1",
+   "scene": "example-rules",
+   "file": "scene-example-rules.html",
    "start": 2.4,
-   "dur": 2.4,
+   "dur": 4.8,
    "local": [
     {
      "shot": 1,
+     "at": 0,
+     "dur": 2.4,
+     "text": "กฎข้อแรก\nอย่าวิ่งตามเพื่อน"
+    },
+    {
+     "shot": 2,
+     "at": 2.4,
+     "dur": 2.4,
+     "text": "น้ำเหลือไม่ถึงสามสิบลิตร"
+    }
+   ]
+  },
+  {
+   "id": "door-2",
+   "scene": "door",
+   "file": "_placeholder.html",
+   "start": 7.2,
+   "dur": 2.4,
+   "local": [
+    {
+     "shot": 3,
      "at": 0,
      "dur": 2.4,
      "text": "คุณเปิดประตูออกไปดู"
@@ -74,14 +122,14 @@
    ]
   },
   {
-   "id": "example-news-2",
+   "id": "example-news-3",
    "scene": "example-news",
    "file": "scene-example-news.html",
-   "start": 4.8,
+   "start": 9.6,
    "dur": 3.2,
    "local": [
     {
-     "shot": 2,
+     "shot": 4,
      "at": 0,
      "dur": 3.2,
      "text": "ผู้เช่าคนนั้น คือคุณ"
@@ -89,17 +137,32 @@
    ]
   },
   {
-   "id": "example-map-3",
+   "id": "example-map-4",
    "scene": "example-map",
    "file": "scene-example-map.html",
-   "start": 8,
+   "start": 12.8,
    "dur": 3.2,
    "local": [
     {
-     "shot": 3,
+     "shot": 5,
      "at": 0,
      "dur": 3.2,
      "text": "คือคุณ\nที่ยังไม่รู้ตัว"
+    }
+   ]
+  },
+  {
+   "id": "example-next-5",
+   "scene": "example-next",
+   "file": "scene-example-next.html",
+   "start": 16,
+   "dur": 3.2,
+   "local": [
+    {
+     "shot": 6,
+     "at": 0,
+     "dur": 3.2,
+     "text": ""
     }
    ]
   }

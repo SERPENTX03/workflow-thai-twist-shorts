@@ -22,8 +22,15 @@
   --paper: #f6f1e6;
   --white: #f6f2ea;
   --mute: #8a97ab;
-  /* the one accent */
+  /* accents: red turns the story, gold marks a keyword or a number */
   --red: #e5383b;
+  --gold: #f6c445;
+  --ok: #3fa66b;
+  /* day / warm sets (school, street, farm, lantern-lit wood) */
+  --day-0: #e9e2d2;
+  --day-1: #cfc4ad;
+  --wood-0: #6b4a2f;
+  --wood-1: #3e2a1b;
   /* cast */
   --skin: #e7b38c;
   --skin-d: #c98f6b;
@@ -71,6 +78,22 @@
   padding: 0 28px;
   text-shadow: none;
 }
+/* keyword marks from story.json: [คำ] and {คำ} */
+.cap .hl { color: var(--gold); }
+.cap .hl-red { color: var(--red); }
+.cap.red .hl, .cap.red .hl-red { color: #fff; text-decoration: underline 6px; text-underline-offset: 12px; }
+/* captionLook "folk": a quieter line on a dark pill (slow folklore tales) */
+.cap.folk .cap-line > span {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 56px;
+  line-height: 1.4;
+  background: rgba(8, 10, 16, 0.82);
+  border-radius: 12px;
+  padding: 2px 26px;
+  text-shadow: none;
+}
+.cap.folk.red .cap-line > span { background: var(--red); font-weight: 700; }
 .cap-band {
   position: absolute;
   left: 0;
@@ -161,6 +184,7 @@
   --skin: #05070b; --skin-d: #05070b; --hair: #05070b; --shirt: #05070b; --pants: #05070b;
   --top: #05070b; --skirt: #05070b; --exo: #05070b; --sarong: #05070b; --shoe: #05070b;
   --eye: #05070b; --eye-white: #05070b; --hair-old: #05070b; --band: #05070b;
+  --coat: #05070b; --coat-d: #05070b; --fur: #05070b; --fur-patch: #05070b; --nose: #05070b;
 }
 /* someone who casts a shadow is alive; the protagonist never gets one */
 .shadow-blob {
@@ -170,6 +194,170 @@
   border-radius: 50%;
   background: rgba(5, 7, 12, 0.45);
 }
+
+/* ---------- name tag: dot + name over a character ("เจย์ · 28 ปี", "เจ้าด่าง") ---------- */
+.tag {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 50px;
+  padding: 0 20px 0 14px;
+  border-radius: 25px;
+  background: rgba(246, 242, 234, 0.96);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 28px;
+  white-space: nowrap;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+.tag > i { width: 18px; height: 18px; border-radius: 50%; background: var(--ok); }
+.tag.you > i { background: var(--gold); }
+.tag.warn > i { background: var(--red); }
+
+/* ---------- rule card: "กฎข้อ 1" + the rule ---------- */
+.rule-card {
+  position: absolute;
+  width: 720px;
+  padding: 70px 50px 46px;
+  border-radius: 22px;
+  background: var(--paper);
+  color: var(--ink);
+  text-align: center;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.4);
+  border-top: 12px solid var(--red);
+}
+.rule-card .rule-no {
+  position: absolute;
+  left: 50%;
+  top: 18px;
+  margin-left: -95px;
+  width: 190px;
+  height: 46px;
+  line-height: 46px;
+  border-radius: 23px;
+  background: var(--red);
+  color: #fff;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 28px;
+}
+.rule-card .rule-text {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 66px;
+  line-height: 1.25;
+}
+.rule-card .rule-text > span { display: block; }
+
+/* ---------- stat tile: a number that matters ("น้ำ 90 ลิตร", "อยู่ได้ 27 วัน") ---------- */
+.stat {
+  position: absolute;
+  min-width: 300px;
+  padding: 22px 30px 24px;
+  border-radius: 20px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
+}
+.stat .stat-label { font-size: 30px; font-weight: 500; color: rgba(24, 32, 46, 0.65); }
+.stat .stat-num { font-family: var(--font-display); font-weight: 700; font-size: 96px; line-height: 1.1; }
+.stat .stat-unit { font-size: 34px; font-weight: 700; color: var(--shirt); margin-left: 10px; }
+
+/* ---------- meter: a level that fills or drains (water, battery, temperature) ---------- */
+.meter {
+  position: absolute;
+  height: 26px;
+  border-radius: 13px;
+  background: rgba(24, 32, 46, 0.15);
+  overflow: hidden;
+}
+.meter > b { display: block; height: 100%; width: 100%; border-radius: 13px; background: var(--shirt); }
+.meter.low > b { background: var(--red); }
+
+/* ---------- checklist: rows that tick one by one ---------- */
+.checklist {
+  position: absolute;
+  padding: 30px 40px;
+  border-radius: 20px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 36px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
+}
+.checklist .row { display: flex; align-items: center; gap: 22px; height: 70px; }
+.checklist .box {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 4px solid rgba(24, 32, 46, 0.35);
+  flex: none;
+}
+.checklist .tick { position: absolute; inset: -4px; border-radius: 10px; background: var(--ok); }
+.checklist .tick::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 6px;
+  width: 12px;
+  height: 22px;
+  border: solid #fff;
+  border-width: 0 6px 6px 0;
+  rotate: 45deg;
+}
+
+/* ---------- next-episode card (series end card) ---------- */
+.next-card {
+  position: absolute;
+  left: 90px;
+  right: 90px;
+  text-align: center;
+  color: var(--white);
+  font-family: var(--font-display);
+}
+.next-card .next-kicker {
+  display: inline-block;
+  padding: 0 26px;
+  height: 52px;
+  line-height: 52px;
+  border-radius: 26px;
+  background: var(--red);
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 30px;
+}
+.next-card .next-title { font-weight: 700; font-size: 84px; line-height: 1.25; margin-top: 34px; }
+.next-card .next-title > span { display: block; }
+.next-card .next-cta { font-family: var(--font-ui); font-weight: 500; font-size: 32px; color: var(--mute); margin-top: 30px; }
+
+/* ---------- weather + water (flood, canal, rain) ---------- */
+/* rain: tween background-position (e.g. "0px 0px" → "-160px 1200px", ease none) for falling streaks */
+.rain {
+  position: absolute;
+  inset: -100px;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(100deg, rgba(225, 233, 245, 0) 0 46px, rgba(225, 233, 245, 0.32) 46px 49px, rgba(225, 233, 245, 0) 49px 130px),
+    repeating-linear-gradient(97deg, rgba(225, 233, 245, 0) 0 80px, rgba(225, 233, 245, 0.2) 80px 82px, rgba(225, 233, 245, 0) 82px 190px);
+}
+/* flood water: set top/height per scene; tween y (negative) to rise — never top/height (check: gsap_non_transform_motion) */
+.flood {
+  position: absolute;
+  left: -200px;
+  right: -200px;
+  background: linear-gradient(180deg, rgba(128, 108, 72, 0.9), rgba(66, 56, 38, 0.97));
+  border-top: 6px solid rgba(232, 222, 192, 0.6);
+}
+/* a reflection in the water: wrap the figure, the wrapper flips it (never tween this wrapper's transform) */
+.mirror-y { position: absolute; transform: scaleY(-1); opacity: 0.32; filter: blur(2px); }
+
+/* ---------- depth: soft-focus background layer (put the far set inside it) ---------- */
+.far { position: absolute; inset: 0; filter: blur(6px); }
 
 /* ---------- finish: vignette (grain comes from the registry if wanted) ---------- */
 .vignette {

@@ -1,52 +1,78 @@
 # Art direction
 
-The look: a quiet, flat 2D night illustration — like a storybook drawn in vector shapes — with clean UI cards laid on top. Calm frames, precise motion, one red accent that only appears when the story turns.
+The look: flat 2D vector illustration like a storybook, with clean UI cards, counters and diagrams laid on top. Calm frames, precise motion. Colour accents are rationed so they mean something. Evidence: `ref-library.md`.
 
 ## Palette (tokens in `assets/kit/kit.css`)
 
-| Role | Token | Notes |
+Pick a **set palette per scene**, not one for the whole film. Bright sets are normal; darkness is saved for the turn.
+
+| Set | Tokens | Use for |
 |---|---|---|
-| Night sky / map ground | `--sky-0` `--sky-1` | navy gradient; never pure black backgrounds |
-| Interior | `--wall-0/1`, `--floor-0/1` | cool blue-grey walls, warm brown wood floors |
-| Light | `--lamp`, `--moon` | the only warm sources; use soft radial glows (`mix-blend-mode: screen`) |
-| UI paper | `--cream`, `--paper`, `--ink` | cards, newspapers, HUD |
-| Accent | `--red` | captions that turn the story, rings, stamps, the "คุณ" chip. **Nothing else is red.** |
-| Cast | `--skin`, `--hair`, `--shirt`, `--pants` | protagonist always wears the blue shirt so he reads at a glance |
+| Day (school, street, farm) | `--day-0` `--day-1`, real sky blue, green grass | survival openings, rules, knowledge beats |
+| Warm wood / lantern | `--wood-0` `--wood-1`, `--lamp` glow | Thai houses, folklore interiors |
+| Night city / interior | `--sky-0/1`, `--wall-0/1`, `--floor-0/1`, `--moon` | night beats, the turn, the reveal |
+| UI paper | `--cream`, `--paper`, `--ink` | cards, stat tiles, checklists, newspapers |
+
+Accents:
+
+| Token | Means | Where |
+|---|---|---|
+| `--red` | danger / the story turns | full red caption box (2–4 per film), `{คำ}` keyword, rings, rule-card spine, ตอนต่อไป kicker |
+| `--gold` | a fact, a number, the smart move | `[คำ]` keyword, `.tag.you` dot |
+| `--ok` | done / safe | checklist ticks, `.tag` dot for living cast |
+
+Arc: open bright or warm → drift darker each act → the reveal is the darkest frame → end card on navy.
 
 ## Type
 
-- **Display**: Kanit 600/700 — captions, headlines, big numbers.
-- **UI**: IBM Plex Sans Thai 500/700 — cards, chips, HUD, labels.
-- No third face. No outlined or gradient text. Caption size 74 px (do not go below 64 px — phone readability).
+- **Display**: Kanit 600/700 — captions, rule text, big numbers.
+- **UI**: IBM Plex Sans Thai 500/700 — cards, tags, HUD, labels. Never under 28 px (`check` flags it).
+- Caption 74 px (`bold` look) or 56 px on a dark pill (`folk` look). No third face, no outlined or gradient text.
 
 ## Frame and safe zones (1080×1920)
 
-- Action and faces live in **y 160–1180**. Captions sit centred at **y ≈ 1390** on a soft dark band.
-- Bottom **~380 px** stays free of essential content (platform UI covers it).
-- Cards: top area (y 240–700) when the scene is behind them, or lower (y 1490–1830) on map scenes where the map fills the top.
-- HUD clock top-left (70, 90). Only in night/time-critical scenes.
+- Action and faces live in **y 160–1180**. Captions centred at **y ≈ 1390**.
+- Bottom **~380 px** carries no essential content, but the **set continues to the bottom edge** (floor, grass, water). Never leave it flat black.
+- Cards: top area (y 170–700) when the scene is behind them, or lower (y 1490–1830) on map scenes.
+- HUD clock top-left (70, 90) whenever time matters — in survival stories that is most of the film.
 
-## Scene types (reusable vocabulary)
+## Shot vocabulary (rotate them: no two consecutive shots of the same type)
 
-| Type | Example file | Use for |
+| Type | Example | Use for |
 |---|---|---|
-| Side-view interior | `scene-example-room.html` | most story beats; layered wall → props → light → people → night grade |
-| Top-down map | `scene-example-map.html` | movement, "god view", who is where, the final sting |
-| Evidence card | `scene-example-news.html` | newspaper, contract, calendar, phone screen — the reveal's proof |
-| Exterior | (draw per episode) | establishing hook: building, corridor, door number |
-| Info card over scene | `.card` | counts, lists, dials ("ของที่ย้ายที่เอง ×12", "วิญญาณที่พบ 0") |
+| Side-view set + cast | `scene-example-room.html` | most story beats |
+| Rules / numbers over a set | `scene-example-rules.html` | "กฎข้อ N", stat tile, meter, checklist |
+| Close-up object or face | (draw per episode) | ~1 in 4 shots: hand on the tap, dog nose, sweating face, bandage — the clue shots |
+| Diagram / cross-section | (draw per episode) | how something works: pipe from pump to floor 23, door open-in vs open-out, crowd per m² from above |
+| Top-down map | `scene-example-map.html` | who is where, distance rings, the final sting |
+| Evidence card | `scene-example-news.html` | newspaper, calendar, phone alert — the reveal's proof |
+| Exterior / establishing | (draw per episode) | hook: skyline going dark, school with flag, stilt house in rain |
+| Silhouette crowd / backlit door | (draw per episode with `.sil`) | panic, stairs full of people, someone at the door |
+| Next-episode card | `scene-example-next.html` | series ending |
+
+## Information graphics (the reference clips' signature)
+
+- **Something counts on screen at least every ~10 s**: clock, day counter, stat tile, meter, thermometer, calendar.
+- Counters tick with the voice (count 90 → 29 while the line is read), meters drain with a `tick` cue.
+- Checklists tick one row per beat. Rule cards drop in with a `stamp`.
+- Label every named character the first time with a `.tag` (dot + name + one fact: "เจย์ · 28 ปี").
+- Diagrams use the paper palette, thick ink lines, one gold or red highlight, labels as `.chip`.
 
 ## Camera and motion
 
-- Every shot has motion: a slow push (scale 1 → 1.1 over the shot), a pan, or an entrance. Never a dead frame for a full shot.
-- Entrances: slide-up through a mask, back-out pops for chips/rings, drop-in for cards. **Banned**: everything fading in, centred title on a gradient, glow on UI, generic particle bursts, corner labels or frame borders.
+- Every shot has motion: slow push (scale 1 → 1.08), a pan, or an entrance. Never a dead frame for a full shot.
+- **Depth**: put the far set inside `.far` (soft blur); keep the cast and props sharp; foreground objects may cross the frame edge (`data-layout-allow-overflow`).
+- Entrances: slide-up through a mask, back-out pops for chips/rings/ticks, drop-in for cards, count-up for numbers. **Banned**: everything fading in, centred title on a gradient, glow on UI, generic particle bursts, frame borders.
 - Hard cuts between shots (on the beat). Camera continuity inside a scene clip.
-- Highlight with **dashed red rings/ellipses** that pop in (back.out), not arrows.
-- Ease: `power2/3.out` for moves, `back.out(1.8–2.2)` for pops, `power2.inOut` for camera.
+- Highlight with **dashed red rings** that pop in (back.out), not arrows.
+- Ease: `power2/3.out` for moves, `back.out(1.8–2.4)` for pops, `power2.inOut` for camera and counters.
+- Folklore look: slower pushes (whole shot), lamp flicker, rain; still cut on beats but hold longer.
 
 ## Cast rules
 
-- Characters come from `assets/kit/cast.svg` (`man`, `man-wide`, `man-raise`, `woman`, `elder`). Add new symbols there, same 200×520 frame, colours through CSS variables.
-- The living cast a `.shadow-blob`; the protagonist-ghost never does (if the twist is a ghost twist).
-- Silhouettes / reflections / shadows = the same symbol with `.sil`.
-- Faces are dots; emotion = `man-wide` (wide eyes, open mouth). Keep characters ≥ 600 px tall when they matter.
+- Characters come from `assets/kit/cast.svg` (`man`, `man-wide`, `man-raise`, `woman`, `elder`). Add new symbols there (students, an animal companion, a creature), same frame convention, colours through CSS variables.
+- Give each named character **one trackable trait** (long sleeves, cap, glasses) — it doubles as a clue device.
+- The animal companion appears in at least 3 shots and reacts before the humans do.
+- The living cast a `.shadow-blob`; a ghost protagonist never does.
+- Silhouettes / reflections / crowds = the same symbol with `.sil`.
+- Close-up faces: draw the head big (≥ 500 px) with sweat drops or wide eyes; full figures that matter ≥ 600 px tall.

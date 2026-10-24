@@ -5,7 +5,7 @@
 //   node scripts/build.mjs episodes/<slug>
 import fs from 'node:fs';
 import path from 'node:path';
-import { episodeDir, loadStory, esc, round } from './lib.mjs';
+import { episodeDir, loadStory, esc, marks, plain, round } from './lib.mjs';
 
 const dir = episodeDir(process.argv[2]);
 const S = loadStory(dir);
@@ -24,7 +24,7 @@ groups.forEach((g, k) => {
   g.file = fs.existsSync(comp(`scene-${g.scene}.html`)) ? `scene-${g.scene}.html` : '_placeholder.html';
   g.compId = g.file === '_placeholder.html' ? 'placeholder' : `scene-${g.scene}`;
   // shot times local to the scene clip — what you animate against inside the scene file
-  g.local = g.shots.map(s => ({ shot: s.i, at: round(s.start - g.start), dur: s.dur, text: s.text }));
+  g.local = g.shots.map(s => ({ shot: s.i, at: round(s.start - g.start), dur: s.dur, text: plain(s.text) }));
 });
 fs.writeFileSync(path.join(dir, 'timing.json'), JSON.stringify({
   title: S.title, bpm: S.bpm, beat: round(S.beat), total: S.total, totalBeats: S.totalBeats,
@@ -33,9 +33,11 @@ fs.writeFileSync(path.join(dir, 'timing.json'), JSON.stringify({
 }, null, 1));
 
 // ---- 2. captions sub-composition (one timed clip per shot, slide-up through a mask)
+// captionLook: "bold" (default, big Kanit) or "folk" (smaller line on a dark pill, for slow folklore tales)
+const look = S.captionLook === 'folk' ? ' folk' : '';
 const caps = S.shots.filter(s => s.text).map(s => {
-  const lines = s.text.split('\n').map(l => `<span class="cap-line"><span data-layout-allow-overflow>${esc(l)}</span></span>`).join('');
-  return `      <div id="cap-${s.i}" class="clip cap ${s.style === 'red' ? 'red' : ''}" data-start="${s.start}" data-duration="${s.dur}" data-track-index="1">${lines}</div>`;
+  const lines = s.text.split('\n').map(l => `<span class="cap-line"><span data-layout-allow-overflow>${marks(l)}</span></span>`).join('');
+  return `      <div id="cap-${s.i}" class="clip cap${look} ${s.style === 'red' ? 'red' : ''}" data-start="${s.start}" data-duration="${s.dur}" data-track-index="1">${lines}</div>`;
 }).join('\n');
 const capTweens = S.shots.filter(s => s.text).map(s => {
   const n = s.text.split('\n').length;
@@ -80,7 +82,7 @@ const castSprite = fs.existsSync(castFile)
   : '';
 const hosts = groups.map(g => {
   const vars = g.file === '_placeholder.html'
-    ? ` data-variable-values='${JSON.stringify({ label: g.scene, note: g.shots.map(s => s.text.replace(/\n/g, ' ')).join(' / ') }).replace(/'/g, '&#39;')}'`
+    ? ` data-variable-values='${JSON.stringify({ label: g.scene, note: g.shots.map(s => plain(s.text).replace(/\n/g, ' ')).join(' / ') }).replace(/'/g, '&#39;')}'`
     : '';
   return `      <div id="${g.id}" data-composition-id="${g.compId}" data-composition-src="compositions/${g.file}"${vars}
         data-start="${g.start}" data-duration="${g.dur}" data-track-index="0" data-width="1080" data-height="1920"></div>`;

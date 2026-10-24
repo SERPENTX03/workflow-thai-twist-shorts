@@ -1,11 +1,11 @@
 ---
 name: thai-twist-short
-description: Make a Thai vertical (9:16) twist-ending short story video in this repo with HyperFrames — faceless, flat 2D night illustration, second-person narration ("คุณ"), bold Thai captions with red accent boxes, info cards, top-down map scenes, Thai TTS voiceover and a synthesized score. Use for any request to write, storyboard, build, voice, score, review or render an episode in episodes/, or to start a new one from a story idea.
+description: Make a Thai vertical (9:16) twist-ending short story video in this repo with HyperFrames — faceless, flat 2D illustration, survival "ถ้า…" scenarios, haunting twists or Thai folklore, bold Thai captions with keyword highlights, rule cards, counters and diagrams, Thai TTS voiceover and a synthesized score, often as a series with a ตอนต่อไป card. Use for any request to write, storyboard, build, voice, score, review or render an episode in episodes/, or to start a new one from a story idea.
 ---
 
 # Thai Twist Short — workflow
 
-This repo turns a short story idea into a 45–90 s vertical video. **`story.json` is the single source of truth**: every shot, caption, voice line, beat length and sound cue lives there. Scripts generate the root timeline, captions, voice and score from it. You hand-make only the **scenes** (`compositions/scene-<name>.html`).
+This repo turns a short story idea into a 45–130 s vertical video. **`story.json` is the single source of truth**: every shot, caption, voice line, beat length and sound cue lives there. Scripts generate the root timeline, captions, voice and score from it. You hand-make only the **scenes** (`compositions/scene-<name>.html`).
 
 Before writing any composition HTML, load `/hyperframes-core` (contract) — and `/hyperframes-animation` when a scene needs motion beyond the examples. This skill owns the format and the process; those skills own the HyperFrames rules.
 
@@ -21,7 +21,7 @@ idea ─► 1 story ─► 2 story.json ─► 3 animatic ─► 4 scenes ─►
 | 0 | New episode folder | `npm run new -- <slug> "ชื่อเรื่อง"` | `episodes/<slug>/story.json` exists |
 | 1 | Write the story beats | — | passes every check in `references/story-rules.md` → *Twist checklist*; show the user the logline + twist + clue list and get a yes |
 | 2 | Write `story.json` | — | schema in `references/story-json.md`; each caption ≤ 2 lines, ≤ ~18 Thai characters per line |
-| 3 | Animatic | `npm run build -- episodes/<slug>` | builds; every missing scene shows as a placeholder; total length 45–90 s |
+| 3 | Animatic | `npm run build -- episodes/<slug>` | builds; every missing scene shows as a placeholder; length fits the format family (`story-rules.md`) |
 | 4 | Draw scenes, one file per `scene` name | edit `compositions/scene-<name>.html`, then build | `npx hyperframes check` = 0 errors (run in the episode folder) |
 | 5 | Voice + score | `npm run audio -- episodes/<slug>` | no `⚠ OVER` lines from voice; score says *ducked under voice* |
 | 6 | Review loop | `npm run check -- episodes/<slug>` → read the sheets | every score in `references/review.md` ≥ 8 |
@@ -35,18 +35,35 @@ Rules for the loop:
 
 ## The format in one screen
 
-- **9:16, 1080×1920, 30 fps, 45–90 s, 75 BPM grid** (1 beat = 0.8 s). Shots are 3 beats (2.4 s); key lines get 4 (3.2 s).
-- **Second person.** The narrator talks to "คุณ"; the viewer is the protagonist, which is what makes the twist land on *them*.
-- **Something new every 2–4 s**: every shot brings a new visual event (a move, a card, a ring, a reveal), not just a new caption.
-- **One accent: red** (`--red`). Red boxes mark the lines that turn the story; everything else is white.
-- **Clues are visual and honest**: the twist must already be on screen before it is said (see `references/story-rules.md`).
-- **Hook in the first 2 s**: an anomaly + a number or a rule, on screen at frame 0.
+- **9:16, 1080×1920, 30 fps, 75 BPM grid** (1 beat = 0.8 s). Shots are 3 beats (2.4 s); key lines get 4 (3.2 s).
+- **Three format families** (`references/story-rules.md`): survival "ถ้า…" (default, 60–110 s), haunting twist (45–90 s), ตำนานไทย (90–130 s, slow, `captionLook: "folk"`).
+- **Twist + knowledge.** A real fact, rule or number on screen every 3–5 shots, shown as a card, counter, meter or diagram. Something counts at least every ~10 s.
+- **Named cast + one animal**, labelled with `.tag` the first time. "คุณ" or a named lead.
+- **Something new every 2–4 s**, and no two consecutive shots of the same type (set, close-up, diagram, map, card…). Bright sets are normal; darkness is saved for the turn.
+- **Captions mostly white**; colour one keyword with `[gold]` or `{red}`; full red boxes only on the 2–4 lines that turn the story.
+- **Clues are visual and honest**: on screen 3+ times before the twist is said.
+- **Hook in the first 2 s**: a place + a threat or a number, on screen at frame 0.
+- **Series ending**: cliffhanger line → ตอนต่อไป card (`scene-example-next.html`), `series` set in `story.json`.
+
+## Commands (project skills)
+
+| Say | Skill | Does |
+|---|---|---|
+| ช่วยคิดไอเดีย | `/twist-idea` | 5 ideas scored against the reference patterns → pick one → logline, twist, clues, facts |
+| ช่วยคิดตอนต่อไป | `/twist-next` | reads an episode + its series bible → next episode outline that answers the cliffhanger |
+| ช่วยคิดฮุก / ชื่อเรื่อง | `/twist-hook` | hook lines, titles and cover text for an episode |
+| วางซีรีส์ | `/twist-series` | series bible: cast, animal, world rules, 5-episode arc |
+| วิเคราะห์ ref | `/twist-ref` | analyse a reference clip with ffmpeg and log new patterns to `references/ref-library.md` |
+| ตรวจเรื่อง | `/twist-doctor` | score a story.json against the rules before any scene is drawn |
+
+The commands stop at an approved outline or a report; building still follows the pipeline above.
 
 ## References
 
 | File | Read it when |
 |---|---|
-| `references/story-rules.md` | writing or judging the story — structure, twist types, clue planting, Thai caption voice |
+| `references/ref-library.md` | what the high-view reference clips do — the evidence behind every rule |
+| `references/story-rules.md` | writing or judging the story — format families, structure, knowledge layer, cast, twist types, clue planting, Thai caption voice |
 | `references/story-json.md` | writing `story.json` — every field, cue types, timing math |
 | `references/art-direction.md` | choosing palette, type, framing, camera, the cast, what is banned |
 | `references/scene-kit.md` | building a scene file — kit classes, cast sprite, example scenes, HyperFrames gotchas found in this repo |

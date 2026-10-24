@@ -1,6 +1,6 @@
 # Scene kit — building `compositions/scene-<name>.html`
 
-Start by copying the closest example (`scene-example-room.html`, `scene-example-map.html`, `scene-example-news.html`) to `scene-<name>.html`, rename every id prefix and the composition id, then run `npm run build`. The build wires it in automatically (the host id becomes `scene-<name>`).
+Start by copying the closest example (`scene-example-room.html`, `scene-example-rules.html`, `scene-example-map.html`, `scene-example-news.html`, `scene-example-next.html`) to `scene-<name>.html`, rename every id prefix and the composition id, then run `npm run build`. The build wires it in automatically (the host id becomes `scene-<name>`).
 
 ## File shape (HyperFrames sub-composition)
 
@@ -44,8 +44,28 @@ Start by copying the closest example (`scene-example-room.html`, `scene-example-
 | `.sil` | turns any cast member into a featureless black silhouette |
 | `.shadow-blob` | floor shadow under living characters |
 | `.vignette` | already applied over everything by the captions layer |
+| `.tag` (+ `.you`, `.warn`) | name tag with a coloured dot: `<div class="tag you"><i></i>คุณ · ม.4/2</div>` |
+| `.rule-card` + `.rule-no` / `.rule-text > span` | "กฎข้อ 1" card, red top edge |
+| `.stat` + `.stat-label` / `.stat-num` / `.stat-unit` | a number that matters; count it with a tween on a plain object + `onUpdate` (see `scene-example-rules.html`) |
+| `.meter > b` (+ `.low`) | a level that drains or fills — tween the `b`'s `width` |
+| `.checklist > .row > .box > .tick` | rows that tick — pop each `.tick` with `scale` 0 → 1 on a beat |
+| `.next-card` + `.next-kicker` / `.next-title > span` / `.next-cta` | series end card (`scene-example-next.html`) |
+| `.rain` | falling streaks; tween `backgroundPosition` with `ease: "none"` across the clip |
+| `.flood` | flood / canal water band; set `top` + `height`, tween `y` (negative) to make it rise — tweening `top` fails `check` |
+| `.mirror-y` | water reflection wrapper (flipped, faint); a ghost gets none |
+| `.far` | soft-focus wrapper for the far set (depth); keep cast and props outside it |
 
-Cast member: `<svg class="who" viewBox="0 0 200 520"><use href="#man-wide" /></svg>` — symbols: `man`, `man-wide`, `man-raise`, `woman`, `elder`.
+## Example scenes
+
+| File | Shows |
+|---|---|
+| `scene-example-room.html` | side-view night interior, mirror silhouette, HUD clock |
+| `scene-example-rules.html` | day set in `.far`, name tag, rule card drop, stat count-down, meter drain, checklist ticks — across two shots in one clip |
+| `scene-example-map.html` | top-down map, hollow dot, dashed paths |
+| `scene-example-news.html` | evidence card with blur-to-sharp photo and red ring |
+| `scene-example-next.html` | ตอนต่อไป end card; all text lands by 1.0 s so it is read for ≥ 2 s |
+
+Cast member: `<svg class="who" viewBox="0 0 200 520"><use href="#man-wide" /></svg>` — symbols: `man`, `man-wide`, `man-raise`, `woman`, `elder`, `raincoat` (hooded lead, `--coat`). Animal companion: `dog`, `dog-growl` use their own frame, `viewBox="0 0 320 220"` (side view facing right, `--fur` / `--fur-patch`); flip with `scaleX(-1)` on a wrapper.
 
 ## Gotchas found while building this kit (all verified)
 
@@ -56,6 +76,8 @@ Cast member: `<svg class="who" viewBox="0 0 200 520"><use href="#man-wide" /></s
 5. No `<br>` in text: split lines into block `<span>`s.
 6. Never put a CSS `transform` on an element you also tween (`gsap_css_transform_conflict`) — set the start state in `fromTo`.
 7. A named `font-family` must have an `@font-face` that reaches the file; linking `kit.css` (which declares Kanit and Plex Thai) is enough.
+8. An element that enters later must start **fully** off-canvas in its `fromTo` start state (e.g. `y: 1500`, not `y: 900`), or it sits visible below the frame content during earlier shots.
+9. Reading text under 28 px fails `check` (`text_below_floor`). Mark pure texture with `data-layout-ignore`.
 
 ## Layer order inside a scene
 

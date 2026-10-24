@@ -4,10 +4,14 @@
   "voice": "male",
   "voices": { "male": "gemini:Finn", "female": "gemini:Leda" },
   "voiceStyle": "เล่าเรื่องด้วยน้ำเสียงปกติ เป็นธรรมชาติ เหมือนเพื่อนเล่าให้ฟัง จังหวะพอดี ไม่กระซิบ ไม่เว่อร์",
+  "series": { "name": "เมื่อไฟดับทั้งเมือง", "ep": 1, "next": "ใครอยู่หน้าประตู" },
   "shots": [
     { "scene": "example-room", "beats": 3, "style": "red", "text": "ตีสาม ในกระจก\nมีเงาดำยืนอยู่", "mood": 0.8, "cues": [[0, "hit"], [1.5, "shriek"]] },
-    { "scene": "door", "beats": 3, "style": "plain", "text": "คุณเปิดประตูออกไปดู", "mood": 0.6, "cues": [[0.4, "creak"]] },
+    { "scene": "example-rules", "beats": 3, "style": "plain", "text": "กฎข้อแรก\n[อย่าวิ่ง]ตามเพื่อน", "mood": 0.5, "cues": [[0.5, "stamp"]] },
+    { "scene": "example-rules", "beats": 3, "style": "plain", "text": "น้ำเหลือ[ไม่ถึงสามสิบลิตร]", "mood": 0.6, "cues": [[0.3, "whoosh"], [1, "tick"], [1.6, "tick"], [2.2, "tick"]] },
+    { "scene": "door", "beats": 3, "style": "plain", "text": "คุณเปิดประตู{ออกไปดู}", "mood": 0.6, "cues": [[0.4, "creak"]] },
     { "scene": "example-news", "beats": 4, "style": "red", "text": "ผู้เช่าคนนั้น คือคุณ", "mood": 1, "cues": [[0, "bighit"]] },
-    { "scene": "example-map", "beats": 4, "style": "red", "text": "คือคุณ\nที่ยังไม่รู้ตัว", "mood": 0.8, "music": true, "cues": [[0, "hit"], [2, "bell"]] }
+    { "scene": "example-map", "beats": 4, "style": "red", "text": "คือคุณ\nที่ยังไม่รู้ตัว", "mood": 0.8, "music": true, "cues": [[0, "hit"], [2, "bell"]] },
+    { "scene": "example-next", "beats": 4, "text": "", "vo": "ตอนต่อไป ใครอยู่หน้าประตู", "voLead": 0.4, "mood": 0.4, "music": true }
   ]
 }

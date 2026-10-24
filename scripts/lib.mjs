@@ -30,7 +30,7 @@ export function loadStory(dir) {
       beats: s.beats,
       style: s.style || 'plain',
       text: s.text || '',
-      vo: s.vo === undefined ? (s.text || '').replace(/\n/g, ' ').replace(/[“”"]/g, '') : s.vo,
+      vo: s.vo === undefined ? plain(s.text || '').replace(/\n/g, ' ').replace(/[“”"]/g, '') : s.vo,
       voLead: s.voLead ?? 0.12,
       cues: s.cues || [],
       mood: s.mood ?? 0.5,
@@ -64,3 +64,9 @@ export function mediaDuration(file) {
 }
 
 export const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+// caption keyword marks: [คำ] = gold highlight, {คำ} = red word
+export const plain = s => String(s).replace(/[[\]{}]/g, '');
+export const marks = s => esc(s)
+  .replace(/\[([^\]]+)\]/g, '<span class="hl">$1</span>')
+  .replace(/\{([^}]+)\}/g, '<span class="hl-red">$1</span>');
