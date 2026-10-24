@@ -1,0 +1,76 @@
+<!doctype html>
+<!-- Diagram: flowing water depth vs a person, a small car, an SUV (NWS figures).
+     Shot 0 (0): rule card 2. Shot 1 (3.2): 15 cm knocks an adult down. Shot 2 (5.6): 30 cm floats a small car, 60 cm carries an SUV. -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #e8e1d1; }
+        #dp-grid { position: absolute; inset: -40px; background:
+          repeating-linear-gradient(0deg, rgba(24,32,46,0.06) 0 2px, transparent 2px 60px),
+          repeating-linear-gradient(90deg, rgba(24,32,46,0.06) 0 2px, transparent 2px 60px); }
+        #dp-ground { position: absolute; left: -100px; right: -100px; top: 1160px; height: 900px; background: #b7a989; border-top: 8px solid var(--ink); }
+        #dp-water { top: 1160px; height: 900px; opacity: 0.72; }
+        #dp-flow { position: absolute; left: -200px; right: -200px; top: 1200px; height: 10px;
+          background: repeating-linear-gradient(90deg, rgba(240,230,200,0.5) 0 60px, transparent 60px 160px); opacity: 0.6; }
+        #dp-man { left: 90px; top: 484px; width: 260px; height: 676px; transform-origin: 130px 676px; }
+        #dp-car { position: absolute; left: 370px; top: 960px; width: 330px; height: 200px; transform-origin: 165px 200px; }
+        #dp-suv { position: absolute; left: 700px; top: 890px; width: 370px; height: 270px; transform-origin: 185px 270px; }
+        .dp-body { position: absolute; left: 0; right: 0; bottom: 30px; border-radius: 22px; }
+        .dp-cab { position: absolute; border-radius: 22px 22px 0 0; }
+        .dp-wheel { position: absolute; bottom: 0; width: 64px; height: 64px; border-radius: 50%; background: #1d2230; border: 10px solid #5a6170; }
+        .dp-lbl { top: 0; }
+        #dp-l15 { left: 60px; top: 400px; }
+        #dp-l30 { left: 370px; top: 830px; }
+        #dp-l60 { left: 760px; top: 760px; }
+        #dp-card { left: 180px; top: 170px; }
+        #dp-scale { position: absolute; left: 20px; top: 860px; width: 12px; height: 300px; background: var(--ink); }
+      </style>
+      <div data-hf-id="hf-s3t9" id="root" data-composition-id="scene-depth" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-4hui" id="dp-grid" data-layout-allow-overflow data-layout-ignore></div>
+        <div data-hf-id="hf-7ck4" id="dp-ground" data-layout-allow-overflow></div>
+        <svg data-hf-id="hf-u8r2" id="dp-man" class="who" viewBox="0 0 200 520"><use data-hf-id="hf-8tgs" href="#man" /></svg>
+        <div data-hf-id="hf-eg30" id="dp-car">
+          <div data-hf-id="hf-7oni" class="dp-cab" style="left:50px;right:60px;bottom:110px;height:60px;background:#5f8fc0"></div>
+          <div data-hf-id="hf-aywj" class="dp-body" style="height:80px;background:#3f74ad"></div>
+          <div data-hf-id="hf-ponc" class="dp-wheel" style="left:30px"></div><div data-hf-id="hf-o9nf" class="dp-wheel" style="right:30px"></div>
+        </div>
+        <div data-hf-id="hf-jhp8" id="dp-suv">
+          <div data-hf-id="hf-b5xm" class="dp-cab" style="left:20px;right:40px;bottom:140px;height:80px;background:#7c8a6e"></div>
+          <div data-hf-id="hf-djy2" class="dp-body" style="height:120px;background:#5e6c51"></div>
+          <div data-hf-id="hf-7f8x" class="dp-wheel" style="left:30px;width:80px;height:80px"></div><div data-hf-id="hf-pb5g" class="dp-wheel" style="right:30px;width:80px;height:80px"></div>
+        </div>
+        <div data-hf-id="hf-4ogp" id="dp-water" class="flood" data-layout-allow-overflow></div>
+        <div data-hf-id="hf-gn26" id="dp-flow" data-layout-allow-overflow data-layout-ignore></div>
+        <div data-hf-id="hf-sua5" id="dp-l15" class="chip red">15 ซม. · คนล้ม</div>
+        <div data-hf-id="hf-kjy4" id="dp-l30" class="chip">30 ซม. · รถเล็กลอย</div>
+        <div data-hf-id="hf-e8z3" id="dp-l60" class="chip red">60 ซม. · SUV</div>
+        <div data-hf-id="hf-llte" id="dp-card" class="rule-card">
+          <div data-hf-id="hf-e55t" class="rule-no">กฎข้อ 2</div>
+          <div data-hf-id="hf-cwji" class="rule-text"><span data-hf-id="hf-g8fb">อย่าเดิน</span><span data-hf-id="hf-h5jn">ลุยน้ำไหล</span></div>
+        </div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#dp-flow", { x: 0 }, { x: -640, duration: 8.8, ease: "none" }, 0);
+        // shot 0 — card
+        tl.fromTo("#dp-card", { y: -800, rotation: 3 }, { y: 0, rotation: 0, duration: 0.45, ease: "back.out(1.5)" }, 0.35);
+        tl.fromTo("#dp-card", { x: 0 }, { x: 1100, duration: 0.3, ease: "power3.in", immediateRender: false }, 3.0);
+        // shot 1 — water to 15 cm: the man tips over
+        tl.fromTo("#dp-water", { y: 0 }, { y: -50, duration: 0.6, ease: "power2.out" }, 3.4);
+        tl.fromTo("#dp-l15", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 3.7);
+        tl.fromTo("#dp-man", { rotation: 0, x: 0 }, { rotation: -70, x: -30, duration: 0.7, ease: "power2.in" }, 4.3);
+        // shot 2 — 30 cm floats the car, 60 cm carries the SUV
+        tl.fromTo("#dp-water", { y: -50 }, { y: -92, duration: 0.6, ease: "power2.inOut", immediateRender: false }, 5.9);
+        tl.fromTo("#dp-l30", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 6.0);
+        tl.fromTo("#dp-car", { y: 0, rotation: 0 }, { y: -50, rotation: -6, duration: 0.6, ease: "sine.inOut" }, 6.3);
+        tl.fromTo("#dp-water", { y: -92 }, { y: -184, duration: 0.6, ease: "power2.inOut", immediateRender: false }, 6.9);
+        tl.fromTo("#dp-l60", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 7.1);
+        tl.fromTo("#dp-suv", { x: 0, y: 0, rotation: 0 }, { x: -80, y: -60, rotation: 8, duration: 1.2, ease: "sine.inOut" }, 7.3);
+        window.__timelines["scene-depth"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

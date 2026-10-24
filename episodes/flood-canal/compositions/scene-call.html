@@ -1,0 +1,52 @@
+<!doctype html>
+<!-- Cliffhanger close-up: ภูมิ's smartphone rings in the dark (date 2569 — the present). Shot 0 (0): incoming call "ป้าแดง".
+     Shot 1 (2.4): red line under it — the number was cancelled. -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #05070c; }
+        #cl-glow { position: absolute; left: -100px; top: 100px; width: 1280px; height: 1300px; background: radial-gradient(circle, rgba(120, 170, 255, 0.25), rgba(120, 170, 255, 0) 60%); }
+        #cl-phone { position: absolute; left: 260px; top: 200px; width: 560px; height: 1060px; border-radius: 70px; background: #11151d; border: 14px solid #2b313c; }
+        #cl-scr { position: absolute; left: 22px; top: 22px; right: 22px; bottom: 22px; border-radius: 52px; background: linear-gradient(180deg, #1e2c46, #0f1626); color: var(--white); font-family: var(--font-ui); text-align: center; overflow: hidden; }
+        #cl-date { font-size: 30px; font-weight: 500; color: var(--mute); margin-top: 60px; }
+        #cl-time { font: 700 120px var(--font-display); line-height: 1.1; }
+        #cl-in { font-size: 32px; font-weight: 500; color: var(--mute); margin-top: 90px; }
+        #cl-name { font: 700 84px var(--font-display); margin-top: 6px; }
+        #cl-avatar { width: 170px; height: 170px; border-radius: 50%; background: #b8443a; margin: 30px auto 0; }
+        #cl-btns { position: absolute; left: 0; right: 0; bottom: 70px; display: flex; justify-content: space-around; }
+        .cl-btn { width: 130px; height: 130px; border-radius: 50%; }
+        #cl-warn { left: 250px; top: 110px; }
+      </style>
+      <div data-hf-id="hf-g9iw" id="root" data-composition-id="scene-call" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-tyoe" id="cl-glow"></div>
+        <div data-hf-id="hf-hvxb" id="cl-phone">
+          <div data-hf-id="hf-qasf" id="cl-scr">
+            <div data-hf-id="hf-4fy1" id="cl-date">16 ต.ค. 2569</div>
+            <div data-hf-id="hf-g9wq" id="cl-time">02:00</div>
+            <div data-hf-id="hf-lumm" id="cl-in">สายเรียกเข้า</div>
+            <div data-hf-id="hf-nwwo" id="cl-name">ป้าแดง</div>
+            <div data-hf-id="hf-q3pm" id="cl-avatar"></div>
+            <div data-hf-id="hf-ytmu" id="cl-btns"><div data-hf-id="hf-lbs1" class="cl-btn" style="background:var(--red)"></div><div data-hf-id="hf-z4oi" class="cl-btn" style="background:var(--ok)"></div></div>
+          </div>
+        </div>
+        <div data-hf-id="hf-enyy" id="cl-warn" class="chip red">หมายเลขนี้ถูกยกเลิกตั้งแต่ปี 2554</div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#cl-phone", { y: 200, scale: 0.94 }, { y: 0, scale: 1, duration: 0.5, ease: "power3.out" }, 0);
+        // buzzing on each ring (cue ticks at 0.3 / 0.9 / 1.5 beats)
+        [0.24, 0.72, 1.2, 2.6, 3.4, 4.2].forEach(t => {
+          tl.fromTo("#cl-phone", { x: 0 }, { x: 10, duration: 0.05, ease: "none", repeat: 5, yoyo: true, immediateRender: false }, t);
+        });
+        tl.fromTo("#cl-glow", { opacity: 0.4 }, { opacity: 1, duration: 0.4, ease: "sine.inOut", repeat: 6, yoyo: true }, 0);
+        tl.fromTo("#cl-avatar", { scale: 1 }, { scale: 1.08, duration: 0.4, ease: "sine.inOut", repeat: 13, yoyo: true }, 0);
+        // shot 1 — the warning
+        tl.fromTo("#cl-warn", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 2.5);
+        window.__timelines["scene-call"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

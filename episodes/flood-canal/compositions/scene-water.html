@@ -1,0 +1,71 @@
+<!doctype html>
+<!-- Rules over the warm interior (blurred). Shot 0 (0): rule card 3. Shot 1 (2.4): 4 L per person per day (FEMA: 1 gallon).
+     Shot 2 (4.8): 4 × 3 people × 3 days = 36 L, the jug meter fills, checklist ticks. -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #4a3220; }
+        #wt-set { position: absolute; inset: -40px; }
+        #wt-wall { position: absolute; left: 0; right: 0; top: 0; height: 1240px; background: repeating-linear-gradient(90deg, #8d6a47 0 70px, #7d5c3c 70px 74px); }
+        #wt-floor { position: absolute; left: 0; right: 0; top: 1240px; bottom: 0; background: linear-gradient(180deg, #6b4a2f, #3e2a1b); }
+        .wt-jug { position: absolute; top: 980px; width: 120px; height: 200px; border-radius: 30px 30px 20px 20px; background: rgba(170, 210, 235, 0.8); border: 6px solid #e8f2f8; }
+        #wt-card { left: 180px; top: 180px; }
+        #wt-stat { left: 80px; top: 180px; padding: 30px 46px; }
+        #wt-stat .stat-num { font-size: 150px; }
+        #wt-stat .stat-label { font-size: 36px; }
+        #wt-x { position: absolute; left: 560px; top: 290px; font: 700 64px var(--font-display); color: var(--white); text-shadow: 0 4px 16px rgba(0,0,0,0.6); }
+        #wt-meter { left: 100px; top: 540px; width: 880px; }
+        #wt-list { left: 80px; top: 620px; width: 620px; }
+        #wt-boy { left: 780px; top: 700px; width: 200px; height: 520px; }
+      </style>
+      <div data-hf-id="hf-c1j3" id="root" data-composition-id="scene-water" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-dagu" id="wt-set" class="far" data-layout-allow-overflow>
+          <div data-hf-id="hf-conp" id="wt-wall"></div><div data-hf-id="hf-emod" id="wt-floor"></div>
+          <div data-hf-id="hf-zbns" class="wt-jug" style="left:140px"></div><div data-hf-id="hf-mq1w" class="wt-jug" style="left:290px"></div><div data-hf-id="hf-d911" class="wt-jug" style="left:440px"></div>
+        </div>
+        <svg data-hf-id="hf-kzdp" id="wt-boy" class="who" viewBox="0 0 200 520"><use data-hf-id="hf-0j9z" href="#raincoat" /></svg>
+        <div data-hf-id="hf-iw64" id="wt-stat" class="stat">
+          <div data-hf-id="hf-wzvd" class="stat-label" id="wt-label">น้ำดื่ม · คนละ / วัน</div>
+          <div data-hf-id="hf-yeow"><span data-hf-id="hf-y4es" id="wt-num" class="stat-num">0</span><span data-hf-id="hf-hrn7" class="stat-unit">ลิตร</span></div>
+        </div>
+        <div data-hf-id="hf-k3nv" id="wt-x">× 3 คน × 3 วัน</div>
+        <div data-hf-id="hf-gii8" id="wt-meter" class="meter"><b data-hf-id="hf-51v7" id="wt-fill"></b></div>
+        <div data-hf-id="hf-srd8" id="wt-list" class="checklist">
+          <div data-hf-id="hf-4qy7" class="row"><div data-hf-id="hf-d74r" class="box"><div data-hf-id="hf-texs" class="tick" id="wt-t1"></div></div>น้ำดื่ม 36 ลิตร</div>
+          <div data-hf-id="hf-o88o" class="row"><div data-hf-id="hf-jvrv" class="box"><div data-hf-id="hf-4aff" class="tick" id="wt-t2"></div></div>ไฟฉาย + ถ่านสำรอง</div>
+          <div data-hf-id="hf-ykby" class="row"><div data-hf-id="hf-jhgu" class="box"><div data-hf-id="hf-0cbe" class="tick" id="wt-t3"></div></div>ยาประจำตัว</div>
+          <div data-hf-id="hf-daur" class="row"><div data-hf-id="hf-j35t" class="box"><div data-hf-id="hf-hklp" class="tick" id="wt-t4"></div></div>มือถือ + พาวเวอร์แบงก์</div>
+        </div>
+        <div data-hf-id="hf-zwzp" id="wt-card" class="rule-card">
+          <div data-hf-id="hf-ejgu" class="rule-no">กฎข้อ 3</div>
+          <div data-hf-id="hf-cwji" class="rule-text"><span data-hf-id="hf-5p8s">สำรองน้ำดื่ม</span><span data-hf-id="hf-q1ac">ไว้ก่อน</span></div>
+        </div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#wt-set", { scale: 1 }, { scale: 1.06, duration: 8, ease: "none" }, 0);
+        // shot 0 — card
+        tl.fromTo("#wt-card", { y: -800, rotation: -3 }, { y: 0, rotation: 0, duration: 0.45, ease: "back.out(1.5)" }, 0.35);
+        tl.fromTo("#wt-card", { x: 0 }, { x: -1100, duration: 0.3, ease: "power3.in", immediateRender: false }, 2.25);
+        // shot 1 — 0 → 4 litres
+        tl.fromTo("#wt-stat", { x: -700 }, { x: 0, duration: 0.35, ease: "power3.out" }, 2.4);
+        const v = { n: 0 };
+        const num = document.querySelector("#wt-num");
+        tl.fromTo(v, { n: 0 }, { n: 4, duration: 0.9, ease: "power2.inOut", onUpdate: () => { num.textContent = Math.round(v.n); } }, 2.8);
+        // shot 2 — × 3 × 3 = 36, the meter fills, the list ticks
+        tl.fromTo("#wt-x", { x: 700 }, { x: 0, duration: 0.35, ease: "power3.out" }, 4.8);
+        tl.fromTo(v, { n: 4 }, { n: 36, duration: 1.2, ease: "power2.inOut", immediateRender: false, onUpdate: () => { num.textContent = Math.round(v.n); } }, 5.1);
+        tl.fromTo("#wt-meter", { x: -1100 }, { x: 0, duration: 0.35, ease: "power3.out" }, 4.9);
+        tl.fromTo("#wt-fill", { width: "0%" }, { width: "100%", duration: 1.2, ease: "power2.inOut" }, 5.1);
+        tl.fromTo("#wt-list", { y: 1500 }, { y: 0, duration: 0.4, ease: "back.out(1.3)" }, 5.0);
+        ["#wt-t1", "#wt-t2", "#wt-t3", "#wt-t4"].forEach((t, k) => {
+          tl.fromTo(t, { scale: 0 }, { scale: 1, duration: 0.25, ease: "back.out(2.4)" }, 5.2 + k * 0.48);
+        });
+        window.__timelines["scene-water"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

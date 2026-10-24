@@ -1,0 +1,74 @@
+<!doctype html>
+<!-- Grandma's house inside, grey daylight. Shot 0 (0): ภูมิ with a box, เจ้าโอ่ง tag. Shot 1 (2.4): water seeps under the door toward the wall socket. -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: var(--wood-1); }
+        #room-world { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 700px 1100px; }
+        #room-wall { position: absolute; left: -200px; right: -200px; top: 0; height: 1240px;
+          background: repeating-linear-gradient(90deg, #8d6a47 0 70px, #7d5c3c 70px 74px); }
+        #room-floor { position: absolute; left: -200px; right: -200px; top: 1240px; height: 900px;
+          background: repeating-linear-gradient(90deg, rgba(0,0,0,0.16) 0 4px, transparent 4px 140px), linear-gradient(180deg, #6b4a2f, #3e2a1b); }
+        #room-window { position: absolute; left: 90px; top: 360px; width: 300px; height: 340px; border: 18px solid #4e3622;
+          background: linear-gradient(180deg, #8e9cab, #b9c2c8); overflow: hidden; }
+        #room-wrain { inset: -60px; }
+        #room-light { position: absolute; left: -100px; top: 300px; width: 900px; height: 1100px;
+          background: radial-gradient(ellipse at 30% 30%, rgba(210, 225, 240, 0.25), rgba(210, 225, 240, 0) 60%); mix-blend-mode: screen; }
+        #room-photo { position: absolute; left: 470px; top: 400px; width: 150px; height: 190px; background: #e9e1cd; border: 12px solid #3a281a; }
+        #room-photo-face { position: absolute; left: 35px; top: 30px; width: 80px; height: 80px; border-radius: 50%; background: #c9a07e; }
+        #room-door { position: absolute; left: 820px; top: 640px; width: 240px; height: 600px; background: #4a3220; border: 14px solid #33220f; }
+        #room-socket { position: absolute; left: 150px; top: 1110px; width: 60px; height: 76px; border-radius: 10px; background: #f1ece0; border: 4px solid #a59d8c; }
+        .room-hole { position: absolute; left: 14px; width: 10px; height: 16px; background: #333; }
+        #room-box { position: absolute; left: 330px; top: 920px; width: 220px; height: 150px; background: #c9a46a; border: 6px solid #8a6a3a; }
+        #room-boy { left: 340px; top: 720px; width: 200px; height: 520px; }
+        #room-boy-shadow { left: 320px; top: 1222px; }
+        #room-dog { left: 560px; top: 1050px; width: 260px; height: 179px; }
+        #room-dog-shadow { left: 560px; top: 1212px; width: 260px; }
+        #room-water { top: 1400px; height: 800px; }
+        #room-seep { position: absolute; left: 600px; top: 1228px; width: 460px; height: 26px; border-radius: 13px; background: rgba(128, 108, 72, 0.85); transform-origin: 100% 50%; }
+        #room-ring { position: absolute; left: 110px; top: 1068px; width: 140px; height: 160px; border-radius: 50%; border: 7px dashed var(--red); }
+        #room-tag-dog { left: 560px; top: 960px; }
+        #room-chip { left: 90px; top: 990px; }
+      </style>
+      <div data-hf-id="hf-ogwr" id="root" data-composition-id="scene-room" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-rare" id="room-world" data-layout-allow-overflow>
+          <div data-hf-id="hf-zsg6" id="room-wall" data-layout-allow-overflow></div>
+          <div data-hf-id="hf-acus" id="room-floor" data-layout-allow-overflow></div>
+          <div data-hf-id="hf-eitp" id="room-window"><div data-hf-id="hf-ubg6" id="room-wrain" class="rain" data-layout-ignore></div></div>
+          <div data-hf-id="hf-73zf" id="room-photo"><div data-hf-id="hf-glzj" id="room-photo-face"></div></div>
+          <div data-hf-id="hf-7oth" id="room-door"></div>
+          <div data-hf-id="hf-ss7m" id="room-socket"><div data-hf-id="hf-l2xe" class="room-hole" style="top:18px"></div><div data-hf-id="hf-kdmp" class="room-hole" style="top:18px;left:34px"></div></div>
+          <div data-hf-id="hf-xk4b" id="room-light"></div>
+          <div data-hf-id="hf-xvkn" id="room-boy-shadow" class="shadow-blob"></div>
+          <svg data-hf-id="hf-rdg9" id="room-boy" class="who" viewBox="0 0 200 520"><use data-hf-id="hf-0j9z" href="#raincoat" /></svg>
+          <div data-hf-id="hf-i74g" id="room-box"></div>
+          <div data-hf-id="hf-1g7n" id="room-dog-shadow" class="shadow-blob"></div>
+          <svg data-hf-id="hf-j8l5" id="room-dog" class="who" viewBox="0 0 320 220"><use data-hf-id="hf-r1la" href="#dog" /></svg>
+          <div data-hf-id="hf-51ve" id="room-seep"></div>
+          <div data-hf-id="hf-q3l4" id="room-water" class="flood" data-layout-allow-overflow></div>
+          <div data-hf-id="hf-6hr7" id="room-ring"></div>
+        </div>
+        <div data-hf-id="hf-agj1" id="room-tag-dog" class="tag"><i data-hf-id="hf-wt6k"></i>เจ้าโอ่ง · หมาของยาย</div>
+        <div data-hf-id="hf-qr92" id="room-chip" class="chip red">ปลั๊กไฟ</div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#room-world", { scale: 1 }, { scale: 1.1, duration: 4.8, ease: "power1.inOut" }, 0);
+        tl.fromTo("#room-wrain", { backgroundPosition: "0px 0px, 0px 0px" }, { backgroundPosition: "-120px 900px, -90px 700px", duration: 4.8, ease: "none" }, 0);
+        // shot 0 — the dog trots in, tag pops
+        tl.fromTo("#room-dog", { x: -700 }, { x: 0, duration: 0.9, ease: "power2.out" }, 0.1);
+        tl.fromTo("#room-dog-shadow", { x: -700 }, { x: 0, duration: 0.9, ease: "power2.out" }, 0.1);
+        tl.fromTo("#room-tag-dog", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 0.9);
+        // shot 1 — a dark line of water slides under the door, then the floor floods
+        tl.fromTo("#room-seep", { scaleX: 0 }, { scaleX: 1, duration: 0.9, ease: "power2.out" }, 2.5);
+        tl.fromTo("#room-water", { y: 0 }, { y: -164, duration: 1.6, ease: "power2.inOut" }, 3.0);
+        tl.fromTo("#room-ring", { scale: 0.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2)" }, 3.4);
+        tl.fromTo("#room-chip", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 3.5);
+        window.__timelines["scene-room"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

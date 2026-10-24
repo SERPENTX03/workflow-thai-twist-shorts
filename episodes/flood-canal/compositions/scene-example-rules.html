@@ -1,0 +1,78 @@
+<!doctype html>
+<!-- EXAMPLE SCENE — survival "rules + numbers" beat over a day set.
+     Shot A (local 0): name tag on the cast, then "กฎข้อ 1" card drops in.
+     Shot B (local 2.4): card leaves; a stat counts down, a meter drains, a checklist ticks. -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: var(--day-0); }
+        #rules-world { position: absolute; left: -60px; top: -60px; width: 1200px; height: 2040px; }
+        #rules-wall { position: absolute; left: 0; right: 0; top: 0; height: 1240px; background: linear-gradient(180deg, var(--day-0), var(--day-1)); }
+        #rules-floor { position: absolute; left: 0; right: 0; top: 1240px; bottom: 0; background: linear-gradient(180deg, #b9a98c, #8f7f66); }
+        .rules-win { position: absolute; top: 260px; width: 260px; height: 360px; background: #c9dbe4; border: 14px solid #8b2f2f; }
+        .rules-rail { position: absolute; left: 0; right: 0; height: 16px; background: #8b2f2f; }
+        #rules-man { left: 690px; top: 640px; width: 230px; height: 598px; }
+        #rules-shadow { left: 685px; top: 1218px; }
+        #rules-tag { left: 680px; top: 520px; }
+        #rules-card { left: 180px; top: 170px; }
+        #rules-stat { left: 80px; top: 230px; }
+        #rules-meter { left: 110px; top: 480px; width: 380px; }
+        #rules-list { left: 80px; top: 600px; width: 560px; }
+      </style>
+      <div data-hf-id="hf-b6x0" id="root" data-composition-id="scene-example-rules" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-ay7i" id="rules-world" data-layout-allow-overflow>
+          <div data-hf-id="hf-ql5v" class="far">
+            <div data-hf-id="hf-9wmj" id="rules-wall"></div>
+            <div data-hf-id="hf-ta4a" class="rules-win" style="left:120px"></div>
+            <div data-hf-id="hf-d2px" class="rules-win" style="left:440px"></div>
+            <div data-hf-id="hf-1udk" class="rules-win" style="left:760px"></div>
+            <div data-hf-id="hf-jaye" class="rules-rail" style="top:700px"></div>
+            <div data-hf-id="hf-4hg3" id="rules-floor"></div>
+          </div>
+          <div data-hf-id="hf-my80" id="rules-shadow" class="shadow-blob"></div>
+          <svg data-hf-id="hf-i3jd" id="rules-man" class="who" viewBox="0 0 200 520"><use data-hf-id="hf-8tgs" href="#man" /></svg>
+        </div>
+        <div data-hf-id="hf-jadt" id="rules-tag" class="tag you"><i data-hf-id="hf-wt6k"></i>คุณ · ม.4/2</div>
+        <div data-hf-id="hf-4n4v" id="rules-card" class="rule-card">
+          <div data-hf-id="hf-fc2w" class="rule-no">กฎข้อ 1</div>
+          <div data-hf-id="hf-cwji" class="rule-text"><span data-hf-id="hf-wv7a">อย่าวิ่งลงบันได</span><span data-hf-id="hf-iwc2">ตามเพื่อน</span></div>
+        </div>
+        <div data-hf-id="hf-okps" id="rules-stat" class="stat">
+          <div data-hf-id="hf-miou" class="stat-label">น้ำที่เหลือ</div>
+          <div data-hf-id="hf-yeow"><span data-hf-id="hf-5i3l" id="rules-num" class="stat-num">90</span><span data-hf-id="hf-hrn7" class="stat-unit">ลิตร</span></div>
+        </div>
+        <div data-hf-id="hf-6inu" id="rules-meter" class="meter"><b data-hf-id="hf-ktpb" id="rules-fill"></b></div>
+        <div data-hf-id="hf-0lpc" id="rules-list" class="checklist">
+          <div data-hf-id="hf-02mr" class="row"><div data-hf-id="hf-d74r" class="box"><div data-hf-id="hf-x316" class="tick" id="rules-t1"></div></div>ปิดประตู ล็อก</div>
+          <div data-hf-id="hf-marp" class="row"><div data-hf-id="hf-jvrv" class="box"><div data-hf-id="hf-t4x5" class="tick" id="rules-t2"></div></div>แปะกระดาษปิดกระจก</div>
+          <div data-hf-id="hf-dlrr" class="row"><div data-hf-id="hf-jhgu" class="box"><div data-hf-id="hf-sd9c" class="tick" id="rules-t3"></div></div>นั่งต่ำกว่าขอบหน้าต่าง</div>
+        </div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        // camera: slow push across both shots
+        tl.fromTo("#rules-world", { scale: 1 }, { scale: 1.08, duration: 4.8, ease: "none" }, 0);
+        // shot A — tag pops, rule card drops in
+        tl.fromTo("#rules-tag", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 0.15);
+        tl.fromTo("#rules-card", { y: -700, rotation: -3 }, { y: 0, rotation: 0, duration: 0.45, ease: "back.out(1.5)" }, 0.4);
+        // shot B — card out, numbers in
+        tl.fromTo("#rules-card", { x: 0 }, { x: -1100, duration: 0.3, ease: "power3.in", immediateRender: false }, 2.35);
+        tl.fromTo("#rules-stat", { x: -600 }, { x: 0, duration: 0.35, ease: "power3.out" }, 2.45);
+        tl.fromTo("#rules-meter", { x: -600 }, { x: 0, duration: 0.35, ease: "power3.out" }, 2.5);
+        tl.fromTo("#rules-list", { y: 1500 }, { y: 0, duration: 0.4, ease: "back.out(1.3)" }, 2.6);
+        const water = { v: 90 };
+        const num = document.querySelector("#rules-num");
+        tl.fromTo(water, { v: 90 }, { v: 29, duration: 1.4, ease: "power2.inOut",
+          onUpdate: () => { num.textContent = Math.round(water.v); } }, 2.9);
+        tl.fromTo("#rules-fill", { width: "100%" }, { width: "32%", duration: 1.4, ease: "power2.inOut" }, 2.9);
+        ["#rules-t1", "#rules-t2", "#rules-t3"].forEach((t, k) => {
+          tl.fromTo(t, { scale: 0 }, { scale: 1, duration: 0.25, ease: "back.out(2.4)" }, 3.1 + k * 0.45);
+        });
+        window.__timelines["scene-example-rules"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

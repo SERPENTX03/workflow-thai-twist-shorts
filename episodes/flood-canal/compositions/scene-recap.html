@@ -1,0 +1,80 @@
+<!doctype html>
+<!-- Fast re-read, four 1.6 s panels, each ringing a clue in red: TV "ต.ค. 54" (0), calendar 2554 (1.6),
+     reflections with her gap (3.2), the one lit house (4.8). Each panel slides in over the last. -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #0d1220; }
+        .rc-p { position: absolute; inset: 0; overflow: hidden; }
+        .rc-ring { position: absolute; border: 9px dashed var(--red); border-radius: 50%; }
+        /* 1 — TV */
+        #rc-1 { background: #2b1d12; }
+        #rc-tv { position: absolute; left: 90px; top: 380px; width: 900px; height: 680px; border-radius: 40px; background: #3a3a40; border: 18px solid #222228; }
+        #rc-scr { position: absolute; left: 40px; top: 40px; width: 784px; height: 560px; border-radius: 24px; background: #3b6fa8; overflow: hidden; }
+        #rc-news { position: absolute; left: 40px; top: 40px; font: 700 76px var(--font-display); color: #fff; }
+        #rc-tick { position: absolute; left: 0; right: 0; bottom: 0; height: 120px; background: var(--red); font: 700 64px/120px var(--font-ui); color: #fff; padding-left: 40px; white-space: nowrap; }
+        #rc-r1 { left: 110px; top: 830px; width: 420px; height: 220px; }
+        /* 2 — calendar */
+        #rc-2 { background: #3a281a; }
+        #rc-cal { position: absolute; left: 240px; top: 300px; width: 600px; height: 760px; background: var(--paper); border-top: 100px solid var(--red); text-align: center; color: var(--ink); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        #rc-cal-m { font: 700 70px var(--font-ui); margin-top: 40px; }
+        #rc-cal-y { font: 700 190px var(--font-display); line-height: 1.1; }
+        #rc-cal-g { margin: 30px 60px 0; height: 200px; background: repeating-linear-gradient(90deg, rgba(24,32,46,0.25) 0 44px, transparent 44px 68px); }
+        #rc-r2 { left: 190px; top: 420px; width: 700px; height: 420px; }
+        /* 3 — reflections */
+        #rc-3 { background: #2c3346; }
+        #rc-w { top: 900px; height: 1200px; }
+        #rc-boy { left: 160px; top: 380px; width: 200px; height: 520px; }
+        #rc-aunt { left: 560px; top: 390px; width: 196px; height: 510px; --top: #b8443a; --skirt: #5a3f6e; --hair: #a4a4aa; }
+        #rc-boy-rw { left: 160px; top: 900px; width: 200px; height: 520px; }
+        #rc-r3 { left: 500px; top: 880px; width: 320px; height: 420px; }
+        #rc-c3 { left: 520px; top: 1220px; }
+        /* 4 — map */
+        #rc-4 { background: #1a2638; }
+        #rc-r4 { left: 360px; top: 520px; width: 360px; height: 360px; }
+      </style>
+      <div data-hf-id="hf-tzv3" id="root" data-composition-id="scene-recap" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-oarf" class="rc-p" id="rc-1">
+          <div data-hf-id="hf-djo3" id="rc-tv"><div data-hf-id="hf-i93n" id="rc-scr"><div data-hf-id="hf-8mtl" id="rc-news">ข่าวด่วน</div><div data-hf-id="hf-ebiy" id="rc-tick">ต.ค. 54 · น้ำเหนือไหลบ่า</div></div></div>
+          <div data-hf-id="hf-tepj" class="rc-ring" id="rc-r1"></div>
+        </div>
+        <div data-hf-id="hf-df9s" class="rc-p" id="rc-2">
+          <div data-hf-id="hf-s453" id="rc-cal"><div data-hf-id="hf-ffe8" id="rc-cal-m">ตุลาคม</div><div data-hf-id="hf-tclx" id="rc-cal-y">2554</div><div data-hf-id="hf-19wv" id="rc-cal-g"></div></div>
+          <div data-hf-id="hf-ij7w" class="rc-ring" id="rc-r2"></div>
+        </div>
+        <div data-hf-id="hf-e6xl" class="rc-p" id="rc-3">
+          <div data-hf-id="hf-p576" id="rc-w" class="flood" data-layout-allow-overflow></div>
+          <div data-hf-id="hf-chjn" id="rc-boy-rw" class="mirror-y"><svg data-hf-id="hf-8c5e" class="who" style="left:0;top:0;width:200px;height:520px" viewBox="0 0 200 520"><use data-hf-id="hf-0j9z" href="#raincoat" /></svg></div>
+          <svg data-hf-id="hf-1nf9" id="rc-boy" class="who" viewBox="0 0 200 520"><use data-hf-id="hf-sj9z" href="#raincoat" /></svg>
+          <svg data-hf-id="hf-hhmx" id="rc-aunt" class="who" viewBox="0 0 200 520"><use data-hf-id="hf-lswu" href="#auntie" /></svg>
+          <div data-hf-id="hf-lihh" class="rc-ring" id="rc-r3"></div>
+          <div data-hf-id="hf-5mfn" id="rc-c3" class="chip red">ไม่มีเงา</div>
+        </div>
+        <div data-hf-id="hf-5j1q" class="rc-p" id="rc-4">
+          <svg data-hf-id="hf-r6sg" style="position:absolute;left:0;top:0;width:1080px;height:1920px" viewBox="0 0 1080 1920">
+            <path data-hf-id="hf-y5l3" d="M-100 820 C200 760 500 880 760 800 S1100 760 1200 820" fill="none" stroke="#8a7550" stroke-width="90" />
+            <rect data-hf-id="hf-0z7t" x="80" y="640" width="120" height="90" fill="#2a3240" /><rect data-hf-id="hf-fvtk" x="240" y="630" width="120" height="90" fill="#2a3240" />
+            <rect data-hf-id="hf-cg0q" x="720" y="640" width="120" height="90" fill="#2a3240" /><rect data-hf-id="hf-7k49" x="880" y="620" width="120" height="90" fill="#2a3240" />
+            <rect data-hf-id="hf-svf6" x="160" y="930" width="120" height="90" fill="#2a3240" /><rect data-hf-id="hf-az89" x="760" y="940" width="120" height="90" fill="#2a3240" />
+            <circle data-hf-id="hf-hugk" cx="540" cy="700" r="150" fill="rgba(255, 210, 122, 0.25)" />
+            <rect data-hf-id="hf-d9z5" x="470" y="650" width="140" height="100" fill="#ffd27a" />
+          </svg>
+          <div data-hf-id="hf-22le" class="rc-ring" id="rc-r4"></div>
+        </div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        [["#rc-1", "#rc-r1", 0], ["#rc-2", "#rc-r2", 1.6], ["#rc-3", "#rc-r3", 3.2], ["#rc-4", "#rc-r4", 4.8]].forEach(([p, r, t], k) => {
+          if (k > 0) tl.fromTo(p, { x: 1100 }, { x: 0, duration: 0.22, ease: "power3.out" }, t);
+          tl.fromTo(p, { scale: 1.08 }, { scale: 1, duration: 1.6, ease: "power2.out" }, t);
+          tl.fromTo(r, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, t + 0.35);
+        });
+        tl.fromTo("#rc-c3", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 3.6);
+        window.__timelines["scene-recap"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

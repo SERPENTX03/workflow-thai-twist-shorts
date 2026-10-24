@@ -1,0 +1,680 @@
+{
+ "title": "น้ำท่วมริมคลอง",
+ "bpm": 75,
+ "beat": 0.8,
+ "total": 87.2,
+ "totalBeats": 109,
+ "shots": [
+  {
+   "i": 0,
+   "scene": "exterior",
+   "start": 0,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "น้ำขึ้น [40 ซม.]\nในชั่วโมงเดียว",
+   "style": "red"
+  },
+  {
+   "i": 1,
+   "scene": "exterior",
+   "start": 2.4,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ภูมิกลับมาเก็บของ\nที่[บ้านยาย]ริมคลอง",
+   "style": "plain"
+  },
+  {
+   "i": 2,
+   "scene": "room",
+   "start": 4.8,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "เจ้าโอ่ง หมาของยาย\nตามมาด้วย",
+   "style": "plain"
+  },
+  {
+   "i": 3,
+   "scene": "room",
+   "start": 7.2,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "น้ำเริ่มซึม\nเข้า{ใต้ประตู}",
+   "style": "plain"
+  },
+  {
+   "i": 4,
+   "scene": "breaker",
+   "start": 9.6,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "กฎข้อ 1\n[ตัดไฟ]ตอนพื้นยังแห้ง",
+   "style": "plain"
+  },
+  {
+   "i": 5,
+   "scene": "breaker",
+   "start": 12.8,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ปิด[ลูกย่อย]ทีละตัว\nแล้วค่อยปิดตัวหลัก",
+   "style": "plain"
+  },
+  {
+   "i": 6,
+   "scene": "breaker",
+   "start": 15.2,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ถ้าต้อง{ยืนในน้ำ}\nห้ามแตะตู้ไฟเด็ดขาด",
+   "style": "plain"
+  },
+  {
+   "i": 7,
+   "scene": "neighbor",
+   "start": 17.6,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ป้าแดง เพื่อนบ้านยาย\nเรียกจากบ้านข้างๆ",
+   "style": "plain"
+  },
+  {
+   "i": 8,
+   "scene": "neighbor",
+   "start": 20,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ป้าแดงยังไม่ยอม\nออกจากบ้านตัวเอง",
+   "style": "plain"
+  },
+  {
+   "i": 9,
+   "scene": "neighbor",
+   "start": 22.4,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ข่าวบอกว่า\n[น้ำเหนือ]กำลังมาอีก",
+   "style": "plain"
+  },
+  {
+   "i": 10,
+   "scene": "dog",
+   "start": 24.8,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "แต่เจ้าโอ่ง\nไม่ยอมก้าวเข้าไป",
+   "style": "plain"
+  },
+  {
+   "i": 11,
+   "scene": "depth",
+   "start": 27.2,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "กฎข้อ 2\nอย่า[เดินลุยน้ำไหล]",
+   "style": "plain"
+  },
+  {
+   "i": 12,
+   "scene": "depth",
+   "start": 30.4,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "น้ำไหลแค่ [15 ซม.]\nก็ล้มผู้ใหญ่ได้",
+   "style": "plain"
+  },
+  {
+   "i": 13,
+   "scene": "depth",
+   "start": 32.8,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "[30 ซม.] รถเล็กลอย\n[60 ซม.] SUV ก็ไป",
+   "style": "plain"
+  },
+  {
+   "i": 14,
+   "scene": "reflect",
+   "start": 36,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ภูมิพาป้าแดง\nออกมาที่ระเบียง",
+   "style": "plain"
+  },
+  {
+   "i": 15,
+   "scene": "reflect",
+   "start": 38.4,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "รอเรือกู้ภัย\nบน[จุดที่สูงที่สุด]",
+   "style": "plain"
+  },
+  {
+   "i": 16,
+   "scene": "map",
+   "start": 40.8,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "วัดบนเนิน\nห่างไป [1.2 กม.]",
+   "style": "plain"
+  },
+  {
+   "i": 17,
+   "scene": "map",
+   "start": 43.2,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ทั้งซอย\n[ไฟดับ]หมดแล้ว",
+   "style": "plain"
+  },
+  {
+   "i": 18,
+   "scene": "water",
+   "start": 45.6,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "กฎข้อ 3\nสำรอง[น้ำดื่ม]ไว้ก่อน",
+   "style": "plain"
+  },
+  {
+   "i": 19,
+   "scene": "water",
+   "start": 48,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "คนละ [4 ลิตร]\nต่อวัน",
+   "style": "plain"
+  },
+  {
+   "i": 20,
+   "scene": "water",
+   "start": 50.4,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "3 คน 3 วัน\nต้องมี [36 ลิตร]",
+   "style": "plain"
+  },
+  {
+   "i": 21,
+   "scene": "phone",
+   "start": 53.6,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ป้าแดงโทรหาลูก\nไม่ติดสักที",
+   "style": "plain"
+  },
+  {
+   "i": 22,
+   "scene": "neighbor",
+   "start": 56,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ข่าวบอก ท่วมแล้ว\n[65 จังหวัด]",
+   "style": "plain"
+  },
+  {
+   "i": 23,
+   "scene": "neighbor",
+   "start": 58.4,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "“เหมือนปีนั้นเลย”\nป้าแดงพูดเบาๆ",
+   "style": "plain"
+  },
+  {
+   "i": 24,
+   "scene": "boat",
+   "start": 60.8,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "หกโมงครึ่ง\nเรือกู้ภัยมาถึง",
+   "style": "plain"
+  },
+  {
+   "i": 25,
+   "scene": "boat",
+   "start": 63.2,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "“ริมคลองนี้ไม่มีคนอยู่\nมา {15 ปี}แล้ว”",
+   "style": "red"
+  },
+  {
+   "i": 26,
+   "scene": "boat",
+   "start": 66.4,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ตั้งแต่\n[น้ำท่วมปี 54]",
+   "style": "plain"
+  },
+  {
+   "i": 27,
+   "scene": "recap",
+   "start": 68.8,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "ทีวี ฉายข่าวปี 54",
+   "style": "plain"
+  },
+  {
+   "i": 28,
+   "scene": "recap",
+   "start": 70.4,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "ปฏิทิน ค้างที่ ต.ค. 54",
+   "style": "plain"
+  },
+  {
+   "i": 29,
+   "scene": "recap",
+   "start": 72,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "ในน้ำ ไม่มีเงาป้า",
+   "style": "plain"
+  },
+  {
+   "i": 30,
+   "scene": "recap",
+   "start": 73.6,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "ไฟดับทั้งซอย\nยกเว้นบ้านป้า",
+   "style": "plain"
+  },
+  {
+   "i": 31,
+   "scene": "dark",
+   "start": 75.2,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "ป้าแดง ยังอยู่ปี 54",
+   "style": "red"
+  },
+  {
+   "i": 32,
+   "scene": "call",
+   "start": 78.4,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "คืนนั้น\nมือถือภูมิดังขึ้น…",
+   "style": "plain"
+  },
+  {
+   "i": 33,
+   "scene": "call",
+   "start": 80.8,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "จากเบอร์ป้าแดง\nที่{ยกเลิกไปแล้ว}…",
+   "style": "red"
+  },
+  {
+   "i": 34,
+   "scene": "next",
+   "start": 84,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "",
+   "style": "plain"
+  }
+ ],
+ "scenes": [
+  {
+   "id": "exterior-0",
+   "scene": "exterior",
+   "file": "scene-exterior.html",
+   "start": 0,
+   "dur": 4.8,
+   "local": [
+    {
+     "shot": 0,
+     "at": 0,
+     "dur": 2.4,
+     "text": "น้ำขึ้น 40 ซม.\nในชั่วโมงเดียว"
+    },
+    {
+     "shot": 1,
+     "at": 2.4,
+     "dur": 2.4,
+     "text": "ภูมิกลับมาเก็บของ\nที่บ้านยายริมคลอง"
+    }
+   ]
+  },
+  {
+   "id": "room-1",
+   "scene": "room",
+   "file": "scene-room.html",
+   "start": 4.8,
+   "dur": 4.8,
+   "local": [
+    {
+     "shot": 2,
+     "at": 0,
+     "dur": 2.4,
+     "text": "เจ้าโอ่ง หมาของยาย\nตามมาด้วย"
+    },
+    {
+     "shot": 3,
+     "at": 2.4,
+     "dur": 2.4,
+     "text": "น้ำเริ่มซึม\nเข้าใต้ประตู"
+    }
+   ]
+  },
+  {
+   "id": "breaker-2",
+   "scene": "breaker",
+   "file": "scene-breaker.html",
+   "start": 9.6,
+   "dur": 8,
+   "local": [
+    {
+     "shot": 4,
+     "at": 0,
+     "dur": 3.2,
+     "text": "กฎข้อ 1\nตัดไฟตอนพื้นยังแห้ง"
+    },
+    {
+     "shot": 5,
+     "at": 3.2,
+     "dur": 2.4,
+     "text": "ปิดลูกย่อยทีละตัว\nแล้วค่อยปิดตัวหลัก"
+    },
+    {
+     "shot": 6,
+     "at": 5.6,
+     "dur": 2.4,
+     "text": "ถ้าต้องยืนในน้ำ\nห้ามแตะตู้ไฟเด็ดขาด"
+    }
+   ]
+  },
+  {
+   "id": "neighbor-3",
+   "scene": "neighbor",
+   "file": "scene-neighbor.html",
+   "start": 17.6,
+   "dur": 7.2,
+   "local": [
+    {
+     "shot": 7,
+     "at": 0,
+     "dur": 2.4,
+     "text": "ป้าแดง เพื่อนบ้านยาย\nเรียกจากบ้านข้างๆ"
+    },
+    {
+     "shot": 8,
+     "at": 2.4,
+     "dur": 2.4,
+     "text": "ป้าแดงยังไม่ยอม\nออกจากบ้านตัวเอง"
+    },
+    {
+     "shot": 9,
+     "at": 4.8,
+     "dur": 2.4,
+     "text": "ข่าวบอกว่า\nน้ำเหนือกำลังมาอีก"
+    }
+   ]
+  },
+  {
+   "id": "dog-4",
+   "scene": "dog",
+   "file": "scene-dog.html",
+   "start": 24.8,
+   "dur": 2.4,
+   "local": [
+    {
+     "shot": 10,
+     "at": 0,
+     "dur": 2.4,
+     "text": "แต่เจ้าโอ่ง\nไม่ยอมก้าวเข้าไป"
+    }
+   ]
+  },
+  {
+   "id": "depth-5",
+   "scene": "depth",
+   "file": "scene-depth.html",
+   "start": 27.2,
+   "dur": 8.8,
+   "local": [
+    {
+     "shot": 11,
+     "at": 0,
+     "dur": 3.2,
+     "text": "กฎข้อ 2\nอย่าเดินลุยน้ำไหล"
+    },
+    {
+     "shot": 12,
+     "at": 3.2,
+     "dur": 2.4,
+     "text": "น้ำไหลแค่ 15 ซม.\nก็ล้มผู้ใหญ่ได้"
+    },
+    {
+     "shot": 13,
+     "at": 5.6,
+     "dur": 3.2,
+     "text": "30 ซม. รถเล็กลอย\n60 ซม. SUV ก็ไป"
+    }
+   ]
+  },
+  {
+   "id": "reflect-6",
+   "scene": "reflect",
+   "file": "scene-reflect.html",
+   "start": 36,
+   "dur": 4.8,
+   "local": [
+    {
+     "shot": 14,
+     "at": 0,
+     "dur": 2.4,
+     "text": "ภูมิพาป้าแดง\nออกมาที่ระเบียง"
+    },
+    {
+     "shot": 15,
+     "at": 2.4,
+     "dur": 2.4,
+     "text": "รอเรือกู้ภัย\nบนจุดที่สูงที่สุด"
+    }
+   ]
+  },
+  {
+   "id": "map-7",
+   "scene": "map",
+   "file": "scene-map.html",
+   "start": 40.8,
+   "dur": 4.8,
+   "local": [
+    {
+     "shot": 16,
+     "at": 0,
+     "dur": 2.4,
+     "text": "วัดบนเนิน\nห่างไป 1.2 กม."
+    },
+    {
+     "shot": 17,
+     "at": 2.4,
+     "dur": 2.4,
+     "text": "ทั้งซอย\nไฟดับหมดแล้ว"
+    }
+   ]
+  },
+  {
+   "id": "water-8",
+   "scene": "water",
+   "file": "scene-water.html",
+   "start": 45.6,
+   "dur": 8,
+   "local": [
+    {
+     "shot": 18,
+     "at": 0,
+     "dur": 2.4,
+     "text": "กฎข้อ 3\nสำรองน้ำดื่มไว้ก่อน"
+    },
+    {
+     "shot": 19,
+     "at": 2.4,
+     "dur": 2.4,
+     "text": "คนละ 4 ลิตร\nต่อวัน"
+    },
+    {
+     "shot": 20,
+     "at": 4.8,
+     "dur": 3.2,
+     "text": "3 คน 3 วัน\nต้องมี 36 ลิตร"
+    }
+   ]
+  },
+  {
+   "id": "phone-9",
+   "scene": "phone",
+   "file": "scene-phone.html",
+   "start": 53.6,
+   "dur": 2.4,
+   "local": [
+    {
+     "shot": 21,
+     "at": 0,
+     "dur": 2.4,
+     "text": "ป้าแดงโทรหาลูก\nไม่ติดสักที"
+    }
+   ]
+  },
+  {
+   "id": "neighbor-10",
+   "scene": "neighbor",
+   "file": "scene-neighbor.html",
+   "start": 56,
+   "dur": 4.8,
+   "local": [
+    {
+     "shot": 22,
+     "at": 0,
+     "dur": 2.4,
+     "text": "ข่าวบอก ท่วมแล้ว\n65 จังหวัด"
+    },
+    {
+     "shot": 23,
+     "at": 2.4,
+     "dur": 2.4,
+     "text": "“เหมือนปีนั้นเลย”\nป้าแดงพูดเบาๆ"
+    }
+   ]
+  },
+  {
+   "id": "boat-11",
+   "scene": "boat",
+   "file": "scene-boat.html",
+   "start": 60.8,
+   "dur": 8,
+   "local": [
+    {
+     "shot": 24,
+     "at": 0,
+     "dur": 2.4,
+     "text": "หกโมงครึ่ง\nเรือกู้ภัยมาถึง"
+    },
+    {
+     "shot": 25,
+     "at": 2.4,
+     "dur": 3.2,
+     "text": "“ริมคลองนี้ไม่มีคนอยู่\nมา 15 ปีแล้ว”"
+    },
+    {
+     "shot": 26,
+     "at": 5.6,
+     "dur": 2.4,
+     "text": "ตั้งแต่\nน้ำท่วมปี 54"
+    }
+   ]
+  },
+  {
+   "id": "recap-12",
+   "scene": "recap",
+   "file": "scene-recap.html",
+   "start": 68.8,
+   "dur": 6.4,
+   "local": [
+    {
+     "shot": 27,
+     "at": 0,
+     "dur": 1.6,
+     "text": "ทีวี ฉายข่าวปี 54"
+    },
+    {
+     "shot": 28,
+     "at": 1.6,
+     "dur": 1.6,
+     "text": "ปฏิทิน ค้างที่ ต.ค. 54"
+    },
+    {
+     "shot": 29,
+     "at": 3.2,
+     "dur": 1.6,
+     "text": "ในน้ำ ไม่มีเงาป้า"
+    },
+    {
+     "shot": 30,
+     "at": 4.8,
+     "dur": 1.6,
+     "text": "ไฟดับทั้งซอย\nยกเว้นบ้านป้า"
+    }
+   ]
+  },
+  {
+   "id": "dark-13",
+   "scene": "dark",
+   "file": "scene-dark.html",
+   "start": 75.2,
+   "dur": 3.2,
+   "local": [
+    {
+     "shot": 31,
+     "at": 0,
+     "dur": 3.2,
+     "text": "ป้าแดง ยังอยู่ปี 54"
+    }
+   ]
+  },
+  {
+   "id": "call-14",
+   "scene": "call",
+   "file": "scene-call.html",
+   "start": 78.4,
+   "dur": 5.6,
+   "local": [
+    {
+     "shot": 32,
+     "at": 0,
+     "dur": 2.4,
+     "text": "คืนนั้น\nมือถือภูมิดังขึ้น…"
+    },
+    {
+     "shot": 33,
+     "at": 2.4,
+     "dur": 3.2,
+     "text": "จากเบอร์ป้าแดง\nที่ยกเลิกไปแล้ว…"
+    }
+   ]
+  },
+  {
+   "id": "next-15",
+   "scene": "next",
+   "file": "scene-next.html",
+   "start": 84,
+   "dur": 3.2,
+   "local": [
+    {
+     "shot": 34,
+     "at": 0,
+     "dur": 3.2,
+     "text": ""
+    }
+   ]
+  }
+ ]
+}

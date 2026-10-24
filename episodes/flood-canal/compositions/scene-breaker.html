@@ -1,0 +1,68 @@
+<!doctype html>
+<!-- Diagram, paper palette. Shot 0 (0): rule card 1 over the breaker box. Shot 1 (3.2): sub-breakers flip off one by one, then the main.
+     Shot 2 (5.6): water rises to the box — standing in water, don't touch (red). -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #e8e1d1; }
+        #brk-grid { position: absolute; inset: -40px; background:
+          repeating-linear-gradient(0deg, rgba(24,32,46,0.06) 0 2px, transparent 2px 60px),
+          repeating-linear-gradient(90deg, rgba(24,32,46,0.06) 0 2px, transparent 2px 60px); }
+        #brk-floor { position: absolute; left: -100px; right: -100px; top: 1240px; height: 800px; background: #cdbf9f; border-top: 8px solid var(--ink); }
+        #brk-box { position: absolute; left: 190px; top: 520px; width: 700px; height: 560px; border-radius: 24px; background: #f6f1e6; border: 10px solid var(--ink); }
+        #brk-box-title { position: absolute; left: 0; right: 0; top: 26px; text-align: center; font: 700 34px var(--font-ui); color: var(--ink); }
+        .brk-sw { position: absolute; top: 120px; width: 110px; height: 240px; border-radius: 14px; background: #e3dccb; border: 6px solid var(--ink); }
+        .brk-lever { position: absolute; left: 18px; width: 62px; height: 90px; border-radius: 10px; background: var(--ok); }
+        .brk-label { position: absolute; left: -20px; right: -20px; top: 256px; text-align: center; font: 700 30px var(--font-ui); color: var(--ink); white-space: nowrap; }
+        #brk-main { left: 520px; width: 140px; }
+        #brk-main .brk-lever { left: 22px; width: 84px; background: var(--red); }
+        .brk-n { position: absolute; top: -66px; left: 50%; margin-left: -26px; width: 52px; height: 52px; border-radius: 50%; background: var(--gold); color: var(--ink); font: 700 30px/52px var(--font-ui); text-align: center; }
+        #brk-water { top: 1300px; height: 900px; }
+        #brk-card { left: 180px; top: 150px; }
+        #brk-ring { position: absolute; left: 150px; top: 480px; width: 780px; height: 640px; border-radius: 40px; border: 8px dashed var(--red); }
+        #brk-no { left: 340px; top: 260px; }
+        #brk-done { left: 330px; top: 380px; }
+      </style>
+      <div data-hf-id="hf-z9yk" id="root" data-composition-id="scene-breaker" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-aelt" id="brk-grid" data-layout-allow-overflow data-layout-ignore></div>
+        <div data-hf-id="hf-3gya" id="brk-floor" data-layout-allow-overflow></div>
+        <div data-hf-id="hf-89kk" id="brk-box">
+          <div data-hf-id="hf-ud2j" id="brk-box-title">ตู้ไฟบ้านยาย</div>
+          <div data-hf-id="hf-u5bp" class="brk-sw" style="left:40px"><div data-hf-id="hf-igkd" class="brk-n">1</div><div data-hf-id="hf-inj6" class="brk-lever" id="brk-l1" style="top:20px"></div><div data-hf-id="hf-9fp7" class="brk-label">ไฟห้อง</div></div>
+          <div data-hf-id="hf-ii8a" class="brk-sw" style="left:180px"><div data-hf-id="hf-jnhg" class="brk-n">2</div><div data-hf-id="hf-t447" class="brk-lever" id="brk-l2" style="top:20px"></div><div data-hf-id="hf-tngg" class="brk-label">ปลั๊ก</div></div>
+          <div data-hf-id="hf-7y8e" class="brk-sw" style="left:320px"><div data-hf-id="hf-j96f" class="brk-n">3</div><div data-hf-id="hf-q97o" class="brk-lever" id="brk-l3" style="top:20px"></div><div data-hf-id="hf-7idq" class="brk-label">ปั๊มน้ำ</div></div>
+          <div data-hf-id="hf-5lpv" class="brk-sw" id="brk-main"><div data-hf-id="hf-kg3i" class="brk-n">4</div><div data-hf-id="hf-j21d" class="brk-lever" id="brk-l4" style="top:20px"></div><div data-hf-id="hf-w7ir" class="brk-label">ตัวหลัก</div></div>
+        </div>
+        <div data-hf-id="hf-mu54" id="brk-water" class="flood" data-layout-allow-overflow></div>
+        <div data-hf-id="hf-w7l3" id="brk-ring"></div>
+        <div data-hf-id="hf-ezj9" id="brk-done" class="chip">ไฟดับทั้งบ้าน · ปลอดภัย</div>
+        <div data-hf-id="hf-5n2n" id="brk-no" class="chip red">ยืนในน้ำ = ห้ามแตะ</div>
+        <div data-hf-id="hf-rx9t" id="brk-card" class="rule-card">
+          <div data-hf-id="hf-fc2w" class="rule-no">กฎข้อ 1</div>
+          <div data-hf-id="hf-cwji" class="rule-text"><span data-hf-id="hf-ed1k">ตัดไฟ</span><span data-hf-id="hf-soqb">ตอนพื้นยังแห้ง</span></div>
+        </div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#brk-box", { scale: 0.96 }, { scale: 1.02, duration: 8, ease: "none" }, 0);
+        // shot 0 — rule card
+        tl.fromTo("#brk-card", { y: -800, rotation: -3 }, { y: 0, rotation: 0, duration: 0.45, ease: "back.out(1.5)" }, 0.35);
+        tl.fromTo("#brk-card", { x: 0 }, { x: -1100, duration: 0.3, ease: "power3.in", immediateRender: false }, 3.0);
+        // shot 1 — levers flip down 1, 2, 3, then main (cue ticks at 0.5/1/1.5 beats, stamp at 2.2)
+        [["#brk-l1", 3.6], ["#brk-l2", 4.0], ["#brk-l3", 4.4], ["#brk-l4", 4.96]].forEach(([l, t]) => {
+          tl.fromTo(l, { y: 0, backgroundColor: l === "#brk-l4" ? "#e5383b" : "#3fa66b" },
+            { y: 110, backgroundColor: "#7b8494", duration: 0.18, ease: "power3.in" }, t);
+        });
+        tl.fromTo("#brk-done", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 4.0);
+        // shot 2 — water climbs to the box: never touch it from the water
+        tl.fromTo("#brk-water", { y: 0 }, { y: -340, duration: 1.2, ease: "power2.inOut" }, 5.6);
+        tl.fromTo("#brk-ring", { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2)" }, 6.2);
+        tl.fromTo("#brk-no", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 5.8);
+        window.__timelines["scene-breaker"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

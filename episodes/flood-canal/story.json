@@ -1,0 +1,61 @@
+{
+  "title": "น้ำท่วมริมคลอง",
+  "bpm": 75,
+  "voice": "th-TH-NiwatNeural",
+  "voiceRate": "-4%",
+  "voicePitch": "-4Hz",
+  "captionLook": "bold",
+  "series": { "name": "น้ำท่วมริมคลอง", "ep": 1, "next": "สายจากปี 54" },
+  "shots": [
+    { "scene": "exterior", "beats": 3, "style": "red", "text": "น้ำขึ้น [40 ซม.]\nในชั่วโมงเดียว", "mood": 0.4, "cues": [[0, "hit"], [1.2, "tick"]] },
+    { "scene": "exterior", "beats": 3, "text": "ภูมิกลับมาเก็บของ\nที่[บ้านยาย]ริมคลอง", "mood": 0.3, "music": true, "cues": [[0.4, "whoosh"]] },
+
+    { "scene": "room", "beats": 3, "text": "เจ้าโอ่ง หมาของยาย\nตามมาด้วย", "mood": 0.3, "music": true, "cues": [[0.3, "step"], [1, "step"]] },
+    { "scene": "room", "beats": 3, "text": "น้ำเริ่มซึม\nเข้า{ใต้ประตู}", "mood": 0.5, "cues": [[0.5, "scrape"]] },
+
+    { "scene": "breaker", "beats": 4, "text": "กฎข้อ 1\n[ตัดไฟ]ตอนพื้นยังแห้ง", "mood": 0.5, "cues": [[0.5, "stamp"]] },
+    { "scene": "breaker", "beats": 3, "text": "ปิด[ลูกย่อย]ทีละตัว\nแล้วค่อยปิดตัวหลัก", "mood": 0.5, "cues": [[0.5, "tick"], [1, "tick"], [1.5, "tick"], [2.2, "stamp"]] },
+    { "scene": "breaker", "beats": 3, "text": "ถ้าต้อง{ยืนในน้ำ}\nห้ามแตะตู้ไฟเด็ดขาด", "mood": 0.6, "cues": [[0, "hit"]] },
+
+    { "scene": "neighbor", "beats": 3, "text": "ป้าแดง เพื่อนบ้านยาย\nเรียกจากบ้านข้างๆ", "mood": 0.5, "cues": [[0.3, "creak"]] },
+    { "scene": "neighbor", "beats": 3, "text": "ป้าแดงยังไม่ยอม\nออกจากบ้านตัวเอง", "mood": 0.5 },
+    { "scene": "neighbor", "beats": 3, "text": "ข่าวบอกว่า\n[น้ำเหนือ]กำลังมาอีก", "mood": 0.55, "cues": [[0.4, "whoosh"]] },
+
+    { "scene": "dog", "beats": 3, "text": "แต่เจ้าโอ่ง\nไม่ยอมก้าวเข้าไป", "mood": 0.65, "cues": [[0, "hit"], [0.8, "shriek"]] },
+
+    { "scene": "depth", "beats": 4, "text": "กฎข้อ 2\nอย่า[เดินลุยน้ำไหล]", "mood": 0.5, "cues": [[0.5, "stamp"]] },
+    { "scene": "depth", "beats": 3, "text": "น้ำไหลแค่ [15 ซม.]\nก็ล้มผู้ใหญ่ได้", "mood": 0.5, "cues": [[0.6, "whoosh"]] },
+    { "scene": "depth", "beats": 4, "text": "[30 ซม.] รถเล็กลอย\n[60 ซม.] SUV ก็ไป", "mood": 0.55, "cues": [[0.4, "tick"], [1.6, "tick"]] },
+
+    { "scene": "reflect", "beats": 3, "text": "ภูมิพาป้าแดง\nออกมาที่ระเบียง", "mood": 0.55, "cues": [[0.3, "step"], [1, "step"], [1.7, "step"]] },
+    { "scene": "reflect", "beats": 3, "text": "รอเรือกู้ภัย\nบน[จุดที่สูงที่สุด]", "mood": 0.6 },
+
+    { "scene": "map", "beats": 3, "text": "วัดบนเนิน\nห่างไป [1.2 กม.]", "mood": 0.5, "cues": [[0.2, "whoosh"]] },
+    { "scene": "map", "beats": 3, "text": "ทั้งซอย\n[ไฟดับ]หมดแล้ว", "mood": 0.6 },
+
+    { "scene": "water", "beats": 3, "text": "กฎข้อ 3\nสำรอง[น้ำดื่ม]ไว้ก่อน", "mood": 0.5, "cues": [[0.5, "stamp"]] },
+    { "scene": "water", "beats": 3, "text": "คนละ [4 ลิตร]\nต่อวัน", "mood": 0.5, "cues": [[0.6, "tick"], [1.2, "tick"]] },
+    { "scene": "water", "beats": 4, "text": "3 คน 3 วัน\nต้องมี [36 ลิตร]", "mood": 0.5, "cues": [[0.5, "tick"], [1.1, "tick"], [1.7, "tick"], [2.3, "tick"]] },
+
+    { "scene": "phone", "beats": 3, "text": "ป้าแดงโทรหาลูก\nไม่ติดสักที", "mood": 0.6, "cues": [[0.4, "tick"], [1.4, "tick"]] },
+
+    { "scene": "neighbor", "beats": 3, "text": "ข่าวบอก ท่วมแล้ว\n[65 จังหวัด]", "mood": 0.6, "cues": [[0.4, "whoosh"]] },
+    { "scene": "neighbor", "beats": 3, "text": "“เหมือนปีนั้นเลย”\nป้าแดงพูดเบาๆ", "mood": 0.7 },
+
+    { "scene": "boat", "beats": 3, "text": "หกโมงครึ่ง\nเรือกู้ภัยมาถึง", "mood": 0.55, "cues": [[0.2, "whoosh"]] },
+    { "scene": "boat", "beats": 4, "style": "red", "text": "“ริมคลองนี้ไม่มีคนอยู่\nมา {15 ปี}แล้ว”", "mood": 0.85, "cues": [[0, "hit"]], "voLead": 0.4 },
+    { "scene": "boat", "beats": 3, "text": "ตั้งแต่\n[น้ำท่วมปี 54]", "mood": 0.85, "cues": [[0.5, "bell"]] },
+
+    { "scene": "recap", "beats": 2, "text": "ทีวี ฉายข่าวปี 54", "mood": 0.75, "music": true, "cues": [[0, "whoosh"]] },
+    { "scene": "recap", "beats": 2, "text": "ปฏิทิน ค้างที่ ต.ค. 54", "mood": 0.75, "music": true, "cues": [[0, "flip"]] },
+    { "scene": "recap", "beats": 2, "text": "ในน้ำ ไม่มีเงาป้า", "mood": 0.8, "music": true, "cues": [[0, "whoosh"]] },
+    { "scene": "recap", "beats": 2, "text": "ไฟดับทั้งซอย\nยกเว้นบ้านป้า", "mood": 0.85, "music": true, "cues": [[0, "whoosh"]] },
+
+    { "scene": "dark", "beats": 4, "style": "red", "text": "ป้าแดง ยังอยู่ปี 54", "mood": 1, "cues": [[0, "bighit"]], "voLead": 0.5 },
+
+    { "scene": "call", "beats": 3, "text": "คืนนั้น\nมือถือภูมิดังขึ้น…", "mood": 0.7, "cues": [[0.3, "tick"], [0.9, "tick"], [1.5, "tick"]] },
+    { "scene": "call", "beats": 4, "style": "red", "text": "จากเบอร์ป้าแดง\nที่{ยกเลิกไปแล้ว}…", "mood": 0.9, "cues": [[0, "hit"], [1.5, "shriek"]] },
+
+    { "scene": "next", "beats": 4, "text": "", "vo": "ตอนต่อไป สายจากปี ห้าสิบสี่", "voLead": 0.4, "mood": 0.4, "music": true }
+  ]
+}

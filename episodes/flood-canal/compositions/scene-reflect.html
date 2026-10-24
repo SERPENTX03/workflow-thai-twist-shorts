@@ -1,0 +1,65 @@
+<!doctype html>
+<!-- Dusk, the porch step under shallow water. ภูมิ, ป้าแดง and เจ้าโอ่ง stand in a row; only ภูมิ and the dog have reflections (clue, not named).
+     Shot 0 (0): they walk out. Shot 1 (2.4): camera rises, HUD 17:40, "จุดที่สูงที่สุด". -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #2c3346; }
+        #rf-world { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 900px; }
+        #rf-sky { position: absolute; left: -200px; right: -200px; top: -400px; height: 1500px; background: linear-gradient(180deg, #2d3a58, #6b6a80 55%, #c98a6a 85%, #e2a77a); }
+        #rf-far { position: absolute; left: -100px; right: -100px; top: 860px; height: 220px; background: #3b3a48; clip-path: polygon(0 60%, 10% 30%, 22% 55%, 35% 20%, 50% 50%, 62% 25%, 78% 55%, 90% 35%, 100% 50%, 100% 100%, 0 100%); }
+        #rf-wall { position: absolute; left: -100px; width: 520px; top: 380px; height: 720px; background: repeating-linear-gradient(90deg, #6e5036 0 46px, #5e4430 46px 50px); }
+        #rf-rail { position: absolute; left: -100px; width: 1300px; top: 900px; height: 18px; background: #4a3624; }
+        .rf-post { position: absolute; top: 900px; width: 20px; height: 200px; background: #4a3624; }
+        #rf-water { top: 1100px; height: 900px; }
+        #rf-boy { left: 300px; top: 580px; width: 200px; height: 520px; }
+        #rf-aunt { left: 560px; top: 590px; width: 196px; height: 510px; --top: #b8443a; --skirt: #5a3f6e; --hair: #a4a4aa; }
+        #rf-phone { position: absolute; left: 706px; top: 880px; width: 40px; height: 72px; border-radius: 8px; background: var(--red); border: 4px solid #5a1010; }
+        #rf-dog { left: 60px; top: 920px; width: 260px; height: 179px; }
+        #rf-boy-rw { left: 300px; top: 1100px; width: 200px; height: 520px; }
+        #rf-dog-rw { left: 60px; top: 1100px; width: 260px; height: 179px; }
+        #rf-night { position: absolute; left: -200px; right: -200px; top: -400px; height: 2600px; background: rgba(10, 14, 32, 0.25); }
+        #rf-chip { left: 560px; top: 300px; }
+        #rf-hud { }
+      </style>
+      <div data-hf-id="hf-9xlt" id="root" data-composition-id="scene-reflect" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-70nr" id="rf-world" data-layout-allow-overflow>
+          <div data-hf-id="hf-kvr8" id="rf-sky" data-layout-allow-overflow></div>
+          <div data-hf-id="hf-ql5v" class="far"><div data-hf-id="hf-evlg" id="rf-far" data-layout-allow-overflow></div></div>
+          <div data-hf-id="hf-ym49" id="rf-wall" data-layout-allow-overflow></div>
+          <div data-hf-id="hf-4bad" id="rf-rail" data-layout-allow-overflow></div>
+          <div data-hf-id="hf-7vfe" class="rf-post" style="left:240px"></div><div data-hf-id="hf-nttx" class="rf-post" style="left:540px"></div><div data-hf-id="hf-aygg" class="rf-post" style="left:840px"></div>
+          <div data-hf-id="hf-fmrd" id="rf-water" class="flood" data-layout-allow-overflow></div>
+          <div data-hf-id="hf-oz78" id="rf-boy-rw" class="mirror-y"><svg data-hf-id="hf-e9eg" id="rf-boy-r" class="who" style="left:0;top:0;width:200px;height:520px" viewBox="0 0 200 520"><use data-hf-id="hf-0j9z" href="#raincoat" /></svg></div>
+          <div data-hf-id="hf-z00w" id="rf-dog-rw" class="mirror-y"><svg data-hf-id="hf-0btk" id="rf-dog-r" class="who" style="left:0;top:0;width:260px;height:179px" viewBox="0 0 320 220"><use data-hf-id="hf-kyha" href="#dog-growl" /></svg></div>
+          <svg data-hf-id="hf-0myo" id="rf-boy" class="who" viewBox="0 0 200 520"><use data-hf-id="hf-sj9z" href="#raincoat" /></svg>
+          <svg data-hf-id="hf-pz5q" id="rf-aunt" class="who" viewBox="0 0 200 520"><use data-hf-id="hf-lswu" href="#auntie" /></svg>
+          <div data-hf-id="hf-gyz2" id="rf-phone"></div>
+          <svg data-hf-id="hf-ouuc" id="rf-dog" class="who" viewBox="0 0 320 220"><use data-hf-id="hf-0y36" href="#dog-growl" /></svg>
+          <div data-hf-id="hf-xle5" id="rf-night" data-layout-allow-overflow></div>
+        </div>
+        <div data-hf-id="hf-vqwj" id="rf-chip" class="chip">จุดที่สูงที่สุด · ระเบียงบ้านยาย</div>
+        <div data-hf-id="hf-yx6t" id="rf-hud" class="hud">17:40</div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#rf-hud", { y: -220 }, { y: 0, duration: 0.35, ease: "back.out(1.8)" }, 0);
+        // shot 0 — they step out onto the porch, side by side
+        [["#rf-boy", 0.1, -420], ["#rf-boy-r", 0.1, -420], ["#rf-aunt", 0.1, -180], ["#rf-phone", 0.1, -180]].forEach(([s, t, dx]) => {
+          tl.fromTo(s, { x: dx }, { x: 0, duration: 1.1, ease: "power2.out" }, t);
+        });
+        tl.fromTo("#rf-dog", { x: -360 }, { x: 0, duration: 0.8, ease: "power2.out" }, 0.5);
+        tl.fromTo("#rf-dog-r", { x: -360 }, { x: 0, duration: 0.8, ease: "power2.out" }, 0.5);
+        tl.fromTo("#rf-world", { scale: 1.06 }, { scale: 1, duration: 2.4, ease: "power2.out" }, 0);
+        // shot 1 — the camera lifts toward the darkening sky
+        tl.fromTo("#rf-world", { y: 0 }, { y: 160, duration: 2.4, ease: "power2.inOut", immediateRender: false }, 2.4);
+        tl.fromTo("#rf-night", { opacity: 0.2 }, { opacity: 1, duration: 4.8, ease: "none" }, 0);
+        tl.fromTo("#rf-chip", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 2.7);
+        window.__timelines["scene-reflect"] = tl;
+      </script>
+    </template>
+  </body>
+</html>
