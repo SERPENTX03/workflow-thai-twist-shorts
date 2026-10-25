@@ -44,6 +44,9 @@ const index = [];
 for (const s of S.shots) {
   if (!s.vo) continue;
   const id = String(s.i).padStart(2, '0');
+  // a typo'd role ("femal") would otherwise fall through to edge-tts and read the line in the wrong voice
+  if (s.voice && !ROLES[s.voice] && !/^(eleven|gemini):|^[a-z]{2}-[A-Z]{2}-/.test(s.voice))
+    die(`shot ${s.i}: unknown voice role "${s.voice}" (roles: ${Object.keys(ROLES).join(', ')})`);
   const voice = s.voice ? pick(s.voice) : VOICE;
   const provider = voice.startsWith('gemini:') ? 'gemini' : voice.startsWith('eleven:') ? 'eleven' : 'edge';
   const ext = provider === 'gemini' ? 'wav' : 'mp3';

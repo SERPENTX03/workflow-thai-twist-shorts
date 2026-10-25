@@ -24,7 +24,7 @@ npx hyperframes skills update
 
 ## เสียงพากย์ (ElevenLabs เป็นค่าเริ่มต้น)
 
-ค่าเริ่มต้นใช้เสียง ElevenLabs: **ชาย = Vasko, หญิง = Jessica** (กำหนดไว้ใน `voices` ของ `story.json`)
+ตอนใหม่ใช้ชุดเสียงตายตัวใน [`.claude/skills/thai-twist-short/references/voices.md`](.claude/skills/thai-twist-short/references/voices.md): `male` (ผู้บรรยาย), `female`, `old_male`, `old_female` — `template/story.json` ตั้งไว้ให้แล้ว และกฎการเลือกเสียงต่อบรรทัดอยู่ในไฟล์นั้น ตัวอย่าง Vasko/Jessica ด้านล่างเป็นค่าเดิมของเครื่องมือ
 
 1. สร้าง API key ที่ <https://elevenlabs.io/app/settings/api-keys> เปิดสิทธิ์ **Text to Speech: Access** (ถ้าอยากให้สคริปต์หา voice id จากชื่อ เปิด **Voices: Read** เพิ่ม)
 2. ก๊อป `.env.example` เป็น `.env` แล้วใส่คีย์: `ELEVENLABS_API_KEY=คีย์ของคุณ` (`.env` อยู่ใน `.gitignore` ห้าม commit หรือแชร์)

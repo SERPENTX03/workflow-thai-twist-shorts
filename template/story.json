@@ -2,7 +2,7 @@
   "title": "ตัวอย่าง: เงาในกระจก",
   "bpm": 75,
   "voice": "male",
-  "voices": { "male": "eleven:yq05eeRaHPMGuWTVpqeP", "female": "eleven:MYZYcGOqrkYQcwDunXl7" },
+  "voices": { "male": "eleven:xYmBpJREC3WfqEFpbPvO", "female": "eleven:MYZYcGOqrkYQcwDunXl7", "old_male": "eleven:5KvpaGteYkNayiswuX2h", "old_female": "eleven:p2Wol3C7j3rHbfOrbL18" },
   "voiceModel": "eleven_v3",
   "series": { "name": "เมื่อไฟดับทั้งเมือง", "ep": 1, "next": "ใครอยู่หน้าประตู" },
   "shots": [

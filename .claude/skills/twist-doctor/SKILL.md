@@ -22,7 +22,7 @@ Read `episodes/<slug>/story.json`, `references/story-rules.md`, `art-direction.m
 | 8 | Variety | plan a shot type per shot (set / close-up / diagram / map / card / exterior / silhouette); no two in a row the same; ≥ 4 types; ≥ 1 close-up and 1 diagram |
 | 9 | Palette arc | not one palette for the whole film; darkest frame at the reveal |
 | 10 | Twist line | ≤ 20 characters, 4 beats, `bighit`, `voLead` ≈ 0.5 |
-| 11 | Voice fit | no `⚠ OVER` in the last voice run; long lines get more beats |
+| 11 | Voice fit + casting | no `⚠ OVER` in the last voice run; long lines get more beats; `voices` map equals `references/voices.md`; every quoted line of a character carries that character's role (elders → `old_*`), narration carries none, no raw ids |
 | 12 | Ending | series → cliffhanger + `example-next` card, `series.next` set; stand-alone → sting on the iconic image |
 | 13 | Continuity | (series) names, traits, counters and rules match the bible |
 

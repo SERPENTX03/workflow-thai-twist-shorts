@@ -20,10 +20,10 @@ idea ─► 1 story ─► 2 story.json ─► 3 animatic ─► 4 scenes ─►
 |---|---|---|---|
 | 0 | New episode folder | `npm run new -- <slug> "ชื่อเรื่อง"` | `episodes/<slug>/story.json` exists |
 | 1 | Write the story beats | — | passes every check in `references/story-rules.md` → *Twist checklist*; show the user the logline + twist + clue list and get a yes |
-| 2 | Write `story.json` | — | schema in `references/story-json.md`; each caption ≤ 2 lines, ≤ ~18 Thai characters per line |
+| 2 | Write `story.json` | — | schema in `references/story-json.md`; each caption ≤ 2 lines, ≤ ~18 Thai characters per line; cast voices from `references/voices.md` (list each speaker, gender, age, role first) |
 | 3 | Animatic | `npm run build -- episodes/<slug>` | builds; every missing scene shows as a placeholder; length fits the format family (`story-rules.md`) |
 | 4 | Draw scenes, one file per `scene` name | edit `compositions/scene-<name>.html`, then build | `npx hyperframes check` = 0 errors (run in the episode folder) |
-| 5 | Voice + score | `npm run audio -- episodes/<slug>` | no `⚠ OVER` lines from voice; score says *ducked under voice* |
+| 5 | Voice + score | `npm run audio -- episodes/<slug>` | no `⚠ OVER` lines from voice; score says *ducked under voice*; then do the `voices.md` listening check per speaking character |
 | 6 | Review loop | `npm run check -- episodes/<slug>` → read the sheets | every score in `references/review.md` ≥ 8 |
 | 7 | Render + loudness | `npm run final -- episodes/<slug>` | `renders/<slug>-final.mp4`, −14 LUFS ±0.5 |
 
