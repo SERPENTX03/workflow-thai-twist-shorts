@@ -20,8 +20,9 @@
 |---|---|---|
 | `title` | — | Shown in the build report and the HTML title. |
 | `bpm` | 75 | Beat grid. 75 BPM → 0.8 s per beat. Survival: 75–85; folklore: 60–70 with 4–6 beat shots. |
-| `voice` | `th-TH-NiwatNeural` | edge-tts voice (`th-TH-NiwatNeural` male, `th-TH-PremwadeeNeural` female), or a Gemini voice as `gemini:<Name>` (key in `.env`). May be a role name from `voices`. |
+| `voice` | `th-TH-NiwatNeural` | ElevenLabs voice as `eleven:<Name or voice_id>`, or an edge-tts voice (`th-TH-NiwatNeural` male, `th-TH-PremwadeeNeural` female), or a Gemini voice as `gemini:<Name>` (key in `.env`). May be a role name from `voices`. |
 | `voices` | — | Role → voice id, e.g. `{"male":"gemini:Finn","female":"gemini:Leda"}`. A shot can set `"voice": "female"` to switch speaker for its line. |
+| `voiceModel`, `voiceLang`, `voiceSpeed`, `voiceSettings` | `eleven_v3`, —, —, `{stability:0.5, similarity_boost:0.75}` | ElevenLabs only: model id, language code (e.g. `th`), speed, and voice settings overrides. |
 | `voiceStyle` | — | Gemini only: delivery instruction (e.g. calm everyday narration). `voiceRate`/`voicePitch` apply to edge-tts only. |
 | `voiceRate`, `voicePitch` | `-8%`, `-6Hz` | Slightly slower and lower reads as more ominous. |
 | `captionLook` | `bold` | `bold` = 74 px Kanit (survival, haunting). `folk` = 56 px line on a dark pill (slow folklore tales). |
@@ -37,6 +38,8 @@
 | `text` | `""` | Caption. `\n` = line break. `[คำ]` = gold keyword, `{คำ}` = red keyword (marks are stripped from the voice). Empty = no caption (and no voice unless `vo` is set). |
 | `style` | `plain` | `plain` (white) or `red` (accent box). |
 | `vo` | = `text` | What the voice says, if different from the caption. `""` = silent shot. |
+| `voice` | episode voice | A role from `voices` (`"female"`) or a voice id, for this line only. |
+| `tone` | `voiceTone` | ElevenLabs v3 audio tags for this line, comma-separated: `"whispers, scared"` → `[whispers] [scared] line`. See `audio.md`. |
 | `voLead` | 0.12 | Seconds after the cut before the line starts. Raise it (0.5–0.9) to let a hit ring first. |
 | `mood` | 0.5 | 0–1 dread. Drives drone level/noise; ≥ 0.8 adds a heartbeat on every beat. |
 | `music` | false | Music-box motif on every beat of this shot (use for calm openings and the sting). |

@@ -1,0 +1,46 @@
+<!doctype html>
+<!-- Rule 6: signal for help. 8 s clip, three shots.
+     0: rule card "กฎข้อ 6". 2.4... shot starts at 3.2: three signal tiles (whistle x3, bright cloth, blinking light). 5.6: pin "บอกจุดที่อยู่". -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: linear-gradient(180deg, #0b1328, #1c2c4f); }
+        #sg-card { left: 150px; top: 190px; }
+        .sg-tile { position: absolute; left: 90px; width: 900px; height: 190px; border-radius: 26px; background: rgba(239, 232, 218, 0.96); color: var(--ink); font: 700 52px/190px var(--font-display); padding-left: 250px; }
+        .sg-ico { position: absolute; left: 36px; top: 30px; width: 130px; height: 130px; }
+        #sg-t1 { top: 160px; } #sg-t2 { top: 380px; } #sg-t3 { top: 600px; }
+        .sg-dot { position: absolute; top: 56px; width: 22px; height: 22px; border-radius: 50%; background: var(--red); }
+        #sg-flag { position: absolute; left: 24px; top: 20px; width: 90px; height: 90px; background: #ff7a1a; clip-path: polygon(0 0, 100% 20%, 80% 50%, 100% 80%, 0 100%); }
+        #sg-bulb { position: absolute; left: 14px; top: 14px; width: 100px; height: 100px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 40px 12px rgba(246, 196, 69, 0.7); }
+        #sg-pin { position: absolute; left: 90px; top: 830px; width: 900px; height: 170px; border-radius: 26px; background: var(--red); color: #fff; font: 700 46px/170px var(--font-display); text-align: center; }
+        #sg-list { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+      </style>
+      <div data-hf-id="hf-epng" id="root" data-composition-id="scene-signal" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-ytg0" id="sg-card" class="rule-card">
+          <div data-hf-id="hf-cjxp" class="rule-no">กฎข้อ 6</div>
+          <div data-hf-id="hf-cwji" class="rule-text"><span data-hf-id="hf-1e7c">ส่งสัญญาณ</span><span data-hf-id="hf-g42i">ให้เรือเห็น</span></div>
+        </div>
+        <div data-hf-id="hf-qb6s" id="sg-list">
+          <div data-hf-id="hf-ky8x" id="sg-t1" class="sg-tile"><div data-hf-id="hf-fnoa" class="sg-ico"><i data-hf-id="hf-udkq" class="sg-dot" style="left:12px"></i><i data-hf-id="hf-tsbs" class="sg-dot" style="left:54px"></i><i data-hf-id="hf-yiza" class="sg-dot" style="left:96px"></i></div>นกหวีด 3 ครั้ง</div>
+          <div data-hf-id="hf-718z" id="sg-t2" class="sg-tile"><div data-hf-id="hf-5ozi" class="sg-ico"><div data-hf-id="hf-l7he" id="sg-flag"></div></div>ผ้าสีสด โบกให้เห็น</div>
+          <div data-hf-id="hf-f8f6" id="sg-t3" class="sg-tile"><div data-hf-id="hf-63aj" class="sg-ico"><div data-hf-id="hf-tdq1" id="sg-bulb"></div></div>ไฟกะพริบ</div>
+          <div data-hf-id="hf-0lkn" id="sg-pin">แล้วบอก จุดที่อยู่ ให้ชัด</div>
+        </div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#sg-card", { y: -700, rotation: -3 }, { y: 0, rotation: 0, duration: 0.45, ease: "back.out(1.5)" }, 0.3);
+        tl.fromTo("#sg-card", { x: 0 }, { x: -1100, duration: 0.3, ease: "power3.in", immediateRender: false }, 3.0);
+        ["#sg-t1", "#sg-t2", "#sg-t3"].forEach((t, k) => tl.fromTo(t, { x: 1300 }, { x: 0, duration: 0.35, ease: "power3.out" }, 3.3 + k * 0.5));
+        [0, 1, 2].forEach(k => tl.fromTo(".sg-dot:nth-child(" + (k + 1) + ")", { scale: 0 }, { scale: 1, duration: 0.2, ease: "back.out(2.4)" }, 3.5 + k * 0.4));
+        tl.fromTo("#sg-flag", { rotation: -10 }, { rotation: 10, duration: 0.25, ease: "sine.inOut", repeat: 7, yoyo: true }, 3.8);
+        tl.fromTo("#sg-bulb", { opacity: 0.2 }, { opacity: 1, duration: 0.2, ease: "none", repeat: 9, yoyo: true }, 4.3);
+        tl.fromTo("#sg-pin", { y: 600, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "back.out(1.6)" }, 5.9);
+        window.__timelines["scene-signal"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

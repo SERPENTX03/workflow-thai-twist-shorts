@@ -71,6 +71,8 @@ Arc: open bright or warm → drift darker each act → the reveal is the darkest
 ## Cast rules
 
 - Characters come from `assets/kit/cast.svg` (`man`, `man-wide`, `man-raise`, `woman`, `elder`). Add new symbols there (students, an animal companion, a creature), same frame convention, colours through CSS variables.
+- **Prototype 1 cast** (design canvas https://claude.ai/artifact/TuLAda3PXVngzNaWVrjR1S): `hero` is the **owner's personal** survival lead — opt-in only, used when the user says "ตัวเอกของฉัน" / "my-hero" (see `/twist-cast`), never the default; for other stories treat it as a style reference — skinhead with a straight hairline, olive streak-camo jacket, grey fleece + cream hood, navy striped tee, white-edged pack straps, orange roll and paracord as the single bright accent. Pets: `cat-black`, `cat-orange`, `beagle`, `dog-patch` (new 300×340 frame; the old `dog` stays for the temple dog in flood-canal). Share one look: big round head, dot or round glossy eyes, soft pink cheeks.
+- **Relative height**: draw people at ≈ cm × 2.6 px — hero 170 (442 px), raincoat 165, elder 160, woman 158, auntie 150 (shortest). Pets at the same scale: cat 150 px, beagle 205, dog-patch 225. Never stretch every character to one height.
 - Give each named character **one trackable trait** (long sleeves, cap, glasses) — it doubles as a clue device.
 - The animal companion appears in at least 3 shots and reacts before the humans do.
 - The living cast a `.shadow-blob`; a ghost protagonist never does.

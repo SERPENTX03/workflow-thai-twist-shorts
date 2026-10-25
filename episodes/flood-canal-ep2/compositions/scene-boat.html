@@ -1,0 +1,74 @@
+<!doctype html>
+<!-- Night falls. Shot 0 (0): rescue boat arrives, HUD 18:30. Shot 1 (2.4, the turn): ภูมิ points at ป้าแดง's lit house;
+     the flashlight hits it and the light dies — a rotten, empty shell. Shot 2 (5.6): chip "น้ำท่วมปี 2554". -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: var(--sky-0); }
+        #bt-world { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 700px 800px; }
+        #bt-sky { position: absolute; left: -200px; right: -200px; top: 0; height: 1200px; background: linear-gradient(180deg, var(--sky-0), var(--sky-1) 80%, #39405a); }
+        /* ป้าแดง's house (right) */
+        #bt-n { position: absolute; left: 600px; top: 520px; width: 460px; height: 380px; }
+        #bt-n-roof { position: absolute; left: -20px; top: 0; width: 500px; height: 140px; background: #3d2620; clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+        #bt-n-wall { position: absolute; left: 10px; top: 140px; width: 440px; height: 240px; background: repeating-linear-gradient(90deg, #4b3626 0 40px, #3c2a1d 40px 44px); }
+        #bt-n-win { position: absolute; left: 80px; top: 190px; width: 150px; height: 120px; background: #f2d79a; border: 10px solid #2e1f14; box-shadow: 0 0 80px 20px rgba(255, 214, 140, 0.45); }
+        #bt-n-rot { position: absolute; left: 10px; top: 140px; width: 440px; height: 240px; background:
+          linear-gradient(160deg, transparent 0 30%, rgba(10,12,18,0.85) 30% 34%, transparent 34%),
+          linear-gradient(20deg, transparent 0 60%, rgba(10,12,18,0.85) 60% 63%, transparent 63%),
+          rgba(30, 36, 30, 0.55); opacity: 0; }
+        .bt-post { position: absolute; top: 900px; width: 22px; height: 300px; background: #2e2218; }
+        /* grandma's porch (left) */
+        #bt-porch { position: absolute; left: -100px; top: 1080px; width: 520px; height: 26px; background: #4a3624; }
+        #bt-boy { left: 150px; top: 560px; width: 200px; height: 520px; }
+        #bt-dog { left: 20px; top: 900px; width: 260px; height: 179px; }
+        #bt-water { top: 1100px; height: 900px; }
+        /* boat + rescuer */
+        #bt-boat { position: absolute; left: 230px; top: 960px; width: 520px; height: 300px; }
+        #bt-hull { position: absolute; left: 0; top: 160px; width: 520px; height: 110px; background: #e8762a; clip-path: polygon(0 0, 100% 0, 88% 100%, 8% 100%); }
+        #bt-man { left: 220px; top: -230px; width: 160px; height: 416px; --shirt: #e8762a; --pants: #2b2f3a; }
+        #bt-beam { position: absolute; left: 520px; top: 640px; width: 520px; height: 260px; background: linear-gradient(90deg, rgba(255,250,220,0.55), rgba(255,250,220,0)); clip-path: polygon(0 45%, 100% 0, 100% 100%, 0 55%); transform-origin: 0 50%; mix-blend-mode: screen; }
+        #bt-night { position: absolute; left: -200px; right: -200px; top: 0; height: 2200px; background: rgba(6, 10, 26, 0.35); }
+        #bt-ring { position: absolute; left: 640px; top: 480px; width: 400px; height: 460px; border-radius: 50%; border: 8px dashed var(--red); }
+        #bt-chip { left: 620px; top: 300px; }
+        #bt-hud { }
+      </style>
+      <div data-hf-id="hf-j6uq" id="root" data-composition-id="scene-boat" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-gb71" id="bt-world" data-layout-allow-overflow>
+          <div data-hf-id="hf-2oz2" id="bt-sky" data-layout-allow-overflow></div>
+          <div data-hf-id="hf-kbny" class="bt-post" style="left:660px"></div><div data-hf-id="hf-cui1" class="bt-post" style="left:1000px"></div>
+          <div data-hf-id="hf-if22" id="bt-n"><div data-hf-id="hf-e5mp" id="bt-n-roof"></div><div data-hf-id="hf-h9z7" id="bt-n-wall"></div><div data-hf-id="hf-rwkn" id="bt-n-win"></div><div data-hf-id="hf-rjpq" id="bt-n-rot"></div></div>
+          <div data-hf-id="hf-wd1n" id="bt-porch" data-layout-allow-overflow></div>
+          <svg data-hf-id="hf-7f82" id="bt-boy" class="who" viewBox="0 0 200 520"><use data-hf-id="hf-0j9z" href="#raincoat" /></svg>
+          <svg data-hf-id="hf-udda" id="bt-dog" class="who" viewBox="0 0 320 220"><use data-hf-id="hf-r1la" href="#dog" /></svg>
+          <div data-hf-id="hf-gojj" id="bt-water" class="flood" data-layout-allow-overflow></div>
+          <div data-hf-id="hf-qy26" id="bt-boat"><svg data-hf-id="hf-yrd8" id="bt-man" class="who" viewBox="0 0 200 520"><use data-hf-id="hf-8tgs" href="#man" /></svg><div data-hf-id="hf-43qx" id="bt-hull"></div></div>
+          <div data-hf-id="hf-tsfr" id="bt-night" data-layout-allow-overflow></div>
+          <div data-hf-id="hf-cyht" id="bt-beam"></div>
+          <div data-hf-id="hf-v14a" id="bt-ring"></div>
+        </div>
+        <div data-hf-id="hf-m2m2" id="bt-chip" class="chip red">น้ำท่วมปี 2554</div>
+        <div data-hf-id="hf-ydqn" id="bt-hud" class="hud">02:40</div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#bt-hud", { y: -220 }, { y: 0, duration: 0.35, ease: "back.out(1.8)" }, 0);
+        // shot 0 — the boat glides in, bobbing
+        tl.fromTo("#bt-boat", { x: 800 }, { x: 0, duration: 1.6, ease: "power2.out" }, 0);
+        tl.fromTo("#bt-hull", { y: 0 }, { y: 8, duration: 0.8, ease: "sine.inOut", repeat: 9, yoyo: true }, 0);
+        // shot 1 — the beam swings onto her house; its light dies, the rot shows
+        tl.fromTo("#bt-beam", { rotation: 30, opacity: 0 }, { rotation: -22, opacity: 1, duration: 0.7, ease: "power2.out" }, 2.6);
+        tl.fromTo("#bt-world", { scale: 1 }, { scale: 1.12, duration: 3.2, ease: "power2.inOut" }, 2.4);
+        tl.fromTo("#bt-n-win", { backgroundColor: "#f2d79a", boxShadow: "0 0 80px 20px rgba(255, 214, 140, 0.45)" },
+          { backgroundColor: "#0e1118", boxShadow: "0 0 0px 0px rgba(255, 214, 140, 0)", duration: 0.12, ease: "none" }, 3.3);
+        tl.fromTo("#bt-n-rot", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 3.35);
+        tl.fromTo("#bt-ring", { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2)" }, 3.6);
+        // shot 2 — the year
+        tl.fromTo("#bt-chip", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 5.9);
+        window.__timelines["scene-boat"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

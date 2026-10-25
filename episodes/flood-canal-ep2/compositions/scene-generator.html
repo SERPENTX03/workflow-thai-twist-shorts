@@ -1,0 +1,81 @@
+<!doctype html>
+<!-- Rule 5: generators outside. 11.2 s clip, four shots.
+     0: generator running INSIDE the hall (smoke drifts into the crowd). 2.4: rule card "กฎข้อ 5".
+     5.6: CO chip, smoke has no colour/smell. 8.8: top-down plan — generator outside, 6 m from doors and windows. -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #1c140d; }
+        #gn-world { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 700px; }
+        #gn-wall { position: absolute; left: -100px; right: -100px; top: 0; height: 1120px; background: repeating-linear-gradient(90deg, #6b4a2f 0 70px, #5b3e27 70px 74px); }
+        #gn-floor { position: absolute; left: -100px; right: -100px; top: 1120px; height: 900px; background: linear-gradient(180deg, #4a3220, #2a1c11); }
+        #gn-lamp { position: absolute; left: -100px; top: 100px; width: 1300px; height: 1100px; background: radial-gradient(circle at 40% 45%, rgba(255, 200, 130, 0.35), rgba(255, 200, 130, 0) 62%); mix-blend-mode: screen; }
+        #gn-gen { position: absolute; left: 130px; top: 840px; width: 300px; height: 230px; border-radius: 24px; background: #c8392b; border: 10px solid #5a1612; }
+        #gn-gen-pipe { position: absolute; left: 400px; top: 880px; width: 120px; height: 30px; background: #3a3a40; }
+        #gn-gen-lab { position: absolute; left: 20px; top: 70px; font: 700 40px var(--font-display); color: #fff; }
+        .gn-smoke { position: absolute; width: 150px; height: 150px; border-radius: 50%; background: radial-gradient(circle, rgba(200, 200, 205, 0.55), rgba(200, 200, 205, 0) 70%); }
+        .gn-p { position: absolute; width: 80px; height: 208px; }
+        #gn-card { left: 190px; top: 190px; }
+        #gn-co { left: 470px; top: 560px; }
+        #gn-co2 { left: 470px; top: 630px; }
+        #gn-plan { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background: #101a2c; }
+        #gn-bld { position: absolute; left: 230px; top: 330px; width: 620px; height: 400px; border: 14px solid #cfc4ad; background: #1f2d44; }
+        #gn-door { position: absolute; left: 480px; top: 710px; width: 120px; height: 36px; background: var(--gold); }
+        #gn-win { position: absolute; left: 825px; top: 450px; width: 36px; height: 130px; background: #8fb7d6; }
+        #gn-genout { position: absolute; left: 90px; top: 850px; width: 150px; height: 110px; border-radius: 16px; background: #c8392b; border: 6px solid #5a1612; }
+        #gn-dim { position: absolute; left: 160px; top: 730px; width: 10px; height: 120px; background: var(--red); transform-origin: 0 0; }
+        #gn-dist { left: 250px; top: 780px; }
+        #gn-lab { left: 70px; top: 980px; }
+      </style>
+      <div data-hf-id="hf-2fw9" id="root" data-composition-id="scene-generator" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-ynu0" id="gn-world" data-layout-allow-overflow>
+          <div data-hf-id="hf-33rs" id="gn-wall" data-layout-allow-overflow></div>
+          <div data-hf-id="hf-uu2m" id="gn-floor" data-layout-allow-overflow></div>
+          <div data-hf-id="hf-pm6v" id="gn-gen"><div data-hf-id="hf-jmuj" id="gn-gen-lab">ปั่นไฟ</div></div>
+          <div data-hf-id="hf-news" id="gn-gen-pipe"></div>
+          <div data-hf-id="hf-iu2p" id="gn-lamp"></div>
+          <div data-hf-id="hf-mezh" id="gn-smokes"></div>
+        </div>
+        <div data-hf-id="hf-iraf" id="gn-card" class="rule-card">
+          <div data-hf-id="hf-dqus" class="rule-no">กฎข้อ 5</div>
+          <div data-hf-id="hf-cwji" class="rule-text"><span data-hf-id="hf-lw4n">ปั่นไฟต้องอยู่</span><span data-hf-id="hf-ekds">นอกอาคาร</span></div>
+        </div>
+        <div data-hf-id="hf-p629" id="gn-co" class="chip red">CO · คาร์บอนมอนอกไซด์</div>
+        <div data-hf-id="hf-tkpu" id="gn-co2" class="chip">ไม่มีสี ไม่มีกลิ่น</div>
+        <div data-hf-id="hf-kxfq" id="gn-plan">
+          <div data-hf-id="hf-dekn" id="gn-bld"></div><div data-hf-id="hf-0xgz" id="gn-door"></div><div data-hf-id="hf-7tpv" id="gn-win"></div>
+          <div data-hf-id="hf-4k1h" id="gn-genout"></div><div data-hf-id="hf-zhcz" id="gn-dim"></div>
+          <div data-hf-id="hf-d2v4" id="gn-dist" class="stat"><div data-hf-id="hf-g12m" class="stat-label">ห่างประตู หน้าต่าง</div><div data-hf-id="hf-yeow"><span data-hf-id="hf-lnai" class="stat-num">6</span><span data-hf-id="hf-px1g" class="stat-unit">เมตร ขึ้นไป</span></div></div>
+          <div data-hf-id="hf-5gb7" id="gn-lab" class="chip">ปั่นไฟ · นอกอาคาร</div>
+        </div>
+      </div>
+      <script>
+        const sm = document.querySelector("#gn-smokes"), ppl = ["man", "woman", "elder", "man-wide", "woman", "man"];
+        for (let k = 0; k < 6; k++) sm.insertAdjacentHTML("beforeend", `<div class="gn-smoke" id="gn-s${k}" style="left:${470 + k * 60}px;top:860px"></div>`);
+        ppl.forEach((p, k) => sm.insertAdjacentHTML("beforeend", `<svg class="who gn-p sil" style="left:${560 + k * 80}px;top:${900 + (k % 2) * 60}px" viewBox="0 0 200 520"><use href="#${p}"/></svg>`));
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#gn-world", { scale: 1.04 }, { scale: 1.1, duration: 8.8, ease: "none" }, 0);
+        tl.fromTo("#gn-gen", { x: -600 }, { x: 0, duration: 0.5, ease: "power3.out" }, 0);
+        tl.fromTo("#gn-gen", { y: 0 }, { y: -4, duration: 0.1, ease: "none", repeat: 60, yoyo: true, immediateRender: false }, 0.5);
+        for (let k = 0; k < 6; k++) {
+          tl.fromTo("#gn-s" + k, { x: 0, y: 0, scale: 0.5, opacity: 0 }, { x: 160 + k * 20, y: -140 - k * 20, scale: 1.6, opacity: 1, duration: 1.8, ease: "power1.out", repeat: 4, repeatDelay: 0.1 }, 0.3 + k * 0.35);
+        }
+        // shot 1 — rule card
+        tl.fromTo("#gn-card", { y: -700, rotation: -3 }, { y: 0, rotation: 0, duration: 0.45, ease: "back.out(1.5)" }, 2.6);
+        tl.fromTo("#gn-card", { x: 0 }, { x: -1100, duration: 0.3, ease: "power3.in", immediateRender: false }, 5.4);
+        // shot 2 — CO chips
+        tl.fromTo("#gn-co", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 5.8);
+        tl.fromTo("#gn-co2", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 6.4);
+        // shot 3 — top-down plan slides over
+        tl.fromTo("#gn-plan", { y: 1920 }, { y: 0, duration: 0.5, ease: "power3.out" }, 8.6);
+        tl.fromTo("#gn-dim", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "power2.out" }, 9.2);
+        tl.fromTo("#gn-dist", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2)" }, 9.5);
+        tl.fromTo("#gn-lab", { x: -600 }, { x: 0, duration: 0.3, ease: "power3.out" }, 9.0);
+        window.__timelines["scene-generator"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

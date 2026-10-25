@@ -1,0 +1,76 @@
+<!doctype html>
+<!-- Top-down map at dusk. Shot 0 (0): route from บ้านยาย to the hilltop temple, 1.2 km. Shot 1 (2.4): every house light goes out —
+     except ป้าแดง's. ป้าแดง's dot is hollow (clue). -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #1a2638; }
+        #mp-svg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 800px; }
+        #mp-km { left: 600px; top: 250px; }
+        #mp-home { left: 120px; top: 1010px; }
+        #mp-aunt { left: 520px; top: 1010px; }
+        #mp-dark { left: 300px; top: 560px; }
+      </style>
+      <div data-hf-id="hf-4m86" id="root" data-composition-id="scene-map" data-width="1080" data-height="1920">
+        <svg data-hf-id="hf-r9ex" id="mp-svg" viewBox="0 0 1080 1920" data-layout-allow-overflow>
+          <!-- flooded fields -->
+          <rect data-hf-id="hf-jdq3" x="-100" y="0" width="1300" height="1920" fill="#3c4a4e" />
+          <path data-hf-id="hf-9dx3" d="M-100 1180 C200 1120 500 1240 760 1160 S1100 1120 1200 1180 V1920 H-100Z" fill="#6c5c40" />
+          <!-- canal -->
+          <path data-hf-id="hf-kx0o" d="M-100 1200 C200 1140 500 1260 760 1180 S1100 1140 1200 1200" fill="none" stroke="#8a7550" stroke-width="90" />
+          <!-- hill + temple -->
+          <circle data-hf-id="hf-ajo7" cx="820" cy="360" r="200" fill="#4f6a55" />
+          <circle data-hf-id="hf-pcox" cx="820" cy="360" r="130" fill="#5d7a62" />
+          <rect data-hf-id="hf-y0v8" x="770" y="310" width="100" height="100" fill="#e9d9b0" stroke="#7b3b2c" stroke-width="12" />
+          <path data-hf-id="hf-pne1" d="M760 310 L820 260 L880 310Z" fill="#c4562f" />
+          <!-- houses along the canal (ids for the lights) -->
+          <g data-hf-id="hf-chui" id="mp-houses">
+            <rect data-hf-id="hf-rzbe" id="mp-h1" x="120" y="1050" width="90" height="70" fill="#f2d79a" />
+            <rect data-hf-id="hf-8tk8" id="mp-h2" x="250" y="1040" width="90" height="70" fill="#f2d79a" />
+            <rect data-hf-id="hf-s8cw" id="mp-h3" x="640" y="1040" width="90" height="70" fill="#f2d79a" />
+            <rect data-hf-id="hf-w7qe" id="mp-h4" x="780" y="1060" width="90" height="70" fill="#f2d79a" />
+            <rect data-hf-id="hf-lgnu" id="mp-h5" x="900" y="1030" width="90" height="70" fill="#f2d79a" />
+            <rect data-hf-id="hf-x20k" id="mp-h6" x="200" y="1290" width="90" height="70" fill="#f2d79a" />
+            <rect data-hf-id="hf-lkug" id="mp-h7" x="560" y="1300" width="90" height="70" fill="#f2d79a" />
+            <rect data-hf-id="hf-1x29" id="mp-h8" x="860" y="1280" width="90" height="70" fill="#f2d79a" />
+          </g>
+          <!-- ป้าแดง's house: the light never goes out -->
+          <rect data-hf-id="hf-5uzq" id="mp-aunt-h" x="500" y="1060" width="100" height="76" fill="#ffd27a" />
+          <circle data-hf-id="hf-f1f5" id="mp-aunt-glow" cx="550" cy="1098" r="120" fill="rgba(255, 210, 122, 0.25)" />
+          <!-- route -->
+          <path data-hf-id="hf-ltp2" id="mp-route" d="M165 1040 C200 860 420 760 560 680 S760 520 800 420" fill="none" stroke="#f6c445" stroke-width="12" stroke-linecap="round" stroke-dasharray="2 30" />
+          <!-- people -->
+          <circle data-hf-id="hf-e9kf" id="mp-me" cx="165" cy="1000" r="30" fill="#f6c445" stroke="#fff" stroke-width="6" />
+          <circle data-hf-id="hf-upy8" id="mp-dog" cx="215" cy="1010" r="16" fill="#f1ece2" stroke="#23242b" stroke-width="5" />
+          <circle data-hf-id="hf-xlma" id="mp-her" cx="550" cy="1000" r="30" fill="none" stroke="rgba(239,232,218,0.85)" stroke-width="6" stroke-dasharray="10 8" />
+        </svg>
+        <div data-hf-id="hf-e3br" id="mp-km" class="chip">วัดบนเนิน · 1.2 กม.</div>
+        <div data-hf-id="hf-pkod" id="mp-home" class="chip">บ้านยาย</div>
+        <div data-hf-id="hf-72er" id="mp-aunt" class="chip red">บ้านป้าแดง</div>
+        <div data-hf-id="hf-w256" id="mp-dark" class="chip">ไฟดับทั้งซอย</div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#mp-svg", { scale: 1.08 }, { scale: 1, duration: 4.8, ease: "power1.out" }, 0);
+        // shot 0 — the route draws up to the temple
+        tl.fromTo("#mp-home", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 0.1);
+        tl.fromTo("#mp-me", { attr: { r: 0 } }, { attr: { r: 30 }, duration: 0.3, ease: "back.out(2)" }, 0.2);
+        tl.fromTo("#mp-dog", { attr: { r: 0 } }, { attr: { r: 16 }, duration: 0.3, ease: "back.out(2)" }, 0.3);
+        tl.fromTo("#mp-route", { strokeDashoffset: 1200, opacity: 0 }, { strokeDashoffset: 0, opacity: 1, duration: 1.2, ease: "power1.inOut" }, 0.4);
+        tl.fromTo("#mp-km", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 0.9);
+        // shot 1 — lights out, house by house; hers stays on
+        tl.fromTo("#mp-her", { attr: { r: 0 } }, { attr: { r: 30 }, duration: 0.3, ease: "back.out(2)" }, 2.5);
+        tl.fromTo("#mp-aunt", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: "power3.out" }, 2.6);
+        ["#mp-h1", "#mp-h2", "#mp-h6", "#mp-h7", "#mp-h3", "#mp-h4", "#mp-h8", "#mp-h5"].forEach((h, k) => {
+          tl.fromTo(h, { attr: { fill: "#f2d79a" } }, { attr: { fill: "#2a3240" }, duration: 0.08, ease: "none" }, 2.8 + k * 0.14);
+        });
+        tl.fromTo("#mp-dark", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 3.2);
+        tl.fromTo("#mp-aunt-glow", { attr: { r: 90 } }, { attr: { r: 140 }, duration: 0.6, ease: "sine.inOut", repeat: 3, yoyo: true }, 2.4);
+        window.__timelines["scene-map"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

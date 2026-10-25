@@ -1,0 +1,58 @@
+<!doctype html>
+<!-- The reveal of the clue: first light, ป้าแดง on the roof edge finally has a SHADOW and a REFLECTION. 5.6 s clip, two shots.
+     0 (4 beats): the shadow-blob and the mirrored figure fade in, gold ring. 3.2 (3 beats): เจ้าโอ่ง walks up to her feet. -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #2b2a4a; }
+        #sh-world { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 780px; }
+        #sh-sky { position: absolute; left: -200px; right: -200px; top: 0; height: 1000px; background: linear-gradient(180deg, #2b2a4a, #b86a58 70%, #f0b070); }
+        #sh-sun { position: absolute; left: 700px; top: 700px; width: 260px; height: 260px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 230, 170, 0.95), rgba(255, 230, 170, 0) 70%); mix-blend-mode: screen; }
+        #sh-slab { position: absolute; left: 140px; top: 886px; width: 800px; height: 40px; background: repeating-linear-gradient(90deg, #7d8290 0 26px, #666b78 26px 30px); }
+        #sh-wall { position: absolute; left: 160px; top: 926px; width: 760px; height: 100px; background: #4a3426; }
+        #sh-water { top: 1040px; height: 900px; }
+        #sh-aunt { left: 560px; top: 372px; width: 200px; height: 520px; --top: #b8443a; --skirt: #5a3f6e; --hair: #a4a4aa; }
+        #sh-refl-wrap { left: 560px; top: 1040px; width: 200px; height: 520px; opacity: 0; }
+        #sh-refl { position: absolute; left: 0; top: 0; width: 200px; height: 520px; --top: #b8443a; --skirt: #5a3f6e; --hair: #a4a4aa; }
+        #sh-shadow { left: 470px; top: 880px; width: 380px; opacity: 0; }
+        #sh-ring { position: absolute; left: 430px; top: 850px; width: 440px; height: 120px; border-radius: 50%; border: 7px dashed var(--gold); }
+        #sh-dog { left: -60px; top: 696px; width: 260px; height: 179px; }
+        #sh-chip { left: 100px; top: 1010px; }
+        #sh-tag { left: 80px; top: 600px; }
+      </style>
+      <div data-hf-id="hf-q4k4" id="root" data-composition-id="scene-shadow" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-qmmq" id="sh-world" data-layout-allow-overflow>
+          <div data-hf-id="hf-6a8p" id="sh-sky" data-layout-allow-overflow></div>
+          <div data-hf-id="hf-6z69" id="sh-sun"></div>
+          <div data-hf-id="hf-s0at" id="sh-wall"></div><div data-hf-id="hf-it6t" id="sh-slab"></div>
+          <div data-hf-id="hf-krck" id="sh-water" class="flood" data-layout-allow-overflow></div>
+          <div data-hf-id="hf-sdro" id="sh-shadow" class="shadow-blob"></div>
+          <div data-hf-id="hf-3np9" id="sh-refl-wrap" class="mirror-y"><svg data-hf-id="hf-k7x8" id="sh-refl" class="who" viewBox="0 0 200 520"><use data-hf-id="hf-ecku" href="#auntie" /></svg></div>
+          <svg data-hf-id="hf-j0ld" id="sh-aunt" class="who" viewBox="0 0 200 520"><use data-hf-id="hf-lsmq" href="#auntie" /></svg>
+          <div data-hf-id="hf-rht3" id="sh-ring"></div>
+          <svg data-hf-id="hf-2zhh" id="sh-dog" class="who" viewBox="0 0 320 220"><use data-hf-id="hf-r1la" href="#dog" /></svg>
+        </div>
+        <div data-hf-id="hf-3s2s" id="sh-chip" class="chip red">เงา · ครั้งแรก</div>
+        <div data-hf-id="hf-yik2" id="sh-tag" class="tag you"><i data-hf-id="hf-wt6k"></i>เจ้าโอ่ง</div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#sh-world", { scale: 1.15 }, { scale: 1, duration: 5.6, ease: "none" }, 0);
+        tl.fromTo("#sh-sun", { y: 120, opacity: 0.4 }, { y: -40, opacity: 1, duration: 5.6, ease: "none" }, 0);
+        tl.fromTo("#sh-shadow", { opacity: 0, scaleX: 0.3 }, { opacity: 1, scaleX: 1, duration: 0.7, ease: "power2.out" }, 1.0);
+        tl.fromTo("#sh-refl-wrap", { opacity: 0 }, { opacity: 0.32, duration: 0.8, ease: "power1.out" }, 1.3);
+        tl.fromTo("#sh-ring", { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2)" }, 1.7);
+        tl.fromTo("#sh-chip", { x: -700 }, { x: 0, duration: 0.35, ease: "power3.out" }, 1.4);
+        // shot 1 — the dog walks up and sits by her feet
+        tl.fromTo("#sh-chip", { opacity: 1 }, { opacity: 0, duration: 0.2, immediateRender: false }, 3.5);
+        tl.fromTo("#sh-dog", { x: -400 }, { x: 440, duration: 2.0, ease: "power1.inOut" }, 3.2);
+        tl.fromTo("#sh-tag", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 3.6);
+        tl.fromTo("#sh-tag", { x: 0 }, { x: 440, duration: 2.0, ease: "power1.inOut", immediateRender: false }, 3.2);
+        window.__timelines["scene-shadow"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

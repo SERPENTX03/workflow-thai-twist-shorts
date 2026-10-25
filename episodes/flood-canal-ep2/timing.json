@@ -1,0 +1,767 @@
+{
+ "title": "สายจากปี 54",
+ "bpm": 75,
+ "beat": 0.8,
+ "total": 111.2,
+ "totalBeats": 139,
+ "shots": [
+  {
+   "i": 0,
+   "scene": "call",
+   "start": 0,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "ตีสอง น้ำถึงวัด\nเหลืออีก [90 นาที]",
+   "style": "red"
+  },
+  {
+   "i": 1,
+   "scene": "call",
+   "start": 3.2,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ภูมิรับสาย\nจากเบอร์ป้าแดง",
+   "style": "plain"
+  },
+  {
+   "i": 2,
+   "scene": "call",
+   "start": 5.6,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "“ต้น… ใช่ต้นไหมลูก”",
+   "style": "plain"
+  },
+  {
+   "i": 3,
+   "scene": "phone",
+   "start": 8.8,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "เบอร์นี้ เคยเป็นของ\n[ต้น] ลูกชายป้าแดง",
+   "style": "plain"
+  },
+  {
+   "i": 4,
+   "scene": "phone",
+   "start": 11.2,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "พอถูกยกเลิก\nก็{ขายต่อ}มาให้ภูมิ",
+   "style": "plain"
+  },
+  {
+   "i": 5,
+   "scene": "battery",
+   "start": 13.6,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "กฎข้อ 4\n[ประหยัดแบต]ไว้ก่อน",
+   "style": "plain"
+  },
+  {
+   "i": 6,
+   "scene": "battery",
+   "start": 16.8,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "แบตเหลือ [31%]\nไฟดับ ชาร์จไม่ได้",
+   "style": "plain"
+  },
+  {
+   "i": 7,
+   "scene": "battery",
+   "start": 20,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "เปิด[โหมดประหยัด]\nลดแสงหน้าจอ",
+   "style": "plain"
+  },
+  {
+   "i": 8,
+   "scene": "battery",
+   "start": 22.4,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ปิดเน็ต บลูทูธ\nที่ไม่ได้ใช้",
+   "style": "plain"
+  },
+  {
+   "i": 9,
+   "scene": "neighbor",
+   "start": 24.8,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "“ไปวัดสิลูก\nที่นั่น[ปลอดภัยที่สุด]”",
+   "style": "plain"
+  },
+  {
+   "i": 10,
+   "scene": "neighbor",
+   "start": 28,
+   "dur": 4,
+   "beats": 5,
+   "text": "“แต่ตีสองน้ำจะมา\nปิด{ประตูหน้าศาลา}”",
+   "style": "plain"
+  },
+  {
+   "i": 11,
+   "scene": "dog",
+   "start": 32,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "เจ้าโอ่งขนตั้ง\nทุกครั้งที่ป้าพูด",
+   "style": "plain"
+  },
+  {
+   "i": 12,
+   "scene": "map",
+   "start": 34.4,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ภูมิกับเจ้าโอ่ง\nขึ้นเรือ[พี่ชาติ]ไปวัด",
+   "style": "plain"
+  },
+  {
+   "i": 13,
+   "scene": "temple",
+   "start": 36.8,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "ศาลาวัด\nคนหลบน้ำ [127 คน]",
+   "style": "plain"
+  },
+  {
+   "i": 14,
+   "scene": "temple",
+   "start": 40,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "บนเสาศาลา\n[บันทึกน้ำปี 54]",
+   "style": "plain"
+  },
+  {
+   "i": 15,
+   "scene": "temple",
+   "start": 43.2,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "“14 ต.ค. 54 ตีสอง\nน้ำปิด{ประตูหน้า}”",
+   "style": "plain"
+  },
+  {
+   "i": 16,
+   "scene": "temple",
+   "start": 46.4,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ตรงกับที่ป้าแดงบอก\n[ทุกตัวเลข]",
+   "style": "plain"
+  },
+  {
+   "i": 17,
+   "scene": "generator",
+   "start": 48.8,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "แต่ในศาลา\nมี{เครื่องปั่นไฟ}ติดอยู่",
+   "style": "plain"
+  },
+  {
+   "i": 18,
+   "scene": "generator",
+   "start": 51.2,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "กฎข้อ 5\nปั่นไฟต้องอยู่[นอกอาคาร]",
+   "style": "plain"
+  },
+  {
+   "i": 19,
+   "scene": "generator",
+   "start": 54.4,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "ควันมี {CO}\nไม่มีสี ไม่มีกลิ่น",
+   "style": "plain"
+  },
+  {
+   "i": 20,
+   "scene": "generator",
+   "start": 57.6,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ห่างประตู หน้าต่าง\nอย่างน้อย [6 เมตร]",
+   "style": "plain"
+  },
+  {
+   "i": 21,
+   "scene": "exit",
+   "start": 60,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ภูมิพาทุกคน\nย้ายไป[ประตูข้าง]",
+   "style": "plain"
+  },
+  {
+   "i": 22,
+   "scene": "exit",
+   "start": 62.4,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "ตีสองตรง\nน้ำ{ปิดประตูหน้า}",
+   "style": "plain"
+  },
+  {
+   "i": 23,
+   "scene": "exit",
+   "start": 65.6,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ออกทางข้าง\nรอด[ครบทุกคน]",
+   "style": "plain"
+  },
+  {
+   "i": 24,
+   "scene": "roof",
+   "start": 68,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "แต่ฝั่งคลอง มี[แสงจอ]\nบนหลังคาบ้านป้า",
+   "style": "plain"
+  },
+  {
+   "i": 25,
+   "scene": "roof",
+   "start": 71.2,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "“ป้าอยู่บนหลังคา\nรอ[ต้น]โทรกลับ”",
+   "style": "plain"
+  },
+  {
+   "i": 26,
+   "scene": "roof",
+   "start": 74.4,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ไฟฉายที่เอวป้า\n{ไม่เคยเปิด}เลย",
+   "style": "plain"
+  },
+  {
+   "i": 27,
+   "scene": "dark",
+   "start": 76.8,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "ป้าแดง\n{ไม่เคยส่งสัญญาณ}",
+   "style": "red"
+  },
+  {
+   "i": 28,
+   "scene": "log",
+   "start": 80,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "บันทึกเรือปี 54\nบ้าน 14 [ไม่พบสัญญาณ]",
+   "style": "plain"
+  },
+  {
+   "i": 29,
+   "scene": "signal",
+   "start": 83.2,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "กฎข้อ 6\nส่ง[สัญญาณ]ให้เรือเห็น",
+   "style": "plain"
+  },
+  {
+   "i": 30,
+   "scene": "signal",
+   "start": 86.4,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "นกหวีด [3 ครั้ง]\nผ้าสีสด ไฟกะพริบ",
+   "style": "plain"
+  },
+  {
+   "i": 31,
+   "scene": "signal",
+   "start": 88.8,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "แล้วบอก[จุดที่อยู่]\nให้ชัดที่สุด",
+   "style": "plain"
+  },
+  {
+   "i": 32,
+   "scene": "talk",
+   "start": 91.2,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "“แม่ ผมเอง[ต้น]\nเปิดไฟฉายที่เอวสิ”",
+   "style": "plain"
+  },
+  {
+   "i": 33,
+   "scene": "flash",
+   "start": 94.4,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "ไฟบนหลังคา\n[กะพริบ]ครั้งแรก",
+   "style": "plain"
+  },
+  {
+   "i": 34,
+   "scene": "boat",
+   "start": 96.8,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "เรือพี่ชาติ\nเข้าไปถึงหลังคา",
+   "style": "plain"
+  },
+  {
+   "i": 35,
+   "scene": "shadow",
+   "start": 99.2,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "ผิวน้ำใต้ป้าแดง\n{มีเงา}เป็นครั้งแรก",
+   "style": "red"
+  },
+  {
+   "i": 36,
+   "scene": "shadow",
+   "start": 102.4,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "เจ้าโอ่ง\nเดินเข้าไปหาป้า",
+   "style": "plain"
+  },
+  {
+   "i": 37,
+   "scene": "dawn",
+   "start": 104.8,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "เช้ามา บนหลังคา\nเหลือแค่[ไฟฉาย]",
+   "style": "plain"
+  },
+  {
+   "i": 38,
+   "scene": "end",
+   "start": 108,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "สายที่ไม่ได้รับ\n[ต้น] · 14 ต.ค. 2554",
+   "style": "red"
+  }
+ ],
+ "scenes": [
+  {
+   "id": "call-0",
+   "scene": "call",
+   "file": "scene-call.html",
+   "start": 0,
+   "dur": 8.8,
+   "local": [
+    {
+     "shot": 0,
+     "at": 0,
+     "dur": 3.2,
+     "text": "ตีสอง น้ำถึงวัด\nเหลืออีก 90 นาที"
+    },
+    {
+     "shot": 1,
+     "at": 3.2,
+     "dur": 2.4,
+     "text": "ภูมิรับสาย\nจากเบอร์ป้าแดง"
+    },
+    {
+     "shot": 2,
+     "at": 5.6,
+     "dur": 3.2,
+     "text": "“ต้น… ใช่ต้นไหมลูก”"
+    }
+   ]
+  },
+  {
+   "id": "phone-1",
+   "scene": "phone",
+   "file": "scene-phone.html",
+   "start": 8.8,
+   "dur": 4.8,
+   "local": [
+    {
+     "shot": 3,
+     "at": 0,
+     "dur": 2.4,
+     "text": "เบอร์นี้ เคยเป็นของ\nต้น ลูกชายป้าแดง"
+    },
+    {
+     "shot": 4,
+     "at": 2.4,
+     "dur": 2.4,
+     "text": "พอถูกยกเลิก\nก็ขายต่อมาให้ภูมิ"
+    }
+   ]
+  },
+  {
+   "id": "battery-2",
+   "scene": "battery",
+   "file": "scene-battery.html",
+   "start": 13.6,
+   "dur": 11.2,
+   "local": [
+    {
+     "shot": 5,
+     "at": 0,
+     "dur": 3.2,
+     "text": "กฎข้อ 4\nประหยัดแบตไว้ก่อน"
+    },
+    {
+     "shot": 6,
+     "at": 3.2,
+     "dur": 3.2,
+     "text": "แบตเหลือ 31%\nไฟดับ ชาร์จไม่ได้"
+    },
+    {
+     "shot": 7,
+     "at": 6.4,
+     "dur": 2.4,
+     "text": "เปิดโหมดประหยัด\nลดแสงหน้าจอ"
+    },
+    {
+     "shot": 8,
+     "at": 8.8,
+     "dur": 2.4,
+     "text": "ปิดเน็ต บลูทูธ\nที่ไม่ได้ใช้"
+    }
+   ]
+  },
+  {
+   "id": "neighbor-3",
+   "scene": "neighbor",
+   "file": "scene-neighbor.html",
+   "start": 24.8,
+   "dur": 7.2,
+   "local": [
+    {
+     "shot": 9,
+     "at": 0,
+     "dur": 3.2,
+     "text": "“ไปวัดสิลูก\nที่นั่นปลอดภัยที่สุด”"
+    },
+    {
+     "shot": 10,
+     "at": 3.2,
+     "dur": 4,
+     "text": "“แต่ตีสองน้ำจะมา\nปิดประตูหน้าศาลา”"
+    }
+   ]
+  },
+  {
+   "id": "dog-4",
+   "scene": "dog",
+   "file": "scene-dog.html",
+   "start": 32,
+   "dur": 2.4,
+   "local": [
+    {
+     "shot": 11,
+     "at": 0,
+     "dur": 2.4,
+     "text": "เจ้าโอ่งขนตั้ง\nทุกครั้งที่ป้าพูด"
+    }
+   ]
+  },
+  {
+   "id": "map-5",
+   "scene": "map",
+   "file": "scene-map.html",
+   "start": 34.4,
+   "dur": 2.4,
+   "local": [
+    {
+     "shot": 12,
+     "at": 0,
+     "dur": 2.4,
+     "text": "ภูมิกับเจ้าโอ่ง\nขึ้นเรือพี่ชาติไปวัด"
+    }
+   ]
+  },
+  {
+   "id": "temple-6",
+   "scene": "temple",
+   "file": "scene-temple.html",
+   "start": 36.8,
+   "dur": 12,
+   "local": [
+    {
+     "shot": 13,
+     "at": 0,
+     "dur": 3.2,
+     "text": "ศาลาวัด\nคนหลบน้ำ 127 คน"
+    },
+    {
+     "shot": 14,
+     "at": 3.2,
+     "dur": 3.2,
+     "text": "บนเสาศาลา\nบันทึกน้ำปี 54"
+    },
+    {
+     "shot": 15,
+     "at": 6.4,
+     "dur": 3.2,
+     "text": "“14 ต.ค. 54 ตีสอง\nน้ำปิดประตูหน้า”"
+    },
+    {
+     "shot": 16,
+     "at": 9.6,
+     "dur": 2.4,
+     "text": "ตรงกับที่ป้าแดงบอก\nทุกตัวเลข"
+    }
+   ]
+  },
+  {
+   "id": "generator-7",
+   "scene": "generator",
+   "file": "scene-generator.html",
+   "start": 48.8,
+   "dur": 11.2,
+   "local": [
+    {
+     "shot": 17,
+     "at": 0,
+     "dur": 2.4,
+     "text": "แต่ในศาลา\nมีเครื่องปั่นไฟติดอยู่"
+    },
+    {
+     "shot": 18,
+     "at": 2.4,
+     "dur": 3.2,
+     "text": "กฎข้อ 5\nปั่นไฟต้องอยู่นอกอาคาร"
+    },
+    {
+     "shot": 19,
+     "at": 5.6,
+     "dur": 3.2,
+     "text": "ควันมี CO\nไม่มีสี ไม่มีกลิ่น"
+    },
+    {
+     "shot": 20,
+     "at": 8.8,
+     "dur": 2.4,
+     "text": "ห่างประตู หน้าต่าง\nอย่างน้อย 6 เมตร"
+    }
+   ]
+  },
+  {
+   "id": "exit-8",
+   "scene": "exit",
+   "file": "scene-exit.html",
+   "start": 60,
+   "dur": 8,
+   "local": [
+    {
+     "shot": 21,
+     "at": 0,
+     "dur": 2.4,
+     "text": "ภูมิพาทุกคน\nย้ายไปประตูข้าง"
+    },
+    {
+     "shot": 22,
+     "at": 2.4,
+     "dur": 3.2,
+     "text": "ตีสองตรง\nน้ำปิดประตูหน้า"
+    },
+    {
+     "shot": 23,
+     "at": 5.6,
+     "dur": 2.4,
+     "text": "ออกทางข้าง\nรอดครบทุกคน"
+    }
+   ]
+  },
+  {
+   "id": "roof-9",
+   "scene": "roof",
+   "file": "scene-roof.html",
+   "start": 68,
+   "dur": 8.8,
+   "local": [
+    {
+     "shot": 24,
+     "at": 0,
+     "dur": 3.2,
+     "text": "แต่ฝั่งคลอง มีแสงจอ\nบนหลังคาบ้านป้า"
+    },
+    {
+     "shot": 25,
+     "at": 3.2,
+     "dur": 3.2,
+     "text": "“ป้าอยู่บนหลังคา\nรอต้นโทรกลับ”"
+    },
+    {
+     "shot": 26,
+     "at": 6.4,
+     "dur": 2.4,
+     "text": "ไฟฉายที่เอวป้า\nไม่เคยเปิดเลย"
+    }
+   ]
+  },
+  {
+   "id": "dark-10",
+   "scene": "dark",
+   "file": "scene-dark.html",
+   "start": 76.8,
+   "dur": 3.2,
+   "local": [
+    {
+     "shot": 27,
+     "at": 0,
+     "dur": 3.2,
+     "text": "ป้าแดง\nไม่เคยส่งสัญญาณ"
+    }
+   ]
+  },
+  {
+   "id": "log-11",
+   "scene": "log",
+   "file": "scene-log.html",
+   "start": 80,
+   "dur": 3.2,
+   "local": [
+    {
+     "shot": 28,
+     "at": 0,
+     "dur": 3.2,
+     "text": "บันทึกเรือปี 54\nบ้าน 14 ไม่พบสัญญาณ"
+    }
+   ]
+  },
+  {
+   "id": "signal-12",
+   "scene": "signal",
+   "file": "scene-signal.html",
+   "start": 83.2,
+   "dur": 8,
+   "local": [
+    {
+     "shot": 29,
+     "at": 0,
+     "dur": 3.2,
+     "text": "กฎข้อ 6\nส่งสัญญาณให้เรือเห็น"
+    },
+    {
+     "shot": 30,
+     "at": 3.2,
+     "dur": 2.4,
+     "text": "นกหวีด 3 ครั้ง\nผ้าสีสด ไฟกะพริบ"
+    },
+    {
+     "shot": 31,
+     "at": 5.6,
+     "dur": 2.4,
+     "text": "แล้วบอกจุดที่อยู่\nให้ชัดที่สุด"
+    }
+   ]
+  },
+  {
+   "id": "talk-13",
+   "scene": "talk",
+   "file": "scene-talk.html",
+   "start": 91.2,
+   "dur": 3.2,
+   "local": [
+    {
+     "shot": 32,
+     "at": 0,
+     "dur": 3.2,
+     "text": "“แม่ ผมเองต้น\nเปิดไฟฉายที่เอวสิ”"
+    }
+   ]
+  },
+  {
+   "id": "flash-14",
+   "scene": "flash",
+   "file": "scene-flash.html",
+   "start": 94.4,
+   "dur": 2.4,
+   "local": [
+    {
+     "shot": 33,
+     "at": 0,
+     "dur": 2.4,
+     "text": "ไฟบนหลังคา\nกะพริบครั้งแรก"
+    }
+   ]
+  },
+  {
+   "id": "boat-15",
+   "scene": "boat",
+   "file": "scene-boat.html",
+   "start": 96.8,
+   "dur": 2.4,
+   "local": [
+    {
+     "shot": 34,
+     "at": 0,
+     "dur": 2.4,
+     "text": "เรือพี่ชาติ\nเข้าไปถึงหลังคา"
+    }
+   ]
+  },
+  {
+   "id": "shadow-16",
+   "scene": "shadow",
+   "file": "scene-shadow.html",
+   "start": 99.2,
+   "dur": 5.6,
+   "local": [
+    {
+     "shot": 35,
+     "at": 0,
+     "dur": 3.2,
+     "text": "ผิวน้ำใต้ป้าแดง\nมีเงาเป็นครั้งแรก"
+    },
+    {
+     "shot": 36,
+     "at": 3.2,
+     "dur": 2.4,
+     "text": "เจ้าโอ่ง\nเดินเข้าไปหาป้า"
+    }
+   ]
+  },
+  {
+   "id": "dawn-17",
+   "scene": "dawn",
+   "file": "scene-dawn.html",
+   "start": 104.8,
+   "dur": 3.2,
+   "local": [
+    {
+     "shot": 37,
+     "at": 0,
+     "dur": 3.2,
+     "text": "เช้ามา บนหลังคา\nเหลือแค่ไฟฉาย"
+    }
+   ]
+  },
+  {
+   "id": "end-18",
+   "scene": "end",
+   "file": "scene-end.html",
+   "start": 108,
+   "dur": 3.2,
+   "local": [
+    {
+     "shot": 38,
+     "at": 0,
+     "dur": 3.2,
+     "text": "สายที่ไม่ได้รับ\nต้น · 14 ต.ค. 2554"
+    }
+   ]
+  }
+ ]
+}

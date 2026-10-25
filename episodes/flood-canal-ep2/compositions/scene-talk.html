@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- ภูมิ answers as "ต้น". 3.2 s, one shot. Phone in call: timer runs, a warm voice wave pulses, chip "ภูมิ = ต้น". -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #05070c; }
+        #tk-glow { position: absolute; left: -100px; top: 100px; width: 1280px; height: 1300px; background: radial-gradient(circle, rgba(255, 190, 120, 0.3), rgba(255, 190, 120, 0) 60%); }
+        #tk-phone { position: absolute; left: 260px; top: 200px; width: 560px; height: 1060px; border-radius: 70px; background: #11151d; border: 14px solid #2b313c; }
+        #tk-scr { position: absolute; left: 22px; top: 22px; right: 22px; bottom: 22px; border-radius: 52px; background: linear-gradient(180deg, #2c2438, #15101f); color: var(--white); font-family: var(--font-ui); text-align: center; overflow: hidden; }
+        #tk-name { font: 700 84px var(--font-display); margin-top: 110px; }
+        #tk-time { font: 500 40px var(--font-ui); color: var(--mute); margin-top: 6px; }
+        #tk-avatar { width: 170px; height: 170px; border-radius: 50%; background: #b8443a; margin: 50px auto 0; }
+        #tk-wave { position: absolute; left: 0; right: 0; top: 640px; height: 160px; display: flex; justify-content: center; align-items: center; gap: 12px; }
+        .tk-bar { width: 18px; height: 120px; border-radius: 9px; background: var(--gold); }
+        #tk-end { position: absolute; left: 215px; bottom: 80px; width: 130px; height: 130px; border-radius: 50%; background: var(--red); }
+        #tk-chip { left: 300px; top: 120px; }
+      </style>
+      <div data-hf-id="hf-1p52" id="root" data-composition-id="scene-talk" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-cj00" id="tk-glow"></div>
+        <div data-hf-id="hf-cfll" id="tk-phone"><div data-hf-id="hf-s7u5" id="tk-scr">
+          <div data-hf-id="hf-w3sm" id="tk-name">ป้าแดง</div><div data-hf-id="hf-iwgt" id="tk-time">กำลังสนทนา 00:12</div>
+          <div data-hf-id="hf-iqu0" id="tk-avatar"></div>
+          <div data-hf-id="hf-072g" id="tk-wave"></div>
+          <div data-hf-id="hf-rkgi" id="tk-end"></div>
+        </div></div>
+        <div data-hf-id="hf-lhz6" id="tk-chip" class="chip red">ภูมิ ตอบเป็น “ต้น”</div>
+      </div>
+      <script>
+        const w = document.querySelector("#tk-wave");
+        for (let k = 0; k < 9; k++) w.insertAdjacentHTML("beforeend", `<i class="tk-bar" id="tk-b${k}"></i>`);
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#tk-phone", { y: 160, scale: 0.95 }, { y: 0, scale: 1, duration: 0.5, ease: "power3.out" }, 0);
+        for (let k = 0; k < 9; k++) tl.fromTo("#tk-b" + k, { scaleY: 0.3 }, { scaleY: 1, duration: 0.22 + (k % 3) * 0.06, ease: "sine.inOut", repeat: 9, yoyo: true }, 0.2 + k * 0.05);
+        tl.fromTo("#tk-avatar", { scale: 1 }, { scale: 1.08, duration: 0.5, ease: "sine.inOut", repeat: 5, yoyo: true }, 0.2);
+        tl.fromTo("#tk-chip", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 0.6);
+        window.__timelines["scene-talk"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

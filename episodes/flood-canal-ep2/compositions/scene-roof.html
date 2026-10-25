@@ -1,0 +1,64 @@
+<!doctype html>
+<!-- ป้าแดง on her flat tin roof, water all round, night. 8.8 s clip, three shots.
+     0: far — a green phone glow on the roof (the "แสงจอ"). 3.2: push in on her, red keypad phone in hand, tag.
+     6.4: push to her belt: the flashlight is OFF (gold ring). She has NO shadow and NO reflection (clue). -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: var(--sky-0); }
+        #rf-world { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 780px; }
+        #rf-sky { position: absolute; left: -200px; right: -200px; top: 0; height: 1000px; background: linear-gradient(180deg, var(--sky-0), var(--sky-1) 80%, #39405a); }
+        #rf-slab { position: absolute; left: 180px; top: 886px; width: 720px; height: 40px; background: repeating-linear-gradient(90deg, #6d727c 0 26px, #565b66 26px 30px); }
+        #rf-wall { position: absolute; left: 200px; top: 926px; width: 680px; height: 120px; background: #3c2a1d; }
+        #rf-water { top: 1000px; height: 1000px; }
+        #rf-night { position: absolute; left: -200px; right: -200px; top: 0; height: 2200px; background: rgba(6, 10, 26, 0.3); }
+        #rf-aunt { left: 440px; top: 372px; width: 200px; height: 520px; --top: #b8443a; --skirt: #5a3f6e; --hair: #a4a4aa; }
+        #rf-phone { position: absolute; left: 468px; top: 664px; width: 44px; height: 80px; border-radius: 8px; background: var(--red); border: 4px solid #5a1010; }
+        #rf-scr { position: absolute; left: 6px; top: 6px; width: 24px; height: 22px; background: #b6e3a0; box-shadow: 0 0 40px 14px rgba(150, 240, 150, 0.7); }
+        #rf-glow { position: absolute; left: 380px; top: 580px; width: 260px; height: 260px; border-radius: 50%; background: radial-gradient(circle, rgba(150, 240, 150, 0.55), rgba(150, 240, 150, 0) 65%); mix-blend-mode: screen; }
+        #rf-torch { position: absolute; left: 574px; top: 650px; width: 18px; height: 62px; border-radius: 6px; background: #2a2d34; border: 3px solid #14161a; }
+        #rf-ring { position: absolute; left: 540px; top: 626px; width: 90px; height: 120px; border-radius: 50%; border: 6px dashed var(--gold); }
+        #rf-tag { left: 440px; top: 280px; }
+        #rf-chip { left: 120px; top: 560px; }
+        #rf-chip2 { left: 620px; top: 560px; }
+      </style>
+      <div data-hf-id="hf-zdrm" id="root" data-composition-id="scene-roof" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-70nr" id="rf-world" data-layout-allow-overflow>
+          <div data-hf-id="hf-kvr8" id="rf-sky" data-layout-allow-overflow></div>
+          <div data-hf-id="hf-wywe" id="rf-wall"></div>
+          <div data-hf-id="hf-0ouu" id="rf-slab"></div>
+          <div data-hf-id="hf-zg9p" id="rf-glow"></div>
+          <svg data-hf-id="hf-pz5q" id="rf-aunt" class="who" viewBox="0 0 200 520"><use data-hf-id="hf-ecku" href="#auntie" /></svg>
+          <div data-hf-id="hf-gyz2" id="rf-phone"><div data-hf-id="hf-0pze" id="rf-scr"></div></div>
+          <div data-hf-id="hf-hpx0" id="rf-torch"></div>
+          <div data-hf-id="hf-fmrd" id="rf-water" class="flood" data-layout-allow-overflow></div>
+          <div data-hf-id="hf-xle5" id="rf-night" data-layout-allow-overflow></div>
+          <div data-hf-id="hf-p19s" id="rf-ring"></div>
+          <div data-hf-id="hf-b18x" id="rf-tag" class="tag warn"><i data-hf-id="hf-wt6k"></i>ป้าแดง</div>
+        </div>
+        <div data-hf-id="hf-idc5" id="rf-chip" class="chip">แสงจอ บนหลังคาบ้านป้า</div>
+        <div data-hf-id="hf-h5i9" id="rf-chip2" class="chip red">ไฟฉายปิดอยู่</div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        // shot 0 — far, the glow blinks
+        tl.fromTo("#rf-world", { scale: 0.72, x: 0, y: 40 }, { scale: 0.8, y: 40, duration: 3.2, ease: "power1.out" }, 0);
+        tl.fromTo("#rf-glow", { opacity: 0.35 }, { opacity: 1, duration: 0.5, ease: "sine.inOut", repeat: 11, yoyo: true }, 0);
+        tl.fromTo("#rf-chip", { x: -600 }, { x: 0, duration: 0.35, ease: "power3.out" }, 0.4);
+        // shot 1 — push in on her
+        tl.fromTo("#rf-chip", { opacity: 1 }, { opacity: 0, duration: 0.2, immediateRender: false }, 3.1);
+        tl.fromTo("#rf-world", { scale: 0.8, y: 40 }, { scale: 1.3, y: 100, duration: 2.0, ease: "power2.inOut", immediateRender: false }, 3.2);
+        tl.fromTo("#rf-tag", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 4.0);
+        // shot 2 — her belt: torch is off
+        tl.fromTo("#rf-world", { scale: 1.3, x: 0, y: 100 }, { scale: 2.2, x: -88, y: 118, duration: 1.4, ease: "power2.inOut", immediateRender: false }, 6.4);
+        tl.fromTo("#rf-tag", { opacity: 1 }, { opacity: 0, duration: 0.2, immediateRender: false }, 6.4);
+        tl.fromTo("#rf-ring", { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2)" }, 7.1);
+        tl.fromTo("#rf-chip2", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 7.5);
+        window.__timelines["scene-roof"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

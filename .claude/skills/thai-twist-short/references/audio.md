@@ -4,6 +4,9 @@ All sound is generated from `story.json`; nothing is downloaded or sampled excep
 
 ## Voice — `scripts/voice.mjs`
 
+- Three providers, chosen by the voice id prefix: `eleven:<Name or voice_id>` (ElevenLabs, default: male Vasko, female Jessica; key `ELEVENLABS_API_KEY` in `.env`; ids in `scripts/eleven-voices.json`, `npm run voices -- <name>` looks one up), `gemini:<Name>`, or a plain edge-tts voice id.
+- **Acting (ElevenLabs v3 only)**: a shot's `"tone"` (or the episode default `voiceTone`) is sent as audio tags in front of the line, e.g. `"tone": "whispers, scared"` → `[whispers] [scared] …`. Tags are English words: `whispers`, `softly`, `sad`, `scared`, `nervous`, `tense`, `urgent`, `warm`, `crying`, `sighs`, `gasps`. Use them to follow the episode's emotional arc: calm narration early, tense in the problem, whisper on the reveal. The caption is unaffected.
+- Every synthesized line is cached by (voice, settings, text) in `assets/vo/cache`, so re-running only pays for changed lines (credits are per character on ElevenLabs).
 - edge-tts (Microsoft online neural voices). Needs internet; the line text is sent to Microsoft's read-aloud service. Install once: `pip install edge-tts` (if synthesis fails with HTTP 403, upgrade: `pip install -U edge-tts`).
 - One line per shot (`vo`, default = caption without line breaks), silence trimmed, placed at `shot.start + voLead`.
 - If a line is longer than its shot it is sped up, max 1.3×. Above that the script prints `⚠ OVER` — shorten the line or give the shot more beats. Never let a line run across a cut.

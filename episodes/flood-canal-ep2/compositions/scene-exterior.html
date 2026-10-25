@@ -1,0 +1,92 @@
+<!doctype html>
+<!-- Hook: grandma's stilt house by the canal in the rain, water rising on a gauge pole.
+     Shot 0 (local 0): HUD 16:20, water climbs to 40 cm, gauge chip. Shot 1 (2.4): ภูมิ walks the plank, tag. -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #8c9aa8; }
+        #ext-world { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 800px; }
+        #ext-sky { position: absolute; left: -200px; right: -200px; top: 0; height: 1200px; background: linear-gradient(180deg, #6f7f91, #a9b4bd 70%, #c3c8c6); }
+        .ext-tree { position: absolute; border-radius: 50%; background: #4f6a55; }
+        /* grandma's house (left), neighbour's house (right) */
+        #ext-house { position: absolute; left: 70px; top: 470px; width: 560px; height: 420px; }
+        #ext-roof { position: absolute; left: -40px; top: 0; width: 640px; height: 170px; background: #7b3b2c; clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+        #ext-wall { position: absolute; left: 20px; top: 170px; width: 520px; height: 250px; background: repeating-linear-gradient(90deg, #8a6440 0 46px, #7a5636 46px 50px); }
+        #ext-door { position: absolute; left: 230px; top: 230px; width: 110px; height: 190px; background: #4a3220; }
+        .ext-win { position: absolute; top: 230px; width: 120px; height: 100px; background: #33414f; border: 10px solid #5b3e26; }
+        .ext-post { position: absolute; top: 890px; width: 26px; height: 420px; background: #4f3a27; }
+        #ext-deck { position: absolute; left: 60px; top: 880px; width: 600px; height: 24px; background: #5b4129; }
+        #ext-plank { position: absolute; left: 600px; top: 1010px; width: 300px; height: 20px; background: #6d5034; transform-origin: 0 50%; rotate: 18deg; }
+        #ext-n { position: absolute; left: 760px; top: 610px; width: 420px; height: 300px; }
+        #ext-n-roof { position: absolute; left: -20px; top: 0; width: 460px; height: 120px; background: #6a3a30; clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+        #ext-n-wall { position: absolute; left: 10px; top: 120px; width: 400px; height: 180px; background: repeating-linear-gradient(90deg, #7c5a3c 0 40px, #6b4b30 40px 44px); }
+        #ext-n-win { position: absolute; left: 60px; top: 160px; width: 130px; height: 100px; background: #f2d79a; border: 10px solid #4e3622; box-shadow: 0 0 60px 10px rgba(255, 214, 140, 0.45); }
+        #ext-n-tv { position: absolute; left: 20px; top: 22px; width: 70px; height: 50px; background: #9fd0ff; }
+        .ext-n-post { position: absolute; top: 910px; width: 22px; height: 400px; background: #4a3624; }
+        #ext-water { top: 1420px; height: 900px; }
+        #ext-ripples { position: absolute; left: -200px; right: -200px; top: 1440px; height: 600px;
+          background: repeating-linear-gradient(180deg, rgba(240, 230, 200, 0.12) 0 4px, transparent 4px 70px); }
+        /* water gauge pole */
+        #ext-pole { position: absolute; left: 930px; top: 800px; width: 46px; height: 640px; background: #f3efe4; border: 4px solid #2a2a2a; }
+        .ext-mark { position: absolute; left: 0; width: 100%; height: 50px; background: var(--red); }
+        .ext-num { position: absolute; left: -96px; font: 700 30px var(--font-ui); color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.6); }
+        #ext-chip { left: 700px; top: 1090px; }
+        #ext-place { left: 70px; top: 230px; }
+        #ext-boy { left: 440px; top: 392px; width: 190px; height: 494px; }
+        #ext-tag { left: 400px; top: 300px; }
+        #ext-hud { }
+      </style>
+      <div data-hf-id="hf-89y2" id="root" data-composition-id="scene-exterior" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-izsa" id="ext-world" data-layout-allow-overflow>
+          <div data-hf-id="hf-ql5v" class="far">
+            <div data-hf-id="hf-t5o1" id="ext-sky" data-layout-allow-overflow></div>
+            <div data-hf-id="hf-swhm" class="ext-tree" style="left:-80px;top:560px;width:300px;height:300px"></div>
+            <div data-hf-id="hf-auuc" class="ext-tree" style="left:560px;top:520px;width:260px;height:260px;background:#5a7560"></div>
+            <div data-hf-id="hf-e69d" class="ext-tree" style="left:900px;top:480px;width:300px;height:320px"></div>
+          </div>
+          <div data-hf-id="hf-vk54" class="ext-n-post" style="left:800px"></div><div data-hf-id="hf-b34i" class="ext-n-post" style="left:1100px"></div>
+          <div data-hf-id="hf-d8pn" id="ext-n"><div data-hf-id="hf-bage" id="ext-n-roof"></div><div data-hf-id="hf-qw7k" id="ext-n-wall"></div><div data-hf-id="hf-wgwu" id="ext-n-win"><div data-hf-id="hf-a0ou" id="ext-n-tv"></div></div></div>
+          <div data-hf-id="hf-976w" class="ext-post" style="left:100px"></div><div data-hf-id="hf-5ken" class="ext-post" style="left:330px"></div><div data-hf-id="hf-186f" class="ext-post" style="left:600px"></div>
+          <div data-hf-id="hf-bq40" id="ext-deck"></div>
+          <div data-hf-id="hf-wut5" id="ext-house">
+            <div data-hf-id="hf-ztd1" id="ext-roof"></div><div data-hf-id="hf-kqo7" id="ext-wall"></div>
+            <div data-hf-id="hf-83zu" class="ext-win" style="left:70px"></div><div data-hf-id="hf-9lle" class="ext-win" style="left:380px"></div>
+            <div data-hf-id="hf-ftu3" id="ext-door"></div>
+          </div>
+          <svg data-hf-id="hf-wlzz" id="ext-boy" class="who" viewBox="0 0 200 520"><use data-hf-id="hf-0j9z" href="#raincoat" /></svg>
+          <div data-hf-id="hf-pfrd" id="ext-pole">
+            <div data-hf-id="hf-eqiu" class="ext-mark" style="top:0"></div><div data-hf-id="hf-km3z" class="ext-mark" style="top:100px"></div>
+            <div data-hf-id="hf-jkwk" class="ext-mark" style="top:200px"></div><div data-hf-id="hf-2tzh" class="ext-mark" style="top:300px"></div>
+            <div data-hf-id="hf-03ka" class="ext-mark" style="top:400px"></div><div data-hf-id="hf-617v" class="ext-mark" style="top:500px"></div>
+          </div>
+          <div data-hf-id="hf-goue" id="ext-water" class="flood" data-layout-allow-overflow></div>
+          <div data-hf-id="hf-3bff" id="ext-ripples" data-layout-allow-overflow></div>
+          <div data-hf-id="hf-573o" class="rain" id="ext-rain" data-layout-allow-overflow data-layout-ignore></div>
+        </div>
+        <div data-hf-id="hf-2ktq" id="ext-chip" class="chip red">น้ำ 40 ซม.</div>
+        <div data-hf-id="hf-ahwf" id="ext-place" class="chip">ริมคลอง · บ้านยาย</div>
+        <div data-hf-id="hf-0jnu" id="ext-tag" class="tag you"><i data-hf-id="hf-wt6k"></i>ภูมิ · ม.5</div>
+        <div data-hf-id="hf-7iq7" id="ext-hud" class="hud">16:20</div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#ext-world", { scale: 1 }, { scale: 1.08, duration: 4.8, ease: "none" }, 0);
+        tl.fromTo("#ext-rain", { backgroundPosition: "0px 0px, 0px 0px" }, { backgroundPosition: "-240px 1800px, -180px 1300px", duration: 4.8, ease: "none" }, 0);
+        tl.fromTo("#ext-hud", { y: -220 }, { y: 0, duration: 0.35, ease: "back.out(1.8)" }, 0);
+        tl.fromTo("#ext-place", { x: -500 }, { x: 0, duration: 0.35, ease: "power3.out" }, 0.1);
+        // shot 0 — the water climbs the pole to the 40 cm mark
+        tl.fromTo("#ext-water", { y: 0 }, { y: -260, duration: 1.8, ease: "power2.inOut" }, 0.1);
+        tl.fromTo("#ext-ripples", { y: 0 }, { y: -260, duration: 1.8, ease: "power2.inOut" }, 0.1);
+        tl.fromTo("#ext-chip", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2.2)" }, 0.95);
+        // shot 1 — ภูมิ walks up to the door
+        tl.fromTo("#ext-boy", { x: 760 }, { x: 0, duration: 1.4, ease: "power2.out" }, 2.4);
+        tl.fromTo("#ext-tag", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 3.1);
+        tl.fromTo("#ext-water", { y: -260 }, { y: -300, duration: 2.4, ease: "none", immediateRender: false }, 2.4);
+        window.__timelines["scene-exterior"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

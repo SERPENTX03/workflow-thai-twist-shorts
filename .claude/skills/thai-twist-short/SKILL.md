@@ -72,4 +72,4 @@ The commands stop at an approved outline or a report; building still follows the
 
 ## Tools this workflow needs
 
-Node ≥ 22, ffmpeg/ffprobe on PATH, Python 3 with `pip install edge-tts` (Thai voices are Microsoft online neural voices — internet required, and the caption text is sent to that service), Chrome (HyperFrames installs what it needs on first render). HyperFrames itself runs through `npx` (version pinned in each episode's `package.json`).
+Node ≥ 22, ffmpeg/ffprobe on PATH, an `ELEVENLABS_API_KEY` in `.env` for the default ElevenLabs voices (or Python 3 with `pip install edge-tts` for the free Microsoft voices); internet is required and the caption text is sent to the voice service, Chrome (HyperFrames installs what it needs on first render). HyperFrames itself runs through `npx` (version pinned in each episode's `package.json`).

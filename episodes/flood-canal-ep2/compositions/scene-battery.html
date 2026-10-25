@@ -1,0 +1,69 @@
+<!doctype html>
+<!-- Rule 4: save the phone battery. 11.2 s clip, four shots.
+     0: rule card "กฎข้อ 4". 3.2: stat 31% + red meter. 6.4: ticks "โหมดประหยัด / ลดแสง" and the phone screen dims.
+     8.8: tick "ปิดเน็ต / บลูทูธ". ภูมิ's phone glows in a dark room. -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #070a12; }
+        #bat-world { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 640px; }
+        #bat-glow { position: absolute; left: -100px; top: 60px; width: 1280px; height: 1200px; background: radial-gradient(circle, rgba(120, 170, 255, 0.28), rgba(120, 170, 255, 0) 60%); }
+        #bat-phone { position: absolute; left: 600px; top: 260px; width: 380px; height: 740px; border-radius: 56px; background: #11151d; border: 12px solid #2b313c; }
+        #bat-scr { position: absolute; left: 18px; top: 18px; right: 18px; bottom: 18px; border-radius: 40px; background: linear-gradient(180deg, #1e2c46, #0f1626); color: var(--white); font-family: var(--font-ui); text-align: center; overflow: hidden; }
+        #bat-time { font: 700 90px var(--font-display); margin-top: 70px; }
+        #bat-pct { font: 700 54px var(--font-display); margin-top: 20px; color: var(--red); }
+        #bat-dim { position: absolute; inset: 0; background: #000; opacity: 0; }
+        #bat-card { left: 120px; top: 190px; }
+        #bat-stat { left: 70px; top: 270px; }
+        #bat-meter { left: 100px; top: 530px; width: 360px; }
+        #bat-list { left: 60px; top: 650px; width: 560px; }
+      </style>
+      <div data-hf-id="hf-x57x" id="root" data-composition-id="scene-battery" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-efxu" id="bat-world" data-layout-allow-overflow>
+          <div data-hf-id="hf-zk18" id="bat-glow"></div>
+          <div data-hf-id="hf-fvhx" id="bat-phone"><div data-hf-id="hf-f01d" id="bat-scr">
+            <div data-hf-id="hf-7rja" id="bat-time">00:31</div>
+            <div data-hf-id="hf-zhdz" id="bat-pct">31%</div>
+            <div data-hf-id="hf-2dz7" id="bat-dim"></div>
+          </div></div>
+        </div>
+        <div data-hf-id="hf-oz93" id="bat-card" class="rule-card">
+          <div data-hf-id="hf-dcjr" class="rule-no">กฎข้อ 4</div>
+          <div data-hf-id="hf-cwji" class="rule-text"><span data-hf-id="hf-vjp9">ประหยัดแบต</span><span data-hf-id="hf-6jeq">ให้นานที่สุด</span></div>
+        </div>
+        <div data-hf-id="hf-3o4c" id="bat-stat" class="stat">
+          <div data-hf-id="hf-8z8l" class="stat-label">แบตมือถือ ไฟดับ ชาร์จไม่ได้</div>
+          <div data-hf-id="hf-yeow"><span data-hf-id="hf-4g6j" id="bat-num" class="stat-num">45</span><span data-hf-id="hf-holh" class="stat-unit">%</span></div>
+        </div>
+        <div data-hf-id="hf-y3pc" id="bat-meter" class="meter low"><b data-hf-id="hf-05kf" id="bat-fill"></b></div>
+        <div data-hf-id="hf-vnk0" id="bat-list" class="checklist">
+          <div data-hf-id="hf-94kf" class="row"><div data-hf-id="hf-d74r" class="box"><div data-hf-id="hf-v8pq" class="tick" id="bat-t1"></div></div>เปิดโหมดประหยัดแบต</div>
+          <div data-hf-id="hf-kk5z" class="row"><div data-hf-id="hf-jvrv" class="box"><div data-hf-id="hf-ralp" class="tick" id="bat-t2"></div></div>ลดแสงหน้าจอ</div>
+          <div data-hf-id="hf-smyl" class="row"><div data-hf-id="hf-jhgu" class="box"><div data-hf-id="hf-obc4" class="tick" id="bat-t3"></div></div>ปิดเน็ต บลูทูธ ที่ไม่ใช้</div>
+        </div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#bat-world", { scale: 1 }, { scale: 1.08, duration: 11.2, ease: "none" }, 0);
+        tl.fromTo("#bat-phone", { y: 260, rotation: 4 }, { y: 0, rotation: 0, duration: 0.5, ease: "power3.out" }, 0);
+        tl.fromTo("#bat-card", { y: -700, rotation: -3 }, { y: 0, rotation: 0, duration: 0.45, ease: "back.out(1.5)" }, 0.4);
+        tl.fromTo("#bat-card", { x: 0 }, { x: -1100, duration: 0.3, ease: "power3.in", immediateRender: false }, 3.1);
+        tl.fromTo("#bat-stat", { x: -700 }, { x: 0, duration: 0.35, ease: "power3.out" }, 3.3);
+        tl.fromTo("#bat-meter", { x: -700 }, { x: 0, duration: 0.35, ease: "power3.out" }, 3.4);
+        const b = { v: 45 }, num = document.querySelector("#bat-num");
+        tl.fromTo(b, { v: 45 }, { v: 31, duration: 1.2, ease: "power2.inOut", onUpdate: () => { num.textContent = Math.round(b.v); } }, 3.6);
+        tl.fromTo("#bat-fill", { width: "45%" }, { width: "31%", duration: 1.2, ease: "power2.inOut" }, 3.6);
+        tl.fromTo("#bat-list", { y: 1500 }, { y: 0, duration: 0.4, ease: "back.out(1.3)" }, 6.2);
+        tl.fromTo("#bat-t1", { scale: 0 }, { scale: 1, duration: 0.25, ease: "back.out(2.4)" }, 6.7);
+        tl.fromTo("#bat-t2", { scale: 0 }, { scale: 1, duration: 0.25, ease: "back.out(2.4)" }, 7.4);
+        tl.fromTo("#bat-dim", { opacity: 0 }, { opacity: 0.55, duration: 0.5, ease: "power2.out" }, 7.4);
+        tl.fromTo("#bat-t3", { scale: 0 }, { scale: 1, duration: 0.25, ease: "back.out(2.4)" }, 9.3);
+        tl.fromTo("#bat-fill", { backgroundColor: "#e5383b" }, { backgroundColor: "#3fa66b", duration: 0.6 }, 9.6);
+        window.__timelines["scene-battery"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

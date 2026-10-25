@@ -1,0 +1,45 @@
+<!doctype html>
+<!-- Close-up: เจ้าโอ่ง growls at ป้าแดง's lit doorway (blurred behind). One shot, 2.4 s. -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #3a2a1c; }
+        #dog-bg { position: absolute; inset: -60px; filter: blur(10px);
+          background: repeating-linear-gradient(90deg, #6a482c 0 80px, #5a3c24 80px 86px); }
+        #dog-door { position: absolute; left: 640px; top: 260px; width: 380px; height: 900px; background: #f2d79a; box-shadow: 0 0 120px 40px rgba(255, 214, 140, 0.4); filter: blur(8px); }
+        #dog-aunt { left: 740px; top: 420px; width: 230px; height: 600px; filter: blur(9px); }
+        #dog-water { top: 1180px; height: 900px; }
+        #dog-face { position: absolute; left: -380px; top: 560px; width: 1300px; height: 894px; }
+        #dog-ring { position: absolute; left: 700px; top: 360px; width: 340px; height: 720px; border-radius: 170px; border: 8px dashed var(--red); }
+        #dog-chip { left: 140px; top: 330px; }
+        .dog-jamb { position: absolute; top: 220px; height: 960px; width: 40px; background: #1d1209; filter: blur(5px); }
+        #dog-lintel { position: absolute; left: 600px; top: 220px; width: 460px; height: 50px; background: #1d1209; filter: blur(5px); }
+        #dog-where { left: 560px; top: 130px; }
+      </style>
+      <div data-hf-id="hf-mdg2" id="root" data-composition-id="scene-dog" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-78nj" id="dog-bg" data-layout-allow-overflow data-layout-ignore></div>
+        <div data-hf-id="hf-zwdi" id="dog-door"></div>
+        <div data-hf-id="hf-wgzc" class="dog-jamb" style="left:604px"></div><div data-hf-id="hf-j8ff" class="dog-jamb" style="left:1020px"></div><div data-hf-id="hf-mbz6" id="dog-lintel"></div>
+        <svg data-hf-id="hf-o666" id="dog-aunt" class="who sil" viewBox="0 0 200 520"><use data-hf-id="hf-lswu" href="#auntie" /></svg>
+        <div data-hf-id="hf-k0yp" id="dog-water" class="flood" data-layout-allow-overflow></div>
+        <svg data-hf-id="hf-bg3k" id="dog-face" class="who" viewBox="0 0 320 220" data-layout-allow-overflow><use data-hf-id="hf-kyha" href="#dog-growl" /></svg>
+        <div data-hf-id="hf-jg5o" id="dog-ring"></div>
+        <div data-hf-id="hf-4tuq" id="dog-chip" class="chip">เจ้าโอ่ง · ขนตั้ง</div>
+        <div data-hf-id="hf-3vfk" id="dog-where" class="chip red">หน้าประตูบ้านป้าแดง</div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#dog-face", { x: -120, scale: 0.94 }, { x: 0, scale: 1, duration: 0.5, ease: "power3.out" }, 0);
+        tl.fromTo("#dog-face", { y: 0 }, { y: -10, duration: 0.12, ease: "power1.inOut", repeat: 9, yoyo: true }, 0.6);
+        tl.fromTo("#dog-door", { opacity: 0.7 }, { opacity: 1, duration: 2.4, ease: "none" }, 0);
+        tl.fromTo("#dog-ring", { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.35, ease: "back.out(2)" }, 0.8);
+        tl.fromTo("#dog-where", { y: -200 }, { y: 0, duration: 0.3, ease: "back.out(1.8)" }, 0.5);
+        tl.fromTo("#dog-chip", { x: -500 }, { x: 0, duration: 0.3, ease: "power3.out" }, 0.3);
+        window.__timelines["scene-dog"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

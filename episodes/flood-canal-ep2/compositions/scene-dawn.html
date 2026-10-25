@@ -1,0 +1,36 @@
+<!doctype html>
+<!-- Morning on the tin roof: empty, only the torch left lying there, glinting. 3.2 s, one shot. -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #f0b070; }
+        #dn-world { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 800px; }
+        #dn-sky { position: absolute; left: -200px; right: -200px; top: 0; height: 1000px; background: linear-gradient(180deg, #8a6aa0, #e89a78 60%, #ffd49a); }
+        #dn-sun { position: absolute; left: 340px; top: 560px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 240, 190, 1), rgba(255, 240, 190, 0) 70%); mix-blend-mode: screen; }
+        #dn-slab { position: absolute; left: 100px; top: 886px; width: 880px; height: 44px; background: repeating-linear-gradient(90deg, #8a8f9c 0 26px, #6f7482 26px 30px); }
+        #dn-wall { position: absolute; left: 120px; top: 930px; width: 840px; height: 100px; background: #5a4130; }
+        #dn-water { top: 1040px; height: 900px; background: linear-gradient(180deg, rgba(150, 125, 90, 0.92), rgba(90, 76, 54, 0.97)); }
+        #dn-torch { position: absolute; left: 500px; top: 852px; width: 90px; height: 28px; border-radius: 10px; background: #2a2d34; border: 3px solid #14161a; }
+        #dn-glint { position: absolute; left: 540px; top: 820px; width: 120px; height: 120px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 65%); mix-blend-mode: screen; }
+      </style>
+      <div data-hf-id="hf-o7o6" id="root" data-composition-id="scene-dawn" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-drk5" id="dn-world" data-layout-allow-overflow>
+          <div data-hf-id="hf-d7xi" id="dn-sky" data-layout-allow-overflow></div><div data-hf-id="hf-s64y" id="dn-sun"></div>
+          <div data-hf-id="hf-n19w" id="dn-wall"></div><div data-hf-id="hf-eogo" id="dn-slab"></div>
+          <div data-hf-id="hf-h2ny" id="dn-torch"></div><div data-hf-id="hf-badg" id="dn-glint"></div>
+          <div data-hf-id="hf-1piz" id="dn-water" class="flood" data-layout-allow-overflow></div>
+        </div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#dn-world", { scale: 1.3 }, { scale: 1.05, duration: 3.2, ease: "power1.out" }, 0);
+        tl.fromTo("#dn-sun", { y: 140, opacity: 0.5 }, { y: -20, opacity: 1, duration: 3.2, ease: "none" }, 0);
+        tl.fromTo("#dn-glint", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1.2, duration: 0.5, ease: "sine.inOut", repeat: 3, yoyo: true }, 0.8);
+        window.__timelines["scene-dawn"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

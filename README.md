@@ -12,7 +12,7 @@
 |---|---|
 | Node.js 22+ | สคริปต์ทั้งหมด และ HyperFrames (`npx`) |
 | ffmpeg + ffprobe (อยู่ใน PATH) | ตัดต่อเสียง วัดความดัง |
-| Python 3 + `pip install edge-tts google-genai` | เสียงพากย์ไทย: `edge-tts` = บริการออนไลน์ของ Microsoft (ไม่ต้องมีคีย์), `google-genai` = เสียง Gemini (ต้องมีคีย์ ดูหัวข้อ "เสียงพากย์") — ทั้งสองแบบต้องต่อเน็ต และข้อความพากย์จะถูกส่งไปที่บริการนั้น |
+| คีย์ ElevenLabs (ค่าเริ่มต้น) หรือ Python 3 + `pip install edge-tts google-genai` | เสียงพากย์ไทย: ElevenLabs (ต้องมีคีย์ ดูหัวข้อ "เสียงพากย์"), `edge-tts` = บริการออนไลน์ของ Microsoft (ไม่ต้องมีคีย์), `google-genai` = เสียง Gemini (ต้องมีคีย์) — ทุกแบบต้องต่อเน็ต และข้อความพากย์จะถูกส่งไปที่บริการนั้น |
 | Google Chrome | HyperFrames ใช้เรนเดอร์ |
 | Claude Code (แนะนำ) | เดินเวิร์กโฟลว์ให้อัตโนมัติ |
 
@@ -22,24 +22,45 @@
 npx hyperframes skills update
 ```
 
-## เสียงพากย์ (Gemini)
+## เสียงพากย์ (ElevenLabs เป็นค่าเริ่มต้น)
 
-ค่าเริ่มต้นใช้เสียง Gemini: **ชาย = Finn, หญิง = Leda** (กำหนดไว้ใน `voices` ของ `story.json`)
+ค่าเริ่มต้นใช้เสียง ElevenLabs: **ชาย = Vasko, หญิง = Jessica** (กำหนดไว้ใน `voices` ของ `story.json`)
 
-1. ขอ API key ฟรีที่ <https://aistudio.google.com/apikey>
-2. ก๊อป `.env.example` เป็น `.env` แล้วใส่คีย์: `GEMINI_API_KEY=คีย์ของคุณ` (`.env` อยู่ใน `.gitignore` ห้าม commit หรือแชร์ — ถ้าแชร์โปรเจกต์เป็น zip ให้ลบ `.env` ออกก่อน)
-3. `pip install google-genai`
+1. สร้าง API key ที่ <https://elevenlabs.io/app/settings/api-keys> เปิดสิทธิ์ **Text to Speech: Access** (ถ้าอยากให้สคริปต์หา voice id จากชื่อ เปิด **Voices: Read** เพิ่ม)
+2. ก๊อป `.env.example` เป็น `.env` แล้วใส่คีย์: `ELEVENLABS_API_KEY=คีย์ของคุณ` (`.env` อยู่ใน `.gitignore` ห้าม commit หรือแชร์)
+3. เสียง **Vasko** เป็นเสียงจาก Voice Library: เปิดหน้าเสียงนั้นแล้วกด "Add to my voices" แล้วคัดลอก voice id ใส่ใน `scripts/eleven-voices.json` (`"Vasko": "<id>"`) หรือรัน `npm run voices -- vasko` เพื่อค้นหา id (ต้องมีสิทธิ์ Voices: Read) ส่วน **Jessica** เป็นเสียงมาตรฐาน มี id ใส่ไว้ให้แล้ว (ตรวจให้แน่ใจว่าตรงกับบัญชีคุณ)
 
 ```json
 "voice": "male",
-"voices": { "male": "gemini:Finn", "female": "gemini:Leda" },
-"voiceStyle": "เล่าเรื่องด้วยน้ำเสียงปกติ เป็นธรรมชาติ ..."
+"voices": { "male": "eleven:Vasko", "female": "eleven:Jessica" },
+"voiceModel": "eleven_v3"
 ```
 
 - ช็อตที่อยากเปลี่ยนผู้พูด ใส่ `"voice": "female"` ในช็อตนั้น
-- `voiceStyle` คุมน้ำเสียง; `voiceRate`/`voicePitch` ใช้กับ edge-tts เท่านั้น
-- ระดับฟรีมีโควตาจำกัด ถ้าเต็มสคริปต์จะลองใหม่เอง หรือรอแล้วรัน `npm run voice` ซ้ำ
-- ไม่อยากใช้ Gemini: ตั้ง `"voice": "th-TH-NiwatNeural"` (หรือ `th-TH-PremwadeeNeural`) จะกลับไปใช้ edge-tts ซึ่งไม่ต้องมีคีย์
+- ตัวเลือกเสริม: `voiceModel` (ค่าเริ่มต้น `eleven_v3` ถ้าอ่านไทยไม่ดีให้ลองโมเดลอื่นของ ElevenLabs), `voiceLang` (เช่น `"th"`), `voiceSpeed`, `voiceSettings` (เช่น `{"stability":0.5}`)
+- เครดิตคิดตามจำนวนตัวอักษร สคริปต์ **เก็บแคชเสียงของแต่ละบรรทัด** (`assets/vo/cache`) ถ้าแก้บทแค่บรรทัดเดียว จะเสียเครดิตเฉพาะบรรทัดที่เปลี่ยน
+- ข้อความพากย์จะถูกส่งไปที่ ElevenLabs
+- ใช้ voice id ตรงๆ ได้ (ไม่ต้องเพิ่มใน `eleven-voices.json`): `"eleven:MHPwHxLx0nmGIb5Jnbly"` — ตัวอย่างจริงอยู่ที่ `episodes/flood-canal-ep2/story.json` (ผู้บรรยายชาย + ป้าแดงเสียงหญิง)
+
+### ใส่อารมณ์ให้แต่ละบรรทัด (`tone`, เฉพาะ `eleven_v3`)
+
+ใส่ `"tone"` ในช็อต สคริปต์จะส่งเป็นแท็กนำหน้าบรรทัด เช่น `"whispers, scared"` → `[whispers] [scared] บรรทัดพากย์` (แคปชั่นบนจอไม่เปลี่ยน) ตั้งค่าเริ่มต้นทั้งตอนได้ด้วย `"voiceTone"` ระดับบนสุด
+
+```json
+"voice": "male",
+"voices": { "male": "eleven:yq05eeRaHPMGuWTVpqeP", "female": "eleven:MHPwHxLx0nmGIb5Jnbly" },
+"voiceModel": "eleven_v3",
+"shots": [
+  { "scene": "call", "beats": 4, "voice": "female", "text": "“ต้น… ใช่ต้นไหมลูก”", "tone": "whispers, trembling" },
+  { "scene": "generator", "beats": 4, "text": "กฎข้อ 5\nปั่นไฟต้องอยู่[นอกอาคาร]", "tone": "urgent" },
+  { "scene": "dark", "beats": 4, "style": "red", "text": "ป้าแดง\n{ไม่เคยส่งสัญญาณ}", "tone": "whispers" }
+]
+```
+
+- แท็กที่ใช้ได้ดี: `whispers`, `softly`, `sad`, `scared`, `nervous`, `urgent`, `warm`, `relieved` (เป็นคำอังกฤษ ลองฟังก่อนใช้จริง ผลต่างกันตามเสียง)
+- แท็กหลายตัวทำให้เสียงช้าลงและมีช่วงหยุด บรรทัดอาจยาวเกินช็อต (`⚠ OVER`) ลดแท็กเหลือคำเดียว ย่อบทด้วย `"vo"` หรือเพิ่มจังหวะ
+- เสียงเดียวกันที่ใช้ `tone` ต่างกัน ลักษณะเสียงอาจต่างกันเล็กน้อย ถ้าอยากให้บรรทัดสองบรรทัดฟังเป็นคนเดียวกัน ใช้ `tone` เดียวกัน
+- ใช้เสียงอื่นได้: Gemini `"gemini:Finn"` (ต้อง `pip install google-genai` และ `GEMINI_API_KEY`) หรือ edge-tts `"th-TH-NiwatNeural"` (ฟรี ไม่ต้องมีคีย์ ต้อง `pip install edge-tts`)
 
 ## เริ่มเร็ว
 

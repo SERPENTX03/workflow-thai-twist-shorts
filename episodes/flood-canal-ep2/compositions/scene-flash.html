@@ -1,0 +1,52 @@
+<!doctype html>
+<!-- The torch on ป้าแดง's belt lights for the first time. 2.4 s, one shot. Three blinks at 0.3 / 0.65 / 1.0, a beam up into the dark,
+     a gold ring flaring each time. -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: var(--sky-0); }
+        #fl-world { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 540px 780px; }
+        #fl-sky { position: absolute; left: -200px; right: -200px; top: 0; height: 1000px; background: linear-gradient(180deg, var(--sky-0), var(--sky-1) 80%, #39405a); }
+        #fl-slab { position: absolute; left: 180px; top: 886px; width: 720px; height: 40px; background: repeating-linear-gradient(90deg, #6d727c 0 26px, #565b66 26px 30px); }
+        #fl-wall { position: absolute; left: 200px; top: 926px; width: 680px; height: 120px; background: #3c2a1d; }
+        #fl-water { top: 1000px; height: 1000px; }
+        #fl-aunt { left: 440px; top: 372px; width: 200px; height: 520px; --top: #b8443a; --skirt: #5a3f6e; --hair: #a4a4aa; }
+        #fl-torch { position: absolute; left: 574px; top: 650px; width: 18px; height: 62px; border-radius: 6px; background: #ffe9a0; border: 3px solid #14161a; }
+        #fl-beam { position: absolute; left: 540px; top: -300px; width: 400px; height: 980px; background: linear-gradient(0deg, rgba(255, 240, 180, 0.7), rgba(255, 240, 180, 0)); clip-path: polygon(40% 100%, 60% 100%, 100% 0, 0 0); mix-blend-mode: screen; opacity: 0; }
+        #fl-flare { position: absolute; left: 500px; top: 590px; width: 170px; height: 170px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 235, 150, 0.9), rgba(255, 235, 150, 0) 65%); mix-blend-mode: screen; opacity: 0; }
+        #fl-night { position: absolute; left: -200px; right: -200px; top: 0; height: 2200px; background: rgba(6, 10, 26, 0.3); }
+        #fl-chip { left: 560px; top: 260px; }
+      </style>
+      <div data-hf-id="hf-22my" id="root" data-composition-id="scene-flash" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-4701" id="fl-world" data-layout-allow-overflow>
+          <div data-hf-id="hf-pmxe" id="fl-sky" data-layout-allow-overflow></div>
+          <div data-hf-id="hf-9vbg" id="fl-wall"></div><div data-hf-id="hf-gi68" id="fl-slab"></div>
+          <div data-hf-id="hf-ol66" id="fl-beam" data-layout-allow-overflow></div>
+          <svg data-hf-id="hf-j224" id="fl-aunt" class="who" viewBox="0 0 200 520"><use data-hf-id="hf-ecku" href="#auntie" /></svg>
+          <div data-hf-id="hf-ueti" id="fl-torch"></div>
+          <div data-hf-id="hf-6qfo" id="fl-flare"></div>
+          <div data-hf-id="hf-4yoj" id="fl-water" class="flood" data-layout-allow-overflow></div>
+          <div data-hf-id="hf-rf37" id="fl-night" data-layout-allow-overflow></div>
+        </div>
+        <div data-hf-id="hf-cbl0" id="fl-chip" class="chip">ไฟฉาย · เปิดครั้งแรก</div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#fl-world", { scale: 1.5, x: -60, y: 100 }, { scale: 1.2, x: 0, y: 60, duration: 2.4, ease: "power1.out" }, 0);
+        [0.3, 0.65, 1.0].forEach((t, k) => {
+          const ir = k === 0 ? {} : { immediateRender: false };
+          tl.fromTo("#fl-beam", { opacity: 0 }, { opacity: 1, duration: 0.06, ease: "none", ...ir }, t);
+          tl.fromTo("#fl-flare", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1.4, duration: 0.18, ease: "power2.out", ...ir }, t);
+          tl.fromTo("#fl-beam", { opacity: 1 }, { opacity: 0, duration: 0.14, ease: "none", immediateRender: false }, t + 0.18);
+          tl.fromTo("#fl-flare", { opacity: 1 }, { opacity: 0, duration: 0.14, ease: "none", immediateRender: false }, t + 0.18);
+        });
+        tl.fromTo("#fl-beam", { opacity: 0 }, { opacity: 0.9, duration: 0.3, ease: "power2.out", immediateRender: false }, 1.4);
+        tl.fromTo("#fl-chip", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 0.5);
+        window.__timelines["scene-flash"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

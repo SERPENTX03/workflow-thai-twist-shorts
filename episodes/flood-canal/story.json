@@ -1,9 +1,9 @@
 {
   "title": "น้ำท่วมริมคลอง",
   "bpm": 75,
-  "voice": "th-TH-NiwatNeural",
-  "voiceRate": "-4%",
-  "voicePitch": "-4Hz",
+  "voice": "male",
+  "voices": { "male": "eleven:yq05eeRaHPMGuWTVpqeP", "female": "eleven:MYZYcGOqrkYQcwDunXl7" },
+  "voiceModel": "eleven_v3",
   "captionLook": "bold",
   "series": { "name": "น้ำท่วมริมคลอง", "ep": 1, "next": "สายจากปี 54" },
   "shots": [

@@ -1,0 +1,63 @@
+<!doctype html>
+<!-- Top-down plan of the temple hall. 8 s clip, three shots.
+     0: dots (people) head for the SIDE door. 2.4: HUD 02:00, flood water rises and covers the FRONT door.
+     5.6: dots stream out the side door; counter 127/127. -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #101a2c; }
+        #ex-hall { position: absolute; left: 150px; top: 300px; width: 640px; height: 700px; border: 14px solid #cfc4ad; background: #22314a; }
+        #ex-front { position: absolute; left: 380px; top: 984px; width: 160px; height: 44px; background: var(--gold); }
+        #ex-side { position: absolute; left: 776px; top: 560px; width: 44px; height: 160px; background: var(--ok); }
+        #ex-hill { position: absolute; left: 840px; top: 300px; width: 400px; height: 800px; background: #2d4a3a; }
+        #ex-svg { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+        #ex-water { top: 1000px; height: 1100px; }
+        #ex-hud { }
+        #ex-lab-f { left: 330px; top: 1050px; }
+        #ex-lab-s { left: 590px; top: 440px; }
+        #ex-count { left: 380px; top: 90px; width: 360px; }
+      </style>
+      <div data-hf-id="hf-r7ro" id="root" data-composition-id="scene-exit" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-jc2u" id="ex-hill"></div>
+        <div data-hf-id="hf-1nm6" id="ex-hall"></div>
+        <div data-hf-id="hf-samw" id="ex-front"></div><div data-hf-id="hf-j9lm" id="ex-side"></div>
+        <svg data-hf-id="hf-h5y0" id="ex-svg" viewBox="0 0 1080 1920"><g data-hf-id="hf-5921" id="ex-dots"></g></svg>
+        <div data-hf-id="hf-yot6" id="ex-water" class="flood" data-layout-allow-overflow></div>
+        <div data-hf-id="hf-lema" id="ex-hud" class="hud">02:00</div>
+        <div data-hf-id="hf-cto9" id="ex-lab-s" class="chip">ประตูข้าง</div>
+        <div data-hf-id="hf-6zt9" id="ex-lab-f" class="chip red">ประตูหน้า ปิด</div>
+        <div data-hf-id="hf-z57t" id="ex-count" class="stat"><div data-hf-id="hf-f0t9" class="stat-label">ออกมาแล้ว</div><div data-hf-id="hf-yeow"><span data-hf-id="hf-ob9q" id="ex-num" class="stat-num">0</span><span data-hf-id="hf-uyb2" class="stat-unit">/ 127 คน</span></div></div>
+      </div>
+      <script>
+        const g = document.querySelector("#ex-dots"), N = 28, NS = "http://www.w3.org/2000/svg";
+        for (let k = 0; k < N; k++) {
+          const c = document.createElementNS(NS, "circle");
+          c.setAttribute("id", "ex-d" + k); c.setAttribute("r", 14); c.setAttribute("fill", "#f6f2ea");
+          c.setAttribute("cx", 230 + (k % 7) * 70); c.setAttribute("cy", 380 + Math.floor(k / 7) * 130 + (k % 2) * 40);
+          g.appendChild(c);
+        }
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#ex-hud", { y: -220 }, { y: 0, duration: 0.35, ease: "back.out(1.8)" }, 2.3);
+        tl.fromTo("#ex-lab-s", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 0.3);
+        // shot 0 — everyone drifts toward the side door
+        for (let k = 0; k < N; k++) {
+          tl.fromTo("#ex-d" + k, { attr: { cx: 230 + (k % 7) * 70 } }, { attr: { cx: 600 + (k % 7) * 18, cy: 620 + (k % 4) * 24 }, duration: 2.0, ease: "power2.inOut" }, 0.2 + (k % 7) * 0.05);
+        }
+        // shot 1 — the water takes the front door
+        tl.fromTo("#ex-water", { y: 0 }, { y: -140, duration: 2.0, ease: "power2.inOut" }, 2.5);
+        tl.fromTo("#ex-lab-f", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 3.6);
+        // shot 2 — out through the side door, onto the hill
+        for (let k = 0; k < N; k++) {
+          tl.fromTo("#ex-d" + k, { attr: { cx: 600 + (k % 7) * 18 } }, { attr: { cx: 900 + (k % 7) * 40, cy: 520 + Math.floor(k / 7) * 60 }, duration: 1.4, ease: "power2.inOut", immediateRender: false }, 5.7 + k * 0.03);
+        }
+        const n = { v: 0 }, num = document.querySelector("#ex-num");
+        tl.fromTo("#ex-count", { x: -600 }, { x: 0, duration: 0.35, ease: "power3.out" }, 5.8);
+        tl.fromTo(n, { v: 0 }, { v: 127, duration: 1.6, ease: "power1.inOut", onUpdate: () => { num.textContent = Math.round(n.v); } }, 6.0);
+        window.__timelines["scene-exit"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

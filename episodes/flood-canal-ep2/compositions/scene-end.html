@@ -1,0 +1,40 @@
+<!doctype html>
+<!-- Final sting: ภูมิ's phone, missed call from "ต้น", date 14 ต.ค. 2554. 3.2 s, one shot. No next-episode card. -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #05070c; }
+        #en-glow { position: absolute; left: -100px; top: 100px; width: 1280px; height: 1300px; background: radial-gradient(circle, rgba(229, 56, 59, 0.22), rgba(229, 56, 59, 0) 60%); }
+        #en-phone { position: absolute; left: 260px; top: 200px; width: 560px; height: 1060px; border-radius: 70px; background: #11151d; border: 14px solid #2b313c; }
+        #en-scr { position: absolute; left: 22px; top: 22px; right: 22px; bottom: 22px; border-radius: 52px; background: linear-gradient(180deg, #1e2c46, #0f1626); color: var(--white); font-family: var(--font-ui); text-align: center; overflow: hidden; }
+        #en-time { font: 700 110px var(--font-display); margin-top: 90px; }
+        #en-date { font: 500 30px var(--font-ui); color: var(--mute); }
+        #en-notif { position: absolute; left: 30px; right: 30px; top: 420px; height: 230px; border-radius: 30px; background: rgba(246, 242, 234, 0.96); color: var(--ink); text-align: left; padding: 24px 30px; }
+        #en-n1 { font: 700 32px var(--font-ui); color: var(--red); }
+        #en-n2 { font: 700 60px var(--font-display); margin-top: 6px; }
+        #en-n3 { font: 500 32px var(--font-ui); color: rgba(24, 32, 46, 0.7); }
+        #en-chip { left: 270px; top: 120px; }
+      </style>
+      <div data-hf-id="hf-f25l" id="root" data-composition-id="scene-end" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-oi72" id="en-glow"></div>
+        <div data-hf-id="hf-yb67" id="en-phone"><div data-hf-id="hf-cyi7" id="en-scr">
+          <div data-hf-id="hf-kvkl" id="en-time">06:12</div><div data-hf-id="hf-jrxq" id="en-date">17 ต.ค. 2569</div>
+          <div data-hf-id="hf-tyut" id="en-notif"><div data-hf-id="hf-jwwu" id="en-n1">สายที่ไม่ได้รับ</div><div data-hf-id="hf-yaiq" id="en-n2">ต้น</div><div data-hf-id="hf-4zd3" id="en-n3">14 ต.ค. 2554 · 02:00</div></div>
+        </div></div>
+        <div data-hf-id="hf-r5bt" id="en-chip" class="chip red">ปี 2554</div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#en-phone", { y: 200, scale: 0.94 }, { y: 0, scale: 1, duration: 0.5, ease: "power3.out" }, 0);
+        tl.fromTo("#en-notif", { x: 700, opacity: 0 }, { x: 0, opacity: 1, duration: 0.4, ease: "power3.out" }, 0.5);
+        tl.fromTo("#en-glow", { opacity: 0.3 }, { opacity: 1, duration: 0.5, ease: "sine.inOut", repeat: 4, yoyo: true }, 0);
+        tl.fromTo("#en-phone", { x: 0 }, { x: 8, duration: 0.05, ease: "none", repeat: 5, yoyo: true, immediateRender: false }, 0.7);
+        tl.fromTo("#en-chip", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(2)" }, 0.9);
+        window.__timelines["scene-end"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

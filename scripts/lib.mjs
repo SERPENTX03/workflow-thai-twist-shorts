@@ -32,6 +32,8 @@ export function loadStory(dir) {
       text: s.text || '',
       vo: s.vo === undefined ? plain(s.text || '').replace(/\n/g, ' ').replace(/[“”"]/g, '') : s.vo,
       voLead: s.voLead ?? 0.12,
+      voice: s.voice,
+      tone: s.tone,
       cues: s.cues || [],
       mood: s.mood ?? 0.5,
       music: !!s.music,

@@ -10,6 +10,7 @@
     "new": "node scripts/new-episode.mjs",
     "build": "node scripts/build.mjs",
     "voice": "node scripts/voice.mjs",
+    "voices": "node scripts/eleven_voices.mjs",
     "score": "node scripts/score.mjs",
     "audio": "node scripts/audio.mjs",
     "check": "node scripts/check.mjs",
