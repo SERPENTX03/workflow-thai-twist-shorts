@@ -28,4 +28,4 @@ series/<name>.md                   series bible: cast, animal, world rules, epis
 
 ## Commands
 
-Thinking helpers live as project skills next to the workflow skill: `/twist-idea` (ช่วยคิดไอเดีย), `/twist-next` (ช่วยคิดตอนต่อไป), `/twist-hook` (ฮุก/ชื่อเรื่อง), `/twist-series` (วางซีรีส์), `/twist-ref` (วิเคราะห์คลิป ref), `/twist-doctor` (ตรวจเรื่องก่อนวาด), `/twist-cast` (ออกแบบตัวละครสไตล์ประจำช่อง; คีย์เวิร์ด "ตัวเอกของฉัน" = ลุคส่วนตัวของเจ้าของโปรเจกต์ ใช้เมื่อสั่งเท่านั้น). They end at an approved outline or a report; building always goes through `thai-twist-short`.
+Thinking helpers live as project skills next to the workflow skill: `/twist-idea` (ช่วยคิดไอเดีย), `/twist-next` (ช่วยคิดตอนต่อไป), `/twist-hook` (ฮุก/ชื่อเรื่อง), `/twist-series` (วางซีรีส์), `/twist-ref` (วิเคราะห์คลิป ref), `/twist-doctor` (ตรวจเรื่องก่อนวาด), `/twist-cast` (ออกแบบตัวละครสไตล์ประจำช่อง). They end at an approved outline or a report; building always goes through `thai-twist-short`.

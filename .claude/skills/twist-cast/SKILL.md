@@ -1,7 +1,7 @@
 ---
 name: twist-cast
-description: Design new characters (people and pets) for a Thai twist-shorts story in the project's flat 2D house style — shared cast.svg symbols, relative heights, one trackable trait per character, pet frame. Use when the user says ออกแบบตัวละคร, สร้างตัวละครใหม่, เพิ่มสัตว์เลี้ยง, ตัวละครสไตล์เดิม, or /twist-cast. Also the keyword "ตัวเอกของฉัน" / "my-hero" = use the owner's personal `hero` look.
-argument-hint: "[บทบาท/ลักษณะตัวละคร เช่น 'ครูใหญ่ใส่แว่น' หรือ 'ตัวเอกของฉัน']"
+description: Design new characters (people and pets) for a Thai twist-shorts story in the project's flat 2D house style — shared cast.svg symbols, relative heights, one trackable trait per character, pet frame. Use when the user says ออกแบบตัวละคร, สร้างตัวละครใหม่, เพิ่มสัตว์เลี้ยง, ตัวละครสไตล์เดิม, or /twist-cast.
+argument-hint: "[บทบาท/ลักษณะตัวละคร เช่น 'ครูใหญ่ใส่แว่น']"
 ---
 
 # ออกแบบตัวละคร (สไตล์ประจำช่อง)
@@ -25,10 +25,3 @@ Read `references/art-direction.md` → *Cast rules*, and `template/assets/kit/ca
 4. Record the character in `series/<name>.md` (name, height, trait, symbol id, variables) if the story is a series.
 5. Build and snapshot (`npm run build -- episodes/<slug>`, then `npx hyperframes snapshot --at …`) and look at the frames.
 
-## Keyword: "ตัวเอกของฉัน" / "my-hero"
-
-`hero` in `cast.svg` is the **owner's personal protagonist** (skinhead with a straight hairline, olive streak-camo jacket, grey fleece with cream hood, navy striped tee, white-edged pack straps, orange roll as the one accent). It is **not the default lead**.
-
-- Use `hero` **only** when the user says "ตัวเอกของฉัน", "my-hero" or names it explicitly. Otherwise draw the lead from the house style above (or `man`) and never default to `hero`.
-- The look is a *style reference*, not a fixed model: for other stories, reuse its recipe (layered clothes, one bright accent, pack/prop that says "survival") with different hair, colours and trait.
-- The lead's clothes may be adapted to the story (e.g. a raincoat in a flood episode) while keeping the hairstyle and the accent.

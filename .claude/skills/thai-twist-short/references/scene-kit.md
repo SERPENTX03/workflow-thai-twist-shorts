@@ -64,9 +64,12 @@ Start by copying the closest example (`scene-example-room.html`, `scene-example-
 | `scene-example-map.html` | top-down map, hollow dot, dashed paths |
 | `scene-example-news.html` | evidence card with blur-to-sharp photo and red ring |
 | `scene-example-next.html` | ตอนต่อไป end card; all text lands by 1.0 s so it is read for ≥ 2 s |
-| `scene-example-cast.html` | dusk line-up: `hero` + `dog-patch`, `beagle`, `cat-orange`, `cat-black` (300×340 pet frame), relative heights, staggered pop-in, `.tag` labels |
+| `scene-example-poses.html` | hand poses + grip props (offer + coin, hold + glass, pocket + raise) — the one-hand rule in practice, see `hands-poses.md` |
+| `scene-example-cast.html` | dusk line-up: `man` + `dog-patch`, `beagle`, `cat-orange`, `cat-black` (300×340 pet frame), relative heights, staggered pop-in, `.tag` labels |
 
 Cast member: `<svg class="who" viewBox="0 0 200 520"><use href="#man-wide" /></svg>` — symbols: `man`, `man-wide`, `man-raise`, `woman`, `elder`, `raincoat` (hooded lead, `--coat`). Animal companion: `dog`, `dog-growl` use their own frame, `viewBox="0 0 320 220"` (side view facing right, `--fur` / `--fur-patch`); flip with `scaleX(-1)` on a wrapper.
+
+**Hands:** never draw a hand beside a resting arm. Add `arm-l-off` / `arm-r-off` to the `<svg class="who">` and layer a pose arm + grip prop — see `hands-poses.md`.
 
 ## Gotchas found while building this kit (all verified)
 

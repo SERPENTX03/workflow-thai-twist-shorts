@@ -180,12 +180,19 @@
 /* ---------- cast (assets/kit/cast.svg) ---------- */
 .who { position: absolute; width: 200px; height: 520px; overflow: visible; }
 /* the twist tool: same figure, no features — a shadow, a reflection, a ghost */
-.sil {
+.sil.sil, .sil {
   --skin: #05070b; --skin-d: #05070b; --hair: #05070b; --shirt: #05070b; --pants: #05070b;
   --top: #05070b; --skirt: #05070b; --exo: #05070b; --sarong: #05070b; --shoe: #05070b;
   --eye: #05070b; --eye-white: #05070b; --hair-old: #05070b; --band: #05070b;
-  --coat: #05070b; --coat-d: #05070b; --fur: #05070b; --fur-patch: #05070b; --nose: #05070b;
+  --sleeve: #05070b; --coat: #05070b; --coat-d: #05070b; --fur: #05070b; --fur-patch: #05070b; --nose: #05070b;
 }
+/* hand poses (cast.svg, "Pose library"): hide the resting arm, layer a pose arm on top; c-* = sleeve colour */
+.arm-l-off { --arm-l-rest: none; }
+.arm-r-off { --arm-r-rest: none; }
+.c-man { --sleeve: var(--shirt, #2f5f8f); }
+.c-woman, .c-auntie { --sleeve: var(--top, #d9c9a8); }
+.c-raincoat { --sleeve: var(--coat, #f2c230); }
+.c-elder { --sleeve: var(--exo, #e9e4d6); }
 /* someone who casts a shadow is alive; the protagonist never gets one */
 .shadow-blob {
   position: absolute;

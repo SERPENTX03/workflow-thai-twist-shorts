@@ -67,6 +67,7 @@ The commands stop at an approved outline or a report; building still follows the
 | `references/story-json.md` | writing `story.json` — every field, cue types, timing math |
 | `references/art-direction.md` | choosing palette, type, framing, camera, the cast, what is banned |
 | `references/scene-kit.md` | building a scene file — kit classes, cast sprite, example scenes, HyperFrames gotchas found in this repo |
+| `references/hands-poses.md` | drawing any hand, gesture, hand-over or held object — one-hand rule, pose library, grip props |
 | `references/audio.md` | voice, score, SFX cues, ducking, loudness |
 | `references/review.md` | the contact-sheet scoring loop and the fix list |
 
