@@ -67,9 +67,13 @@ Start by copying the closest example (`scene-example-room.html`, `scene-example-
 | `scene-example-poses.html` | hand poses + grip props (offer + coin, hold + glass, pocket + raise) — the one-hand rule in practice, see `hands-poses.md` |
 | `scene-example-cast.html` | dusk line-up: `man` + `dog-patch`, `beagle`, `cat-orange`, `cat-black` (300×340 pet frame), relative heights, staggered pop-in, `.tag` labels |
 
-Cast member: `<svg class="who" viewBox="0 0 200 520"><use href="#man-wide" /></svg>` — symbols: `man`, `man-wide`, `man-raise`, `woman`, `elder`, `raincoat` (hooded lead, `--coat`). Animal companion: `dog`, `dog-growl` use their own frame, `viewBox="0 0 320 220"` (side view facing right, `--fur` / `--fur-patch`); flip with `scaleX(-1)` on a wrapper.
+Cast member: `<svg class="who" viewBox="0 0 200 520"><use href="#man-wide" /></svg>` — symbols: `man`, `man-wide`, `man-raise`, `woman`, `elder`, `raincoat` (hooded lead, `--coat`). Animal companions (`dog-patch`, `beagle`, `cat-orange`, `cat-black`) use the 300×340 pet frame, `viewBox="0 0 300 340"`; the old side-view `dog` / `dog-growl` were removed from the template (older episodes keep their own copy).
 
 **Hands:** never draw a hand beside a resting arm. Add `arm-l-off` / `arm-r-off` to the `<svg class="who">` and layer a pose arm + grip prop — see `hands-poses.md`.
+
+**Library:** body poses, kids, crowd, accessories, talk mouths, emotion marks, props, icons and set pieces are ready in `cast.svg` — see `cast-library.md` and `npm run gallery` before drawing anything new.
+
+**Faces (moods):** `face-off` on the svg hides the neutral face, then layer one of `face-happy laugh sad cry angry scared shock worried smirk tired hollow` right after the character `<use>`: `<svg class="who c-man face-off" viewBox="0 0 200 520"><use href="#man"/><use href="#face-angry"/></svg>`. Fits man, man-wide, raincoat, elder as is; for woman and auntie add `transform="translate(0 4)"`. One face per figure per shot; change mood on a cut or a beat. `hollow` (blank black eyes) is for ghosts and the twist frame. See all of them with `npm run gallery`.
 
 ## Gotchas found while building this kit (all verified)
 

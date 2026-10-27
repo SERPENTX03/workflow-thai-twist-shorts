@@ -72,8 +72,9 @@ Arc: open bright or warm → drift darker each act → the reveal is the darkest
 
 - Characters come from `assets/kit/cast.svg` (`man`, `man-wide`, `man-raise`, `woman`, `elder`). Add new symbols there (students, an animal companion, a creature), same frame convention, colours through CSS variables.
 - **Prototype 1 cast** (design canvas https://claude.ai/artifact/TuLAda3PXVngzNaWVrjR1S): pets `cat-black`, `cat-orange`, `beagle`, `dog-patch` (300×340 frame; the old `dog` stays for the temple dog in flood-canal). Share one look: big round head, dot or round glossy eyes, soft pink cheeks.
-- **Relative height**: draw people at ≈ cm × 2.6 px — man 170 (442 px), raincoat 165, elder 160, woman 158, auntie 150 (shortest). Pets at the same scale: cat 150 px, beagle 205, dog-patch 225. Never stretch every character to one height.
+- **Relative height**: draw people at ≈ cm × 2.6 px — man 170 (442 px), raincoat 165, elder 160, woman 158, auntie 150, student 165, kid / kid-girl 120 (312 px, own 200×420 frame). Pets at the same scale: cat 150 px, beagle 205, dog-patch 225. Never stretch every character to one height.
 - **Hands (hard rule):** one arm = one sleeve + one hand; hide the resting arm before posing it; use the pose library and grip props. Full rules, anchors and checklist: `hands-poses.md`.
+- **Faces:** pick the mood from the face library (`face-*` in `cast.svg`, gallery: `npm run gallery`); hide the neutral face with `face-off` first — never draw a second pair of eyes over it. Match the mood to the caption line; `hollow` is saved for the turn.
 - Give each named character **one trackable trait** (long sleeves, cap, glasses) — it doubles as a clue device.
 - The animal companion appears in at least 3 shots and reacts before the humans do.
 - The living cast a `.shadow-blob`; a ghost protagonist never does.

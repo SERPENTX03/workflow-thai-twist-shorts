@@ -17,7 +17,7 @@ Read before drawing any shot where a hand does something (hand over, hold, point
 
 ## Pose library (`template/assets/kit/cast.svg`, "Pose library")
 
-Frame 200 × 520. Use `viewBox="0 0 200 520"`, `class="who c-<symbol> arm-r-off"` (set `c-man`, `c-woman`, `c-auntie`, `c-raincoat`, `c-elder` — it sets the sleeve colour).
+Frame 200 × 520. Use `viewBox="0 0 200 520"`, `class="who c-<symbol> arm-r-off"` (set `c-man`, `c-woman`, `c-auntie`, `c-raincoat`, `c-elder`, `c-student`, `c-kid`, `c-kid-girl` — it sets the sleeve colour).
 
 | Pose | Symbols | Hand anchor r / l | Use for |
 |---|---|---|---|
@@ -27,8 +27,9 @@ Frame 200 × 520. Use `viewBox="0 0 200 520"`, `class="who c-<symbol> arm-r-off"
 | raise | `arm-r-raise` `arm-l-raise` | (190,110) / (10,110) | wave, stop, ask, shout |
 | pocket | `arm-r-pocket` `arm-l-pocket` | hand hidden | hand in pocket, hiding a hand (a clue device) |
 | rest | (default arm) | — | nothing to do |
+| carry | `arm-r-carry` + `arm-l-carry` | (150,262) / (50,262) | both hands on one big object: `prop-box` at (100,262) draws both hands |
 
-Grip props: `prop-glass`, `prop-coin`, `prop-phone`, `prop-paper`, `prop-key`, `prop-flashlight` (origin = hand centre).
+Grip props (origin = hand centre): `prop-glass`, `-coin`, `-phone`, `-paper`, `-key`, `-flashlight`, `-bottle`, `-radio`, `-candle`, `-map`, `-rope`, `-sack` (hangs below the hand), `-bowl`, `-bandage`. Accessories that sit on a hand (`acc-watch`, `acc-hand-bandage`) use the same anchors — see `cast-library.md`.
 
 Example (a woman hands a coin; a man sets a glass down) → `template/compositions/scene-example-poses.html`.
 
