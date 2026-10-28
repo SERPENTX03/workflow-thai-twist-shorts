@@ -1,0 +1,235 @@
+/* เที่ยวสุดท้าย หนึ่งล้านบาท (the last ride) — story kit styles. Link after kit.css:
+     <link rel="stylesheet" href="assets/kit/kit.css" />
+     <link rel="stylesheet" href="assets/kit/stories/last-ride.css" />
+   SVG pieces live in stories/last-ride.svg (ids lr-*). Every class here starts with lr- (or c-lr- for sleeves).
+   How-to: .claude/skills/thai-twist-short/references/last-ride.md */
+
+:root {
+  /* palette: navy, blue-grey, muddy brown, cream, warm lamp */
+  --lr-navy: #1f2a44;
+  --lr-slate: #5d6f82;
+  --lr-mud: #6e5a48;
+  --lr-cream: #e8dcc3;
+  --lr-warm: #ffcf8a;
+
+  /* cast */
+  --lr-ek-shirt: #6e5a48;  --lr-ek-collar: #85705c;  --lr-ek-pants: #3d434c;
+  --lr-cap-navy: #1f2a44;  --lr-cap-brim: #18213a;   --lr-cap-patch: #e8dcc3;
+  --lr-chan-shirt: #6f7d6a; --lr-chan-collar: #5d6a59; --lr-chan-pants: #4a3528; --lr-chan-hair: #a8aaac; --lr-chan-brow: #8d8f91;
+  --lr-mom-top: #6f8aa6;   --lr-mom-skirt: #2c3442;
+  --lr-girl-dress: #e3d39c; --lr-clip: #c4a650;
+  --lr-wife-top: #9a5544;  --lr-wife-pants: #2c3138;
+  --lr-son-shirt: #5f6f4f; --lr-son-shorts: #4a4436;
+
+  /* truck */
+  --lr-cab: #d6c9ac;  --lr-box: #7d8fa0;  --lr-door: #73859a;  --lr-door-in: #5d6d7f;
+  --lr-glass: #27364c; --lr-tail: #8e2b25; --lr-lens: #9aa3ad;
+
+  /* props */
+  --lr-doll: #e8dcc3; --lr-key-tag: #a9844c; --lr-phone-case: #1d2433; --lr-phone-glow: #8fb8e8;
+}
+
+/* ---------- figure sleeve classes (pose arms take the shirt colour; short sleeves show skin forearms) ---------- */
+.c-lr-ek   { --sleeve: var(--lr-ek-shirt);   --forearm: var(--skin); }
+.c-lr-chan { --sleeve: var(--lr-chan-shirt); --brow: var(--lr-chan-brow); }
+.c-lr-mom  { --sleeve: var(--lr-mom-top); }
+.c-lr-girl { --sleeve: var(--lr-girl-dress); --forearm: var(--skin); }
+.c-lr-wife { --sleeve: var(--lr-wife-top); }
+.c-lr-son  { --sleeve: var(--lr-son-shirt);  --forearm: var(--skin); }
+
+/* ---------- states ---------- */
+/* Ek without the built-in cap (to layer a face first, then lr-ek-cap on top, or to knock the cap off) */
+.lr-no-cap { --lr-cap: none; }
+/* drive hands without the watch */
+.lr-no-watch { --lr-watch: none; }
+/* the reveal: soaked and pale (mother, girl, doll). Hair clumps, wet patches, a few drops — no blood, no wounds. */
+.lr-wet {
+  --lr-wet: inline;
+  --skin: #cdd5d3; --skin-d: #a8b3b2; --blush: #9fb0b5;
+  --lr-mom-top: #4c6278; --lr-mom-skirt: #1f2630;
+  --lr-girl-dress: #b9ad80; --lr-doll: #c5baa0;
+}
+/* Ek after the second twist: same figure, colour drained and a little light. Use only at the reveal. */
+.lr-spirit {
+  --skin: #c8d1d4; --skin-d: #a3afb4;
+  --lr-ek-shirt: #7a7c7c; --lr-ek-collar: #8d9090; --lr-ek-pants: #555c66;
+  --lr-cap-navy: #3b4660; --lr-cap-brim: #2f3850;
+  filter: saturate(.5) brightness(1.06);
+  opacity: .9;
+}
+/* a thin rim light so a figure separates from a night set (warm right edge, cool left edge) */
+.lr-rim { filter: drop-shadow(3px 0 0 rgba(255, 207, 138, .5)) drop-shadow(-3px 0 0 rgba(140, 170, 210, .4)); }
+.lr-spirit.lr-rim { filter: saturate(.5) brightness(1.06) drop-shadow(0 0 6px rgba(190, 220, 235, .55)); }
+
+/* watch */
+.lr-cracked { --lr-crack: inline; }
+
+/* truck (on the svg that holds lr-truck-side / lr-truck-rear) */
+.lr-lights-on { --lr-beam: inline; --lr-lens: #ffe9a8; }
+.lr-no-box    { --lr-box-on: none; }
+.lr-damaged   { --lr-dmg: inline; }
+.lr-doors-open { --lr-doors-shut: none; --lr-doors-open: inline; }
+.lr-prints    { --lr-prints-on: inline; }
+
+/* the shared silhouette look also blacks out this kit's figures */
+.sil {
+  --lr-ek-shirt: #05070b; --lr-ek-collar: #05070b; --lr-ek-pants: #05070b; --lr-cap-navy: #05070b; --lr-cap-brim: #05070b; --lr-cap-patch: #05070b;
+  --lr-chan-shirt: #05070b; --lr-chan-collar: #05070b; --lr-chan-pants: #05070b; --lr-chan-hair: #05070b; --lr-chan-brow: #05070b;
+  --lr-mom-top: #05070b; --lr-mom-skirt: #05070b; --lr-girl-dress: #05070b; --lr-clip: #05070b;
+  --lr-wife-top: #05070b; --lr-wife-pants: #05070b; --lr-son-shirt: #05070b; --lr-son-shorts: #05070b;
+}
+
+/* ================= HTML props: text stays editable ================= */
+
+/* ---------- phone close-up: one handset, four screens. <div class="lr-phone" data-screen="deposit|call-chan|call-wife|voice"> ---------- */
+.lr-phone {
+  position: absolute; width: 420px; height: 860px; box-sizing: border-box;
+  border-radius: 58px; background: var(--lr-phone-case); box-shadow: inset 0 0 0 4px rgba(255, 255, 255, .07);
+  font-family: var(--font-ui); color: #f1ede4;
+}
+.lr-phone-screen { position: absolute; inset: 18px; border-radius: 42px; overflow: hidden; background: #0e1420; }
+.lr-status { position: absolute; z-index: 2; left: 30px; right: 30px; top: 18px; display: flex; justify-content: space-between; align-items: center; font: 700 28px/1 var(--font-ui); color: #c9d2e0; }
+.lr-status i { width: 44px; height: 20px; border-radius: 5px; border: 3px solid #c9d2e0; box-sizing: border-box; position: relative; }
+.lr-status i::after { content: ""; position: absolute; left: 3px; top: 3px; bottom: 3px; width: 55%; background: #c9d2e0; border-radius: 2px; }
+.lr-screen { display: none; position: absolute; inset: 0; flex-direction: column; align-items: center; text-align: center; padding: 96px 30px 40px; box-sizing: border-box; gap: 14px; }
+.lr-phone[data-screen="deposit"]   .lr-screen--deposit,
+.lr-phone[data-screen="call-chan"] .lr-screen--call-chan,
+.lr-phone[data-screen="call-wife"] .lr-screen--call-wife,
+.lr-phone[data-screen="voice"]     .lr-screen--voice { display: flex; }
+
+/* bank deposit */
+.lr-screen--deposit { background: linear-gradient(180deg, #13233a, #0e1420 60%); }
+.lr-bank-app { font-size: 28px; color: #9fb0c4; }
+.lr-bank-icon { width: 120px; height: 120px; margin-top: 30px; border-radius: 50%; background: #2f6b4a; display: grid; place-items: center; font: 700 64px/1 var(--font-display); color: #e8f5ec; }
+.lr-bank-label { margin-top: 10px; font: 700 40px/1.2 var(--font-ui); color: #e8f5ec; }
+.lr-bank-amount { font: 700 58px/1.1 var(--font-display); color: #8fd18b; letter-spacing: -1px; }
+.lr-bank-unit { font: 700 34px/1 var(--font-ui); color: #8fd18b; }
+.lr-bank-from { margin-top: 26px; font-size: 30px; color: #f1ede4; }
+.lr-bank-time { font-size: 28px; color: #9fb0c4; }
+
+/* calls */
+.lr-screen--call-chan, .lr-screen--call-wife { background: linear-gradient(180deg, #1c2a40, #0e1420); }
+.lr-call-sub { margin-top: 40px; font-size: 30px; color: #9fb0c4; }
+.lr-call-avatar { width: 190px; height: 190px; margin-top: 20px; border-radius: 50%; display: grid; place-items: center; font: 700 88px/1 var(--font-display); background: #5d6f82; color: #f1ede4; }
+.lr-screen--call-wife .lr-call-avatar { background: #9a5544; }
+.lr-call-name { margin-top: 18px; font: 700 56px/1.1 var(--font-display); }
+.lr-call-buttons { margin-top: auto; width: 100%; display: flex; justify-content: space-around; }
+.lr-call-btn { display: flex; flex-direction: column; align-items: center; gap: 10px; font-size: 28px; color: #c9d2e0; }
+.lr-call-btn b { width: 112px; height: 112px; border-radius: 50%; display: grid; place-items: center; background: #c0392b; }
+.lr-call-btn.is-accept b { background: #2f8a55; }
+.lr-call-btn svg { width: 54px; height: 54px; }
+
+/* voice message */
+.lr-screen--voice { background: #121a27; }
+.lr-voice-head { margin-top: 30px; font: 700 40px/1.2 var(--font-display); }
+.lr-voice-from { font-size: 30px; color: #9fb0c4; }
+.lr-wave { position: relative; width: 340px; height: 120px; margin-top: 70px; }
+.lr-wave-bars { position: absolute; left: 0; top: 0; width: 340px; height: 120px; display: flex; align-items: center; justify-content: space-between; }
+.lr-wave-bars span { width: 8px; border-radius: 4px; background: #4a5a70; }
+.lr-wave-played { position: absolute; left: 0; top: 0; height: 120px; width: calc(var(--lr-progress, .35) * 340px); overflow: hidden; }
+.lr-wave-played .lr-wave-bars span { background: var(--lr-warm); }
+.lr-voice-time { margin-top: 18px; font: 700 30px/1 var(--font-ui); color: #c9d2e0; }
+.lr-voice-play { margin-top: auto; width: 128px; height: 128px; border-radius: 50%; background: var(--lr-warm); display: flex; align-items: center; justify-content: center; gap: 16px; }
+.lr-voice-play i { width: 14px; height: 48px; border-radius: 4px; background: #121a27; }
+
+/* ---------- handover ledger (สมุดส่งมอบรถ): <div class="lr-ledger"> closed, add is-open for the spread ---------- */
+.lr-ledger { position: absolute; width: 520px; height: 700px; font-family: var(--font-ui); color: #3b2c1c; }
+.lr-ledger.is-open { width: 1040px; }
+.lr-ledger-cover { position: absolute; inset: 0; border-radius: 10px 18px 18px 10px; background: var(--lr-ledger-cover, #6b4f36); box-shadow: inset 22px 0 0 rgba(0, 0, 0, .2); }
+.lr-ledger-cover::after { content: ""; position: absolute; right: 0; bottom: 0; width: 70px; height: 70px; border-radius: 0 0 18px 0; background: linear-gradient(135deg, transparent 50%, rgba(255, 255, 255, .12) 50%); }
+.lr-ledger-label { position: absolute; left: 90px; right: 56px; top: 180px; padding: 26px 18px; background: var(--lr-cream); border: 4px solid #4b3826; text-align: center; }
+.lr-ledger-label b { display: block; font: 700 44px/1.2 var(--font-display); }
+.lr-ledger-label span { display: block; margin-top: 8px; font-size: 28px; }
+.lr-ledger-spread { display: none; position: absolute; inset: 0; padding: 14px; box-sizing: border-box; border-radius: 16px; background: var(--lr-ledger-cover, #6b4f36); }
+.lr-ledger.is-open .lr-ledger-cover { display: none; }
+.lr-ledger.is-open .lr-ledger-spread { display: flex; }
+.lr-page { flex: 1; position: relative; padding: 34px 32px; background-color: #efe5cc;
+  background-image: repeating-linear-gradient(180deg, transparent 0 62px, rgba(90, 70, 50, .22) 62px 64px); background-position: 0 102px; }
+.lr-page + .lr-page { box-shadow: inset 22px 0 18px -16px rgba(0, 0, 0, .35); }
+.lr-page-title { font: 700 32px/40px var(--font-display); margin-bottom: 26px; }
+.lr-row { display: flex; justify-content: space-between; align-items: baseline; font-size: 34px; line-height: 64px; }
+.lr-row small { font-size: 28px; color: #6b5a44; }
+.lr-row.is-struck b { text-decoration: line-through; text-decoration-thickness: 4px; text-decoration-color: #8a2a22; color: #7a6a55; }
+.lr-row.is-new b { color: #1f2a44; }
+.lr-sign { display: block; width: 300px; height: 80px; margin: 8px 0 0 20px; }
+.lr-sign path { fill: none; stroke: #1f2a44; stroke-width: 4; stroke-linecap: round; }
+
+/* ================= landscape film (story.json "format": "landscape") — used with last-ride.js ================= */
+/* one shot instance; LR.run shows it at its start and hides it at its end */
+.lr-shot { position: absolute; inset: 0; overflow: hidden; opacity: 0; }
+.lr-cam { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.lr-fade { position: absolute; inset: 0; background: #000; opacity: 0; pointer-events: none; }
+.lr-layer { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: visible; }
+.lr-truck { position: absolute; overflow: visible; }
+.lr-night { position: absolute; inset: 0; background: rgba(6, 10, 26, .38); pointer-events: none; }
+.lr-warm { position: absolute; inset: 0; background: radial-gradient(ellipse at 40% 55%, rgba(255, 196, 120, .22), rgba(0, 0, 0, 0) 60%); pointer-events: none; }
+
+/* the two vehicles never share a colour: the box truck is cream all over (as the script says), Ek's own pickup is rust red */
+.lr-cream-box { --lr-cab: #d6c9ac; --lr-box: #d2c4a3; --lr-door: #c9bb98; --lr-door-in: #a39478; --lr-in-side: #2a2a2c; }
+.lr-own { --lr-cab: #8f4a3c; --lr-cab-dent: #6e382d; --lr-glass: #24303f; }
+:root { --lr-own-cab: #8f4a3c; --lr-rope: #3d8fd1; }
+
+/* phone: extra screens used by LR.phone (lr-on shows a screen without data-screen) */
+.lr-screen.lr-on { display: flex; }
+.lr-call-time { margin-top: 10px; font: 700 34px/1 var(--font-ui); color: #9fd0a8; }
+.lr-dial-b { display: none; color: #e7a49c; }
+.lr-phone.is-unanswered .lr-dial-a { display: none; }
+.lr-phone.is-unanswered .lr-dial-b { display: block; }
+.lr-screen--slip { background: linear-gradient(180deg, #e9efe9, #d9e3dc); color: #1d2a22; padding-top: 100px; }
+.lr-slip-ok { width: 110px; height: 110px; border-radius: 50%; background: #2f8a55; color: #fff; display: grid; place-items: center; font: 700 64px/1 var(--font-display); }
+.lr-slip-title { font: 700 40px/1.2 var(--font-display); margin-top: 6px; }
+.lr-slip-amount { font: 700 64px/1.05 var(--font-display); color: #2f8a55; margin-top: 10px; }
+.lr-slip-unit { font: 700 32px/1 var(--font-ui); color: #2f8a55; }
+.lr-slip-row { width: 100%; display: flex; flex-direction: column; align-items: center; margin-top: 14px; font-size: 28px; color: #4a5a50; }
+.lr-slip-row b { font: 700 32px/1.25 var(--font-ui); color: #1d2a22; }
+.lr-slip-to { padding: 10px 0; border-top: 3px dashed rgba(29, 42, 34, .25); border-bottom: 3px dashed rgba(29, 42, 34, .25); }
+.lr-screen--chat { background: #e8e2d6; color: #1d2433; padding: 70px 18px 24px; gap: 14px; align-items: stretch; text-align: left; justify-content: flex-start; }
+.lr-chat-head { display: flex; align-items: center; gap: 14px; font: 700 34px/1 var(--font-display); padding: 16px 8px 18px; border-bottom: 2px solid rgba(0, 0, 0, .1); }
+.lr-chat-head i { width: 58px; height: 58px; border-radius: 50%; background: #9a5544; color: #fff; display: grid; place-items: center; font-style: normal; font-size: 30px; }
+.lr-chat-head i.lr-chan-dot { background: #5d6f82; }
+.lr-msg { max-width: 82%; border-radius: 22px; padding: 14px 20px; font: 500 30px/1.35 var(--font-ui); position: relative; }
+.lr-in { align-self: flex-start; background: #fff; border-top-left-radius: 6px; }
+.lr-out { align-self: flex-end; background: #c9e7b8; border-top-right-radius: 6px; padding-right: 54px; }
+.lr-photo { padding: 10px; display: flex; gap: 10px; align-items: flex-end; background: #fff; }
+.lr-bill { width: 170px; height: 200px; background: #f6f3ea; border: 2px solid #d9d2c0; border-radius: 6px; display: flex; flex-direction: column; gap: 6px; padding: 12px; box-sizing: border-box; font-size: 28px; line-height: 1.1; }
+.lr-bill b { font: 700 28px/1.1 var(--font-ui); }
+.lr-bill span { color: #b03a2e; font-size: 28px; }
+.lr-bill em { font-style: normal; font: 700 30px/1 var(--font-display); margin-top: auto; }
+.lr-book-kid { width: 110px; height: 150px; background: #5f8fc4; color: #fff; border-radius: 6px; display: grid; place-items: center; text-align: center; font: 700 28px/1.2 var(--font-ui); }
+.lr-tick { position: absolute; right: 16px; bottom: 14px; width: 26px; height: 26px; border-radius: 50%; border: 3px solid #6a7a6a; box-sizing: border-box; }
+.lr-tick-pending::after { content: ""; position: absolute; left: 9px; top: 3px; width: 3px; height: 9px; background: #6a7a6a; box-shadow: 3px 7px 0 -0px transparent; }
+.lr-tick-pending::before { content: ""; position: absolute; left: 9px; top: 10px; width: 7px; height: 3px; background: #6a7a6a; }
+.lr-phone.no-mine .lr-mine, .lr-phone.no-text .lr-text, .lr-phone.no-photo .lr-photo { display: none; }
+
+/* ledger: the form page (Ek's page) and the other spreads LR.ledger builds */
+.lr-ledger .lr-form { padding: 30px 30px; }
+.lr-field { display: flex; align-items: baseline; gap: 14px; font-size: 30px; line-height: 60px; color: #5a4a36; }
+.lr-field .lr-fill { flex: 1; min-height: 46px; border-bottom: 3px dotted rgba(59, 44, 28, .5); font: 700 34px/46px var(--font-display); color: #1f2a44; }
+.lr-payee span { background: rgba(246, 196, 69, .0); }
+.lr-clause { margin-top: 18px; font: 500 28px/1.45 var(--font-ui); color: #3b2c1c; }
+.lr-clause span { display: block; }
+.lr-sig-row .lr-sign { width: 220px; height: 60px; margin: 0; }
+.lr-fold { position: absolute; left: 0; right: 0; bottom: 0; height: 250px; background: linear-gradient(180deg, #d9cba8, #e6dabd 30%); box-shadow: 0 -8px 16px rgba(0, 0, 0, .25); border-top: 3px solid rgba(90, 70, 50, .35); }
+.lr-fold i { position: absolute; left: 0; right: 0; top: 18px; height: 3px; background: rgba(90, 70, 50, .22); }
+.lr-yellow { background-color: #e3cf98 !important; }
+.lr-torn { clip-path: polygon(0 0, 100% 0, 100% 86%, 92% 90%, 84% 87%, 74% 93%, 62% 89%, 50% 95%, 38% 90%, 26% 96%, 14% 91%, 0 95%); }
+.lr-chan-row b { color: #3b2c1c; }
+.lr-blank { min-width: 220px; border-bottom: 4px dotted rgba(138, 42, 34, .6); }
+.lr-done { color: #2f6b4a; }
+.lr-next .lr-coord { font: 700 36px/1.3 var(--font-display); color: #1f2a44; margin-top: 10px; }
+.lr-next .lr-coord-sub { font-size: 28px; color: #6b5a44; }
+.lr-next .lr-note { margin-top: 70px; padding: 14px 18px; border-left: 8px solid #8a2a22; font: 700 38px/1.4 var(--font-display); color: #3b2c1c; }
+.lr-card-text { position: absolute; left: 0; right: 0; top: 400px; text-align: center; font: 700 72px/1.3 var(--font-display); color: var(--lr-cream); }
+.lr-card-text small { display: block; font: 500 34px/1.6 var(--font-ui); color: var(--mute); }
+.lr-form .lr-clause { margin-top: 10px; }
+.lr-form .lr-clause-tail { position: absolute; left: 30px; right: 30px; bottom: 150px; margin: 0; }
+.lr-form .lr-fold { height: 210px; }
+.lr-next .lr-note span { display: block; }
+/* ledger text stays readable under the night grade */
+.lr-row small { color: #4f4232; }
+.lr-row.is-struck b { color: #5e5040; }
+.lr-yellow .lr-row.is-struck b { color: #4a3e30; }
+/* the status bar on a light screen (the transfer slip) */
+.lr-phone:has(.lr-screen--slip.lr-on) .lr-status { color: #3a4a40; }
+.lr-phone:has(.lr-screen--slip.lr-on) .lr-status i { border-color: #3a4a40; }
+.lr-phone:has(.lr-screen--slip.lr-on) .lr-status i::after { background: #3a4a40; }

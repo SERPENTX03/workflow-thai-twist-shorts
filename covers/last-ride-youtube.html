@@ -1,0 +1,1458 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../template/assets/kit/kit.css">
+<link rel="stylesheet" href="../template/assets/kit/stories/last-ride.css">
+<style>
+html,body{margin:0;background:#000}
+#c{position:relative;width:1280px;height:720px;overflow:hidden;background:#0b1020}
+.set{position:absolute;left:0;top:0}
+.shade{position:absolute;inset:0;pointer-events:none}
+.t{position:absolute;font-family:var(--font-display);font-weight:700;color:var(--white);-webkit-text-stroke:12px #0b1328;paint-order:stroke fill;text-shadow:0 10px 0 #0b1328;white-space:nowrap}
+.t em{font-style:normal;color:var(--gold)}
+.chip{position:absolute;background:var(--red);color:#fff;font:700 56px/1 var(--font-display);padding:16px 34px;border-radius:14px;box-shadow:0 8px 0 #7d1a1c;white-space:nowrap}
+
+</style></head><body><div id="c">
+<svg width="0" height="0" style="position:absolute"><defs>
+  
+  <defs>
+    
+    <g id="legs-pants">
+      <rect x="66" y="300" width="28" height="205" rx="14" fill="var(--pants, #1d2736)"/>
+      <rect x="106" y="300" width="28" height="205" rx="14" fill="var(--pants, #1d2736)"/>
+      <rect x="58" y="494" width="42" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+      <rect x="100" y="494" width="42" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    </g>
+    <g id="head-short">
+      <rect x="88" y="118" width="24" height="26" fill="var(--skin-d, #c98f6b)"/>
+      <circle cx="100" cy="65" r="65" fill="var(--skin, #e7b38c)"/>
+      
+      <path d="M30 80 C20 14 66 -10 100 -10 C138 -10 182 14 170 80 C164 58 150 44 130 40 C112 54 86 52 70 38 C52 46 38 60 30 80Z" fill="var(--hair, #16161c)"/>
+      <circle cx="35" cy="78" r="10" fill="var(--skin-d, #c98f6b)"/><circle cx="165" cy="78" r="10" fill="var(--skin-d, #c98f6b)"/>
+    </g>
+    <g id="eyes-dot" style="display:var(--face-rest,inline)">
+      <circle cx="77" cy="72" r="6" fill="var(--eye, #1a1a22)"/>
+      <circle cx="123" cy="72" r="6" fill="var(--eye, #1a1a22)"/>
+      <g style="display:var(--mouth-rest,inline)"><ellipse cx="100" cy="97" rx="9" ry="3" fill="var(--eye, #7a3b34)"/></g>
+    </g>
+    <g id="eyes-wide" style="display:var(--face-rest,inline)">
+      <circle cx="77" cy="72" r="11" fill="var(--eye-white, #fff)"/>
+      <circle cx="123" cy="72" r="11" fill="var(--eye-white, #fff)"/>
+      <circle cx="79" cy="72" r="5" fill="var(--eye, #1a1a22)"/>
+      <circle cx="125" cy="72" r="5" fill="var(--eye, #1a1a22)"/>
+      <g style="display:var(--mouth-rest,inline)"><ellipse cx="100" cy="100" rx="9" ry="9" fill="var(--eye, #7a3b34)"/></g>
+    </g>
+    <g id="arm-l-down" style="display:var(--arm-l-rest,inline)"><line x1="58" y1="160" x2="52" y2="320" stroke="var(--shirt, #2f5f8f)" stroke-width="36" stroke-linecap="round"/><circle cx="52" cy="330" r="20" fill="var(--skin, #e7b38c)"/></g>
+    <g id="arm-r-down" style="display:var(--arm-r-rest,inline)"><line x1="142" y1="160" x2="148" y2="320" stroke="var(--shirt, #2f5f8f)" stroke-width="36" stroke-linecap="round"/><circle cx="148" cy="330" r="20" fill="var(--skin, #e7b38c)"/></g>
+    <g id="torso-shirt"><rect x="58" y="140" width="84" height="175" rx="30" fill="var(--shirt, #2f5f8f)"/></g>
+  </defs>
+
+  
+  <symbol id="man" viewBox="0 0 200 520">
+    <use href="#legs-pants"/><use href="#arm-l-down"/><use href="#arm-r-down"/><use href="#torso-shirt"/><use href="#head-short"/><use href="#eyes-dot"/>
+  </symbol>
+  <symbol id="man-wide" viewBox="0 0 200 520">
+    <use href="#legs-pants"/><use href="#arm-l-down"/><use href="#arm-r-down"/><use href="#torso-shirt"/><use href="#head-short"/><use href="#eyes-wide"/>
+  </symbol>
+  
+  <symbol id="man-raise" viewBox="0 0 200 520" overflow="visible">
+    <use href="#legs-pants"/><use href="#arm-r-down"/>
+    <line x1="58" y1="160" x2="-40" y2="40" stroke="var(--shirt, #2f5f8f)" stroke-width="36" stroke-linecap="round"/>
+    <circle cx="-46" cy="32" r="20" fill="var(--skin, #e7b38c)"/>
+    <use href="#torso-shirt"/><use href="#head-short"/><use href="#eyes-wide"/>
+  </symbol>
+
+  
+  <symbol id="woman" viewBox="0 0 200 520">
+    <rect x="30" y="20" width="140" height="190" rx="60" fill="var(--hair, #2a1d18)"/>
+    <rect x="72" y="380" width="24" height="125" rx="12" fill="var(--skin, #e7b38c)"/>
+    <rect x="104" y="380" width="24" height="125" rx="12" fill="var(--skin, #e7b38c)"/>
+    <rect x="62" y="494" width="40" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    <rect x="98" y="494" width="40" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    <path d="M60 290 H140 L156 400 H44Z" fill="var(--skirt, #3b4c5e)"/>
+    <g style="display:var(--arm-l-rest,inline)"><line x1="60" y1="160" x2="54" y2="310" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/><circle cx="54" cy="318" r="18" fill="var(--skin, #e7b38c)"/></g>
+    <g style="display:var(--arm-r-rest,inline)"><line x1="140" y1="160" x2="146" y2="310" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/><circle cx="146" cy="318" r="18" fill="var(--skin, #e7b38c)"/></g>
+        <rect x="60" y="140" width="80" height="160" rx="30" fill="var(--top, #d9c9a8)"/>
+    <rect x="89" y="118" width="22" height="26" fill="var(--skin-d, #c98f6b)"/>
+    <circle cx="100" cy="68" r="60" fill="var(--skin, #e7b38c)"/>
+    
+    <path d="M34 90 C24 20 70 0 100 0 C134 0 178 20 166 90 C160 64 148 46 128 36 C116 52 108 56 100 56 C92 56 84 52 72 36 C52 46 40 64 34 90Z" fill="var(--hair, #2a1d18)"/>
+    <g style="display:var(--face-rest,inline)"><circle cx="78" cy="76" r="6" fill="var(--eye, #1a1a22)"/><circle cx="122" cy="76" r="6" fill="var(--eye, #1a1a22)"/></g>
+    <g style="display:var(--face-rest,inline)"><g style="display:var(--mouth-rest,inline)"><ellipse cx="100" cy="99" rx="8" ry="3" fill="var(--eye, #7a3b34)"/></g></g>
+  </symbol>
+
+  
+  <symbol id="auntie" viewBox="0 0 200 520" overflow="visible">
+    <rect x="72" y="380" width="24" height="125" rx="12" fill="var(--skin, #e7b38c)"/>
+    <rect x="104" y="380" width="24" height="125" rx="12" fill="var(--skin, #e7b38c)"/>
+    <rect x="62" y="494" width="40" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    <rect x="98" y="494" width="40" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    <path d="M60 290 H140 L156 400 H44Z" fill="var(--skirt, #3b4c5e)"/>
+    <g style="display:var(--arm-l-rest,inline)"><line x1="60" y1="160" x2="54" y2="310" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/><circle cx="54" cy="318" r="18" fill="var(--skin, #e7b38c)"/></g>
+    <g style="display:var(--arm-r-rest,inline)"><line x1="140" y1="160" x2="146" y2="310" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/><circle cx="146" cy="318" r="18" fill="var(--skin, #e7b38c)"/></g>
+        <rect x="60" y="140" width="80" height="160" rx="30" fill="var(--top, #d9c9a8)"/>
+    <rect x="89" y="118" width="22" height="26" fill="var(--skin-d, #c98f6b)"/>
+    <circle cx="100" cy="-6" r="30" fill="var(--hair, #9a9aa0)"/>
+    <circle cx="100" cy="68" r="60" fill="var(--skin, #e7b38c)"/>
+    <path d="M36 84 C30 26 68 8 100 8 C132 8 170 26 164 84 C158 62 146 46 128 38 C116 52 108 56 100 56 C92 56 84 52 72 38 C54 46 42 62 36 84Z" fill="var(--hair, #9a9aa0)"/>
+    <g style="display:var(--face-rest,inline)"><circle cx="78" cy="76" r="6" fill="var(--eye, #1a1a22)"/><circle cx="122" cy="76" r="6" fill="var(--eye, #1a1a22)"/></g>
+    <path d="M66 90 q12 8 24 0 M110 90 q12 8 24 0" stroke="rgba(0,0,0,0.18)" stroke-width="3" fill="none"/>
+    <g style="display:var(--face-rest,inline)"><g style="display:var(--mouth-rest,inline)"><ellipse cx="100" cy="102" rx="8" ry="3" fill="var(--eye, #7a3b34)"/></g></g>
+  </symbol>
+
+  
+  <symbol id="raincoat" viewBox="0 0 200 520" overflow="visible">
+    <use href="#legs-pants"/>
+    <g style="display:var(--arm-l-rest,inline)"><line x1="56" y1="165" x2="48" y2="325" stroke="var(--coat, #f2c230)" stroke-width="40" stroke-linecap="round"/><circle cx="48" cy="334" r="20" fill="var(--skin, #e7b38c)"/></g>
+    <g style="display:var(--arm-r-rest,inline)"><line x1="144" y1="165" x2="152" y2="325" stroke="var(--coat, #f2c230)" stroke-width="40" stroke-linecap="round"/><circle cx="152" cy="334" r="20" fill="var(--skin, #e7b38c)"/></g>
+        <path d="M54 140 H146 L160 370 H40Z" fill="var(--coat, #f2c230)"/>
+    <path d="M100 150 V365" stroke="rgba(0,0,0,0.18)" stroke-width="5"/>
+    <rect x="88" y="118" width="24" height="26" fill="var(--skin-d, #c98f6b)"/>
+    <path d="M26 72 A74 74 0 0 1 174 72 L170 130 Q100 150 30 130Z" fill="var(--coat-d, #d9a91c)"/>
+    <circle cx="100" cy="72" r="58" fill="var(--skin, #e7b38c)"/>
+    <path d="M42 80 C38 36 70 14 100 14 C132 14 162 36 158 80 C150 60 136 50 118 50 C104 60 88 58 78 50 C62 54 48 62 42 80Z" fill="var(--hair, #16161c)"/>
+    <use href="#eyes-dot"/>
+  </symbol>
+
+  
+  <symbol id="elder" viewBox="0 0 200 520" overflow="visible">
+    <use href="#legs-pants"/>
+    <rect x="56" y="285" width="88" height="160" rx="10" fill="var(--sarong, #4f6688)"/>
+    <path d="M56 320 H144 M56 350 H144 M56 380 H144 M80 285 V445 M120 285 V445" stroke="rgba(255,255,255,0.18)" stroke-width="4"/>
+    <g style="display:var(--arm-l-rest,inline)"><line x1="56" y1="160" x2="50" y2="320" stroke="var(--exo, #e9e4d6)" stroke-width="36" stroke-linecap="round"/><circle cx="50" cy="330" r="20" fill="var(--skin, #e7b38c)"/></g>
+    <line x1="144" y1="160" x2="214" y2="250" stroke="var(--exo, #e9e4d6)" stroke-width="36" stroke-linecap="round"/>
+    <circle cx="220" cy="258" r="20" fill="var(--skin, #e7b38c)"/>
+    <rect x="212" y="190" width="16" height="64" fill="var(--candle, #f3ead2)"/>
+    <ellipse cx="220" cy="178" rx="8" ry="15" fill="var(--flame, #ffd890)"/>
+    <rect x="56" y="140" width="88" height="160" rx="30" fill="var(--exo, #e9e4d6)"/>
+    <rect x="88" y="118" width="24" height="26" fill="var(--skin-d, #c98f6b)"/>
+    <circle cx="100" cy="65" r="65" fill="var(--skin, #e7b38c)"/>
+    <path d="M35 60 A66 66 0 0 1 165 60 L165 50 Q100 20 35 50Z" fill="var(--hair-old, #e9e6df)"/>
+    <rect x="35" y="32" width="130" height="16" fill="var(--band, #fbfaf5)"/>
+    <ellipse cx="100" cy="112" rx="26" ry="18" fill="var(--hair-old, #e9e6df)"/>
+    <use href="#eyes-dot"/>
+  </symbol>
+
+  
+
+
+  
+  <symbol id="cat-black" viewBox="0 0 300 340" overflow="visible">
+    <path d="M82 306 C16 300 6 214 56 192 C74 186 82 200 70 210" stroke="var(--cat, #2a292d)" stroke-width="26" stroke-linecap="round" fill="none"/>
+    <path d="M150 170 C230 170 238 260 228 300 C220 330 80 330 72 300 C62 260 70 170 150 170Z" fill="var(--cat, #2a292d)"/>
+    <path d="M150 196 C190 196 196 260 190 296 L150 318 L110 296 C104 260 110 196 150 196Z" fill="var(--cat-d, #3b3739)"/>
+    <path d="M140 238 A24 24 0 0 0 178 256 A28 28 0 0 1 140 238Z" fill="#f3e4c8"/>
+    <rect x="116" y="290" width="32" height="46" rx="16" fill="var(--cat-d, #3b3739)"/><rect x="152" y="290" width="32" height="46" rx="16" fill="var(--cat-d, #3b3739)"/>
+    <path d="M104 80 C84 54 56 56 52 74 C66 76 70 106 82 112Z" fill="var(--cat-h, #1f1f23)"/><path d="M92 82 C82 70 68 70 66 76 C74 78 76 92 82 96Z" fill="#b9654f"/>
+    <path d="M196 72 L240 6 L246 100Z" fill="var(--cat-h, #1f1f23)"/><path d="M212 72 L236 30 L238 86Z" fill="#b9654f"/>
+    <ellipse cx="150" cy="134" rx="94" ry="76" fill="var(--cat-h, #1f1f23)"/>
+    <ellipse cx="108" cy="130" rx="27" ry="21" fill="var(--cat-eye, #f2cc5c)"/><ellipse cx="192" cy="130" rx="27" ry="21" fill="var(--cat-eye, #f2cc5c)"/>
+    <ellipse cx="111" cy="134" rx="9" ry="12" fill="#111114"/><ellipse cx="189" cy="134" rx="9" ry="12" fill="#111114"/>
+    <circle cx="114" cy="130" r="3.5" fill="#fff"/><circle cx="192" cy="130" r="3.5" fill="#fff"/>
+    <path d="M80 128 A28 15 0 0 1 136 128Z" fill="#2e2d33"/><path d="M164 128 A28 15 0 0 1 220 128Z" fill="#2e2d33"/>
+    <path d="M142 158 L158 158 L150 168Z" fill="#b9654f"/>
+    <path d="M150 168 Q142 180 130 172 M150 168 Q158 180 170 172" stroke="#5a5256" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M60 150 L96 154 M60 166 L96 162 M240 150 L204 154 M240 166 L204 162" stroke="rgba(246,242,234,.35)" stroke-width="2.5" stroke-linecap="round"/>
+  </symbol>
+
+  
+  <symbol id="cat-orange" viewBox="0 0 300 340" overflow="visible">
+    <path d="M214 306 C284 300 294 214 244 192 C226 186 218 200 230 210" stroke="var(--cat, #e8913a)" stroke-width="26" stroke-linecap="round" fill="none"/>
+    <path d="M262 218 L234 232 M266 252 L238 262" stroke="var(--cat-stripe, #c26a1f)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M150 170 C230 170 238 260 228 300 C220 330 80 330 72 300 C62 260 70 170 150 170Z" fill="var(--cat, #e8913a)"/>
+    <path d="M150 196 C190 196 196 260 190 296 L150 318 L110 296 C104 260 110 196 150 196Z" fill="var(--cat-d, #f7dfb8)"/>
+    <path d="M96 230 L112 236 M92 258 L110 262 M204 230 L188 236 M208 258 L190 262" stroke="var(--cat-stripe, #c26a1f)" stroke-width="8" stroke-linecap="round"/>
+    <rect x="116" y="290" width="32" height="46" rx="16" fill="var(--cat-d, #f7dfb8)"/><rect x="152" y="290" width="32" height="46" rx="16" fill="var(--cat-d, #f7dfb8)"/>
+    <path d="M92 74 L58 8 L56 100Z" fill="var(--cat, #e8913a)"/><path d="M84 74 L64 34 L64 86Z" fill="#f0a4a0"/>
+    <path d="M208 74 L242 8 L244 100Z" fill="var(--cat, #e8913a)"/><path d="M216 74 L236 34 L236 86Z" fill="#f0a4a0"/>
+    <ellipse cx="150" cy="134" rx="94" ry="76" fill="var(--cat, #e8913a)"/>
+    <path d="M150 62 V92 M128 66 L134 94 M172 66 L166 94" stroke="var(--cat-stripe, #c26a1f)" stroke-width="8" stroke-linecap="round"/>
+    <ellipse cx="150" cy="166" rx="40" ry="28" fill="var(--cat-d, #f7dfb8)"/>
+    <ellipse cx="110" cy="130" rx="24" ry="25" fill="#fff"/><ellipse cx="190" cy="130" rx="24" ry="25" fill="#fff"/>
+    <circle cx="112" cy="132" r="17" fill="var(--cat-eye, #7fb069)"/><circle cx="188" cy="132" r="17" fill="var(--cat-eye, #7fb069)"/>
+    <ellipse cx="112" cy="132" rx="7" ry="13" fill="#111114"/><ellipse cx="188" cy="132" rx="7" ry="13" fill="#111114"/>
+    <circle cx="117" cy="125" r="4.5" fill="#fff"/><circle cx="193" cy="125" r="4.5" fill="#fff"/>
+    <path d="M142 156 L158 156 L150 166Z" fill="#e8838f"/>
+    <path d="M150 166 Q142 178 130 170 M150 166 Q158 178 170 170" stroke="#8a4b22" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M60 152 L98 156 M60 168 L98 164 M240 152 L202 156 M240 168 L202 164" stroke="rgba(255,255,255,.55)" stroke-width="2.5" stroke-linecap="round"/>
+    <ellipse cx="72" cy="152" rx="11" ry="7" fill="#f0a4a0" opacity=".4"/><ellipse cx="228" cy="152" rx="11" ry="7" fill="#f0a4a0" opacity=".4"/>
+  </symbol>
+
+  
+  <symbol id="beagle" viewBox="0 0 300 340" overflow="visible">
+    <path d="M214 286 C262 278 278 236 262 206" stroke="var(--bg-head, #c47a3c)" stroke-width="20" stroke-linecap="round" fill="none"/>
+    <circle cx="262" cy="200" r="12" fill="var(--bg-white, #f4efe6)"/>
+    <ellipse cx="150" cy="254" rx="70" ry="80" fill="var(--bg-white, #f4efe6)"/>
+    <ellipse cx="98" cy="240" rx="26" ry="42" fill="var(--bg-head, #c47a3c)"/><ellipse cx="202" cy="240" rx="26" ry="42" fill="var(--bg-head, #c47a3c)"/>
+    <ellipse cx="94" cy="222" rx="18" ry="26" fill="#2b2420"/><ellipse cx="206" cy="222" rx="18" ry="26" fill="#2b2420"/>
+    <rect x="112" y="282" width="34" height="52" rx="17" fill="var(--bg-white, #f4efe6)"/><rect x="154" y="282" width="34" height="52" rx="17" fill="var(--bg-white, #f4efe6)"/>
+    <ellipse cx="129" cy="332" rx="21" ry="10" fill="var(--bg-white, #f4efe6)"/><ellipse cx="171" cy="332" rx="21" ry="10" fill="var(--bg-white, #f4efe6)"/>
+    <ellipse cx="150" cy="132" rx="88" ry="80" fill="var(--bg-head, #c47a3c)"/>
+    <path d="M150 58 C174 80 178 112 170 152 L130 152 C122 112 126 80 150 58Z" fill="var(--bg-white, #f4efe6)"/>
+    <ellipse cx="150" cy="168" rx="40" ry="30" fill="var(--bg-white, #f4efe6)"/>
+    <path d="M70 88 C26 82 16 160 34 212 C64 216 90 170 90 124Z" fill="var(--bg-ear, #7a421e)"/>
+    <path d="M230 88 C274 82 284 160 266 212 C236 216 210 170 210 124Z" fill="var(--bg-ear, #7a421e)"/>
+    <ellipse cx="110" cy="124" rx="14" ry="16" fill="#3a2216"/><ellipse cx="190" cy="124" rx="14" ry="16" fill="#3a2216"/>
+    <circle cx="114" cy="119" r="4.5" fill="#fff"/><circle cx="194" cy="119" r="4.5" fill="#fff"/><circle cx="108" cy="130" r="2" fill="#fff"/><circle cx="188" cy="130" r="2" fill="#fff"/>
+    <ellipse cx="150" cy="152" rx="15" ry="10" fill="var(--nose, #1a1a22)"/>
+    <path d="M150 162 V172 M150 172 Q136 186 124 174 M150 172 Q164 186 176 174" stroke="#1a1a22" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M140 180 Q150 212 160 180Z" fill="#ef7b8a"/>
+    <rect x="106" y="206" width="88" height="14" rx="7" fill="var(--collar, #3fa66b)"/><circle cx="150" cy="228" r="9" fill="#f6c445"/>
+  </symbol>
+
+  
+  <symbol id="dog-patch" viewBox="0 0 300 340" overflow="visible">
+    <path d="M214 280 C262 270 280 230 262 196" stroke="var(--fur, #f4efe6)" stroke-width="22" stroke-linecap="round" fill="none"/>
+    <ellipse cx="150" cy="252" rx="72" ry="82" fill="var(--fur, #f4efe6)"/>
+    <ellipse cx="124" cy="236" rx="30" ry="40" fill="var(--fur-patch, #23242b)"/>
+    <rect x="110" y="282" width="36" height="52" rx="18" fill="var(--fur, #f4efe6)"/><rect x="154" y="282" width="36" height="52" rx="18" fill="var(--fur, #f4efe6)"/>
+    <ellipse cx="128" cy="332" rx="22" ry="10" fill="var(--fur, #f4efe6)"/><ellipse cx="172" cy="332" rx="22" ry="10" fill="var(--fur, #f4efe6)"/>
+    <path d="M72 92 C38 84 24 134 44 176 C70 182 86 154 86 122Z" fill="var(--fur-patch, #23242b)"/>
+    <path d="M228 92 C262 84 276 134 256 176 C230 182 214 154 214 122Z" fill="var(--fur-patch, #23242b)"/>
+    <ellipse cx="150" cy="132" rx="92" ry="84" fill="var(--fur, #f4efe6)"/>
+    <circle cx="110" cy="120" r="33" fill="var(--fur-patch, #23242b)"/>
+    <circle cx="112" cy="122" r="17" fill="#fff"/><circle cx="188" cy="122" r="17" fill="#fff"/>
+    <circle cx="115" cy="125" r="10" fill="var(--eye, #1a1a22)"/><circle cx="185" cy="125" r="10" fill="var(--eye, #1a1a22)"/>
+    <circle cx="119" cy="120" r="3.5" fill="#fff"/><circle cx="189" cy="120" r="3.5" fill="#fff"/>
+    <ellipse cx="150" cy="166" rx="40" ry="30" fill="#fff"/>
+    <ellipse cx="150" cy="152" rx="14" ry="10" fill="var(--nose, #1a1a22)"/>
+    <path d="M150 162 V172 M150 172 Q136 186 124 174 M150 172 Q164 186 176 174" stroke="#1a1a22" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M140 180 Q150 214 160 180Z" fill="#ef7b8a"/>
+    <ellipse cx="78" cy="150" rx="11" ry="7" fill="#e58a7a" opacity=".35"/><ellipse cx="222" cy="150" rx="11" ry="7" fill="#e58a7a" opacity=".35"/>
+    <rect x="104" y="208" width="92" height="15" rx="7.5" fill="var(--collar, #e5383b)"/><circle cx="150" cy="232" r="9" fill="#f6c445"/>
+  </symbol>
+  
+  <defs>
+    <g id="pose-r-hold"><path d="M142 160 L156 250" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="41" stroke-linecap="round"/><path d="M142 160 L156 250" fill="none" stroke="var(--sleeve, var(--shirt, #2f5f8f))" stroke-width="34" stroke-linecap="round"/><path d="M156 250 L135.8 247.2" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="36" stroke-linecap="round"/><path d="M156 250 L135.8 247.2" fill="none" stroke="var(--forearm, var(--sleeve, var(--shirt, #2f5f8f)))" stroke-width="29" stroke-linecap="round"/><path d="M135.8 247.2 L112 244" fill="none" stroke="var(--skin, #e7b38c)" stroke-width="20" stroke-linecap="round"/><circle cx="112" cy="244" r="19" fill="var(--skin, #e7b38c)"/></g>
+    <g id="pose-r-chest"><path d="M142 160 L154 252" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="41" stroke-linecap="round"/><path d="M142 160 L154 252" fill="none" stroke="var(--sleeve, var(--shirt, #2f5f8f))" stroke-width="34" stroke-linecap="round"/><path d="M154 252 L129.5 215.9" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="36" stroke-linecap="round"/><path d="M154 252 L129.5 215.9" fill="none" stroke="var(--forearm, var(--sleeve, var(--shirt, #2f5f8f)))" stroke-width="29" stroke-linecap="round"/><path d="M129.5 215.9 L116 196" fill="none" stroke="var(--skin, #e7b38c)" stroke-width="20" stroke-linecap="round"/><circle cx="116" cy="196" r="19" fill="var(--skin, #e7b38c)"/></g>
+    <g id="pose-r-offer"><path d="M142 160 L178 236" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="41" stroke-linecap="round"/><path d="M142 160 L178 236" fill="none" stroke="var(--sleeve, var(--shirt, #2f5f8f))" stroke-width="34" stroke-linecap="round"/><path d="M178 236 L191.6 230.7" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="36" stroke-linecap="round"/><path d="M178 236 L191.6 230.7" fill="none" stroke="var(--forearm, var(--sleeve, var(--shirt, #2f5f8f)))" stroke-width="29" stroke-linecap="round"/><path d="M191.6 230.7 L214 222" fill="none" stroke="var(--skin, #e7b38c)" stroke-width="20" stroke-linecap="round"/><circle cx="214" cy="222" r="19" fill="var(--skin, #e7b38c)"/></g>
+    <g id="pose-r-raise"><path d="M142 160 L178 208" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="41" stroke-linecap="round"/><path d="M142 160 L178 208" fill="none" stroke="var(--sleeve, var(--shirt, #2f5f8f))" stroke-width="34" stroke-linecap="round"/><path d="M178 208 L187.1 133.8" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="36" stroke-linecap="round"/><path d="M178 208 L187.1 133.8" fill="none" stroke="var(--forearm, var(--sleeve, var(--shirt, #2f5f8f)))" stroke-width="29" stroke-linecap="round"/><path d="M187.1 133.8 L190 110" fill="none" stroke="var(--skin, #e7b38c)" stroke-width="20" stroke-linecap="round"/><circle cx="190" cy="110" r="19" fill="var(--skin, #e7b38c)"/></g>
+    <g id="pose-r-pocket"><path d="M142 160 L158 250 L130 304" fill="none" stroke="var(--sleeve, var(--shirt, #2f5f8f))" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/></g>
+  </defs>
+  <symbol id="arm-r-hold" viewBox="0 0 200 520" overflow="visible"><use href="#pose-r-hold"/></symbol>
+  <symbol id="arm-r-chest" viewBox="0 0 200 520" overflow="visible"><use href="#pose-r-chest"/></symbol>
+  <symbol id="arm-r-offer" viewBox="0 0 200 520" overflow="visible"><use href="#pose-r-offer"/></symbol>
+  <symbol id="arm-r-raise" viewBox="0 0 200 520" overflow="visible"><use href="#pose-r-raise"/></symbol>
+  <symbol id="arm-r-pocket" viewBox="0 0 200 520" overflow="visible"><use href="#pose-r-pocket"/></symbol>
+  
+  <symbol id="arm-l-hold" viewBox="0 0 200 520" overflow="visible"><g transform="matrix(-1 0 0 1 200 0)"><use href="#pose-r-hold"/></g></symbol>
+  <symbol id="arm-l-chest" viewBox="0 0 200 520" overflow="visible"><g transform="matrix(-1 0 0 1 200 0)"><use href="#pose-r-chest"/></g></symbol>
+  <symbol id="arm-l-offer" viewBox="0 0 200 520" overflow="visible"><g transform="matrix(-1 0 0 1 200 0)"><use href="#pose-r-offer"/></g></symbol>
+  <symbol id="arm-l-raise" viewBox="0 0 200 520" overflow="visible"><g transform="matrix(-1 0 0 1 200 0)"><use href="#pose-r-raise"/></g></symbol>
+  <symbol id="arm-l-pocket" viewBox="0 0 200 520" overflow="visible"><g transform="matrix(-1 0 0 1 200 0)"><use href="#pose-r-pocket"/></g></symbol>
+
+  
+  <symbol id="prop-glass" overflow="visible"><rect x="-17" y="-64" width="34" height="76" rx="5" fill="#dfe9ee" opacity=".85"/><rect x="-15" y="-34" width="30" height="44" rx="3" fill="#8fc4e6" opacity=".9"/><rect x="-17" y="-64" width="34" height="76" rx="5" fill="none" stroke="#9fb4c0" stroke-width="3"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-coin" overflow="visible"><ellipse cx="0" cy="-34" rx="26" ry="22" fill="#e8a81c"/><ellipse cx="0" cy="-38" rx="26" ry="20" fill="#f6c445"/><ellipse cx="0" cy="-38" rx="13" ry="9" fill="#fde29a"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-phone" overflow="visible"><rect x="-22" y="-78" width="44" height="86" rx="8" fill="#1a1d24"/><rect x="-18" y="-72" width="36" height="66" rx="4" fill="#7fb7ff"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-paper" overflow="visible"><rect x="-34" y="-84" width="68" height="92" rx="3" fill="#f6f1e4" stroke="#cfc6b0" stroke-width="3"/><path d="M-22 -66 H22 M-22 -50 H22 M-22 -34 H8" stroke="#8d8672" stroke-width="4" stroke-linecap="round"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-key" overflow="visible"><circle cx="0" cy="-48" r="16" fill="none" stroke="#d9a91c" stroke-width="8"/><rect x="-4" y="-34" width="8" height="40" rx="3" fill="#d9a91c"/><path d="M4 -10 h12 M4 -2 h9" stroke="#d9a91c" stroke-width="6" stroke-linecap="round"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-flashlight" overflow="visible"><rect x="-14" y="-62" width="28" height="70" rx="6" fill="#3a3f4a"/><rect x="-20" y="-82" width="40" height="22" rx="5" fill="#d7dbe0"/><ellipse cx="0" cy="-82" rx="16" ry="5" fill="#fff2b8"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  
+  <defs>
+    <g id="fx-cheeks"><ellipse cx="62" cy="92" rx="10" ry="6" fill="var(--blush, #e58a7a)" opacity=".35"/><ellipse cx="138" cy="92" rx="10" ry="6" fill="var(--blush, #e58a7a)" opacity=".35"/></g>
+    <g id="fx-sweat"><path d="M152 30 C146 44 142 52 152 58 C162 52 158 44 152 30Z" fill="var(--tear, #8fd0ff)"/></g>
+    <g id="fx-dot-eyes"><circle cx="77" cy="74" r="6" fill="var(--eye, #1a1a22)"/><circle cx="123" cy="74" r="6" fill="var(--eye, #1a1a22)"/></g>
+    <g id="fx-lid-eyes"><path d="M68 74 A9 9 0 0 0 86 74Z" fill="var(--eye, #1a1a22)"/><path d="M114 74 A9 9 0 0 0 132 74Z" fill="var(--eye, #1a1a22)"/><path d="M66 74 H88 M112 74 H134" stroke="var(--eye, #1a1a22)" stroke-width="5" stroke-linecap="round"/></g>
+    <g id="fx-wide-eyes"><circle cx="77" cy="72" r="13" fill="var(--eye-white, #fff)"/><circle cx="123" cy="72" r="13" fill="var(--eye-white, #fff)"/></g>
+  </defs>
+  <symbol id="face-happy" viewBox="0 0 200 520" overflow="visible">
+    <use href="#fx-cheeks"/>
+    <path d="M66 76 Q77 62 88 76 M112 76 Q123 62 134 76" fill="none" stroke="var(--eye, #1a1a22)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M80 92 Q100 118 120 92Z" fill="var(--mouth, #7a3b34)" stroke="var(--mouth, #7a3b34)" stroke-width="4" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="face-laugh" viewBox="0 0 200 520" overflow="visible">
+    <use href="#fx-cheeks"/>
+    <path d="M66 74 Q77 60 88 74 M112 74 Q123 60 134 74" fill="none" stroke="var(--eye, #1a1a22)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M72 88 Q100 132 128 88Z" fill="var(--mouth, #7a3b34)" stroke="var(--mouth, #7a3b34)" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M82 92 H118" stroke="var(--eye-white, #fff)" stroke-width="6" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="face-sad" viewBox="0 0 200 520" overflow="visible">
+    <use href="#fx-dot-eyes"/>
+    <path d="M62 62 L90 50 M110 50 L138 62" stroke="var(--brow, var(--hair, #16161c))" stroke-width="7" stroke-linecap="round"/>
+    <path d="M86 108 Q100 92 114 108" fill="none" stroke="var(--mouth, #7a3b34)" stroke-width="5" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="face-cry" viewBox="0 0 200 520" overflow="visible">
+    <path d="M70 80 C62 100 64 118 70 130 M130 80 C138 100 136 118 130 130" fill="none" stroke="var(--tear, #8fd0ff)" stroke-width="9" stroke-linecap="round"/>
+    <path d="M66 74 Q77 84 88 74 M112 74 Q123 84 134 74" fill="none" stroke="var(--eye, #1a1a22)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M62 60 L90 48 M110 48 L138 60" stroke="var(--brow, var(--hair, #16161c))" stroke-width="7" stroke-linecap="round"/>
+    <ellipse cx="100" cy="106" rx="15" ry="11" fill="var(--mouth, #7a3b34)"/>
+  </symbol>
+  <symbol id="face-angry" viewBox="0 0 200 520" overflow="visible">
+    <use href="#fx-cheeks"/>
+    <use href="#fx-dot-eyes"/>
+    <path d="M60 52 L92 66 M108 66 L140 52" stroke="var(--brow, var(--hair, #16161c))" stroke-width="8" stroke-linecap="round"/>
+    <path d="M82 108 Q100 94 118 108" fill="none" stroke="var(--mouth, #7a3b34)" stroke-width="6" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="face-scared" viewBox="0 0 200 520" overflow="visible">
+    <use href="#fx-wide-eyes"/>
+    <circle cx="77" cy="72" r="3.5" fill="var(--eye, #1a1a22)"/><circle cx="123" cy="72" r="3.5" fill="var(--eye, #1a1a22)"/>
+    <path d="M62 50 L90 40 M110 40 L138 50" stroke="var(--brow, var(--hair, #16161c))" stroke-width="6" stroke-linecap="round"/>
+    <path d="M84 106 q4 -8 8 0 t8 0 t8 0 t8 0" fill="none" stroke="var(--mouth, #7a3b34)" stroke-width="5" stroke-linecap="round"/>
+    <use href="#fx-sweat"/>
+  </symbol>
+  <symbol id="face-shock" viewBox="0 0 200 520" overflow="visible">
+    <circle cx="77" cy="72" r="15" fill="var(--eye-white, #fff)"/><circle cx="123" cy="72" r="15" fill="var(--eye-white, #fff)"/>
+    <circle cx="77" cy="72" r="3" fill="var(--eye, #1a1a22)"/><circle cx="123" cy="72" r="3" fill="var(--eye, #1a1a22)"/>
+    <path d="M60 44 Q77 34 94 44 M106 44 Q123 34 140 44" fill="none" stroke="var(--brow, var(--hair, #16161c))" stroke-width="6" stroke-linecap="round"/>
+    <ellipse cx="100" cy="104" rx="10" ry="14" fill="var(--mouth, #7a3b34)"/>
+  </symbol>
+  <symbol id="face-worried" viewBox="0 0 200 520" overflow="visible">
+    <use href="#fx-dot-eyes"/>
+    <path d="M64 58 L90 48 M110 48 L136 58" stroke="var(--brow, var(--hair, #16161c))" stroke-width="6" stroke-linecap="round"/>
+    <path d="M84 104 q8 -8 16 0 t16 0" fill="none" stroke="var(--mouth, #7a3b34)" stroke-width="5" stroke-linecap="round"/>
+    <use href="#fx-sweat"/>
+  </symbol>
+  <symbol id="face-smirk" viewBox="0 0 200 520" overflow="visible">
+    <use href="#fx-lid-eyes"/>
+    <path d="M64 56 L90 54 M110 46 L136 40" stroke="var(--brow, var(--hair, #16161c))" stroke-width="6" stroke-linecap="round"/>
+    <path d="M86 102 Q104 108 118 94" fill="none" stroke="var(--mouth, #7a3b34)" stroke-width="5" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="face-tired" viewBox="0 0 200 520" overflow="visible">
+    <use href="#fx-lid-eyes"/>
+    <path d="M68 86 q9 6 18 0 M114 86 q9 6 18 0" fill="none" stroke="rgba(0,0,0,.22)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M64 60 H90 M110 60 H136" stroke="var(--brow, var(--hair, #16161c))" stroke-width="6" stroke-linecap="round"/>
+    <path d="M90 105 Q100 102 110 106" fill="none" stroke="var(--mouth, #7a3b34)" stroke-width="5" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="face-hollow" viewBox="0 0 200 520" overflow="visible">
+    <ellipse cx="77" cy="74" rx="11" ry="14" fill="#05070b"/><ellipse cx="123" cy="74" rx="11" ry="14" fill="#05070b"/>
+    <path d="M90 106 H110" stroke="#05070b" stroke-width="5" stroke-linecap="round"/>
+  </symbol>
+
+  
+  <symbol id="acc-glasses" viewBox="0 0 200 520" overflow="visible">
+    <path d="M62 70 L38 64 M138 70 L162 64" stroke="var(--frame, #1a1a22)" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="77" cy="72" r="15" fill="rgba(255,255,255,.14)" stroke="var(--frame, #1a1a22)" stroke-width="4"/>
+    <circle cx="123" cy="72" r="15" fill="rgba(255,255,255,.14)" stroke="var(--frame, #1a1a22)" stroke-width="4"/>
+    <path d="M92 71 Q100 64 108 71" fill="none" stroke="var(--frame, #1a1a22)" stroke-width="4"/>
+  </symbol>
+  <symbol id="acc-cap" viewBox="0 0 200 520" overflow="visible">
+    <path d="M32 54 C28 -16 172 -16 168 54Z" fill="var(--cap, #c0392b)"/>
+    <path d="M100 -12 V50" stroke="rgba(0,0,0,.15)" stroke-width="3"/>
+    <ellipse cx="100" cy="54" rx="76" ry="12" fill="var(--cap-d, #922b21)"/>
+    <circle cx="100" cy="-12" r="6" fill="var(--cap-d, #922b21)"/>
+  </symbol>
+  <symbol id="acc-mask" viewBox="0 0 200 520" overflow="visible">
+    <path d="M60 86 Q46 80 37 76 M140 86 Q154 80 163 76" fill="none" stroke="#c9d2da" stroke-width="3"/>
+    <path d="M60 84 Q100 74 140 84 L136 112 Q100 130 64 112Z" fill="var(--mask, #e8eef2)"/>
+    <path d="M68 94 Q100 88 132 94 M68 104 Q100 98 132 104" fill="none" stroke="rgba(0,0,0,.12)" stroke-width="3"/>
+  </symbol>
+  <symbol id="acc-headband" viewBox="0 0 200 520" overflow="visible">
+    <path d="M34 30 Q100 14 166 30 L166 48 Q100 32 34 48Z" fill="var(--bandage, #f4f1ea)"/>
+    <path d="M50 30 L60 44 M76 26 L84 40 M140 26 L148 40" stroke="#d8d2c4" stroke-width="3"/>
+    <circle cx="124" cy="34" r="7" fill="var(--blood, #b3261e)" opacity=".85"/>
+  </symbol>
+  <symbol id="acc-scarf" viewBox="0 0 200 520" overflow="visible">
+    <path d="M118 140 L130 222 L110 226 L102 146Z" fill="var(--scarf, #d97b2a)"/>
+    <rect x="64" y="124" width="72" height="28" rx="13" fill="var(--scarf, #d97b2a)"/>
+    <path d="M78 126 V150 M100 124 V152 M122 126 V150 M110 190 L124 188" stroke="rgba(0,0,0,.15)" stroke-width="5"/>
+  </symbol>
+  <symbol id="acc-bag" viewBox="0 0 200 520" overflow="visible">
+    <path d="M134 146 L72 284" stroke="var(--bag-strap, #3a2a1c)" stroke-width="10" stroke-linecap="round"/>
+    <rect x="38" y="270" width="64" height="54" rx="10" fill="var(--bag, #7a5233)"/>
+    <path d="M38 282 Q38 270 50 270 H90 Q102 270 102 282 V296 Q70 310 38 296Z" fill="var(--bag-d, #5c3d25)"/>
+    <rect x="66" y="294" width="8" height="10" rx="2" fill="#d9a91c"/>
+  </symbol>
+  <symbol id="acc-amulet" viewBox="0 0 200 520" overflow="visible">
+    <path d="M78 132 Q100 196 122 132" fill="none" stroke="#2b2b2b" stroke-width="3"/>
+    <rect x="90" y="176" width="20" height="26" rx="5" fill="var(--gold, #f6c445)" stroke="#a77d16" stroke-width="3"/>
+    <path d="M100 182 V196 M95 188 H105" stroke="#a77d16" stroke-width="3" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="acc-backpack" viewBox="0 0 200 520" overflow="visible">
+    <rect x="26" y="124" width="148" height="176" rx="28" fill="var(--pack, #2f3b2a)"/>
+    <rect x="42" y="104" width="116" height="26" rx="13" fill="var(--roll, #d97b2a)"/>
+  </symbol>
+  <symbol id="acc-straps" viewBox="0 0 200 520" overflow="visible">
+    <path d="M72 142 L70 262 M128 142 L130 262" stroke="var(--strap, #16181a)" stroke-width="13" stroke-linecap="round"/>
+    <path d="M72 214 H128" stroke="var(--strap, #16181a)" stroke-width="8"/>
+    <rect x="94" y="208" width="12" height="12" rx="3" fill="#f4efe6"/>
+  </symbol>
+  <symbol id="acc-watch" overflow="visible">
+    <rect x="-20" y="-36" width="40" height="13" rx="5" fill="#2b2f36"/>
+    <circle cx="0" cy="-30" r="10" fill="#dfe9ee" stroke="#2b2f36" stroke-width="3"/>
+    <path d="M0 -30 V-36 M0 -30 H5" stroke="#2b2f36" stroke-width="2"/>
+  </symbol>
+  <symbol id="acc-hand-bandage" overflow="visible">
+    <circle cx="0" cy="0" r="21" fill="var(--bandage, #f4f1ea)"/>
+    <path d="M-19 -8 L19 -12 M-20 2 L20 0 M-17 11 L17 10" stroke="#d8d2c4" stroke-width="3"/>
+    <circle cx="6" cy="-3" r="5" fill="var(--blood, #b3261e)" opacity=".85"/>
+  </symbol>
+
+  
+  <defs>
+    <path id="mk-star" d="M0 -11 L3 -3 L11 -3 L5 2 L7 11 L0 6 L-7 11 L-5 2 L-11 -3 L-3 -3Z"/>
+    <path id="mk-drop" d="M0 -14 C-6 -4 -9 2 -9 6 A9 9 0 0 0 9 6 C9 2 6 -4 0 -14Z"/>
+  </defs>
+  <symbol id="mark-question" viewBox="0 0 200 520" overflow="visible">
+    <path d="M154 -46 Q154 -72 176 -72 Q198 -72 198 -50 Q198 -34 180 -28 L178 -12" fill="none" stroke="#18202e" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="177" cy="6" r="10" fill="#18202e"/>
+    <path d="M154 -46 Q154 -72 176 -72 Q198 -72 198 -50 Q198 -34 180 -28 L178 -12" fill="none" stroke="var(--mark, #f6c445)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="177" cy="6" r="6" fill="var(--mark, #f6c445)"/>
+  </symbol>
+  <symbol id="mark-exclaim" viewBox="0 0 200 520" overflow="visible">
+    <path d="M182 -74 L178 -22" stroke="#18202e" stroke-width="19" stroke-linecap="round"/><circle cx="177" cy="0" r="11" fill="#18202e"/>
+    <path d="M182 -74 L178 -22" stroke="var(--mark-hot, #e5383b)" stroke-width="11" stroke-linecap="round"/><circle cx="177" cy="0" r="7" fill="var(--mark-hot, #e5383b)"/>
+  </symbol>
+  <symbol id="mark-anger" viewBox="0 0 200 520" overflow="visible">
+    <path d="M136 6 Q146 12 146 0 M156 0 Q156 12 166 6 M136 24 Q146 18 146 30 M166 24 Q156 18 156 30" fill="none" stroke="var(--mark-hot, #e5383b)" stroke-width="6" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="mark-drops" viewBox="0 0 200 520" overflow="visible">
+    <use href="#mk-drop" transform="translate(178 10) rotate(30)" fill="var(--tear, #8fd0ff)"/>
+    <use href="#mk-drop" transform="translate(196 36) rotate(60) scale(.8)" fill="var(--tear, #8fd0ff)"/>
+    <use href="#mk-drop" transform="translate(22 14) rotate(-30) scale(.9)" fill="var(--tear, #8fd0ff)"/>
+  </symbol>
+  <symbol id="mark-zzz" viewBox="0 0 200 520" overflow="visible">
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M150 -6 H166 L150 12 H166 M170 -40 H192 L170 -16 H192 M190 -84 H218 L190 -52 H218" stroke="#18202e" stroke-width="12"/>
+      <path d="M150 -6 H166 L150 12 H166 M170 -40 H192 L170 -16 H192 M190 -84 H218 L190 -52 H218" stroke="var(--mark-soft, #f6f2ea)" stroke-width="6"/>
+    </g>
+  </symbol>
+  <symbol id="mark-dizzy" viewBox="0 0 200 520" overflow="visible">
+    <ellipse cx="100" cy="-6" rx="74" ry="16" fill="none" stroke="var(--mark-soft, #f6f2ea)" stroke-width="3" stroke-dasharray="10 8"/>
+    <use href="#mk-star" transform="translate(30 -4)" fill="var(--mark, #f6c445)"/>
+    <use href="#mk-star" transform="translate(112 10) scale(1.2)" fill="var(--mark, #f6c445)"/>
+    <use href="#mk-star" transform="translate(166 -16)" fill="var(--mark, #f6c445)"/>
+  </symbol>
+  <symbol id="mark-idea" viewBox="0 0 200 520" overflow="visible">
+    <path d="M100 -112 V-124 M66 -98 L58 -106 M134 -98 L142 -106 M56 -66 H44 M144 -66 H156" stroke="var(--mark, #f6c445)" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="100" cy="-70" r="24" fill="#ffe27a" stroke="#18202e" stroke-width="4"/>
+    <rect x="89" y="-48" width="22" height="16" rx="4" fill="#9aa3ad" stroke="#18202e" stroke-width="4"/>
+  </symbol>
+  <symbol id="mark-shiver" viewBox="0 0 200 520" overflow="visible">
+    <g stroke-linecap="round" fill="none">
+      <path d="M16 110 l-16 -8 M12 150 h-18 M16 190 l-16 8 M184 110 l16 -8 M188 150 h18 M184 190 l16 8" stroke="#18202e" stroke-width="9"/>
+      <path d="M16 110 l-16 -8 M12 150 h-18 M16 190 l-16 8 M184 110 l16 -8 M188 150 h18 M184 190 l16 8" stroke="var(--mark-soft, #f6f2ea)" stroke-width="4"/>
+    </g>
+  </symbol>
+  <symbol id="mark-gloom" viewBox="0 0 200 520" overflow="visible">
+    <path d="M68 12 V42 M84 6 V46 M100 4 V48 M116 6 V46 M132 12 V42" stroke="var(--gloom, #3b2a6e)" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+  </symbol>
+
+  
+  <symbol id="talk-a" viewBox="0 0 200 520" overflow="visible"><ellipse cx="100" cy="100" rx="11" ry="10" fill="var(--mouth, #7a3b34)"/><ellipse cx="100" cy="105" rx="6" ry="3" fill="#c45a5a"/></symbol>
+  <symbol id="talk-e" viewBox="0 0 200 520" overflow="visible"><rect x="86" y="94" width="28" height="11" rx="5.5" fill="var(--mouth, #7a3b34)"/></symbol>
+  <symbol id="talk-o" viewBox="0 0 200 520" overflow="visible"><ellipse cx="100" cy="100" rx="7" ry="9" fill="var(--mouth, #7a3b34)"/></symbol>
+  <symbol id="talk-m" viewBox="0 0 200 520" overflow="visible"><path d="M90 98 H110" stroke="var(--mouth, #7a3b34)" stroke-width="4" stroke-linecap="round"/></symbol>
+
+  
+  <symbol id="man-walk" viewBox="0 0 200 520" overflow="visible">
+    <path d="M84 305 L68 400 L56 500 M116 305 L128 400 L142 500" fill="none" stroke="var(--pants, #1d2736)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="34" y="490" width="44" height="26" rx="10" fill="var(--shoe, #0f141c)"/><rect x="124" y="490" width="44" height="26" rx="10" fill="var(--shoe, #0f141c)"/>
+    <g style="display:var(--arm-l-rest,inline)"><line x1="58" y1="160" x2="42" y2="306" stroke="var(--shirt, #2f5f8f)" stroke-width="36" stroke-linecap="round"/><circle cx="40" cy="316" r="20" fill="var(--skin, #e7b38c)"/></g>
+    <g style="display:var(--arm-r-rest,inline)"><line x1="142" y1="160" x2="154" y2="312" stroke="var(--shirt, #2f5f8f)" stroke-width="36" stroke-linecap="round"/><circle cx="156" cy="322" r="20" fill="var(--skin, #e7b38c)"/></g>
+    <use href="#torso-shirt"/><use href="#head-short"/><use href="#eyes-dot"/>
+  </symbol>
+  <symbol id="man-run" viewBox="0 0 200 520" overflow="visible">
+    <g transform="rotate(8 100 300)">
+      <path d="M142 160 L172 228 L192 280" fill="none" stroke="var(--shirt, #2f5f8f)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="194" cy="290" r="20" fill="var(--skin, #e7b38c)"/>
+      <path d="M114 300 L140 396 L176 452" fill="none" stroke="var(--pants, #1d2736)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="162" y="440" width="44" height="22" rx="10" fill="var(--shoe, #0f141c)" transform="rotate(30 184 451)"/>
+      <path d="M86 300 L56 376 L78 446" fill="none" stroke="var(--pants, #1d2736)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="60" y="440" width="46" height="22" rx="10" fill="var(--shoe, #0f141c)"/>
+      <use href="#torso-shirt"/>
+      <path d="M58 160 L34 232 L66 268" fill="none" stroke="var(--shirt, #2f5f8f)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="72" cy="270" r="20" fill="var(--skin, #e7b38c)"/>
+      <use href="#head-short"/><use href="#eyes-wide"/>
+    </g>
+  </symbol>
+  <symbol id="man-sit" viewBox="0 0 200 520" overflow="visible">
+    <g transform="translate(0 110)"><use href="#torso-shirt"/><use href="#head-short"/><use href="#eyes-dot"/></g>
+    <path d="M94 398 H196 L198 496" fill="none" stroke="var(--pants, #1d2736)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M94 398 H196 L198 496" fill="none" stroke="rgba(0,0,0,.22)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="186" y="488" width="48" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    <path d="M90 416 H214 L218 498" fill="none" stroke="var(--pants, #1d2736)" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="204" y="494" width="50" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    <g transform="translate(0 110)"><use href="#arm-l-down"/><use href="#arm-r-down"/></g>
+  </symbol>
+  <symbol id="man-crouch" viewBox="0 0 200 520" overflow="visible">
+    <g transform="translate(0 160)"><use href="#torso-shirt"/><use href="#head-short"/><use href="#eyes-dot"/></g>
+    <rect x="62" y="380" width="30" height="126" rx="15" fill="var(--pants, #1d2736)"/><rect x="108" y="380" width="30" height="126" rx="15" fill="var(--pants, #1d2736)"/>
+    <rect x="54" y="494" width="44" height="24" rx="10" fill="var(--shoe, #0f141c)"/><rect x="102" y="494" width="44" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    <ellipse cx="76" cy="374" rx="28" ry="34" fill="var(--pants, #1d2736)"/><ellipse cx="124" cy="374" rx="28" ry="34" fill="var(--pants, #1d2736)"/>
+    <path d="M58 322 L40 380 L74 362 M142 322 L160 380 L126 362" fill="none" stroke="var(--shirt, #2f5f8f)" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="80" cy="360" r="19" fill="var(--skin, #e7b38c)"/><circle cx="120" cy="360" r="19" fill="var(--skin, #e7b38c)"/>
+  </symbol>
+  <symbol id="man-back" viewBox="0 0 200 520" overflow="visible">
+    <use href="#legs-pants"/><use href="#arm-l-down"/><use href="#arm-r-down"/><use href="#torso-shirt"/>
+    <rect x="88" y="112" width="24" height="32" fill="var(--skin-d, #c98f6b)"/>
+    <circle cx="35" cy="78" r="10" fill="var(--skin-d, #c98f6b)"/><circle cx="165" cy="78" r="10" fill="var(--skin-d, #c98f6b)"/>
+    <circle cx="100" cy="62" r="68" fill="var(--hair, #16161c)"/>
+  </symbol>
+  <symbol id="man-lie" viewBox="0 0 520 200" overflow="visible">
+    <g transform="translate(0 234) rotate(-90)"><use href="#man" width="200" height="520"/></g>
+  </symbol>
+  <symbol id="woman-back" viewBox="0 0 200 520" overflow="visible">
+    <rect x="72" y="380" width="24" height="125" rx="12" fill="var(--skin, #e7b38c)"/><rect x="104" y="380" width="24" height="125" rx="12" fill="var(--skin, #e7b38c)"/>
+    <rect x="62" y="494" width="40" height="24" rx="10" fill="var(--shoe, #0f141c)"/><rect x="98" y="494" width="40" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    <path d="M60 290 H140 L156 400 H44Z" fill="var(--skirt, #3b4c5e)"/>
+    <path d="M60 160 L54 310 M140 160 L146 310" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/>
+    <circle cx="54" cy="318" r="18" fill="var(--skin, #e7b38c)"/><circle cx="146" cy="318" r="18" fill="var(--skin, #e7b38c)"/>
+    <rect x="60" y="140" width="80" height="160" rx="30" fill="var(--top, #d9c9a8)"/>
+    <circle cx="100" cy="66" r="62" fill="var(--hair, #2a1d18)"/>
+    <rect x="38" y="50" width="124" height="180" rx="54" fill="var(--hair, #2a1d18)"/>
+  </symbol>
+  <symbol id="woman-sit" viewBox="0 0 200 520" overflow="visible">
+    <g transform="translate(0 100)">
+      <rect x="30" y="20" width="140" height="190" rx="60" fill="var(--hair, #2a1d18)"/>
+      <rect x="60" y="140" width="80" height="160" rx="30" fill="var(--top, #d9c9a8)"/>
+      <rect x="89" y="118" width="22" height="26" fill="var(--skin-d, #c98f6b)"/>
+      <circle cx="100" cy="68" r="60" fill="var(--skin, #e7b38c)"/>
+      <path d="M34 90 C24 20 70 0 100 0 C134 0 178 20 166 90 C160 64 148 46 128 36 C116 52 108 56 100 56 C92 56 84 52 72 36 C52 46 40 64 34 90Z" fill="var(--hair, #2a1d18)"/>
+      <g style="display:var(--face-rest,inline)"><circle cx="78" cy="76" r="6" fill="var(--eye, #1a1a22)"/><circle cx="122" cy="76" r="6" fill="var(--eye, #1a1a22)"/><g style="display:var(--mouth-rest,inline)"><ellipse cx="100" cy="99" rx="8" ry="3" fill="var(--eye, #7a3b34)"/></g></g>
+    </g>
+    <path d="M196 424 L198 494 M212 430 L214 494" fill="none" stroke="var(--skin, #e7b38c)" stroke-width="22" stroke-linecap="round"/>
+    <rect x="184" y="490" width="40" height="22" rx="9" fill="var(--shoe, #0f141c)"/><rect x="200" y="496" width="42" height="22" rx="9" fill="var(--shoe, #0f141c)"/>
+    <path d="M54 384 H150 Q222 386 226 424 L224 444 H54Z" fill="var(--skirt, #3b4c5e)"/>
+    <g transform="translate(0 100)">
+      <g style="display:var(--arm-l-rest,inline)"><line x1="60" y1="160" x2="54" y2="310" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/><circle cx="54" cy="318" r="18" fill="var(--skin, #e7b38c)"/></g>
+      <g style="display:var(--arm-r-rest,inline)"><line x1="140" y1="160" x2="146" y2="310" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/><circle cx="146" cy="318" r="18" fill="var(--skin, #e7b38c)"/></g>
+    </g>
+  </symbol>
+  <symbol id="woman-run" viewBox="0 0 200 520" overflow="visible">
+    <g transform="rotate(8 100 300)">
+      <rect x="30" y="20" width="140" height="190" rx="60" fill="var(--hair, #2a1d18)"/>
+      <path d="M140 160 L166 226 L186 278" fill="none" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="188" cy="286" r="18" fill="var(--skin, #e7b38c)"/>
+      <path d="M114 384 L140 440 L170 474" fill="none" stroke="var(--skin, #e7b38c)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="156" y="466" width="40" height="20" rx="9" fill="var(--shoe, #0f141c)" transform="rotate(30 176 476)"/>
+      <path d="M86 384 L64 432 L84 478" fill="none" stroke="var(--skin, #e7b38c)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="66" y="472" width="40" height="20" rx="9" fill="var(--shoe, #0f141c)"/>
+      <path d="M60 290 H140 L164 396 H38Z" fill="var(--skirt, #3b4c5e)"/>
+      <rect x="60" y="140" width="80" height="160" rx="30" fill="var(--top, #d9c9a8)"/>
+      <rect x="89" y="118" width="22" height="26" fill="var(--skin-d, #c98f6b)"/>
+      <circle cx="100" cy="68" r="60" fill="var(--skin, #e7b38c)"/>
+      <path d="M34 90 C24 20 70 0 100 0 C134 0 178 20 166 90 C160 64 148 46 128 36 C116 52 108 56 100 56 C92 56 84 52 72 36 C52 46 40 64 34 90Z" fill="var(--hair, #2a1d18)"/>
+      <g style="display:var(--face-rest,inline)"><circle cx="78" cy="76" r="6" fill="var(--eye, #1a1a22)"/><circle cx="122" cy="76" r="6" fill="var(--eye, #1a1a22)"/><g style="display:var(--mouth-rest,inline)"><ellipse cx="100" cy="99" rx="8" ry="3" fill="var(--eye, #7a3b34)"/></g></g>
+      <path d="M60 160 L38 228 L66 262" fill="none" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="70" cy="264" r="18" fill="var(--skin, #e7b38c)"/>
+    </g>
+  </symbol>
+
+  
+  <defs>
+    <g id="pose-r-carry"><path d="M142 160 L166 234 L150 262" fill="none" stroke="var(--sleeve, var(--shirt, #2f5f8f))" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/><circle cx="150" cy="262" r="19" fill="var(--skin, #e7b38c)"/></g>
+  </defs>
+  <symbol id="arm-r-carry" viewBox="0 0 200 520" overflow="visible"><use href="#pose-r-carry"/></symbol>
+  <symbol id="arm-l-carry" viewBox="0 0 200 520" overflow="visible"><g transform="matrix(-1 0 0 1 200 0)"><use href="#pose-r-carry"/></g></symbol>
+
+  
+  <symbol id="kid" viewBox="0 0 200 420" overflow="visible">
+    <rect x="68" y="296" width="26" height="100" rx="13" fill="var(--skin, #e7b38c)"/><rect x="106" y="296" width="26" height="100" rx="13" fill="var(--skin, #e7b38c)"/>
+    <rect x="68" y="364" width="26" height="32" rx="6" fill="var(--sock, #f4f4f0)"/><rect x="106" y="364" width="26" height="32" rx="6" fill="var(--sock, #f4f4f0)"/>
+    <rect x="58" y="394" width="40" height="24" rx="10" fill="var(--shoe, #0f141c)"/><rect x="102" y="394" width="40" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    <rect x="60" y="250" width="80" height="62" rx="14" fill="var(--shorts, #1f2a4a)"/>
+    <g style="display:var(--arm-l-rest,inline)"><line x1="60" y1="160" x2="54" y2="250" stroke="var(--uniform, #f4f4f0)" stroke-width="30" stroke-linecap="round"/><circle cx="54" cy="262" r="17" fill="var(--skin, #e7b38c)"/></g>
+    <g style="display:var(--arm-r-rest,inline)"><line x1="140" y1="160" x2="146" y2="250" stroke="var(--uniform, #f4f4f0)" stroke-width="30" stroke-linecap="round"/><circle cx="146" cy="262" r="17" fill="var(--skin, #e7b38c)"/></g>
+    <rect x="60" y="140" width="80" height="130" rx="28" fill="var(--uniform, #f4f4f0)"/>
+    <path d="M84 140 L100 160 L116 140" fill="none" stroke="#cfcfc8" stroke-width="5" stroke-linejoin="round"/>
+    <circle cx="100" cy="182" r="3" fill="#c9c9c2"/><circle cx="100" cy="206" r="3" fill="#c9c9c2"/><circle cx="100" cy="230" r="3" fill="#c9c9c2"/>
+    <path d="M114 178 h16 M114 186 h12" stroke="var(--badge, #2f5f8f)" stroke-width="3"/>
+    <use href="#head-short"/><use href="#fx-cheeks"/><use href="#eyes-dot"/>
+  </symbol>
+  <symbol id="kid-girl" viewBox="0 0 200 420" overflow="visible">
+    <circle cx="26" cy="98" r="24" fill="var(--hair, #16161c)"/><circle cx="174" cy="98" r="24" fill="var(--hair, #16161c)"/>
+    <circle cx="42" cy="84" r="7" fill="var(--tie, #e5383b)"/><circle cx="158" cy="84" r="7" fill="var(--tie, #e5383b)"/>
+    <rect x="70" y="300" width="24" height="96" rx="12" fill="var(--skin, #e7b38c)"/><rect x="106" y="300" width="24" height="96" rx="12" fill="var(--skin, #e7b38c)"/>
+    <rect x="70" y="364" width="24" height="32" rx="6" fill="var(--sock, #f4f4f0)"/><rect x="106" y="364" width="24" height="32" rx="6" fill="var(--sock, #f4f4f0)"/>
+    <rect x="60" y="394" width="40" height="24" rx="10" fill="var(--shoe, #0f141c)"/><rect x="100" y="394" width="40" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    <path d="M58 240 H142 L156 318 H44Z" fill="var(--shorts, #1f2a4a)"/>
+    <path d="M78 248 L72 316 M100 248 V316 M122 248 L128 316" stroke="rgba(255,255,255,.15)" stroke-width="3"/>
+    <g style="display:var(--arm-l-rest,inline)"><line x1="60" y1="160" x2="54" y2="250" stroke="var(--uniform, #f4f4f0)" stroke-width="28" stroke-linecap="round"/><circle cx="54" cy="262" r="16" fill="var(--skin, #e7b38c)"/></g>
+    <g style="display:var(--arm-r-rest,inline)"><line x1="140" y1="160" x2="146" y2="250" stroke="var(--uniform, #f4f4f0)" stroke-width="28" stroke-linecap="round"/><circle cx="146" cy="262" r="16" fill="var(--skin, #e7b38c)"/></g>
+    <rect x="60" y="140" width="80" height="112" rx="28" fill="var(--uniform, #f4f4f0)"/>
+    <rect x="89" y="118" width="22" height="26" fill="var(--skin-d, #c98f6b)"/>
+    <path d="M100 152 L82 142 L82 164Z M100 152 L118 142 L118 164Z" fill="var(--shorts, #1f2a4a)"/><circle cx="100" cy="152" r="6" fill="var(--shorts, #1f2a4a)"/>
+    <circle cx="100" cy="65" r="65" fill="var(--skin, #e7b38c)"/>
+    <path d="M32 96 C18 18 62 -12 100 -12 C138 -12 182 18 168 96 C166 70 160 52 150 40 L50 40 C40 52 34 70 32 96Z" fill="var(--hair, #16161c)"/>
+    <use href="#fx-cheeks"/><use href="#eyes-dot"/>
+  </symbol>
+  <symbol id="student" viewBox="0 0 200 520" overflow="visible">
+    <use href="#legs-pants"/>
+    <g style="display:var(--arm-l-rest,inline)"><line x1="58" y1="160" x2="52" y2="320" stroke="var(--uniform, #f4f4f0)" stroke-width="36" stroke-linecap="round"/><circle cx="52" cy="330" r="20" fill="var(--skin, #e7b38c)"/></g>
+    <g style="display:var(--arm-r-rest,inline)"><line x1="142" y1="160" x2="148" y2="320" stroke="var(--uniform, #f4f4f0)" stroke-width="36" stroke-linecap="round"/><circle cx="148" cy="330" r="20" fill="var(--skin, #e7b38c)"/></g>
+    <rect x="58" y="140" width="84" height="175" rx="30" fill="var(--uniform, #f4f4f0)"/>
+    <rect x="58" y="292" width="84" height="12" fill="#1a1a22"/><rect x="92" y="290" width="16" height="16" rx="3" fill="#b9bcc0"/>
+    <path d="M84 140 L100 162 L116 140" fill="none" stroke="#cfcfc8" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M114 180 h18 M114 188 h14" stroke="var(--badge, #2f5f8f)" stroke-width="3"/>
+    <use href="#head-short"/><use href="#eyes-dot"/>
+  </symbol>
+
+  
+  <symbol id="crowd" viewBox="0 0 640 520" overflow="visible"><g fill="var(--crowd-far, #1b2233)"><circle cx="160" cy="62" r="60"/><rect x="98" y="122" width="124" height="400" rx="46"/></g><g fill="var(--crowd-far, #1b2233)"><circle cx="320" cy="81.4" r="57.5"/><rect x="260.6" y="138.8" width="118.8" height="383.2" rx="44.1"/></g><g fill="var(--crowd-far, #1b2233)"><circle cx="480" cy="53.2" r="61.2"/><rect x="416.8" y="114.3" width="126.4" height="407.7" rx="46.9"/></g><g fill="var(--crowd, #05070b)"><circle cx="80" cy="83.1" r="57.2"/><rect x="20.9" y="140.4" width="118.3" height="381.6" rx="43.9"/></g><g fill="var(--crowd, #05070b)"><circle cx="240" cy="107.8" r="54"/><rect x="184.2" y="161.8" width="111.6" height="360.2" rx="41.4"/></g><g fill="var(--crowd, #05070b)"><circle cx="400" cy="69" r="59.1"/><rect x="339" y="128.1" width="122.1" height="393.9" rx="45.3"/></g><g fill="var(--crowd, #05070b)"><circle cx="560" cy="97.2" r="55.4"/><rect x="502.8" y="152.6" width="114.5" height="369.4" rx="42.5"/></g></symbol>
+
+  
+  <symbol id="prop-bottle" overflow="visible"><rect x="-8" y="-88" width="16" height="14" rx="3" fill="#2f8fd0"/><rect x="-15" y="-76" width="30" height="84" rx="9" fill="#bfe3f5" opacity=".92" stroke="#7fb2cc" stroke-width="3"/><rect x="-15" y="-50" width="30" height="18" fill="#2f8fd0"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-radio" overflow="visible"><path d="M24 -70 L42 -112" stroke="#9aa3ad" stroke-width="4" stroke-linecap="round"/><rect x="-38" y="-72" width="76" height="60" rx="9" fill="#3a3f4a"/><circle cx="-14" cy="-42" r="15" fill="#23262d"/><path d="M-22 -42 H-6 M-14 -50 V-34" stroke="#4a505c" stroke-width="3"/><rect x="8" y="-62" width="22" height="10" rx="2" fill="var(--gold, #f6c445)"/><circle cx="19" cy="-32" r="6" fill="#9aa3ad"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-candle" overflow="visible"><circle cx="0" cy="-82" r="32" fill="#ffcf8a" opacity=".25"/><rect x="-9" y="-70" width="18" height="78" rx="3" fill="#f3ead2"/><path d="M0 -70 V-76" stroke="#2b2b2b" stroke-width="2"/><ellipse cx="0" cy="-86" rx="8" ry="14" fill="#ffd890"/><ellipse cx="0" cy="-82" rx="3.5" ry="7" fill="#fff6dc"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-map" overflow="visible"><path d="M-42 -84 L-14 -76 L14 -84 L42 -76 V6 L14 -2 L-14 6 L-42 -2Z" fill="#efe3c2" stroke="#c9b98f" stroke-width="3" stroke-linejoin="round"/><path d="M-14 -76 V6 M14 -84 V-2" stroke="#c9b98f" stroke-width="2"/><path d="M-32 -16 Q-12 -40 6 -36 T26 -60" fill="none" stroke="var(--red, #e5383b)" stroke-width="4" stroke-dasharray="6 5"/><path d="M22 -66 l10 10 M32 -66 l-10 10" stroke="var(--red, #e5383b)" stroke-width="4" stroke-linecap="round"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-rope" overflow="visible"><circle cx="0" cy="-36" r="28" fill="none" stroke="#c8a165" stroke-width="9"/><circle cx="0" cy="-36" r="16" fill="none" stroke="#a9844c" stroke-width="8"/><path d="M24 -20 Q40 0 30 24" fill="none" stroke="#c8a165" stroke-width="8" stroke-linecap="round"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-sack" overflow="visible"><path d="M-12 6 Q-44 20 -40 66 Q-36 90 0 90 Q36 90 40 66 Q44 20 12 6Z" fill="#b48a5a"/><path d="M-20 40 Q0 48 20 40" fill="none" stroke="#8a6a44" stroke-width="3"/><rect x="-15" y="-6" width="30" height="14" rx="6" fill="#8a6a44"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-bowl" overflow="visible"><path d="M-32 -26 A32 18 0 0 1 32 -26Z" fill="#fbfaf5"/><path d="M-38 -26 H38 A38 32 0 0 1 -38 -26Z" fill="#e9e4d6" stroke="#b9b2a2" stroke-width="3"/><path d="M-30 -14 H30" stroke="#4f6688" stroke-width="3"/><circle cx="0" cy="8" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-bandage" overflow="visible"><path d="M16 -30 Q44 -18 34 14" fill="none" stroke="var(--bandage, #f4f1ea)" stroke-width="12" stroke-linecap="round"/><rect x="-20" y="-54" width="40" height="44" rx="8" fill="var(--bandage, #f4f1ea)" stroke="#d8d2c4" stroke-width="3"/><ellipse cx="0" cy="-54" rx="20" ry="6" fill="#e8e3d6" stroke="#d8d2c4" stroke-width="3"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-box" overflow="visible"><rect x="-64" y="-62" width="128" height="86" rx="6" fill="var(--box, #c49a6c)" stroke="#8a6a44" stroke-width="4"/><path d="M-64 -40 H64" stroke="#8a6a44" stroke-width="3"/><rect x="-12" y="-62" width="24" height="86" fill="#e3c99a" opacity=".7"/><circle cx="-50" cy="0" r="19" fill="var(--skin, #e7b38c)"/><circle cx="50" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+
+  
+  <symbol id="icon-clock" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="var(--paper, #f6f1e6)" stroke="var(--ink, #18202e)" stroke-width="7"/><path d="M50 50 V26 M50 50 L68 60" stroke="var(--ink, #18202e)" stroke-width="7" stroke-linecap="round"/><circle cx="50" cy="50" r="5" fill="var(--red, #e5383b)"/></symbol>
+  <symbol id="icon-thermo" viewBox="0 0 100 100"><path d="M40 62 V20 A10 10 0 0 1 60 20 V62" fill="var(--paper, #f6f1e6)" stroke="var(--ink, #18202e)" stroke-width="6"/><circle cx="50" cy="76" r="16" fill="var(--red, #e5383b)" stroke="var(--ink, #18202e)" stroke-width="6"/><rect x="46" y="34" width="8" height="34" fill="var(--red, #e5383b)"/><path d="M62 30 h8 M62 42 h8 M62 54 h8" stroke="var(--ink, #18202e)" stroke-width="4"/></symbol>
+  <symbol id="icon-warn" viewBox="0 0 100 100"><path d="M50 8 L94 88 H6Z" fill="var(--gold, #f6c445)" stroke="var(--ink, #18202e)" stroke-width="6" stroke-linejoin="round"/><rect x="45" y="34" width="10" height="30" rx="5" fill="var(--ink, #18202e)"/><circle cx="50" cy="75" r="6" fill="var(--ink, #18202e)"/></symbol>
+  <symbol id="icon-check" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="var(--ok, #3fa66b)"/><path d="M29 52 L44 67 L72 36" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-cross" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="var(--red, #e5383b)"/><path d="M34 34 L66 66 M66 34 L34 66" stroke="#fff" stroke-width="10" stroke-linecap="round"/></symbol>
+  <symbol id="icon-arrow" viewBox="0 0 100 100"><path d="M14 50 H76 M56 28 L80 50 L56 72" fill="none" stroke="var(--icon, #18202e)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-drop" viewBox="0 0 100 100"><path d="M50 8 C30 40 22 54 22 66 A28 28 0 0 0 78 66 C78 54 70 40 50 8Z" fill="#4ea3e0" stroke="var(--ink, #18202e)" stroke-width="5"/><path d="M36 66 A14 14 0 0 0 46 80" fill="none" stroke="#d6efff" stroke-width="5" stroke-linecap="round"/></symbol>
+  <symbol id="icon-bolt" viewBox="0 0 100 100"><path d="M58 6 L22 56 H48 L40 94 L78 40 H52Z" fill="var(--gold, #f6c445)" stroke="var(--ink, #18202e)" stroke-width="5" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-fire" viewBox="0 0 100 100"><path d="M50 6 C66 30 82 42 80 64 A30 30 0 0 1 20 64 C18 48 30 40 34 26 C40 38 44 42 48 44 C46 30 46 18 50 6Z" fill="#f08a24" stroke="var(--ink, #18202e)" stroke-width="5" stroke-linejoin="round"/><path d="M50 50 C60 60 64 66 62 74 A12 12 0 0 1 38 74 C38 66 44 62 50 50Z" fill="var(--gold, #f6c445)"/></symbol>
+  <symbol id="icon-pin" viewBox="0 0 100 100"><path d="M50 94 C30 66 18 52 18 36 A32 32 0 0 1 82 36 C82 52 70 66 50 94Z" fill="var(--red, #e5383b)" stroke="var(--ink, #18202e)" stroke-width="5"/><circle cx="50" cy="36" r="12" fill="var(--paper, #f6f1e6)"/></symbol>
+  <symbol id="icon-skull" viewBox="0 0 100 100"><path d="M50 10 C26 10 14 28 14 46 C14 60 22 66 28 70 V84 H72 V70 C78 66 86 60 86 46 C86 28 74 10 50 10Z" fill="var(--paper, #f6f1e6)" stroke="var(--ink, #18202e)" stroke-width="5" stroke-linejoin="round"/><circle cx="36" cy="48" r="10" fill="var(--ink, #18202e)"/><circle cx="64" cy="48" r="10" fill="var(--ink, #18202e)"/><path d="M50 58 L45 68 H55Z M40 76 V84 M50 76 V84 M60 76 V84" fill="var(--ink, #18202e)" stroke="var(--ink, #18202e)" stroke-width="4"/></symbol>
+  <symbol id="icon-eye" viewBox="0 0 100 100"><path d="M6 50 Q50 6 94 50 Q50 94 6 50Z" fill="var(--paper, #f6f1e6)" stroke="var(--ink, #18202e)" stroke-width="6" stroke-linejoin="round"/><circle cx="50" cy="50" r="17" fill="var(--red, #e5383b)"/><circle cx="50" cy="50" r="8" fill="var(--ink, #18202e)"/></symbol>
+
+  
+  <symbol id="set-door" viewBox="0 0 234 533"><rect width="234" height="533" fill="var(--door-frame, #3e2a1b)"/><rect x="14" y="14" width="206" height="519" fill="var(--door, #6b4a2f)"/><rect x="38" y="44" width="158" height="190" rx="6" fill="none" stroke="rgba(0,0,0,.25)" stroke-width="6"/><rect x="38" y="270" width="158" height="226" rx="6" fill="none" stroke="rgba(0,0,0,.25)" stroke-width="6"/><circle cx="196" cy="290" r="11" fill="var(--gold, #f6c445)"/></symbol>
+  <symbol id="set-door-open" viewBox="0 0 234 533"><rect width="234" height="533" fill="var(--door-frame, #3e2a1b)"/><rect x="14" y="14" width="206" height="519" fill="var(--void, #05070b)"/><path d="M14 14 L92 40 L92 506 L14 533Z" fill="var(--door, #6b4a2f)"/><path d="M92 40 L100 44 V504 L92 506Z" fill="rgba(0,0,0,.35)"/><circle cx="80" cy="290" r="9" fill="var(--gold, #f6c445)"/></symbol>
+  <symbol id="set-window" viewBox="0 0 260 312"><rect width="260" height="300" rx="6" fill="var(--frame, #e9e4d6)"/><rect x="16" y="16" width="228" height="268" fill="var(--glass, #1c2c4f)"/><path d="M130 16 V284 M16 150 H244" stroke="var(--frame, #e9e4d6)" stroke-width="12"/><path d="M40 40 L90 40 L40 100Z" fill="rgba(255,255,255,.12)"/><rect x="-10" y="294" width="280" height="18" rx="4" fill="var(--frame, #e9e4d6)"/></symbol>
+  <symbol id="set-table" viewBox="0 0 312 195"><rect width="312" height="22" rx="6" fill="var(--wood-0, #6b4a2f)"/><rect x="20" y="22" width="22" height="173" fill="var(--wood-1, #3e2a1b)"/><rect x="270" y="22" width="22" height="173" fill="var(--wood-1, #3e2a1b)"/><rect x="42" y="22" width="228" height="20" fill="var(--wood-1, #3e2a1b)" opacity=".6"/></symbol>
+  <symbol id="set-chair" viewBox="0 0 117 234"><rect x="6" y="0" width="105" height="118" rx="10" fill="var(--wood-0, #6b4a2f)"/><rect x="20" y="16" width="77" height="86" rx="6" fill="var(--wood-1, #3e2a1b)" opacity=".5"/><rect x="0" y="112" width="117" height="18" rx="5" fill="var(--wood-0, #6b4a2f)"/><rect x="8" y="130" width="14" height="104" fill="var(--wood-1, #3e2a1b)"/><rect x="95" y="130" width="14" height="104" fill="var(--wood-1, #3e2a1b)"/></symbol>
+  <symbol id="set-tap" viewBox="0 0 160 200"><rect x="64" y="0" width="32" height="26" rx="6" fill="#9aa3ad"/><path d="M80 26 V46 Q80 58 92 58 H112 V74" fill="none" stroke="#b9c1ca" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><rect x="70" y="8" width="20" height="10" rx="3" fill="var(--red, #e5383b)"/><path d="M8 96 H152 L138 150 H22Z" fill="var(--basin, #e9e4d6)" stroke="#b9b2a2" stroke-width="4" stroke-linejoin="round"/><rect x="72" y="150" width="16" height="50" fill="#9aa3ad"/></symbol>
+  <symbol id="set-stairs" viewBox="0 0 300 300"><path d="M0 300 V250 H60 V200 H120 V150 H180 V100 H240 V50 H300 V300Z" fill="var(--wall-0, #33465c)"/><path d="M0 250 H60 M60 200 H120 M120 150 H180 M180 100 H240 M240 50 H300" stroke="var(--cream, #efe8da)" stroke-width="6" opacity=".55"/></symbol>
+  <symbol id="set-bulb" viewBox="0 0 120 220"><circle cx="60" cy="170" r="50" fill="var(--lamp, #ffcf8a)" opacity=".22"/><path d="M60 0 V130" stroke="#2b2b2b" stroke-width="4"/><rect x="48" y="126" width="24" height="20" rx="4" fill="#5c5f66"/><circle cx="60" cy="166" r="22" fill="var(--lamp, #ffcf8a)"/><circle cx="54" cy="160" r="7" fill="#fff3d6"/></symbol>
+  <symbol id="set-bed" viewBox="0 0 520 200"><rect x="0" y="20" width="26" height="180" rx="6" fill="var(--wood-0, #6b4a2f)"/><rect x="0" y="110" width="520" height="56" rx="10" fill="var(--wood-1, #3e2a1b)"/><rect x="494" y="84" width="26" height="116" rx="6" fill="var(--wood-0, #6b4a2f)"/><rect x="26" y="86" width="468" height="34" rx="14" fill="#efe8da"/><rect x="40" y="62" width="110" height="38" rx="18" fill="#fbfaf5"/><path d="M190 80 Q300 66 494 86 V122 H170Z" fill="var(--blanket, #4f6688)"/></symbol>
+  <symbol id="set-shrine" viewBox="0 0 200 360"><rect x="88" y="180" width="24" height="180" fill="var(--shrine-pole, #c9b98f)"/><rect x="40" y="170" width="120" height="16" rx="3" fill="var(--shrine-pole, #c9b98f)"/><rect x="58" y="96" width="84" height="74" fill="var(--shrine, #e9e4d6)" stroke="var(--gold, #f6c445)" stroke-width="4"/><rect x="86" y="120" width="28" height="50" rx="12" fill="var(--void, #05070b)"/><path d="M40 100 L100 40 L160 100Z" fill="var(--shrine-roof, #b3261e)" stroke="var(--gold, #f6c445)" stroke-width="4" stroke-linejoin="round"/><path d="M60 62 L100 14 L140 62Z" fill="var(--shrine-roof, #b3261e)" stroke="var(--gold, #f6c445)" stroke-width="4" stroke-linejoin="round"/><path d="M100 14 V0 M40 100 L28 90 M160 100 L172 90" stroke="var(--gold, #f6c445)" stroke-width="5" stroke-linecap="round"/><circle cx="72" cy="182" r="6" fill="var(--red, #e5383b)"/><circle cx="128" cy="182" r="6" fill="#f3ead2"/></symbol>
+
+  
+  <defs>
+    <g id="pose-r-reach"><path d="M142 160 L186 196" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="41" stroke-linecap="round"/><path d="M142 160 L186 196" fill="none" stroke="var(--sleeve, var(--shirt, #2f5f8f))" stroke-width="34" stroke-linecap="round"/><path d="M186 196 L210 184" fill="none" stroke="var(--forearm, var(--sleeve, var(--shirt, #2f5f8f)))" stroke-width="29" stroke-linecap="round"/><path d="M210 184 L226 176" fill="none" stroke="var(--skin, #e7b38c)" stroke-width="20" stroke-linecap="round"/><circle cx="226" cy="176" r="19" fill="var(--skin, #e7b38c)"/></g>
+  </defs>
+  <symbol id="arm-r-reach" viewBox="0 0 200 520" overflow="visible"><use href="#pose-r-reach"/></symbol>
+  <symbol id="arm-l-reach" viewBox="0 0 200 520" overflow="visible"><g transform="matrix(-1 0 0 1 200 0)"><use href="#pose-r-reach"/></g></symbol>
+
+  
+  <symbol id="face-wary" viewBox="0 0 200 520" overflow="visible">
+    <circle cx="84" cy="74" r="6" fill="var(--eye, #1a1a22)"/><circle cx="130" cy="74" r="6" fill="var(--eye, #1a1a22)"/>
+    <path d="M67 67 H89 M113 67 H135" stroke="var(--eye, #1a1a22)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M64 57 L90 62 M110 62 L136 57" stroke="var(--brow, var(--hair, #16161c))" stroke-width="6" stroke-linecap="round"/>
+    <path d="M92 102 H108" stroke="var(--mouth, #7a3b34)" stroke-width="4" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="face-guilty" viewBox="0 0 200 520" overflow="visible">
+    <circle cx="77" cy="79" r="5" fill="var(--eye, #1a1a22)"/><circle cx="123" cy="79" r="5" fill="var(--eye, #1a1a22)"/>
+    <path d="M67 73 Q77 69 87 73 M113 73 Q123 69 133 73" fill="none" stroke="var(--eye, #1a1a22)" stroke-width="5" stroke-linecap="round"/>
+    <path d="M62 59 L90 51 M110 51 L138 59" stroke="var(--brow, var(--hair, #16161c))" stroke-width="7" stroke-linecap="round"/>
+    <path d="M90 105 Q100 100 110 105" fill="none" stroke="var(--mouth, #7a3b34)" stroke-width="5" stroke-linecap="round"/>
+  </symbol>
+
+  
+  <defs>
+    <linearGradient id="lr-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--lr-sky-0, #0c1424)"/><stop offset="1" stop-color="var(--lr-sky-1, #24344c)"/></linearGradient>
+    <linearGradient id="lr-shutter-fade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".18"/><stop offset=".5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".22"/></linearGradient>
+    <linearGradient id="lr-beam-grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffdf9a" stop-opacity=".7"/><stop offset="1" stop-color="#ffdf9a" stop-opacity="0"/></linearGradient>
+    <linearGradient id="lr-cone-grad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffcf8a" stop-opacity=".38"/><stop offset="1" stop-color="#ffcf8a" stop-opacity=".05"/></linearGradient>
+  </defs>
+  
+  <defs>
+    
+    <g id="lr-g-ek-cap">
+      <path d="M32 50 C28 -20 172 -20 168 50Z" fill="var(--lr-cap-navy, #1f2a44)"/>
+      <path d="M100 -18 C150 -16 172 10 168 50 L100 50Z" fill="rgba(0,0,0,.2)"/>
+      <circle cx="100" cy="-17" r="6" fill="var(--lr-cap-navy, #1f2a44)"/>
+      <g transform="rotate(14 140 13)"><rect x="128" y="2" width="24" height="22" rx="3" fill="var(--lr-cap-patch, #e8dcc3)"/><rect x="131" y="5" width="18" height="16" rx="2" fill="none" stroke="#a99c80" stroke-width="2" stroke-dasharray="4 3"/></g>
+      <path d="M40 64 Q100 54 160 64 L156 72 Q100 62 44 72Z" fill="rgba(0,0,0,.16)"/>
+      <path d="M12 50 Q100 26 188 50 Q192 64 176 68 Q100 52 24 68 Q8 64 12 50Z" fill="var(--lr-cap-brim, #18213a)"/>
+      <path d="M20 50 Q100 30 180 50" fill="none" stroke="rgba(255,255,255,.2)" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    
+    <g id="lr-g-ek-face" style="display:var(--face-rest,inline)">
+      <circle cx="77" cy="74" r="6" fill="var(--eye, #1a1a22)"/><circle cx="123" cy="74" r="6" fill="var(--eye, #1a1a22)"/>
+      <path d="M68 67 Q77 63 86 67 M114 67 Q123 63 132 67" fill="none" stroke="rgba(0,0,0,.35)" stroke-width="3" stroke-linecap="round"/>
+      <path d="M70 85 q7 4 14 0 M116 85 q7 4 14 0" fill="none" stroke="rgba(0,0,0,.14)" stroke-width="3" stroke-linecap="round"/>
+      <g style="display:var(--mouth-rest,inline)"><path d="M90 99 Q100 105 110 99" fill="none" stroke="var(--mouth, #7a3b34)" stroke-width="4" stroke-linecap="round"/></g>
+    </g>
+    <g id="lr-g-ek-torso">
+      <path d="M64 152 Q100 140 136 152 Q142 156 142 170 V306 Q142 318 130 318 H70 Q58 318 58 306 V170 Q58 156 64 152Z" fill="var(--lr-ek-shirt, #6e5a48)"/>
+      <path d="M120 147 Q136 150 140 160 Q142 166 142 176 V306 Q142 318 130 318 H120Z" fill="rgba(0,0,0,.14)"/>
+      <path d="M84 142 L100 166 L92 174 L77 150Z M116 142 L100 166 L108 174 L123 150Z" fill="var(--lr-ek-collar, #85705c)"/>
+      <path d="M100 168 V316" stroke="rgba(0,0,0,.22)" stroke-width="3"/>
+      <circle cx="100" cy="192" r="3" fill="#43372c"/><circle cx="100" cy="232" r="3" fill="#43372c"/><circle cx="100" cy="272" r="3" fill="#43372c"/>
+      <rect x="70" y="192" width="24" height="26" rx="3" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="3"/><path d="M70 200 H94" stroke="rgba(0,0,0,.28)" stroke-width="3"/>
+    </g>
+    
+    <g id="lr-g-watch-wrist">
+      <rect x="-14" y="-36" width="28" height="13" rx="4" fill="#15171b"/>
+      <circle cx="0" cy="-30" r="8" fill="#d9dde0" stroke="#15171b" stroke-width="3"/>
+      <path d="M0 -30 L-4 -29.5 M0 -30 L-5.4 -31.1" stroke="#15171b" stroke-width="1.6"/>
+      <path d="M-5 -35 L1 -29 L4 -24" fill="none" stroke="#5c6670" stroke-width="1.4" style="display:var(--lr-crack,none)"/>
+    </g>
+    <g id="lr-g-wet-drops"><use href="#mk-drop" transform="translate(0 0) scale(.8)"/></g>
+  </defs>
+
+  
+  <symbol id="lr-ek" viewBox="0 0 200 520" overflow="visible">
+    <rect x="68" y="300" width="28" height="200" rx="13" fill="var(--lr-ek-pants, #3d434c)"/><rect x="104" y="300" width="28" height="200" rx="13" fill="var(--lr-ek-pants, #3d434c)"/>
+    <rect x="108" y="300" width="24" height="200" rx="12" fill="rgba(0,0,0,.12)"/>
+    <rect x="56" y="490" width="44" height="28" rx="10" fill="var(--shoe, #0f141c)"/><rect x="100" y="490" width="44" height="28" rx="10" fill="var(--shoe, #0f141c)"/>
+    <g style="display:var(--arm-l-rest,inline)"><path d="M57 222 L54 316" stroke="var(--skin, #e7b38c)" stroke-width="24" stroke-linecap="round"/><path d="M61 166 L57 226" stroke="var(--lr-ek-shirt, #6e5a48)" stroke-width="36" stroke-linecap="round"/><circle cx="54" cy="328" r="19" fill="var(--skin, #e7b38c)"/></g>
+    <g style="display:var(--arm-r-rest,inline)"><path d="M143 222 L146 316" stroke="var(--skin, #e7b38c)" stroke-width="24" stroke-linecap="round"/><path d="M139 166 L143 226" stroke="var(--lr-ek-shirt, #6e5a48)" stroke-width="36" stroke-linecap="round"/><circle cx="146" cy="328" r="19" fill="var(--skin, #e7b38c)"/><use href="#lr-g-watch-wrist" transform="translate(146 328)"/></g>
+    <use href="#lr-g-ek-torso"/>
+    <use href="#head-short"/><use href="#lr-g-ek-face"/>
+    <g style="display:var(--lr-cap,inline)"><use href="#lr-g-ek-cap"/></g>
+  </symbol>
+  <symbol id="lr-ek-cap" viewBox="0 0 200 520" overflow="visible"><use href="#lr-g-ek-cap"/></symbol>
+
+  
+  <symbol id="lr-ek-drive" viewBox="0 0 200 520" overflow="visible">
+    <path d="M50 210 L40 250" stroke="var(--skin, #e7b38c)" stroke-width="24" stroke-linecap="round"/><path d="M150 210 L160 250" stroke="var(--skin, #e7b38c)" stroke-width="24" stroke-linecap="round"/>
+    <path d="M61 166 L49 214" stroke="var(--lr-ek-shirt, #6e5a48)" stroke-width="36" stroke-linecap="round"/><path d="M139 166 L151 214" stroke="var(--lr-ek-shirt, #6e5a48)" stroke-width="36" stroke-linecap="round"/>
+    <use href="#lr-g-ek-torso"/>
+    <use href="#head-short"/><use href="#lr-g-ek-face"/>
+    <g style="display:var(--lr-cap,inline)"><use href="#lr-g-ek-cap"/></g>
+  </symbol>
+  <symbol id="lr-ek-drive-hands" viewBox="0 0 200 520" overflow="visible">
+    <path d="M40 250 L66 292 M160 250 L134 292" stroke="var(--skin, #e7b38c)" stroke-width="24" stroke-linecap="round"/>
+    <g transform="translate(142 279) rotate(-58)" style="display:var(--lr-watch,inline)"><rect x="-14" y="-7" width="28" height="13" rx="4" fill="#15171b"/><circle cx="0" cy="0" r="7" fill="#d9dde0" stroke="#15171b" stroke-width="2.5"/></g>
+    <circle cx="66" cy="292" r="19" fill="var(--skin, #e7b38c)"/><circle cx="134" cy="292" r="19" fill="var(--skin, #e7b38c)"/>
+  </symbol>
+
+  
+  <symbol id="lr-chan" viewBox="0 0 200 520" overflow="visible">
+    <rect x="70" y="306" width="26" height="194" rx="12" fill="var(--lr-chan-pants, #4a3528)"/><rect x="104" y="306" width="26" height="194" rx="12" fill="var(--lr-chan-pants, #4a3528)"/>
+    <rect x="58" y="490" width="42" height="28" rx="10" fill="var(--lr-chan-shoe, #1d1712)"/><rect x="100" y="490" width="42" height="28" rx="10" fill="var(--lr-chan-shoe, #1d1712)"/>
+    <g style="display:var(--arm-l-rest,inline)"><path d="M64 174 L60 322" stroke="var(--lr-chan-shirt, #6f7d6a)" stroke-width="30" stroke-linecap="round"/><circle cx="60" cy="332" r="18" fill="var(--skin, #e7b38c)"/></g>
+    <g style="display:var(--arm-r-rest,inline)"><path d="M136 174 L140 322" stroke="var(--lr-chan-shirt, #6f7d6a)" stroke-width="30" stroke-linecap="round"/><circle cx="140" cy="332" r="18" fill="var(--skin, #e7b38c)"/></g>
+    <ellipse cx="68" cy="168" rx="16" ry="14" fill="var(--lr-chan-shirt, #6f7d6a)"/><ellipse cx="132" cy="168" rx="16" ry="14" fill="var(--lr-chan-shirt, #6f7d6a)"/>
+    <path d="M70 162 Q100 150 130 162 Q140 168 140 184 V312 Q140 322 130 322 H70 Q60 322 60 312 V184 Q60 168 70 162Z" fill="var(--lr-chan-shirt, #6f7d6a)"/>
+    <path d="M118 156 Q136 160 140 172 V312 Q140 322 130 322 H118Z" fill="rgba(0,0,0,.14)"/>
+    <rect x="90" y="136" width="20" height="26" fill="var(--skin-d, #c98f6b)"/>
+    <path d="M86 154 L100 170 L90 178 L78 160Z M114 154 L100 170 L110 178 L122 160Z" fill="var(--lr-chan-collar, #5d6a59)"/>
+    <path d="M100 172 V320" stroke="rgba(0,0,0,.2)" stroke-width="3"/><circle cx="100" cy="196" r="3" fill="#3f4a3c"/><circle cx="100" cy="236" r="3" fill="#3f4a3c"/><circle cx="100" cy="276" r="3" fill="#3f4a3c"/>
+    <circle cx="46" cy="90" r="10" fill="var(--skin-d, #c98f6b)"/><circle cx="154" cy="90" r="10" fill="var(--skin-d, #c98f6b)"/>
+    <ellipse cx="100" cy="80" rx="54" ry="66" fill="var(--skin, #e7b38c)"/>
+    <path d="M46 64 C44 2 156 2 154 64 C148 40 130 30 100 30 C70 30 52 40 46 64Z" fill="var(--lr-chan-hair, #a8aaac)"/>
+    <g style="display:var(--face-rest,inline)">
+      <path d="M62 70 L90 66 M110 66 L138 70" stroke="var(--lr-chan-brow, #8d8f91)" stroke-width="10" stroke-linecap="round"/>
+      <circle cx="77" cy="87" r="5.5" fill="var(--eye, #1a1a22)"/><circle cx="123" cy="87" r="5.5" fill="var(--eye, #1a1a22)"/>
+      <path d="M68 81 H86 M114 81 H132" stroke="rgba(0,0,0,.32)" stroke-width="3" stroke-linecap="round"/>
+      <path d="M80 100 Q76 112 82 122 M120 100 Q124 112 118 122" fill="none" stroke="rgba(0,0,0,.14)" stroke-width="3"/>
+      <g style="display:var(--mouth-rest,inline)"><path d="M90 114 H110" stroke="var(--mouth, #7a3b34)" stroke-width="4" stroke-linecap="round"/></g>
+    </g>
+  </symbol>
+
+  
+  <symbol id="lr-mom" viewBox="0 0 200 520" overflow="visible">
+    <rect x="34" y="22" width="132" height="158" rx="56" fill="var(--hair, #16161c)"/>
+    <rect x="76" y="462" width="22" height="44" rx="10" fill="var(--skin, #e7b38c)"/><rect x="102" y="462" width="22" height="44" rx="10" fill="var(--skin, #e7b38c)"/>
+    <rect x="62" y="494" width="40" height="24" rx="10" fill="var(--shoe, #0f141c)"/><rect x="98" y="494" width="40" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    <path d="M62 288 H138 L152 474 H48Z" fill="var(--lr-mom-skirt, #2c3442)"/><path d="M112 288 H138 L152 474 H118Z" fill="rgba(0,0,0,.16)"/>
+    <g style="display:var(--arm-l-rest,inline)"><line x1="60" y1="160" x2="54" y2="310" stroke="var(--lr-mom-top, #6f8aa6)" stroke-width="30" stroke-linecap="round"/><circle cx="54" cy="318" r="18" fill="var(--skin, #e7b38c)"/></g>
+    <g style="display:var(--arm-r-rest,inline)"><line x1="140" y1="160" x2="146" y2="310" stroke="var(--lr-mom-top, #6f8aa6)" stroke-width="30" stroke-linecap="round"/><circle cx="146" cy="318" r="18" fill="var(--skin, #e7b38c)"/></g>
+    <rect x="60" y="140" width="80" height="156" rx="30" fill="var(--lr-mom-top, #6f8aa6)"/><path d="M116 142 Q140 146 140 170 V266 Q140 296 116 296Z" fill="rgba(0,0,0,.14)"/>
+    <rect x="89" y="118" width="22" height="28" fill="var(--skin-d, #c98f6b)"/><path d="M86 141 Q100 158 114 141Z" fill="var(--skin-d, #c98f6b)"/>
+    <circle cx="100" cy="68" r="60" fill="var(--skin, #e7b38c)"/>
+    <path d="M34 90 C24 20 70 0 100 0 C134 0 178 20 166 90 C160 64 148 46 128 36 C116 52 108 56 100 56 C92 56 84 52 72 36 C52 46 40 64 34 90Z" fill="var(--hair, #16161c)"/>
+    <g style="display:var(--face-rest,inline)"><circle cx="78" cy="76" r="6" fill="var(--eye, #1a1a22)"/><circle cx="122" cy="76" r="6" fill="var(--eye, #1a1a22)"/><g style="display:var(--mouth-rest,inline)"><path d="M92 99 Q100 103 108 99" fill="none" stroke="var(--mouth, #7a3b34)" stroke-width="4" stroke-linecap="round"/></g></g>
+    <g style="display:var(--lr-wet,none)">
+      <path d="M34 160 L38 194 L46 168 L52 200 L60 172 L60 150Z M166 160 L162 194 L154 168 L148 200 L140 172 L140 150Z" fill="var(--hair, #16161c)"/>
+      <path d="M86 34 Q82 46 86 56 M114 34 Q118 46 114 56" fill="none" stroke="var(--hair, #16161c)" stroke-width="6" stroke-linecap="round"/>
+      <ellipse cx="80" cy="196" rx="16" ry="11" fill="rgba(10,20,35,.28)"/><ellipse cx="124" cy="246" rx="13" ry="20" fill="rgba(10,20,35,.28)"/>
+      <path d="M50 450 H150 L152 474 H48Z" fill="rgba(10,20,35,.32)"/>
+      <g fill="var(--tear, #8fd0ff)"><use href="#mk-drop" transform="translate(52 492) scale(.7)"/><use href="#mk-drop" transform="translate(150 486) scale(.6)"/><use href="#mk-drop" transform="translate(56 346) scale(.6)"/><use href="#mk-drop" transform="translate(40 206) scale(.55)"/></g>
+    </g>
+  </symbol>
+
+  
+  <symbol id="lr-girl" viewBox="0 0 200 420" overflow="visible">
+    <rect x="72" y="322" width="24" height="74" rx="11" fill="var(--skin, #e7b38c)"/><rect x="104" y="322" width="24" height="74" rx="11" fill="var(--skin, #e7b38c)"/>
+    <rect x="62" y="392" width="38" height="24" rx="9" fill="var(--lr-girl-shoe, #7a4e3a)"/><rect x="100" y="392" width="38" height="24" rx="9" fill="var(--lr-girl-shoe, #7a4e3a)"/>
+    <g style="display:var(--arm-l-rest,inline)"><path d="M58 170 L54 250" stroke="var(--skin, #e7b38c)" stroke-width="24" stroke-linecap="round"/><circle cx="54" cy="262" r="16" fill="var(--skin, #e7b38c)"/></g>
+    <g style="display:var(--arm-r-rest,inline)"><path d="M142 170 L146 250" stroke="var(--skin, #e7b38c)" stroke-width="24" stroke-linecap="round"/><circle cx="146" cy="262" r="16" fill="var(--skin, #e7b38c)"/></g>
+    <path d="M66 142 Q100 132 134 142 L154 330 Q100 340 46 330Z" fill="var(--lr-girl-dress, #e3d39c)"/><path d="M116 138 Q132 140 134 142 L154 330 Q140 333 124 335Z" fill="rgba(0,0,0,.1)"/>
+    <circle cx="64" cy="160" r="18" fill="var(--lr-girl-dress, #e3d39c)"/><circle cx="136" cy="160" r="18" fill="var(--lr-girl-dress, #e3d39c)"/>
+    <rect x="89" y="116" width="22" height="28" fill="var(--skin-d, #c98f6b)"/><path d="M84 140 Q100 160 116 140" fill="none" stroke="#f4ecd4" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="100" cy="65" r="65" fill="var(--skin, #e7b38c)"/>
+    <path d="M28 112 C12 18 60 -14 100 -14 C140 -14 188 18 172 112 L156 114 C160 82 154 58 142 44 L58 44 C46 58 40 82 44 114Z" fill="var(--hair, #16161c)"/>
+    <rect x="128" y="28" width="30" height="11" rx="5" fill="var(--lr-clip, #c4a650)" transform="rotate(-18 143 33)"/>
+    <use href="#fx-cheeks"/>
+    <g style="display:var(--face-rest,inline)"><circle cx="77" cy="74" r="6.5" fill="var(--eye, #1a1a22)"/><circle cx="123" cy="74" r="6.5" fill="var(--eye, #1a1a22)"/><g style="display:var(--mouth-rest,inline)"><path d="M93 98 Q100 102 107 98" fill="none" stroke="var(--mouth, #7a3b34)" stroke-width="4" stroke-linecap="round"/></g></g>
+    <g style="display:var(--lr-wet,none)">
+      <path d="M28 104 L32 130 L40 108 L46 132 L52 110Z M172 104 L168 130 L160 108 L154 132 L148 110Z" fill="var(--hair, #16161c)"/>
+      <path d="M92 44 Q89 52 92 58" fill="none" stroke="var(--hair, #16161c)" stroke-width="5" stroke-linecap="round"/>
+      <ellipse cx="82" cy="200" rx="14" ry="10" fill="rgba(10,20,35,.22)"/><path d="M50 300 Q100 312 150 300 L154 330 Q100 340 46 330Z" fill="rgba(10,20,35,.24)"/>
+      <g fill="var(--tear, #8fd0ff)"><use href="#mk-drop" transform="translate(48 350) scale(.55)"/><use href="#mk-drop" transform="translate(152 346) scale(.5)"/><use href="#mk-drop" transform="translate(30 140) scale(.5)"/></g>
+    </g>
+  </symbol>
+
+  
+  <symbol id="lr-mom-girl" viewBox="0 0 350 520" overflow="visible">
+    <use href="#lr-mom" width="200" height="520" style="--arm-r-rest:none"/>
+    <line x1="140" y1="160" x2="164" y2="326" stroke="var(--lr-mom-top, #6f8aa6)" stroke-width="30" stroke-linecap="round"/>
+    <g transform="translate(175 158) scale(.862)">
+      <use href="#lr-girl" width="200" height="420" style="--arm-l-rest:none"/>
+      <path d="M58 170 L-6 210" stroke="var(--skin, #e7b38c)" stroke-width="24" stroke-linecap="round"/>
+    </g>
+    <circle cx="170" cy="341" r="14" fill="var(--skin, #e7b38c)"/>
+    <circle cx="164" cy="334" r="18" fill="var(--skin, #e7b38c)"/>
+  </symbol>
+
+  
+  <symbol id="lr-wife-sit" viewBox="0 0 200 520" overflow="visible">
+    <g transform="translate(0 100)">
+      <ellipse cx="152" cy="148" rx="15" ry="30" fill="var(--hair, #16161c)" transform="rotate(14 152 148)"/><circle cx="146" cy="122" r="7" fill="var(--lr-wife-tie, #6b3b30)"/>
+      <rect x="60" y="140" width="80" height="160" rx="30" fill="var(--lr-wife-top, #9a5544)"/><path d="M116 142 Q140 146 140 170 V270 Q140 300 116 300Z" fill="rgba(0,0,0,.14)"/>
+      <rect x="89" y="118" width="22" height="26" fill="var(--skin-d, #c98f6b)"/>
+      <circle cx="100" cy="68" r="60" fill="var(--skin, #e7b38c)"/>
+      <path d="M38 84 C30 18 70 2 100 2 C130 2 170 18 162 84 C156 54 138 36 100 34 C62 36 44 54 38 84Z" fill="var(--hair, #16161c)"/>
+      <g style="display:var(--face-rest,inline)"><circle cx="78" cy="76" r="6" fill="var(--eye, #1a1a22)"/><circle cx="122" cy="76" r="6" fill="var(--eye, #1a1a22)"/><g style="display:var(--mouth-rest,inline)"><path d="M92 100 H108" stroke="var(--mouth, #7a3b34)" stroke-width="4" stroke-linecap="round"/></g></g>
+    </g>
+    <path d="M94 400 H196 L198 496" fill="none" stroke="var(--lr-wife-pants, #2c3138)" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M94 400 H196 L198 496" fill="none" stroke="rgba(0,0,0,.22)" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="186" y="488" width="44" height="22" rx="9" fill="var(--shoe, #0f141c)"/>
+    <path d="M90 416 H212 L216 498" fill="none" stroke="var(--lr-wife-pants, #2c3138)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="202" y="494" width="46" height="22" rx="9" fill="var(--shoe, #0f141c)"/>
+    <g transform="translate(0 100)">
+      <g style="display:var(--arm-l-rest,inline)"><line x1="60" y1="160" x2="54" y2="310" stroke="var(--lr-wife-top, #9a5544)" stroke-width="30" stroke-linecap="round"/><circle cx="54" cy="318" r="18" fill="var(--skin, #e7b38c)"/></g>
+      <g style="display:var(--arm-r-rest,inline)"><line x1="140" y1="160" x2="146" y2="310" stroke="var(--lr-wife-top, #9a5544)" stroke-width="30" stroke-linecap="round"/><circle cx="146" cy="318" r="18" fill="var(--skin, #e7b38c)"/></g>
+    </g>
+  </symbol>
+
+  
+  <symbol id="lr-son" viewBox="0 0 200 420" overflow="visible">
+    <rect x="68" y="300" width="26" height="96" rx="13" fill="var(--skin, #e7b38c)"/><rect x="106" y="300" width="26" height="96" rx="13" fill="var(--skin, #e7b38c)"/>
+    <rect x="58" y="392" width="40" height="24" rx="9" fill="var(--lr-son-shoe, #3b2c22)"/><rect x="102" y="392" width="40" height="24" rx="9" fill="var(--lr-son-shoe, #3b2c22)"/>
+    <rect x="60" y="252" width="80" height="64" rx="12" fill="var(--lr-son-shorts, #4a4436)"/>
+    <g style="display:var(--arm-l-rest,inline)"><path d="M57 192 L54 250" stroke="var(--skin, #e7b38c)" stroke-width="24" stroke-linecap="round"/><path d="M60 162 L57 198" stroke="var(--lr-son-shirt, #5f6f4f)" stroke-width="32" stroke-linecap="round"/><circle cx="54" cy="262" r="17" fill="var(--skin, #e7b38c)"/></g>
+    <g style="display:var(--arm-r-rest,inline)"><path d="M143 192 L146 250" stroke="var(--skin, #e7b38c)" stroke-width="24" stroke-linecap="round"/><path d="M140 162 L143 198" stroke="var(--lr-son-shirt, #5f6f4f)" stroke-width="32" stroke-linecap="round"/><circle cx="146" cy="262" r="17" fill="var(--skin, #e7b38c)"/></g>
+    <rect x="60" y="140" width="80" height="132" rx="28" fill="var(--lr-son-shirt, #5f6f4f)"/><path d="M116 142 Q140 146 140 168 V250 Q140 272 116 272Z" fill="rgba(0,0,0,.14)"/>
+    <path d="M86 142 Q100 156 114 142" fill="none" stroke="rgba(0,0,0,.22)" stroke-width="5" stroke-linecap="round"/>
+    <use href="#head-short"/><use href="#fx-cheeks"/><use href="#eyes-dot"/>
+  </symbol>
+
+  
+  <defs>
+    <g id="lr-g-side-shadow"><ellipse cx="660" cy="606" rx="640" ry="16" fill="rgba(0,0,0,.38)"/></g>
+    <g id="lr-g-side-box">
+      <rect x="24" y="24" width="800" height="380" rx="6" fill="var(--lr-box, #7d8fa0)"/>
+      <rect x="24" y="24" width="800" height="16" rx="4" fill="rgba(255,255,255,.12)"/>
+      <path d="M124 40 V404 M224 40 V404 M324 40 V404 M424 40 V404 M524 40 V404 M624 40 V404 M724 40 V404" stroke="rgba(0,0,0,.1)" stroke-width="4"/>
+      <rect x="24" y="356" width="800" height="48" fill="rgba(0,0,0,.14)"/>
+      <path d="M44 40 V404" stroke="rgba(0,0,0,.22)" stroke-width="4"/>
+      <rect x="26" y="300" width="12" height="40" rx="3" fill="var(--lr-tail, #8e2b25)"/>
+    </g>
+    <g id="lr-g-side-body">
+      <rect x="30" y="398" width="800" height="92" rx="6" fill="var(--lr-cab, #d6c9ac)"/>
+      <rect x="30" y="396" width="800" height="10" rx="3" fill="rgba(0,0,0,.18)"/>
+      <rect x="30" y="412" width="12" height="34" rx="3" fill="var(--lr-tail, #8e2b25)"/>
+      <path d="M820 490 V262 Q820 214 868 210 H1000 Q1032 210 1052 240 L1112 340 L1240 356 Q1286 362 1290 400 V490Z" fill="var(--lr-cab, #d6c9ac)"/>
+      <path d="M848 236 H996 Q1016 236 1028 256 L1074 330 H848Z" fill="var(--lr-glass, #27364c)"/>
+      <path d="M872 246 H900 L868 322 H850Z" fill="rgba(255,255,255,.1)"/>
+      <path d="M838 236 V488 M1086 342 V488" stroke="rgba(0,0,0,.25)" stroke-width="3"/>
+      <rect x="1046" y="364" width="30" height="8" rx="3" fill="#4a4f57"/>
+      <path d="M1112 340 L1240 356" stroke="rgba(0,0,0,.18)" stroke-width="3"/>
+      <path d="M1062 300 L1046 312" stroke="#2b2f36" stroke-width="6"/><rect x="1060" y="280" width="20" height="34" rx="4" fill="#2b2f36"/>
+      <rect x="30" y="452" width="1260" height="38" fill="rgba(0,0,0,.12)"/>
+      <rect x="1280" y="402" width="12" height="50" rx="3" fill="#2b2f36"/>
+      <rect x="1250" y="470" width="52" height="26" rx="6" fill="#3a3f47"/><rect x="14" y="470" width="40" height="26" rx="6" fill="#3a3f47"/>
+      <path d="M222 520 A108 108 0 0 1 438 520Z M922 520 A108 108 0 0 1 1138 520Z" fill="#15171b"/>
+    </g>
+    <g id="lr-g-side-lens"><rect x="1268" y="370" width="22" height="26" rx="4" fill="var(--lr-lens, #9aa3ad)"/></g>
+    <g id="lr-g-side-beam"><path d="M1290 376 L1780 290 L1780 476 Z" fill="url(#lr-beam-grad)"/><circle cx="1282" cy="383" r="30" fill="var(--lamp, #ffcf8a)" opacity=".35"/></g>
+    <g id="lr-g-side-damage">
+      <path d="M1112 340 L1150 326 L1172 350 L1204 334 L1232 360 L1270 352 L1292 380 V430 L1262 446 L1250 410Z" fill="var(--lr-cab-dent, #b9ab8c)"/>
+      <path d="M1150 326 L1172 350 L1204 334 L1232 360 M1262 446 L1250 410" fill="none" stroke="#6b6150" stroke-width="3"/>
+      <path d="M1266 372 L1280 366 L1276 384Z M1282 386 L1292 380 L1290 396Z" fill="#cfd6dc"/>
+      <path d="M990 270 L1010 244 M990 270 L1030 290 M990 270 L962 300 M990 270 L976 240" stroke="rgba(255,255,255,.45)" stroke-width="2"/>
+      <rect x="1250" y="476" width="52" height="20" fill="#15171b"/>
+    </g>
+    <g id="lr-g-wheel"><circle r="80" fill="#15171b"/><circle r="46" fill="#8a929c"/><circle r="16" fill="#4a4f57"/><circle cx="0" cy="-30" r="5" fill="#4a4f57"/><circle cx="28" cy="-9" r="5" fill="#4a4f57"/><circle cx="17" cy="24" r="5" fill="#4a4f57"/><circle cx="-17" cy="24" r="5" fill="#4a4f57"/><circle cx="-28" cy="-9" r="5" fill="#4a4f57"/></g>
+
+    
+    <g id="lr-g-rear-base">
+      <ellipse cx="260" cy="632" rx="260" ry="14" fill="rgba(0,0,0,.38)"/>
+      <rect x="48" y="520" width="80" height="112" rx="16" fill="#15171b"/><rect x="392" y="520" width="80" height="112" rx="16" fill="#15171b"/>
+      <rect x="30" y="500" width="460" height="42" rx="6" fill="#2b2f36"/><rect x="220" y="508" width="80" height="26" rx="3" fill="#cfc8b4"/>
+      <rect x="20" y="12" width="480" height="496" rx="8" fill="var(--lr-box, #7d8fa0)"/>
+      <rect x="20" y="12" width="480" height="14" rx="6" fill="rgba(255,255,255,.12)"/>
+      <path d="M420 12 H492 Q500 12 500 20 V500 Q500 508 492 508 H420Z" fill="rgba(0,0,0,.12)"/>
+      <rect x="26" y="458" width="14" height="36" rx="3" fill="var(--lr-tail, #8e2b25)"/><rect x="480" y="458" width="14" height="36" rx="3" fill="var(--lr-tail, #8e2b25)"/>
+    </g>
+    <g id="lr-g-rear-inside">
+      <rect x="44" y="36" width="432" height="452" fill="var(--lr-in-side, #222b39)"/>
+      <path d="M44 36 H476 L390 112 H130Z" fill="var(--lr-in-top, #1b2230)"/>
+      <rect x="130" y="112" width="260" height="298" fill="var(--lr-in-back, #18202d)"/>
+      <path d="M44 488 H476 L390 410 H130Z" fill="var(--lr-in-floor, #3a414c)"/>
+      <path d="M118 488 L178 410 M206 488 L226 410 M314 488 L294 410 M402 488 L342 410" stroke="rgba(0,0,0,.25)" stroke-width="3"/>
+      <path d="M130 410 H390" stroke="rgba(0,0,0,.35)" stroke-width="4"/>
+    </g>
+    <g id="lr-g-rear-door-l">
+      <rect x="44" y="36" width="216" height="452" fill="var(--lr-door, #73859a)"/>
+      <path d="M60 110 H244 M60 200 H244 M60 290 H244 M60 380 H244" stroke="rgba(0,0,0,.12)" stroke-width="4"/>
+      <rect x="48" y="80" width="10" height="34" fill="#3a414b"/><rect x="48" y="410" width="10" height="34" fill="#3a414b"/>
+      <path d="M236 48 V476" stroke="#3a414b" stroke-width="7"/><rect x="228" y="60" width="16" height="12" fill="#3a414b"/><rect x="228" y="452" width="16" height="12" fill="#3a414b"/>
+    </g>
+    <g id="lr-g-rear-door-r">
+      <rect x="260" y="36" width="216" height="452" fill="var(--lr-door, #73859a)"/>
+      <rect x="260" y="36" width="216" height="452" fill="rgba(0,0,0,.06)"/>
+      <path d="M276 110 H460 M276 200 H460 M276 290 H460 M276 380 H460" stroke="rgba(0,0,0,.12)" stroke-width="4"/>
+      <rect x="462" y="80" width="10" height="34" fill="#3a414b"/><rect x="462" y="410" width="10" height="34" fill="#3a414b"/>
+      <path d="M284 48 V476" stroke="#3a414b" stroke-width="7"/><rect x="276" y="60" width="16" height="12" fill="#3a414b"/><rect x="276" y="452" width="16" height="12" fill="#3a414b"/>
+      <rect x="278" y="244" width="48" height="14" rx="6" fill="#2b2f36"/>
+      <path d="M300 226 l26 -10 M304 238 l18 -4 M296 272 l30 10 M308 284 l18 4" stroke="rgba(235,240,245,.6)" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M260 36 V488" stroke="rgba(0,0,0,.4)" stroke-width="4"/>
+    </g>
+    <g id="lr-g-rear-door-l-open"><path d="M44 36 L-24 14 V510 L44 488Z" fill="var(--lr-door-in, #5d6d7f)"/><path d="M-24 14 V510" stroke="rgba(0,0,0,.35)" stroke-width="4"/></g>
+    <g id="lr-g-rear-door-r-open"><path d="M476 36 L544 14 V510 L476 488Z" fill="var(--lr-door-in, #5d6d7f)"/><path d="M544 14 V510" stroke="rgba(0,0,0,.35)" stroke-width="4"/><rect x="520" y="240" width="14" height="40" rx="5" fill="#2b2f36"/></g>
+    <g id="lr-g-wet-prints" fill="var(--lr-print, rgba(140,178,205,.5))">
+      <ellipse cx="226" cy="476" rx="11" ry="6"/><ellipse cx="250" cy="466" rx="11" ry="6"/><ellipse cx="232" cy="452" rx="9.5" ry="5"/><ellipse cx="254" cy="443" rx="9.5" ry="5"/><ellipse cx="238" cy="432" rx="8" ry="4.5"/><ellipse cx="256" cy="424" rx="8" ry="4.5"/>
+      <ellipse cx="290" cy="470" rx="7" ry="4"/><ellipse cx="304" cy="460" rx="7" ry="4"/><ellipse cx="292" cy="448" rx="6" ry="3.5"/><ellipse cx="304" cy="439" rx="6" ry="3.5"/><ellipse cx="294" cy="429" rx="5" ry="3"/>
+      <ellipse cx="270" cy="418" rx="34" ry="5" opacity=".7"/>
+    </g>
+  </defs>
+
+  <symbol id="lr-truck-shadow-side" viewBox="0 0 1300 620" overflow="visible"><use href="#lr-g-side-shadow"/></symbol>
+  <symbol id="lr-truck-side-box" viewBox="0 0 1300 620" overflow="visible"><use href="#lr-g-side-box"/></symbol>
+  <symbol id="lr-truck-side-body" viewBox="0 0 1300 620" overflow="visible"><use href="#lr-g-side-body"/><use href="#lr-g-side-lens"/></symbol>
+  <symbol id="lr-truck-beam-side" viewBox="0 0 1300 620" overflow="visible"><use href="#lr-g-side-beam"/></symbol>
+  <symbol id="lr-truck-damage-side" viewBox="0 0 1300 620" overflow="visible"><use href="#lr-g-side-damage"/></symbol>
+  <symbol id="lr-truck-wheel" overflow="visible"><use href="#lr-g-wheel"/></symbol>
+  
+  <symbol id="lr-truck-side" viewBox="0 0 1300 620" overflow="visible">
+    <use href="#lr-g-side-shadow"/>
+    <g style="display:var(--lr-box-on,inline)"><use href="#lr-g-side-box"/></g>
+    <use href="#lr-g-side-body"/><use href="#lr-g-side-lens"/>
+    <g style="display:var(--lr-dmg,none)"><use href="#lr-g-side-damage"/></g>
+    <g style="display:var(--lr-beam,none)"><use href="#lr-g-side-beam"/></g>
+    <use href="#lr-g-wheel" transform="translate(330 520)"/><use href="#lr-g-wheel" transform="translate(1030 520)"/>
+  </symbol>
+
+  <symbol id="lr-truck-rear-base" viewBox="-40 0 600 640" overflow="visible"><use href="#lr-g-rear-base"/></symbol>
+  <symbol id="lr-truck-rear-inside" viewBox="-40 0 600 640" overflow="visible"><use href="#lr-g-rear-inside"/></symbol>
+  <symbol id="lr-truck-rear-door-l" viewBox="-40 0 600 640" overflow="visible"><use href="#lr-g-rear-door-l"/></symbol>
+  <symbol id="lr-truck-rear-door-r" viewBox="-40 0 600 640" overflow="visible"><use href="#lr-g-rear-door-r"/></symbol>
+  <symbol id="lr-truck-rear-door-l-open" viewBox="-40 0 600 640" overflow="visible"><use href="#lr-g-rear-door-l-open"/></symbol>
+  <symbol id="lr-truck-rear-door-r-open" viewBox="-40 0 600 640" overflow="visible"><use href="#lr-g-rear-door-r-open"/></symbol>
+  <symbol id="lr-wet-prints" viewBox="-40 0 600 640" overflow="visible"><use href="#lr-g-wet-prints"/></symbol>
+  
+  <symbol id="lr-truck-rear" viewBox="-40 0 600 640" overflow="visible">
+    <use href="#lr-g-rear-base"/><use href="#lr-g-rear-inside"/>
+    <g style="display:var(--lr-prints-on,none)"><use href="#lr-g-wet-prints"/></g>
+    <g style="display:var(--lr-doors-shut,inline)"><use href="#lr-g-rear-door-l"/><use href="#lr-g-rear-door-r"/></g>
+    <g style="display:var(--lr-doors-open,none)"><use href="#lr-g-rear-door-l-open"/><use href="#lr-g-rear-door-r-open"/></g>
+  </symbol>
+
+  
+  <symbol id="lr-latch" viewBox="0 0 400 400">
+    <rect width="400" height="400" fill="var(--lr-door, #73859a)"/><rect x="0" y="0" width="48" height="400" fill="rgba(0,0,0,.18)"/>
+    <path d="M0 96 H400 M0 316 H400" stroke="rgba(0,0,0,.12)" stroke-width="8"/>
+    <rect x="160" y="0" width="30" height="400" fill="#3a414b"/><rect x="168" y="0" width="8" height="400" fill="rgba(255,255,255,.08)"/>
+    <rect x="140" y="60" width="70" height="30" rx="4" fill="#2b2f36"/><rect x="140" y="310" width="70" height="30" rx="4" fill="#2b2f36"/>
+    <circle cx="152" cy="75" r="5" fill="#5c6670"/><circle cx="198" cy="75" r="5" fill="#5c6670"/><circle cx="152" cy="325" r="5" fill="#5c6670"/><circle cx="198" cy="325" r="5" fill="#5c6670"/>
+    <rect x="164" y="186" width="190" height="34" rx="14" fill="#2b2f36"/><circle cx="176" cy="203" r="20" fill="#3a414b"/><rect x="300" y="190" width="50" height="26" rx="12" fill="#4a525c"/>
+    <path d="M226 168 l58 -22 M236 156 l30 -8 M222 246 l66 22 M238 262 l34 8 M118 150 l-26 -18 M120 254 l-30 14" stroke="rgba(235,240,245,.7)" stroke-width="4" stroke-linecap="round"/>
+  </symbol>
+
+  
+  <symbol id="lr-cab-back" viewBox="0 0 1080 960">
+    <rect width="1080" height="960" fill="var(--lr-cab-in, #2a2f38)"/>
+    <rect x="220" y="60" width="640" height="230" rx="30" fill="var(--lr-cab-night, #121a2a)"/><path d="M260 80 H340 L300 270 H240Z" fill="rgba(255,255,255,.05)"/>
+    <rect x="170" y="250" width="300" height="520" rx="60" fill="var(--lr-seat, #4a4038)"/><rect x="250" y="176" width="140" height="96" rx="32" fill="var(--lr-seat, #4a4038)"/>
+    <rect x="610" y="250" width="300" height="520" rx="60" fill="var(--lr-seat, #4a4038)"/><rect x="690" y="176" width="140" height="96" rx="32" fill="var(--lr-seat, #4a4038)"/>
+    <path d="M640 420 H880 M640 560 H880" stroke="rgba(0,0,0,.22)" stroke-width="5"/>
+    <rect x="610" y="250" width="70" height="520" rx="30" fill="rgba(0,0,0,.12)"/>
+  </symbol>
+  <symbol id="lr-cab-dash" viewBox="0 0 1080 960">
+    <path d="M0 720 Q540 670 1080 720 V960 H0Z" fill="var(--lr-dash, #24272d)"/>
+    <path d="M230 700 Q320 664 410 700 V730 H230Z" fill="#1b1d22"/>
+    <circle cx="290" cy="712" r="16" fill="#3a4a3a"/><circle cx="350" cy="712" r="16" fill="#3a4a3a"/><path d="M290 712 l8 -9 M350 712 l-9 -6" stroke="var(--lamp, #ffcf8a)" stroke-width="3"/>
+    <rect x="500" y="740" width="120" height="34" rx="6" fill="#16181c"/><rect x="520" y="750" width="80" height="12" rx="3" fill="#3d5a4a"/>
+    <path d="M690 760 H900 V840 H690Z" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="4"/>
+    <rect x="296" y="800" width="48" height="160" fill="#1b1d22"/>
+  </symbol>
+  <symbol id="lr-cab-wheel" viewBox="0 0 1080 960">
+    <ellipse cx="320" cy="750" rx="150" ry="110" fill="none" stroke="var(--lr-wheel, #15171b)" stroke-width="26"/>
+    <path d="M178 760 Q320 790 462 760 M320 790 V856" stroke="var(--lr-wheel, #15171b)" stroke-width="22" fill="none"/>
+    <ellipse cx="320" cy="776" rx="34" ry="24" fill="#2b2f36"/>
+  </symbol>
+  <symbol id="lr-cab-frame" viewBox="0 0 1080 960">
+    <path d="M0 0 H1080 V34 H0Z" fill="var(--lr-cab, #d6c9ac)"/>
+    <path d="M0 0 H70 L150 720 H0Z" fill="var(--lr-cab, #d6c9ac)"/><path d="M1080 0 H1010 L930 720 H1080Z" fill="var(--lr-cab, #d6c9ac)"/>
+    <path d="M0 0 H70 L150 720 H120Z" fill="rgba(0,0,0,.14)"/>
+    <rect x="22" y="420" width="120" height="86" rx="18" fill="#2b2f36"/><rect x="32" y="430" width="100" height="66" rx="12" fill="var(--lr-mirror, #3e5068)"/><path d="M44 440 L80 440 L48 486Z" fill="rgba(255,255,255,.1)"/>
+  </symbol>
+
+  
+  <symbol id="lr-hand-cover" overflow="visible"><circle r="19" fill="var(--skin, #e7b38c)"/></symbol>
+
+  
+  <symbol id="lr-phone-hand" overflow="visible">
+    <rect x="-23" y="-82" width="46" height="88" rx="10" fill="var(--lr-phone-case, #1d2433)"/>
+    <rect x="-19" y="-76" width="38" height="68" rx="6" fill="var(--lr-phone-glow, #8fb8e8)"/>
+    <circle cx="0" cy="-40" r="22" fill="var(--lr-phone-glow, #8fb8e8)" opacity=".25"/>
+    <circle r="19" fill="var(--skin, #e7b38c)"/>
+  </symbol>
+
+  
+  <symbol id="lr-key" overflow="visible">
+    <g transform="rotate(-12)"><rect x="6" y="4" width="30" height="44" rx="5" fill="var(--lr-key-tag, #a9844c)" stroke="#7a5e34" stroke-width="3"/><circle cx="21" cy="14" r="4" fill="#3b2c1c"/><path d="M12 28 H30 M12 36 H26" stroke="#7a5e34" stroke-width="3"/></g>
+    <circle cx="0" cy="-6" r="14" fill="none" stroke="#b7b9bc" stroke-width="5"/>
+    <path d="M-5 -46 V-96 H5 V-86 H11 V-78 H5 V-70 H10 V-62 H5 V-46Z" fill="#c9ccd0"/>
+    <rect x="-12" y="-48" width="24" height="24" rx="6" fill="#2b2f36"/>
+    <circle r="19" fill="var(--skin, #e7b38c)"/>
+  </symbol>
+
+  
+  <symbol id="lr-doll" overflow="visible">
+    <ellipse cx="-14" cy="-98" rx="10" ry="26" fill="var(--lr-doll, #e8dcc3)"/><ellipse cx="-14" cy="-96" rx="4" ry="15" fill="#e3b5a8" opacity=".7"/>
+    <path d="M8 -72 C14 -112 46 -112 46 -94 C46 -80 32 -84 24 -70Z" fill="var(--lr-doll, #e8dcc3)"/>
+    <ellipse cx="-28" cy="2" rx="10" ry="18" fill="var(--lr-doll, #e8dcc3)" transform="rotate(20 -28 2)"/><ellipse cx="28" cy="2" rx="10" ry="18" fill="var(--lr-doll, #e8dcc3)" transform="rotate(-20 28 2)"/>
+    <ellipse cx="-15" cy="44" rx="14" ry="9" fill="var(--lr-doll, #e8dcc3)"/><ellipse cx="15" cy="44" rx="14" ry="9" fill="var(--lr-doll, #e8dcc3)"/>
+    <ellipse cx="0" cy="8" rx="30" ry="36" fill="var(--lr-doll, #e8dcc3)"/>
+    <circle cx="0" cy="-50" r="30" fill="var(--lr-doll, #e8dcc3)"/>
+    <path d="M0 -80 A30 30 0 0 1 0 -20Z M0 -28 A30 36 0 0 1 0 44Z" fill="rgba(0,0,0,.1)"/>
+    <circle cx="-11" cy="-52" r="5" fill="#2a2622"/><circle cx="11" cy="-52" r="5" fill="#2a2622"/><circle cx="-12" cy="-53" r="1.3" fill="#8a8178"/><circle cx="10" cy="-53" r="1.3" fill="#8a8178"/>
+    <path d="M-4 -41 H4 L0 -36Z" fill="#c98b80"/>
+    <path d="M-9 8 h18" stroke="#b9ab8d" stroke-width="2.5" stroke-dasharray="4 3"/>
+    <g style="display:var(--lr-wet,none)">
+      <ellipse cx="-8" cy="18" rx="16" ry="18" fill="rgba(40,50,60,.22)"/><ellipse cx="6" cy="-60" rx="14" ry="10" fill="rgba(40,50,60,.2)"/>
+      <g fill="var(--tear, #8fd0ff)"><use href="#mk-drop" transform="translate(-16 62) scale(.5)"/><use href="#mk-drop" transform="translate(14 66) scale(.45)"/></g>
+    </g>
+  </symbol>
+
+  
+  <symbol id="lr-watch" viewBox="0 0 240 320">
+    <rect x="80" y="0" width="80" height="320" rx="20" fill="#15171b"/><circle cx="120" cy="272" r="5" fill="#2b2f36"/><circle cx="120" cy="296" r="5" fill="#2b2f36"/>
+    <circle cx="120" cy="160" r="80" fill="#2b2f36"/><circle cx="120" cy="160" r="66" fill="var(--lr-watch-face, #e9e6dd)"/>
+    <path d="M120 100 V112 M120 208 V220 M60 160 H72 M168 160 H180 M150 108 l-5 9 M90 108 l5 9 M150 212 l-5 -9 M90 212 l5 -9 M172 130 l-9 5 M68 130 l9 5 M172 190 l-9 -5 M68 190 l9 -5" stroke="#2b2f36" stroke-width="4" stroke-linecap="round"/>
+    <rect x="93" y="176" width="54" height="24" rx="4" fill="#b9c2a8" stroke="#2b2f36" stroke-width="2.5"/><text x="120" y="194.5" text-anchor="middle" font-family="Plex Thai, sans-serif" font-weight="700" font-size="17" fill="#1d2418">20:47</text>
+    <path d="M120 160 L86 164" stroke="#15171b" stroke-width="8" stroke-linecap="round"/>
+    <path d="M120 160 L67 149" stroke="#15171b" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="120" cy="160" r="6" fill="var(--red, #e5383b)"/>
+    <path d="M80 122 L104 112" stroke="rgba(255,255,255,.5)" stroke-width="5" stroke-linecap="round"/>
+    <g style="display:var(--lr-crack,none)" fill="none" stroke="#fdfdfb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".9">
+      <path d="M84 110 L118 152 L112 176 L152 214"/><path d="M118 152 L150 140"/>
+    </g>
+  </symbol>
+  <symbol id="lr-watch-wrist" overflow="visible"><use href="#lr-g-watch-wrist"/></symbol>
+
+  
+  
+  <symbol id="lr-warehouse-wall" viewBox="0 0 1080 1240">
+    <rect width="1080" height="1240" fill="var(--lr-wall, #4b5562)"/>
+    <path d="M0 0 H200 V1240 H0Z M880 0 H1080 V1240 H880Z" fill="rgba(0,0,0,.16)"/>
+    <path d="M270 0 V1240 M810 0 V1240 M0 230 H1080" stroke="rgba(0,0,0,.18)" stroke-width="4"/>
+    <ellipse cx="190" cy="900" rx="60" ry="150" fill="rgba(0,0,0,.1)"/><ellipse cx="930" cy="1000" rx="50" ry="120" fill="rgba(0,0,0,.1)"/>
+    <rect x="130" y="258" width="820" height="62" rx="8" fill="#3a424c"/>
+    <rect x="150" y="320" width="780" height="880" fill="#262c34"/>
+    <rect x="170" y="320" width="740" height="880" fill="var(--lr-shutter, #66717d)"/>
+    <path d="M170 334 H910 M170 362 H910 M170 390 H910 M170 418 H910 M170 446 H910 M170 474 H910 M170 502 H910 M170 530 H910 M170 558 H910 M170 586 H910 M170 614 H910 M170 642 H910 M170 670 H910 M170 698 H910 M170 726 H910 M170 754 H910 M170 782 H910 M170 810 H910 M170 838 H910 M170 866 H910 M170 894 H910 M170 922 H910 M170 950 H910 M170 978 H910 M170 1006 H910 M170 1034 H910 M170 1062 H910 M170 1090 H910 M170 1118 H910 M170 1146 H910 M170 1174 H910" stroke="rgba(0,0,0,.22)" stroke-width="4"/>
+    <rect x="170" y="320" width="740" height="880" fill="url(#lr-shutter-fade)"/>
+    <rect x="170" y="1178" width="740" height="22" fill="#3a424c"/><rect x="520" y="1160" width="40" height="14" rx="4" fill="#2b2f36"/>
+    <rect x="150" y="320" width="20" height="880" fill="#30363f"/><rect x="910" y="320" width="20" height="880" fill="#30363f"/>
+    <rect y="1200" width="1080" height="40" fill="#353d47"/>
+  </symbol>
+  <symbol id="lr-warehouse-floor" viewBox="0 0 1080 700">
+    <rect width="1080" height="700" fill="var(--lr-floor, #353c45)"/><rect width="1080" height="20" fill="rgba(0,0,0,.25)"/>
+    <path d="M0 170 H1080 M0 400 H1080 M300 0 L60 700 M540 0 V700 M780 0 L1020 700" stroke="rgba(0,0,0,.2)" stroke-width="4"/>
+    <ellipse cx="540" cy="220" rx="380" ry="120" fill="var(--lamp, #ffcf8a)" opacity=".1"/>
+    <ellipse cx="300" cy="440" rx="90" ry="28" fill="rgba(0,0,0,.25)"/>
+  </symbol>
+  <symbol id="lr-warehouse-lamp" viewBox="0 0 1080 1240">
+    <path d="M500 190 H580 L880 1240 H200Z" fill="url(#lr-cone-grad)"/>
+    <circle cx="540" cy="200" r="130" fill="var(--lamp, #ffcf8a)" opacity=".16"/>
+    <path d="M540 0 V142" stroke="#1a1d22" stroke-width="4"/>
+    <path d="M490 140 H590 L620 190 H460Z" fill="#2a2f36"/><path d="M460 190 H620" stroke="#4a525c" stroke-width="4"/>
+    <ellipse cx="540" cy="196" rx="26" ry="14" fill="#ffe6b0"/>
+  </symbol>
+  
+  <symbol id="lr-road-bg" viewBox="0 0 1080 1240">
+    <rect width="1080" height="1240" fill="url(#lr-sky)"/>
+    <path d="M0 900 Q60 850.5 120 890 Q180 811.5 240 904 Q300 829.5 360 890 Q420 822.8 480 904 Q540 814.6 600 890 Q660 842.1 720 904 Q780 810.1 840 890 Q900 837.1 960 904 Q1020 817.3 1080 890 Q1140 819.3 1200 904 V1240 H0Z" fill="var(--lr-trees-far, #1e2a3c)"/>
+    <path d="M0 1010 Q80 892.1 160 1000 Q240 874 320 1014 Q400 862.9 480 1000 Q560 860.2 640 1014 Q720 866.2 800 1000 Q880 880.3 960 1014 Q1040 900.5 1120 1000 V1240 H0Z" fill="var(--lr-trees, #121a27)"/>
+  </symbol>
+  <symbol id="lr-road-ground" viewBox="0 0 1080 720">
+    <rect width="1080" height="50" fill="var(--lr-shoulder, #3a3b38)"/>
+    <rect y="50" width="1080" height="460" fill="var(--lr-asphalt, #262b33)"/>
+    <rect y="58" width="1080" height="6" fill="#9aa0a6" opacity=".45"/><rect y="496" width="1080" height="6" fill="#9aa0a6" opacity=".45"/>
+    <g fill="#d9c27a" opacity=".8"><rect x="20" y="272" width="96" height="10" rx="3"/><rect x="200" y="272" width="96" height="10" rx="3"/><rect x="380" y="272" width="96" height="10" rx="3"/><rect x="560" y="272" width="96" height="10" rx="3"/><rect x="740" y="272" width="96" height="10" rx="3"/><rect x="920" y="272" width="96" height="10" rx="3"/></g>
+    <rect y="510" width="1080" height="210" fill="var(--lr-shoulder, #3a3b38)"/>
+    <g fill="rgba(0,0,0,.25)"><circle cx="80" cy="560" r="4"/><circle cx="210" cy="600" r="4"/><circle cx="330" cy="570" r="4"/><circle cx="470" cy="640" r="4"/><circle cx="610" cy="580" r="4"/><circle cx="760" cy="620" r="4"/><circle cx="880" cy="565" r="4"/><circle cx="1010" cy="610" r="4"/><circle cx="150" cy="668" r="4"/><circle cx="540" cy="690" r="4"/><circle cx="940" cy="676" r="4"/><circle cx="60" cy="20" r="4"/><circle cx="400" cy="28" r="4"/><circle cx="720" cy="16" r="4"/><circle cx="990" cy="30" r="4"/></g>
+  </symbol>
+  <symbol id="lr-road-fg" viewBox="0 0 1080 320" overflow="visible">
+    <path d="M0 320 V230 Q40 180 70 230 Q100 170 140 226 Q170 196 200 236 V320Z M760 320 V240 Q800 190 840 236 Q880 170 920 230 Q960 196 1000 226 Q1040 186 1080 222 V320Z" fill="var(--lr-grass-fg, #0f1610)"/>
+    <g transform="rotate(-4 100 240)"><rect x="80" y="40" width="46" height="200" rx="10" fill="#e1dbcc"/><rect x="80" y="40" width="46" height="40" rx="10" fill="#a3302a"/><rect x="104" y="40" width="22" height="200" rx="0" fill="rgba(0,0,0,.14)"/></g>
+  </symbol>
+  <symbol id="lr-road-sala" viewBox="0 0 460 400">
+    <rect x="40" y="378" width="380" height="22" fill="#4a3e33"/>
+    <rect x="70" y="160" width="22" height="220" fill="#5a4a3c"/><rect x="368" y="160" width="22" height="220" fill="#5a4a3c"/>
+    <rect x="90" y="300" width="280" height="18" fill="#6a5644"/><rect x="104" y="318" width="12" height="62" fill="#4f4134"/><rect x="344" y="318" width="12" height="62" fill="#4f4134"/>
+    <path d="M10 172 L80 70 H380 L450 172Z" fill="#6b3f32"/><path d="M180 70 L230 10 L280 70Z" fill="#5a3429"/>
+    <path d="M300 92 L332 92 L312 146Z" fill="#1a1410"/><rect x="10" y="164" width="440" height="14" fill="rgba(0,0,0,.3)"/>
+    <path d="M230 172 H450 L380 70 H230Z" fill="rgba(0,0,0,.14)"/>
+  </symbol>
+  <symbol id="lr-road-shop" viewBox="0 0 480 440">
+    <rect x="20" y="40" width="440" height="400" fill="#5b6470"/><rect x="0" y="20" width="480" height="30" fill="#3f464f"/>
+    <rect x="50" y="70" width="380" height="70" fill="#c3b9a0"/><path d="M50 128 H430" stroke="rgba(0,0,0,.12)" stroke-width="6"/>
+    <rect x="60" y="170" width="360" height="262" fill="#77808d"/>
+    <path d="M60 190 H420 M60 216 H420 M60 242 H420 M60 268 H420 M60 294 H420 M60 320 H420 M60 346 H420 M60 372 H420 M60 398 H420" stroke="rgba(0,0,0,.2)" stroke-width="4"/>
+    <rect x="300" y="40" width="160" height="400" fill="rgba(0,0,0,.12)"/><rect x="40" y="430" width="400" height="10" fill="#2e333a"/>
+  </symbol>
+  <symbol id="lr-road-bridge" viewBox="0 0 1080 300" overflow="visible">
+    <rect x="0" y="96" width="22" height="204" fill="#9aa1a8"/><rect x="12" y="96" width="10" height="204" fill="rgba(0,0,0,.14)"/><rect x="120" y="96" width="22" height="204" fill="#9aa1a8"/><rect x="132" y="96" width="10" height="204" fill="rgba(0,0,0,.14)"/><rect x="240" y="96" width="22" height="204" fill="#9aa1a8"/><rect x="252" y="96" width="10" height="204" fill="rgba(0,0,0,.14)"/><rect x="360" y="96" width="22" height="204" fill="#9aa1a8"/><rect x="372" y="96" width="10" height="204" fill="rgba(0,0,0,.14)"/><rect x="480" y="96" width="22" height="204" fill="#9aa1a8"/><rect x="492" y="96" width="10" height="204" fill="rgba(0,0,0,.14)"/><rect x="600" y="96" width="22" height="204" fill="#9aa1a8"/><rect x="612" y="96" width="10" height="204" fill="rgba(0,0,0,.14)"/><rect x="720" y="96" width="22" height="204" fill="#9aa1a8"/><rect x="732" y="96" width="10" height="204" fill="rgba(0,0,0,.14)"/><rect x="840" y="96" width="22" height="204" fill="#9aa1a8"/><rect x="852" y="96" width="10" height="204" fill="rgba(0,0,0,.14)"/><rect x="960" y="96" width="22" height="204" fill="#9aa1a8"/><rect x="972" y="96" width="10" height="204" fill="rgba(0,0,0,.14)"/><rect x="1080" y="96" width="22" height="204" fill="#9aa1a8"/><rect x="1092" y="96" width="10" height="204" fill="rgba(0,0,0,.14)"/>
+    <rect y="120" width="1080" height="16" fill="#8b929a"/><rect y="196" width="1080" height="14" fill="#8b929a"/>
+    <path d="M612 140 L612 158" stroke="#3b2c22" stroke-width="3"/><circle cx="612" cy="234" r="9" fill="#e08a2a"/><circle cx="622.4" cy="230.2" r="9" fill="#f2c94c"/><circle cx="630.8" cy="219.7" r="9" fill="#f4efe4"/><circle cx="635.4" cy="204.5" r="9" fill="#e08a2a"/><circle cx="635.4" cy="187.5" r="9" fill="#f2c94c"/><circle cx="630.8" cy="172.3" r="9" fill="#f4efe4"/><circle cx="622.4" cy="161.8" r="9" fill="#e08a2a"/><circle cx="612" cy="158" r="9" fill="#f2c94c"/><circle cx="601.6" cy="161.8" r="9" fill="#f4efe4"/><circle cx="593.2" cy="172.3" r="9" fill="#e08a2a"/><circle cx="588.6" cy="187.5" r="9" fill="#f2c94c"/><circle cx="588.6" cy="204.5" r="9" fill="#f4efe4"/><circle cx="593.2" cy="219.7" r="9" fill="#e08a2a"/><circle cx="601.6" cy="230.2" r="9" fill="#f2c94c"/>
+    <path d="M604 232 L598 270 M612 234 V276 M620 232 L626 270" stroke="#b3261e" stroke-width="5" stroke-linecap="round"/>
+  </symbol>
+  
+  <symbol id="lr-road-rail-bent" viewBox="0 0 560 240" overflow="visible">
+    <rect x="40" y="80" width="20" height="160" fill="#6f767e"/><rect x="480" y="80" width="20" height="160" fill="#6f767e"/>
+    <rect x="262" y="104" width="20" height="140" fill="#6f767e" transform="rotate(18 272 240)"/>
+    <path d="M0 92 H200 Q262 94 300 152 Q332 194 382 122 Q420 82 560 92" fill="none" stroke="#a9b0b7" stroke-width="28"/>
+    <path d="M0 86 H200 Q262 88 300 146 Q332 188 382 116 Q420 76 560 86" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="5"/>
+    <path d="M286 130 L300 160 M330 176 L344 150" stroke="#5c636b" stroke-width="4"/>
+  </symbol>
+  <symbol id="lr-road-debris" viewBox="0 0 420 90">
+    <path d="M40 76 L62 52 L76 78Z M110 82 L120 66 L136 80Z M200 72 L214 60 L222 80Z" fill="#dfe7ee" opacity=".9"/>
+    <path d="M160 84 L176 70 L184 86Z M300 80 L312 66 L322 84Z" fill="#e08a2a"/>
+    <rect x="236" y="62" width="70" height="16" rx="4" fill="#3a3f47" transform="rotate(-8 270 70)"/>
+    <circle cx="90" cy="84" r="3" fill="#cfd6dc"/><circle cx="350" cy="82" r="3" fill="#cfd6dc"/><circle cx="380" cy="86" r="2.5" fill="#cfd6dc"/>
+  </symbol>
+  
+  <symbol id="lr-pier-bg" viewBox="0 0 1080 1920">
+    <rect width="1080" height="830" fill="url(#lr-sky)"/>
+    <path d="M0 830 V800 Q120 784 240 798 Q380 780 520 800 Q700 782 860 798 Q980 788 1080 796 V830Z" fill="#121b28"/>
+    <rect y="830" width="1080" height="1090" fill="var(--lr-water, #0d1522)"/>
+    <path d="M120 900 h60 M700 930 h90 M330 1010 h120 M880 1060 h100 M80 1150 h140 M560 1200 h70 M760 1300 h160 M200 1360 h120 M960 1420 h90 M420 1500 h180 M60 1600 h160 M700 1640 h200 M300 1760 h220 M880 1820 h160" stroke="#22324a" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="540" cy="778" r="70" fill="var(--lamp, #ffcf8a)" opacity=".2"/>
+    <rect x="537" y="780" width="6" height="66" fill="#2a2f36"/><circle cx="540" cy="778" r="9" fill="#ffd892"/>
+    <g fill="var(--lamp, #ffcf8a)"><rect x="536" y="838" width="8" height="20" rx="4" opacity="0.6"/><rect x="534.5" y="884" width="11" height="20" rx="4" opacity="0.5"/><rect x="533" y="930" width="14" height="20" rx="4" opacity="0.4"/><rect x="531.5" y="976" width="17" height="20" rx="4" opacity="0.4"/><rect x="530" y="1022" width="20" height="20" rx="4" opacity="0.3"/><rect x="528.5" y="1068" width="23" height="20" rx="4" opacity="0.2"/><rect x="527" y="1114" width="26" height="20" rx="4" opacity="0.2"/><rect x="525.5" y="1160" width="29" height="20" rx="4" opacity="0.1"/></g>
+  </symbol>
+  <symbol id="lr-pier-deck" viewBox="0 0 1080 1920">
+    <path d="M440 1240 L528 860 H552 L640 1240Z" fill="var(--lr-deck, #5a4636)"/>
+    <path d="M440 1240 L528 860 H540 L560 1240Z" fill="rgba(255,255,255,.04)"/>
+    <path d="M443.5 1224.8 H636.5 M448.8 1202 H631.2 M455 1175.4 H625 M462 1145 H618 M469.9 1110.8 H610.1 M478.7 1072.8 H601.3 M488.4 1031 H591.6 M499 985.4 H581 M510.4 936 H569.6 M521.8 886.6 H558.2" stroke="rgba(0,0,0,.3)" stroke-width="3"/>
+    <rect y="1240" width="1080" height="680" fill="var(--lr-deck, #5a4636)"/>
+    <rect y="1240" width="1080" height="18" fill="rgba(0,0,0,.28)"/>
+    <path d="M0 1290 H1080 M0 1350 H1080 M0 1420 H1080 M0 1500 H1080 M0 1590 H1080 M0 1690 H1080 M0 1800 H1080" stroke="rgba(0,0,0,.28)" stroke-width="5"/>
+    <path d="M220 1258 V1920 M560 1258 V1920 M860 1258 V1920" stroke="rgba(0,0,0,.14)" stroke-width="4"/>
+  </symbol>
+  <symbol id="lr-pier-posts" viewBox="0 0 1080 1920" overflow="visible">
+    <g fill="var(--lr-post, #3b2c22)"><rect x="426.4" y="1069.4" width="20.6" height="210.3" rx="3.7"/><rect x="633" y="1069.4" width="20.6" height="210.3" rx="3.7"/><rect x="449.8" y="1012.9" width="16.6" height="169.6" rx="3"/><rect x="613.6" y="1012.9" width="16.6" height="169.6" rx="3"/><rect x="473.2" y="956.4" width="12.6" height="129" rx="2.3"/><rect x="594.2" y="956.4" width="12.6" height="129" rx="2.3"/><rect x="494.4" y="905" width="9" height="92.1" rx="1.6"/><rect x="576.6" y="905" width="9" height="92.1" rx="1.6"/><rect x="513.4" y="858.7" width="5.8" height="58.9" rx="1"/><rect x="560.8" y="858.7" width="5.8" height="58.9" rx="1"/></g>
+    <rect x="20" y="1000" width="50" height="320" rx="8" fill="var(--lr-post, #3b2c22)"/><rect x="1010" y="1000" width="50" height="320" rx="8" fill="var(--lr-post, #3b2c22)"/>
+    <rect x="46" y="1000" width="24" height="320" fill="rgba(0,0,0,.18)"/><rect x="1036" y="1000" width="24" height="320" fill="rgba(0,0,0,.18)"/>
+  </symbol>
+  
+  <symbol id="lr-house" viewBox="0 0 1600 1920">
+    <rect x="1000" width="600" height="1240" fill="url(#lr-sky)"/>
+    <rect x="1000" y="1200" width="600" height="720" fill="var(--lr-porch, #3e3126)"/>
+    <path d="M1010 1260 H1600 M1010 1340 H1600 M1010 1440 H1600 M1010 1560 H1600 M1010 1700 H1600" stroke="rgba(0,0,0,.25)" stroke-width="4"/>
+    <rect x="1000" y="380" width="600" height="820" fill="var(--lr-house-ext, #5e5245)"/>
+    <path d="M960 392 L1600 300 V392Z" fill="#3a2c22"/>
+    <rect x="1090" y="660" width="250" height="540" fill="#3b2c22"/>
+    <rect x="1104" y="674" width="222" height="526" fill="var(--lr-house-door, #7a5a3c)"/>
+    <rect x="1104" y="674" width="70" height="526" fill="rgba(0,0,0,.14)"/>
+    <rect x="1160" y="720" width="110" height="120" rx="4" fill="var(--lamp, #ffcf8a)" opacity=".55"/>
+    <rect x="1140" y="890" width="150" height="260" rx="6" fill="none" stroke="rgba(0,0,0,.22)" stroke-width="6"/>
+    <circle cx="1300" cy="940" r="9" fill="var(--gold, #f6c445)"/>
+    <rect x="1104" y="1192" width="222" height="8" fill="var(--lamp, #ffcf8a)" opacity=".8"/>
+    <rect x="1070" y="1200" width="290" height="30" fill="#2e241c"/>
+    <rect x="1400" y="620" width="150" height="180" fill="#d9d2c0"/><rect x="1412" y="632" width="126" height="156" fill="var(--lamp, #ffcf8a)" opacity=".6"/><path d="M1475 632 V788 M1412 710 H1538" stroke="#d9d2c0" stroke-width="8"/>
+    <rect width="1000" height="1200" fill="var(--lr-house-int, #cdb58a)"/>
+    <rect width="1000" height="200" fill="rgba(0,0,0,.12)"/><rect width="90" height="1200" fill="rgba(0,0,0,.1)"/>
+    <rect y="1200" width="1000" height="720" fill="var(--lr-house-floor, #6b4f36)"/><path d="M0 1260 H1000 M0 1340 H1000 M0 1440 H1000 M0 1560 H1000 M0 1700 H1000" stroke="rgba(0,0,0,.22)" stroke-width="4"/>
+    <rect y="1180" width="1000" height="20" fill="#5a4230"/>
+    <circle cx="600" cy="930" r="240" fill="var(--lamp, #ffcf8a)" opacity=".2"/>
+    <rect x="96" y="310" width="50" height="380" fill="#8a4f3a"/><rect x="374" y="310" width="50" height="380" fill="#8a4f3a"/>
+    <rect x="120" y="330" width="280" height="330" fill="#e9e4d6"/><rect x="134" y="344" width="252" height="302" fill="#1b2740"/><path d="M260 344 V646 M134 495 H386" stroke="#e9e4d6" stroke-width="10"/>
+    <rect x="440" y="1000" width="320" height="22" fill="#6b4a2f"/><rect x="460" y="1022" width="20" height="178" fill="#4f3624"/><rect x="720" y="1022" width="20" height="178" fill="#4f3624"/><rect x="480" y="1110" width="240" height="12" fill="#4f3624"/>
+    <rect x="584" y="958" width="32" height="42" rx="4" fill="#b9a27a"/><path d="M560 900 H640 L662 960 H538Z" fill="#efdcaa"/>
+    <rect x="160" y="1080" width="190" height="18" rx="4" fill="#6b4a2f"/><rect x="172" y="1098" width="14" height="102" fill="#4f3624"/><rect x="324" y="1098" width="14" height="102" fill="#4f3624"/>
+    <rect x="980" width="30" height="1200" fill="#3a2c22"/>
+  </symbol>
+
+  
+  <defs>
+    <linearGradient id="lr-l-fog" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fb0c4" stop-opacity="0"/><stop offset=".5" stop-color="#9fb0c4" stop-opacity=".35"/><stop offset="1" stop-color="#9fb0c4" stop-opacity="0"/></linearGradient>
+    <radialGradient id="lr-l-glow"><stop offset="0" stop-color="#ffcf8a" stop-opacity=".55"/><stop offset="1" stop-color="#ffcf8a" stop-opacity="0"/></radialGradient>
+    <linearGradient id="lr-l-room" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9bf8f"/><stop offset="1" stop-color="#c4a574"/></linearGradient>
+  </defs>
+  <symbol id="lr-l-road-sky" viewBox="0 0 1920 1080">
+    <rect width="1920" height="1080" fill="url(#lr-sky)"/>
+    <circle cx="1560" cy="150" r="46" fill="var(--moon, #f4ecd4)" opacity=".85"/><circle cx="1576" cy="140" r="44" fill="var(--lr-sky-0, #0c1424)" opacity=".75"/>
+    <path d="M0 520 Q60 470 130 505 Q200 440 270 500 Q340 455 410 505 Q480 430 560 500 Q630 465 700 505 Q770 440 850 500 Q920 455 990 505 Q1060 430 1140 500 Q1210 465 1280 505 Q1350 440 1430 500 Q1500 455 1570 505 Q1640 430 1720 500 Q1790 465 1860 505 Q1900 480 1920 500 V1080 H0Z" fill="var(--lr-trees-far, #1e2a3c)"/>
+    <path d="M0 600 Q80 500 170 590 Q250 480 340 596 Q430 500 520 590 Q610 470 700 596 Q790 500 880 590 Q970 480 1060 596 Q1150 500 1240 590 Q1330 470 1420 596 Q1510 500 1600 590 Q1690 480 1780 596 Q1860 520 1920 590 V1080 H0Z" fill="var(--lr-trees, #121a27)"/>
+  </symbol>
+  <symbol id="lr-l-road-ground" viewBox="0 0 1920 480">
+    <rect width="1920" height="34" fill="var(--lr-shoulder, #3a3b38)"/>
+    <rect y="34" width="1920" height="250" fill="var(--lr-asphalt, #262b33)"/>
+    <rect y="40" width="1920" height="5" fill="#9aa0a6" opacity=".45"/><rect y="272" width="1920" height="6" fill="#9aa0a6" opacity=".5"/>
+    <rect y="284" width="1920" height="196" fill="var(--lr-shoulder, #3a3b38)"/>
+    <path d="M0 330 Q30 300 60 330 Q90 296 120 330 Q160 300 190 330 M1700 330 Q1730 300 1760 330 Q1790 296 1820 330 Q1860 300 1890 330" fill="none" stroke="var(--lr-grass-fg, #0f1610)" stroke-width="10"/>
+    <g fill="rgba(0,0,0,.22)"><circle cx="90" cy="340" r="4"/><circle cx="320" cy="380" r="4"/><circle cx="610" cy="350" r="4"/><circle cx="900" cy="410" r="4"/><circle cx="1180" cy="360" r="4"/><circle cx="1450" cy="400" r="4"/><circle cx="1760" cy="370" r="4"/></g>
+  </symbol>
+  
+  <symbol id="lr-l-road-dash" viewBox="0 0 2160 12" overflow="visible">
+    <g fill="#d9c27a" opacity=".8"><rect x="0" width="110" height="10" rx="3"/><rect x="240" width="110" height="10" rx="3"/><rect x="480" width="110" height="10" rx="3"/><rect x="720" width="110" height="10" rx="3"/><rect x="960" width="110" height="10" rx="3"/><rect x="1200" width="110" height="10" rx="3"/><rect x="1440" width="110" height="10" rx="3"/><rect x="1680" width="110" height="10" rx="3"/><rect x="1920" width="110" height="10" rx="3"/></g>
+  </symbol>
+  <symbol id="lr-l-road-back" viewBox="0 0 1920 1080">
+    <rect width="1920" height="560" fill="url(#lr-sky)"/>
+    <path d="M0 560 V420 Q90 360 170 420 Q250 330 330 410 Q420 350 520 430 Q600 380 690 470 Q760 470 840 530 L860 560Z M1920 560 V420 Q1830 360 1750 420 Q1670 330 1590 410 Q1500 350 1400 430 Q1320 380 1230 470 Q1160 470 1080 530 L1060 560Z" fill="var(--lr-trees, #121a27)"/>
+    <rect y="540" width="1920" height="540" fill="var(--lr-shoulder, #3a3b38)"/>
+    <path d="M900 540 H1020 L1700 1080 H220Z" fill="var(--lr-asphalt, #262b33)"/>
+    <path d="M908 540 L250 1080 M1012 540 L1670 1080" stroke="#9aa0a6" stroke-width="6" opacity=".45"/>
+    <g fill="#d9c27a" opacity=".75"><path d="M957 556 h6 l2 18 h-10z"/><path d="M955 600 h10 l3 34 h-16z"/><path d="M952 670 h16 l5 56 h-26z"/><path d="M948 780 h24 l7 90 h-38z"/><path d="M941 950 h38 l10 130 h-58z"/></g>
+    <path d="M0 1080 V860 Q60 820 110 870 Q170 800 220 880 L240 1080Z M1920 1080 V860 Q1860 820 1810 870 Q1750 800 1700 880 L1680 1080Z" fill="var(--lr-grass-fg, #0f1610)"/>
+  </symbol>
+
+  <symbol id="lr-l-warehouse" viewBox="0 0 1920 1080">
+    <rect width="1920" height="760" fill="var(--lr-wall, #4b5562)"/>
+    <path d="M0 0 H300 V760 H0Z M1620 0 H1920 V760 H1620Z" fill="rgba(0,0,0,.16)"/>
+    <path d="M300 0 V760 M1620 0 V760 M0 150 H1920" stroke="rgba(0,0,0,.18)" stroke-width="5"/>
+    <g fill="#2b3340"><rect x="70" y="60" width="160" height="70" rx="4"/><rect x="1690" y="60" width="160" height="70" rx="4"/></g>
+    <g fill="var(--lr-sky-1, #24344c)"><rect x="80" y="70" width="66" height="50"/><rect x="154" y="70" width="66" height="50"/><rect x="1700" y="70" width="66" height="50"/><rect x="1774" y="70" width="66" height="50"/></g>
+    <rect x="520" y="180" width="880" height="56" rx="8" fill="#3a424c"/>
+    <rect x="540" y="236" width="840" height="524" fill="#262c34"/>
+    <rect x="560" y="236" width="800" height="524" fill="var(--lr-shutter, #66717d)"/>
+    <path d="M560 256 H1360 M560 282 H1360 M560 308 H1360 M560 334 H1360 M560 360 H1360 M560 386 H1360 M560 412 H1360 M560 438 H1360 M560 464 H1360 M560 490 H1360 M560 516 H1360 M560 542 H1360 M560 568 H1360 M560 594 H1360 M560 620 H1360 M560 646 H1360 M560 672 H1360 M560 698 H1360 M560 724 H1360" stroke="rgba(0,0,0,.18)" stroke-width="4"/>
+    <rect x="560" y="236" width="800" height="524" fill="url(#lr-shutter-fade)"/>
+    <ellipse cx="420" cy="560" rx="70" ry="170" fill="rgba(0,0,0,.1)"/><ellipse cx="1500" cy="600" rx="60" ry="140" fill="rgba(0,0,0,.1)"/>
+    <g fill="#3a3027"><rect x="1460" y="560" width="120" height="200"/><rect x="1470" y="520" width="100" height="40"/></g>
+    <path d="M1460 640 H1580 M1460 700 H1580" stroke="rgba(0,0,0,.3)" stroke-width="4"/>
+    <rect y="740" width="1920" height="340" fill="var(--lr-floor, #353c45)"/>
+    <rect y="740" width="1920" height="22" fill="rgba(0,0,0,.25)"/>
+    <path d="M0 860 H1920 M0 990 H1920 M760 760 L520 1080 M1160 760 L1400 1080" stroke="rgba(0,0,0,.18)" stroke-width="4"/>
+    <ellipse cx="960" cy="880" rx="640" ry="120" fill="var(--lamp, #ffcf8a)" opacity=".12"/>
+  </symbol>
+  <symbol id="lr-l-warehouse-lamp" viewBox="0 0 1920 1080">
+    <path d="M920 120 H1000 L1480 1000 H440Z" fill="url(#lr-cone-grad)"/>
+    <circle cx="960" cy="130" r="160" fill="var(--lamp, #ffcf8a)" opacity=".14"/>
+    <path d="M960 0 V76" stroke="#1a1d22" stroke-width="4"/>
+    <path d="M910 74 H1010 L1040 124 H880Z" fill="#2a2f36"/><path d="M880 124 H1040" stroke="#4a525c" stroke-width="4"/>
+    <ellipse cx="960" cy="130" rx="26" ry="14" fill="#ffe6b0"/>
+  </symbol>
+  <symbol id="lr-l-warehouse-front" viewBox="0 0 1920 1080">
+    <rect width="1920" height="1080" fill="url(#lr-sky)"/>
+    <path d="M0 420 Q90 360 180 410 Q260 340 350 400 L360 820 H0Z M1920 430 Q1830 370 1750 420 Q1680 350 1600 410 L1580 820 H1920Z" fill="var(--lr-trees, #121a27)"/>
+    <path d="M330 300 L960 180 L1590 300 V820 H330Z" fill="#3a434f"/>
+    <path d="M330 300 L960 180 L1590 300" fill="none" stroke="#262c34" stroke-width="14"/>
+    <path d="M330 300 V820 M1590 300 V820" stroke="rgba(0,0,0,.25)" stroke-width="6"/>
+    <rect x="640" y="380" width="640" height="440" fill="#1c2129"/>
+    <rect x="660" y="380" width="600" height="250" fill="var(--lr-shutter, #66717d)"/>
+    <path d="M660 400 H1260 M660 424 H1260 M660 448 H1260 M660 472 H1260 M660 496 H1260 M660 520 H1260 M660 544 H1260 M660 568 H1260 M660 592 H1260 M660 616 H1260" stroke="rgba(0,0,0,.2)" stroke-width="4"/>
+    <rect x="660" y="630" width="600" height="190" fill="#2a2620"/>
+    <ellipse cx="960" cy="820" rx="300" ry="40" fill="var(--lamp, #ffcf8a)" opacity=".22"/>
+    <rect x="660" y="626" width="600" height="10" fill="#4a525c"/>
+    <path d="M960 300 V336" stroke="#1a1d22" stroke-width="4"/><path d="M920 334 H1000 L1020 360 H900Z" fill="#2a2f36"/><ellipse cx="960" cy="362" rx="18" ry="9" fill="#ffe6b0"/>
+    <path d="M940 362 H980 L1220 830 H700Z" fill="url(#lr-cone-grad)"/>
+    <circle cx="960" cy="364" r="110" fill="var(--lamp, #ffcf8a)" opacity=".16"/>
+    <g fill="#2b3340"><rect x="420" y="420" width="140" height="110"/><rect x="1360" y="420" width="140" height="110"/></g>
+    <rect y="820" width="1920" height="260" fill="var(--lr-yard, #34332f)"/>
+    <rect y="820" width="1920" height="16" fill="rgba(0,0,0,.3)"/>
+    <g fill="rgba(0,0,0,.25)"><circle cx="140" cy="900" r="5"/><circle cx="420" cy="960" r="5"/><circle cx="760" cy="920" r="5"/><circle cx="1240" cy="980" r="5"/><circle cx="1600" cy="910" r="5"/><circle cx="1820" cy="990" r="5"/></g>
+  </symbol>
+
+  <symbol id="lr-l-pier" viewBox="0 0 1920 1080">
+    <rect width="1920" height="520" fill="url(#lr-sky)"/>
+    <path d="M0 520 V500 Q200 480 420 496 Q700 474 960 492 Q1240 476 1500 494 Q1720 482 1920 494 V520Z" fill="#121b28"/>
+    <rect y="520" width="1920" height="560" fill="var(--lr-water, #0d1522)"/>
+    <path d="M140 560 h80 M1500 580 h120 M380 620 h140 M1180 640 h100 M60 700 h160 M1640 720 h180 M300 780 h200 M1380 800 h160" stroke="#22324a" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="960" cy="470" r="90" fill="url(#lr-l-glow)"/>
+    <rect x="957" y="470" width="6" height="56" fill="#2a2f36"/><circle cx="960" cy="468" r="9" fill="#ffd892"/>
+    <g fill="var(--lamp, #ffcf8a)"><rect x="955" y="532" width="10" height="16" rx="4" opacity=".55"/><rect x="953" y="566" width="14" height="18" rx="4" opacity=".45"/><rect x="951" y="604" width="18" height="20" rx="4" opacity=".35"/><rect x="949" y="648" width="22" height="22" rx="4" opacity=".25"/></g>
+    <path d="M800 820 L946 526 H974 L1120 820Z" fill="var(--lr-deck, #5a4636)"/>
+    <path d="M800 820 L946 526 H960 L986 820Z" fill="rgba(255,255,255,.04)"/>
+    <path d="M806 806 H1114 M818 782 H1102 M832 752 H1088 M848 720 H1072 M866 684 H1054 M886 644 H1034 M906 604 H1014 M926 564 H994" stroke="rgba(0,0,0,.3)" stroke-width="3"/>
+    <rect y="820" width="1920" height="260" fill="var(--lr-deck, #5a4636)"/>
+    <rect y="820" width="1920" height="16" fill="rgba(0,0,0,.28)"/>
+    <path d="M0 870 H1920 M0 930 H1920 M0 1000 H1920" stroke="rgba(0,0,0,.28)" stroke-width="5"/>
+    <path d="M320 836 V1080 M760 836 V1080 M1200 836 V1080 M1640 836 V1080" stroke="rgba(0,0,0,.14)" stroke-width="4"/>
+  </symbol>
+  <symbol id="lr-l-pier-posts" viewBox="0 0 1920 1080" overflow="visible">
+    <g fill="var(--lr-post, #3b2c22)"><rect x="790" y="700" width="22" height="150" rx="4"/><rect x="1108" y="700" width="22" height="150" rx="4"/><rect x="842" y="620" width="16" height="110" rx="3"/><rect x="1062" y="620" width="16" height="110" rx="3"/><rect x="884" y="566" width="12" height="80" rx="2"/><rect x="1024" y="566" width="12" height="80" rx="2"/><rect x="914" y="532" width="8" height="54" rx="2"/><rect x="998" y="532" width="8" height="54" rx="2"/></g>
+    <rect x="40" y="640" width="60" height="300" rx="8" fill="var(--lr-post, #3b2c22)"/><rect x="1820" y="640" width="60" height="300" rx="8" fill="var(--lr-post, #3b2c22)"/>
+    <rect x="70" y="640" width="30" height="300" fill="rgba(0,0,0,.18)"/><rect x="1850" y="640" width="30" height="300" fill="rgba(0,0,0,.18)"/>
+  </symbol>
+
+  <symbol id="lr-l-house" viewBox="0 0 1920 1080">
+    <rect x="1160" width="760" height="1080" fill="url(#lr-sky)"/>
+    <rect x="1160" y="930" width="760" height="150" fill="var(--lr-porch, #3e3126)"/>
+    <path d="M1170 970 H1920 M1170 1030 H1920" stroke="rgba(0,0,0,.25)" stroke-width="4"/>
+    <rect x="1160" y="190" width="760" height="740" fill="var(--lr-house-ext, #5e5245)"/>
+    <path d="M1120 202 L1920 110 V202Z" fill="#3a2c22"/>
+    <rect x="1230" y="380" width="250" height="550" fill="#3b2c22"/>
+    <rect x="1244" y="394" width="222" height="536" fill="var(--lr-house-door, #7a5a3c)"/>
+    <rect x="1244" y="394" width="70" height="536" fill="rgba(0,0,0,.14)"/>
+    <rect x="1300" y="440" width="110" height="120" rx="4" fill="var(--lamp, #ffcf8a)" style="opacity:calc(var(--lr-house-light, 1) * .55)"/>
+    <rect x="1280" y="610" width="150" height="260" rx="6" fill="none" stroke="rgba(0,0,0,.22)" stroke-width="6"/>
+    <circle cx="1440" cy="660" r="9" fill="var(--gold, #f6c445)"/>
+    <rect x="1244" y="922" width="222" height="8" fill="var(--lamp, #ffcf8a)" style="opacity:calc(var(--lr-house-light, 1) * .8)"/>
+    <rect x="1210" y="930" width="290" height="26" fill="#2e241c"/>
+    <rect x="1580" y="380" width="200" height="220" fill="#d9d2c0"/><rect x="1594" y="394" width="172" height="192" fill="var(--lamp, #ffcf8a)" style="opacity:calc(var(--lr-house-light, 1) * .6)"/><path d="M1680 394 V586 M1594 490 H1766" stroke="#d9d2c0" stroke-width="8"/>
+    <circle cx="1350" cy="300" r="16" fill="#ffe6b0" style="opacity:calc(var(--lr-house-light, 1) * .9)"/><circle cx="1350" cy="300" r="70" fill="var(--lamp, #ffcf8a)" opacity=".18"/>
+    <rect width="1160" height="930" fill="url(#lr-l-room)"/>
+    <rect width="1160" height="140" fill="rgba(0,0,0,.1)"/><rect width="70" height="930" fill="rgba(0,0,0,.1)"/>
+    <rect y="930" width="1160" height="150" fill="var(--lr-house-floor, #6b4f36)"/><path d="M0 980 H1160 M0 1040 H1160" stroke="rgba(0,0,0,.22)" stroke-width="4"/>
+    <rect y="912" width="1160" height="18" fill="#5a4230"/>
+    <rect x="130" y="200" width="44" height="340" fill="#8a4f3a"/><rect x="430" y="200" width="44" height="340" fill="#8a4f3a"/>
+    <rect x="160" y="220" width="280" height="290" fill="#e9e4d6"/><rect x="174" y="234" width="252" height="262" fill="#1b2740"/><path d="M300 234 V496 M174 365 H426" stroke="#e9e4d6" stroke-width="10"/>
+    <rect x="760" y="300" width="150" height="190" rx="6" fill="#7a5a3c"/><rect x="772" y="312" width="126" height="166" rx="4" fill="#e7dcc4"/>
+    <circle cx="835" cy="370" r="34" fill="#c9a77a"/><rect x="800" y="410" width="70" height="50" rx="10" fill="#9a7b56"/>
+    <rect x="1140" width="40" height="930" fill="#3a2c22"/>
+  </symbol>
+  
+  <symbol id="lr-l-house-table" viewBox="0 0 1920 1080" overflow="visible">
+    <circle cx="640" cy="640" r="300" fill="var(--lamp, #ffcf8a)" style="opacity:calc(var(--lr-house-light, 1) * .16)"/>
+    <path d="M610 520 H690 L716 580 H584Z" fill="#efdcaa" style="opacity:calc(var(--lr-house-light, 1) * 1)"/><rect x="636" y="580" width="28" height="140" fill="#b9a27a"/>
+    <rect x="460" y="720" width="380" height="24" rx="4" fill="#6b4a2f"/><rect x="484" y="744" width="22" height="186" fill="#4f3624"/><rect x="794" y="744" width="22" height="186" fill="#4f3624"/>
+    <ellipse cx="560" cy="716" rx="58" ry="12" fill="#f3efe4"/><ellipse cx="560" cy="712" rx="34" ry="7" fill="#e8d9a8"/>
+    <ellipse cx="730" cy="716" rx="58" ry="12" fill="#f3efe4"/><path d="M700 712 Q730 700 760 712" fill="none" stroke="#c9b58a" stroke-width="4"/>
+    <rect x="620" y="702" width="14" height="14" rx="3" fill="#9aa3ad"/>
+  </symbol>
+  <symbol id="lr-l-cab-out" viewBox="0 0 1920 1080">
+    <rect width="1920" height="1080" fill="url(#lr-sky)"/>
+    <path d="M0 640 Q80 560 170 630 Q260 540 352 620 V1080 H0Z M1920 640 Q1840 560 1750 630 Q1660 540 1568 620 V1080 H1920Z" fill="var(--lr-trees, #121a27)"/>
+    <path d="M0 900 Q960 840 1920 900 V1080 H0Z" fill="var(--lr-cab, #d6c9ac)"/>
+    <path d="M0 900 Q960 840 1920 900" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="6"/>
+    <rect x="0" y="0" width="352" height="1080" fill="rgba(0,0,0,.25)"/><rect x="1568" y="0" width="352" height="1080" fill="rgba(0,0,0,.25)"/>
+  </symbol>
+
+  
+  
+  <symbol id="lr-own-marks" viewBox="0 0 1300 620" overflow="visible">
+    <path d="M1120 420 Q1150 404 1176 418 Q1196 432 1222 424 L1226 446 Q1190 452 1160 440 Q1136 432 1118 444Z" fill="rgba(0,0,0,.28)"/>
+    <path d="M1124 424 Q1150 410 1172 424" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="3"/>
+    <path d="M36 404 C70 430 50 452 86 470 C120 486 104 444 140 452" fill="none" stroke="var(--lr-rope, #3d8fd1)" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="36" cy="404" r="7" fill="#2b2f36"/>
+    <g transform="translate(870 270)"><path d="M0 -20 L6 -6 L21 -6 L9 3 L13 18 L0 9 L-13 18 L-9 3 L-21 -6 L-6 -6Z" fill="var(--gold, #f6c445)" stroke="#fff" stroke-width="3"/><circle cx="-4" cy="-1" r="2" fill="#5a3a12"/><circle cx="4" cy="-1" r="2" fill="#5a3a12"/></g>
+  </symbol>
+  
+  <symbol id="lr-own-dent" viewBox="0 0 400 300">
+    <rect width="400" height="300" fill="var(--lr-own-cab, #8f4a3c)"/>
+    <path d="M0 210 A190 190 0 0 1 380 210 V300 H0Z" fill="#15171b"/>
+    <path d="M60 110 Q140 70 220 104 Q290 132 360 108 L370 160 Q290 182 210 150 Q140 124 64 160Z" fill="rgba(0,0,0,.3)"/>
+    <path d="M70 116 Q140 80 214 112" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="6"/>
+    <path d="M120 140 l30 -20 M250 140 l24 14" stroke="rgba(0,0,0,.35)" stroke-width="5"/>
+  </symbol>
+  <symbol id="lr-own-rope" viewBox="0 0 400 300">
+    <rect width="400" height="300" fill="var(--lr-own-cab, #8f4a3c)"/><rect y="0" width="400" height="40" fill="rgba(0,0,0,.25)"/>
+    <rect x="40" y="160" width="320" height="26" rx="6" fill="#2b2f36"/>
+    <path d="M70 60 C150 140 90 200 170 240 C250 280 220 140 330 170" fill="none" stroke="var(--lr-rope, #3d8fd1)" stroke-width="22" stroke-linecap="round"/>
+    <path d="M70 60 C150 140 90 200 170 240 C250 280 220 140 330 170" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="5" stroke-dasharray="14 10"/>
+    <circle cx="70" cy="60" r="18" fill="#2b2f36"/>
+  </symbol>
+  <symbol id="lr-own-sticker" viewBox="0 0 400 300">
+    <rect width="400" height="300" fill="var(--lr-own-cab, #8f4a3c)"/>
+    <rect x="30" y="30" width="340" height="240" rx="18" fill="var(--lr-glass, #27364c)"/>
+    <path d="M60 50 L120 50 L70 250 L40 250Z" fill="rgba(255,255,255,.08)"/>
+    <g transform="translate(220 150) rotate(-8)"><path d="M0 -70 L20 -22 L72 -22 L30 10 L46 62 L0 30 L-46 62 L-30 10 L-72 -22 L-20 -22Z" fill="var(--gold, #f6c445)" stroke="#fff" stroke-width="8" stroke-linejoin="round"/>
+      <circle cx="-14" cy="-4" r="6" fill="#5a3a12"/><circle cx="14" cy="-4" r="6" fill="#5a3a12"/><path d="M-14 14 Q0 26 14 14" fill="none" stroke="#5a3a12" stroke-width="5" stroke-linecap="round"/></g>
+  </symbol>
+  
+  <symbol id="lr-rescue-side" viewBox="0 0 1300 620" overflow="visible">
+    <ellipse cx="660" cy="606" rx="640" ry="16" fill="rgba(0,0,0,.38)"/>
+    <rect x="30" y="300" width="800" height="190" rx="8" fill="#e9e6df"/>
+    <path d="M820 490 V262 Q820 214 868 210 H1000 Q1032 210 1052 240 L1112 340 L1240 356 Q1286 362 1290 400 V490Z" fill="#e9e6df"/>
+    <path d="M848 236 H996 Q1016 236 1028 256 L1074 330 H848Z" fill="var(--lr-glass, #27364c)"/>
+    <rect x="30" y="400" width="1260" height="34" fill="#e2702a"/>
+    <text x="420" y="378" text-anchor="middle" font-family="Kanit, sans-serif" font-weight="700" font-size="64" fill="#c43a2b">กู้ภัย</text>
+    <rect x="880" y="186" width="160" height="26" rx="8" fill="#2b2f36"/>
+    <rect class="lr-bar-a" x="888" y="190" width="70" height="18" rx="6" fill="#e5383b"/><rect class="lr-bar-b" x="962" y="190" width="70" height="18" rx="6" fill="#3b6fe5"/>
+    <rect x="30" y="452" width="1260" height="38" fill="rgba(0,0,0,.12)"/>
+    <path d="M222 520 A108 108 0 0 1 438 520Z M922 520 A108 108 0 0 1 1138 520Z" fill="#15171b"/>
+    <use href="#lr-g-wheel" transform="translate(330 520)"/><use href="#lr-g-wheel" transform="translate(1030 520)"/>
+  </symbol>
+  
+  <symbol id="lr-curve-sign" viewBox="0 0 120 300" overflow="visible">
+    <g transform="rotate(-14 60 300)"><rect x="54" y="80" width="12" height="220" fill="#8a929c"/>
+      <rect x="0" y="0" width="120" height="96" rx="8" fill="#f2c230" stroke="#15171b" stroke-width="6"/>
+      <path d="M40 18 L76 48 L40 78 M64 18 L100 48 L64 78" fill="none" stroke="#15171b" stroke-width="12" stroke-linejoin="round"/></g>
+  </symbol>
+  <symbol id="lr-tree-broken" viewBox="0 0 360 520" overflow="visible">
+    <path d="M150 520 L160 300 L148 250 L190 280 L200 520Z" fill="#5a4636"/><path d="M150 520 L160 300 L148 250 L162 258 L172 520Z" fill="rgba(255,255,255,.12)"/>
+    <path d="M148 250 L170 236 L190 280" fill="#c9a77a"/>
+    <path d="M170 262 L330 470 L300 490 L150 290Z" fill="#5a4636"/>
+    <ellipse cx="300" cy="470" rx="90" ry="44" fill="var(--lr-trees, #121a27)"/>
+    <ellipse cx="90" cy="230" rx="80" ry="70" fill="var(--lr-trees, #121a27)" opacity=".9"/>
+  </symbol>
+  
+  <symbol id="lr-sheet" viewBox="0 0 560 140" overflow="visible">
+    <path d="M10 140 Q20 70 90 64 Q130 40 170 62 Q300 52 420 70 Q510 76 550 140Z" fill="#e8e6e0"/>
+    <path d="M90 64 Q130 40 170 62 M240 58 Q320 84 420 70" fill="none" stroke="rgba(0,0,0,.12)" stroke-width="5"/>
+    <path d="M10 140 H550" stroke="rgba(0,0,0,.3)" stroke-width="6"/>
+  </symbol>
+  
+  <symbol id="lr-shoe" viewBox="0 0 180 90" overflow="visible">
+    <path d="M10 70 Q12 30 50 30 L90 34 Q110 50 150 54 Q174 58 172 74 L170 82 H12Z" fill="#e9e6df"/>
+    <path d="M10 76 H172" stroke="#3a3f47" stroke-width="10" stroke-linecap="round"/>
+    <path d="M56 36 L70 50 M70 36 L84 50 M84 38 L98 52" stroke="#3a3f47" stroke-width="4"/>
+    <path d="M110 50 Q140 56 160 60" fill="none" stroke="#3d8fd1" stroke-width="6"/>
+  </symbol>
+  <symbol id="lr-shoe-hand" overflow="visible">
+    <g transform="rotate(-70) translate(-30 -45) scale(.62)"><use href="#lr-shoe" width="180" height="90"/></g>
+    <circle r="19" fill="var(--skin, #e7b38c)"/>
+  </symbol>
+  
+  <symbol id="lr-garland" viewBox="0 0 80 240" overflow="visible">
+    <path d="M40 0 V20" stroke="#3b2c22" stroke-width="3"/>
+    <g opacity=".85"><circle cx="40" cy="30" r="12" fill="#c9a24a"/><circle cx="30" cy="50" r="12" fill="#d8c8a0"/><circle cx="26" cy="74" r="12" fill="#b98a3a"/><circle cx="30" cy="98" r="12" fill="#c9a24a"/><circle cx="40" cy="116" r="12" fill="#d8c8a0"/><circle cx="50" cy="98" r="12" fill="#b98a3a"/><circle cx="54" cy="74" r="12" fill="#c9a24a"/><circle cx="50" cy="50" r="12" fill="#d8c8a0"/></g>
+    <path d="M34 128 L30 200 M40 130 V214 M46 128 L50 200" stroke="#8a3a30" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+  </symbol>
+  
+  <symbol id="lr-vest" viewBox="0 0 200 520" overflow="visible">
+    <path d="M62 156 Q100 146 138 156 L140 300 Q100 310 60 300Z" fill="#e2702a"/>
+    <path d="M62 236 H138 M62 270 H138" stroke="#e8f0f2" stroke-width="10"/>
+    <path d="M86 150 L100 200 L114 150" fill="none" stroke="#c45f20" stroke-width="6"/>
+  </symbol>
+  
+  <symbol id="lr-bag-hug" overflow="visible">
+    <rect x="-70" y="-50" width="140" height="96" rx="34" fill="#4f5a46"/>
+    <path d="M-40 -48 Q0 -90 40 -48" fill="none" stroke="#3a4234" stroke-width="10"/>
+    <path d="M-66 0 H66" stroke="rgba(0,0,0,.2)" stroke-width="5"/>
+    <circle cx="-50" cy="0" r="19" fill="var(--skin, #e7b38c)"/><circle cx="50" cy="0" r="19" fill="var(--skin, #e7b38c)"/>
+  </symbol>
+  
+  <symbol id="lr-cap-ground" viewBox="0 0 220 120" overflow="visible">
+    <ellipse cx="110" cy="112" rx="104" ry="10" fill="rgba(0,0,0,.35)"/>
+    <g transform="translate(10 62) rotate(-8)"><use href="#lr-g-ek-cap"/></g>
+  </symbol>
+  
+  <symbol id="lr-book-hand" overflow="visible">
+    <rect x="-34" y="-96" width="70" height="92" rx="5" fill="var(--lr-ledger-cover, #6b4f36)"/><rect x="-26" y="-74" width="52" height="22" fill="var(--lr-cream, #e8dcc3)"/><rect x="-34" y="-96" width="10" height="92" fill="rgba(0,0,0,.2)"/>
+    <circle r="19" fill="var(--skin, #e7b38c)"/>
+  </symbol>
+  
+  <symbol id="lr-hand-big" overflow="visible">
+    <ellipse cx="0" cy="0" rx="96" ry="104" fill="var(--skin, #e7b38c)"/>
+    <ellipse cx="-96" cy="-24" rx="32" ry="58" transform="rotate(-28 -96 -24)" fill="var(--skin, #e7b38c)"/>
+    <path d="M-60 40 Q0 70 60 40" fill="none" stroke="var(--skin-d, #c98f6b)" stroke-width="6" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="lr-arm-big" overflow="visible">
+    <rect x="-70" y="40" width="140" height="900" rx="66" fill="var(--skin, #e7b38c)"/>
+    <rect x="-70" y="40" width="40" height="900" rx="20" fill="var(--skin-d, #c98f6b)" opacity=".35"/>
+    <rect x="-96" y="700" width="192" height="300" rx="40" fill="var(--sleeve, #6e5a48)"/>
+    <use href="#lr-hand-big"/>
+  </symbol>
+  <symbol id="lr-watch-big" overflow="visible">
+    <rect x="-86" y="96" width="172" height="62" rx="16" fill="#15171b"/>
+    <g transform="translate(0 127) rotate(90)"><g transform="scale(.62) translate(-120 -160)"><use href="#lr-watch" width="240" height="320"/></g></g>
+  </symbol>
+
+
+  
+  <symbol id="face-lr-grin" viewBox="0 0 200 520" overflow="visible">
+    <ellipse cx="77" cy="80" rx="15" ry="11" fill="rgba(40,30,40,.28)"/><ellipse cx="123" cy="80" rx="15" ry="11" fill="rgba(40,30,40,.28)"/>
+    <circle cx="77" cy="75" r="10" fill="#f3efe6"/><circle cx="123" cy="75" r="10" fill="#f3efe6"/>
+    <circle cx="78" cy="75" r="3.2" fill="#15131a"/><circle cx="122" cy="75" r="3.2" fill="#15131a"/>
+    <path d="M64 63 L90 60 M110 60 L136 63" stroke="var(--brow, #8d8f91)" stroke-width="7" stroke-linecap="round"/>
+    <path d="M56 92 Q100 132 144 92 Q100 108 56 92Z" fill="#3a1418"/>
+    <path d="M62 95 Q100 112 138 95 L136 101 Q100 116 64 101Z" fill="#efe9dc"/>
+    <path d="M74 99 V106 M86 102 V110 M100 104 V112 M114 102 V110 M126 99 V106" stroke="#a89f8e" stroke-width="2"/>
+    <path d="M56 92 Q100 132 144 92" fill="none" stroke="#5a2228" stroke-width="3" stroke-linecap="round"/>
+    <path d="M50 88 Q54 96 58 92 M150 88 Q146 96 142 92" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="3" stroke-linecap="round"/>
+  </symbol>
+</defs></svg>
+
+<svg class="set" width="1280" height="720" viewBox="0 0 1920 1080"><use href="#lr-l-warehouse" width="1920" height="1080"/><use href="#lr-l-warehouse-lamp" width="1920" height="1080" x="320"/></svg>
+<svg class="set lr-cream-box" width="1280" height="720" viewBox="0 0 1920 1080"><g opacity=".55" transform="translate(-60 560) scale(.55)"><use href="#lr-truck-side" width="1300" height="620"/></g></svg>
+<svg class="who c-lr-chan face-off arm-l-off lr-rim" style="left:690px;top:40px;width:653.8461538461538px;height:1700px" viewBox="0 0 200 520" overflow="visible">
+  <use href="#lr-chan" width="200" height="520"/><use href="#face-lr-grin" width="200" height="520" transform="translate(0 13)"/>
+  <use href="#arm-l-hold" width="200" height="520"/><use href="#lr-key" transform="translate(88 244)"/></svg>
+<div class="shade" style="background:linear-gradient(0deg, rgba(255,214,150,.08), rgba(6,10,26,.32) 60%)"></div>
+<div class="shade" style="background:linear-gradient(90deg, rgba(4,6,14,.92) 0, rgba(4,6,14,.75) 38%, rgba(4,6,14,0) 62%), radial-gradient(ellipse at 76% 30%, rgba(0,0,0,0) 30%, rgba(4,6,14,.55) 80%)"></div>
+<div class="chip" style="left:48px;top:70px;font-size:46px;transform:rotate(-2deg)">ห้ามเปิดดู</div>
+<div class="t" style="left:48px;top:190px;font-size:118px;line-height:1.08">เที่ยวสุดท้าย<br><em>หนึ่งล้านบาท</em></div>
+<div class="t" style="left:52px;top:500px;font-size:54px;-webkit-text-stroke:8px #0b1328;text-shadow:0 6px 0 #0b1328">“ล้านนึง… ไปไหม?”</div>
+
+</div></body></html>

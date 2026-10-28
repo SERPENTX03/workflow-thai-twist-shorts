@@ -13,33 +13,33 @@
         #map-her-chip { left: 700px; top: 760px; }
         #map-me-chip { left: 560px; top: 330px; }
       </style>
-      <div id="root" data-composition-id="scene-example-map" data-width="1080" data-height="1920">
-        <svg id="map-svg" viewBox="0 0 1080 1300" data-layout-allow-overflow>
+      <div data-hf-id="hf-wx85" id="root" data-composition-id="scene-example-map" data-width="1080" data-height="1920">
+        <svg data-hf-id="hf-spfi" id="map-svg" viewBox="0 0 1080 1300" data-layout-allow-overflow>
           <!-- floor + walls -->
-          <rect x="140" y="200" width="800" height="900" fill="#3f3129" />
-          <g stroke="rgba(0,0,0,0.25)" stroke-width="3">
-            <path d="M220 200V1100M300 200V1100M380 200V1100M460 200V1100M540 200V1100M620 200V1100M700 200V1100M780 200V1100M860 200V1100" />
+          <rect data-hf-id="hf-y0sh" x="140" y="200" width="800" height="900" fill="#3f3129" />
+          <g data-hf-id="hf-1pib" stroke="rgba(0,0,0,0.25)" stroke-width="3">
+            <path data-hf-id="hf-y4gq" d="M220 200V1100M300 200V1100M380 200V1100M460 200V1100M540 200V1100M620 200V1100M700 200V1100M780 200V1100M860 200V1100" />
           </g>
-          <rect x="140" y="200" width="800" height="900" fill="none" stroke="#0a0f18" stroke-width="28" />
-          <rect x="200" y="1086" width="160" height="30" fill="#3f3129" />
-          <path d="M200 1100 A160 160 0 0 1 360 940" fill="none" stroke="rgba(239,232,218,0.35)" stroke-width="4" stroke-dasharray="10 10" />
-          <rect x="340" y="186" width="260" height="28" fill="#6f8fb8" />
+          <rect data-hf-id="hf-8bky" x="140" y="200" width="800" height="900" fill="none" stroke="#0a0f18" stroke-width="28" />
+          <rect data-hf-id="hf-hahy" x="200" y="1086" width="160" height="30" fill="#3f3129" />
+          <path data-hf-id="hf-x334" d="M200 1100 A160 160 0 0 1 360 940" fill="none" stroke="rgba(239,232,218,0.35)" stroke-width="4" stroke-dasharray="10 10" />
+          <rect data-hf-id="hf-g9b7" x="340" y="186" width="260" height="28" fill="#6f8fb8" />
           <!-- furniture -->
-          <rect x="620" y="250" width="280" height="400" rx="16" fill="#5d6f86" />
-          <rect x="650" y="270" width="220" height="80" rx="20" fill="#eee9de" />
-          <rect x="200" y="520" width="220" height="150" rx="14" fill="#6b4d3a" />
-          <circle cx="380" cy="560" r="18" fill="#f0d29e" />
+          <rect data-hf-id="hf-9oob" x="620" y="250" width="280" height="400" rx="16" fill="#5d6f86" />
+          <rect data-hf-id="hf-fvh1" x="650" y="270" width="220" height="80" rx="20" fill="#eee9de" />
+          <rect data-hf-id="hf-zm3m" x="200" y="520" width="220" height="150" rx="14" fill="#6b4d3a" />
+          <circle data-hf-id="hf-z8m2" cx="380" cy="560" r="18" fill="#f0d29e" />
           <!-- her footsteps: path drawn on -->
-          <path id="map-path" d="M280 1080 C300 900 420 820 560 800 S760 820 800 880" fill="none"
+          <path data-hf-id="hf-clrq" id="map-path" d="M280 1080 C300 900 420 820 560 800 S760 820 800 880" fill="none"
             stroke="rgba(239,232,218,0.75)" stroke-width="8" stroke-linecap="round" stroke-dasharray="1 26" />
           <!-- the living tenant -->
-          <circle id="map-her" data-layout-allow-overflow cx="800" cy="880" r="34" fill="#d9c9a8" stroke="#fff" stroke-width="6" />
+          <circle data-hf-id="hf-ybn1" id="map-her" data-layout-allow-overflow cx="800" cy="880" r="34" fill="#d9c9a8" stroke="#fff" stroke-width="6" />
           <!-- the protagonist, hollow -->
-          <circle id="map-me" cx="620" cy="440" r="30" fill="none" stroke="rgba(239,232,218,0.8)" stroke-width="6" stroke-dasharray="10 8" />
-          <circle id="map-ring" cx="620" cy="440" r="72" fill="none" stroke="#e5383b" stroke-width="7" stroke-dasharray="12 10" />
+          <circle data-hf-id="hf-s5cq" id="map-me" cx="620" cy="440" r="30" fill="none" stroke="rgba(239,232,218,0.8)" stroke-width="6" stroke-dasharray="10 8" />
+          <circle data-hf-id="hf-z732" id="map-ring" cx="620" cy="440" r="72" fill="none" stroke="#e5383b" stroke-width="7" stroke-dasharray="12 10" />
         </svg>
-        <div id="map-her-chip" class="chip">คนเป็น</div>
-        <div id="map-me-chip" class="chip red">คุณ</div>
+        <div data-hf-id="hf-ii6d" id="map-her-chip" class="chip">คนเป็น</div>
+        <div data-hf-id="hf-fxu8" id="map-me-chip" class="chip red">คุณ</div>
       </div>
       <script>
         const tl = gsap.timeline({ paused: true });

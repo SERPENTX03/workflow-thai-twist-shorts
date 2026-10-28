@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- EXAMPLE SCENE — hand poses and grip props. Copy the pattern, not the layout.
+     THE ONE-HAND RULE: hide the resting arm with arm-l-off / arm-r-off, then layer ONE pose arm (sleeve + hand), then the prop on the hand anchor.
+     Anchors and pose names are documented in assets/kit/cast.svg ("Pose library"). -->
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <style>
+        #poses-root { position: absolute; inset: 0; overflow: hidden; background: linear-gradient(180deg, #7a5230, #4b2f1b); }
+        #poses-floor { position: absolute; left: 0; right: 0; top: 1180px; height: 740px; background: #3a2414; }
+        .poses-who { width: 300px; height: 780px; }
+        .poses-lab { position: absolute; font: 700 30px/1 "IBM Plex Sans Thai", sans-serif; color: #f6efe0; }
+      </style>
+      <div data-hf-id="hf-trqy" id="poses-root" data-composition-id="scene-example-poses" data-width="1080" data-height="1920">
+        <div data-hf-id="hf-uw2g" id="poses-floor"></div>
+        <!-- offer: the woman hands a coin over -->
+        <svg data-hf-id="hf-c9rj" id="poses-a" class="who poses-who c-woman arm-r-off" viewBox="0 0 200 520" style="left:40px; top:380px">
+          <use data-hf-id="hf-lswu" href="#woman" /><use data-hf-id="hf-4x0y" href="#arm-r-offer" /><use data-hf-id="hf-huqa" href="#prop-coin" transform="translate(214 222)" />
+        </svg>
+        <!-- hold: the man puts a glass down (left arm only is posed, right arm rests) -->
+        <svg data-hf-id="hf-8s9u" id="poses-b" class="who poses-who c-man arm-l-off" viewBox="0 0 200 520" style="left:420px; top:380px">
+          <use data-hf-id="hf-8tgs" href="#man" /><use data-hf-id="hf-w0bd" href="#arm-l-hold" /><use data-hf-id="hf-pcbi" href="#prop-glass" transform="translate(88 244)" />
+        </svg>
+        <!-- raise + pocket: two hands, two different poses, no resting arm left behind -->
+        <svg data-hf-id="hf-ikfw" id="poses-c" class="who poses-who c-raincoat arm-l-off arm-r-off" viewBox="0 0 200 520" style="left:740px; top:380px">
+          <use data-hf-id="hf-0j9z" href="#raincoat" /><use data-hf-id="hf-qeq0" href="#arm-l-pocket" /><use data-hf-id="hf-hjlc" href="#arm-r-raise" />
+        </svg>
+        <div data-hf-id="hf-h9ev" class="poses-lab" style="left:80px; top:1230px">offer + coin</div>
+        <div data-hf-id="hf-vejk" class="poses-lab" style="left:470px; top:1230px">hold + glass</div>
+        <div data-hf-id="hf-brfj" class="poses-lab" style="left:760px; top:1230px">pocket + raise</div>
+      </div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#poses-a", { y: 1500 }, { y: 0, duration: 0.6, ease: "back.out(1.6)" }, 0.1);
+        tl.fromTo("#poses-b", { y: 1500 }, { y: 0, duration: 0.6, ease: "back.out(1.6)" }, 0.35);
+        tl.fromTo("#poses-c", { y: 1500 }, { y: 0, duration: 0.6, ease: "back.out(1.6)" }, 0.6);
+        window.__timelines["scene-example-poses"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

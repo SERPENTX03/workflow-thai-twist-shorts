@@ -1,0 +1,72 @@
+<!doctype html>
+<!-- The memory comes back at once: truck headlights, the horn, his hands yanking the wheel, the impact; silence.
+     "เขาไม่ได้ขับรถไปถึงโกดัง" — from here on Ek may wear the spirit look (lr-spirit): drained colour, nothing gory.
+     Views: flash/montage|silence|truth|walk -->
+<html data-composition-variables='[{"id":"shots","type":"string","label":"Shots (from build)","default":"[]"}]'>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <link rel="stylesheet" href="assets/kit/stories/last-ride.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #05070c; }
+        .fl-panel { position: absolute; inset: 0; opacity: 0; }
+        .fl-white { position: absolute; inset: 0; background: #fffaf0; opacity: 0; }
+        .fl-lamp { position: absolute; border-radius: 50%; background: radial-gradient(circle, #fffef6 0, #fff3c8 30%, rgba(255, 240, 190, 0) 70%); }
+      </style>
+      <div data-hf-id="hf-wgve" id="root" data-composition-id="scene-flash" data-width="1920" data-height="1080"></div>
+      <script src="assets/kit/stories/last-ride.js"></script>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const S = LR.shots("scene-flash", [{ at: 0, dur: 6, view: "flash/montage" }]);
+        const L = LR.layer;
+        const wreckSite = L('<use href="#lr-l-road-sky" width="1920" height="1080"/><use href="#lr-l-road-ground" y="600" width="1920" height="480"/><use href="#lr-road-rail-bent" x="1000" y="470" width="680" height="292"/>')
+          + `<svg class="lr-truck lr-own lr-no-box lr-damaged" viewBox="0 0 1300 620" overflow="visible" style="left:980px;top:500px;width:780px;height:372px"><use href="#lr-truck-shadow-side" width="1300" height="620"/><g transform="rotate(-5 680 520)"><use href="#lr-truck-side-body" width="1300" height="620"/><use href="#lr-own-marks" width="1300" height="620"/><use href="#lr-truck-damage-side" width="1300" height="620"/></g><use href="#lr-truck-wheel" x="330" y="520"/><use href="#lr-truck-wheel" x="1030" y="490"/></svg>`
+          + L('<use href="#lr-sheet" x="420" y="690" width="700" height="175"/><use href="#lr-cap-ground" x="1160" y="740" width="230" height="125"/>');
+        const views = {
+          flash: {
+            html: (c) => {
+              if (c.act === 'montage') {
+                const P = [
+                  // headlights of a truck coming straight at him in the rain
+                  L('<use href="#lr-l-road-back" width="1920" height="1080"/>') + '<div class="fl-lamp" style="left:620px;top:380px;width:300px;height:300px"></div><div class="fl-lamp" style="left:1000px;top:380px;width:300px;height:300px"></div><div class="rain" data-layout-allow-overflow></div>',
+                  // the horn: his face in the cab
+                  LR.V.cab({ face: 'shock', dark: 0.1, nocap: false }).html({ ...c, id: c.id + 'a' }),
+                  // his hands yank the wheel
+                  L('<rect width="1920" height="1080" fill="#1b1d22"/>') + `<svg class="lr-layer c-lr-ek" viewBox="0 0 1920 1080"><g id="${c.id}-wh"><ellipse cx="960" cy="640" rx="560" ry="420" fill="none" stroke="#15171b" stroke-width="70"/><g transform="translate(470 560) rotate(28) scale(.7)"><use href="#lr-arm-big"/></g><g transform="translate(1450 560) rotate(-28) scale(.7)"><use href="#lr-arm-big"/><use href="#lr-watch-big"/></g></g></svg>`,
+                  // impact
+                  L('<use href="#lr-l-road-back" width="1920" height="1080"/>') + `<div class="fl-white" id="${c.id}-imp"></div>`,
+                ];
+                return P.map((h, i) => `<div class="fl-panel" id="${c.id}-p${i}">${h}</div>`).join('');
+              }
+              if (c.act === 'silence') return `<div class="fl-white" id="${c.id}-w" style="opacity:1"></div>`;
+              if (c.act === 'truth') return wreckSite + LR.NIGHT + '<div class="lr-night" style="background:rgba(6,10,26,.3)"></div>';
+              // walk: Ek (drained now) walks away from the wreck; his body stays under the sheet
+              return wreckSite + LR.who('ek', { id: `${c.id}-ek`, x: 760, feet: 1000, h: 520, face: 'sad', cls: 'lr-spirit lr-rim' }) + LR.NIGHT;
+            },
+            anim: (c) => {
+              if (c.act === 'montage') {
+                const q = c.dur / 4;
+                for (let i = 0; i < 4; i++) c.tl.fromTo(`#${c.id}-p${i}`, { opacity: 0 }, { opacity: 1, duration: 0.05 }, c.t(i * q));
+                for (let i = 0; i < 3; i++) c.tl.fromTo(`#${c.id}-p${i}`, { opacity: 1 }, { opacity: 0, duration: 0.05, immediateRender: false }, c.t((i + 1) * q));
+                c.tl.fromTo(`#${c.id}-p0 .fl-lamp`, { scale: 0.5 }, { scale: 2.4, duration: q, ease: 'power2.in' }, c.at);
+                c.tl.fromTo(`#${c.id}-p1 svg`, { x: 0 }, { x: 14, duration: 0.05, yoyo: true, repeat: 9, ease: 'none' }, c.t(q));
+                c.tl.fromTo(`#${c.id}-wh`, { rotation: 0 }, { rotation: -70, svgOrigin: '960 640', duration: q * 0.8, ease: 'power3.in' }, c.t(2 * q));
+                c.tl.fromTo(`#${c.id}-imp`, { opacity: 0 }, { opacity: 1, duration: 0.12, ease: 'power4.in' }, c.t(3 * q + 0.1));
+                c.tl.fromTo(c.q('.lr-cam'), { x: 0, y: 0 }, { x: 24, y: 12, duration: 0.04, yoyo: true, repeat: 9, ease: 'none', immediateRender: false }, c.t(3 * q + 0.1));
+              } else if (c.act === 'silence') c.tl.fromTo(`#${c.id}-w`, { opacity: 1 }, { opacity: 0, duration: c.dur * 0.8, ease: 'power2.out' }, c.at);
+              else if (c.act === 'truth') LR.cam(c, { scale: 1.2, x: -200, y: -160 }, { scale: 1.06, x: -40, y: -20 });
+              else {
+                c.tl.fromTo(`#${c.id}-ek`, { x: 0 }, { x: -560, duration: c.dur, ease: 'sine.inOut' }, c.at);
+                LR.cam(c, { scale: 1.04 }, { scale: 1 });
+              }
+            },
+          },
+          _: { html: () => '' },
+        };
+        LR.run({ comp: 'scene-flash', prefix: 'fl', tl, shots: S, views });
+        window.__timelines["scene-flash"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

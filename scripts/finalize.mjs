@@ -24,3 +24,4 @@ run('ffmpeg', ['-v', 'error', '-y', '-i', rendered, '-af', ln + ',aresample=4800
 const chk = spawnSync('ffmpeg', ['-hide_banner', '-i', final, '-af', 'ebur128=peak=true', '-f', 'null', '-'], { encoding: 'utf8' }).stderr;
 const I = (chk.match(/I:\s+(-?[\d.]+) LUFS/g) || []).pop();
 console.log(`✓ ${path.relative(process.cwd(), final)}  ${S.total.toFixed(1)}s  ${I || ''}`);
+spawnSync(process.execPath, ['scripts/qc.mjs', dir], { stdio: 'inherit' });   // report only; a failed check does not delete the render

@@ -1,0 +1,65 @@
+<!doctype html>
+<!-- Driving on: a child's voice through the wall, the heater he turns up anyway, the unanswered call, the message
+     still not sent, the mother asking him to stop. Views: box/girl|mom|mom2 · heater/on · phone/dial · chat/pending ·
+     rearview/look -->
+<html data-composition-variables='[{"id":"shots","type":"string","label":"Shots (from build)","default":"[]"}]'>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <link rel="stylesheet" href="assets/kit/stories/last-ride.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #05070c; }
+        .nt-ring { position: absolute; border: 6px solid rgba(240, 236, 226, .7); border-radius: 50%; opacity: 0; width: 90px; height: 90px; }
+      </style>
+      <div data-hf-id="hf-uq32" id="root" data-composition-id="scene-night" data-width="1920" data-height="1080"></div>
+      <script src="assets/kit/stories/last-ride.js"></script>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const S = LR.shots("scene-night", [{ at: 0, dur: 4, view: "box/girl", who: "girl" }]);
+        const L = LR.layer;
+        const views = {
+          // the girl: in the cab, Ek listens; the mother: the truck from the side, a voice ring on the box; mom2: his face
+          box: {
+            html: (c) => c.act === 'mom'
+              ? LR.V.road({ x: 420, k: 0.66, drive: true, lights: true }).html(c) + `<div class="nt-ring" id="${c.id}-r" style="left:${420 + 300 - 45}px;top:${840 - 300 - 45}px"></div>`
+              : LR.V.cab({ face: c.act === 'mom2' ? 'shock' : 'wary', drive: c.act === 'girl', push: c.act === 'mom2' ? 1.14 : 1.06 }).html(c),
+            anim: (c) => {
+              if (c.act === 'mom') {
+                LR.V.road({ x: 420, k: 0.66, drive: true, lights: true }).anim(c);
+                if (c.vo) c.tl.fromTo(`#${c.id}-r`, { scale: 0.3, opacity: 0.8 }, { scale: 2.6, opacity: 0, duration: 0.8, repeat: 1, ease: 'power2.out' }, c.vo[0]);
+              } else LR.V.cab({ face: c.act === 'mom2' ? 'shock' : 'wary', drive: c.act === 'girl', push: c.act === 'mom2' ? 1.14 : 1.06 }).anim(c);
+            },
+          },
+          // the heater knob turns; warm air from a vent that can't reach the back
+          heater: {
+            html: (c) => L('<rect width="1920" height="1080" fill="#1b1d22"/><path d="M0 420 Q960 380 1920 420 V1080 H0Z" fill="#24272d"/>'
+              + '<rect x="560" y="200" width="800" height="150" rx="30" fill="#15171b"/><path d="M600 240 H1320 M600 275 H1320 M600 310 H1320" stroke="#2b2f36" stroke-width="12"/>'
+              + '<g fill="#2b2f36"><circle cx="700" cy="620" r="90"/><circle cx="1220" cy="620" r="90"/></g><circle cx="960" cy="620" r="110" fill="#2b2f36"/>'
+              + `<g id="${c.id}-knob"><circle cx="960" cy="620" r="86" fill="#3a3f47"/><rect x="952" y="540" width="16" height="70" rx="6" fill="#d9dde0"/></g><path d="M880 760 A110 110 0 0 1 1040 760" fill="none" stroke="#3b6fe5" stroke-width="10"/><path d="M1040 760 A110 110 0 0 0 1060 700" fill="none" stroke="#e5383b" stroke-width="10"/>`)
+              + `<div id="${c.id}-air" style="position:absolute;left:600px;top:110px;width:720px;height:200px;background:linear-gradient(0deg, rgba(255,170,90,.0), rgba(255,170,90,.25));opacity:0"></div>`
+              + `<svg class="lr-layer c-lr-ek" viewBox="0 0 1920 1080"><g id="${c.id}-hand"><g transform="translate(1060 690) rotate(-150) scale(.42)"><use href="#lr-arm-big"/></g></g></svg>` + '<div class="lr-night" style="background:rgba(6,10,26,.25)"></div>',
+            anim: (c) => {
+              c.tl.fromTo(`#${c.id}-knob`, { rotation: 0 }, { rotation: 120, svgOrigin: '960 620', duration: 0.6, ease: 'power2.out' }, c.t(0.5));
+              c.tl.fromTo(`#${c.id}-air`, { opacity: 0 }, { opacity: 1, duration: 1.2 }, c.t(0.9));
+              LR.cam(c, { scale: 1 }, { scale: 1.06 });
+            },
+          },
+          phone: LR.V.phone({ screen: 'dial-wife', time: '00:26', unanswered: 1.4 }),
+          chat: LR.V.phone({ screen: 'chat-wife', time: '00:27', top: -150, zoom0: 1.2, zoom1: 1.28 }),
+          // the rear-view mirror: only his own eyes, and the blank wall of the cab behind him
+          rearview: {
+            html: (c) => L('<rect width="1920" height="1080" fill="#0e1218"/><rect x="0" y="0" width="1920" height="70" fill="#d6c9ac"/><rect x="940" y="70" width="40" height="120" fill="#2b2f36"/>')
+              + `<div style="position:absolute;left:460px;top:180px;width:1000px;height:330px;border-radius:40px;border:22px solid #1d2128;overflow:hidden;background:#1a1f28">
+                  <div style="position:absolute;left:-460px;top:-180px;width:1920px;height:1080px">${LR.who('ek', { x: 960, feet: 1750, h: 1600, face: 'wary', cls: 'lr-rim' })}</div>
+                  <div style="position:absolute;inset:0;background:linear-gradient(110deg, rgba(255,255,255,.1), rgba(255,255,255,0) 40%)"></div></div>` + '<div class="lr-night" style="background:rgba(6,10,26,.3)"></div>',
+            anim: (c) => LR.cam(c, { scale: 1 }, { scale: 1.06 }),
+          },
+          _: { html: () => '' },
+        };
+        LR.run({ comp: 'scene-night', prefix: 'nt', tl, shots: S, views });
+        window.__timelines["scene-night"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

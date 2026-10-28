@@ -1,0 +1,37 @@
+<!doctype html>
+<!-- "ผมจะขับต่อ": the call, the mother holding her child in the side mirror, thin fog, a lullaby from the back.
+     Ek is drained (lr-spirit); his cap sits on the dash since he took it off at his door.
+     Views: cab/say|wait|chan|say2|chan2|say3 · mirror/mom · fog/drive|far -->
+<html data-composition-variables='[{"id":"shots","type":"string","label":"Shots (from build)","default":"[]"}]'>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <link rel="stylesheet" href="assets/kit/stories/last-ride.css" />
+      <style>#root { position: absolute; inset: 0; overflow: hidden; background: #05070c; }</style>
+      <div data-hf-id="hf-mr48" id="root" data-composition-id="scene-decide" data-width="1920" data-height="1080"></div>
+      <script src="assets/kit/stories/last-ride.js"></script>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const S = LR.shots("scene-decide", [{ at: 0, dur: 4, view: "cab/say", who: "ek" }]);
+        const views = {
+          cab: {
+            html: (c) => LR.V.cab({ spirit: true, nocap: true, dash: ['cap'], seat: 'phone', drive: true, face: c.act === 'wait' ? 'sad' : null, dark: 0.3 }).html(c),
+            anim: (c) => {
+              LR.V.cab({ drive: true, close: c.who === 'ek', push: 1.06 }).anim(c);
+              if (c.who === 'chan' && c.vo) c.tl.fromTo(c.q('.lr-seat-glow'), { opacity: 0.6 }, { opacity: 1, duration: 0.25, yoyo: true, repeat: 3, ease: 'sine.inOut' }, c.vo[0]);
+            },
+          },
+          mirror: LR.V.mirror({ show: 'hug', push: 1.1 }),
+          // the box truck in thin fog, the seams of the box glowing warm
+          fog: LR.V.road((c) => ({ x: c.act === 'far' ? 900 : 420, k: c.act === 'far' ? 0.36 : 0.66, ground: c.act === 'far' ? 700 : 840, drive: true, lights: true, fog: true,
+            cam0: { scale: 1 }, cam1: c.act === 'far' ? { scale: 1 } : { scale: 1.05 },
+            anim: (c) => { if (c.act === 'far') LR.fadeOut(c, 1.6); } })),
+          _: { html: () => '' },
+        };
+        LR.run({ comp: 'scene-decide', prefix: 'dc', tl, shots: S, views });
+        window.__timelines["scene-decide"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

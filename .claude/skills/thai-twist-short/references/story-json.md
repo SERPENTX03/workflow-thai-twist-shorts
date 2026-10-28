@@ -62,3 +62,15 @@ Leave `text` empty (the card carries the words) and copy `scene-example-next.htm
 - `timing.json` — absolute shot times, and per scene clip the **local** time each shot starts (`scenes[].local[].at`). Animate scenes against these.
 - `index.html`, `compositions/captions.html` — rebuilt by `npm run build`.
 - `assets/vo/*`, `assets/voice.wav`, `assets/score.wav`, `beats.json` — rebuilt by `npm run audio`.
+
+## Long-form landscape (`"format": "landscape"`)
+
+| Field | Where | Meaning |
+|---|---|---|
+| `format` | top | `"landscape"` → 1920×1080, subtitles in the bottom band (`.cap.land`, max 2 lines, ≤ ~42 chars), runtime target 600–720 s. Default `"portrait"` keeps every Shorts rule. `target: [min, max]` overrides the range. |
+| `breath`, `switchBreath`, `minBeats`, `fitStep` | top | `npm run fit -- episodes/<slug>` sizes every voiced shot to its measured line: voLead + line + 0.15 + breath (+ switchBreath when the next line has another `who`), rounded up to `fitStep` beats, plus the shot's `hold`. Run voice first; lines are cached, so re-running costs nothing. |
+| `who` | shot | Who speaks (`ek`, `chan`, `mom`…; default narrator). Used by `fit` and passed to scenes for talk mouths. |
+| `hold` | shot | Extra beats after the line (time to look at a clue). |
+| `view` | shot | `"panel/act"` the scene draws for this shot (scenes that declare a `shots` variable get `{at, dur, view, who, vo}` per shot from build). |
+| `fx` | shot | `"phone"` (band-limited call) or `"muffled"` (through a steel wall); same voice, only the sound changes. |
+| `hush` | shot | The drone fades out for a held silence. |

@@ -1,0 +1,97 @@
+<!doctype html>
+<!-- Before: Ek at the warehouse with no car of his own; the rain memory (his own rust-red pickup, the leaning curve
+     sign, the snapped tree, the white rail — the same things he meets again at the crash); the stopped watch; Chan.
+     Views: money/count · rain/drive|flash · front/wide|shrug · watch/wind|hold · meet/reveal|chan|walk -->
+<html data-composition-variables='[{"id":"shots","type":"string","label":"Shots (from build)","default":"[]"}]'>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <link rel="stylesheet" href="assets/kit/stories/last-ride.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #05070c; }
+        .ar-flash { position: absolute; inset: 0; background: radial-gradient(circle at 92% 62%, rgba(255, 250, 235, 1), rgba(255, 244, 214, .7) 25%, rgba(255, 240, 200, 0) 60%); opacity: 0; }
+      </style>
+      <div data-hf-id="hf-9z3b" id="root" data-composition-id="scene-arrive" data-width="1920" data-height="1080"></div>
+      <script src="assets/kit/stories/last-ride.js"></script>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const S = LR.shots("scene-arrive", [{ at: 0, dur: 4, view: "money/count" }]);
+        const L = LR.layer;
+        const front = L('<use href="#lr-l-warehouse-front" width="1920" height="1080"/>');
+        const rainDiv = (c) => `<div class="rain" id="${c.id}-rain" data-layout-allow-overflow></div>`;
+        const rainAnim = (c) => c.tl.fromTo(`#${c.id}-rain`, { backgroundPosition: '0px 0px' }, { backgroundPosition: `-${Math.round(c.dur * 160)}px ${Math.round(c.dur * 1300)}px`, duration: c.dur, ease: 'none' }, c.at);
+        // the roadside things he will recognise later, in the rain, behind his own pickup
+        const landmarks = '<use href="#lr-tree-broken" x="1180" y="300" width="360" height="520"/><use href="#lr-curve-sign" x="1600" y="520" width="120" height="300"/>'
+          + '<path d="M0 640 H1920" stroke="#d8dde2" stroke-width="16"/><g fill="#9aa1a8"><rect x="80" y="630" width="12" height="40"/><rect x="480" y="630" width="12" height="40"/><rect x="880" y="630" width="12" height="40"/><rect x="1280" y="630" width="12" height="40"/><rect x="1680" y="630" width="12" height="40"/></g>';
+
+        const views = {
+          // Ek alone in the yard: no car of his anywhere
+          money: {
+            html: (c) => front + LR.who('ek', { x: 760, feet: 960, h: 440, cls: 'lr-rim' }) + LR.NIGHT,
+            anim: (c) => { LR.fadeIn(c, 0.8); LR.cam(c, { scale: 1, x: 0 }, { scale: 1.07, x: 40 }); },
+          },
+          // memory: his own pickup (rust red, no box, rope + sticker + old dent) in heavy rain; an oncoming light; blur
+          rain: {
+            html: (c) => L('<use href="#lr-l-road-sky" width="1920" height="1080"/><use href="#lr-l-road-ground" y="600" width="1920" height="480"/>' + landmarks + `<g id="${c.id}-dash"><use href="#lr-l-road-dash" x="-120" y="752" width="2160" height="12"/></g>`)
+              + LR.truck(c.act === 'flash' ? 560 : 360, 860, 0.62, { id: `${c.id}-truck`, cls: 'lr-own lr-no-box lr-lights-on', box: false, own: true, lights: true })
+              + rainDiv(c) + '<div class="lr-night" style="background:rgba(6,10,26,.5)"></div>'
+              + (c.act === 'flash' ? `<div class="ar-flash" id="${c.id}-flash"></div>` : ''),
+            anim: (c) => {
+              rainAnim(c);
+              c.tl.fromTo(`#${c.id}-dash`, { x: 0 }, { x: -240 * Math.ceil(c.dur * 3), duration: c.dur, ease: 'none' }, c.at);
+              c.tl.fromTo(c.q('.lr-wheel-a use, .lr-wheel-b use'), { rotation: 0 }, { rotation: 360 * c.dur * 1.6, svgOrigin: '0 0', duration: c.dur, ease: 'none' }, c.at);
+              if (c.act === 'flash') {
+                c.tl.fromTo(`#${c.id}-flash`, { opacity: 0 }, { opacity: 1, duration: 0.7, ease: 'power3.in' }, c.t(0.9));
+                c.tl.fromTo(c.q('.lr-cam'), { filter: 'blur(0px)' }, { filter: 'blur(18px)', duration: 1.2, ease: 'sine.in' }, c.t(1.6));
+                LR.fadeOut(c, 1.0);
+              } else { LR.fadeIn(c, 0.6); LR.cam(c, { scale: 1.04, x: 0 }, { scale: 1.08, x: -60 }); }
+            },
+          },
+          // back in the yard
+          front: {
+            html: (c) => front + (c.act === 'shrug'
+              ? LR.who('ek', { x: 960, feet: 1700, h: 1300, face: 'tired', r: 'chest', cls: 'lr-rim' })
+              : LR.who('ek', { x: 760, feet: 960, h: 440, cls: 'lr-rim', r: 'chest', face: 'wary' })) + LR.NIGHT,
+            anim: (c) => { if (c.act === 'wide') LR.fadeIn(c, 1); LR.cam(c, { scale: 1 }, { scale: c.act === 'shrug' ? 1.04 : 1.06 }); },
+          },
+          // his left wrist: cracked glass, stopped at 20:47; the other hand tries the crown
+          watch: {
+            html: (c) => L('<rect width="1920" height="1080" fill="#1a1f28"/><ellipse cx="960" cy="420" rx="700" ry="380" fill="#ffcf8a" opacity=".08"/>')
+              + `<svg class="lr-layer c-lr-ek lr-cracked" viewBox="0 0 1920 1080"><g transform="translate(520 500) rotate(-90) scale(1.8)"><use href="#lr-arm-big"/><use href="#lr-watch-big"/></g>`
+              + `<g id="${c.id}-thumb"><g transform="translate(790 300) rotate(160) scale(.42)"><use href="#lr-hand-big"/></g></g></svg>`
+              + '<div class="lr-night" style="background:rgba(6,10,26,.3)"></div>',
+            anim: (c) => {
+              if (c.act === 'wind') {
+                c.tl.fromTo(`#${c.id}-thumb`, { x: 120, y: -60 }, { x: 0, y: 0, duration: 0.6, ease: 'power2.out' }, c.at);
+                c.tl.fromTo(`#${c.id}-thumb`, { rotation: 0 }, { rotation: -8, svgOrigin: '790 300', duration: 0.3, yoyo: true, repeat: 3, ease: 'sine.inOut' }, c.t(0.7));
+                LR.cam(c, { scale: 1.1, x: 187, y: 44 }, { scale: 1.25, x: 212, y: 50 });
+              } else LR.cam(c, { scale: 1.6, x: 272, y: 64 }, { scale: 1.75, x: 298, y: 70 });
+            },
+          },
+          // Chan waiting under the lamp; they talk; he leads Ek inside
+          meet: {
+            html: (c) => {
+              const close = c.act === 'chan';
+              const ek = LR.who('ek', { id: `${c.id}-ek`, x: close ? 620 : 640, feet: close ? 1360 : 960, h: close ? 1000 : 440, cls: 'lr-rim', face: c.act === 'reveal' ? 'wary' : null });
+              const chan = LR.who('chan', { id: `${c.id}-chan`, x: close ? 1320 : 1040, feet: close ? 1350 : 960, h: close ? 960 : 425, cls: 'lr-rim', talk: true });
+              return front + `<div id="${c.id}-ppl" style="position:absolute;inset:0">${ek}${chan}</div>` + LR.NIGHT;
+            },
+            anim: (c) => {
+              if (c.act === 'reveal') LR.cam(c, { scale: 1.02, x: 0 }, { scale: 1.12, x: -120 });
+              else if (c.act === 'walk') {
+                c.tl.fromTo(`#${c.id}-chan`, { x: 0, opacity: 1 }, { x: -60, opacity: 0.0, duration: c.dur * 0.8, ease: 'sine.in' }, c.t(0.6));
+                c.tl.fromTo(`#${c.id}-ek`, { x: 0, opacity: 1 }, { x: 280, opacity: 0.0, duration: c.dur * 0.8, ease: 'sine.in' }, c.t(1.2));
+                LR.cam(c, { scale: 1 }, { scale: 1.05 });
+                LR.fadeOut(c, 0.8);
+              } else LR.cam(c, { scale: 1 }, { scale: 1.04 });
+            },
+          },
+          _: { html: () => '' },
+        };
+        LR.run({ comp: 'scene-arrive', prefix: 'ar', tl, shots: S, views });
+        window.__timelines["scene-arrive"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

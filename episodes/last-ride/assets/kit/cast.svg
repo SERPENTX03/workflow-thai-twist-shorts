@@ -1,0 +1,697 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!--
+    Cast for Thai Twist Shorts. Each symbol is 200 x 520, feet on the bottom edge.
+    scripts/build.mjs inlines this file into index.html, so every scene can use:
+         <svg class="who" viewBox="0 0 200 520"><use href="#man"/></svg>
+    (an external href="assets/kit/cast.svg#man" does NOT render in HyperFrames)
+    Colours read CSS variables, so a silhouette is just:  .ghost { –skin:#05070b; –hair:#05070b; ... }
+    (see .sil in kit.css). Variables: –skin –skin-d –hair –shirt –pants –top –skirt
+    –exo –sarong –eye –eye-white –shoe.
+  -->
+  <defs>
+    <!-- shared parts -->
+    <g id="legs-pants">
+      <rect x="66" y="300" width="28" height="205" rx="14" fill="var(--pants, #1d2736)"/>
+      <rect x="106" y="300" width="28" height="205" rx="14" fill="var(--pants, #1d2736)"/>
+      <rect x="58" y="494" width="42" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+      <rect x="100" y="494" width="42" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    </g>
+    <g id="head-short">
+      <rect x="88" y="118" width="24" height="26" fill="var(--skin-d, #c98f6b)"/>
+      <circle cx="100" cy="65" r="65" fill="var(--skin, #e7b38c)"/>
+      <!-- full short hair: crown, side-burns to the ears, a swept fringe (never a bare forehead) -->
+      <path d="M30 80 C20 14 66 -10 100 -10 C138 -10 182 14 170 80 C164 58 150 44 130 40 C112 54 86 52 70 38 C52 46 38 60 30 80Z" fill="var(--hair, #16161c)"/>
+      <circle cx="35" cy="78" r="10" fill="var(--skin-d, #c98f6b)"/><circle cx="165" cy="78" r="10" fill="var(--skin-d, #c98f6b)"/>
+    </g>
+    <g id="eyes-dot" style="display:var(--face-rest,inline)">
+      <circle cx="77" cy="72" r="6" fill="var(--eye, #1a1a22)"/>
+      <circle cx="123" cy="72" r="6" fill="var(--eye, #1a1a22)"/>
+      <g style="display:var(--mouth-rest,inline)"><ellipse cx="100" cy="97" rx="9" ry="3" fill="var(--eye, #7a3b34)"/></g>
+    </g>
+    <g id="eyes-wide" style="display:var(--face-rest,inline)">
+      <circle cx="77" cy="72" r="11" fill="var(--eye-white, #fff)"/>
+      <circle cx="123" cy="72" r="11" fill="var(--eye-white, #fff)"/>
+      <circle cx="79" cy="72" r="5" fill="var(--eye, #1a1a22)"/>
+      <circle cx="125" cy="72" r="5" fill="var(--eye, #1a1a22)"/>
+      <g style="display:var(--mouth-rest,inline)"><ellipse cx="100" cy="100" rx="9" ry="9" fill="var(--eye, #7a3b34)"/></g>
+    </g>
+    <g id="arm-l-down" style="display:var(--arm-l-rest,inline)"><line x1="58" y1="160" x2="52" y2="320" stroke="var(--shirt, #2f5f8f)" stroke-width="36" stroke-linecap="round"/><circle cx="52" cy="330" r="20" fill="var(--skin, #e7b38c)"/></g>
+    <g id="arm-r-down" style="display:var(--arm-r-rest,inline)"><line x1="142" y1="160" x2="148" y2="320" stroke="var(--shirt, #2f5f8f)" stroke-width="36" stroke-linecap="round"/><circle cx="148" cy="330" r="20" fill="var(--skin, #e7b38c)"/></g>
+    <g id="torso-shirt"><rect x="58" y="140" width="84" height="175" rx="30" fill="var(--shirt, #2f5f8f)"/></g>
+  </defs>
+
+  <!-- the tenant / protagonist ("คุณ") -->
+  <symbol id="man" viewBox="0 0 200 520">
+    <use href="#legs-pants"/><use href="#arm-l-down"/><use href="#arm-r-down"/><use href="#torso-shirt"/><use href="#head-short"/><use href="#eyes-dot"/>
+  </symbol>
+  <symbol id="man-wide" viewBox="0 0 200 520">
+    <use href="#legs-pants"/><use href="#arm-l-down"/><use href="#arm-r-down"/><use href="#torso-shirt"/><use href="#head-short"/><use href="#eyes-wide"/>
+  </symbol>
+  <!-- left arm (screen-left) raised: use it twice, once normal and once as .sil, for a mirror that copies him -->
+  <symbol id="man-raise" viewBox="0 0 200 520" overflow="visible">
+    <use href="#legs-pants"/><use href="#arm-r-down"/>
+    <line x1="58" y1="160" x2="-40" y2="40" stroke="var(--shirt, #2f5f8f)" stroke-width="36" stroke-linecap="round"/>
+    <circle cx="-46" cy="32" r="20" fill="var(--skin, #e7b38c)"/>
+    <use href="#torso-shirt"/><use href="#head-short"/><use href="#eyes-wide"/>
+  </symbol>
+
+  <!-- a second person, living -->
+  <symbol id="woman" viewBox="0 0 200 520">
+    <rect x="30" y="20" width="140" height="190" rx="60" fill="var(--hair, #2a1d18)"/>
+    <rect x="72" y="380" width="24" height="125" rx="12" fill="var(--skin, #e7b38c)"/>
+    <rect x="104" y="380" width="24" height="125" rx="12" fill="var(--skin, #e7b38c)"/>
+    <rect x="62" y="494" width="40" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    <rect x="98" y="494" width="40" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    <path d="M60 290 H140 L156 400 H44Z" fill="var(--skirt, #3b4c5e)"/>
+    <g style="display:var(--arm-l-rest,inline)"><line x1="60" y1="160" x2="54" y2="310" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/><circle cx="54" cy="318" r="18" fill="var(--skin, #e7b38c)"/></g>
+    <g style="display:var(--arm-r-rest,inline)"><line x1="140" y1="160" x2="146" y2="310" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/><circle cx="146" cy="318" r="18" fill="var(--skin, #e7b38c)"/></g>
+        <rect x="60" y="140" width="80" height="160" rx="30" fill="var(--top, #d9c9a8)"/>
+    <rect x="89" y="118" width="22" height="26" fill="var(--skin-d, #c98f6b)"/>
+    <circle cx="100" cy="68" r="60" fill="var(--skin, #e7b38c)"/>
+    <!-- centre-parted hair framing the face, over the long back hair -->
+    <path d="M34 90 C24 20 70 0 100 0 C134 0 178 20 166 90 C160 64 148 46 128 36 C116 52 108 56 100 56 C92 56 84 52 72 36 C52 46 40 64 34 90Z" fill="var(--hair, #2a1d18)"/>
+    <g style="display:var(--face-rest,inline)"><circle cx="78" cy="76" r="6" fill="var(--eye, #1a1a22)"/><circle cx="122" cy="76" r="6" fill="var(--eye, #1a1a22)"/></g>
+    <g style="display:var(--face-rest,inline)"><g style="display:var(--mouth-rest,inline)"><ellipse cx="100" cy="99" rx="8" ry="3" fill="var(--eye, #7a3b34)"/></g></g>
+  </symbol>
+
+  <!-- an older woman ("ป้า"): grey hair pulled into a bun, long sleeves; set –hair for the shade -->
+  <symbol id="auntie" viewBox="0 0 200 520" overflow="visible">
+    <rect x="72" y="380" width="24" height="125" rx="12" fill="var(--skin, #e7b38c)"/>
+    <rect x="104" y="380" width="24" height="125" rx="12" fill="var(--skin, #e7b38c)"/>
+    <rect x="62" y="494" width="40" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    <rect x="98" y="494" width="40" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    <path d="M60 290 H140 L156 400 H44Z" fill="var(--skirt, #3b4c5e)"/>
+    <g style="display:var(--arm-l-rest,inline)"><line x1="60" y1="160" x2="54" y2="310" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/><circle cx="54" cy="318" r="18" fill="var(--skin, #e7b38c)"/></g>
+    <g style="display:var(--arm-r-rest,inline)"><line x1="140" y1="160" x2="146" y2="310" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/><circle cx="146" cy="318" r="18" fill="var(--skin, #e7b38c)"/></g>
+        <rect x="60" y="140" width="80" height="160" rx="30" fill="var(--top, #d9c9a8)"/>
+    <rect x="89" y="118" width="22" height="26" fill="var(--skin-d, #c98f6b)"/>
+    <circle cx="100" cy="-6" r="30" fill="var(--hair, #9a9aa0)"/>
+    <circle cx="100" cy="68" r="60" fill="var(--skin, #e7b38c)"/>
+    <path d="M36 84 C30 26 68 8 100 8 C132 8 170 26 164 84 C158 62 146 46 128 38 C116 52 108 56 100 56 C92 56 84 52 72 38 C54 46 42 62 36 84Z" fill="var(--hair, #9a9aa0)"/>
+    <g style="display:var(--face-rest,inline)"><circle cx="78" cy="76" r="6" fill="var(--eye, #1a1a22)"/><circle cx="122" cy="76" r="6" fill="var(--eye, #1a1a22)"/></g>
+    <path d="M66 90 q12 8 24 0 M110 90 q12 8 24 0" stroke="rgba(0,0,0,0.18)" stroke-width="3" fill="none"/>
+    <g style="display:var(--face-rest,inline)"><g style="display:var(--mouth-rest,inline)"><ellipse cx="100" cy="102" rx="8" ry="3" fill="var(--eye, #7a3b34)"/></g></g>
+  </symbol>
+
+  <!-- lead in a hooded raincoat (–coat), e.g. ภูมิ in yellow -->
+  <symbol id="raincoat" viewBox="0 0 200 520" overflow="visible">
+    <use href="#legs-pants"/>
+    <g style="display:var(--arm-l-rest,inline)"><line x1="56" y1="165" x2="48" y2="325" stroke="var(--coat, #f2c230)" stroke-width="40" stroke-linecap="round"/><circle cx="48" cy="334" r="20" fill="var(--skin, #e7b38c)"/></g>
+    <g style="display:var(--arm-r-rest,inline)"><line x1="144" y1="165" x2="152" y2="325" stroke="var(--coat, #f2c230)" stroke-width="40" stroke-linecap="round"/><circle cx="152" cy="334" r="20" fill="var(--skin, #e7b38c)"/></g>
+        <path d="M54 140 H146 L160 370 H40Z" fill="var(--coat, #f2c230)"/>
+    <path d="M100 150 V365" stroke="rgba(0,0,0,0.18)" stroke-width="5"/>
+    <rect x="88" y="118" width="24" height="26" fill="var(--skin-d, #c98f6b)"/>
+    <path d="M26 72 A74 74 0 0 1 174 72 L170 130 Q100 150 30 130Z" fill="var(--coat-d, #d9a91c)"/>
+    <circle cx="100" cy="72" r="58" fill="var(--skin, #e7b38c)"/>
+    <path d="M42 80 C38 36 70 14 100 14 C132 14 162 36 158 80 C150 60 136 50 118 50 C104 60 88 58 78 50 C62 54 48 62 42 80Z" fill="var(--hair, #16161c)"/>
+    <use href="#eyes-dot"/>
+  </symbol>
+
+  <!-- elder / exorcist with a candle in the right hand -->
+  <symbol id="elder" viewBox="0 0 200 520" overflow="visible">
+    <use href="#legs-pants"/>
+    <rect x="56" y="285" width="88" height="160" rx="10" fill="var(--sarong, #4f6688)"/>
+    <path d="M56 320 H144 M56 350 H144 M56 380 H144 M80 285 V445 M120 285 V445" stroke="rgba(255,255,255,0.18)" stroke-width="4"/>
+    <g style="display:var(--arm-l-rest,inline)"><line x1="56" y1="160" x2="50" y2="320" stroke="var(--exo, #e9e4d6)" stroke-width="36" stroke-linecap="round"/><circle cx="50" cy="330" r="20" fill="var(--skin, #e7b38c)"/></g>
+    <line x1="144" y1="160" x2="214" y2="250" stroke="var(--exo, #e9e4d6)" stroke-width="36" stroke-linecap="round"/>
+    <circle cx="220" cy="258" r="20" fill="var(--skin, #e7b38c)"/>
+    <rect x="212" y="190" width="16" height="64" fill="var(--candle, #f3ead2)"/>
+    <ellipse cx="220" cy="178" rx="8" ry="15" fill="var(--flame, #ffd890)"/>
+    <rect x="56" y="140" width="88" height="160" rx="30" fill="var(--exo, #e9e4d6)"/>
+    <rect x="88" y="118" width="24" height="26" fill="var(--skin-d, #c98f6b)"/>
+    <circle cx="100" cy="65" r="65" fill="var(--skin, #e7b38c)"/>
+    <path d="M35 60 A66 66 0 0 1 165 60 L165 50 Q100 20 35 50Z" fill="var(--hair-old, #e9e6df)"/>
+    <rect x="35" y="32" width="130" height="16" fill="var(--band, #fbfaf5)"/>
+    <ellipse cx="100" cy="112" rx="26" ry="18" fill="var(--hair-old, #e9e6df)"/>
+    <use href="#eyes-dot"/>
+  </symbol>
+
+  <!-- ===== Prototype 1 additions (design canvas: claude.ai/artifact/TuLAda3PXVngzNaWVrjR1S) =====
+       Heights are relative on purpose: draw the figure at height ≈ cm × 2.6 px (man 170 → 442 px).
+       man 170 cm · raincoat 165 · elder 160 · woman 158 · auntie 150.
+       Pets use their own 300 x 340 frame, feet on the bottom edge: <svg viewBox="0 0 300 340"><use href="#cat-black"/></svg>
+       Draw them at: cat 150 px · beagle 205 · dog-patch 225 (same scale as the frame above). -->
+
+
+  <!-- black cat: folded left ear, half-lidded amber eyes, cream crescent on the chest. Vars: –cat (body) –cat-d (chest/paws) –cat-eye -->
+  <symbol id="cat-black" viewBox="0 0 300 340" overflow="visible">
+    <path d="M82 306 C16 300 6 214 56 192 C74 186 82 200 70 210" stroke="var(--cat, #2a292d)" stroke-width="26" stroke-linecap="round" fill="none"/>
+    <path d="M150 170 C230 170 238 260 228 300 C220 330 80 330 72 300 C62 260 70 170 150 170Z" fill="var(--cat, #2a292d)"/>
+    <path d="M150 196 C190 196 196 260 190 296 L150 318 L110 296 C104 260 110 196 150 196Z" fill="var(--cat-d, #3b3739)"/>
+    <path d="M140 238 A24 24 0 0 0 178 256 A28 28 0 0 1 140 238Z" fill="#f3e4c8"/>
+    <rect x="116" y="290" width="32" height="46" rx="16" fill="var(--cat-d, #3b3739)"/><rect x="152" y="290" width="32" height="46" rx="16" fill="var(--cat-d, #3b3739)"/>
+    <path d="M104 80 C84 54 56 56 52 74 C66 76 70 106 82 112Z" fill="var(--cat-h, #1f1f23)"/><path d="M92 82 C82 70 68 70 66 76 C74 78 76 92 82 96Z" fill="#b9654f"/>
+    <path d="M196 72 L240 6 L246 100Z" fill="var(--cat-h, #1f1f23)"/><path d="M212 72 L236 30 L238 86Z" fill="#b9654f"/>
+    <ellipse cx="150" cy="134" rx="94" ry="76" fill="var(--cat-h, #1f1f23)"/>
+    <ellipse cx="108" cy="130" rx="27" ry="21" fill="var(--cat-eye, #f2cc5c)"/><ellipse cx="192" cy="130" rx="27" ry="21" fill="var(--cat-eye, #f2cc5c)"/>
+    <ellipse cx="111" cy="134" rx="9" ry="12" fill="#111114"/><ellipse cx="189" cy="134" rx="9" ry="12" fill="#111114"/>
+    <circle cx="114" cy="130" r="3.5" fill="#fff"/><circle cx="192" cy="130" r="3.5" fill="#fff"/>
+    <path d="M80 128 A28 15 0 0 1 136 128Z" fill="#2e2d33"/><path d="M164 128 A28 15 0 0 1 220 128Z" fill="#2e2d33"/>
+    <path d="M142 158 L158 158 L150 168Z" fill="#b9654f"/>
+    <path d="M150 168 Q142 180 130 172 M150 168 Q158 180 170 172" stroke="#5a5256" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M60 150 L96 154 M60 166 L96 162 M240 150 L204 154 M240 166 L204 162" stroke="rgba(246,242,234,.35)" stroke-width="2.5" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- orange tabby: both ears up, wide green eyes, cream belly, stripes. Vars: –cat (fur) –cat-d (belly) –cat-stripe –cat-eye -->
+  <symbol id="cat-orange" viewBox="0 0 300 340" overflow="visible">
+    <path d="M214 306 C284 300 294 214 244 192 C226 186 218 200 230 210" stroke="var(--cat, #e8913a)" stroke-width="26" stroke-linecap="round" fill="none"/>
+    <path d="M262 218 L234 232 M266 252 L238 262" stroke="var(--cat-stripe, #c26a1f)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M150 170 C230 170 238 260 228 300 C220 330 80 330 72 300 C62 260 70 170 150 170Z" fill="var(--cat, #e8913a)"/>
+    <path d="M150 196 C190 196 196 260 190 296 L150 318 L110 296 C104 260 110 196 150 196Z" fill="var(--cat-d, #f7dfb8)"/>
+    <path d="M96 230 L112 236 M92 258 L110 262 M204 230 L188 236 M208 258 L190 262" stroke="var(--cat-stripe, #c26a1f)" stroke-width="8" stroke-linecap="round"/>
+    <rect x="116" y="290" width="32" height="46" rx="16" fill="var(--cat-d, #f7dfb8)"/><rect x="152" y="290" width="32" height="46" rx="16" fill="var(--cat-d, #f7dfb8)"/>
+    <path d="M92 74 L58 8 L56 100Z" fill="var(--cat, #e8913a)"/><path d="M84 74 L64 34 L64 86Z" fill="#f0a4a0"/>
+    <path d="M208 74 L242 8 L244 100Z" fill="var(--cat, #e8913a)"/><path d="M216 74 L236 34 L236 86Z" fill="#f0a4a0"/>
+    <ellipse cx="150" cy="134" rx="94" ry="76" fill="var(--cat, #e8913a)"/>
+    <path d="M150 62 V92 M128 66 L134 94 M172 66 L166 94" stroke="var(--cat-stripe, #c26a1f)" stroke-width="8" stroke-linecap="round"/>
+    <ellipse cx="150" cy="166" rx="40" ry="28" fill="var(--cat-d, #f7dfb8)"/>
+    <ellipse cx="110" cy="130" rx="24" ry="25" fill="#fff"/><ellipse cx="190" cy="130" rx="24" ry="25" fill="#fff"/>
+    <circle cx="112" cy="132" r="17" fill="var(--cat-eye, #7fb069)"/><circle cx="188" cy="132" r="17" fill="var(--cat-eye, #7fb069)"/>
+    <ellipse cx="112" cy="132" rx="7" ry="13" fill="#111114"/><ellipse cx="188" cy="132" rx="7" ry="13" fill="#111114"/>
+    <circle cx="117" cy="125" r="4.5" fill="#fff"/><circle cx="193" cy="125" r="4.5" fill="#fff"/>
+    <path d="M142 156 L158 156 L150 166Z" fill="#e8838f"/>
+    <path d="M150 166 Q142 178 130 170 M150 166 Q158 178 170 170" stroke="#8a4b22" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M60 152 L98 156 M60 168 L98 164 M240 152 L202 156 M240 168 L202 164" stroke="rgba(255,255,255,.55)" stroke-width="2.5" stroke-linecap="round"/>
+    <ellipse cx="72" cy="152" rx="11" ry="7" fill="#f0a4a0" opacity=".4"/><ellipse cx="228" cy="152" rx="11" ry="7" fill="#f0a4a0" opacity=".4"/>
+  </symbol>
+
+  <!-- beagle: tan head, white blaze, long dark ears, black saddle patches, white tail tip, green collar. Vars: –bg-head –bg-ear –bg-white -->
+  <symbol id="beagle" viewBox="0 0 300 340" overflow="visible">
+    <path d="M214 286 C262 278 278 236 262 206" stroke="var(--bg-head, #c47a3c)" stroke-width="20" stroke-linecap="round" fill="none"/>
+    <circle cx="262" cy="200" r="12" fill="var(--bg-white, #f4efe6)"/>
+    <ellipse cx="150" cy="254" rx="70" ry="80" fill="var(--bg-white, #f4efe6)"/>
+    <ellipse cx="98" cy="240" rx="26" ry="42" fill="var(--bg-head, #c47a3c)"/><ellipse cx="202" cy="240" rx="26" ry="42" fill="var(--bg-head, #c47a3c)"/>
+    <ellipse cx="94" cy="222" rx="18" ry="26" fill="#2b2420"/><ellipse cx="206" cy="222" rx="18" ry="26" fill="#2b2420"/>
+    <rect x="112" y="282" width="34" height="52" rx="17" fill="var(--bg-white, #f4efe6)"/><rect x="154" y="282" width="34" height="52" rx="17" fill="var(--bg-white, #f4efe6)"/>
+    <ellipse cx="129" cy="332" rx="21" ry="10" fill="var(--bg-white, #f4efe6)"/><ellipse cx="171" cy="332" rx="21" ry="10" fill="var(--bg-white, #f4efe6)"/>
+    <ellipse cx="150" cy="132" rx="88" ry="80" fill="var(--bg-head, #c47a3c)"/>
+    <path d="M150 58 C174 80 178 112 170 152 L130 152 C122 112 126 80 150 58Z" fill="var(--bg-white, #f4efe6)"/>
+    <ellipse cx="150" cy="168" rx="40" ry="30" fill="var(--bg-white, #f4efe6)"/>
+    <path d="M70 88 C26 82 16 160 34 212 C64 216 90 170 90 124Z" fill="var(--bg-ear, #7a421e)"/>
+    <path d="M230 88 C274 82 284 160 266 212 C236 216 210 170 210 124Z" fill="var(--bg-ear, #7a421e)"/>
+    <ellipse cx="110" cy="124" rx="14" ry="16" fill="#3a2216"/><ellipse cx="190" cy="124" rx="14" ry="16" fill="#3a2216"/>
+    <circle cx="114" cy="119" r="4.5" fill="#fff"/><circle cx="194" cy="119" r="4.5" fill="#fff"/><circle cx="108" cy="130" r="2" fill="#fff"/><circle cx="188" cy="130" r="2" fill="#fff"/>
+    <ellipse cx="150" cy="152" rx="15" ry="10" fill="var(--nose, #1a1a22)"/>
+    <path d="M150 162 V172 M150 172 Q136 186 124 174 M150 172 Q164 186 176 174" stroke="#1a1a22" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M140 180 Q150 212 160 180Z" fill="#ef7b8a"/>
+    <rect x="106" y="206" width="88" height="14" rx="7" fill="var(--collar, #3fa66b)"/><circle cx="150" cy="228" r="9" fill="#f6c445"/>
+  </symbol>
+
+  <!-- patch pup (the new cheerful dog): black eye patch + black floppy ears, red collar. Vars: –fur –fur-patch –collar -->
+  <symbol id="dog-patch" viewBox="0 0 300 340" overflow="visible">
+    <path d="M214 280 C262 270 280 230 262 196" stroke="var(--fur, #f4efe6)" stroke-width="22" stroke-linecap="round" fill="none"/>
+    <ellipse cx="150" cy="252" rx="72" ry="82" fill="var(--fur, #f4efe6)"/>
+    <ellipse cx="124" cy="236" rx="30" ry="40" fill="var(--fur-patch, #23242b)"/>
+    <rect x="110" y="282" width="36" height="52" rx="18" fill="var(--fur, #f4efe6)"/><rect x="154" y="282" width="36" height="52" rx="18" fill="var(--fur, #f4efe6)"/>
+    <ellipse cx="128" cy="332" rx="22" ry="10" fill="var(--fur, #f4efe6)"/><ellipse cx="172" cy="332" rx="22" ry="10" fill="var(--fur, #f4efe6)"/>
+    <path d="M72 92 C38 84 24 134 44 176 C70 182 86 154 86 122Z" fill="var(--fur-patch, #23242b)"/>
+    <path d="M228 92 C262 84 276 134 256 176 C230 182 214 154 214 122Z" fill="var(--fur-patch, #23242b)"/>
+    <ellipse cx="150" cy="132" rx="92" ry="84" fill="var(--fur, #f4efe6)"/>
+    <circle cx="110" cy="120" r="33" fill="var(--fur-patch, #23242b)"/>
+    <circle cx="112" cy="122" r="17" fill="#fff"/><circle cx="188" cy="122" r="17" fill="#fff"/>
+    <circle cx="115" cy="125" r="10" fill="var(--eye, #1a1a22)"/><circle cx="185" cy="125" r="10" fill="var(--eye, #1a1a22)"/>
+    <circle cx="119" cy="120" r="3.5" fill="#fff"/><circle cx="189" cy="120" r="3.5" fill="#fff"/>
+    <ellipse cx="150" cy="166" rx="40" ry="30" fill="#fff"/>
+    <ellipse cx="150" cy="152" rx="14" ry="10" fill="var(--nose, #1a1a22)"/>
+    <path d="M150 162 V172 M150 172 Q136 186 124 174 M150 172 Q164 186 176 174" stroke="#1a1a22" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M140 180 Q150 214 160 180Z" fill="#ef7b8a"/>
+    <ellipse cx="78" cy="150" rx="11" ry="7" fill="#e58a7a" opacity=".35"/><ellipse cx="222" cy="150" rx="11" ry="7" fill="#e58a7a" opacity=".35"/>
+    <rect x="104" y="208" width="92" height="15" rx="7.5" fill="var(--collar, #e5383b)"/><circle cx="150" cy="232" r="9" fill="#f6c445"/>
+  </symbol>
+  <!-- ===== Pose library (hands) =====
+       THE ONE-HAND RULE: an arm is ONE sleeve + ONE hand. A character symbol already draws both arms hanging down;
+       to pose an arm you must hide that resting arm first, then layer the pose arm on top. Never add a loose hand
+       or arm next to a resting one (that is the "two hands on one side" bug).
+
+         <svg class="who c-man arm-r-off" viewBox="0 0 200 520">      <- arm-r-off hides the resting right arm
+           <use href="#man"/>
+           <use href="#arm-r-hold"/>                                  <- sleeve + hand, shoulder to hand in one piece
+           <use href="#prop-glass" transform="translate(112 244)"/>   <- prop sits ON the hand anchor, covers it with the grip
+         </svg>
+
+       Screen sides: r = screen-right arm (x 142), l = screen-left arm (x 58); use arm-l-off / arm-r-off on the svg.
+       Sleeve colour: add the c-<symbol> class (c-man c-woman c-auntie c-raincoat c-elder) or set –sleeve.
+       Hand anchors in the 200 x 520 frame (where the prop's translate goes):
+         hold   r (112,244)  l (88,244)    forearm across the belly, holding something in front
+         chest  r (116,196)  l (84,196)    hand on the chest: pledge, panic, "me?"
+         offer  r (214,222)  l (-14,222)   arm out to the side: hand over, take, point at
+         raise  r (190,110)  l (10,110)    hand up: wave, stop, ask, shout
+         pocket (no hand shown)            sleeve bent to the hip, hand hidden in a pocket
+       Props are 'grip props': each draws its own object and then a skin-colour hand over its lower part,
+       so the hand is in front of the object and there is still exactly one hand. -->
+  <defs>
+    <g id="pose-r-hold"><path d="M142 160 L156 250" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="41" stroke-linecap="round"/><path d="M142 160 L156 250" fill="none" stroke="var(--sleeve, var(--shirt, #2f5f8f))" stroke-width="34" stroke-linecap="round"/><path d="M156 250 L135.8 247.2" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="36" stroke-linecap="round"/><path d="M156 250 L135.8 247.2" fill="none" stroke="var(--forearm, var(--sleeve, var(--shirt, #2f5f8f)))" stroke-width="29" stroke-linecap="round"/><path d="M135.8 247.2 L112 244" fill="none" stroke="var(--skin, #e7b38c)" stroke-width="20" stroke-linecap="round"/><circle cx="112" cy="244" r="19" fill="var(--skin, #e7b38c)"/></g>
+    <g id="pose-r-chest"><path d="M142 160 L154 252" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="41" stroke-linecap="round"/><path d="M142 160 L154 252" fill="none" stroke="var(--sleeve, var(--shirt, #2f5f8f))" stroke-width="34" stroke-linecap="round"/><path d="M154 252 L129.5 215.9" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="36" stroke-linecap="round"/><path d="M154 252 L129.5 215.9" fill="none" stroke="var(--forearm, var(--sleeve, var(--shirt, #2f5f8f)))" stroke-width="29" stroke-linecap="round"/><path d="M129.5 215.9 L116 196" fill="none" stroke="var(--skin, #e7b38c)" stroke-width="20" stroke-linecap="round"/><circle cx="116" cy="196" r="19" fill="var(--skin, #e7b38c)"/></g>
+    <g id="pose-r-offer"><path d="M142 160 L178 236" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="41" stroke-linecap="round"/><path d="M142 160 L178 236" fill="none" stroke="var(--sleeve, var(--shirt, #2f5f8f))" stroke-width="34" stroke-linecap="round"/><path d="M178 236 L191.6 230.7" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="36" stroke-linecap="round"/><path d="M178 236 L191.6 230.7" fill="none" stroke="var(--forearm, var(--sleeve, var(--shirt, #2f5f8f)))" stroke-width="29" stroke-linecap="round"/><path d="M191.6 230.7 L214 222" fill="none" stroke="var(--skin, #e7b38c)" stroke-width="20" stroke-linecap="round"/><circle cx="214" cy="222" r="19" fill="var(--skin, #e7b38c)"/></g>
+    <g id="pose-r-raise"><path d="M142 160 L178 208" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="41" stroke-linecap="round"/><path d="M142 160 L178 208" fill="none" stroke="var(--sleeve, var(--shirt, #2f5f8f))" stroke-width="34" stroke-linecap="round"/><path d="M178 208 L187.1 133.8" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="36" stroke-linecap="round"/><path d="M178 208 L187.1 133.8" fill="none" stroke="var(--forearm, var(--sleeve, var(--shirt, #2f5f8f)))" stroke-width="29" stroke-linecap="round"/><path d="M187.1 133.8 L190 110" fill="none" stroke="var(--skin, #e7b38c)" stroke-width="20" stroke-linecap="round"/><circle cx="190" cy="110" r="19" fill="var(--skin, #e7b38c)"/></g>
+    <g id="pose-r-pocket"><path d="M142 160 L158 250 L130 304" fill="none" stroke="var(--sleeve, var(--shirt, #2f5f8f))" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/></g>
+  </defs>
+  <symbol id="arm-r-hold" viewBox="0 0 200 520" overflow="visible"><use href="#pose-r-hold"/></symbol>
+  <symbol id="arm-r-chest" viewBox="0 0 200 520" overflow="visible"><use href="#pose-r-chest"/></symbol>
+  <symbol id="arm-r-offer" viewBox="0 0 200 520" overflow="visible"><use href="#pose-r-offer"/></symbol>
+  <symbol id="arm-r-raise" viewBox="0 0 200 520" overflow="visible"><use href="#pose-r-raise"/></symbol>
+  <symbol id="arm-r-pocket" viewBox="0 0 200 520" overflow="visible"><use href="#pose-r-pocket"/></symbol>
+  <!-- left arms are the right arms mirrored about x = 100 -->
+  <symbol id="arm-l-hold" viewBox="0 0 200 520" overflow="visible"><g transform="matrix(-1 0 0 1 200 0)"><use href="#pose-r-hold"/></g></symbol>
+  <symbol id="arm-l-chest" viewBox="0 0 200 520" overflow="visible"><g transform="matrix(-1 0 0 1 200 0)"><use href="#pose-r-chest"/></g></symbol>
+  <symbol id="arm-l-offer" viewBox="0 0 200 520" overflow="visible"><g transform="matrix(-1 0 0 1 200 0)"><use href="#pose-r-offer"/></g></symbol>
+  <symbol id="arm-l-raise" viewBox="0 0 200 520" overflow="visible"><g transform="matrix(-1 0 0 1 200 0)"><use href="#pose-r-raise"/></g></symbol>
+  <symbol id="arm-l-pocket" viewBox="0 0 200 520" overflow="visible"><g transform="matrix(-1 0 0 1 200 0)"><use href="#pose-r-pocket"/></g></symbol>
+
+  <!-- grip props: origin (0,0) = the hand centre. Draw with transform="translate(x y)" at a hand anchor above. -->
+  <symbol id="prop-glass" overflow="visible"><rect x="-17" y="-64" width="34" height="76" rx="5" fill="#dfe9ee" opacity=".85"/><rect x="-15" y="-34" width="30" height="44" rx="3" fill="#8fc4e6" opacity=".9"/><rect x="-17" y="-64" width="34" height="76" rx="5" fill="none" stroke="#9fb4c0" stroke-width="3"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-coin" overflow="visible"><ellipse cx="0" cy="-34" rx="26" ry="22" fill="#e8a81c"/><ellipse cx="0" cy="-38" rx="26" ry="20" fill="#f6c445"/><ellipse cx="0" cy="-38" rx="13" ry="9" fill="#fde29a"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-phone" overflow="visible"><rect x="-22" y="-78" width="44" height="86" rx="8" fill="#1a1d24"/><rect x="-18" y="-72" width="36" height="66" rx="4" fill="#7fb7ff"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-paper" overflow="visible"><rect x="-34" y="-84" width="68" height="92" rx="3" fill="#f6f1e4" stroke="#cfc6b0" stroke-width="3"/><path d="M-22 -66 H22 M-22 -50 H22 M-22 -34 H8" stroke="#8d8672" stroke-width="4" stroke-linecap="round"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-key" overflow="visible"><circle cx="0" cy="-48" r="16" fill="none" stroke="#d9a91c" stroke-width="8"/><rect x="-4" y="-34" width="8" height="40" rx="3" fill="#d9a91c"/><path d="M4 -10 h12 M4 -2 h9" stroke="#d9a91c" stroke-width="6" stroke-linecap="round"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-flashlight" overflow="visible"><rect x="-14" y="-62" width="28" height="70" rx="6" fill="#3a3f4a"/><rect x="-20" y="-82" width="40" height="22" rx="5" fill="#d7dbe0"/><ellipse cx="0" cy="-82" rx="16" ry="5" fill="#fff2b8"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <!-- ===== Face library (expressions) =====
+       A face = eyes + brows + mouth (+ cheeks, tears, sweat). Every character symbol already draws a neutral face.
+       To change the mood: add face-off on the svg (hides the neutral eyes and mouth), then layer ONE face symbol
+       right after the character use. Never draw a second pair of eyes over the neutral ones.
+
+         <svg class="who c-man face-off" viewBox="0 0 200 520">
+           <use href="#man"/><use href="#face-angry"/>
+         </svg>
+
+       Faces are drawn on the man frame (eyes at y 72, mouth at y 97, head centre 100,65): they fit man, man-wide,
+       man-raise, raincoat and elder as they are. For woman and auntie use transform="translate(0 4)" on the face use.
+       Moods: happy laugh sad cry angry scared shock worried smirk tired hollow (hollow = blank black eyes, for ghosts
+       and the moment the twist lands).
+       Colours: eye, brow (falls back to hair), mouth, blush, tear (sweat and tears), eye-white. -->
+  <defs>
+    <g id="fx-cheeks"><ellipse cx="62" cy="92" rx="10" ry="6" fill="var(--blush, #e58a7a)" opacity=".35"/><ellipse cx="138" cy="92" rx="10" ry="6" fill="var(--blush, #e58a7a)" opacity=".35"/></g>
+    <g id="fx-sweat"><path d="M152 30 C146 44 142 52 152 58 C162 52 158 44 152 30Z" fill="var(--tear, #8fd0ff)"/></g>
+    <g id="fx-dot-eyes"><circle cx="77" cy="74" r="6" fill="var(--eye, #1a1a22)"/><circle cx="123" cy="74" r="6" fill="var(--eye, #1a1a22)"/></g>
+    <g id="fx-lid-eyes"><path d="M68 74 A9 9 0 0 0 86 74Z" fill="var(--eye, #1a1a22)"/><path d="M114 74 A9 9 0 0 0 132 74Z" fill="var(--eye, #1a1a22)"/><path d="M66 74 H88 M112 74 H134" stroke="var(--eye, #1a1a22)" stroke-width="5" stroke-linecap="round"/></g>
+    <g id="fx-wide-eyes"><circle cx="77" cy="72" r="13" fill="var(--eye-white, #fff)"/><circle cx="123" cy="72" r="13" fill="var(--eye-white, #fff)"/></g>
+  </defs>
+  <symbol id="face-happy" viewBox="0 0 200 520" overflow="visible">
+    <use href="#fx-cheeks"/>
+    <path d="M66 76 Q77 62 88 76 M112 76 Q123 62 134 76" fill="none" stroke="var(--eye, #1a1a22)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M80 92 Q100 118 120 92Z" fill="var(--mouth, #7a3b34)" stroke="var(--mouth, #7a3b34)" stroke-width="4" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="face-laugh" viewBox="0 0 200 520" overflow="visible">
+    <use href="#fx-cheeks"/>
+    <path d="M66 74 Q77 60 88 74 M112 74 Q123 60 134 74" fill="none" stroke="var(--eye, #1a1a22)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M72 88 Q100 132 128 88Z" fill="var(--mouth, #7a3b34)" stroke="var(--mouth, #7a3b34)" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M82 92 H118" stroke="var(--eye-white, #fff)" stroke-width="6" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="face-sad" viewBox="0 0 200 520" overflow="visible">
+    <use href="#fx-dot-eyes"/>
+    <path d="M62 62 L90 50 M110 50 L138 62" stroke="var(--brow, var(--hair, #16161c))" stroke-width="7" stroke-linecap="round"/>
+    <path d="M86 108 Q100 92 114 108" fill="none" stroke="var(--mouth, #7a3b34)" stroke-width="5" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="face-cry" viewBox="0 0 200 520" overflow="visible">
+    <path d="M70 80 C62 100 64 118 70 130 M130 80 C138 100 136 118 130 130" fill="none" stroke="var(--tear, #8fd0ff)" stroke-width="9" stroke-linecap="round"/>
+    <path d="M66 74 Q77 84 88 74 M112 74 Q123 84 134 74" fill="none" stroke="var(--eye, #1a1a22)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M62 60 L90 48 M110 48 L138 60" stroke="var(--brow, var(--hair, #16161c))" stroke-width="7" stroke-linecap="round"/>
+    <ellipse cx="100" cy="106" rx="15" ry="11" fill="var(--mouth, #7a3b34)"/>
+  </symbol>
+  <symbol id="face-angry" viewBox="0 0 200 520" overflow="visible">
+    <use href="#fx-cheeks"/>
+    <use href="#fx-dot-eyes"/>
+    <path d="M60 52 L92 66 M108 66 L140 52" stroke="var(--brow, var(--hair, #16161c))" stroke-width="8" stroke-linecap="round"/>
+    <path d="M82 108 Q100 94 118 108" fill="none" stroke="var(--mouth, #7a3b34)" stroke-width="6" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="face-scared" viewBox="0 0 200 520" overflow="visible">
+    <use href="#fx-wide-eyes"/>
+    <circle cx="77" cy="72" r="3.5" fill="var(--eye, #1a1a22)"/><circle cx="123" cy="72" r="3.5" fill="var(--eye, #1a1a22)"/>
+    <path d="M62 50 L90 40 M110 40 L138 50" stroke="var(--brow, var(--hair, #16161c))" stroke-width="6" stroke-linecap="round"/>
+    <path d="M84 106 q4 -8 8 0 t8 0 t8 0 t8 0" fill="none" stroke="var(--mouth, #7a3b34)" stroke-width="5" stroke-linecap="round"/>
+    <use href="#fx-sweat"/>
+  </symbol>
+  <symbol id="face-shock" viewBox="0 0 200 520" overflow="visible">
+    <circle cx="77" cy="72" r="15" fill="var(--eye-white, #fff)"/><circle cx="123" cy="72" r="15" fill="var(--eye-white, #fff)"/>
+    <circle cx="77" cy="72" r="3" fill="var(--eye, #1a1a22)"/><circle cx="123" cy="72" r="3" fill="var(--eye, #1a1a22)"/>
+    <path d="M60 44 Q77 34 94 44 M106 44 Q123 34 140 44" fill="none" stroke="var(--brow, var(--hair, #16161c))" stroke-width="6" stroke-linecap="round"/>
+    <ellipse cx="100" cy="104" rx="10" ry="14" fill="var(--mouth, #7a3b34)"/>
+  </symbol>
+  <symbol id="face-worried" viewBox="0 0 200 520" overflow="visible">
+    <use href="#fx-dot-eyes"/>
+    <path d="M64 58 L90 48 M110 48 L136 58" stroke="var(--brow, var(--hair, #16161c))" stroke-width="6" stroke-linecap="round"/>
+    <path d="M84 104 q8 -8 16 0 t16 0" fill="none" stroke="var(--mouth, #7a3b34)" stroke-width="5" stroke-linecap="round"/>
+    <use href="#fx-sweat"/>
+  </symbol>
+  <symbol id="face-smirk" viewBox="0 0 200 520" overflow="visible">
+    <use href="#fx-lid-eyes"/>
+    <path d="M64 56 L90 54 M110 46 L136 40" stroke="var(--brow, var(--hair, #16161c))" stroke-width="6" stroke-linecap="round"/>
+    <path d="M86 102 Q104 108 118 94" fill="none" stroke="var(--mouth, #7a3b34)" stroke-width="5" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="face-tired" viewBox="0 0 200 520" overflow="visible">
+    <use href="#fx-lid-eyes"/>
+    <path d="M68 86 q9 6 18 0 M114 86 q9 6 18 0" fill="none" stroke="rgba(0,0,0,.22)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M64 60 H90 M110 60 H136" stroke="var(--brow, var(--hair, #16161c))" stroke-width="6" stroke-linecap="round"/>
+    <path d="M90 105 Q100 102 110 106" fill="none" stroke="var(--mouth, #7a3b34)" stroke-width="5" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="face-hollow" viewBox="0 0 200 520" overflow="visible">
+    <ellipse cx="77" cy="74" rx="11" ry="14" fill="#05070b"/><ellipse cx="123" cy="74" rx="11" ry="14" fill="#05070b"/>
+    <path d="M90 106 H110" stroke="#05070b" stroke-width="5" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- ===== Accessories (acc-*) =====
+       Overlays on the man frame (head centre 100,65). Layer them after the character (and after a face).
+       woman / auntie: transform="translate(0 4)". Behind-layer pieces (acc-backpack) go BEFORE the character use.
+       Hand pieces (acc-watch, acc-hand-bandage) have origin = hand centre, like grip props: put them on a resting
+       hand anchor (man r 148,330 l 52,330 · woman/auntie r 146,318 l 54,318 · raincoat r 152,334 l 48,334 ·
+       kid r 146,262 l 54,262) or on a pose-arm hand anchor. One trait per character: these ARE the trackable traits. -->
+  <symbol id="acc-glasses" viewBox="0 0 200 520" overflow="visible">
+    <path d="M62 70 L38 64 M138 70 L162 64" stroke="var(--frame, #1a1a22)" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="77" cy="72" r="15" fill="rgba(255,255,255,.14)" stroke="var(--frame, #1a1a22)" stroke-width="4"/>
+    <circle cx="123" cy="72" r="15" fill="rgba(255,255,255,.14)" stroke="var(--frame, #1a1a22)" stroke-width="4"/>
+    <path d="M92 71 Q100 64 108 71" fill="none" stroke="var(--frame, #1a1a22)" stroke-width="4"/>
+  </symbol>
+  <symbol id="acc-cap" viewBox="0 0 200 520" overflow="visible">
+    <path d="M32 54 C28 -16 172 -16 168 54Z" fill="var(--cap, #c0392b)"/>
+    <path d="M100 -12 V50" stroke="rgba(0,0,0,.15)" stroke-width="3"/>
+    <ellipse cx="100" cy="54" rx="76" ry="12" fill="var(--cap-d, #922b21)"/>
+    <circle cx="100" cy="-12" r="6" fill="var(--cap-d, #922b21)"/>
+  </symbol>
+  <symbol id="acc-mask" viewBox="0 0 200 520" overflow="visible">
+    <path d="M60 86 Q46 80 37 76 M140 86 Q154 80 163 76" fill="none" stroke="#c9d2da" stroke-width="3"/>
+    <path d="M60 84 Q100 74 140 84 L136 112 Q100 130 64 112Z" fill="var(--mask, #e8eef2)"/>
+    <path d="M68 94 Q100 88 132 94 M68 104 Q100 98 132 104" fill="none" stroke="rgba(0,0,0,.12)" stroke-width="3"/>
+  </symbol>
+  <symbol id="acc-headband" viewBox="0 0 200 520" overflow="visible">
+    <path d="M34 30 Q100 14 166 30 L166 48 Q100 32 34 48Z" fill="var(--bandage, #f4f1ea)"/>
+    <path d="M50 30 L60 44 M76 26 L84 40 M140 26 L148 40" stroke="#d8d2c4" stroke-width="3"/>
+    <circle cx="124" cy="34" r="7" fill="var(--blood, #b3261e)" opacity=".85"/>
+  </symbol>
+  <symbol id="acc-scarf" viewBox="0 0 200 520" overflow="visible">
+    <path d="M118 140 L130 222 L110 226 L102 146Z" fill="var(--scarf, #d97b2a)"/>
+    <rect x="64" y="124" width="72" height="28" rx="13" fill="var(--scarf, #d97b2a)"/>
+    <path d="M78 126 V150 M100 124 V152 M122 126 V150 M110 190 L124 188" stroke="rgba(0,0,0,.15)" stroke-width="5"/>
+  </symbol>
+  <symbol id="acc-bag" viewBox="0 0 200 520" overflow="visible">
+    <path d="M134 146 L72 284" stroke="var(--bag-strap, #3a2a1c)" stroke-width="10" stroke-linecap="round"/>
+    <rect x="38" y="270" width="64" height="54" rx="10" fill="var(--bag, #7a5233)"/>
+    <path d="M38 282 Q38 270 50 270 H90 Q102 270 102 282 V296 Q70 310 38 296Z" fill="var(--bag-d, #5c3d25)"/>
+    <rect x="66" y="294" width="8" height="10" rx="2" fill="#d9a91c"/>
+  </symbol>
+  <symbol id="acc-amulet" viewBox="0 0 200 520" overflow="visible">
+    <path d="M78 132 Q100 196 122 132" fill="none" stroke="#2b2b2b" stroke-width="3"/>
+    <rect x="90" y="176" width="20" height="26" rx="5" fill="var(--gold, #f6c445)" stroke="#a77d16" stroke-width="3"/>
+    <path d="M100 182 V196 M95 188 H105" stroke="#a77d16" stroke-width="3" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="acc-backpack" viewBox="0 0 200 520" overflow="visible">
+    <rect x="26" y="124" width="148" height="176" rx="28" fill="var(--pack, #2f3b2a)"/>
+    <rect x="42" y="104" width="116" height="26" rx="13" fill="var(--roll, #d97b2a)"/>
+  </symbol>
+  <symbol id="acc-straps" viewBox="0 0 200 520" overflow="visible">
+    <path d="M72 142 L70 262 M128 142 L130 262" stroke="var(--strap, #16181a)" stroke-width="13" stroke-linecap="round"/>
+    <path d="M72 214 H128" stroke="var(--strap, #16181a)" stroke-width="8"/>
+    <rect x="94" y="208" width="12" height="12" rx="3" fill="#f4efe6"/>
+  </symbol>
+  <symbol id="acc-watch" overflow="visible">
+    <rect x="-20" y="-36" width="40" height="13" rx="5" fill="#2b2f36"/>
+    <circle cx="0" cy="-30" r="10" fill="#dfe9ee" stroke="#2b2f36" stroke-width="3"/>
+    <path d="M0 -30 V-36 M0 -30 H5" stroke="#2b2f36" stroke-width="2"/>
+  </symbol>
+  <symbol id="acc-hand-bandage" overflow="visible">
+    <circle cx="0" cy="0" r="21" fill="var(--bandage, #f4f1ea)"/>
+    <path d="M-19 -8 L19 -12 M-20 2 L20 0 M-17 11 L17 10" stroke="#d8d2c4" stroke-width="3"/>
+    <circle cx="6" cy="-3" r="5" fill="var(--blood, #b3261e)" opacity=".85"/>
+  </symbol>
+
+  <!-- ===== Emotion marks (mark-*) =====
+       Pop-in signs around the head, man frame. Layer after the face. Same transform as the face on a posed body.
+       Pop them with back.out on the beat the line lands; hold ≥ 0.8 s. One mark per figure at a time. -->
+  <defs>
+    <path id="mk-star" d="M0 -11 L3 -3 L11 -3 L5 2 L7 11 L0 6 L-7 11 L-5 2 L-11 -3 L-3 -3Z"/>
+    <path id="mk-drop" d="M0 -14 C-6 -4 -9 2 -9 6 A9 9 0 0 0 9 6 C9 2 6 -4 0 -14Z"/>
+  </defs>
+  <symbol id="mark-question" viewBox="0 0 200 520" overflow="visible">
+    <path d="M154 -46 Q154 -72 176 -72 Q198 -72 198 -50 Q198 -34 180 -28 L178 -12" fill="none" stroke="#18202e" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="177" cy="6" r="10" fill="#18202e"/>
+    <path d="M154 -46 Q154 -72 176 -72 Q198 -72 198 -50 Q198 -34 180 -28 L178 -12" fill="none" stroke="var(--mark, #f6c445)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="177" cy="6" r="6" fill="var(--mark, #f6c445)"/>
+  </symbol>
+  <symbol id="mark-exclaim" viewBox="0 0 200 520" overflow="visible">
+    <path d="M182 -74 L178 -22" stroke="#18202e" stroke-width="19" stroke-linecap="round"/><circle cx="177" cy="0" r="11" fill="#18202e"/>
+    <path d="M182 -74 L178 -22" stroke="var(--mark-hot, #e5383b)" stroke-width="11" stroke-linecap="round"/><circle cx="177" cy="0" r="7" fill="var(--mark-hot, #e5383b)"/>
+  </symbol>
+  <symbol id="mark-anger" viewBox="0 0 200 520" overflow="visible">
+    <path d="M136 6 Q146 12 146 0 M156 0 Q156 12 166 6 M136 24 Q146 18 146 30 M166 24 Q156 18 156 30" fill="none" stroke="var(--mark-hot, #e5383b)" stroke-width="6" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="mark-drops" viewBox="0 0 200 520" overflow="visible">
+    <use href="#mk-drop" transform="translate(178 10) rotate(30)" fill="var(--tear, #8fd0ff)"/>
+    <use href="#mk-drop" transform="translate(196 36) rotate(60) scale(.8)" fill="var(--tear, #8fd0ff)"/>
+    <use href="#mk-drop" transform="translate(22 14) rotate(-30) scale(.9)" fill="var(--tear, #8fd0ff)"/>
+  </symbol>
+  <symbol id="mark-zzz" viewBox="0 0 200 520" overflow="visible">
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M150 -6 H166 L150 12 H166 M170 -40 H192 L170 -16 H192 M190 -84 H218 L190 -52 H218" stroke="#18202e" stroke-width="12"/>
+      <path d="M150 -6 H166 L150 12 H166 M170 -40 H192 L170 -16 H192 M190 -84 H218 L190 -52 H218" stroke="var(--mark-soft, #f6f2ea)" stroke-width="6"/>
+    </g>
+  </symbol>
+  <symbol id="mark-dizzy" viewBox="0 0 200 520" overflow="visible">
+    <ellipse cx="100" cy="-6" rx="74" ry="16" fill="none" stroke="var(--mark-soft, #f6f2ea)" stroke-width="3" stroke-dasharray="10 8"/>
+    <use href="#mk-star" transform="translate(30 -4)" fill="var(--mark, #f6c445)"/>
+    <use href="#mk-star" transform="translate(112 10) scale(1.2)" fill="var(--mark, #f6c445)"/>
+    <use href="#mk-star" transform="translate(166 -16)" fill="var(--mark, #f6c445)"/>
+  </symbol>
+  <symbol id="mark-idea" viewBox="0 0 200 520" overflow="visible">
+    <path d="M100 -112 V-124 M66 -98 L58 -106 M134 -98 L142 -106 M56 -66 H44 M144 -66 H156" stroke="var(--mark, #f6c445)" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="100" cy="-70" r="24" fill="#ffe27a" stroke="#18202e" stroke-width="4"/>
+    <rect x="89" y="-48" width="22" height="16" rx="4" fill="#9aa3ad" stroke="#18202e" stroke-width="4"/>
+  </symbol>
+  <symbol id="mark-shiver" viewBox="0 0 200 520" overflow="visible">
+    <g stroke-linecap="round" fill="none">
+      <path d="M16 110 l-16 -8 M12 150 h-18 M16 190 l-16 8 M184 110 l16 -8 M188 150 h18 M184 190 l16 8" stroke="#18202e" stroke-width="9"/>
+      <path d="M16 110 l-16 -8 M12 150 h-18 M16 190 l-16 8 M184 110 l16 -8 M188 150 h18 M184 190 l16 8" stroke="var(--mark-soft, #f6f2ea)" stroke-width="4"/>
+    </g>
+  </symbol>
+  <symbol id="mark-gloom" viewBox="0 0 200 520" overflow="visible">
+    <path d="M68 12 V42 M84 6 V46 M100 4 V48 M116 6 V46 M132 12 V42" stroke="var(--gloom, #3b2a6e)" stroke-width="5" stroke-linecap="round" opacity=".6"/>
+  </symbol>
+
+  <!-- ===== Talking mouths (talk-*) =====
+       mouth-off on the svg hides only the neutral mouth (eyes stay). Layer one talk-* and swap its href on a
+       0.12 s grid while the voice line plays (see cast-library.md). An expression face (face-*) has its own mouth:
+       use either a face or talk mouths, never both. woman / auntie: transform="translate(0 4)". -->
+  <symbol id="talk-a" viewBox="0 0 200 520" overflow="visible"><ellipse cx="100" cy="100" rx="11" ry="10" fill="var(--mouth, #7a3b34)"/><ellipse cx="100" cy="105" rx="6" ry="3" fill="#c45a5a"/></symbol>
+  <symbol id="talk-e" viewBox="0 0 200 520" overflow="visible"><rect x="86" y="94" width="28" height="11" rx="5.5" fill="var(--mouth, #7a3b34)"/></symbol>
+  <symbol id="talk-o" viewBox="0 0 200 520" overflow="visible"><ellipse cx="100" cy="100" rx="7" ry="9" fill="var(--mouth, #7a3b34)"/></symbol>
+  <symbol id="talk-m" viewBox="0 0 200 520" overflow="visible"><path d="M90 98 H110" stroke="var(--mouth, #7a3b34)" stroke-width="4" stroke-linecap="round"/></symbol>
+
+  <!-- ===== Body poses =====
+       Whole-figure poses in the 200 x 520 frame (man-lie: 520 x 200). Each has a face transform: put the SAME
+       transform on any face-*, talk-*, acc-* or mark-* use layered on it (table in cast-library.md):
+         man-walk none · man-run rotate(8 100 300) · man-sit translate(0 110) · man-crouch translate(0 160)
+         man-lie translate(0 234) rotate(-90) · woman-sit translate(0 104) · woman-run rotate(8 100 300) translate(0 4)
+       Pose arms (arm-*) work on man-walk as is and on man-sit with transform="translate(0 110)".
+       Any standing 200 x 520 figure can lie down: <g transform="translate(0 234) rotate(-90)"><use href="#woman" width="200" height="520"/></g> -->
+  <symbol id="man-walk" viewBox="0 0 200 520" overflow="visible">
+    <path d="M84 305 L68 400 L56 500 M116 305 L128 400 L142 500" fill="none" stroke="var(--pants, #1d2736)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="34" y="490" width="44" height="26" rx="10" fill="var(--shoe, #0f141c)"/><rect x="124" y="490" width="44" height="26" rx="10" fill="var(--shoe, #0f141c)"/>
+    <g style="display:var(--arm-l-rest,inline)"><line x1="58" y1="160" x2="42" y2="306" stroke="var(--shirt, #2f5f8f)" stroke-width="36" stroke-linecap="round"/><circle cx="40" cy="316" r="20" fill="var(--skin, #e7b38c)"/></g>
+    <g style="display:var(--arm-r-rest,inline)"><line x1="142" y1="160" x2="154" y2="312" stroke="var(--shirt, #2f5f8f)" stroke-width="36" stroke-linecap="round"/><circle cx="156" cy="322" r="20" fill="var(--skin, #e7b38c)"/></g>
+    <use href="#torso-shirt"/><use href="#head-short"/><use href="#eyes-dot"/>
+  </symbol>
+  <symbol id="man-run" viewBox="0 0 200 520" overflow="visible">
+    <g transform="rotate(8 100 300)">
+      <path d="M142 160 L172 228 L192 280" fill="none" stroke="var(--shirt, #2f5f8f)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="194" cy="290" r="20" fill="var(--skin, #e7b38c)"/>
+      <path d="M114 300 L140 396 L176 452" fill="none" stroke="var(--pants, #1d2736)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="162" y="440" width="44" height="22" rx="10" fill="var(--shoe, #0f141c)" transform="rotate(30 184 451)"/>
+      <path d="M86 300 L56 376 L78 446" fill="none" stroke="var(--pants, #1d2736)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="60" y="440" width="46" height="22" rx="10" fill="var(--shoe, #0f141c)"/>
+      <use href="#torso-shirt"/>
+      <path d="M58 160 L34 232 L66 268" fill="none" stroke="var(--shirt, #2f5f8f)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="72" cy="270" r="20" fill="var(--skin, #e7b38c)"/>
+      <use href="#head-short"/><use href="#eyes-wide"/>
+    </g>
+  </symbol>
+  <symbol id="man-sit" viewBox="0 0 200 520" overflow="visible">
+    <g transform="translate(0 110)"><use href="#torso-shirt"/><use href="#head-short"/><use href="#eyes-dot"/></g>
+    <path d="M94 398 H196 L198 496" fill="none" stroke="var(--pants, #1d2736)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M94 398 H196 L198 496" fill="none" stroke="rgba(0,0,0,.22)" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="186" y="488" width="48" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    <path d="M90 416 H214 L218 498" fill="none" stroke="var(--pants, #1d2736)" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="204" y="494" width="50" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    <g transform="translate(0 110)"><use href="#arm-l-down"/><use href="#arm-r-down"/></g>
+  </symbol>
+  <symbol id="man-crouch" viewBox="0 0 200 520" overflow="visible">
+    <g transform="translate(0 160)"><use href="#torso-shirt"/><use href="#head-short"/><use href="#eyes-dot"/></g>
+    <rect x="62" y="380" width="30" height="126" rx="15" fill="var(--pants, #1d2736)"/><rect x="108" y="380" width="30" height="126" rx="15" fill="var(--pants, #1d2736)"/>
+    <rect x="54" y="494" width="44" height="24" rx="10" fill="var(--shoe, #0f141c)"/><rect x="102" y="494" width="44" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    <ellipse cx="76" cy="374" rx="28" ry="34" fill="var(--pants, #1d2736)"/><ellipse cx="124" cy="374" rx="28" ry="34" fill="var(--pants, #1d2736)"/>
+    <path d="M58 322 L40 380 L74 362 M142 322 L160 380 L126 362" fill="none" stroke="var(--shirt, #2f5f8f)" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="80" cy="360" r="19" fill="var(--skin, #e7b38c)"/><circle cx="120" cy="360" r="19" fill="var(--skin, #e7b38c)"/>
+  </symbol>
+  <symbol id="man-back" viewBox="0 0 200 520" overflow="visible">
+    <use href="#legs-pants"/><use href="#arm-l-down"/><use href="#arm-r-down"/><use href="#torso-shirt"/>
+    <rect x="88" y="112" width="24" height="32" fill="var(--skin-d, #c98f6b)"/>
+    <circle cx="35" cy="78" r="10" fill="var(--skin-d, #c98f6b)"/><circle cx="165" cy="78" r="10" fill="var(--skin-d, #c98f6b)"/>
+    <circle cx="100" cy="62" r="68" fill="var(--hair, #16161c)"/>
+  </symbol>
+  <symbol id="man-lie" viewBox="0 0 520 200" overflow="visible">
+    <g transform="translate(0 234) rotate(-90)"><use href="#man" width="200" height="520"/></g>
+  </symbol>
+  <symbol id="woman-back" viewBox="0 0 200 520" overflow="visible">
+    <rect x="72" y="380" width="24" height="125" rx="12" fill="var(--skin, #e7b38c)"/><rect x="104" y="380" width="24" height="125" rx="12" fill="var(--skin, #e7b38c)"/>
+    <rect x="62" y="494" width="40" height="24" rx="10" fill="var(--shoe, #0f141c)"/><rect x="98" y="494" width="40" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    <path d="M60 290 H140 L156 400 H44Z" fill="var(--skirt, #3b4c5e)"/>
+    <path d="M60 160 L54 310 M140 160 L146 310" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/>
+    <circle cx="54" cy="318" r="18" fill="var(--skin, #e7b38c)"/><circle cx="146" cy="318" r="18" fill="var(--skin, #e7b38c)"/>
+    <rect x="60" y="140" width="80" height="160" rx="30" fill="var(--top, #d9c9a8)"/>
+    <circle cx="100" cy="66" r="62" fill="var(--hair, #2a1d18)"/>
+    <rect x="38" y="50" width="124" height="180" rx="54" fill="var(--hair, #2a1d18)"/>
+  </symbol>
+  <symbol id="woman-sit" viewBox="0 0 200 520" overflow="visible">
+    <g transform="translate(0 100)">
+      <rect x="30" y="20" width="140" height="190" rx="60" fill="var(--hair, #2a1d18)"/>
+      <rect x="60" y="140" width="80" height="160" rx="30" fill="var(--top, #d9c9a8)"/>
+      <rect x="89" y="118" width="22" height="26" fill="var(--skin-d, #c98f6b)"/>
+      <circle cx="100" cy="68" r="60" fill="var(--skin, #e7b38c)"/>
+      <path d="M34 90 C24 20 70 0 100 0 C134 0 178 20 166 90 C160 64 148 46 128 36 C116 52 108 56 100 56 C92 56 84 52 72 36 C52 46 40 64 34 90Z" fill="var(--hair, #2a1d18)"/>
+      <g style="display:var(--face-rest,inline)"><circle cx="78" cy="76" r="6" fill="var(--eye, #1a1a22)"/><circle cx="122" cy="76" r="6" fill="var(--eye, #1a1a22)"/><g style="display:var(--mouth-rest,inline)"><ellipse cx="100" cy="99" rx="8" ry="3" fill="var(--eye, #7a3b34)"/></g></g>
+    </g>
+    <path d="M196 424 L198 494 M212 430 L214 494" fill="none" stroke="var(--skin, #e7b38c)" stroke-width="22" stroke-linecap="round"/>
+    <rect x="184" y="490" width="40" height="22" rx="9" fill="var(--shoe, #0f141c)"/><rect x="200" y="496" width="42" height="22" rx="9" fill="var(--shoe, #0f141c)"/>
+    <path d="M54 384 H150 Q222 386 226 424 L224 444 H54Z" fill="var(--skirt, #3b4c5e)"/>
+    <g transform="translate(0 100)">
+      <g style="display:var(--arm-l-rest,inline)"><line x1="60" y1="160" x2="54" y2="310" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/><circle cx="54" cy="318" r="18" fill="var(--skin, #e7b38c)"/></g>
+      <g style="display:var(--arm-r-rest,inline)"><line x1="140" y1="160" x2="146" y2="310" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/><circle cx="146" cy="318" r="18" fill="var(--skin, #e7b38c)"/></g>
+    </g>
+  </symbol>
+  <symbol id="woman-run" viewBox="0 0 200 520" overflow="visible">
+    <g transform="rotate(8 100 300)">
+      <rect x="30" y="20" width="140" height="190" rx="60" fill="var(--hair, #2a1d18)"/>
+      <path d="M140 160 L166 226 L186 278" fill="none" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="188" cy="286" r="18" fill="var(--skin, #e7b38c)"/>
+      <path d="M114 384 L140 440 L170 474" fill="none" stroke="var(--skin, #e7b38c)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="156" y="466" width="40" height="20" rx="9" fill="var(--shoe, #0f141c)" transform="rotate(30 176 476)"/>
+      <path d="M86 384 L64 432 L84 478" fill="none" stroke="var(--skin, #e7b38c)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="66" y="472" width="40" height="20" rx="9" fill="var(--shoe, #0f141c)"/>
+      <path d="M60 290 H140 L164 396 H38Z" fill="var(--skirt, #3b4c5e)"/>
+      <rect x="60" y="140" width="80" height="160" rx="30" fill="var(--top, #d9c9a8)"/>
+      <rect x="89" y="118" width="22" height="26" fill="var(--skin-d, #c98f6b)"/>
+      <circle cx="100" cy="68" r="60" fill="var(--skin, #e7b38c)"/>
+      <path d="M34 90 C24 20 70 0 100 0 C134 0 178 20 166 90 C160 64 148 46 128 36 C116 52 108 56 100 56 C92 56 84 52 72 36 C52 46 40 64 34 90Z" fill="var(--hair, #2a1d18)"/>
+      <g style="display:var(--face-rest,inline)"><circle cx="78" cy="76" r="6" fill="var(--eye, #1a1a22)"/><circle cx="122" cy="76" r="6" fill="var(--eye, #1a1a22)"/><g style="display:var(--mouth-rest,inline)"><ellipse cx="100" cy="99" rx="8" ry="3" fill="var(--eye, #7a3b34)"/></g></g>
+      <path d="M60 160 L38 228 L66 262" fill="none" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="70" cy="264" r="18" fill="var(--skin, #e7b38c)"/>
+    </g>
+  </symbol>
+
+  <!-- carry: both arms forward, hands at (150,262) and (50,262); prop-box sits at (100,262) and draws both hands.
+       <svg class="who c-man arm-l-off arm-r-off"><use href="#man"/><use href="#arm-l-carry"/><use href="#arm-r-carry"/><use href="#prop-box" transform="translate(100 262)"/></svg> -->
+  <defs>
+    <g id="pose-r-carry"><path d="M142 160 L166 234 L150 262" fill="none" stroke="var(--sleeve, var(--shirt, #2f5f8f))" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/><circle cx="150" cy="262" r="19" fill="var(--skin, #e7b38c)"/></g>
+  </defs>
+  <symbol id="arm-r-carry" viewBox="0 0 200 520" overflow="visible"><use href="#pose-r-carry"/></symbol>
+  <symbol id="arm-l-carry" viewBox="0 0 200 520" overflow="visible"><g transform="matrix(-1 0 0 1 200 0)"><use href="#pose-r-carry"/></g></symbol>
+
+  <!-- ===== Kids and students =====
+       kid / kid-girl: Thai primary-school uniform, own frame 200 x 420 (shorter body, same head + shoulders as man,
+       so face-*, talk-*, acc-* and arm-* fit without a transform). Draw at height = cm x 2.6 (kid 120 cm = 312 px,
+       width = height x 200 / 420). student: high-school uniform in the man frame (165 cm).
+       Vars: --uniform (shirt) --shorts (shorts/skirt) --sock --tie --badge. Sleeve class: c-kid c-kid-girl c-student. -->
+  <symbol id="kid" viewBox="0 0 200 420" overflow="visible">
+    <rect x="68" y="296" width="26" height="100" rx="13" fill="var(--skin, #e7b38c)"/><rect x="106" y="296" width="26" height="100" rx="13" fill="var(--skin, #e7b38c)"/>
+    <rect x="68" y="364" width="26" height="32" rx="6" fill="var(--sock, #f4f4f0)"/><rect x="106" y="364" width="26" height="32" rx="6" fill="var(--sock, #f4f4f0)"/>
+    <rect x="58" y="394" width="40" height="24" rx="10" fill="var(--shoe, #0f141c)"/><rect x="102" y="394" width="40" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    <rect x="60" y="250" width="80" height="62" rx="14" fill="var(--shorts, #1f2a4a)"/>
+    <g style="display:var(--arm-l-rest,inline)"><line x1="60" y1="160" x2="54" y2="250" stroke="var(--uniform, #f4f4f0)" stroke-width="30" stroke-linecap="round"/><circle cx="54" cy="262" r="17" fill="var(--skin, #e7b38c)"/></g>
+    <g style="display:var(--arm-r-rest,inline)"><line x1="140" y1="160" x2="146" y2="250" stroke="var(--uniform, #f4f4f0)" stroke-width="30" stroke-linecap="round"/><circle cx="146" cy="262" r="17" fill="var(--skin, #e7b38c)"/></g>
+    <rect x="60" y="140" width="80" height="130" rx="28" fill="var(--uniform, #f4f4f0)"/>
+    <path d="M84 140 L100 160 L116 140" fill="none" stroke="#cfcfc8" stroke-width="5" stroke-linejoin="round"/>
+    <circle cx="100" cy="182" r="3" fill="#c9c9c2"/><circle cx="100" cy="206" r="3" fill="#c9c9c2"/><circle cx="100" cy="230" r="3" fill="#c9c9c2"/>
+    <path d="M114 178 h16 M114 186 h12" stroke="var(--badge, #2f5f8f)" stroke-width="3"/>
+    <use href="#head-short"/><use href="#fx-cheeks"/><use href="#eyes-dot"/>
+  </symbol>
+  <symbol id="kid-girl" viewBox="0 0 200 420" overflow="visible">
+    <circle cx="26" cy="98" r="24" fill="var(--hair, #16161c)"/><circle cx="174" cy="98" r="24" fill="var(--hair, #16161c)"/>
+    <circle cx="42" cy="84" r="7" fill="var(--tie, #e5383b)"/><circle cx="158" cy="84" r="7" fill="var(--tie, #e5383b)"/>
+    <rect x="70" y="300" width="24" height="96" rx="12" fill="var(--skin, #e7b38c)"/><rect x="106" y="300" width="24" height="96" rx="12" fill="var(--skin, #e7b38c)"/>
+    <rect x="70" y="364" width="24" height="32" rx="6" fill="var(--sock, #f4f4f0)"/><rect x="106" y="364" width="24" height="32" rx="6" fill="var(--sock, #f4f4f0)"/>
+    <rect x="60" y="394" width="40" height="24" rx="10" fill="var(--shoe, #0f141c)"/><rect x="100" y="394" width="40" height="24" rx="10" fill="var(--shoe, #0f141c)"/>
+    <path d="M58 240 H142 L156 318 H44Z" fill="var(--shorts, #1f2a4a)"/>
+    <path d="M78 248 L72 316 M100 248 V316 M122 248 L128 316" stroke="rgba(255,255,255,.15)" stroke-width="3"/>
+    <g style="display:var(--arm-l-rest,inline)"><line x1="60" y1="160" x2="54" y2="250" stroke="var(--uniform, #f4f4f0)" stroke-width="28" stroke-linecap="round"/><circle cx="54" cy="262" r="16" fill="var(--skin, #e7b38c)"/></g>
+    <g style="display:var(--arm-r-rest,inline)"><line x1="140" y1="160" x2="146" y2="250" stroke="var(--uniform, #f4f4f0)" stroke-width="28" stroke-linecap="round"/><circle cx="146" cy="262" r="16" fill="var(--skin, #e7b38c)"/></g>
+    <rect x="60" y="140" width="80" height="112" rx="28" fill="var(--uniform, #f4f4f0)"/>
+    <rect x="89" y="118" width="22" height="26" fill="var(--skin-d, #c98f6b)"/>
+    <path d="M100 152 L82 142 L82 164Z M100 152 L118 142 L118 164Z" fill="var(--shorts, #1f2a4a)"/><circle cx="100" cy="152" r="6" fill="var(--shorts, #1f2a4a)"/>
+    <circle cx="100" cy="65" r="65" fill="var(--skin, #e7b38c)"/>
+    <path d="M32 96 C18 18 62 -12 100 -12 C138 -12 182 18 168 96 C166 70 160 52 150 40 L50 40 C40 52 34 70 32 96Z" fill="var(--hair, #16161c)"/>
+    <use href="#fx-cheeks"/><use href="#eyes-dot"/>
+  </symbol>
+  <symbol id="student" viewBox="0 0 200 520" overflow="visible">
+    <use href="#legs-pants"/>
+    <g style="display:var(--arm-l-rest,inline)"><line x1="58" y1="160" x2="52" y2="320" stroke="var(--uniform, #f4f4f0)" stroke-width="36" stroke-linecap="round"/><circle cx="52" cy="330" r="20" fill="var(--skin, #e7b38c)"/></g>
+    <g style="display:var(--arm-r-rest,inline)"><line x1="142" y1="160" x2="148" y2="320" stroke="var(--uniform, #f4f4f0)" stroke-width="36" stroke-linecap="round"/><circle cx="148" cy="330" r="20" fill="var(--skin, #e7b38c)"/></g>
+    <rect x="58" y="140" width="84" height="175" rx="30" fill="var(--uniform, #f4f4f0)"/>
+    <rect x="58" y="292" width="84" height="12" fill="#1a1a22"/><rect x="92" y="290" width="16" height="16" rx="3" fill="#b9bcc0"/>
+    <path d="M84 140 L100 162 L116 140" fill="none" stroke="#cfcfc8" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M114 180 h18 M114 188 h14" stroke="var(--badge, #2f5f8f)" stroke-width="3"/>
+    <use href="#head-short"/><use href="#eyes-dot"/>
+  </symbol>
+
+  <!-- crowd: seven silhouettes of mixed height, frame 640 x 520. Front row = crowd (near-black), back row = crowd-far. Scale it
+       like a person (520 units = 170 cm). For depth, put a second crowd behind at opacity .6 inside .far. -->
+  <symbol id="crowd" viewBox="0 0 640 520" overflow="visible"><g fill="var(--crowd-far, #1b2233)"><circle cx="160" cy="62" r="60"/><rect x="98" y="122" width="124" height="400" rx="46"/></g><g fill="var(--crowd-far, #1b2233)"><circle cx="320" cy="81.4" r="57.5"/><rect x="260.6" y="138.8" width="118.8" height="383.2" rx="44.1"/></g><g fill="var(--crowd-far, #1b2233)"><circle cx="480" cy="53.2" r="61.2"/><rect x="416.8" y="114.3" width="126.4" height="407.7" rx="46.9"/></g><g fill="var(--crowd, #05070b)"><circle cx="80" cy="83.1" r="57.2"/><rect x="20.9" y="140.4" width="118.3" height="381.6" rx="43.9"/></g><g fill="var(--crowd, #05070b)"><circle cx="240" cy="107.8" r="54"/><rect x="184.2" y="161.8" width="111.6" height="360.2" rx="41.4"/></g><g fill="var(--crowd, #05070b)"><circle cx="400" cy="69" r="59.1"/><rect x="339" y="128.1" width="122.1" height="393.9" rx="45.3"/></g><g fill="var(--crowd, #05070b)"><circle cx="560" cy="97.2" r="55.4"/><rect x="502.8" y="152.6" width="114.5" height="369.4" rx="42.5"/></g></symbol>
+
+  <!-- more grip props (origin = hand centre, object first, hand last). prop-sack hangs BELOW the hand.
+       prop-box is a two-hand prop for the carry pose (origin between the hands, see arm-*-carry). -->
+  <symbol id="prop-bottle" overflow="visible"><rect x="-8" y="-88" width="16" height="14" rx="3" fill="#2f8fd0"/><rect x="-15" y="-76" width="30" height="84" rx="9" fill="#bfe3f5" opacity=".92" stroke="#7fb2cc" stroke-width="3"/><rect x="-15" y="-50" width="30" height="18" fill="#2f8fd0"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-radio" overflow="visible"><path d="M24 -70 L42 -112" stroke="#9aa3ad" stroke-width="4" stroke-linecap="round"/><rect x="-38" y="-72" width="76" height="60" rx="9" fill="#3a3f4a"/><circle cx="-14" cy="-42" r="15" fill="#23262d"/><path d="M-22 -42 H-6 M-14 -50 V-34" stroke="#4a505c" stroke-width="3"/><rect x="8" y="-62" width="22" height="10" rx="2" fill="var(--gold, #f6c445)"/><circle cx="19" cy="-32" r="6" fill="#9aa3ad"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-candle" overflow="visible"><circle cx="0" cy="-82" r="32" fill="#ffcf8a" opacity=".25"/><rect x="-9" y="-70" width="18" height="78" rx="3" fill="#f3ead2"/><path d="M0 -70 V-76" stroke="#2b2b2b" stroke-width="2"/><ellipse cx="0" cy="-86" rx="8" ry="14" fill="#ffd890"/><ellipse cx="0" cy="-82" rx="3.5" ry="7" fill="#fff6dc"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-map" overflow="visible"><path d="M-42 -84 L-14 -76 L14 -84 L42 -76 V6 L14 -2 L-14 6 L-42 -2Z" fill="#efe3c2" stroke="#c9b98f" stroke-width="3" stroke-linejoin="round"/><path d="M-14 -76 V6 M14 -84 V-2" stroke="#c9b98f" stroke-width="2"/><path d="M-32 -16 Q-12 -40 6 -36 T26 -60" fill="none" stroke="var(--red, #e5383b)" stroke-width="4" stroke-dasharray="6 5"/><path d="M22 -66 l10 10 M32 -66 l-10 10" stroke="var(--red, #e5383b)" stroke-width="4" stroke-linecap="round"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-rope" overflow="visible"><circle cx="0" cy="-36" r="28" fill="none" stroke="#c8a165" stroke-width="9"/><circle cx="0" cy="-36" r="16" fill="none" stroke="#a9844c" stroke-width="8"/><path d="M24 -20 Q40 0 30 24" fill="none" stroke="#c8a165" stroke-width="8" stroke-linecap="round"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-sack" overflow="visible"><path d="M-12 6 Q-44 20 -40 66 Q-36 90 0 90 Q36 90 40 66 Q44 20 12 6Z" fill="#b48a5a"/><path d="M-20 40 Q0 48 20 40" fill="none" stroke="#8a6a44" stroke-width="3"/><rect x="-15" y="-6" width="30" height="14" rx="6" fill="#8a6a44"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-bowl" overflow="visible"><path d="M-32 -26 A32 18 0 0 1 32 -26Z" fill="#fbfaf5"/><path d="M-38 -26 H38 A38 32 0 0 1 -38 -26Z" fill="#e9e4d6" stroke="#b9b2a2" stroke-width="3"/><path d="M-30 -14 H30" stroke="#4f6688" stroke-width="3"/><circle cx="0" cy="8" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-bandage" overflow="visible"><path d="M16 -30 Q44 -18 34 14" fill="none" stroke="var(--bandage, #f4f1ea)" stroke-width="12" stroke-linecap="round"/><rect x="-20" y="-54" width="40" height="44" rx="8" fill="var(--bandage, #f4f1ea)" stroke="#d8d2c4" stroke-width="3"/><ellipse cx="0" cy="-54" rx="20" ry="6" fill="#e8e3d6" stroke="#d8d2c4" stroke-width="3"/><circle cx="0" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+  <symbol id="prop-box" overflow="visible"><rect x="-64" y="-62" width="128" height="86" rx="6" fill="var(--box, #c49a6c)" stroke="#8a6a44" stroke-width="4"/><path d="M-64 -40 H64" stroke="#8a6a44" stroke-width="3"/><rect x="-12" y="-62" width="24" height="86" fill="#e3c99a" opacity=".7"/><circle cx="-50" cy="0" r="19" fill="var(--skin, #e7b38c)"/><circle cx="50" cy="0" r="19" fill="var(--skin, #e7b38c)"/></symbol>
+
+  <!-- ===== Info icons (icon-*) — viewBox 0 0 100 100 =====
+       For cards, HUD, checklists, maps. Thick ink outline, one accent. Draw at 64-140 px. No glow. -->
+  <symbol id="icon-clock" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="var(--paper, #f6f1e6)" stroke="var(--ink, #18202e)" stroke-width="7"/><path d="M50 50 V26 M50 50 L68 60" stroke="var(--ink, #18202e)" stroke-width="7" stroke-linecap="round"/><circle cx="50" cy="50" r="5" fill="var(--red, #e5383b)"/></symbol>
+  <symbol id="icon-thermo" viewBox="0 0 100 100"><path d="M40 62 V20 A10 10 0 0 1 60 20 V62" fill="var(--paper, #f6f1e6)" stroke="var(--ink, #18202e)" stroke-width="6"/><circle cx="50" cy="76" r="16" fill="var(--red, #e5383b)" stroke="var(--ink, #18202e)" stroke-width="6"/><rect x="46" y="34" width="8" height="34" fill="var(--red, #e5383b)"/><path d="M62 30 h8 M62 42 h8 M62 54 h8" stroke="var(--ink, #18202e)" stroke-width="4"/></symbol>
+  <symbol id="icon-warn" viewBox="0 0 100 100"><path d="M50 8 L94 88 H6Z" fill="var(--gold, #f6c445)" stroke="var(--ink, #18202e)" stroke-width="6" stroke-linejoin="round"/><rect x="45" y="34" width="10" height="30" rx="5" fill="var(--ink, #18202e)"/><circle cx="50" cy="75" r="6" fill="var(--ink, #18202e)"/></symbol>
+  <symbol id="icon-check" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="var(--ok, #3fa66b)"/><path d="M29 52 L44 67 L72 36" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-cross" viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="var(--red, #e5383b)"/><path d="M34 34 L66 66 M66 34 L34 66" stroke="#fff" stroke-width="10" stroke-linecap="round"/></symbol>
+  <symbol id="icon-arrow" viewBox="0 0 100 100"><path d="M14 50 H76 M56 28 L80 50 L56 72" fill="none" stroke="var(--icon, #18202e)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-drop" viewBox="0 0 100 100"><path d="M50 8 C30 40 22 54 22 66 A28 28 0 0 0 78 66 C78 54 70 40 50 8Z" fill="#4ea3e0" stroke="var(--ink, #18202e)" stroke-width="5"/><path d="M36 66 A14 14 0 0 0 46 80" fill="none" stroke="#d6efff" stroke-width="5" stroke-linecap="round"/></symbol>
+  <symbol id="icon-bolt" viewBox="0 0 100 100"><path d="M58 6 L22 56 H48 L40 94 L78 40 H52Z" fill="var(--gold, #f6c445)" stroke="var(--ink, #18202e)" stroke-width="5" stroke-linejoin="round"/></symbol>
+  <symbol id="icon-fire" viewBox="0 0 100 100"><path d="M50 6 C66 30 82 42 80 64 A30 30 0 0 1 20 64 C18 48 30 40 34 26 C40 38 44 42 48 44 C46 30 46 18 50 6Z" fill="#f08a24" stroke="var(--ink, #18202e)" stroke-width="5" stroke-linejoin="round"/><path d="M50 50 C60 60 64 66 62 74 A12 12 0 0 1 38 74 C38 66 44 62 50 50Z" fill="var(--gold, #f6c445)"/></symbol>
+  <symbol id="icon-pin" viewBox="0 0 100 100"><path d="M50 94 C30 66 18 52 18 36 A32 32 0 0 1 82 36 C82 52 70 66 50 94Z" fill="var(--red, #e5383b)" stroke="var(--ink, #18202e)" stroke-width="5"/><circle cx="50" cy="36" r="12" fill="var(--paper, #f6f1e6)"/></symbol>
+  <symbol id="icon-skull" viewBox="0 0 100 100"><path d="M50 10 C26 10 14 28 14 46 C14 60 22 66 28 70 V84 H72 V70 C78 66 86 60 86 46 C86 28 74 10 50 10Z" fill="var(--paper, #f6f1e6)" stroke="var(--ink, #18202e)" stroke-width="5" stroke-linejoin="round"/><circle cx="36" cy="48" r="10" fill="var(--ink, #18202e)"/><circle cx="64" cy="48" r="10" fill="var(--ink, #18202e)"/><path d="M50 58 L45 68 H55Z M40 76 V84 M50 76 V84 M60 76 V84" fill="var(--ink, #18202e)" stroke="var(--ink, #18202e)" stroke-width="4"/></symbol>
+  <symbol id="icon-eye" viewBox="0 0 100 100"><path d="M6 50 Q50 6 94 50 Q50 94 6 50Z" fill="var(--paper, #f6f1e6)" stroke="var(--ink, #18202e)" stroke-width="6" stroke-linejoin="round"/><circle cx="50" cy="50" r="17" fill="var(--red, #e5383b)"/><circle cx="50" cy="50" r="8" fill="var(--ink, #18202e)"/></symbol>
+
+  <!-- ===== Set pieces (set-*) =====
+       viewBox = the piece's size in px at the cast scale (cm x 2.6, the same scale as the people), so draw it at its
+       viewBox width/height (x your scene's camera scale) and it matches a 442 px man. Colours read the set tokens. -->
+  <symbol id="set-door" viewBox="0 0 234 533"><rect width="234" height="533" fill="var(--door-frame, #3e2a1b)"/><rect x="14" y="14" width="206" height="519" fill="var(--door, #6b4a2f)"/><rect x="38" y="44" width="158" height="190" rx="6" fill="none" stroke="rgba(0,0,0,.25)" stroke-width="6"/><rect x="38" y="270" width="158" height="226" rx="6" fill="none" stroke="rgba(0,0,0,.25)" stroke-width="6"/><circle cx="196" cy="290" r="11" fill="var(--gold, #f6c445)"/></symbol>
+  <symbol id="set-door-open" viewBox="0 0 234 533"><rect width="234" height="533" fill="var(--door-frame, #3e2a1b)"/><rect x="14" y="14" width="206" height="519" fill="var(--void, #05070b)"/><path d="M14 14 L92 40 L92 506 L14 533Z" fill="var(--door, #6b4a2f)"/><path d="M92 40 L100 44 V504 L92 506Z" fill="rgba(0,0,0,.35)"/><circle cx="80" cy="290" r="9" fill="var(--gold, #f6c445)"/></symbol>
+  <symbol id="set-window" viewBox="0 0 260 312"><rect width="260" height="300" rx="6" fill="var(--frame, #e9e4d6)"/><rect x="16" y="16" width="228" height="268" fill="var(--glass, #1c2c4f)"/><path d="M130 16 V284 M16 150 H244" stroke="var(--frame, #e9e4d6)" stroke-width="12"/><path d="M40 40 L90 40 L40 100Z" fill="rgba(255,255,255,.12)"/><rect x="-10" y="294" width="280" height="18" rx="4" fill="var(--frame, #e9e4d6)"/></symbol>
+  <symbol id="set-table" viewBox="0 0 312 195"><rect width="312" height="22" rx="6" fill="var(--wood-0, #6b4a2f)"/><rect x="20" y="22" width="22" height="173" fill="var(--wood-1, #3e2a1b)"/><rect x="270" y="22" width="22" height="173" fill="var(--wood-1, #3e2a1b)"/><rect x="42" y="22" width="228" height="20" fill="var(--wood-1, #3e2a1b)" opacity=".6"/></symbol>
+  <symbol id="set-chair" viewBox="0 0 117 234"><rect x="6" y="0" width="105" height="118" rx="10" fill="var(--wood-0, #6b4a2f)"/><rect x="20" y="16" width="77" height="86" rx="6" fill="var(--wood-1, #3e2a1b)" opacity=".5"/><rect x="0" y="112" width="117" height="18" rx="5" fill="var(--wood-0, #6b4a2f)"/><rect x="8" y="130" width="14" height="104" fill="var(--wood-1, #3e2a1b)"/><rect x="95" y="130" width="14" height="104" fill="var(--wood-1, #3e2a1b)"/></symbol>
+  <symbol id="set-tap" viewBox="0 0 160 200"><rect x="64" y="0" width="32" height="26" rx="6" fill="#9aa3ad"/><path d="M80 26 V46 Q80 58 92 58 H112 V74" fill="none" stroke="#b9c1ca" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/><rect x="70" y="8" width="20" height="10" rx="3" fill="var(--red, #e5383b)"/><path d="M8 96 H152 L138 150 H22Z" fill="var(--basin, #e9e4d6)" stroke="#b9b2a2" stroke-width="4" stroke-linejoin="round"/><rect x="72" y="150" width="16" height="50" fill="#9aa3ad"/></symbol>
+  <symbol id="set-stairs" viewBox="0 0 300 300"><path d="M0 300 V250 H60 V200 H120 V150 H180 V100 H240 V50 H300 V300Z" fill="var(--wall-0, #33465c)"/><path d="M0 250 H60 M60 200 H120 M120 150 H180 M180 100 H240 M240 50 H300" stroke="var(--cream, #efe8da)" stroke-width="6" opacity=".55"/></symbol>
+  <symbol id="set-bulb" viewBox="0 0 120 220"><circle cx="60" cy="170" r="50" fill="var(--lamp, #ffcf8a)" opacity=".22"/><path d="M60 0 V130" stroke="#2b2b2b" stroke-width="4"/><rect x="48" y="126" width="24" height="20" rx="4" fill="#5c5f66"/><circle cx="60" cy="166" r="22" fill="var(--lamp, #ffcf8a)"/><circle cx="54" cy="160" r="7" fill="#fff3d6"/></symbol>
+  <symbol id="set-bed" viewBox="0 0 520 200"><rect x="0" y="20" width="26" height="180" rx="6" fill="var(--wood-0, #6b4a2f)"/><rect x="0" y="110" width="520" height="56" rx="10" fill="var(--wood-1, #3e2a1b)"/><rect x="494" y="84" width="26" height="116" rx="6" fill="var(--wood-0, #6b4a2f)"/><rect x="26" y="86" width="468" height="34" rx="14" fill="#efe8da"/><rect x="40" y="62" width="110" height="38" rx="18" fill="#fbfaf5"/><path d="M190 80 Q300 66 494 86 V122 H170Z" fill="var(--blanket, #4f6688)"/></symbol>
+  <symbol id="set-shrine" viewBox="0 0 200 360"><rect x="88" y="180" width="24" height="180" fill="var(--shrine-pole, #c9b98f)"/><rect x="40" y="170" width="120" height="16" rx="3" fill="var(--shrine-pole, #c9b98f)"/><rect x="58" y="96" width="84" height="74" fill="var(--shrine, #e9e4d6)" stroke="var(--gold, #f6c445)" stroke-width="4"/><rect x="86" y="120" width="28" height="50" rx="12" fill="var(--void, #05070b)"/><path d="M40 100 L100 40 L160 100Z" fill="var(--shrine-roof, #b3261e)" stroke="var(--gold, #f6c445)" stroke-width="4" stroke-linejoin="round"/><path d="M60 62 L100 14 L140 62Z" fill="var(--shrine-roof, #b3261e)" stroke="var(--gold, #f6c445)" stroke-width="4" stroke-linejoin="round"/><path d="M100 14 V0 M40 100 L28 90 M160 100 L172 90" stroke="var(--gold, #f6c445)" stroke-width="5" stroke-linecap="round"/><circle cx="72" cy="182" r="6" fill="var(--red, #e5383b)"/><circle cx="128" cy="182" r="6" fill="#f3ead2"/></symbol>
+
+  <!-- reach: arm forward and up to a latch, handle or door at shoulder height. Hand anchor r (226,176) l (-26,176). -->
+  <defs>
+    <g id="pose-r-reach"><path d="M142 160 L186 196" fill="none" stroke="rgba(0,0,0,.28)" stroke-width="41" stroke-linecap="round"/><path d="M142 160 L186 196" fill="none" stroke="var(--sleeve, var(--shirt, #2f5f8f))" stroke-width="34" stroke-linecap="round"/><path d="M186 196 L210 184" fill="none" stroke="var(--forearm, var(--sleeve, var(--shirt, #2f5f8f)))" stroke-width="29" stroke-linecap="round"/><path d="M210 184 L226 176" fill="none" stroke="var(--skin, #e7b38c)" stroke-width="20" stroke-linecap="round"/><circle cx="226" cy="176" r="19" fill="var(--skin, #e7b38c)"/></g>
+  </defs>
+  <symbol id="arm-r-reach" viewBox="0 0 200 520" overflow="visible"><use href="#pose-r-reach"/></symbol>
+  <symbol id="arm-l-reach" viewBox="0 0 200 520" overflow="visible"><g transform="matrix(-1 0 0 1 200 0)"><use href="#pose-r-reach"/></g></symbol>
+
+  <!-- two more moods (man frame, same rules as the other face-* symbols) -->
+  <symbol id="face-wary" viewBox="0 0 200 520" overflow="visible">
+    <circle cx="84" cy="74" r="6" fill="var(--eye, #1a1a22)"/><circle cx="130" cy="74" r="6" fill="var(--eye, #1a1a22)"/>
+    <path d="M67 67 H89 M113 67 H135" stroke="var(--eye, #1a1a22)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M64 57 L90 62 M110 62 L136 57" stroke="var(--brow, var(--hair, #16161c))" stroke-width="6" stroke-linecap="round"/>
+    <path d="M92 102 H108" stroke="var(--mouth, #7a3b34)" stroke-width="4" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="face-guilty" viewBox="0 0 200 520" overflow="visible">
+    <circle cx="77" cy="79" r="5" fill="var(--eye, #1a1a22)"/><circle cx="123" cy="79" r="5" fill="var(--eye, #1a1a22)"/>
+    <path d="M67 73 Q77 69 87 73 M113 73 Q123 69 133 73" fill="none" stroke="var(--eye, #1a1a22)" stroke-width="5" stroke-linecap="round"/>
+    <path d="M62 59 L90 51 M110 51 L138 59" stroke="var(--brow, var(--hair, #16161c))" stroke-width="7" stroke-linecap="round"/>
+    <path d="M90 105 Q100 100 110 105" fill="none" stroke="var(--mouth, #7a3b34)" stroke-width="5" stroke-linecap="round"/>
+  </symbol>
+</svg>

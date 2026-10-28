@@ -1,0 +1,349 @@
+{
+  "title": "เที่ยวสุดท้าย หนึ่งล้านบาท · ตัวอย่าง",
+  "bpm": 75,
+  "voice": "male",
+  "voices": {
+    "male": "eleven:xYmBpJREC3WfqEFpbPvO",
+    "female": "eleven:MYZYcGOqrkYQcwDunXl7",
+    "old_male": "eleven:5KvpaGteYkNayiswuX2h",
+    "old_female": "eleven:p2Wol3C7j3rHbfOrbL18"
+  },
+  "voiceModel": "eleven_v3",
+  "breath": 0.15,
+  "switchBreath": 0.3,
+  "minBeats": 2,
+  "fitStep": 0.25,
+  "sfx": {
+    "knock3": {
+      "prompt": "three firm knocks from inside a steel cargo box of a small pickup truck, muffled hollow metallic thuds",
+      "dur": 2,
+      "gain": 0.8
+    },
+    "kid-cough": {
+      "prompt": "small child coughing weakly, muffled behind a metal door",
+      "dur": 2,
+      "gain": 0.7
+    },
+    "ring": {
+      "prompt": "smartphone ringing, simple modern marimba ringtone, one cycle",
+      "dur": 2.5,
+      "gain": 0.5
+    },
+    "unlatch": {
+      "prompt": "heavy metal latch bar on a truck rear door being unlocked, single clunk",
+      "dur": 1,
+      "gain": 0.8
+    },
+    "door-slam": {
+      "prompt": "heavy steel rear door of a truck slamming shut, single loud clunk",
+      "dur": 1,
+      "gain": 0.8
+    },
+    "creak-load": {
+      "prompt": "truck leaf springs creaking as heavy weight settles onto the back",
+      "dur": 1.5,
+      "gain": 0.7
+    },
+    "engine": {
+      "prompt": "inside a pickup truck cab driving at night, steady low engine hum and road noise",
+      "dur": 6,
+      "gain": 0.3
+    },
+    "brakes": {
+      "prompt": "pickup truck braking hard on asphalt, short tire screech",
+      "dur": 2,
+      "gain": 0.6
+    },
+    "steps": {
+      "prompt": "a few slow footsteps on a concrete floor",
+      "dur": 2,
+      "gain": 0.6
+    },
+    "drip": {
+      "prompt": "single water drop falling onto a metal floor",
+      "dur": 0.6,
+      "gain": 0.6
+    },
+    "msg": {
+      "prompt": "short soft smartphone message notification chime",
+      "dur": 0.6,
+      "gain": 0.45
+    },
+    "keys": {
+      "prompt": "a bunch of keys jingling then set down on a paper notebook",
+      "dur": 1.2,
+      "gain": 0.6
+    },
+    "night-amb": {
+      "prompt": "quiet night ambience in the countryside, crickets, light wind",
+      "dur": 6,
+      "gain": 0.35
+    }
+  },
+  "shots": [
+    {
+      "scene": "promo",
+      "view": "chan/smile",
+      "who": "chan",
+      "beats": 4,
+      "text": "“เอก… ขับรถไปส่งของ\nให้ข้าหน่อย”",
+      "tone": "warm, sly",
+      "voice": "old_male",
+      "mood": 0.35,
+      "music": true,
+      "voLead": 0.3,
+      "cues": [
+        [
+          0,
+          "night-amb"
+        ]
+      ]
+    },
+    {
+      "scene": "promo",
+      "view": "chan/key",
+      "who": "chan",
+      "beats": 3.5,
+      "text": "“[ล้านนึง] ไปไหม?”",
+      "tone": "softly, tempting",
+      "voice": "old_male",
+      "mood": 0.45,
+      "hush": true,
+      "hold": 0.5
+    },
+    {
+      "scene": "promo",
+      "view": "ek/cap",
+      "who": "ek",
+      "beats": 4.25,
+      "text": "“ล้านนึง?\n…ขนอะไรครับลุง?”",
+      "tone": "surprised, curious",
+      "mood": 0.45
+    },
+    {
+      "scene": "promo",
+      "view": "rear/open",
+      "who": "chan",
+      "beats": 2.25,
+      "text": "“เดี๋ยวไปรับระหว่างทาง…”",
+      "tone": "calm",
+      "voice": "old_male",
+      "mood": 0.5,
+      "cues": [
+        [
+          0.2,
+          "creak-load"
+        ]
+      ]
+    },
+    {
+      "scene": "promo",
+      "view": "chan/grin",
+      "who": "chan",
+      "beats": 5,
+      "text": "“แต่รับแล้ว\n{ห้ามเปิดดู}”",
+      "tone": "slowly, quietly",
+      "voice": "old_male",
+      "mood": 0.6,
+      "hold": 0.5
+    },
+    {
+      "scene": "promo",
+      "view": "slip/in",
+      "beats": 5,
+      "text": "เงินเข้าจริง[ครึ่งล้าน]…\nเอกเลยรับงาน",
+      "tone": "tense",
+      "mood": 0.45,
+      "cues": [
+        [
+          0.2,
+          "msg"
+        ],
+        [
+          2.5,
+          "keys"
+        ]
+      ]
+    },
+    {
+      "scene": "promo",
+      "view": "mirror/empty",
+      "beats": 3.75,
+      "text": "จุดรับของไม่มีใคร…",
+      "tone": "tense",
+      "mood": 0.6,
+      "cues": [
+        [
+          0,
+          "engine"
+        ]
+      ]
+    },
+    {
+      "scene": "promo",
+      "view": "road/dip",
+      "beats": 4.25,
+      "text": "แต่ท้ายรถ\nกลับ{หนักขึ้น}",
+      "tone": "tense",
+      "mood": 0.7,
+      "voLead": 0.8,
+      "cues": [
+        [
+          0.1,
+          "door-slam"
+        ],
+        [
+          0.4,
+          "creak-load"
+        ]
+      ]
+    },
+    {
+      "scene": "promo",
+      "view": "cab/knock",
+      "beats": 3,
+      "text": "",
+      "vo": "",
+      "mood": 0.75,
+      "cues": [
+        [
+          0.2,
+          "knock3"
+        ],
+        [
+          2.2,
+          "kid-cough"
+        ]
+      ]
+    },
+    {
+      "scene": "promo",
+      "view": "cab/mom",
+      "who": "mom",
+      "beats": 5,
+      "text": "“พี่! เปิดหน่อย…\nลูกหนูหายใจไม่ออก!”",
+      "tone": "urgent, desperate",
+      "voice": "female",
+      "mood": 0.8,
+      "fx": "muffled"
+    },
+    {
+      "scene": "promo",
+      "view": "latch/ring",
+      "beats": 2.5,
+      "text": "",
+      "vo": "",
+      "mood": 0.8,
+      "cues": [
+        [
+          0,
+          "brakes"
+        ],
+        [
+          1.2,
+          "ring"
+        ]
+      ]
+    },
+    {
+      "scene": "promo",
+      "view": "phone/chan",
+      "who": "chan",
+      "beats": 2.25,
+      "text": "“อย่าเปิด เอก”",
+      "tone": "calm, firm",
+      "voice": "old_male",
+      "mood": 0.8,
+      "fx": "phone"
+    },
+    {
+      "scene": "promo",
+      "view": "latch/ek",
+      "who": "ek",
+      "beats": 3.5,
+      "text": "“แต่มีเด็ก\nอยู่ข้างใน!”",
+      "tone": "urgent, shouting",
+      "mood": 0.85
+    },
+    {
+      "scene": "promo",
+      "view": "rear/yank",
+      "beats": 2.5,
+      "text": "",
+      "vo": "",
+      "mood": 0.85,
+      "cues": [
+        [
+          0.3,
+          "unlatch"
+        ]
+      ]
+    },
+    {
+      "scene": "promo",
+      "view": "inside/doll",
+      "beats": 6,
+      "text": "แต่พอเปิดออก…\nกลับ{ไม่มีใคร}",
+      "tone": "softly",
+      "mood": 0.9,
+      "voLead": 1,
+      "cues": [
+        [
+          0,
+          "hit"
+        ],
+        [
+          1.8,
+          "drip"
+        ]
+      ],
+      "hold": 0.5
+    },
+    {
+      "scene": "promo",
+      "view": "side/voice",
+      "who": "girl",
+      "beats": 4.25,
+      "text": "“แม่…\nลุงเห็นเราแล้ว”",
+      "tone": "childlike, small voice, whispers",
+      "voice": "female",
+      "mood": 0.95,
+      "voLead": 0.5
+    },
+    {
+      "scene": "promo",
+      "view": "side/two",
+      "beats": 9,
+      "text": "เอกเพิ่งรู้… ว่าเที่ยวนี้\nเขากำลัง{ขับรถส่งผี}",
+      "tone": "softly, ominous",
+      "style": "red",
+      "mood": 1,
+      "cues": [
+        [
+          0,
+          "bighit"
+        ]
+      ],
+      "voLead": 0.6,
+      "hold": 0.5
+    },
+    {
+      "scene": "promo",
+      "view": "end/drive",
+      "beats": 3.5,
+      "text": "แล้วลุงชาญ\nจ้างเขามาทำไม?",
+      "tone": "tense, quietly",
+      "mood": 0.6
+    },
+    {
+      "scene": "promo",
+      "view": "end/card",
+      "beats": 7,
+      "text": "ดูต่อใน\n[เที่ยวสุดท้าย หนึ่งล้านบาท]",
+      "tone": "calm",
+      "mood": 0.4,
+      "music": true,
+      "hold": 2
+    }
+  ]
+}

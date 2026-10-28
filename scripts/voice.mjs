@@ -52,14 +52,16 @@ for (const s of S.shots) {
   const ext = provider === 'gemini' ? 'wav' : 'mp3';
   const tone = s.tone || S.voiceTone;
   const eText = tone ? String(tone).split(',').map(t => `[${t.trim()}]`).join(' ') + ' ' + s.vo : s.vo;
+  // a shot may override ElevenLabs settings for its line, e.g. { "stability": 0 } for a bigger, hammier read
+  const eSettings = s.voiceSettings ? { ...E_SETTINGS, ...s.voiceSettings } : E_SETTINGS;
   const key = crypto.createHash('sha1').update(JSON.stringify(
-    provider === 'eleven' ? [voice, E_MODEL, E_LANG, E_SETTINGS, eText]
+    provider === 'eleven' ? [voice, E_MODEL, E_LANG, eSettings, eText]
       : provider === 'gemini' ? [voice, STYLE, s.vo] : [voice, RATE, PITCH, s.vo])).digest('hex').slice(0, 16);
   const mp3 = path.join(cacheDir, `${key}.${ext}`), raw = path.join(out, `${id}_raw.wav`), wav = path.join(out, `${id}.wav`);
   if (!fs.existsSync(mp3)) {
     if (provider === 'gemini') run('python', ['-I', path.join(HERE, 'gemini_tts.py'), '--voice', voice.slice(7), '--style', STYLE, '--text', s.vo, '--out', mp3]);
     else if (provider === 'eleven') {
-      try { await elevenTTS({ voice: voice.slice(7), text: eText, out: mp3, model: E_MODEL, lang: E_LANG, settings: E_SETTINGS }); }
+      try { await elevenTTS({ voice: voice.slice(7), text: eText, out: mp3, model: E_MODEL, lang: E_LANG, settings: eSettings }); }
       catch (e) { die(`line ${id}: ${e.message}`); }
     }
     else run('python', ['-m', 'edge_tts', '--voice', voice, `--rate=${RATE}`, `--pitch=${PITCH}`, '--text', s.vo, '--write-media', mp3]);
@@ -70,11 +72,15 @@ for (const s of S.shots) {
   const room = s.dur - s.voLead - TAIL;
   const d = mediaDuration(raw);
   const tempo = Math.min(1.3, Math.max(1, d / room));
-  run('ffmpeg', ['-v', 'error', '-y', '-i', raw, '-af', `atempo=${tempo.toFixed(3)}`, '-ar', '48000', '-ac', '1', '-c:a', 'pcm_s16le', wav]);
+  // fx keeps the speaker's own voice and only changes how it reaches us: "phone" = band-limited like a phone line,
+  // "muffled" = through a wall or a steel door
+  const FX = { phone: ',highpass=f=330,lowpass=f=3300,acompressor=threshold=0.1:ratio=4,volume=1.6', muffled: ',lowpass=f=1100,volume=1.4' };
+  const fx = FX[s.fx] || '';
+  run('ffmpeg', ['-v', 'error', '-y', '-i', raw, '-af', `atempo=${tempo.toFixed(3)}${fx}`, '-ar', '48000', '-ac', '1', '-c:a', 'pcm_s16le', wav]);
   fs.rmSync(raw);
   const len = mediaDuration(wav);
   const over = len > room + 0.02;
-  index.push({ shot: s.i, file: `${id}.wav`, start: round(s.start + s.voLead), dur: round(len), tempo: round(tempo) });
+  index.push({ shot: s.i, file: `${id}.wav`, start: round(s.start + s.voLead), dur: round(len), tempo: round(tempo), raw: round(d), vo: s.vo });
   console.log(`${id}  ${len.toFixed(2)}s / ${s.dur.toFixed(1)}s ${tempo > 1 ? 'x' + tempo.toFixed(2) : '     '} ${over ? '⚠ OVER — shorten the line or add beats' : ''}  ${s.vo}`);
 }
 fs.writeFileSync(path.join(out, 'index.json'), JSON.stringify(index, null, 1));
@@ -84,5 +90,8 @@ const inputs = index.flatMap(v => ['-i', path.join(out, v.file)]);
 const delays = index.map((v, k) => `[${k}:a]adelay=${Math.round(v.start * 1000)}:all=1[a${k}]`).join(';');
 // speech sits at -16 LUFS; score.mjs keeps the bed ~10 dB under it while a line plays
 const mix = index.map((_, k) => `[a${k}]`).join('') + `amix=inputs=${index.length}:normalize=0,highpass=f=90,loudnorm=I=-16:TP=-2:LRA=7,aresample=48000,apad=whole_dur=${S.total},atrim=0:${S.total}[out]`;
-run('ffmpeg', ['-v', 'error', '-y', ...inputs, '-filter_complex', `${delays};${mix}`, '-map', '[out]', '-ar', '48000', '-ac', '1', '-c:a', 'pcm_s16le', path.join(dir, 'assets', 'voice.wav')]);
+// a long film has hundreds of lines: pass the filter graph as a file so the command stays under the Windows limit
+const graph = `${delays};${mix}`, graphFile = path.join(out, 'mix.txt');
+if (graph.length > 6000) fs.writeFileSync(graphFile, graph);
+run('ffmpeg', ['-v', 'error', '-y', ...inputs, ...(graph.length > 6000 ? ['-/filter_complex', graphFile] : ['-filter_complex', graph]), '-map', '[out]', '-ar', '48000', '-ac', '1', '-c:a', 'pcm_s16le', path.join(dir, 'assets', 'voice.wav')]);
 console.log(`✓ assets/voice.wav  (${index.length} lines, voice ${VOICE})`);

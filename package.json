@@ -5,15 +5,22 @@
   "description": "HyperFrames workflow for Thai vertical twist-ending short stories",
   "type": "module",
   "license": "MIT",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "new": "node scripts/new-episode.mjs",
     "build": "node scripts/build.mjs",
     "voice": "node scripts/voice.mjs",
     "voices": "node scripts/eleven_voices.mjs",
+    "sfx": "node scripts/sfx.mjs",
     "score": "node scripts/score.mjs",
     "audio": "node scripts/audio.mjs",
+    "fit": "node scripts/fit.mjs",
+    "story": "node scripts/story-check.mjs",
     "check": "node scripts/check.mjs",
+    "qc": "node scripts/qc.mjs",
+    "gallery": "node scripts/gallery.mjs",
     "final": "node scripts/finalize.mjs"
   }
 }

@@ -1,0 +1,282 @@
+{
+ "7684800186545c3c": {
+  "name": "knock3",
+  "prompt": "three firm knocks from inside a steel cargo box of a small pickup truck, muffled hollow metallic thuds",
+  "dur": 2,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "5d1782df4794dcf5": {
+  "name": "pound",
+  "prompt": "frantic pounding with fists on a steel cargo door from the inside, muffled, urgent",
+  "dur": 2.5,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "e999bcb124ceea89": {
+  "name": "knock1",
+  "prompt": "one slow knock on a thin steel wall, hollow metallic thud, quiet room",
+  "dur": 1,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "2d70d1776e1cdf88": {
+  "name": "brakes",
+  "prompt": "pickup truck braking hard on asphalt, short tire screech",
+  "dur": 2,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "687a8e8c2881a15e": {
+  "name": "brakes-soft",
+  "prompt": "small truck slowing down and stopping gently, soft brake squeal",
+  "dur": 1.5,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "8b3743ffddb23564": {
+  "name": "kid-cough",
+  "prompt": "small child coughing weakly, muffled behind a metal door",
+  "dur": 2,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "00de620270524523": {
+  "name": "kid-cry",
+  "prompt": "small child crying softly and slowly fading to silence, muffled behind a steel wall",
+  "dur": 4,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "c00905ddc675ad5f": {
+  "name": "old-cough",
+  "prompt": "old man dry raspy cough, muffled from inside a closed metal truck box",
+  "dur": 2.5,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "5ba29539e3a9136b": {
+  "name": "ring",
+  "prompt": "smartphone ringing, simple modern marimba ringtone, one cycle",
+  "dur": 2.5,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "a7b3b1010c882fb1": {
+  "name": "ring2",
+  "prompt": "basic mobile phone ringing outdoors at night, old style ringtone",
+  "dur": 2,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "c65ee63f5cb61a84": {
+  "name": "unlatch",
+  "prompt": "heavy metal latch bar on a truck rear door being unlocked, single clunk",
+  "dur": 1,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "36092f26726da7fc": {
+  "name": "night-amb",
+  "prompt": "quiet night ambience in the countryside, crickets, light wind",
+  "dur": 6,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "922926a86af0175e": {
+  "name": "rain",
+  "prompt": "heavy rain on a car windshield with wipers going, inside a moving car",
+  "dur": 5,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "a9a912e81abf16db": {
+  "name": "shutter",
+  "prompt": "metal roll-up warehouse shutter rattling open",
+  "dur": 2.5,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "a58d3cf2037d8579": {
+  "name": "steps",
+  "prompt": "a few slow footsteps on a concrete floor",
+  "dur": 2,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "986244b25742c282": {
+  "name": "door-open",
+  "prompt": "metal rear doors of a cargo truck creaking open slowly",
+  "dur": 2,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "65f82e451364e091": {
+  "name": "msg",
+  "prompt": "short soft smartphone message notification chime",
+  "dur": 0.6,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "c8c179add5800e43": {
+  "name": "book",
+  "prompt": "a thick paper notebook placed down on a car hood, soft thud",
+  "dur": 1,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "4f51297bcc846787": {
+  "name": "dial",
+  "prompt": "phone outgoing call ringback tone, two rings, nobody answers",
+  "dur": 3,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "b42d497b64a74c11": {
+  "name": "send",
+  "prompt": "short swoosh of a phone message being sent",
+  "dur": 0.6,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "d6b6042889e8b521": {
+  "name": "engine-start",
+  "prompt": "old pickup truck engine starting and settling to idle",
+  "dur": 3,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "ed06907719bea652": {
+  "name": "engine",
+  "prompt": "inside a pickup truck cab driving at night, steady low engine hum and road noise",
+  "dur": 6,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "f07ceec7ad1d38ef": {
+  "name": "engine-off",
+  "prompt": "truck engine switching off, then quiet ticking",
+  "dur": 2,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "deb30e3a0cda861c": {
+  "name": "hazard",
+  "prompt": "car hazard lights clicking, ticking relay inside the cab",
+  "dur": 3,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "c21d14e1557436f3": {
+  "name": "window",
+  "prompt": "car window being wound down by hand crank",
+  "dur": 1.5,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "e1f1f5f34c42b85c": {
+  "name": "creak-load",
+  "prompt": "truck leaf springs creaking as heavy weight settles onto the back",
+  "dur": 1.5,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "9c5c5683810ae114": {
+  "name": "door-slam",
+  "prompt": "heavy steel rear door of a truck slamming shut, single loud clunk",
+  "dur": 1,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "34974110cfac505b": {
+  "name": "click",
+  "prompt": "single plastic dashboard switch click",
+  "dur": 0.5,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "e038439a45b0df13": {
+  "name": "roll",
+  "prompt": "a small hard object rolling back and forth on a metal truck floor",
+  "dur": 2.5,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "5b36c26aaf4aaf40": {
+  "name": "drip",
+  "prompt": "single water drop falling onto a metal floor",
+  "dur": 0.6,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "0628785e6959fadc": {
+  "name": "door-car",
+  "prompt": "pickup truck cab door closing",
+  "dur": 1,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "d5fa22cb709abb71": {
+  "name": "thump",
+  "prompt": "palm slamming hard on a steering wheel",
+  "dur": 0.6,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "93625adf2efe51a0": {
+  "name": "horn",
+  "prompt": "long loud car horn blast on an empty road",
+  "dur": 2,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "06f9e708f6b4e9a8": {
+  "name": "skid",
+  "prompt": "tires skidding on wet asphalt during a sharp turn",
+  "dur": 2,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "a76b3db67a74241c": {
+  "name": "siren",
+  "prompt": "distant emergency vehicle siren at night on a rural road",
+  "dur": 4,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "e2e5df7f1a63589d": {
+  "name": "radio",
+  "prompt": "emergency two-way radio chatter and static at a night accident scene",
+  "dur": 4,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "cdb88f5481ab5951": {
+  "name": "horn-truck",
+  "prompt": "big truck air horn blaring very close",
+  "dur": 2,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "43bba55b091928a1": {
+  "name": "crash",
+  "prompt": "car crash impact, metal crunch and glass breaking",
+  "dur": 2.5,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "3a1de011e5a5bd04": {
+  "name": "keys",
+  "prompt": "a bunch of keys jingling then set down on a paper notebook",
+  "dur": 1.2,
+  "influence": 0.5,
+  "episode": "last-ride"
+ },
+ "9a39da4030d00c33": {
+  "name": "pier-steps",
+  "prompt": "several people walking slowly on old wooden pier planks",
+  "dur": 3,
+  "influence": 0.5,
+  "episode": "last-ride"
+ }
+}

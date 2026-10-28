@@ -5,18 +5,22 @@
 //
 //   node scripts/score.mjs episodes/<slug>
 //
-// story.json knobs per shot:  mood 0..1 (dread), music true (music-box motif), cues [[beat, type], ...]
+// story.json knobs per shot:  mood 0..1 (dread), music true (music-box motif), hush true (drone fades out: a held silence),
+// cues [[beat, type], ...]
 // cue types: hit bighit stamp scratch creak scrape step shriek whoosh bell flip tick
+// or a name from story.json `sfx` (ElevenLabs effect cached in sfx-library/ by `npm run sfx`; mixed here, never generated here)
 import fs from 'node:fs';
 import path from 'node:path';
-import { episodeDir, loadStory, run } from './lib.mjs';
+import { spawnSync } from 'node:child_process';
+import { episodeDir, loadStory, run, sfxFile } from './lib.mjs';
 
 const dir = episodeDir(process.argv[2]);
 const S = loadStory(dir);
 const SR = 48000;
 const N = Math.ceil(S.total * SR);
 const B = S.beat;
-const shotAt = t => { let s = S.shots[0]; for (const x of S.shots) if (t >= x.start) s = x; return s; };
+// last shot that has started by t (binary search: a long film has hundreds of shots and this runs per sample)
+const shotAt = t => { let lo = 0, hi = S.shots.length - 1; while (lo < hi) { const m = (lo + hi + 1) >> 1; if (t >= S.shots[m].start) lo = m; else hi = m - 1; } return S.shots[lo]; };
 
 function mulberry32(a) {
   return function () {
@@ -122,10 +126,12 @@ const moodAt = t => {
 };
 {
   // drone: low A with a fifth, darker and noisier as mood rises; drops out right before each big hit
-  const lpL = biquad('lp', 260, 0.7), lpR = biquad('lp', 260, 0.7);
+  const lpL = biquad('lp', 260, 0.7), lpR = biquad('lp', 260, 0.7), hushK = 1 - Math.exp(-1 / (0.35 * SR));
+  let hush = 1;
   for (let i = 0; i < N; i++) {
     const t = i / SR, m = moodAt(t);
     let g = 0.1 + 0.16 * m;
+    if (shotAt(t).hush || hush !== 1) { hush += ((shotAt(t).hush ? 0.02 : 1) - hush) * hushK; if (Math.abs(hush - 1) < 1e-4) hush = 1; g *= hush; }
     if (BIG.some(b => t > b - 0.45 && t < b)) g *= 0.05;
     if (t > S.total - 2) g *= Math.max(0, (S.total - t) / 2);
     if (t < 0.05) g *= t / 0.05;
@@ -159,9 +165,34 @@ for (const s of S.shots) {
   }
 }
 cur = bus.sfx;
+// generated effect: decode the cached mp3 to 48 kHz stereo float, trim to `dur`, fade the last 0.15 s, scale by `gain`
+const sampled = new Map();
+function loadSampled(name) {
+  if (sampled.has(name)) return sampled.get(name);
+  const e = S.sfx[name], f = sfxFile(e);
+  let out = null;
+  if (!fs.existsSync(f)) console.warn(`⚠ sfx "${name}" is not generated yet (npm run sfx -- ${path.relative(process.cwd(), dir)}); cue skipped`);
+  else {
+    const r = spawnSync('ffmpeg', ['-v', 'error', '-i', f, '-t', String(e.dur ?? 2), '-f', 'f32le', '-ac', '2', '-ar', String(SR), '-'], { maxBuffer: 1 << 28 });
+    if (r.status !== 0) console.warn(`⚠ sfx "${name}" could not be decoded`);
+    else out = new Float32Array(new Uint8Array(r.stdout).buffer, 0, Math.floor(r.stdout.length / 4));   // copy: the Buffer's offset may not be 4-aligned
+  }
+  sampled.set(name, out);
+  return out;
+}
+function playSampled(name, t0) {
+  const pcm = loadSampled(name);
+  if (!pcm) return;
+  const g = S.sfx[name].gain ?? 0.7, n = pcm.length / 2, fade = Math.min(n, Math.floor(0.15 * SR)), s0 = Math.floor(t0 * SR);
+  for (let i = 0; i < n; i++) {
+    const k = g * (i > n - fade ? (n - i) / fade : 1);
+    if (s0 + i >= 0 && s0 + i < N) { bus.sfx[0][s0 + i] += pcm[2 * i] * k; bus.sfx[1][s0 + i] += pcm[2 * i + 1] * k; }
+  }
+}
 for (const s of S.shots) for (const [beat, type] of s.cues) {
-  if (!SFX[type]) { console.warn(`⚠ shot ${s.i}: unknown cue "${type}"`); continue; }
-  SFX[type](s.start + beat * B);
+  if (SFX[type]) SFX[type](s.start + beat * B);
+  else if (S.sfx && S.sfx[type]) playSampled(type, s.start + beat * B);
+  else console.warn(`⚠ shot ${s.i}: unknown cue "${type}"`);
 }
 
 // ---------- room reverb ----------

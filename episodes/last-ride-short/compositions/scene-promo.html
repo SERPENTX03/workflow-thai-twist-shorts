@@ -1,0 +1,182 @@
+<!doctype html>
+<!-- Vertical promo for เที่ยวสุดท้าย หนึ่งล้านบาท: first twist only (the ghost passengers); the second twist stays for the
+     full film. Ek looks like an ordinary living man throughout (no lr-spirit). Uses the portrait lr- sets.
+     Views: chan/smile|key|grin · ek/cap · rear/open|yank · slip/in · mirror/empty · road/dip · cab/knock|mom ·
+     latch/ring|ek · phone/chan · inside/doll · side/voice|two · end/drive|card -->
+<html data-composition-variables='[{"id":"shots","type":"string","label":"Shots (from build)","default":"[]"}]'>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <link rel="stylesheet" href="assets/kit/stories/last-ride.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #05070c; }
+        .pm-set { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: visible; }
+        .pm-ring { position: absolute; width: 110px; height: 110px; border: 7px solid rgba(240, 236, 226, .85); border-radius: 50%; opacity: 0; }
+        .pm-torch { position: absolute; left: -1460px; top: -1040px; width: 4000px; height: 4000px; pointer-events: none;
+          background: radial-gradient(circle at 50% 50%, rgba(255, 240, 200, .18) 0, rgba(0, 0, 0, 0) 360px, rgba(2, 4, 8, .62) 640px); }
+        .pm-drop { position: absolute; width: 20px; height: 28px; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: #8fd0ff; opacity: 0; }
+        .pm-glow { position: absolute; border-radius: 50%; background: radial-gradient(circle, rgba(143, 184, 232, .6), rgba(143, 184, 232, 0) 70%); opacity: 0; }
+        .pm-title { position: absolute; left: 60px; right: 60px; top: 560px; text-align: center; font: 700 104px/1.2 var(--font-display); color: var(--lr-cream); }
+        .pm-title span { display: block; color: var(--gold); }
+        .pm-cta { position: absolute; left: 0; right: 0; top: 900px; text-align: center; }
+        .pm-cta .pm-play { display: inline-block; width: 0; height: 0; border-left: 30px solid #fff; border-top: 18px solid transparent; border-bottom: 18px solid transparent; margin-right: 18px; vertical-align: -4px; }
+        .pm-ch { margin-top: 26px; font: 700 64px/1.2 var(--font-display); color: var(--lr-cream); }
+        .pm-ch em { font-style: normal; color: var(--gold); }
+        .pm-cta b { display: inline-block; padding: 0 40px; height: 84px; line-height: 84px; border-radius: 42px; background: var(--red); color: #fff; font: 700 46px/84px var(--font-ui); }
+        .pm-panel { position: absolute; inset: 0; opacity: 0; }
+      </style>
+      <div id="root" data-composition-id="scene-promo" data-width="1080" data-height="1920"></div>
+      <script src="assets/kit/stories/last-ride.js"></script>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const S = LR.shots("scene-promo", [{ at: 0, dur: 3, view: "chan/smile", who: "chan" }]);
+        const P = (inner, cls = '') => `<svg class="pm-set ${cls}" viewBox="0 0 1080 1920" overflow="visible">${inner}</svg>`;
+        const cam = (c, from, to, ease = 'sine.inOut') => c.tl.fromTo(c.q('.lr-cam'), from, { ...to, duration: c.dur, ease }, c.at);
+        const NIGHT = (a = 0.35) => `<div class="lr-night" style="background:rgba(6,10,26,${a})"></div>`;
+        const wh = P('<use href="#lr-warehouse-wall" width="1080" height="1240"/><use href="#lr-warehouse-floor" y="1220" width="1080" height="700"/>');
+        const lamp = P('<use href="#lr-warehouse-lamp" width="1080" height="1240"/>');
+        const road = (extra = '') => P('<use href="#lr-road-bg" width="1080" height="1240"/><use href="#lr-road-ground" y="1200" width="1080" height="720"/>' + extra);
+        const roadFg = P('<use href="#lr-road-fg" y="1600" width="1080" height="320"/>');
+        // the cab close-up (1080 x 960) sits at y 180; the dash continues below it
+        const cab = (c, o = {}) => {
+          const box = 'x="170" y="203" width="300" height="780"';
+          const talk = c.who === 'ek' && !o.face;
+          return `<div style="position:absolute;inset:0;background:#24272d"></div>` + P(`<g transform="translate(0 180)" class="c-lr-ek lr-cream-box${o.face ? ' face-off lr-no-cap' : ''}${talk ? ' mouth-off' : ''}">
+              <use href="#lr-cab-back" width="1080" height="960"/>
+              <g id="${c.id}-ek"><use href="#lr-ek-drive" ${box}/>${o.face ? `<use href="#face-${o.face}" ${box}/><use href="#lr-ek-cap" ${box}/>` : ''}${talk ? `<use id="${c.id}-ek-m" href="#talk-m" ${box}/>` : ''}</g>
+              <use href="#lr-cab-dash" width="1080" height="960"/><use href="#lr-cab-wheel" width="1080" height="960"/>
+              <use href="#lr-ek-drive-hands" ${box}/><use href="#lr-cab-frame" width="1080" height="960"/></g>`) + NIGHT(0.25);
+        };
+        const ring = (c, i, x, y) => `<div class="pm-ring" id="${c.id}-r${i}" style="left:${x - 55}px;top:${y - 55}px"></div>`;
+        const ringAt = (c, i, t) => c.tl.fromTo(`#${c.id}-r${i}`, { scale: 0.3, opacity: 0.9 }, { scale: 2.4, opacity: 0, duration: 0.6, ease: 'power2.out' }, c.t(t));
+        const shake = (c, t, n = 3, a = 8) => c.tl.fromTo(c.q('.lr-cam'), { x: 0 }, { x: a, duration: 0.045, yoyo: true, repeat: n, ease: 'none', immediateRender: false }, c.t(t));
+        const girl = (o) => LR.who('girl', { cls: 'lr-wet lr-rim', r: 'hold', rProp: 'lr-doll', rPropT: ' scale(.74)', over: '<use href="#lr-hand-cover" transform="translate(112 244)"/>', ...o });
+        const mom = (o) => LR.who('mom', { cls: 'lr-wet lr-rim', ...o });
+
+        const views = {
+          // Chan under the warehouse lamp: the smile widens; then the key, held up toward us
+          chan: {
+            html: (c) => {
+              const base = { x: 540, feet: 1950, h: 1700, cls: 'lr-rim', l: c.act === 'key' ? 'hold' : null, lProp: c.act === 'key' ? 'key' : null };
+              if (c.act === 'smile') return wh + lamp + LR.who('chan', { ...base, id: `${c.id}-chan`, face: 'lr-grin' }) + NIGHT(0.42);
+              return wh + lamp + LR.who('chan', { ...base, id: `${c.id}-chan`, face: 'lr-grin' }) + NIGHT(c.act === 'grin' ? 0.5 : 0.42);
+            },
+            anim: (c) => {
+              if (c.act === 'smile') cam(c, { scale: 1, y: 0 }, { scale: 1.06, y: 30 });
+              else if (c.act === 'key') cam(c, { scale: 1.06, y: 0 }, { scale: 1.3, y: -180 }, 'power2.in');
+              else cam(c, { scale: 1.12, y: 60 }, { scale: 1.2, y: 90 });
+            },
+          },
+          // Ek touches the brim of his cap, glances at the box truck, turns back
+          ek: {
+            html: (c) => wh + LR.truck(-720, 1180, 0.95, { cls: 'lr-cream-box' }) + lamp
+              + `<div id="${c.id}-a">${LR.who('ek', { x: 640, feet: 1800, h: 1350, r: 'raise', face: 'wary', cls: 'lr-rim' })}</div>`
+              + `<div id="${c.id}-b" style="opacity:0">${LR.who('ek', { id: `${c.id}-ek`, x: 640, feet: 1800, h: 1350, talk: true, cls: 'lr-rim' })}</div>` + NIGHT(0.3),
+            anim: (c) => { c.tl.set(`#${c.id}-b`, { opacity: 1 }, c.p(0.35)); c.tl.set(`#${c.id}-a`, { opacity: 0 }, c.p(0.35)); cam(c, { scale: 1, x: 0 }, { scale: 1.05, x: -30 }); },
+          },
+          // the back doors open on nothing; later he yanks them open on the road
+          rear: {
+            html: (c) => c.act === 'open'
+              ? wh + LR.rear(540, 1190, 1.3) + lamp + NIGHT(0.25)
+              : road() + LR.rear(560, 1230, 1.25, { cls: 'lr-doors-open lr-prints' }) + LR.who('ek', { x: 250, feet: 1300, h: 600, l: 'hold', lProp: 'phone', face: 'shock', cls: 'lr-rim' })
+                + P('<path d="M330 900 L760 700 L800 1040Z" fill="rgba(255,240,200,.3)" style="mix-blend-mode:screen"/>') + roadFg + NIGHT(0.35),
+            anim: (c) => {
+              if (c.act === 'open') { c.tl.set(c.q('.lr-truck'), { '--lr-doors-shut': 'none', '--lr-doors-open': 'inline' }, c.t(0.4)); cam(c, { scale: 1 }, { scale: 1.08 }); }
+              else { c.tl.set(c.q('.lr-truck'), { '--lr-doors-shut': 'inline', '--lr-doors-open': 'none' }, c.at); c.tl.set(c.q('.lr-truck'), { '--lr-doors-shut': 'none', '--lr-doors-open': 'inline' }, c.t(0.35)); shake(c, 0.35, 3, 10); cam(c, { scale: 1 }, { scale: 1.06 }); }
+            },
+          },
+          // the transfer: half a million
+          slip: {
+            html: (c) => `<div style="position:absolute;inset:0;background:#0b0f16"></div><div style="position:absolute;left:298px;top:150px;width:420px;height:860px;transform-origin:0 0;scale:1.15">${LR.phone('slip', { time: '23:12', style: 'left:0;top:0' })}</div>`
+              + P(`<g transform="translate(540 1230)" class="c-lr-ek"><use href="#lr-arm-big"/></g>`),
+            anim: (c) => { c.tl.fromTo(c.q('.lr-screen--slip'), { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, c.t(0.2)); cam(c, { scale: 1 }, { scale: 1.06 }); },
+          },
+          // the side mirror at the sala: nobody there
+          mirror: {
+            html: (c) => P('<rect width="1080" height="1920" fill="#1b212b"/><rect width="200" height="1920" fill="#d6c9ac" opacity=".9"/>')
+              + `<div style="position:absolute;left:150px;top:300px;width:860px;height:700px;border-radius:120px;overflow:hidden;border:26px solid #4a505a;box-sizing:border-box;background:#0d1320;box-shadow:0 30px 60px rgba(0,0,0,.6)">
+                  <div style="position:absolute;left:-480px;top:-130px;width:1920px;height:1080px">${LR.layer('<use href="#lr-l-road-back" width="1920" height="1080"/><use href="#lr-road-sala" x="1100" y="300" width="380" height="330"/>')}${LR.layer('<path d="M560 120 L780 260 L780 900 L560 1080Z" fill="var(--lr-box)"/>', { cls: 'lr-cream-box' })}<div class="lr-night" style="background:rgba(6,10,26,.25)"></div></div>
+                  <div style="position:absolute;inset:0;background:linear-gradient(120deg, rgba(255,255,255,.12), rgba(255,255,255,0) 40%)"></div></div>` + NIGHT(0.15),
+            anim: (c) => cam(c, { scale: 1 }, { scale: 1.08 }),
+          },
+          // bang: the back door shuts by itself and the truck sinks
+          road: {
+            html: (c) => road('<use href="#lr-road-sala" x="600" y="890" width="420" height="365"/><use href="#lr-garland" x="670" y="1040" width="40" height="120"/>')
+              + LR.truck(40, 1250, 0.66, { cls: 'lr-cream-box lr-lights-on', lights: true }) + roadFg + NIGHT(0.35),
+            anim: (c) => {
+              c.tl.fromTo(c.q('.lr-body'), { y: 0, rotation: 0 }, { y: 10, rotation: -1.4, svgOrigin: '680 520', duration: 0.35, ease: 'power2.out' }, c.t(0.35));
+              shake(c, 0.1, 3, 6);
+              cam(c, { scale: 1.15, x: 120 }, { scale: 1.2, x: 150 });
+            },
+          },
+          // driving: three knocks behind his head, a child's cough; then the mother's voice
+          cab: {
+            html: (c) => cab(c, { face: c.act === 'mom' ? 'shock' : 'wary' }) + ring(c, 0, 640, 420) + ring(c, 1, 640, 420) + ring(c, 2, 640, 420),
+            anim: (c) => {
+              if (c.act === 'knock') { [0.25, 0.75, 1.25].forEach((t, i) => { ringAt(c, i, t); shake(c, t, 3, 6); }); cam(c, { scale: 1 }, { scale: 1.05 }); }
+              else { if (c.vo) [0, 1].forEach((i) => ringAt(c, i, c.line[0] + i * 0.4)); cam(c, { scale: 1, y: 0 }, { scale: 1.12, y: 60 }); }
+            },
+          },
+          // his hand on the latch (watch on that wrist); the phone lights up / he shouts back
+          latch: {
+            html: (c) => c.act === 'ring'
+              ? P('<rect width="1080" height="1920" fill="#0b0f16"/>') + P('<use href="#lr-latch" x="40" y="160" width="1000" height="1000"/>', 'lr-cream-box')
+                + P(`<g id="${c.id}-arm"><g transform="translate(860 670) rotate(-30)" class="c-lr-ek"><use href="#lr-arm-big"/><use href="#lr-watch-big"/></g></g>`)
+                + `<div class="pm-glow" id="${c.id}-glow" style="left:-120px;top:900px;width:560px;height:560px"></div>` + NIGHT(0.2)
+              : road() + LR.rear(700, 1230, 1.15) + LR.who('ek', { id: `${c.id}-ek`, x: 440, feet: 1330, h: 640, l: 'hold', lProp: 'phone', r: 'reach', talk: true, cls: 'lr-rim' }) + roadFg + NIGHT(0.35),
+            anim: (c) => {
+              if (c.act === 'ring') { c.tl.fromTo(`#${c.id}-glow`, { opacity: 0 }, { opacity: 1, duration: 0.22, yoyo: true, repeat: 5, ease: 'sine.inOut' }, c.t(1.0)); shake(c, 0.05, 5, 8); cam(c, { scale: 1 }, { scale: 1.06 }); }
+              else cam(c, { scale: 1.05, x: 60, y: 120 }, { scale: 1.12, x: 80, y: 160 });
+            },
+          },
+          phone: {
+            html: (c) => `<div style="position:absolute;inset:0;background:#0b0f16"></div><div id="${c.id}-ph" style="position:absolute;left:298px;top:150px;width:420px;height:860px;transform-origin:0 0;scale:1.15">${LR.phone('on-call', { time: '03:41', timer: '00:03', style: 'left:0;top:0' })}</div>`
+              + P(`<g transform="translate(540 1230)" class="c-lr-ek"><use href="#lr-arm-big"/></g>`),
+            anim: (c) => cam(c, { scale: 1 }, { scale: 1.05 }),
+          },
+          // inside the box: empty, wet prints, the doll dripping
+          inside: {
+            html: (c) => LR.rear(540, 1500, 2.1, { cls: 'lr-doors-open lr-prints lr-wet', style: '--lr-in-side:#4a4f57;--lr-in-top:#3c4148;--lr-in-back:#40454c;--lr-in-floor:#6c737e;--lr-print:rgba(150,200,235,.75)', inner: '<use href="#lr-doll" transform="translate(260 446) rotate(-78) scale(.42)"/>' })
+              + `<div class="pm-torch" id="${c.id}-t"></div><div class="pm-drop" id="${c.id}-d" style="left:470px;top:960px"></div>`,
+            anim: (c) => {
+              c.tl.fromTo(`#${c.id}-t`, { x: 300, y: -500 }, { x: -40, y: 160, duration: c.dur * 0.55, ease: 'sine.inOut' }, c.at);
+              c.tl.fromTo(`#${c.id}-d`, { y: 0, opacity: 0.95 }, { y: 120, opacity: 0, duration: 0.5, ease: 'power2.in', repeat: 2, repeatDelay: 0.6 }, c.t(1.6));
+              cam(c, { scale: 1 }, { scale: 1.08 });
+            },
+          },
+          // a child's voice right beside him; he turns: the mother and the girl, pale and soaked, far too close
+          side: {
+            html: (c) => c.act === 'voice'
+              ? road() + LR.who('ek', { x: 540, feet: 2400, h: 2150, face: 'shock', cls: 'lr-rim' }) + NIGHT(0.4)
+              : road() + LR.rear(900, 1230, 0.9, { cls: 'lr-doors-open lr-prints' }) + mom({ x: 720, feet: 1240, h: 760 }) + girl({ x: 900, feet: 1250, h: 530 })
+                + LR.who('ek', { x: 220, feet: 1600, h: 1100, l: 'hold', lProp: 'phone', face: 'shock', cls: 'lr-rim' })
+                + P('<path d="M300 1010 L760 760 L820 1120Z" fill="rgba(255,240,200,.28)" style="mix-blend-mode:screen"/>') + NIGHT(0.4),
+            anim: (c) => c.act === 'voice' ? cam(c, { scale: 1, x: 0 }, { scale: 1.08, x: -40 }) : cam(c, { scale: 1.12, x: -60, y: 60 }, { scale: 1.04, x: 0, y: 0 }, 'power2.out'),
+          },
+          // his pale face; the box truck drives into the dark road; the title
+          end: {
+            html: (c) => c.act === 'drive'
+              ? `<div class="pm-panel" id="${c.id}-p0" style="opacity:1">${road() + LR.who('ek', { x: 540, feet: 2350, h: 2100, face: 'shock', cls: 'lr-rim' }) + NIGHT(0.5)}</div>`
+                + `<div class="pm-panel" id="${c.id}-p1">${road() + `<div id="${c.id}-tr" style="position:absolute;inset:0">${LR.truck(140, 1250, 0.62, { cls: 'lr-cream-box lr-lights-on', lights: true })}</div>` + roadFg + NIGHT(0.55)}</div>`
+              : P('<g opacity=".2" transform="translate(332 1110) scale(.32)"><use href="#lr-truck-side" width="1300" height="620"/></g>', 'lr-cream-box')
+                + `<div class="pm-title">เที่ยวสุดท้าย<span>หนึ่งล้านบาท</span></div><div class="pm-cta"><b><i class="pm-play"></i>ดูเรื่องเต็มใน YouTube</b><div class="pm-ch">ช่อง <em>เล่าหักมุม</em></div></div>`,
+            anim: (c) => {
+              if (c.act === 'drive') {
+                c.tl.fromTo(`#${c.id}-p1`, { opacity: 0 }, { opacity: 1, duration: 0.3 }, c.p(0.45));
+                c.tl.fromTo(`#${c.id}-tr`, { x: 0 }, { x: 900, duration: c.dur * 0.55, ease: 'power1.in' }, c.p(0.45));
+                cam(c, { scale: 1 }, { scale: 1.06 });
+              } else {
+                c.tl.fromTo(c.q('.pm-title'), { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, c.t(0.1));
+                c.tl.fromTo(c.q('.pm-cta'), { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.4, ease: 'back.out(2)' }, c.t(0.5));
+              }
+            },
+          },
+          _: { html: () => '' },
+        };
+        LR.run({ comp: 'scene-promo', prefix: 'pm', tl, shots: S, views });
+        window.__timelines["scene-promo"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

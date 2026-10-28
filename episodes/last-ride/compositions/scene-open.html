@@ -1,0 +1,155 @@
+<!doctype html>
+<!-- Cold open: the box truck on the night road, the knocking, the latch, Chan's call. Views (story.json `view`):
+     road/knock|pound|shout · cab/brake · rear/run|fade · latch/ring|hold · phone/call-chan · call/chan|ek|wait ·
+     face/freeze · black/unlock -->
+<html data-composition-variables='[{"id":"shots","type":"string","label":"Shots (from build)","default":"[]"}]'>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <link rel="stylesheet" href="assets/kit/stories/last-ride.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #05070c; }
+        .op-dash { position: absolute; left: 0; top: 0; }
+        .op-ring { position: absolute; border: 6px solid rgba(240, 236, 226, .85); border-radius: 50%; opacity: 0; }
+        .op-beam { position: absolute; pointer-events: none; mix-blend-mode: screen; }
+        .op-glow { position: absolute; border-radius: 50%; background: radial-gradient(circle, rgba(143, 184, 232, .55), rgba(143, 184, 232, 0) 70%); }
+        .op-buzz { position: absolute; font: 700 44px/1 var(--font-display); color: #cfe0f5; opacity: 0; }
+        .op-phone-wrap { position: absolute; left: 750px; top: 120px; width: 420px; height: 860px; }
+      </style>
+      <div data-hf-id="hf-2sqk" id="root" data-composition-id="scene-open" data-width="1920" data-height="1080"></div>
+      <script src="assets/kit/stories/last-ride.js"></script>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const S = LR.shots("scene-open", [{ at: 0, dur: 3.4, view: "road/knock" }, { at: 3.4, dur: 2, view: "road/pound" }, { at: 5.4, dur: 3, view: "rear/run" }]);
+        const L = LR.layer;
+        const sky = L('<use href="#lr-l-road-sky" width="1920" height="1080"/><use href="#lr-l-road-ground" y="600" width="1920" height="480"/>');
+
+        // knock rings on the box wall at given seconds into the shot
+        function rings(c, x, y, times, big) {
+          let h = '';
+          times.forEach((t, i) => { h += `<div class="op-ring" id="${c.id}-ring${i}" style="left:${x - 40}px;top:${y - 40}px;width:80px;height:80px"></div>`; });
+          return h;
+        }
+        function ringAnim(c, times, big) {
+          times.forEach((t, i) => c.tl.fromTo(`#${c.id}-ring${i}`, { scale: 0.3, opacity: 0.9 }, { scale: big ? 3 : 2.2, opacity: 0, duration: 0.55, ease: 'power2.out' }, c.t(t)));
+        }
+        const KNOCK = { knock: [0.25, 0.75, 1.25], pound: [0.15, 0.4, 0.65, 0.9, 1.15, 1.4], shout: [0.1, 0.35, 0.6] };
+
+        const views = {
+          // side view: the cream box truck drives right through the night; knocks show as rings on the box
+          road: {
+            html: (c) => sky + `<svg class="lr-layer" viewBox="0 0 1920 1080"><g id="${c.id}-dash"><use href="#lr-l-road-dash" x="-120" y="752" width="2160" height="12"/></g></svg>`
+              + LR.truck(470, 840, 0.66, { id: `${c.id}-truck`, cls: 'lr-cream-box lr-lights-on', lights: true })
+              + rings(c, 760, 600, KNOCK[c.act] || [])
+              + '<div class="lr-night"></div>',
+            anim: (c) => {
+              c.tl.fromTo(`#${c.id}-dash`, { x: 0 }, { x: -240 * Math.ceil(c.dur * 3), duration: c.dur, ease: 'none' }, c.at);
+              c.tl.fromTo(c.q('.lr-wheel-a use, .lr-wheel-b use'), { rotation: 0 }, { rotation: 360 * c.dur * 1.6, svgOrigin: '0 0', duration: c.dur, ease: 'none' }, c.at);
+              const times = KNOCK[c.act] || [];
+              ringAnim(c, times, c.act === 'pound');
+              const amp = c.act === 'pound' ? 5 : 3;
+              times.forEach((t) => c.tl.fromTo(c.q('.lr-body'), { x: 0 }, { x: amp, duration: 0.05, yoyo: true, repeat: 3, ease: 'none' }, c.t(t)));
+              LR.cam(c, { scale: 1.02, x: 0 }, { scale: c.act === 'shout' ? 1.12 : 1.06, x: c.act === 'shout' ? -120 : -40 });
+            },
+          },
+          // through the windscreen: Ek drives, brakes hard, the cap tips, he grabs the phone
+          cab: {
+            html: (c) => L('<use href="#lr-l-cab-out" width="1920" height="1080"/>')
+              + `<svg class="lr-layer c-lr-ek lr-no-cap lr-cream-box" viewBox="0 0 1920 1080"><g transform="translate(352 0) scale(1.125)">
+                  <use href="#lr-cab-back" width="1080" height="960"/>
+                  <g id="${c.id}-ek"><use href="#lr-ek-drive" x="170" y="203" width="300" height="780"/><use href="#face-shock" x="170" y="203" width="300" height="780" class="op-shock" style="opacity:0"/>
+                    <g id="${c.id}-cap"><use href="#lr-ek-cap" x="170" y="203" width="300" height="780"/></g></g>
+                  <use href="#lr-cab-dash" width="1080" height="960"/><use href="#lr-cab-wheel" width="1080" height="960"/>
+                  <g id="${c.id}-hands"><use href="#lr-ek-drive-hands" x="170" y="203" width="300" height="780"/></g>
+                  <use href="#lr-cab-frame" width="1080" height="960"/></g></svg>`
+              + '<div class="lr-night" style="background:rgba(6,10,26,.25)"></div>',
+            anim: (c) => {
+              const t = Math.min(0.5, c.dur * 0.2);
+              c.tl.fromTo(`#${c.id}-ek`, { y: 0 }, { y: 26, duration: 0.18, ease: 'power3.out' }, c.t(t));
+              c.tl.fromTo(`#${c.id}-cap`, { rotation: 0, x: 0, y: 0 }, { rotation: -14, x: -10, y: -14, svgOrigin: '320 230', duration: 0.25, ease: 'back.out(2)' }, c.t(t));
+              c.tl.fromTo(c.q('.op-shock'), { opacity: 0 }, { opacity: 1, duration: 0.01 }, c.t(t));
+              c.tl.set(`#${c.id}-ek`, { '--face-rest': 'none' }, c.t(t));
+              c.tl.fromTo(c.q('.lr-cam'), { x: 0 }, { x: 14, duration: 0.05, yoyo: true, repeat: 5, ease: 'none' }, c.t(t));
+              c.tl.fromTo(`#${c.id}-hands`, { y: 0 }, { y: 30, duration: 0.3, ease: 'power2.in' }, c.t(t + 0.9));
+            },
+          },
+          // the rear of the box truck on the road: Ek runs in with the phone torch; later the crying fades
+          rear: {
+            html: (c) => L('<use href="#lr-l-road-back" width="1920" height="1080"/>')
+              + LR.rear(1080, 900, 0.92, { id: `${c.id}-truck` })
+              + `<svg class="op-beam" id="${c.id}-beam" viewBox="0 0 1920 1080" style="left:0;top:0;width:1920px;height:1080px"><path d="M800 560 L1130 380 L1210 640Z" fill="rgba(255,240,200,.28)"/></svg>`
+              + LR.who('ek', { id: `${c.id}-ek`, x: c.act === 'run' ? 640 : 860, feet: 930, h: 470, l: 'hold', lProp: 'phone', r: c.act === 'run' ? null : 'reach', face: 'wary', cls: 'lr-rim' })
+              + rings(c, 1080, 560, c.act === 'run' ? [1.3] : [])
+              + '<div class="lr-night"></div>',
+            anim: (c) => {
+              if (c.act === 'run') {
+                c.tl.fromTo(`#${c.id}-ek`, { x: -900 }, { x: 0, duration: 1.0, ease: 'power2.out' }, c.at);
+                c.tl.fromTo(`#${c.id}-beam`, { opacity: 0 }, { opacity: 1, duration: 0.4 }, c.t(0.8));
+                ringAnim(c, [1.3], false);
+                LR.cam(c, { scale: 1 }, { scale: 1.06 });
+              } else {
+                c.tl.fromTo(`#${c.id}-beam`, { opacity: 1 }, { opacity: 0.35, duration: c.dur, ease: 'sine.in' }, c.at);
+                LR.cam(c, { scale: 1.05, y: 0 }, { scale: 1.16, y: 40 });
+              }
+            },
+          },
+          // close-up: his hand on the latch lever (watch on that wrist, not dwelt on); the phone rings off-screen
+          latch: {
+            html: (c) => L('<rect width="1920" height="1080" fill="#0b0f16"/>')
+              + `<svg class="lr-layer lr-cream-box" viewBox="0 0 1920 1080"><use href="#lr-latch" x="560" y="40" width="1000" height="1000"/></svg>`
+              + `<svg class="lr-layer c-lr-ek" viewBox="0 0 1920 1080"><g id="${c.id}-arm"><g transform="translate(1390 548) rotate(-37)"><use href="#lr-arm-big"/><use href="#lr-watch-big"/></g></g></svg>`
+              + `<div class="op-glow" id="${c.id}-glow" style="left:-160px;top:620px;width:620px;height:620px;opacity:0"></div>`
+              + `<div class="op-buzz" id="${c.id}-buzz" style="left:110px;top:760px">ร…ร…</div>`
+              + '<div class="lr-night" style="background:radial-gradient(ellipse at 60% 50%, rgba(6,10,26,0), rgba(6,10,26,.7) 75%)"></div>',
+            anim: (c) => {
+              LR.cam(c, { scale: 1 }, { scale: 1.08 });
+              if (c.act === 'ring') {
+                c.tl.fromTo(`#${c.id}-glow`, { opacity: 0 }, { opacity: 1, duration: 0.25, yoyo: true, repeat: 5, ease: 'sine.inOut' }, c.t(0.7));
+                c.tl.fromTo(`#${c.id}-arm`, { x: 0 }, { x: -8, duration: 0.12, ease: 'power2.out' }, c.t(0.8));
+              } else {
+                c.tl.fromTo(`#${c.id}-arm`, { x: 0 }, { x: 4, duration: 0.08, yoyo: true, repeat: 7, ease: 'none' }, c.t(c.dur * 0.5));
+              }
+            },
+          },
+          // the phone close-up: Chan is calling
+          phone: {
+            html: (c) => L('<rect width="1920" height="1080" fill="#0b0f16"/>')
+              + `<div class="op-phone-wrap" id="${c.id}-ph">${LR.phone('call-chan', { time: '03:41', style: 'left:0;top:0' })}</div>`
+              + `<svg class="lr-layer c-lr-ek" viewBox="0 0 1920 1080"><g transform="translate(960 1020)"><use href="#lr-arm-big"/></g></svg>`,
+            anim: (c) => {
+              c.tl.fromTo(`#${c.id}-ph`, { x: 0 }, { x: 6, duration: 0.05, yoyo: true, repeat: Math.max(0, Math.floor(c.dur / 0.1) - 1), ease: 'none' }, c.at);
+              LR.cam(c, { scale: 1 }, { scale: 1.05 });
+            },
+          },
+          // medium: Ek at the doors, one hand on the latch, the phone on speaker in the other
+          call: {
+            html: (c) => L('<use href="#lr-l-road-back" width="1920" height="1080"/>')
+              + LR.rear(1150, 900, 0.92, { id: `${c.id}-truck` })
+              + `<div class="op-glow" id="${c.id}-glow" style="left:620px;top:470px;width:220px;height:220px;opacity:.6"></div>`
+              + LR.who('ek', { id: `${c.id}-ek`, x: 870, feet: 930, h: 520, l: 'hold', lProp: 'phone', r: 'reach', talk: true, face: c.act === 'wait' ? 'wary' : null, cls: 'lr-rim' })
+              + '<div class="lr-night"></div>',
+            anim: (c) => {
+              if (c.who === 'chan' && c.vo) c.tl.fromTo(`#${c.id}-glow`, { scale: 0.8, opacity: 0.4 }, { scale: 1.15, opacity: 0.9, duration: 0.3, yoyo: true, repeat: Math.max(1, Math.floor((c.vo[1] - c.vo[0]) / 0.3)), ease: 'sine.inOut' }, c.vo[0]);
+              // vary the call: Chan's lines on the two-shot, Ek's line on his face, the silence on the glowing phone
+              if (c.act === 'ek') LR.cam(c, { scale: 1.9, x: 171, y: 95 }, { scale: 2.0, x: 180, y: 100 });
+              else if (c.act === 'wait') LR.cam(c, { scale: 1.7, x: 173, y: -102 }, { scale: 1.8, x: 183, y: -108 });
+              else LR.cam(c, { scale: 1.08, x: 60 }, { scale: c.who === 'chan' ? 1.16 : 1.1, x: 90 });
+            },
+          },
+          // close on Ek's face lit from below by the torch: he freezes while Chan talks
+          face: {
+            html: (c) => L('<rect width="1920" height="1080" fill="#0c111a"/>')
+              + LR.who('ek', { id: `${c.id}-ek`, x: 960, feet: 2700, h: 2500, face: 'wary', l: 'hold', lProp: 'phone', cls: 'lr-rim' })
+              + '<div class="lr-night" style="background:linear-gradient(0deg, rgba(255,240,200,.12), rgba(6,10,26,.55) 60%)"></div>',
+            anim: (c) => LR.cam(c, { scale: 1, y: 0 }, { scale: 1.06, y: 20 }),
+          },
+          black: { html: () => '' },
+          _: { html: () => '' },
+        };
+        LR.run({ comp: 'scene-open', prefix: 'op', tl, shots: S, views });
+        window.__timelines["scene-open"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

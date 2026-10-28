@@ -1,0 +1,89 @@
+<!doctype html>
+<!-- The end: the doll left on the seat, leaned against the glass; the next page — one passenger who does not know yet;
+     he switches on the warm light in the box, puts his cap back on and drives. At the sala a wary man with a bag asks
+     where the truck goes; "ขึ้นมาก่อนครับ… เดี๋ยวผมเล่าให้ฟังทั้งหมด". The truck drives off, warm light leaking from
+     the back, to black. Views: cab/doll|cap|answer · doll/place · book/coord|one · face/read|ek · switch/on ·
+     sala/man|stop|ask · final/drive|end -->
+<html data-composition-variables='[{"id":"shots","type":"string","label":"Shots (from build)","default":"[]"}]'>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <link rel="stylesheet" href="assets/kit/stories/last-ride.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #05070c; }
+        .en-seam { position: absolute; background: #ffcf8a; box-shadow: 0 0 40px 14px rgba(255, 207, 138, .55); }
+        .en-end { position: absolute; left: 0; right: 0; top: 330px; text-align: center; font: 700 120px/1.2 var(--font-display); color: var(--lr-cream); }
+        .en-credit { position: absolute; left: 0; right: 0; top: 560px; text-align: center; font: 500 32px/1.7 var(--font-ui); color: var(--mute); }
+      </style>
+      <div data-hf-id="hf-483l" id="root" data-composition-id="scene-end" data-width="1920" data-height="1080"></div>
+      <script src="assets/kit/stories/last-ride.js"></script>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const S = LR.shots("scene-end", [{ at: 0, dur: 4, view: "cab/doll" }]);
+        const L = LR.layer;
+        const sala = L('<use href="#lr-l-road-sky" width="1920" height="1080"/><use href="#lr-l-road-ground" y="600" width="1920" height="480"/><use href="#lr-road-sala" x="1180" y="510" width="380" height="330"/><use href="#lr-garland" x="1244" y="644" width="34" height="100"/>');
+        const man = (o) => LR.who('man', { face: 'wary', l: 'carry', r: 'carry', carry: '<use href="#lr-bag-hug" transform="translate(100 262)"/>', style: '--hair:#8e8f8c;--shirt:#556b7a;--pants:#2c3138;', cls: 'lr-rim', ...o });
+        const views = {
+          cab: {
+            html: (c) => LR.V.cab({ spirit: true, nocap: c.act === 'doll', dash: c.act === 'doll' ? ['cap'] : ['doll'], seat: c.act === 'doll' ? 'doll' : 'book', box: c.act !== 'doll', drive: c.act === 'cap', dark: 0.25 }).html(c),
+            anim: (c) => {
+              LR.V.cab({ drive: c.act === 'cap', close: c.act === 'answer', push: 1.06 }).anim(c);
+                    },
+          },
+          // the doll goes up against the glass, its folded ear smoothed
+          doll: {
+            html: (c) => LR.V.cab({ spirit: true, nocap: true, dash: ['cap', 'doll'], dark: 0.25 }).html(c),
+            anim: (c) => { c.tl.fromTo(c.q('.lr-dash-doll'), { opacity: 0 }, { opacity: 1, duration: 0.8, ease: 'power2.out' }, c.t(0.4)); LR.cam(c, { scale: 1.5, x: -480, y: -250 }, { scale: 1.58, x: -520, y: -270 }); },
+          },
+          book: LR.V.ledger((c) => ({ page: 'next', bg: 'lap', dim: 0.15, zoom0: c.act === 'one' ? 1.55 : 1, zoom1: c.act === 'one' ? 1.62 : 1.06, pan0X: c.act === 'one' ? -450 : 0, pan0Y: c.act === 'one' ? -50 : 0, panX: c.act === 'one' ? -470 : -30, panY: c.act === 'one' ? -60 : 0,
+            glow: c.act === 'coord' ? '.lr-coord' : null, glowAt: 0.5 })),
+          face: {
+            html: (c) => LR.V.cab({ spirit: true, nocap: c.act === 'read', dash: c.act === 'read' ? ['cap', 'doll'] : ['doll'], seat: 'book', box: c.act === 'ek', dark: 0.25 }).html(c),
+            anim: (c) => LR.V.cab({ close: true }).anim(c),
+          },
+          // the switch for the light in the box; the back of the cab glows warm
+          switch: {
+            html: (c) => L('<rect width="1920" height="1080" fill="#1b1d22"/><path d="M0 560 Q960 520 1920 560 V1080 H0Z" fill="#24272d"/><rect x="820" y="330" width="280" height="200" rx="20" fill="#15171b"/>')
+              + `<svg class="lr-layer" viewBox="0 0 1920 1080"><g id="${c.id}-sw"><rect x="930" y="370" width="60" height="120" rx="14" fill="#3a3f47"/><rect x="938" y="378" width="44" height="52" rx="10" fill="#d9dde0"/></g><circle id="${c.id}-led" cx="960" cy="510" r="10" fill="#4a3a20"/></svg>`
+              + `<svg class="lr-layer c-lr-ek lr-spirit" viewBox="0 0 1920 1080"><g id="${c.id}-hand"><g transform="translate(1000 470) rotate(-150) scale(.42)"><use href="#lr-arm-big"/></g></g></svg>`
+              + `<div id="${c.id}-warm" style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%, rgba(255,207,138,.4), rgba(255,207,138,0) 60%);opacity:0"></div>`,
+            anim: (c) => {
+              c.tl.fromTo(`#${c.id}-hand`, { x: 200, y: 140 }, { x: 0, y: 0, duration: 0.6, ease: 'power2.out' }, c.t(0.2));
+              c.tl.fromTo(`#${c.id}-sw`, { y: 0 }, { y: 40, duration: 0.1 }, c.t(0.8));
+              c.tl.fromTo(`#${c.id}-led`, { attr: { fill: '#4a3a20' } }, { attr: { fill: '#ffcf8a' }, duration: 0.1 }, c.t(0.8));
+              c.tl.fromTo(`#${c.id}-warm`, { opacity: 0 }, { opacity: 1, duration: 0.8 }, c.t(0.9));
+              LR.cam(c, { scale: 1 }, { scale: 1.06 });
+            },
+          },
+          // the sala again: a man hugging a bag, wary; the truck pulls up with its box glowing
+          sala: {
+            html: (c) => {
+              if (c.act === 'ask') return sala + man({ id: `${c.id}-man`, x: 960, feet: 1700, h: 1250, talk: true, face: null }) + LR.NIGHT;
+              return sala + man({ x: 1380, feet: 860, h: 300 })
+                + `<div id="${c.id}-tr" style="position:absolute;inset:0">${LR.truck(300, 860, 0.62, { cls: 'lr-cream-box lr-lights-on', lights: true })}<div class="en-seam" style="left:330px;top:640px;width:8px;height:160px"></div></div>` + LR.NIGHT;
+            },
+            anim: (c) => {
+              if (c.act === 'man') { c.tl.fromTo(`#${c.id}-tr`, { x: -1400 }, { x: -200, duration: c.dur, ease: 'power2.out' }, c.at); LR.cam(c, { scale: 1.2, x: -300 }, { scale: 1.24, x: -320 }); }
+              else if (c.act === 'stop') LR.cam(c, { scale: 1.05 }, { scale: 1.1, x: -60 });
+              else LR.cam(c, { scale: 1 }, { scale: 1.05 });
+            },
+          },
+          // he drives off: the back of the box, warm light through the door seams, smaller and smaller, to black
+          final: {
+            html: (c) => c.act === 'end'
+              ? `<div class="en-end">จบ</div><div class="en-credit">เที่ยวสุดท้าย หนึ่งล้านบาท</div>`
+              : L('<use href="#lr-l-road-back" width="1920" height="1080"/>') + `<div id="${c.id}-car" style="position:absolute;inset:0">${LR.rear(960, 930, 1.0)}<div class="en-seam" style="left:957px;top:340px;width:6px;height:440px"></div><div class="en-seam" style="left:722px;top:330px;width:476px;height:5px"></div></div>` + LR.NIGHT,
+            anim: (c) => {
+              if (c.act === 'end') { c.tl.fromTo(c.q('.en-end'), { opacity: 0 }, { opacity: 1, duration: 0.8 }, c.t(0.2)); c.tl.fromTo(c.q('.en-credit'), { opacity: 0 }, { opacity: 1, duration: 0.5 }, c.t(0.3)); }
+              else { c.tl.fromTo(`#${c.id}-car`, { scale: 1, y: 0 }, { scale: 0.18, y: -140, duration: c.dur, ease: 'power1.in', transformOrigin: '960px 560px' }, c.at); LR.fadeOut(c, 2.0); }
+            },
+          },
+          _: { html: () => '' },
+        };
+        LR.run({ comp: 'scene-end', prefix: 'en', tl, shots: S, views });
+        window.__timelines["scene-end"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

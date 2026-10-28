@@ -1,0 +1,105 @@
+<!doctype html>
+<!-- In the cab: the call (dead, all of them), the ledger falling from the glovebox, every name struck, Chan's handover
+     still blank, Ek's name next, the fold lifted: "…แก่ผู้รับหน้าที่รายถัดไป". The speakerphone, the horn, the U-turn.
+     Views: cab/lock|ask|wait|shout|chan|ek|chan2|cough|ek2|chan3|accuse|accuse2|decide · glove/fall ·
+     book/old|struck|ek|unfold|clause · face/realise · seat/phone|chan|chan2 · wheel/horn · road/uturn -->
+<html data-composition-variables='[{"id":"shots","type":"string","label":"Shots (from build)","default":"[]"}]'>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <link rel="stylesheet" href="assets/kit/stories/last-ride.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #05070c; }
+        .lg-mount { position: absolute; width: 96px; height: 170px; border-radius: 16px; background: #1d2433; box-shadow: 0 0 0 8px #2b2f36; }
+        .lg-mount i { position: absolute; inset: 10px; border-radius: 10px; background: #8fb8e8; opacity: .8; }
+        .lg-glow { position: absolute; border-radius: 50%; background: radial-gradient(circle, rgba(143, 184, 232, .5), rgba(143, 184, 232, 0) 70%); }
+      </style>
+      <div data-hf-id="hf-hmfh" id="root" data-composition-id="scene-ledger" data-width="1920" data-height="1080"></div>
+      <script src="assets/kit/stories/last-ride.js"></script>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const S = LR.shots("scene-ledger", [{ at: 0, dur: 4, view: "cab/ask", who: "ek" }]);
+        const L = LR.layer;
+        const FACE = { ask: 'wary', shout: 'angry', ek: 'angry', ek2: 'wary', accuse: 'sad', accuse2: 'angry', decide: 'angry', cough: 'shock', wait: 'wary', lock: 'wary' };
+        // the phone in its dash holder (call on speaker); it glows while Chan talks
+        const mount = (c) => `<div class="lg-glow" id="${c.id}-glow" style="left:1240px;top:560px;width:260px;height:260px;opacity:.3"></div><div class="lg-mount" style="left:1322px;top:606px"><i></i></div>`;
+        const pulse = (c) => { if (c.who === 'chan' && c.vo) c.tl.fromTo(`#${c.id}-glow`, { opacity: 0.3, scale: 0.85 }, { opacity: 0.9, scale: 1.15, duration: 0.28, yoyo: true, repeat: Math.max(1, Math.floor((c.vo[1] - c.vo[0]) / 0.28)), ease: 'sine.inOut' }, c.vo[0]); };
+        // Chan's side of the call: alone under the warehouse lamp, phone held low (guilty once he admits it)
+        const chanLamp = (c, guilty) => LR.layer('<use href="#lr-l-warehouse" width="1920" height="1080"/><use href="#lr-l-warehouse-lamp" width="1920" height="1080"/>')
+          + LR.who('chan', { id: `${c.id}-chan`, x: 960, feet: 1650, h: 1250, l: 'hold', lProp: 'phone', talk: !guilty, face: guilty ? 'guilty' : null, cls: 'lr-rim' }) + '<div class="lr-night" style="background:rgba(6,10,26,.35)"></div>';
+        const views = {
+          // after "seat/phone" the call is on speaker on the passenger seat; before it the phone sits in the dash holder
+          cab: {
+            html: (c) => { if (c.who === 'chan') return chanLamp(c, false); const onSeat = ['accuse', 'accuse2', 'decide'].includes(c.act); return LR.V.cab({ face: c.who === 'chan' ? 'wary' : FACE[c.act], seat: onSeat ? 'phone' : null, extra: onSeat ? '' : mount(c), dark: 0.3 }).html(c); },
+            anim: (c) => {
+              if (c.who === 'chan') return LR.cam(c, { scale: 1 }, { scale: 1.06 });
+              const close = c.who === 'ek' && ['ask', 'ek', 'ek2', 'accuse', 'accuse2'].includes(c.act);
+              LR.V.cab({ face: FACE[c.act], close, push: c.act === 'shout' || c.act === 'decide' ? 1.12 : 1.06, shake: c.act === 'shout' ? 0.2 : undefined }).anim(c); pulse(c);
+            },
+          },
+          // the glovebox gives; the brown book slides out
+          glove: {
+            html: (c) => L('<rect width="1920" height="1080" fill="#1b1d22"/><path d="M0 300 Q960 250 1920 300 V1080 H0Z" fill="#24272d"/><rect x="700" y="420" width="640" height="300" rx="20" fill="#15171b"/>')
+              + `<svg class="lr-layer" viewBox="0 0 1920 1080"><g id="${c.id}-lid"><rect x="700" y="420" width="640" height="300" rx="20" fill="#2e3238"/><rect x="980" y="450" width="80" height="22" rx="8" fill="#3a3f47"/></g>`
+              + `<g id="${c.id}-book"><g transform="translate(1020 560)"><rect x="-150" y="-100" width="300" height="200" rx="10" fill="#6b4f36"/><rect x="-100" y="-50" width="200" height="56" fill="#e8dcc3"/><rect x="-150" y="-100" width="30" height="200" fill="rgba(0,0,0,.2)"/></g></g></svg>`
+              + '<div class="lr-night" style="background:rgba(6,10,26,.25)"></div>',
+            anim: (c) => {
+              c.tl.fromTo(`#${c.id}-lid`, { rotation: 0 }, { rotation: 0, scaleY: 0.3, svgOrigin: '1020 720', duration: 0.3, ease: 'power2.in' }, c.t(0.6));
+              c.tl.fromTo(`#${c.id}-book`, { x: 0, y: 0, rotation: 0 }, { x: -40, y: 300, rotation: -18, svgOrigin: '1020 560', duration: 0.6, ease: 'power2.in' }, c.t(0.8));
+              LR.cam(c, { scale: 1 }, { scale: 1.05 });
+            },
+          },
+          // the book on his lap, page by page
+          book: LR.V.ledger((c) => {
+            const P = { old: 'old', struck: 'chan', ek: 'chan', unfold: 'sign', clause: 'unfold' };
+            return {
+              page: P[c.act], bg: 'lap', dim: 0.18, name: 'เอก', date: 'วันนี้', payee: 'ภรรยา', signed: true,
+              strike: c.act === 'old' ? 0.5 : undefined, unfold: c.act === 'unfold' ? 0.5 : undefined,
+              glow: c.act === 'struck' ? '.lr-page:first-child .lr-blank' : c.act === 'ek' ? '.lr-row.is-new' : c.act === 'clause' ? '.lr-clause-b' : null, glowAt: 0.4,
+              zoom0: c.act === 'clause' ? 1.5 : c.act === 'unfold' ? 1.15 : 1, zoom1: c.act === 'clause' ? 1.6 : c.act === 'unfold' ? 1.2 : 1.06,
+              pan0X: c.act === 'clause' ? -435 : 0, pan0Y: c.act === 'clause' ? -165 : 0, panX: c.act === 'clause' ? -470 : c.act === 'unfold' ? -150 : 0, panY: c.act === 'clause' ? -180 : 0,
+              anim: (c) => {
+                if (c.act === 'clause') { c.tl.fromTo(c.q('.lr-clause-b'), { color: '#3b2c1c' }, { color: '#b3261e', duration: 0.6 }, c.t(0.5)); }
+              },
+            };
+          }),
+          face: {
+            html: (c) => LR.V.cab({ face: 'shock', dark: 0.35 }).html(c),
+            anim: (c) => LR.V.cab({ face: 'shock', push: 1.16, pushY: 40 }).anim(c),
+          },
+          // the phone on the passenger seat, on speaker
+          seat: {
+            html: (c) => c.who === 'chan' ? chanLamp(c, true) : LR.V.cab({ face: c.act === 'phone' ? 'wary' : 'sad', seat: 'phone', dark: 0.3 }).html(c),
+            anim: (c) => {
+              if (c.who === 'chan') return LR.cam(c, { scale: 1.06 }, { scale: 1.14, y: 30 });
+              LR.V.cab({ face: 'sad', seat: 'phone', push: 1.05 }).anim(c);
+              if (c.who === 'chan' && c.vo) c.tl.fromTo(c.q('.lr-seat-glow'), { opacity: 0.6 }, { opacity: 1, duration: 0.25, yoyo: true, repeat: 3, ease: 'sine.inOut' }, c.vo[0]);
+              if (c.act === 'phone') c.tl.fromTo(c.q('.lr-seat-glow'), { opacity: 1 }, { opacity: 0.5, duration: 0.2, yoyo: true, repeat: 5, ease: 'steps(1)' }, c.at);
+            },
+          },
+          // he slams the wheel; the horn
+          wheel: {
+            html: (c) => LR.V.cab({ face: 'angry', dark: 0.3 }).html(c),
+            anim: (c) => {
+              LR.V.cab({ face: 'angry', push: 1.1, shake: 0.3 }).anim(c);
+              c.tl.fromTo(`#${c.id}-hands`, { y: 0 }, { y: 24, duration: 0.08, yoyo: true, repeat: 1, ease: 'power2.in' }, c.t(0.22));
+            },
+          },
+          // the U-turn on the empty road
+          road: {
+            html: (c) => LR.V.road({ x: 460, k: 0.66, lights: true }).html(c),
+            anim: (c) => {
+              LR.V.road({ x: 460, k: 0.66, lights: true, cam: false }).anim(c);
+              c.tl.fromTo(`#${c.id}-tr`, { scaleX: 1, x: 0 }, { scaleX: -1, x: 0, transformOrigin: '889px 50%', duration: 0.7, ease: 'power2.inOut' }, c.t(0.2));
+              c.tl.fromTo(`#${c.id}-tr`, { y: 0 }, { y: 0, x: -900, duration: c.dur - 1, ease: 'power2.in', immediateRender: false }, c.t(0.95));
+            },
+          },
+          _: { html: () => '' },
+        };
+        LR.run({ comp: 'scene-ledger', prefix: 'lg', tl, shots: S, views });
+        window.__timelines["scene-ledger"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

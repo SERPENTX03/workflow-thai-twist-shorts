@@ -1,0 +1,128 @@
+<!doctype html>
+<!-- The road back: the snapped tree, the leaning curve sign, the white rail (as in the rain memory), rescue lights,
+     his own rust-red pickup against the rail — the old dent, the blue rope, his son's sticker. Nobody turns; a rescuer
+     walks through him; "…ประมาณสองทุ่มสี่สิบเจ็ด"; the stopped watch; a sheet pulled up, his cap on the road.
+     Ek still looks like a living man in this scene: the spirit look starts in scene-flash.
+     Views: pov/drive|signs|lights · site/wide|wreck2|ask|ignore|through · detail/dent|sticker · officer/ring|talk|talk2 ·
+     watch/still · cap/ground · face/cap · silence/hold -->
+<html data-composition-variables='[{"id":"shots","type":"string","label":"Shots (from build)","default":"[]"}]'>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <link rel="stylesheet" href="assets/kit/stories/last-ride.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #05070c; }
+        .cr-red, .cr-blue { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen; opacity: 0; }
+        .cr-red { background: radial-gradient(ellipse at 70% 45%, rgba(229, 56, 59, .45), rgba(229, 56, 59, 0) 55%); }
+        .cr-blue { background: radial-gradient(ellipse at 76% 45%, rgba(59, 111, 229, .45), rgba(59, 111, 229, 0) 55%); }
+        .cr-panel { position: absolute; inset: 0; opacity: 0; }
+      </style>
+      <div data-hf-id="hf-j05j" id="root" data-composition-id="scene-crash" data-width="1920" data-height="1080"></div>
+      <script src="assets/kit/stories/last-ride.js"></script>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const S = LR.shots("scene-crash", [{ at: 0, dur: 4, view: "pov/drive" }]);
+        const L = LR.layer;
+        const lights = (c) => `<div class="cr-red" id="${c.id}-red"></div><div class="cr-blue" id="${c.id}-blue"></div>`;
+        const blink = (c) => {
+          const n = Math.ceil(c.dur / 0.5);
+          c.tl.fromTo(`#${c.id}-red`, { opacity: 1 }, { opacity: 0.15, duration: 0.25, yoyo: true, repeat: n * 2, ease: 'steps(1)' }, c.at);
+          c.tl.fromTo(`#${c.id}-blue`, { opacity: 0.15 }, { opacity: 1, duration: 0.25, yoyo: true, repeat: n * 2, ease: 'steps(1)' }, c.at);
+          if (document.querySelector(c.q('.lr-bar-a'))) c.tl.fromTo(c.q('.lr-bar-a'), { opacity: 1 }, { opacity: 0.2, duration: 0.25, yoyo: true, repeat: n * 2, ease: 'steps(1)' }, c.at);
+        };
+        // a rescuer: shared man + reflective vest; old = the officer who speaks (grey hair, old_male voice)
+        const rescuer = (o) => LR.who('man', { cls: 'lr-rim', under: '<use href="#lr-vest" width="200" height="520"/>', style: (o.old ? '--hair:#a8aaac;' : '') + '--shirt:#2b3a4f;--pants:#1d2736;' + (o.style || ''), ...o });
+        // the accident site, side view: bent rail, his pickup tilted against it, the rescue truck, people bent over it
+        const site = (c, o = {}) => L('<use href="#lr-l-road-sky" width="1920" height="1080"/><use href="#lr-l-road-ground" y="600" width="1920" height="480"/><use href="#lr-road-rail-bent" x="1000" y="470" width="680" height="292"/><use href="#lr-tree-broken" x="80" y="190" width="300" height="430"/><use href="#lr-curve-sign" x="1760" y="430" width="90" height="225"/>')
+          + `<svg class="lr-truck lr-own lr-no-box lr-damaged" viewBox="0 0 1300 620" overflow="visible" style="left:${o.wx ?? 980}px;top:${(o.wg ?? 860) - 600 * (o.wk ?? 0.6)}px;width:${1300 * (o.wk ?? 0.6)}px;height:${620 * (o.wk ?? 0.6)}px"><use href="#lr-truck-shadow-side" width="1300" height="620"/><g transform="rotate(-5 680 520)"><use href="#lr-truck-side-body" width="1300" height="620"/><use href="#lr-own-marks" width="1300" height="620"/><use href="#lr-truck-damage-side" width="1300" height="620"/></g><use href="#lr-truck-wheel" x="330" y="520"/><use href="#lr-truck-wheel" x="1030" y="490"/></svg>`
+          + (o.rescue === false ? '' : `<svg class="lr-truck" viewBox="0 0 1300 620" overflow="visible" style="left:${o.rx ?? 120}px;top:${(o.wg ?? 860) - 600 * 0.6 - 20}px;width:780px;height:372px"><use href="#lr-rescue-side" width="1300" height="620"/></svg>`)
+          + L('<use href="#lr-road-debris" x="1100" y="840" width="420" height="90"/>');
+
+        const views = {
+          // through his windscreen on the way back: the road he knows
+          pov: {
+            html: (c) => L('<use href="#lr-l-road-back" width="1920" height="1080"/>')
+              + (c.act === 'signs' ? `<div class="cr-panel" id="${c.id}-p0">${L('<use href="#lr-tree-broken" x="140" y="180" width="560" height="810"/>')}</div><div class="cr-panel" id="${c.id}-p1">${L('<use href="#lr-curve-sign" x="1300" y="260" width="260" height="650"/>')}</div><div class="cr-panel" id="${c.id}-p2">${L('<path d="M1060 560 L1920 820" stroke="#e1e5e8" stroke-width="34"/><path d="M1080 566 L1080 610 M1300 632 V700 M1560 710 V800 M1860 800 V900" stroke="#9aa1a8" stroke-width="16"/>')}</div>` : '')
+              + (c.act === 'lights' ? lights(c) + `<svg class="lr-truck" viewBox="0 0 1300 620" style="left:860px;top:470px;width:220px;height:105px"><use href="#lr-rescue-side" width="1300" height="620"/></svg>` : '')
+              + L('<path d="M0 0 H1920 V70 H0Z M0 0 H120 L220 1080 H0Z M1920 0 H1800 L1700 1080 H1920Z" fill="#d6c9ac"/><path d="M0 980 Q960 930 1920 980 V1080 H0Z" fill="#24272d"/>', { cls: 'lr-cream-box' }) + LR.NIGHT,
+            anim: (c) => {
+              if (c.act === 'signs') for (let i = 0; i < 3; i++) {
+                c.tl.fromTo(`#${c.id}-p${i}`, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1.15, duration: c.dur / 3, ease: 'power1.in', transformOrigin: '960px 540px' }, c.p(i / 3));
+                c.tl.fromTo(`#${c.id}-p${i}`, { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, c.p((i + 1) / 3) - 0.05);
+              }
+              if (c.act === 'lights') blink(c);
+              LR.cam(c, { scale: 1 }, { scale: 1.08 });
+            },
+          },
+          site: {
+            html: (c) => {
+              const ek = (o) => LR.who('ek', { cls: 'lr-rim', ...o });
+              const bent = (x, f) => rescuer({ x, feet: f, h: 380, style: 'transform-origin:50% 100%;rotate:12deg;' });
+              let ppl = bent(1260, 900) + bent(1460, 905) + rescuer({ id: `${c.id}-off`, x: 1660, feet: 900, h: 380, old: true });
+              if (c.act === 'wreck2') ppl += ek({ x: 360, feet: 1240, h: 900, face: 'shock' });
+              if (c.act === 'ask') ppl += ek({ id: `${c.id}-ek`, x: 700, feet: 960, h: 440, r: 'raise', talk: true });
+              if (c.act === 'ignore') ppl += ek({ x: 1060, feet: 960, h: 440, face: 'wary' });
+              if (c.act === 'through') ppl = bent(1260, 900) + bent(1460, 905) + ek({ x: 900, feet: 960, h: 440, face: 'shock' }) + rescuer({ id: `${c.id}-walker`, x: 300, feet: 965, h: 400, old: true });
+              return site(c) + ppl + lights(c) + LR.NIGHT;
+            },
+            anim: (c) => {
+              blink(c);
+              if (c.act === 'ask') c.tl.fromTo(`#${c.id}-ek`, { x: -400 }, { x: 0, duration: 1.0, ease: 'power2.out' }, c.at);
+              if (c.act === 'through') c.tl.fromTo(`#${c.id}-walker`, { x: 0 }, { x: 1300, duration: c.dur * 0.85, ease: 'none' }, c.at);
+              LR.cam(c, c.act === 'wreck2' ? { scale: 1.05, x: 0 } : { scale: 1 }, c.act === 'wreck2' ? { scale: 1.12, x: -80 } : { scale: 1.05, x: c.act === 'wide' ? -40 : 0 });
+            },
+          },
+          // the marks he knows: the dent and the blue rope; his son's star sticker
+          detail: {
+            html: (c) => (c.act === 'dent'
+              ? `<div class="cr-panel" id="${c.id}-p0" style="opacity:1">${L('<use href="#lr-own-dent" x="-40" y="-60" width="2000" height="1500"/>')}</div><div class="cr-panel" id="${c.id}-p1">${L('<use href="#lr-own-rope" x="-40" y="-60" width="2000" height="1500"/>')}</div>`
+              : L('<use href="#lr-own-sticker" x="-40" y="-60" width="2000" height="1500"/>')) + lights(c) + '<div class="lr-night" style="background:rgba(6,10,26,.3)"></div>',
+            anim: (c) => {
+              blink(c);
+              if (c.act === 'dent') c.tl.fromTo(`#${c.id}-p1`, { opacity: 0 }, { opacity: 1, duration: 0.3 }, c.p(0.5));
+              LR.cam(c, { scale: 1 }, { scale: 1.1 });
+            },
+          },
+          // the officer takes a call; Ek turns behind him
+          officer: {
+            html: (c) => site(c, { rescue: false, wx: 1180 }) + LR.who('ek', { x: 420, feet: 980, h: 470, face: c.act === 'talk2' ? 'shock' : 'wary', cls: 'lr-rim' })
+              + rescuer({ id: `${c.id}-officer`, x: 1080, feet: 1500, h: 1050, old: true, l: c.act === 'ring' ? null : 'hold', lProp: 'phone', talk: true })
+              + lights(c) + LR.NIGHT,
+            anim: (c) => { blink(c); LR.cam(c, { scale: 1 }, { scale: c.act === 'talk2' ? 1.08 : 1.04 }); },
+          },
+          // his left wrist: still 20:47
+          watch: {
+            html: (c) => site(c) + '<div class="lr-night" style="background:rgba(6,10,26,.45)"></div>'
+              + `<svg class="lr-layer c-lr-ek lr-cracked" viewBox="0 0 1920 1080"><g transform="translate(900 380) rotate(-70) scale(1.2)"><use href="#lr-arm-big"/><use href="#lr-watch-big"/></g></svg>` + lights(c),
+            anim: (c) => { blink(c); LR.cam(c, { scale: 1 }, { scale: 1.06 }); },
+          },
+          // a sheet goes up over the body; beside it on the road, the navy cap with the cream patch
+          cap: {
+            html: (c) => site(c, { rescue: false, wx: 1240 })
+              + `<svg class="lr-layer" viewBox="0 0 1920 1080"><g id="${c.id}-sheet"><use href="#lr-sheet" x="420" y="690" width="700" height="175"/></g><use href="#lr-cap-ground" x="1160" y="740" width="230" height="125"/></svg>`
+              + rescuer({ x: 700, feet: 900, h: 380, style: 'transform-origin:50% 100%;rotate:14deg;' }) + lights(c) + LR.NIGHT,
+            anim: (c) => {
+              blink(c);
+              c.tl.fromTo(`#${c.id}-sheet`, { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 0.9, ease: 'power2.out' }, c.t(0.2));
+              LR.cam(c, { scale: 1.05, x: 0, y: 0 }, { scale: 1.6, x: -504, y: -324 }, 'power1.inOut', 0.8);
+            },
+          },
+          // close on him: the same cap, the same patch
+          face: {
+            html: (c) => site(c) + '<div class="lr-night" style="background:rgba(6,10,26,.5)"></div>' + LR.who('ek', { x: 960, feet: 2500, h: 2300, face: 'sad', cls: 'lr-rim' }) + lights(c),
+            anim: (c) => { blink(c); LR.cam(c, { scale: 1, x: 0, y: 0 }, { scale: 1.12, x: -160, y: 120 }); },
+          },
+          // two seconds of nothing: the site, darkening
+          silence: {
+            html: (c) => site(c) + LR.NIGHT,
+            anim: (c) => LR.fadeOut(c, c.dur * 0.9),
+          },
+          _: { html: () => '' },
+        };
+        LR.run({ comp: 'scene-crash', prefix: 'cr', tl, shots: S, views });
+        window.__timelines["scene-crash"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

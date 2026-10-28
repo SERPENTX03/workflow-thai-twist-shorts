@@ -54,9 +54,15 @@ Any standing figure can lie down: `<g transform="translate(0 234) rotate(-90)"><
 </svg>
 ```
 
+## Story kits
+
+Story-only pieces live in `template/assets/kit/stories/<story>.svg` + `.css` with their own id prefix; `build.mjs` and the gallery pick them up automatically. Current kits: `last-ride.md` (`lr-`).
+
+Short sleeves: set `--forearm: var(--skin)` on the figure (pose arms then show a skin forearm under the sleeve).
+
 ## Faces — `face-off` + one `face-*`
 
-`happy laugh sad cry angry scared shock worried smirk tired hollow`. Match the caption line. `hollow` (blank black eyes) is saved for ghosts and the twist frame. One face per figure per shot.
+`happy laugh sad cry angry scared shock worried smirk tired hollow wary guilty`. Match the caption line. `hollow` (blank black eyes) is saved for ghosts and the twist frame. One face per figure per shot.
 
 ## Talking — `mouth-off` + `talk-*`
 

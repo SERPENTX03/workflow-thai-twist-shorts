@@ -1,0 +1,94 @@
+<!doctype html>
+<!-- Signing on the hood. The book shows only what Ek reads: the bottom of his page is folded under, hiding
+     "แก่ผู้รับหน้าที่รายถัดไป" until the cab scene. Then the transfer slip (payee = his wife, "ผู้รับเงินแทน"), the call
+     nobody answers, his message that never shows as sent, and the key in Chan's trembling hand.
+     Views: ledger/fields|clause|sign · hood/chan|chan2|ek|ek2|chan3 · rule/one|two · face/chan · pen/wait · slip/in|name ·
+     call/wife · chat/send · key/offer|take|chan -->
+<html data-composition-variables='[{"id":"shots","type":"string","label":"Shots (from build)","default":"[]"}]'>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <link rel="stylesheet" href="assets/kit/stories/last-ride.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #05070c; }
+        .sg-pen { position: absolute; width: 22px; height: 230px; border-radius: 8px; background: #1f2a44; }
+      </style>
+      <div data-hf-id="hf-hzi9" id="root" data-composition-id="scene-sign" data-width="1920" data-height="1080"></div>
+      <script src="assets/kit/stories/last-ride.js"></script>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const S = LR.shots("scene-sign", [{ at: 0, dur: 4, view: "ledger/fields" }]);
+        const L = LR.layer;
+        const wh = L('<use href="#lr-l-warehouse" width="1920" height="1080"/>');
+        const lamp = L('<use href="#lr-l-warehouse-lamp" width="1920" height="1080"/>');
+        const dim = '<div class="lr-night" style="background:rgba(6,10,26,.22)"></div>';
+        // the front of the truck (cab and hood) with the closed book lying on the hood
+        const hood = (x, ground, k) => LR.truck(x, ground, k, { cls: 'lr-cream-box', extra: '<g transform="translate(1150 334) rotate(-4)"><rect x="-70" y="-14" width="140" height="22" rx="4" fill="#6b4f36"/><rect x="-40" y="-12" width="70" height="8" fill="#e8dcc3"/></g>' });
+
+        const views = {
+          ledger: LR.V.ledger((c) => ({
+            page: 'sign', bg: 'hood',
+            name: c.act === 'sign' ? 'เอก' : '', payee: c.act === 'sign' ? 'ภรรยา' : '', date: c.act === 'sign' ? 'วันนี้' : '',
+            signed: c.act === 'sign', sign: c.act === 'sign' ? 0.8 : undefined,
+            point: c.act === 'clause' ? 0.2 : undefined, px: 1460, py: 800,
+            zoom0: c.act === 'clause' ? 1.12 : 1, zoom1: c.act === 'clause' ? 1.2 : 1.05, panX: c.act === 'clause' ? -220 : 0, panY: c.act === 'clause' ? -40 : 0,
+            anim: (c) => {
+              if (c.act === 'sign') {
+                c.tl.fromTo(c.q('.lr-form .lr-field:nth-child(2) .lr-fill'), { opacity: 0 }, { opacity: 1, duration: 0.3 }, c.t(0.2));
+                c.tl.fromTo(c.q('.lr-payee .lr-fill'), { opacity: 0 }, { opacity: 1, duration: 0.3 }, c.t(0.5));
+              }
+            },
+          })),
+          // two-shot at the hood: Ek left, Chan right, the cab between them
+          hood: {
+            html: (c) => wh + hood(-560, 1060, 1.0) + lamp
+              + LR.who('ek', { id: `${c.id}-ek`, x: 470, feet: 1300, h: 820, talk: true, cls: 'lr-rim', face: c.act === 'ek2' ? 'wary' : null })
+              + LR.who('chan', { id: `${c.id}-chan`, x: 1470, feet: 1290, h: 790, talk: true, cls: 'lr-rim' }) + dim,
+            anim: (c) => LR.cam(c, { scale: 1, x: 0 }, { scale: 1.05, x: c.who === 'chan' ? -60 : 60 }),
+          },
+          // the rules, on Chan: close and still, lamp behind
+          rule: {
+            html: (c) => wh + lamp + LR.who('chan', { id: `${c.id}-chan`, x: c.act === 'two' ? 960 : 1100, feet: c.act === 'two' ? 2350 : 1900, h: c.act === 'two' ? 2100 : 1600, talk: true, cls: 'lr-rim' })
+              + '<div class="lr-night" style="background:rgba(6,10,26,.3)"></div>',
+            anim: (c) => LR.cam(c, { scale: 1 }, { scale: c.act === 'two' ? 1.1 : 1.04 }),
+          },
+          face: {
+            html: (c) => wh + lamp + LR.who('chan', { id: `${c.id}-chan`, x: 960, feet: 2350, h: 2100, talk: true, cls: 'lr-rim' }) + '<div class="lr-night" style="background:rgba(6,10,26,.35)"></div>',
+            anim: (c) => LR.cam(c, { scale: 1.08 }, { scale: 1.12 }),
+          },
+          // the pen over the empty line: he does not sign yet
+          pen: {
+            html: (c) => LR.V.ledger({ page: 'sign', bg: 'hood' }).html(c)
+              + `<svg class="lr-layer c-lr-ek" viewBox="0 0 1920 1080"><g id="${c.id}-hand"><g transform="translate(1490 760) rotate(-30) scale(.62)"><use href="#lr-arm-big"/></g><rect x="1470" y="560" width="22" height="210" rx="8" fill="#1f2a44" transform="rotate(25 1480 760)"/></g></svg>`,
+            anim: (c) => { c.tl.fromTo(`#${c.id}-hand`, { y: 0 }, { y: -18, duration: 0.6, yoyo: true, repeat: 2, ease: 'sine.inOut' }, c.at); LR.cam(c, { scale: 1.05 }, { scale: 1.09 }); },
+          },
+          slip: LR.V.phone((c) => ({ screen: 'slip', time: '23:12', zoom0: c.act === 'name' ? 1.4 : 1, zoom1: c.act === 'name' ? 1.48 : 1.06, pan0Y: c.act === 'name' ? -170 : 0, panY: c.act === 'name' ? -190 : 0,
+            anim: (c) => { if (c.act === 'in') c.tl.fromTo(c.q('.lr-screen--slip'), { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, c.t(0.3)); } })),
+          call: LR.V.phone({ screen: 'dial-wife', time: '23:13', unanswered: 2.0 }),
+          // he types the message; it stays with a clock: never marked as sent
+          chat: LR.V.phone({ screen: 'chat-wife', time: '23:14', msg: 0.7, zoom0: 1.05, zoom1: 1.18, pan0Y: -60, panY: -120 }),
+          // the key: Chan's hand shakes as he holds it out; Ek takes it
+          key: {
+            html: (c) => {
+              const take = c.act === 'take';
+              const close = c.act === 'chan';
+              if (close) return wh + lamp + LR.who('chan', { x: 960, feet: 2350, h: 2100, cls: 'lr-rim' }) + '<div class="lr-night" style="background:rgba(6,10,26,.45)"></div>';
+              return wh + lamp
+                + LR.who('ek', { id: `${c.id}-ek`, x: 720, feet: 1260, h: 780, cls: 'lr-rim', r: 'offer', rProp: take ? 'key' : null })
+                + `<div id="${c.id}-cw" style="position:absolute;inset:0">${LR.who('chan', { id: `${c.id}-chan`, x: 1230, feet: 1250, h: 750, cls: 'lr-rim', l: take ? null : 'offer', lProp: take ? null : 'key' })}</div>` + dim;
+            },
+            anim: (c) => {
+              if (c.act === 'offer') c.tl.fromTo(`#${c.id}-chan`, { x: 0 }, { x: 3, duration: 0.06, yoyo: true, repeat: Math.floor(c.dur / 0.12) * 2 - 1, ease: 'none' }, c.at);
+              LR.cam(c, { scale: c.act === 'chan' ? 1.08 : 1.02 }, { scale: c.act === 'chan' ? 1.16 : 1.07 });
+              if (c.act === 'chan') LR.fadeOut(c, 1.0);
+            },
+          },
+          _: { html: () => '' },
+        };
+        LR.run({ comp: 'scene-sign', prefix: 'sg', tl, shots: S, views });
+        window.__timelines["scene-sign"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

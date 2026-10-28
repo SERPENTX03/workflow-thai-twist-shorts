@@ -1,0 +1,2791 @@
+{
+  "title": "เที่ยวสุดท้าย หนึ่งล้านบาท",
+  "format": "landscape",
+  "bpm": 75,
+  "voice": "male",
+  "voices": {
+    "male": "eleven:xYmBpJREC3WfqEFpbPvO",
+    "female": "eleven:MYZYcGOqrkYQcwDunXl7",
+    "old_male": "eleven:5KvpaGteYkNayiswuX2h",
+    "old_female": "eleven:p2Wol3C7j3rHbfOrbL18"
+  },
+  "voiceModel": "eleven_v3",
+  "breath": 0.1,
+  "switchBreath": 0.3,
+  "minBeats": 2,
+  "fitStep": 0.125,
+  "captionLook": "bold",
+  "sfx": {
+    "knock3": {
+      "prompt": "three firm knocks from inside a steel cargo box of a small pickup truck, muffled hollow metallic thuds",
+      "dur": 2,
+      "gain": 0.8
+    },
+    "pound": {
+      "prompt": "frantic pounding with fists on a steel cargo door from the inside, muffled, urgent",
+      "dur": 2.5,
+      "gain": 0.8
+    },
+    "knock1": {
+      "prompt": "one slow knock on a thin steel wall, hollow metallic thud, quiet room",
+      "dur": 1,
+      "gain": 0.8
+    },
+    "brakes": {
+      "prompt": "pickup truck braking hard on asphalt, short tire screech",
+      "dur": 2,
+      "gain": 0.6
+    },
+    "brakes-soft": {
+      "prompt": "small truck slowing down and stopping gently, soft brake squeal",
+      "dur": 1.5,
+      "gain": 0.5
+    },
+    "kid-cough": {
+      "prompt": "small child coughing weakly, muffled behind a metal door",
+      "dur": 2,
+      "gain": 0.7
+    },
+    "kid-cry": {
+      "prompt": "small child crying softly and slowly fading to silence, muffled behind a steel wall",
+      "dur": 4,
+      "gain": 0.6
+    },
+    "old-cough": {
+      "prompt": "old man dry raspy cough, muffled from inside a closed metal truck box",
+      "dur": 2.5,
+      "gain": 0.7
+    },
+    "ring": {
+      "prompt": "smartphone ringing, simple modern marimba ringtone, one cycle",
+      "dur": 2.5,
+      "gain": 0.5
+    },
+    "ring2": {
+      "prompt": "basic mobile phone ringing outdoors at night, old style ringtone",
+      "dur": 2,
+      "gain": 0.45
+    },
+    "unlatch": {
+      "prompt": "heavy metal latch bar on a truck rear door being unlocked, single clunk",
+      "dur": 1,
+      "gain": 0.8
+    },
+    "night-amb": {
+      "prompt": "quiet night ambience in the countryside, crickets, light wind",
+      "dur": 6,
+      "gain": 0.35
+    },
+    "rain": {
+      "prompt": "heavy rain on a car windshield with wipers going, inside a moving car",
+      "dur": 5,
+      "gain": 0.5
+    },
+    "shutter": {
+      "prompt": "metal roll-up warehouse shutter rattling open",
+      "dur": 2.5,
+      "gain": 0.5
+    },
+    "steps": {
+      "prompt": "a few slow footsteps on a concrete floor",
+      "dur": 2,
+      "gain": 0.6
+    },
+    "door-open": {
+      "prompt": "metal rear doors of a cargo truck creaking open slowly",
+      "dur": 2,
+      "gain": 0.6
+    },
+    "msg": {
+      "prompt": "short soft smartphone message notification chime",
+      "dur": 0.6,
+      "gain": 0.45
+    },
+    "book": {
+      "prompt": "a thick paper notebook placed down on a car hood, soft thud",
+      "dur": 1,
+      "gain": 0.6
+    },
+    "dial": {
+      "prompt": "phone outgoing call ringback tone, two rings, nobody answers",
+      "dur": 3,
+      "gain": 0.4
+    },
+    "send": {
+      "prompt": "short swoosh of a phone message being sent",
+      "dur": 0.6,
+      "gain": 0.4
+    },
+    "engine-start": {
+      "prompt": "old pickup truck engine starting and settling to idle",
+      "dur": 3,
+      "gain": 0.5
+    },
+    "engine": {
+      "prompt": "inside a pickup truck cab driving at night, steady low engine hum and road noise",
+      "dur": 6,
+      "gain": 0.3
+    },
+    "engine-off": {
+      "prompt": "truck engine switching off, then quiet ticking",
+      "dur": 2,
+      "gain": 0.45
+    },
+    "hazard": {
+      "prompt": "car hazard lights clicking, ticking relay inside the cab",
+      "dur": 3,
+      "gain": 0.4
+    },
+    "window": {
+      "prompt": "car window being wound down by hand crank",
+      "dur": 1.5,
+      "gain": 0.5
+    },
+    "creak-load": {
+      "prompt": "truck leaf springs creaking as heavy weight settles onto the back",
+      "dur": 1.5,
+      "gain": 0.7
+    },
+    "door-slam": {
+      "prompt": "heavy steel rear door of a truck slamming shut, single loud clunk",
+      "dur": 1,
+      "gain": 0.8
+    },
+    "click": {
+      "prompt": "single plastic dashboard switch click",
+      "dur": 0.5,
+      "gain": 0.5
+    },
+    "roll": {
+      "prompt": "a small hard object rolling back and forth on a metal truck floor",
+      "dur": 2.5,
+      "gain": 0.6
+    },
+    "drip": {
+      "prompt": "single water drop falling onto a metal floor",
+      "dur": 0.6,
+      "gain": 0.6
+    },
+    "door-car": {
+      "prompt": "pickup truck cab door closing",
+      "dur": 1,
+      "gain": 0.6
+    },
+    "thump": {
+      "prompt": "palm slamming hard on a steering wheel",
+      "dur": 0.6,
+      "gain": 0.7
+    },
+    "horn": {
+      "prompt": "long loud car horn blast on an empty road",
+      "dur": 2,
+      "gain": 0.6
+    },
+    "skid": {
+      "prompt": "tires skidding on wet asphalt during a sharp turn",
+      "dur": 2,
+      "gain": 0.6
+    },
+    "siren": {
+      "prompt": "distant emergency vehicle siren at night on a rural road",
+      "dur": 4,
+      "gain": 0.35
+    },
+    "radio": {
+      "prompt": "emergency two-way radio chatter and static at a night accident scene",
+      "dur": 4,
+      "gain": 0.35
+    },
+    "horn-truck": {
+      "prompt": "big truck air horn blaring very close",
+      "dur": 2,
+      "gain": 0.7
+    },
+    "crash": {
+      "prompt": "car crash impact, metal crunch and glass breaking",
+      "dur": 2.5,
+      "gain": 0.8
+    },
+    "keys": {
+      "prompt": "a bunch of keys jingling then set down on a paper notebook",
+      "dur": 1.2,
+      "gain": 0.6
+    },
+    "pier-steps": {
+      "prompt": "several people walking slowly on old wooden pier planks",
+      "dur": 3,
+      "gain": 0.5
+    }
+  },
+  "shots": [
+    {
+      "scene": "open",
+      "view": "road/knock",
+      "beats": 5.375,
+      "text": "เสียงเคาะดังมาจากท้ายกระบะตู้ทึบ",
+      "tone": "tense",
+      "mood": 0.55,
+      "voLead": 0.9,
+      "cues": [
+        [
+          0.2,
+          "knock3"
+        ]
+      ]
+    },
+    {
+      "scene": "open",
+      "view": "road/pound",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.6,
+      "cues": [
+        [
+          0.1,
+          "pound"
+        ]
+      ]
+    },
+    {
+      "scene": "open",
+      "view": "road/shout",
+      "who": "mom",
+      "beats": 5.625,
+      "text": "“พี่! ช่วยเปิดหน่อย ลูกหนูหายใจไม่ออก!”",
+      "tone": "urgent, desperate",
+      "fx": "muffled",
+      "mood": 0.65,
+      "voice": "female"
+    },
+    {
+      "scene": "open",
+      "view": "cab/brake",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.6,
+      "cues": [
+        [
+          0,
+          "brakes"
+        ]
+      ]
+    },
+    {
+      "scene": "open",
+      "view": "rear/run",
+      "beats": 4.75,
+      "text": "เสียงเด็กไอ ห่างจากมือเขาไม่ถึงคืบ",
+      "tone": "tense",
+      "mood": 0.65,
+      "cues": [
+        [
+          1.5,
+          "kid-cough"
+        ]
+      ],
+      "hold": 0
+    },
+    {
+      "scene": "open",
+      "view": "latch/ring",
+      "beats": 2.5,
+      "text": "",
+      "vo": "",
+      "mood": 0.7,
+      "cues": [
+        [
+          0.9,
+          "ring"
+        ]
+      ]
+    },
+    {
+      "scene": "open",
+      "view": "phone/call-chan",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.7
+    },
+    {
+      "scene": "open",
+      "view": "call/chan",
+      "who": "chan",
+      "beats": 2,
+      "text": "“อย่าเปิด”",
+      "tone": "calm, firm",
+      "fx": "phone",
+      "mood": 0.7,
+      "hold": 0,
+      "voice": "old_male"
+    },
+    {
+      "scene": "open",
+      "view": "call/ek",
+      "who": "ek",
+      "beats": 3.75,
+      "text": "“มีเด็กอยู่ข้างใน!”",
+      "tone": "urgent, shouting",
+      "mood": 0.75
+    },
+    {
+      "scene": "open",
+      "view": "call/wait",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.75
+    },
+    {
+      "scene": "open",
+      "view": "call/chan",
+      "who": "chan",
+      "beats": 2,
+      "text": "“ผมรู้”",
+      "tone": "quietly",
+      "fx": "phone",
+      "style": "red",
+      "mood": 0.8,
+      "hold": 0.5,
+      "voice": "old_male"
+    },
+    {
+      "scene": "open",
+      "view": "face/freeze",
+      "who": "chan",
+      "beats": 3.625,
+      "text": "“ผมจ้างคุณหนึ่งล้านให้ไปส่งถึงท่าเรือ”",
+      "tone": "calm",
+      "fx": "phone",
+      "mood": 0.8,
+      "voice": "old_male"
+    },
+    {
+      "scene": "open",
+      "view": "latch/hold",
+      "who": "chan",
+      "beats": 4.5,
+      "text": "“ถ้าคุณเปิดตอนนี้… คุณอาจไม่อยากขับต่อ”",
+      "tone": "ominous",
+      "fx": "phone",
+      "mood": 0.85,
+      "hold": 0,
+      "voice": "old_male"
+    },
+    {
+      "scene": "open",
+      "view": "rear/fade",
+      "beats": 5.125,
+      "text": "เสียงเด็กร้องไห้เบาลง แล้วก็เงียบไป",
+      "tone": "tense",
+      "mood": 0.7,
+      "cues": [
+        [
+          0,
+          "kid-cry"
+        ]
+      ],
+      "hold": 0.5,
+      "hush": true
+    },
+    {
+      "scene": "open",
+      "view": "black/unlock",
+      "beats": 3,
+      "text": "",
+      "vo": "",
+      "mood": 0.2,
+      "hush": true,
+      "cues": [
+        [
+          1.2,
+          "unlatch"
+        ]
+      ]
+    },
+    {
+      "scene": "title",
+      "view": "card",
+      "beats": 4.5,
+      "text": "",
+      "vo": "",
+      "mood": 0.3,
+      "music": true,
+      "cues": [
+        [
+          0,
+          "bell"
+        ]
+      ]
+    },
+    {
+      "scene": "arrive",
+      "view": "money/count",
+      "beats": 5.75,
+      "text": "ขับรถรับจ้างมาสิบกว่าปี\nเอกไม่เคยได้ค่าจ้าง[หนึ่งล้านบาท]",
+      "tone": "calm",
+      "cues": [
+        [
+          0,
+          "night-amb"
+        ]
+      ],
+      "mood": 0.35,
+      "hold": 0
+    },
+    {
+      "scene": "arrive",
+      "view": "rain/drive",
+      "beats": 2.625,
+      "text": "คืนนั้นฝนตกหนัก",
+      "tone": "calm",
+      "mood": 0.4,
+      "cues": [
+        [
+          0,
+          "rain"
+        ]
+      ]
+    },
+    {
+      "scene": "arrive",
+      "view": "rain/flash",
+      "beats": 5.75,
+      "text": "ไฟรถสวนมาวูบหนึ่ง\nแล้วทุกอย่างก็พร่าเลือน",
+      "tone": "calm",
+      "mood": 0.45,
+      "cues": [
+        [
+          1,
+          "whoosh"
+        ]
+      ],
+      "hold": 0
+    },
+    {
+      "scene": "arrive",
+      "view": "front/wide",
+      "beats": 4.125,
+      "text": "รู้ตัวอีกที เขาก็ยืนอยู่หน้าโกดังแล้ว",
+      "tone": "calm",
+      "mood": 0.35
+    },
+    {
+      "scene": "arrive",
+      "view": "watch/wind",
+      "beats": 4.375,
+      "text": "นาฬิกาข้อมือกระจกร้าว เข็มไม่เดิน",
+      "tone": "calm",
+      "mood": 0.4,
+      "cues": [
+        [
+          0.5,
+          "tick"
+        ],
+        [
+          1,
+          "tick"
+        ]
+      ]
+    },
+    {
+      "scene": "arrive",
+      "view": "watch/hold",
+      "beats": 3.625,
+      "text": "สองทุ่มสี่สิบเจ็ด",
+      "tone": "calm",
+      "mood": 0.45,
+      "hold": 1
+    },
+    {
+      "scene": "arrive",
+      "view": "front/shrug",
+      "beats": 4.5,
+      "text": "เขาคิดว่าคงกระแทกอะไรตอนลงรถ",
+      "tone": "calm",
+      "mood": 0.35
+    },
+    {
+      "scene": "arrive",
+      "view": "meet/reveal",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.4
+    },
+    {
+      "scene": "arrive",
+      "view": "meet/chan",
+      "who": "chan",
+      "beats": 2.5,
+      "text": "“เอกใช่ไหม”",
+      "tone": "slowly, calm",
+      "mood": 0.4,
+      "hold": 0.5,
+      "voice": "old_male"
+    },
+    {
+      "scene": "arrive",
+      "view": "meet/walk",
+      "beats": 3.125,
+      "text": "ชายคนนั้นชื่อชาญ",
+      "tone": "calm",
+      "mood": 0.4,
+      "cues": [
+        [
+          0.5,
+          "shutter"
+        ]
+      ]
+    },
+    {
+      "scene": "inside",
+      "view": "truck/chan",
+      "who": "chan",
+      "beats": 7.75,
+      "text": "“ไปตามพิกัด รับให้ครบสามจุด\nแล้วส่งที่ท่าเรือก่อนฟ้าสาง”",
+      "tone": "slowly, calm",
+      "mood": 0.4,
+      "voice": "old_male"
+    },
+    {
+      "scene": "inside",
+      "view": "truck/walk",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.4,
+      "cues": [
+        [
+          0.3,
+          "steps"
+        ]
+      ]
+    },
+    {
+      "scene": "inside",
+      "view": "truck/ek",
+      "who": "ek",
+      "beats": 4.25,
+      "text": "“ขนอะไรครับ”",
+      "tone": "tired, warm",
+      "mood": 0.4
+    },
+    {
+      "scene": "inside",
+      "view": "rear/open",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.45,
+      "cues": [
+        [
+          0.4,
+          "door-open"
+        ]
+      ]
+    },
+    {
+      "scene": "inside",
+      "view": "rear/empty",
+      "beats": 2.375,
+      "text": "ข้างในว่างเปล่า",
+      "tone": "calm",
+      "mood": 0.45
+    },
+    {
+      "scene": "inside",
+      "view": "rear/chan",
+      "who": "chan",
+      "beats": 7.25,
+      "text": "“เดี๋ยวมีคนขึ้นระหว่างทาง\nคุณแค่จอดรอ ไม่ต้องลงไปช่วย”",
+      "tone": "slowly, calm",
+      "mood": 0.5,
+      "voice": "old_male"
+    },
+    {
+      "scene": "inside",
+      "view": "rear/ek",
+      "who": "ek",
+      "beats": 3.875,
+      "text": "“รับคน ทำไมไม่ใช้รถตู้”",
+      "tone": "puzzled",
+      "mood": 0.5
+    },
+    {
+      "scene": "inside",
+      "view": "latch/rub",
+      "beats": 5,
+      "text": "ชายชราไม่ตอบ เขาลูบรอยขีดรอบกลอน",
+      "tone": "calm",
+      "mood": 0.55,
+      "hold": 0
+    },
+    {
+      "scene": "inside",
+      "view": "rear/chan-low",
+      "who": "chan",
+      "beats": 3.375,
+      "text": "“บางคนขึ้นรถแบบอื่นไม่ได้”",
+      "tone": "quietly",
+      "mood": 0.55,
+      "hold": 0,
+      "voice": "old_male"
+    },
+    {
+      "scene": "inside",
+      "view": "rear/doubt",
+      "beats": 2.625,
+      "text": "เอกเริ่มไม่ชอบงานนี้",
+      "tone": "calm",
+      "mood": 0.45,
+      "cues": [
+        [
+          2,
+          "msg"
+        ]
+      ]
+    },
+    {
+      "scene": "inside",
+      "view": "phone/photo",
+      "beats": 4.625,
+      "text": "แต่ภรรยาเพิ่งส่งรูปใบแจ้งหนี้มา",
+      "tone": "calm",
+      "mood": 0.4
+    },
+    {
+      "scene": "inside",
+      "view": "phone/read",
+      "beats": 6,
+      "text": "ไม่ต้องรีบขับนะ\nกลับมากินข้าวด้วยกันก็พอ",
+      "vo": "",
+      "mood": 0.35,
+      "music": true
+    },
+    {
+      "scene": "inside",
+      "view": "two/ask",
+      "who": "ek",
+      "beats": 2.75,
+      "text": "“จ่ายยังไงครับ”",
+      "tone": "tired, resolved",
+      "mood": 0.4
+    },
+    {
+      "scene": "sign",
+      "view": "ledger/fields",
+      "beats": 6.5,
+      "text": "ในสมุดมีช่องชื่อคนขับ กับช่อง ผู้รับเงินแทน",
+      "tone": "calm",
+      "mood": 0.45,
+      "cues": [
+        [
+          0.2,
+          "book"
+        ]
+      ],
+      "hold": 0
+    },
+    {
+      "scene": "sign",
+      "view": "hood/chan",
+      "who": "chan",
+      "beats": 2.75,
+      "text": "“ใส่บัญชีภรรยาก็ได้”",
+      "tone": "slowly, calm",
+      "mood": 0.45,
+      "voice": "old_male"
+    },
+    {
+      "scene": "sign",
+      "view": "hood/chan2",
+      "who": "chan",
+      "beats": 6.5,
+      "text": "“ครึ่งแรกโอนตอนรับกุญแจ\nอีกครึ่งเมื่อส่งครบ”",
+      "tone": "slowly, calm",
+      "mood": 0.45,
+      "voice": "old_male"
+    },
+    {
+      "scene": "sign",
+      "view": "ledger/clause",
+      "beats": 9.625,
+      "text": "บรรทัดที่ชี้ไว้เขียนว่า\nผู้รับรถยินยอมปฏิบัติหน้าที่จนส่งมอบครบถ้วน",
+      "tone": "calm",
+      "mood": 0.5,
+      "hold": 0.5
+    },
+    {
+      "scene": "sign",
+      "view": "hood/ek",
+      "who": "ek",
+      "beats": 3.25,
+      "text": "“แล้วมีข้อห้ามอะไรอีก”",
+      "tone": "tired, warm",
+      "mood": 0.5
+    },
+    {
+      "scene": "sign",
+      "view": "rule/one",
+      "who": "chan",
+      "beats": 4.25,
+      "text": "“สองข้อ จอดรับให้ครบทุกจุด”",
+      "tone": "slowly, calm",
+      "mood": 0.5,
+      "hold": 0,
+      "voice": "old_male"
+    },
+    {
+      "scene": "sign",
+      "view": "rule/two",
+      "who": "chan",
+      "beats": 7.25,
+      "text": "“เมื่อรับคนแรกแล้ว ห้ามเปิดตู้จนถึงท่าเรือ”",
+      "tone": "slowly, serious",
+      "mood": 0.6,
+      "voLead": 0.6,
+      "hold": 0.5,
+      "voice": "old_male"
+    },
+    {
+      "scene": "sign",
+      "view": "hood/ek2",
+      "who": "ek",
+      "beats": 2.75,
+      "text": "“ถ้าเขาเรียกให้เปิดล่ะ”",
+      "tone": "uneasy",
+      "mood": 0.6
+    },
+    {
+      "scene": "sign",
+      "view": "face/chan",
+      "who": "chan",
+      "beats": 2,
+      "text": "“ขับต่อ”",
+      "tone": "flat, firm",
+      "mood": 0.65,
+      "hold": 0,
+      "voice": "old_male"
+    },
+    {
+      "scene": "sign",
+      "view": "pen/wait",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.6
+    },
+    {
+      "scene": "sign",
+      "view": "hood/chan3",
+      "who": "chan",
+      "beats": 7.875,
+      "text": "“พวกเขาออกเองไม่ได้ คุณต้องเปิดให้\nแต่เปิดที่ปลายทางเท่านั้น”",
+      "tone": "slowly, calm",
+      "mood": 0.6,
+      "hold": 0,
+      "voice": "old_male"
+    },
+    {
+      "scene": "sign",
+      "view": "ledger/sign",
+      "beats": 2.5,
+      "text": "",
+      "vo": "",
+      "mood": 0.55,
+      "cues": [
+        [
+          0.8,
+          "scratch"
+        ]
+      ]
+    },
+    {
+      "scene": "sign",
+      "view": "slip/in",
+      "beats": 4.375,
+      "text": "ไม่นาน เงินก็เข้า [ห้าแสนบาท]",
+      "tone": "calm",
+      "mood": 0.45,
+      "cues": [
+        [
+          0.2,
+          "msg"
+        ]
+      ]
+    },
+    {
+      "scene": "sign",
+      "view": "slip/name",
+      "beats": 3.25,
+      "text": "ชื่อผู้รับเป็นภรรยาของเขา",
+      "tone": "calm",
+      "mood": 0.45,
+      "hold": 0
+    },
+    {
+      "scene": "sign",
+      "view": "call/wife",
+      "beats": 2.5,
+      "text": "",
+      "vo": "",
+      "mood": 0.45,
+      "cues": [
+        [
+          0.3,
+          "dial"
+        ]
+      ]
+    },
+    {
+      "scene": "sign",
+      "view": "chat/send",
+      "beats": 5,
+      "text": "ได้เงินแล้วนะ\nเดี๋ยวทำงานเสร็จจะกลับ",
+      "vo": "",
+      "mood": 0.4,
+      "cues": [
+        [
+          2.4,
+          "send"
+        ]
+      ]
+    },
+    {
+      "scene": "sign",
+      "view": "key/offer",
+      "beats": 4.5,
+      "text": "ลุงชาญยื่นกุญแจให้ มือของแกสั่น",
+      "tone": "calm",
+      "mood": 0.45,
+      "hold": 0
+    },
+    {
+      "scene": "sign",
+      "view": "key/take",
+      "beats": 2.75,
+      "text": "เอกคิดว่าเป็นเพราะอายุ",
+      "tone": "calm",
+      "mood": 0.45
+    },
+    {
+      "scene": "sign",
+      "view": "key/chan",
+      "beats": 5.625,
+      "text": "เขาเพิ่งมารู้ทีหลังว่า แกกลัวเขาเปลี่ยนใจ",
+      "tone": "calm",
+      "mood": 0.55,
+      "hold": 0.5,
+      "cues": [
+        [
+          2.4,
+          "engine-start"
+        ]
+      ]
+    },
+    {
+      "scene": "stop1",
+      "view": "road/arrive",
+      "beats": 3.5,
+      "text": "พิกัดแรกคือศาลาไม้เก่า",
+      "tone": "calm",
+      "mood": 0.45,
+      "cues": [
+        [
+          0,
+          "engine"
+        ]
+      ]
+    },
+    {
+      "scene": "stop1",
+      "view": "sala/garland",
+      "beats": 4.625,
+      "text": "มีเพียงพวงมาลัยซีด ๆ แขวนอยู่ข้างเสา",
+      "tone": "calm",
+      "mood": 0.5
+    },
+    {
+      "scene": "stop1",
+      "view": "road/hazard",
+      "beats": 2.5,
+      "text": "",
+      "vo": "",
+      "mood": 0.5,
+      "cues": [
+        [
+          0.3,
+          "hazard"
+        ]
+      ]
+    },
+    {
+      "scene": "stop1",
+      "view": "mirror/two",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.55
+    },
+    {
+      "scene": "stop1",
+      "view": "mirror/close",
+      "beats": 7.625,
+      "text": "ในกระจกข้าง มีผู้หญิงเสื้อฟ้า\nจูงเด็กหญิงที่กอดตุ๊กตากระต่าย",
+      "tone": "calm",
+      "mood": 0.55,
+      "hold": 0
+    },
+    {
+      "scene": "stop1",
+      "view": "cab/ask",
+      "who": "ek",
+      "beats": 4.25,
+      "text": "“ไปท่าเรือใช่ไหมครับ”",
+      "tone": "polite, unsure",
+      "mood": 0.55,
+      "voLead": 0.8,
+      "cues": [
+        [
+          0,
+          "window"
+        ]
+      ]
+    },
+    {
+      "scene": "stop1",
+      "view": "mirror/two",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.6
+    },
+    {
+      "scene": "stop1",
+      "view": "cab/look",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.6
+    },
+    {
+      "scene": "stop1",
+      "view": "mirror/empty",
+      "beats": 3.25,
+      "text": "ทั้งสองคนหายไปแล้ว",
+      "tone": "calm",
+      "mood": 0.7,
+      "hold": 0.5
+    },
+    {
+      "scene": "stop1",
+      "view": "road/dip",
+      "beats": 3.375,
+      "text": "ทันใดนั้น ท้ายรถยุบลง",
+      "tone": "calm",
+      "mood": 0.7,
+      "cues": [
+        [
+          0.6,
+          "creak-load"
+        ]
+      ]
+    },
+    {
+      "scene": "stop1",
+      "view": "road/slam",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.75,
+      "cues": [
+        [
+          0.1,
+          "door-slam"
+        ]
+      ]
+    },
+    {
+      "scene": "stop1",
+      "view": "cab/key",
+      "beats": 2.75,
+      "text": "เขาไม่ได้ลงไปเปิดตู้",
+      "tone": "calm",
+      "mood": 0.7,
+      "hold": 0
+    },
+    {
+      "scene": "stop1",
+      "view": "phone/chan",
+      "beats": 3.5,
+      "text": "ลุงชาญ: “รับแล้ว ไปต่อได้”",
+      "vo": "",
+      "mood": 0.65,
+      "cues": [
+        [
+          0.2,
+          "msg"
+        ]
+      ]
+    },
+    {
+      "scene": "stop23",
+      "view": "shop/arrive",
+      "beats": 4.125,
+      "text": "จุดที่สองคือร้านสะดวกซื้อร้าง",
+      "tone": "tense",
+      "mood": 0.6,
+      "cues": [
+        [
+          0,
+          "engine"
+        ]
+      ]
+    },
+    {
+      "scene": "stop23",
+      "view": "shop/dip",
+      "beats": 2.875,
+      "text": "แต่รถก็ยุบลงอีกครั้ง",
+      "tone": "tense",
+      "mood": 0.7,
+      "cues": [
+        [
+          0.4,
+          "creak-load"
+        ]
+      ]
+    },
+    {
+      "scene": "stop23",
+      "view": "box/cough",
+      "beats": 2.5,
+      "text": "",
+      "vo": "",
+      "mood": 0.7,
+      "cues": [
+        [
+          0.4,
+          "old-cough"
+        ]
+      ]
+    },
+    {
+      "scene": "stop23",
+      "view": "shoe/close",
+      "beats": 5.625,
+      "text": "จุดที่สามริมสะพาน\nมีรองเท้าข้างหนึ่งใต้ราวกั้น",
+      "tone": "tense",
+      "mood": 0.7,
+      "hold": 0
+    },
+    {
+      "scene": "stop23",
+      "view": "cab/pass",
+      "beats": 5.25,
+      "text": "พอขับเลยพิกัด เสียงเคาะก็ดังขึ้นหลังศีรษะ",
+      "tone": "tense",
+      "mood": 0.75
+    },
+    {
+      "scene": "stop23",
+      "view": "cab/knock",
+      "beats": 3,
+      "text": "",
+      "vo": "",
+      "mood": 0.8,
+      "cues": [
+        [
+          0.3,
+          "knock1"
+        ],
+        [
+          1.6,
+          "knock1"
+        ]
+      ]
+    },
+    {
+      "scene": "stop23",
+      "view": "bridge/stop",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.75,
+      "cues": [
+        [
+          0,
+          "brakes-soft"
+        ]
+      ]
+    },
+    {
+      "scene": "stop23",
+      "view": "bridge/slam",
+      "beats": 2.5,
+      "text": "",
+      "vo": "",
+      "mood": 0.65,
+      "cues": [
+        [
+          0.4,
+          "door-slam"
+        ]
+      ]
+    },
+    {
+      "scene": "night",
+      "view": "box/girl",
+      "who": "girl",
+      "beats": 6.125,
+      "text": "“แม่ หนูหนาว”",
+      "tone": "childlike, small voice",
+      "fx": "muffled",
+      "mood": 0.75,
+      "voLead": 1.6,
+      "cues": [
+        [
+          0,
+          "engine"
+        ],
+        [
+          0.2,
+          "roll"
+        ]
+      ],
+      "hold": 0,
+      "voice": "female"
+    },
+    {
+      "scene": "night",
+      "view": "heater/on",
+      "beats": 5.125,
+      "text": "เอกเปิดฮีตเตอร์\nทั้งที่รู้ว่าลมไปไม่ถึงข้างหลัง",
+      "tone": "tense",
+      "mood": 0.6,
+      "cues": [
+        [
+          0.5,
+          "click"
+        ]
+      ]
+    },
+    {
+      "scene": "night",
+      "view": "phone/dial",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.6,
+      "cues": [
+        [
+          0.3,
+          "dial"
+        ]
+      ]
+    },
+    {
+      "scene": "night",
+      "view": "chat/pending",
+      "beats": 4.75,
+      "text": "ข้อความที่ส่งไปยังไม่ขึ้นว่าส่งสำเร็จ",
+      "tone": "tense",
+      "mood": 0.65,
+      "hold": 0
+    },
+    {
+      "scene": "night",
+      "view": "box/mom",
+      "who": "mom",
+      "beats": 2.625,
+      "text": "“พี่ช่วยจอดหน่อยค่ะ”",
+      "tone": "urgent",
+      "fx": "muffled",
+      "mood": 0.8,
+      "voice": "female"
+    },
+    {
+      "scene": "night",
+      "view": "rearview/look",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.8
+    },
+    {
+      "scene": "night",
+      "view": "box/mom2",
+      "who": "mom",
+      "beats": 3.5,
+      "text": "“ลูกหนูหายใจไม่ออก”",
+      "tone": "urgent, desperate",
+      "fx": "muffled",
+      "mood": 0.85,
+      "hold": 0,
+      "voice": "female"
+    },
+    {
+      "scene": "reveal",
+      "view": "latch/open",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.85,
+      "cues": [
+        [
+          1.1,
+          "unlatch"
+        ]
+      ]
+    },
+    {
+      "scene": "reveal",
+      "view": "rear/ek",
+      "who": "ek",
+      "beats": 2,
+      "text": "“ผมเปิดแล้วนะ!”",
+      "tone": "urgent, shouting",
+      "mood": 0.85
+    },
+    {
+      "scene": "reveal",
+      "view": "rear/doors",
+      "beats": 2.5,
+      "text": "",
+      "vo": "",
+      "mood": 0.85,
+      "cues": [
+        [
+          0.1,
+          "creak"
+        ]
+      ]
+    },
+    {
+      "scene": "reveal",
+      "view": "inside/sweep",
+      "beats": 2.5,
+      "text": "",
+      "vo": "",
+      "mood": 0.85
+    },
+    {
+      "scene": "reveal",
+      "view": "inside/empty",
+      "beats": 2.5,
+      "text": "ตู้ว่างเปล่า",
+      "tone": "tense",
+      "mood": 0.9,
+      "cues": [
+        [
+          0,
+          "hit"
+        ]
+      ],
+      "hold": 0.5
+    },
+    {
+      "scene": "reveal",
+      "view": "inside/prints",
+      "beats": 5.25,
+      "text": "มีเพียงรอยเท้าเปียกหลายคู่\nหันเข้าหาประตู",
+      "tone": "tense",
+      "mood": 0.85,
+      "hold": 0
+    },
+    {
+      "scene": "reveal",
+      "view": "doll/drip",
+      "beats": 6.625,
+      "text": "กลางพื้นมีตุ๊กตากระต่าย\nน้ำหยดจากหูที่พับลง",
+      "tone": "tense",
+      "mood": 0.85,
+      "cues": [
+        [
+          2,
+          "drip"
+        ],
+        [
+          3.2,
+          "drip"
+        ]
+      ],
+      "hold": 0
+    },
+    {
+      "scene": "reveal",
+      "view": "rear/step",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.8,
+      "cues": [
+        [
+          0.2,
+          "steps"
+        ]
+      ]
+    },
+    {
+      "scene": "reveal",
+      "view": "side/girl-voice",
+      "who": "girl",
+      "beats": 3.25,
+      "text": "“แม่… ลุงเปิดแล้ว”",
+      "tone": "childlike, small voice, softly",
+      "mood": 0.9,
+      "hold": 0,
+      "voice": "female"
+    },
+    {
+      "scene": "reveal",
+      "view": "side/girl",
+      "beats": 6.375,
+      "text": "เด็กหญิงยืนอยู่ข้างเขา\nกอดตุ๊กตาตัวเดียวกัน",
+      "tone": "softly",
+      "mood": 0.85,
+      "cues": [
+        [
+          0,
+          "hit"
+        ]
+      ],
+      "voLead": 0.6,
+      "style": "red",
+      "hold": 0
+    },
+    {
+      "scene": "reveal",
+      "view": "side/mom",
+      "beats": 5.75,
+      "text": "แม่ของเด็กยืนอยู่ข้างหลัง\nน้ำไหลจากชายกระโปรง",
+      "tone": "softly",
+      "mood": 0.8,
+      "cues": [
+        [
+          1,
+          "drip"
+        ]
+      ]
+    },
+    {
+      "scene": "reveal",
+      "view": "feet/dry",
+      "beats": 4.25,
+      "text": "แต่พื้นใต้เธอไม่มีแอ่งน้ำ",
+      "tone": "softly",
+      "mood": 0.8,
+      "hold": 0
+    },
+    {
+      "scene": "reveal",
+      "view": "side/torch",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.8
+    },
+    {
+      "scene": "reveal",
+      "view": "mom/talk",
+      "who": "mom",
+      "beats": 4.75,
+      "text": "“หนูพยายามปลดเข็มขัดให้ลูกแล้วค่ะ”",
+      "tone": "softly, calm",
+      "mood": 0.6,
+      "voice": "female"
+    },
+    {
+      "scene": "reveal",
+      "view": "mom/talk2",
+      "who": "mom",
+      "beats": 6.25,
+      "text": "“แต่น้ำมันขึ้นเร็ว ประตูเปิดไม่ออก\nหนูเลยให้ลูกยืนบนตัก”",
+      "tone": "softly, calm",
+      "mood": 0.6,
+      "voice": "female"
+    },
+    {
+      "scene": "reveal",
+      "view": "mom/talk3",
+      "who": "mom",
+      "beats": 4.5,
+      "text": "“หนูจำไม่ได้ว่าหลังจากนั้นเกิดอะไรขึ้น”",
+      "tone": "softly, sad",
+      "mood": 0.6,
+      "hold": 0,
+      "voice": "female"
+    },
+    {
+      "scene": "reveal",
+      "view": "memory/all",
+      "beats": 3.5,
+      "text": "",
+      "vo": "",
+      "mood": 0.55
+    },
+    {
+      "scene": "reveal",
+      "view": "side/lower",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.5
+    },
+    {
+      "scene": "reveal",
+      "view": "mom/talk4",
+      "who": "mom",
+      "beats": 3.875,
+      "text": "“รถคันนี้จะพาเราออกไปได้ใช่ไหมคะ”",
+      "tone": "softly, hopeful",
+      "mood": 0.5,
+      "hold": 0,
+      "voice": "female"
+    },
+    {
+      "scene": "reveal",
+      "view": "rear/wide",
+      "beats": 5.625,
+      "text": "เอกไม่มีคำตอบ\nแต่เขาเปิดประตูให้กว้างขึ้น",
+      "tone": "softly",
+      "mood": 0.45,
+      "cues": [
+        [
+          1.4,
+          "creak"
+        ]
+      ]
+    },
+    {
+      "scene": "reveal",
+      "view": "rear/invite",
+      "who": "ek",
+      "beats": 2.125,
+      "text": "“ขึ้นมาก่อนครับ”",
+      "tone": "softly, warm",
+      "mood": 0.4,
+      "hold": 0.5
+    },
+    {
+      "scene": "ledger",
+      "view": "cab/lock",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.6,
+      "cues": [
+        [
+          0.1,
+          "door-car"
+        ],
+        [
+          1.2,
+          "dial"
+        ]
+      ]
+    },
+    {
+      "scene": "ledger",
+      "view": "cab/ask",
+      "who": "ek",
+      "beats": 4.875,
+      "text": "“คนที่ให้ผมรับ… ตายหมดแล้วใช่ไหม”",
+      "tone": "tense, quietly",
+      "mood": 0.7
+    },
+    {
+      "scene": "ledger",
+      "view": "cab/wait",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.7
+    },
+    {
+      "scene": "ledger",
+      "view": "cab/shout",
+      "who": "ek",
+      "beats": 2,
+      "text": "“ตอบสิ!”",
+      "tone": "angry, shouting",
+      "mood": 0.75
+    },
+    {
+      "scene": "ledger",
+      "view": "cab/chan",
+      "who": "chan",
+      "beats": 2,
+      "text": "“ใช่”",
+      "tone": "quietly",
+      "fx": "phone",
+      "mood": 0.75,
+      "hold": 0,
+      "voice": "old_male"
+    },
+    {
+      "scene": "ledger",
+      "view": "cab/ek",
+      "who": "ek",
+      "beats": 3,
+      "text": "“แล้วทำไมไม่บอกตั้งแต่แรก”",
+      "tone": "angry",
+      "mood": 0.7
+    },
+    {
+      "scene": "ledger",
+      "view": "cab/chan2",
+      "who": "chan",
+      "beats": 3.125,
+      "text": "“ถ้าบอก คุณจะรับงานไหม”",
+      "tone": "calm",
+      "fx": "phone",
+      "mood": 0.7,
+      "hold": 0,
+      "voice": "old_male"
+    },
+    {
+      "scene": "ledger",
+      "view": "cab/cough",
+      "beats": 2.5,
+      "text": "",
+      "vo": "",
+      "mood": 0.7,
+      "cues": [
+        [
+          1.2,
+          "kid-cough"
+        ]
+      ]
+    },
+    {
+      "scene": "ledger",
+      "view": "cab/ek2",
+      "who": "ek",
+      "beats": 3.75,
+      "text": "“ท่าเรืออยู่ที่ไหนกันแน่”",
+      "tone": "tense, low",
+      "mood": 0.7
+    },
+    {
+      "scene": "ledger",
+      "view": "cab/chan3",
+      "who": "chan",
+      "beats": 4.125,
+      "text": "“ที่ที่พวกเขาไปต่อได้”",
+      "tone": "softly",
+      "fx": "phone",
+      "mood": 0.7,
+      "hold": 0,
+      "voice": "old_male"
+    },
+    {
+      "scene": "ledger",
+      "view": "glove/fall",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.65,
+      "cues": [
+        [
+          1,
+          "book"
+        ]
+      ]
+    },
+    {
+      "scene": "ledger",
+      "view": "book/old",
+      "beats": 5.375,
+      "text": "ทุกหน้ามีชื่อคนขับ ทุกชื่อถูกขีดฆ่า",
+      "tone": "tense",
+      "mood": 0.7,
+      "cues": [
+        [
+          0.3,
+          "flip"
+        ],
+        [
+          0.8,
+          "flip"
+        ]
+      ]
+    },
+    {
+      "scene": "ledger",
+      "view": "book/struck",
+      "beats": 4.25,
+      "text": "จนถึงหน้าของชาญ ช่องส่งมอบยังว่าง",
+      "tone": "tense",
+      "mood": 0.75,
+      "cues": [
+        [
+          0.8,
+          "scratch"
+        ]
+      ]
+    },
+    {
+      "scene": "ledger",
+      "view": "book/ek",
+      "beats": 2.75,
+      "text": "ถัดไปคือชื่อเอก",
+      "tone": "tense",
+      "mood": 0.8,
+      "cues": [
+        [
+          1.4,
+          "flip"
+        ]
+      ],
+      "hold": 0
+    },
+    {
+      "scene": "ledger",
+      "view": "book/unfold",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.8,
+      "cues": [
+        [
+          1.2,
+          "flip"
+        ]
+      ]
+    },
+    {
+      "scene": "ledger",
+      "view": "book/clause",
+      "beats": 10.5,
+      "text": "ผู้รับรถยินยอมปฏิบัติหน้าที่\nจนส่งมอบครบถ้วน{แก่ผู้รับหน้าที่รายถัดไป}",
+      "tone": "slowly",
+      "style": "red",
+      "mood": 0.9,
+      "cues": [
+        [
+          0,
+          "hit"
+        ]
+      ],
+      "voLead": 0.5,
+      "hold": 1
+    },
+    {
+      "scene": "ledger",
+      "view": "face/realise",
+      "beats": 6.375,
+      "text": "งานจะจบเมื่อมีคนขับคนใหม่\nไม่ใช่เมื่อถึงท่าเรือ",
+      "tone": "tense",
+      "mood": 0.85,
+      "hold": 0
+    },
+    {
+      "scene": "ledger",
+      "view": "seat/phone",
+      "beats": 2.5,
+      "text": "",
+      "vo": "",
+      "mood": 0.8,
+      "cues": [
+        [
+          0.1,
+          "ring"
+        ]
+      ]
+    },
+    {
+      "scene": "ledger",
+      "view": "cab/accuse",
+      "who": "ek",
+      "beats": 5.625,
+      "text": "“เงินล้านนั่น… ซื้อให้ผมมาทำแทนลุงใช่ไหม”",
+      "tone": "bitter, low",
+      "mood": 0.8
+    },
+    {
+      "scene": "ledger",
+      "view": "seat/chan",
+      "who": "chan",
+      "beats": 2.75,
+      "text": "“ใช่”",
+      "tone": "quietly, guilty",
+      "fx": "phone",
+      "mood": 0.8,
+      "hold": 0,
+      "voice": "old_male"
+    },
+    {
+      "scene": "ledger",
+      "view": "cab/accuse2",
+      "who": "ek",
+      "beats": 5.125,
+      "text": "“ถ้าผมขับไปถึง ลุงก็พ้น แล้วผมต้องขับต่อ?”",
+      "tone": "angry, shaky",
+      "mood": 0.85
+    },
+    {
+      "scene": "ledger",
+      "view": "seat/chan2",
+      "who": "chan",
+      "beats": 2,
+      "text": "“ใช่”",
+      "tone": "quietly",
+      "fx": "phone",
+      "mood": 0.85,
+      "hold": 0,
+      "voice": "old_male"
+    },
+    {
+      "scene": "ledger",
+      "view": "wheel/horn",
+      "beats": 2.5,
+      "text": "",
+      "vo": "",
+      "mood": 0.9,
+      "cues": [
+        [
+          0.3,
+          "thump"
+        ],
+        [
+          0.45,
+          "horn"
+        ]
+      ]
+    },
+    {
+      "scene": "ledger",
+      "view": "road/uturn",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.85,
+      "cues": [
+        [
+          0.1,
+          "skid"
+        ]
+      ]
+    },
+    {
+      "scene": "ledger",
+      "view": "cab/decide",
+      "who": "ek",
+      "beats": 2.875,
+      "text": "“งั้นผมจะเอารถไปคืน”",
+      "tone": "angry, determined",
+      "mood": 0.8,
+      "hold": 0
+    },
+    {
+      "scene": "crash",
+      "view": "pov/drive",
+      "beats": 3.625,
+      "text": "ยิ่งขับย้อนกลับ ถนนยิ่งคุ้น",
+      "tone": "tense",
+      "mood": 0.7,
+      "cues": [
+        [
+          0,
+          "engine"
+        ]
+      ]
+    },
+    {
+      "scene": "crash",
+      "view": "pov/signs",
+      "beats": 6.625,
+      "text": "ต้นไม้หักครึ่งลำต้น\nป้ายโค้งที่เอียงไปข้างหนึ่ง ราวกั้นสีขาว",
+      "tone": "tense",
+      "mood": 0.75,
+      "hold": 0
+    },
+    {
+      "scene": "crash",
+      "view": "pov/lights",
+      "beats": 3.75,
+      "text": "แล้วไฟฉุกเฉินก็ปรากฏข้างหน้า",
+      "tone": "tense",
+      "mood": 0.8,
+      "cues": [
+        [
+          0.3,
+          "siren"
+        ]
+      ]
+    },
+    {
+      "scene": "crash",
+      "view": "site/wide",
+      "beats": 4.75,
+      "text": "รถกู้ภัยจอดข้างซากกระบะที่ชนราวกั้น",
+      "tone": "tense",
+      "mood": 0.8,
+      "cues": [
+        [
+          0,
+          "radio"
+        ]
+      ],
+      "hold": 0
+    },
+    {
+      "scene": "crash",
+      "view": "detail/dent",
+      "beats": 6.25,
+      "text": "รอยบุบตรงบังโคลน\nเชือกสีฟ้าที่ผูกไว้ท้ายกระบะ",
+      "tone": "tense",
+      "mood": 0.85
+    },
+    {
+      "scene": "crash",
+      "view": "detail/sticker",
+      "beats": 4.125,
+      "text": "สติกเกอร์ที่ลูกชายติดให้บนกระจกหลัง",
+      "tone": "tense",
+      "mood": 0.85,
+      "hold": 0
+    },
+    {
+      "scene": "crash",
+      "view": "site/wreck2",
+      "beats": 3.5,
+      "text": "เป็น[รถของเขา]",
+      "tone": "tense",
+      "mood": 0.9,
+      "hold": 1
+    },
+    {
+      "scene": "crash",
+      "view": "site/ask",
+      "who": "ek",
+      "beats": 5.5,
+      "text": "“พี่ครับ รถผมมาอยู่ตรงนี้ได้ยังไง”",
+      "tone": "confused, urgent",
+      "mood": 0.8,
+      "voLead": 1.2,
+      "cues": [
+        [
+          0.1,
+          "door-car"
+        ]
+      ]
+    },
+    {
+      "scene": "crash",
+      "view": "site/ignore",
+      "beats": 2.625,
+      "text": "ไม่มีใครหันมา",
+      "tone": "tense",
+      "mood": 0.85,
+      "hold": 0
+    },
+    {
+      "scene": "crash",
+      "view": "site/through",
+      "beats": 5.625,
+      "text": "ชายคนหนึ่งเดินผ่านตัวเขาไป\nโดยไม่ชะลอฝีเท้า",
+      "tone": "tense",
+      "mood": 0.9,
+      "hold": 0
+    },
+    {
+      "scene": "crash",
+      "view": "officer/ring",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.85,
+      "hush": true,
+      "cues": [
+        [
+          0.8,
+          "ring2"
+        ]
+      ]
+    },
+    {
+      "scene": "crash",
+      "view": "officer/talk",
+      "who": "officer",
+      "beats": 3.5,
+      "text": "“ครับ ผู้หญิงที่ติดต่อเมื่อกี้เป็นภรรยาครับ”",
+      "tone": "calm, matter-of-fact",
+      "mood": 0.85,
+      "voice": "old_male"
+    },
+    {
+      "scene": "crash",
+      "view": "officer/talk2",
+      "who": "officer",
+      "beats": 5.375,
+      "text": "“เสียชีวิตในที่เกิดเหตุครับ\nเวลาประมาณสองทุ่มสี่สิบเจ็ด”",
+      "tone": "calm, quietly",
+      "mood": 0.95,
+      "hold": 0,
+      "voice": "old_male"
+    },
+    {
+      "scene": "crash",
+      "view": "watch/still",
+      "beats": 4.75,
+      "text": "เขาก้มมองนาฬิกา เข็มยังหยุดอยู่ที่เดิม",
+      "tone": "tense",
+      "mood": 0.95,
+      "hold": 0.5
+    },
+    {
+      "scene": "crash",
+      "view": "cap/ground",
+      "beats": 5.875,
+      "text": "บนพื้นมีหมวกแก๊ปกรมท่า\nรอยปะสีครีมตรงด้านข้าง",
+      "tone": "tense",
+      "mood": 0.95,
+      "hold": 0
+    },
+    {
+      "scene": "crash",
+      "view": "face/cap",
+      "beats": 5.75,
+      "text": "เหมือนใบที่เขากำลังสวมอยู่",
+      "tone": "softly",
+      "mood": 0.95,
+      "hold": 0
+    },
+    {
+      "scene": "crash",
+      "view": "silence/hold",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.3,
+      "hush": true
+    },
+    {
+      "scene": "flash",
+      "view": "flash/montage",
+      "beats": 7.75,
+      "text": "ไฟหน้ารถบรรทุก เสียงแตร\nมือที่กระชากพวงมาลัย แรงกระแทก",
+      "tone": "tense",
+      "mood": 0.95,
+      "cues": [
+        [
+          0,
+          "whoosh"
+        ],
+        [
+          0.6,
+          "horn-truck"
+        ],
+        [
+          2.6,
+          "skid"
+        ],
+        [
+          4.4,
+          "crash"
+        ]
+      ]
+    },
+    {
+      "scene": "flash",
+      "view": "flash/silence",
+      "beats": 3.75,
+      "text": "แล้วความเงียบ",
+      "tone": "softly",
+      "mood": 0.2,
+      "hush": true,
+      "hold": 1.5
+    },
+    {
+      "scene": "flash",
+      "view": "flash/truth",
+      "beats": 5,
+      "text": "เขาไม่ได้ขับรถไปถึงโกดัง",
+      "tone": "whispers",
+      "style": "red",
+      "mood": 0.9,
+      "cues": [
+        [
+          0,
+          "bighit"
+        ]
+      ],
+      "voLead": 0.6,
+      "hold": 1
+    },
+    {
+      "scene": "flash",
+      "view": "flash/walk",
+      "beats": 9,
+      "text": "เขาเดินออกจากอุบัติเหตุ\nโดยทิ้งร่างของตัวเองไว้ข้างหลัง",
+      "tone": "softly, sad",
+      "mood": 0.7,
+      "hold": 0.5
+    },
+    {
+      "scene": "truth",
+      "view": "seat/call",
+      "who": "ek",
+      "beats": 2.625,
+      "text": "“ลุงรู้ตั้งแต่แรก?”",
+      "tone": "quietly, hurt",
+      "mood": 0.6
+    },
+    {
+      "scene": "truth",
+      "view": "chan/lamp",
+      "who": "chan",
+      "beats": 2,
+      "text": "“รู้”",
+      "tone": "quietly",
+      "fx": "phone",
+      "mood": 0.6,
+      "hold": 0,
+      "voice": "old_male"
+    },
+    {
+      "scene": "truth",
+      "view": "ek/ask2",
+      "who": "ek",
+      "beats": 2.625,
+      "text": "“ว่าผมตายแล้ว?”",
+      "tone": "quietly, trembling",
+      "mood": 0.65,
+      "hold": 0
+    },
+    {
+      "scene": "truth",
+      "view": "chan/talk",
+      "who": "chan",
+      "beats": 4,
+      "text": "“ตอนผมรับรถ ผมก็ไม่รู้เหมือนกัน”",
+      "tone": "sighs, sad",
+      "fx": "phone",
+      "mood": 0.6,
+      "hold": 0,
+      "voice": "old_male"
+    },
+    {
+      "scene": "truth",
+      "view": "hands/look",
+      "beats": 4.75,
+      "text": "เอกมองมือตัวเอง\nมันยังเหมือนเดิมทุกอย่าง",
+      "tone": "softly",
+      "mood": 0.55,
+      "hold": 0
+    },
+    {
+      "scene": "truth",
+      "view": "ek/money",
+      "who": "ek",
+      "beats": 3.375,
+      "text": "“แล้วผมจะเอาเงินไปทำอะไร”",
+      "tone": "sad, bitter",
+      "mood": 0.55
+    },
+    {
+      "scene": "truth",
+      "view": "chan/talk2",
+      "who": "chan",
+      "beats": 5.875,
+      "text": "“คนที่ยังอยู่ใช้ได้\nเงินครึ่งแรกถึงภรรยาคุณแล้ว”",
+      "tone": "softly",
+      "fx": "phone",
+      "mood": 0.55,
+      "voice": "old_male"
+    },
+    {
+      "scene": "truth",
+      "view": "insert/field",
+      "beats": 6.75,
+      "text": "เขาเพิ่งเข้าใจว่าทำไมสมุดต้องมีช่อง\n[ผู้รับเงินแทน]",
+      "tone": "softly",
+      "mood": 0.6,
+      "hold": 0.5
+    },
+    {
+      "scene": "truth",
+      "view": "chan/talk3",
+      "who": "chan",
+      "beats": 6.625,
+      "text": "“เงินที่ผมเหลือไว้ก่อนตาย มีอยู่เท่านั้น\nผมเอามันแลกกับคนที่จะมารับรถต่อ”",
+      "tone": "guilty",
+      "fx": "phone",
+      "mood": 0.55,
+      "voice": "old_male"
+    },
+    {
+      "scene": "truth",
+      "view": "ek/accuse",
+      "who": "ek",
+      "beats": 4.5,
+      "text": "“ลุงก็เลยหลอกผม”",
+      "tone": "quietly, bitter",
+      "mood": 0.55
+    },
+    {
+      "scene": "truth",
+      "view": "chan/yes",
+      "who": "chan",
+      "beats": 2.375,
+      "text": "“ใช่”",
+      "tone": "guilty, quietly",
+      "fx": "phone",
+      "mood": 0.55,
+      "hold": 0,
+      "voice": "old_male"
+    },
+    {
+      "scene": "truth",
+      "view": "chan/bow",
+      "beats": 3.125,
+      "text": "คราวนี้แกไม่แก้ตัว",
+      "tone": "softly",
+      "mood": 0.5
+    },
+    {
+      "scene": "truth",
+      "view": "chan/confess",
+      "who": "chan",
+      "beats": 3.875,
+      "text": "“ผมขับมานานจนจำเสียงลูกตัวเองแทบไม่ได้แล้ว”",
+      "tone": "sad",
+      "fx": "phone",
+      "mood": 0.5,
+      "voice": "old_male"
+    },
+    {
+      "scene": "truth",
+      "view": "chan/confess2",
+      "who": "chan",
+      "beats": 4.875,
+      "text": "“ผมอยากไป แต่ผมไม่กล้าบอกคุณตรง ๆ”",
+      "tone": "sad, guilty",
+      "fx": "phone",
+      "mood": 0.5,
+      "hold": 0,
+      "voice": "old_male"
+    },
+    {
+      "scene": "truth",
+      "view": "ek/if",
+      "who": "ek",
+      "beats": 3.5,
+      "text": "“ถ้าผมไม่ขับต่อ?”",
+      "tone": "quietly",
+      "mood": 0.5,
+      "voLead": 0.8
+    },
+    {
+      "scene": "truth",
+      "view": "chan/offer",
+      "who": "chan",
+      "beats": 8,
+      "text": "“คืนกุญแจ ผมจะรับหน้าที่กลับ\nคุณขึ้นท้ายรถ แล้วผมจะพาไปส่ง”",
+      "tone": "softly, sincere",
+      "fx": "phone",
+      "mood": 0.5,
+      "voice": "old_male"
+    },
+    {
+      "scene": "truth",
+      "view": "ek/rest",
+      "who": "ek",
+      "beats": 3.5,
+      "text": "“เงินที่เหลือล่ะ”",
+      "tone": "quietly",
+      "mood": 0.5,
+      "voLead": 0.8
+    },
+    {
+      "scene": "truth",
+      "view": "chan/dodge",
+      "who": "chan",
+      "beats": 4.25,
+      "text": "“คุณไม่ต้องรับงานก็ได้ เอก”",
+      "tone": "softly",
+      "fx": "phone",
+      "mood": 0.5,
+      "hold": 0,
+      "voice": "old_male"
+    },
+    {
+      "scene": "truth",
+      "view": "ek/know",
+      "beats": 5.875,
+      "text": "ลุงชาญหลบคำถาม\nนั่นทำให้เอกเข้าใจคำตอบ",
+      "tone": "softly",
+      "mood": 0.5,
+      "hold": 0.5
+    },
+    {
+      "scene": "home",
+      "view": "drive/home",
+      "beats": 3.625,
+      "text": "ก่อนตัดสินใจ เอกขอกลับบ้าน",
+      "tone": "softly",
+      "mood": 0.4,
+      "cues": [
+        [
+          0,
+          "engine"
+        ]
+      ]
+    },
+    {
+      "scene": "home",
+      "view": "house/out",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.35
+    },
+    {
+      "scene": "home",
+      "view": "house/in",
+      "beats": 5,
+      "text": "ภรรยานั่งอยู่ข้างโต๊ะ\nลูกชายหลับพิงแขนเธอ",
+      "tone": "softly",
+      "mood": 0.35,
+      "music": true,
+      "hold": 0
+    },
+    {
+      "scene": "home",
+      "view": "table/plates",
+      "beats": 5.25,
+      "text": "บนโต๊ะมีข้าวสองจาน จานหนึ่งยังไม่ได้แตะ",
+      "tone": "softly",
+      "mood": 0.4,
+      "hold": 0.5
+    },
+    {
+      "scene": "home",
+      "view": "door/knock",
+      "beats": 4,
+      "text": "",
+      "vo": "",
+      "mood": 0.4,
+      "hush": true
+    },
+    {
+      "scene": "home",
+      "view": "wife/phone",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.4
+    },
+    {
+      "scene": "home",
+      "view": "wife/cry",
+      "beats": 6,
+      "text": "ภรรยามองจำนวนเงินที่เข้า\nแล้วร้องไห้ออกมา",
+      "tone": "softly",
+      "mood": 0.45,
+      "hold": 0.5
+    },
+    {
+      "scene": "home",
+      "view": "ek/door",
+      "beats": 3.375,
+      "text": "เอกอยากบอกเธอว่าไม่ต้องกลัว",
+      "tone": "softly",
+      "mood": 0.4
+    },
+    {
+      "scene": "home",
+      "view": "ek/door2",
+      "beats": 4.375,
+      "text": "ไม่ต้องคอยฟังเสียงรถเขาทุกคืนอีกแล้ว",
+      "tone": "softly",
+      "mood": 0.4
+    },
+    {
+      "scene": "home",
+      "view": "cut/glass",
+      "beats": 4,
+      "text": "แต่ไม่มีคำไหนไปถึงเธอ",
+      "tone": "softly",
+      "mood": 0.4,
+      "hold": 0.5
+    },
+    {
+      "scene": "home",
+      "view": "son/ask",
+      "beats": 5.375,
+      "text": "ลูกชายตื่นขึ้นมาถามแม่ว่า “พ่อกลับหรือยัง”",
+      "tone": "softly",
+      "mood": 0.45,
+      "hold": 0.5
+    },
+    {
+      "scene": "home",
+      "view": "wife/hug",
+      "beats": 2.5,
+      "text": "",
+      "vo": "",
+      "mood": 0.45
+    },
+    {
+      "scene": "home",
+      "view": "cut/dim",
+      "beats": 8.125,
+      "text": "เอกถอดหมวก ยืนอยู่อย่างนั้น\nจนไฟในห้องถูกหรี่ลง",
+      "tone": "softly",
+      "mood": 0.4,
+      "hold": 2
+    },
+    {
+      "scene": "home",
+      "view": "ek/leave",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.35,
+      "cues": [
+        [
+          0.4,
+          "steps"
+        ]
+      ]
+    },
+    {
+      "scene": "decide",
+      "view": "cab/say",
+      "who": "ek",
+      "beats": 2.375,
+      "text": "“ผมจะขับต่อ”",
+      "tone": "calm, resolved",
+      "mood": 0.4,
+      "cues": [
+        [
+          0,
+          "engine"
+        ]
+      ],
+      "hold": 0
+    },
+    {
+      "scene": "decide",
+      "view": "cab/wait",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.4
+    },
+    {
+      "scene": "decide",
+      "view": "cab/chan",
+      "who": "chan",
+      "beats": 2,
+      "text": "“คุณแน่ใจนะ”",
+      "tone": "softly",
+      "fx": "phone",
+      "mood": 0.4,
+      "hold": 0,
+      "voice": "old_male"
+    },
+    {
+      "scene": "decide",
+      "view": "cab/say2",
+      "who": "ek",
+      "beats": 3.375,
+      "text": "“โอนอีกครึ่งให้เมียผม”",
+      "tone": "calm, firm",
+      "mood": 0.4
+    },
+    {
+      "scene": "decide",
+      "view": "cab/chan2",
+      "who": "chan",
+      "beats": 4.125,
+      "text": "“เอก งานนี้มันไม่รู้ว่าจะจบเมื่อไร”",
+      "tone": "softly, worried",
+      "fx": "phone",
+      "mood": 0.45,
+      "hold": 0,
+      "voice": "old_male"
+    },
+    {
+      "scene": "decide",
+      "view": "mirror/mom",
+      "beats": 6.875,
+      "text": "ในกระจกข้าง\nผู้หญิงกำลังกอดลูกอยู่หลังประตูตู้",
+      "tone": "calm",
+      "mood": 0.4,
+      "hold": 0.5
+    },
+    {
+      "scene": "decide",
+      "view": "cab/say3",
+      "who": "ek",
+      "beats": 2,
+      "text": "“ผมรู้แล้ว”",
+      "tone": "softly, calm",
+      "mood": 0.35,
+      "hold": 0
+    },
+    {
+      "scene": "decide",
+      "view": "fog/drive",
+      "beats": 2.375,
+      "text": "ไม่มีเสียงเคาะอีกแล้ว",
+      "tone": "calm",
+      "mood": 0.35,
+      "hold": 0
+    },
+    {
+      "scene": "decide",
+      "view": "fog/far",
+      "beats": 7.125,
+      "text": "มีเพียงเสียงแม่กล่อมลูกเบา ๆ จากด้านหลัง",
+      "tone": "calm",
+      "mood": 0.3,
+      "music": true,
+      "hold": 2.5
+    },
+    {
+      "scene": "pier",
+      "view": "pier/park",
+      "beats": 4,
+      "text": "",
+      "vo": "",
+      "mood": 0.35,
+      "cues": [
+        [
+          0.2,
+          "engine-off"
+        ],
+        [
+          1.6,
+          "steps"
+        ],
+        [
+          3.4,
+          "creak"
+        ]
+      ]
+    },
+    {
+      "scene": "pier",
+      "view": "box/all",
+      "beats": 3.125,
+      "text": "คราวนี้เขามองเห็นทุกคน",
+      "tone": "softly",
+      "mood": 0.4,
+      "hold": 0
+    },
+    {
+      "scene": "pier",
+      "view": "box/two",
+      "beats": 4,
+      "text": "",
+      "vo": "",
+      "mood": 0.4
+    },
+    {
+      "scene": "pier",
+      "view": "box/tired",
+      "beats": 7.125,
+      "text": "ไม่มีใครมีบาดแผล\nทุกคนดูเหมือนคนเหนื่อยที่รอกลับบ้าน",
+      "tone": "softly",
+      "mood": 0.35,
+      "hold": 0
+    },
+    {
+      "scene": "pier",
+      "view": "walk/out",
+      "beats": 2.5,
+      "text": "",
+      "vo": "",
+      "mood": 0.35,
+      "cues": [
+        [
+          0.4,
+          "pier-steps"
+        ]
+      ]
+    },
+    {
+      "scene": "pier",
+      "view": "thanks/mom",
+      "who": "mom",
+      "beats": 3.25,
+      "text": "“ขอบคุณนะคะ ที่เปิดให้”",
+      "tone": "warm, softly",
+      "mood": 0.35,
+      "hold": 0,
+      "voice": "female"
+    },
+    {
+      "scene": "pier",
+      "view": "thanks/wai",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.35
+    },
+    {
+      "scene": "pier",
+      "view": "walk/away",
+      "beats": 3,
+      "text": "",
+      "vo": "",
+      "mood": 0.35,
+      "music": true
+    },
+    {
+      "scene": "pier",
+      "view": "book/chan-struck",
+      "beats": 5.75,
+      "text": "ลุงชาญคืนสมุดให้ ชื่อของแกถูกขีดทับแล้ว",
+      "tone": "softly",
+      "mood": 0.4,
+      "hold": 0
+    },
+    {
+      "scene": "pier",
+      "view": "slip/in",
+      "beats": 5.25,
+      "text": "เงินอีก[ห้าแสน] เข้าบัญชีภรรยาเขา",
+      "tone": "softly",
+      "mood": 0.4,
+      "cues": [
+        [
+          0.2,
+          "msg"
+        ]
+      ],
+      "hold": 0
+    },
+    {
+      "scene": "pier",
+      "view": "hand/key",
+      "who": "chan",
+      "beats": 3.875,
+      "text": "“ผมขอโทษ”",
+      "tone": "sad, softly",
+      "mood": 0.45,
+      "voLead": 1.4,
+      "cues": [
+        [
+          0.3,
+          "keys"
+        ]
+      ],
+      "hold": 0.5,
+      "voice": "old_male"
+    },
+    {
+      "scene": "pier",
+      "view": "two/ek",
+      "who": "ek",
+      "beats": 5.875,
+      "text": "“ถ้ามีคนมารับต่อจากผม ผมจะบอกเขาก่อน”",
+      "tone": "calm, kind",
+      "mood": 0.4,
+      "voLead": 0.8,
+      "hold": 0
+    },
+    {
+      "scene": "pier",
+      "view": "walk/chan",
+      "beats": 6.25,
+      "text": "ลุงชาญก้มหน้า แล้วเดินตามผู้โดยสารไป",
+      "tone": "softly",
+      "mood": 0.35,
+      "music": true,
+      "cues": [
+        [
+          0.5,
+          "pier-steps"
+        ]
+      ],
+      "hold": 2
+    },
+    {
+      "scene": "end",
+      "view": "cab/doll",
+      "beats": 6.875,
+      "text": "บนเบาะข้างคนขับ\nมีตุ๊กตากระต่ายที่เด็กหญิงลืมไว้",
+      "tone": "calm",
+      "mood": 0.4,
+      "cues": [
+        [
+          0,
+          "door-car"
+        ]
+      ],
+      "voLead": 0.6,
+      "hold": 0
+    },
+    {
+      "scene": "end",
+      "view": "doll/place",
+      "beats": 2.5,
+      "text": "",
+      "vo": "",
+      "mood": 0.35
+    },
+    {
+      "scene": "end",
+      "view": "book/coord",
+      "beats": 4.125,
+      "text": "หน้าถัดไปของสมุด คือพิกัดเที่ยวใหม่",
+      "tone": "calm",
+      "mood": 0.45,
+      "cues": [
+        [
+          0.2,
+          "flip"
+        ]
+      ]
+    },
+    {
+      "scene": "end",
+      "view": "book/one",
+      "beats": 6.625,
+      "text": "หนึ่งคน\nยังไม่ทราบว่าตัวเองเสียชีวิต",
+      "tone": "slowly, quietly",
+      "style": "red",
+      "mood": 0.6,
+      "cues": [
+        [
+          0,
+          "hit"
+        ]
+      ],
+      "voLead": 0.5,
+      "hold": 1
+    },
+    {
+      "scene": "end",
+      "view": "face/read",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.5
+    },
+    {
+      "scene": "end",
+      "view": "switch/on",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.4,
+      "cues": [
+        [
+          1,
+          "click"
+        ]
+      ]
+    },
+    {
+      "scene": "end",
+      "view": "cab/cap",
+      "beats": 6.125,
+      "text": "เขาสตาร์ตรถ หมุนหมวกให้เข้าที่\nแล้วขับออกไป",
+      "tone": "calm",
+      "mood": 0.4,
+      "cues": [
+        [
+          0.1,
+          "engine-start"
+        ]
+      ],
+      "hold": 0
+    },
+    {
+      "scene": "end",
+      "view": "sala/man",
+      "beats": 3.5,
+      "text": "",
+      "vo": "",
+      "mood": 0.5,
+      "cues": [
+        [
+          0.5,
+          "engine"
+        ]
+      ]
+    },
+    {
+      "scene": "end",
+      "view": "sala/stop",
+      "beats": 2,
+      "text": "",
+      "vo": "",
+      "mood": 0.5,
+      "cues": [
+        [
+          0,
+          "brakes-soft"
+        ],
+        [
+          1.3,
+          "window"
+        ]
+      ]
+    },
+    {
+      "scene": "end",
+      "view": "sala/ask",
+      "who": "man",
+      "beats": 2.5,
+      "text": "“พี่ รถไปไหนครับ”",
+      "tone": "nervous",
+      "mood": 0.5,
+      "hold": 0,
+      "voice": "old_male"
+    },
+    {
+      "scene": "end",
+      "view": "face/ek",
+      "beats": 4.5,
+      "text": "เอกมองเขา เหมือนเห็นตัวเองเมื่อคืน",
+      "tone": "calm",
+      "mood": 0.45,
+      "hold": 0
+    },
+    {
+      "scene": "end",
+      "view": "cab/answer",
+      "who": "ek",
+      "beats": 4.75,
+      "text": "“ขึ้นมาก่อนครับ… เดี๋ยวผมเล่าให้ฟังทั้งหมด”",
+      "tone": "calm, warm",
+      "mood": 0.35,
+      "hold": 0.5
+    },
+    {
+      "scene": "end",
+      "view": "final/drive",
+      "beats": 5,
+      "text": "",
+      "vo": "",
+      "mood": 0.3,
+      "music": true,
+      "cues": [
+        [
+          0,
+          "engine"
+        ]
+      ]
+    },
+    {
+      "scene": "end",
+      "view": "final/end",
+      "beats": 6,
+      "text": "",
+      "vo": "",
+      "mood": 0.2,
+      "hush": true
+    }
+  ]
+}

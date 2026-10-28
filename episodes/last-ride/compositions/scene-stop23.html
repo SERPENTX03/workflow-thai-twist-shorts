@@ -1,0 +1,48 @@
+<!doctype html>
+<!-- Second and third pickups: the closed shop (the truck sinks, a dry cough from the box), the bridge with one shoe
+     under the rail, two slow knocks behind his head, the door again.
+     Views: shop/arrive|dip · box/cough · shoe/close · cab/pass|knock · bridge/stop|slam -->
+<html data-composition-variables='[{"id":"shots","type":"string","label":"Shots (from build)","default":"[]"}]'>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <link rel="stylesheet" href="assets/kit/stories/last-ride.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #05070c; }
+        .s23-ring { position: absolute; border: 6px solid rgba(240, 236, 226, .8); border-radius: 50%; opacity: 0; width: 90px; height: 90px; }
+      </style>
+      <div data-hf-id="hf-mbkb" id="root" data-composition-id="scene-stop23" data-width="1920" data-height="1080"></div>
+      <script src="assets/kit/stories/last-ride.js"></script>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const S = LR.shots("scene-stop23", [{ at: 0, dur: 4, view: "shop/arrive" }]);
+        const L = LR.layer;
+        const ring = (c, i, x, y) => `<div class="s23-ring" id="${c.id}-r${i}" style="left:${x - 45}px;top:${y - 45}px"></div>`;
+        const ringAt = (c, i, t) => c.tl.fromTo(`#${c.id}-r${i}`, { scale: 0.3, opacity: 0.9 }, { scale: 2.6, opacity: 0, duration: 0.7, ease: 'power2.out' }, c.t(t));
+        const views = {
+          shop: LR.V.road((c) => ({ x: 260, k: 0.66, stop: 'shop', stopX: 1290, lights: true, arrive: c.act === 'arrive', dip: c.act === 'dip' ? 0.35 : undefined,
+            cam0: c.act === 'dip' ? { scale: 1.15, x: 260 } : { scale: 1 }, cam1: c.act === 'dip' ? { scale: 1.2, x: 280 } : { scale: 1.05, x: -30 } })),
+          // behind the box at the shop: a dry cough from inside
+          box: {
+            html: (c) => L('<use href="#lr-l-road-back" width="1920" height="1080"/><use href="#lr-road-shop" x="1420" y="160" width="480" height="440" opacity=".7"/>')
+              + LR.rear(960, 940, 1.0) + ring(c, 0, 960, 520) + ring(c, 1, 960, 520) + LR.NIGHT,
+            anim: (c) => { ringAt(c, 0, 0.5); ringAt(c, 1, 0.9); LR.cam(c, { scale: 1 }, { scale: 1.08 }); },
+          },
+          // the bridge rail, close: one shoe under it, a garland tied to a post
+          shoe: {
+            html: (c) => L('<use href="#lr-l-road-sky" width="1920" height="1080"/><rect y="690" width="1920" height="390" fill="#3a3b38"/><use href="#lr-road-bridge" x="-200" y="90" width="2400" height="666"/><use href="#lr-shoe" x="900" y="600" width="270" height="135"/>')
+              + '<div class="lr-night" style="background:rgba(6,10,26,.42)"></div><div style="position:absolute;inset:0;background:radial-gradient(ellipse at 54% 72%, rgba(255,236,190,.16), rgba(0,0,0,0) 40%);background-position:0 -120px"></div>',
+            anim: (c) => LR.cam(c, { scale: 1, x: 0 }, { scale: 1.1, x: -40, y: -30 }),
+          },
+          cab: LR.V.cab((c) => ({ face: c.act === 'knock' ? 'shock' : 'wary', drive: c.act === 'pass', knock: c.act === 'knock' ? [0.24, 1.28] : [], push: 1.1 })),
+          bridge: LR.V.road((c) => ({ x: 380, k: 0.66, stop: 'bridge', stopX: 520, lights: true, arrive: c.act === 'stop', dip: c.act === 'slam' ? 0.2 : undefined, slam: c.act === 'slam' ? 0.32 : undefined,
+            fg: '<svg class="lr-layer" viewBox="0 0 1920 1080"><use href="#lr-shoe" x="1500" y="826" width="90" height="45"/></svg>' })),
+          _: { html: () => '' },
+        };
+        LR.run({ comp: 'scene-stop23', prefix: 's2', tl, shots: S, views });
+        window.__timelines["scene-stop23"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

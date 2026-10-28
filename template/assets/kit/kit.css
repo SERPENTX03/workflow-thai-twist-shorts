@@ -102,6 +102,25 @@
   height: 420px;
   background: linear-gradient(180deg, rgba(4, 7, 14, 0), rgba(4, 7, 14, 0.5) 50%, rgba(4, 7, 14, 0));
 }
+/* story.json "format": "landscape" (1920×1080 long-form): subtitles grow upward from the bottom band,
+   max two lines, so keep faces and clues above y ≈ 860 */
+.cap.land {
+  top: auto;
+  bottom: 58px;
+  left: 220px;
+  right: 220px;
+  transform: none;
+  gap: 2px;
+}
+.cap.land .cap-line > span { font-size: 52px; line-height: 1.36; text-shadow: 0 3px 14px rgba(0, 0, 0, 0.9), 0 0 4px rgba(0, 0, 0, 0.6); }
+.cap.land.red .cap-line > span { padding: 0 22px; border-radius: 10px; }
+.cap.land.red .hl, .cap.land.red .hl-red { text-decoration-thickness: 4px; text-underline-offset: 9px; }
+.cap-band.land {
+  top: auto;
+  bottom: 0;
+  height: 260px;
+  background: linear-gradient(180deg, rgba(4, 7, 14, 0), rgba(4, 7, 14, 0.55));
+}
 
 /* ---------- info card (cream, red spine) ---------- */
 .card {
@@ -184,7 +203,7 @@
   --skin: #05070b; --skin-d: #05070b; --hair: #05070b; --shirt: #05070b; --pants: #05070b;
   --top: #05070b; --skirt: #05070b; --exo: #05070b; --sarong: #05070b; --shoe: #05070b;
   --eye: #05070b; --eye-white: #05070b; --hair-old: #05070b; --band: #05070b;
-  --sleeve: #05070b; --uniform: #05070b; --shorts: #05070b; --sock: #05070b; --tie: #05070b; --badge: #05070b;
+  --sleeve: #05070b; --forearm: #05070b; --uniform: #05070b; --shorts: #05070b; --sock: #05070b; --tie: #05070b; --badge: #05070b;
   --cap: #05070b; --cap-d: #05070b; --mask: #05070b; --bandage: #05070b; --blood: #05070b; --scarf: #05070b; --bag: #05070b; --bag-d: #05070b;
   --bag-strap: #05070b; --pack: #05070b; --roll: #05070b; --strap: #05070b; --frame: #05070b; --brow: #05070b; --mouth: #05070b; --blush: #05070b; --tear: #05070b; --coat: #05070b; --coat-d: #05070b; --fur: #05070b; --fur-patch: #05070b; --nose: #05070b;
 }

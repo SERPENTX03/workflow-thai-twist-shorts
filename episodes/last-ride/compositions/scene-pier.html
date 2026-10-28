@@ -1,0 +1,95 @@
+<!doctype html>
+<!-- The old pier: Chan waiting; the doors open on all four passengers (the coughing old man, the boy with one shoe, the
+     mother and her daughter) — tired, not hurt, no longer wet. They walk the boards toward the warm light. The mother
+     thanks him; the girl wais (no doll: she left it on the seat). Chan's name struck, the second transfer, the spare
+     key on the book, his apology, and he follows them.
+     Views: pier/park · box/all|two|tired · walk/out|away|chan · thanks/mom|wai · book/chan-struck · slip/in · hand/key ·
+     two/ek -->
+<html data-composition-variables='[{"id":"shots","type":"string","label":"Shots (from build)","default":"[]"}]'>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <link rel="stylesheet" href="assets/kit/stories/last-ride.css" />
+      <style>#root { position: absolute; inset: 0; overflow: hidden; background: #05070c; }</style>
+      <div data-hf-id="hf-mmg8" id="root" data-composition-id="scene-pier" data-width="1920" data-height="1080"></div>
+      <script src="assets/kit/stories/last-ride.js"></script>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const S = LR.shots("scene-pier", [{ at: 0, dur: 4, view: "pier/park" }]);
+        const L = LR.layer;
+        const pier = L('<use href="#lr-l-pier" width="1920" height="1080"/>');
+        const posts = L('<use href="#lr-l-pier-posts" width="1920" height="1080"/>');
+        const glowBox = '<div style="position:absolute;left:200px;top:300px;width:640px;height:620px;background:radial-gradient(ellipse at 50% 55%, rgba(255,207,138,.35), rgba(255,207,138,0) 65%);mix-blend-mode:screen"></div>';
+        const truckRear = (open) => LR.rear(520, 900, 1.0, { cls: open ? 'lr-doors-open' : '', style: '--lr-in-side:#5a4a36;--lr-in-top:#4a3d2e;--lr-in-back:#4e4132;--lr-in-floor:#7a6650' });
+        // the passengers (dry now): the old man with a cough, the boy holding one shoe, the mother, the girl
+        const oldMan = (o) => LR.who('man', { face: 'tired', r: 'chest', style: '--hair:#b4b4b0;--shirt:#7a6a55;--pants:#3d3a34;' + (o.style || ''), ...o });
+        const boy = (o) => LR.who('student', { r: 'hold', rProp: 'shoe', ...o });
+        const mom = (o) => LR.who('mom', { cls: 'lr-rim', ...o });
+        const girl = (o) => LR.who('girl', { cls: 'lr-rim', ...o });
+        const ek = (o) => LR.who('ek', { cls: 'lr-spirit lr-rim', nocap: true, ...o });
+        const chan = (o) => LR.who('chan', { cls: 'lr-rim', ...o });
+        const insideBox = (k = 1) => oldMan({ x: 400, feet: 700, h: 300 * k }) + boy({ x: 520, feet: 705, h: 300 * k }) + mom({ x: 610, feet: 705, h: 290 * k }) + girl({ x: 680, feet: 705, h: 200 * k });
+
+        const views = {
+          // he parks, hands Chan the book, goes round to the doors
+          pier: {
+            html: (c) => pier + truckRear(false) + chan({ id: `${c.id}-chan`, x: 1260, feet: 960, h: 420, l: 'offer', lProp: 'book' }) + ek({ id: `${c.id}-ek`, x: 940, feet: 980, h: 450 }) + posts + LR.NIGHT,
+            anim: (c) => {
+              c.tl.set(c.q('.lr-truck'), { '--lr-doors-shut': 'none', '--lr-doors-open': 'inline' }, c.p(0.8));
+              c.tl.fromTo(`#${c.id}-ek`, { x: 0 }, { x: -260, duration: c.dur * 0.5, ease: 'sine.inOut' }, c.p(0.35));
+              LR.fadeIn(c, 0.8); LR.cam(c, { scale: 1 }, { scale: 1.04 });
+            },
+          },
+          // the open box: all four of them, in the warm box light
+          box: {
+            html: (c) => pier + truckRear(true) + glowBox + insideBox() + ek({ x: 1000, feet: 1000, h: 470, face: 'sad' }) + posts + LR.NIGHT,
+            anim: (c) => {
+              const T = { all: [{ scale: 1.5, x: 660, y: 120 }, { scale: 1.55, x: 690, y: 120 }], two: [{ scale: 2.2, x: 1150, y: 300 }, { scale: 2.3, x: 1180, y: 320 }], tired: [{ scale: 1.6, x: 660, y: 140 }, { scale: 1.5, x: 620, y: 120 }] }[c.act];
+              LR.cam(c, T[0], T[1]);
+            },
+          },
+          // down the boards toward the light
+          walk: {
+            html: (c) => {
+              const ppl = c.act === 'out'
+                ? `<div id="${c.id}-g">${oldMan({ x: 860, feet: 900, h: 330 })}${boy({ x: 1000, feet: 905, h: 340 })}</div>` + mom({ x: 640, feet: 940, h: 380 }) + girl({ x: 760, feet: 945, h: 270 })
+                : c.act === 'away' ? `<div id="${c.id}-g">${mom({ x: 930, feet: 800, h: 300 })}${girl({ x: 1010, feet: 805, h: 210 })}</div>`
+                  : `<div id="${c.id}-g">${chan({ x: 960, feet: 820, h: 300 })}</div>`;
+              return pier + truckRear(true) + ppl + ek({ x: 360, feet: 1040, h: 500, face: c.act === 'out' ? null : 'sad' }) + posts + LR.NIGHT;
+            },
+            anim: (c) => {
+              if (c.act === 'out') c.tl.fromTo(`#${c.id}-g`, { x: 0, y: 0, opacity: 1 }, { x: 60, y: -120, opacity: 0.6, duration: c.dur, ease: 'sine.in' }, c.at);
+              else c.tl.fromTo(`#${c.id}-g`, { y: 0, scale: 1, opacity: 1 }, { y: -260, scale: 0.35, opacity: 0, duration: c.dur, ease: 'sine.in', transformOrigin: '960px 540px' }, c.at);
+              if (c.act === 'chan') LR.fadeOut(c, 1.2);
+              LR.cam(c, { scale: 1 }, { scale: 1.04 });
+            },
+          },
+          // the mother thanks him; the girl wais
+          thanks: {
+            html: (c) => pier + mom({ id: `${c.id}-mom`, x: 1240, feet: 1500, h: 1000, talk: c.who === 'mom', face: c.act === 'wai' ? 'happy' : null })
+              + girl({ x: 1540, feet: 1300, h: 620, r: c.act === 'wai' ? 'chest' : null, l: c.act === 'wai' ? 'chest' : null })
+              + ek({ x: 560, feet: 1560, h: 1060, face: 'sad' }) + posts + LR.NIGHT,
+            anim: (c) => LR.cam(c, { scale: 1 }, { scale: 1.04, x: c.act === 'wai' ? -60 : 0 }),
+          },
+          book: LR.V.ledger({ page: 'struck', bg: 'dark', strike: 0.4, strikeSel: '.lr-page:first-child .lr-row.is-struck b', glow: '.lr-done', glowAt: 1.0 }),
+          slip: LR.V.phone({ screen: 'slip', time: '04:52', when: 'วันนี้ 04:52 น.' }),
+          // the spare key goes down on the book
+          hand: {
+            html: (c) => LR.V.ledger({ page: 'struck', bg: 'dark' }).html(c)
+              + `<svg class="lr-layer c-lr-chan" viewBox="0 0 1920 1080"><g id="${c.id}-k"><g transform="translate(1250 470) rotate(-28)"><circle cx="0" cy="-10" r="30" fill="none" stroke="#b7b9bc" stroke-width="10"/><path d="M-10 -100 V-210 H10 V-190 H24 V-172 H10 V-154 H22 V-136 H10 V-100Z" fill="#c9ccd0"/><rect x="-26" y="-104" width="52" height="52" rx="12" fill="#2b2f36"/><g transform="rotate(-12)"><rect x="14" y="8" width="64" height="94" rx="10" fill="var(--lr-key-tag, #a9844c)" stroke="#7a5e34" stroke-width="6"/><circle cx="46" cy="30" r="8" fill="#3b2c1c"/></g></g></g></svg>`,
+            anim: (c) => { c.tl.fromTo(`#${c.id}-k`, { y: -400, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: 'power2.out' }, c.t(0.2)); LR.cam(c, { scale: 1 }, { scale: 1.05 }); },
+          },
+          // two-shot: Ek takes the key
+          two: {
+            html: (c) => pier + chan({ x: 1300, feet: 1500, h: 980, face: 'guilty' }) + ek({ id: `${c.id}-ek`, x: 640, feet: 1550, h: 1030, talk: true, r: 'hold', rProp: 'key' }) + posts + LR.NIGHT,
+            anim: (c) => LR.cam(c, { scale: 1 }, { scale: 1.05 }),
+          },
+          _: { html: () => '' },
+        };
+        LR.run({ comp: 'scene-pier', prefix: 'pr', tl, shots: S, views });
+        window.__timelines["scene-pier"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

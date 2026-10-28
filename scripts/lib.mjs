@@ -1,6 +1,8 @@
 // Shared helpers for the episode scripts.
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
+import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 
 export function episodeDir(arg) {
@@ -32,6 +34,10 @@ export function loadStory(dir) {
       text: s.text || '',
       vo: s.vo === undefined ? plain(s.text || '').replace(/\n/g, ' ').replace(/[“”"]/g, '') : s.vo,
       voLead: s.voLead ?? 0.12,
+      fx: s.fx,
+      view: s.view,
+      who: s.who,
+      hush: !!s.hush,
       voice: s.voice,
       tone: s.tone,
       cues: s.cues || [],
@@ -44,8 +50,16 @@ export function loadStory(dir) {
     b += s.beats;
     return shot;
   });
-  return { ...story, bpm, beat, shots, totalBeats: b, total: round(b * beat) };
+  const F = FORMATS[story.format === 'landscape' ? 'landscape' : 'portrait'];
+  return { ...story, bpm, beat, shots, totalBeats: b, total: round(b * beat), ...F, target: story.target || F.target };
 }
+
+// story.json `format`: "portrait" (default, 9:16 Shorts) or "landscape" (16:9 long-form for YouTube).
+// target = runtime range in seconds that story-check and qc compare against; capChars = max Thai characters per caption line.
+export const FORMATS = {
+  portrait: { format: 'portrait', W: 1080, H: 1920, target: [55, 80], capChars: 26 },
+  landscape: { format: 'landscape', W: 1920, H: 1080, target: [600, 720], capChars: 42 },
+};
 
 export const round = x => Math.round(x * 1000) / 1000;
 
@@ -72,3 +86,10 @@ export const plain = s => String(s).replace(/[[\]{}]/g, '');
 export const marks = s => esc(s)
   .replace(/\[([^\]]+)\]/g, '<span class="hl">$1</span>')
   .replace(/\{([^}]+)\}/g, '<span class="hl-red">$1</span>');
+
+// Generated sound effects (ElevenLabs) live in one repo-level library keyed by their settings, so the same
+// prompt is paid for once and reused by every episode. story.json `sfx` entries: { prompt, dur, influence?, gain? }.
+export const SFX_LIB = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'sfx-library');
+export const sfxSpec = e => ({ prompt: String(e.prompt || '').trim(), dur: e.dur ?? 2, influence: e.influence ?? 0.5 });
+export const sfxKey = e => crypto.createHash('sha1').update(JSON.stringify(sfxSpec(e))).digest('hex').slice(0, 16);
+export const sfxFile = e => path.join(SFX_LIB, `${sfxKey(e)}.mp3`);

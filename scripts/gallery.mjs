@@ -1,11 +1,18 @@
 // Cast gallery: every symbol in template/assets/kit/cast.svg on one page.
 // npm run gallery  ->  template/assets/kit/gallery.html (open it in a browser)
-import { readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { lastRideSection } from "./gallery-last-ride.mjs";
 
 const kit = resolve("template/assets/kit");
 const cast = readFileSync(resolve(kit, "cast.svg"), "utf8");
 const css = readFileSync(resolve(kit, "kit.css"), "utf8");
+
+// story kits: assets/kit/stories/*.svg + *.css (ids/classes prefixed per story)
+const storyDir = resolve(kit, "stories");
+const storyFiles = existsSync(storyDir) ? readdirSync(storyDir).sort() : [];
+const storySvg = storyFiles.filter((f) => f.endsWith(".svg")).map((f) => readFileSync(resolve(storyDir, f), "utf8").replace(/^[\s\S]*?<svg[^>]*>/, "").replace(/<\/svg>\s*$/, "")).join("");
+const storyCss = storyFiles.filter((f) => f.endsWith(".css")).map((f) => readFileSync(resolve(storyDir, f), "utf8")).join("\n");
 
 const inline = cast.replace(/^<svg[^>]*>/, '<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute">');
 const ids = [...cast.matchAll(/<symbol id="([^"]+)"([^>]*)>/g)].map((m) => ({ id: m[1], attrs: m[2] }));
@@ -25,7 +32,7 @@ const accs = prefixed("acc-");
 const marks = prefixed("mark-");
 const icons = prefixed("icon-");
 const sets = prefixed("set-");
-const poses = ["hold", "chest", "offer", "raise", "pocket", "carry"];
+const poses = ["hold", "chest", "offer", "raise", "reach", "pocket", "carry"];
 const cls = (id) => (id === "kid-girl" ? "c-kid-girl" : `c-${id.split("-")[0]}`);
 const FIG = 'width="200" height="520"';
 
@@ -95,6 +102,7 @@ const html = `<!doctype html>
 <title>Cast gallery</title>
 <style>
 ${css}
+${storyCss}
 
 body{margin:0;padding:40px;background:#131a2b;color:#efe8da;font-family:"Plex Thai",sans-serif}
 h1{font-family:Kanit,sans-serif;font-size:36px;margin:0 0 6px}
@@ -109,8 +117,12 @@ figcaption{margin-top:8px;font-size:15px;color:#c9d2e0;max-width:220px}
 .sw{display:flex;align-items:center;gap:10px;width:230px;font-size:14px}
 .sw i{width:30px;height:30px;border-radius:8px;border:1px solid #fff3}
 .sw span{color:#8a97ab;margin-left:auto}
+h3{font-family:Kanit,sans-serif;font-size:21px;margin:30px 0 10px;color:#efe8da}
+h4{font-family:"Plex Thai",sans-serif;font-size:16px;margin:22px 0 10px;color:#c9d2e0}
+.art.lr-flat{background:#d9d4c7}
 </style></head><body>
 ${inline}
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute">${storySvg}</svg>
 <h1>Cast gallery</h1>
 <p class="n">ทุก symbol ใน assets/kit/cast.svg &nbsp;·&nbsp; สร้างจาก npm run gallery &nbsp;·&nbsp; วิธีใช้: .claude/skills/thai-twist-short/references/cast-library.md</p>
 <h2>ตัวละคร (สูงตามจริง · ซม.)</h2><p class="n">วาดที่ ซม. × 2.6 px · kid / kid-girl ใช้กรอบ 200×420</p><div class="row">${people.map(person).join("")}</div>
@@ -127,6 +139,7 @@ ${inline}
 <h2>prop (จุดกำเนิด = กลางมือ)</h2><div class="row">${props.map(prop).join("")}</div>
 <h2>ไอคอนอินโฟกราฟิก</h2><div class="row">${icons.map(icon).join("")}</div>
 <h2>ชิ้นฉาก (viewBox = px ที่สเกลตัวละคร)</h2><div class="row">${sets.map(setp).join("")}</div>
+${lastRideSection(card)}
 <h2>สีใน kit.css</h2><div class="row">${swatches}</div>
 </body></html>`;
 

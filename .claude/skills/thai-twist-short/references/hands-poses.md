@@ -25,6 +25,7 @@ Frame 200 × 520. Use `viewBox="0 0 200 520"`, `class="who c-<symbol> arm-r-off"
 | chest | `arm-r-chest` `arm-l-chest` | (116,196) / (84,196) | "me?", pledge, panic, flinch |
 | offer | `arm-r-offer` `arm-l-offer` | (214,222) / (−14,222) | hand over a coin / key / paper; take; point at |
 | raise | `arm-r-raise` `arm-l-raise` | (190,110) / (10,110) | wave, stop, ask, shout |
+| reach | `arm-r-reach` `arm-l-reach` | (226,176) / (−26,176) | a latch, handle or door at shoulder height |
 | pocket | `arm-r-pocket` `arm-l-pocket` | hand hidden | hand in pocket, hiding a hand (a clue device) |
 | rest | (default arm) | — | nothing to do |
 | carry | `arm-r-carry` + `arm-l-carry` | (150,262) / (50,262) | both hands on one big object: `prop-box` at (100,262) draws both hands |

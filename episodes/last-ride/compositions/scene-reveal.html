@@ -1,0 +1,137 @@
+<!doctype html>
+<!-- First twist: he opens the box. Empty; wet footprints facing the door; the rabbit doll dripping from its folded ear.
+     Then the girl beside him holding the same doll, her mother behind — wet, pale, no puddle under her (lr-wet; no
+     blood, no wounds). Ek stays an ordinary man here: no spirit look.
+     Views: latch/open · rear/ek|doors|step|wide|invite · inside/sweep|empty|prints · doll/drip · side/girl-voice|girl|mom|
+     torch|lower · feet/dry · mom/talk|talk2|talk3|talk4 · memory/all -->
+<html data-composition-variables='[{"id":"shots","type":"string","label":"Shots (from build)","default":"[]"}]'>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <link rel="stylesheet" href="assets/kit/stories/last-ride.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #05070c; }
+        .rv-torch { position: absolute; left: -1600px; top: -1600px; width: 4000px; height: 4000px; pointer-events: none;
+          background: radial-gradient(circle at 50% 50%, rgba(255, 240, 200, .18) 0, rgba(0, 0, 0, 0) 380px, rgba(2, 4, 8, .6) 680px); }
+        .rv-drop { position: absolute; width: 18px; height: 26px; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: #8fd0ff; opacity: 0; }
+        .rv-panel { position: absolute; inset: 0; opacity: 0; }
+      </style>
+      <div data-hf-id="hf-vuc9" id="root" data-composition-id="scene-reveal" data-width="1920" data-height="1080"></div>
+      <script src="assets/kit/stories/last-ride.js"></script>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const S = LR.shots("scene-reveal", [{ at: 0, dur: 4, view: "latch/open" }]);
+        const L = LR.layer;
+        const road = L('<use href="#lr-l-road-back" width="1920" height="1080"/>');
+        const beam = (x, y, rot, id) => `<svg class="lr-layer" viewBox="0 0 1920 1080" style="mix-blend-mode:screen"><g id="${id}"><path transform="translate(${x} ${y}) rotate(${rot})" d="M0 0 L520 -150 L520 150Z" fill="rgba(255,240,200,.3)"/></g></svg>`;
+        const drop = (c, i, x, y) => `<div class="rv-drop" id="${c.id}-d${i}" style="left:${x}px;top:${y}px"></div>`;
+        const drip = (c, i, t, dist = 160) => c.tl.fromTo(`#${c.id}-d${i}`, { y: 0, opacity: 0.95 }, { y: dist, opacity: 0, duration: 0.55, ease: 'power2.in', repeat: Math.max(0, Math.floor((c.dur - t) / 1.2) - 1), repeatDelay: 0.65 }, c.t(t));
+        const girl = (o) => LR.who('girl', { cls: 'lr-wet lr-rim', r: 'hold', rProp: 'lr-doll', rPropT: ' scale(.74)', over: '<use href="#lr-hand-cover" transform="translate(112 244)"/>', ...o });
+        const mom = (o) => LR.who('mom', { cls: 'lr-wet lr-rim', ...o });
+
+        const views = {
+          // his hand pulls the lever: the latch gives
+          latch: {
+            html: (c) => L('<rect width="1920" height="1080" fill="#0b0f16"/>')
+              + `<svg class="lr-layer lr-cream-box" viewBox="0 0 1920 1080"><g id="${c.id}-lever"><use href="#lr-latch" x="560" y="40" width="1000" height="1000"/></g></svg>`
+              + `<svg class="lr-layer c-lr-ek" viewBox="0 0 1920 1080"><g id="${c.id}-arm"><g transform="translate(1390 548) rotate(-37)"><use href="#lr-arm-big"/><use href="#lr-watch-big"/></g></g></svg>`
+              + '<div class="lr-night" style="background:radial-gradient(ellipse at 60% 50%, rgba(6,10,26,0), rgba(6,10,26,.7) 75%)"></div>',
+            anim: (c) => {
+              c.tl.fromTo(`#${c.id}-arm`, { x: 0, y: 0 }, { x: -60, y: 30, duration: 0.4, ease: 'power3.in' }, c.t(0.8));
+              c.tl.fromTo(c.q('.lr-cam'), { x: 0 }, { x: 10, duration: 0.05, yoyo: true, repeat: 3, ease: 'none' }, c.t(1.15));
+              LR.cam(c, { scale: 1 }, { scale: 1.06 });
+            },
+          },
+          // at the doors with the phone torch
+          rear: {
+            html: (c) => {
+              const open = !['ek'].includes(c.act);
+              const ppl = ['wide', 'invite'].includes(c.act) ? mom({ x: 1560, feet: 980, h: 410 }) + girl({ x: 1420, feet: 990, h: 290 }) : '';
+              return road + LR.rear(1060, 930, 1.0, { cls: (open ? 'lr-doors-open lr-prints' : '') + ' lr-wet' }) + ppl
+                + LR.who('ek', { id: `${c.id}-ek`, x: c.act === 'step' ? 560 : 640, feet: 990, h: 540, l: 'hold', lProp: 'phone', r: ['ek', 'wide'].includes(c.act) ? 'reach' : null, talk: c.who === 'ek', face: c.act === 'step' ? 'shock' : null, cls: 'lr-rim' })
+                + (c.act === 'doors' || c.act === 'step' ? beam(760, 640, -14, `${c.id}-beam`) : '') + LR.NIGHT;
+            },
+            anim: (c) => {
+              if (c.act === 'doors') { c.tl.set(c.q('.lr-truck'), { '--lr-doors-shut': 'inline', '--lr-doors-open': 'none' }, c.at); c.tl.set(c.q('.lr-truck'), { '--lr-doors-shut': 'none', '--lr-doors-open': 'inline' }, c.t(0.9)); }
+              if (c.act === 'step') c.tl.fromTo(`#${c.id}-ek`, { x: 80 }, { x: 0, duration: 0.5, ease: 'power2.out' }, c.at);
+              LR.cam(c, { scale: 1.02, x: 0 }, { scale: c.act === 'invite' ? 1.06 : 1.08, x: 40 });
+            },
+          },
+          // what the torch finds: an empty box, wet prints facing the door, the doll in the middle of the floor
+          inside: {
+            html: (c) => LR.rear(960, 1350, 2.2, { style: '--lr-in-side:#4a4f57;--lr-in-top:#3c4148;--lr-in-back:#40454c;--lr-in-floor:#6c737e;--lr-print:rgba(150,200,235,.75)', cls: 'lr-doors-open lr-prints lr-wet', inner: c.act === 'sweep' ? '' : '<use href="#lr-doll" transform="translate(260 446) rotate(-78) scale(.42)"/>' })
+              + `<div class="rv-torch" id="${c.id}-torch"></div>`,
+            anim: (c) => {
+              const t = `#${c.id}-torch`;
+              if (c.act === 'sweep') {
+                c.tl.fromTo(t, { x: -500, y: -200 }, { x: 500, y: -330, duration: c.dur * 0.45, ease: 'sine.inOut' }, c.at);
+                c.tl.fromTo(t, { x: 500, y: -330 }, { x: 0, y: 330, duration: c.dur * 0.45, ease: 'sine.inOut', immediateRender: false }, c.p(0.5));
+              } else c.tl.fromTo(t, { x: c.act === 'prints' ? -40 : 0, y: 300 }, { x: c.act === 'prints' ? 40 : 0, y: 330, duration: c.dur, ease: 'sine.inOut' }, c.at);
+              LR.cam(c, { scale: 1 }, { scale: c.act === 'empty' ? 1.03 : 1.08 });
+            },
+          },
+          // the doll, close: water drips from the folded ear
+          doll: {
+            html: (c) => L('<rect width="1920" height="1080" fill="#11151c"/><rect y="640" width="1920" height="440" fill="#3a414c"/><path d="M0 700 H1920 M0 820 H1920" stroke="rgba(0,0,0,.25)" stroke-width="6"/>')
+              + `<svg class="lr-layer lr-wet" viewBox="0 0 1920 1080"><g transform="translate(900 640) rotate(-78) scale(2.6)"><use href="#lr-doll"/></g><ellipse cx="900" cy="760" rx="300" ry="40" fill="rgba(140,178,205,.25)"/></svg>`
+              + drop(c, 0, 640, 560) + `<div class="rv-torch" style="transform:translate(-90px,-80px)"></div>`,
+            anim: (c) => { drip(c, 0, 0.6, 170); LR.cam(c, { scale: 1.05 }, { scale: 1.14 }); },
+          },
+          // beside him: the girl (same doll), the mother behind her; the torch shakes over them, then comes down
+          side: {
+            html: (c) => {
+              const ekClose = c.act === 'girl-voice';
+              if (ekClose) return road + LR.who('ek', { x: 960, feet: 2400, h: 2200, face: 'shock', cls: 'lr-rim' }) + '<div class="lr-night" style="background:rgba(6,10,26,.45)"></div>';
+              if (c.act === 'girl') return road + LR.rear(1640, 900, 0.9, { cls: 'lr-doors-open lr-prints' }) + girl({ x: 1060, feet: 1010, h: 700 })
+                + LR.who('ek', { x: 260, feet: 1500, h: 1100, l: 'hold', lProp: 'phone', face: 'shock', cls: 'lr-rim' }) + beam(330, 760, -10, `${c.id}-beam`) + LR.NIGHT;
+              const showMom = true;
+              return road + LR.rear(1500, 900, 0.9, { cls: 'lr-doors-open lr-prints' })
+                + (showMom ? mom({ x: 1000, feet: 960, h: 470 }) : '') + girl({ x: 760, feet: 990, h: 350 })
+                + LR.who('ek', { x: 300, feet: 1080, h: 640, l: 'hold', lProp: 'phone', face: c.act === 'lower' ? 'sad' : 'shock', cls: 'lr-rim' })
+                + beam(360, 700, -8, `${c.id}-beam`) + LR.NIGHT;
+            },
+            anim: (c) => {
+              if (c.act === 'torch') c.tl.fromTo(`#${c.id}-beam`, { rotation: -6 }, { rotation: 6, svgOrigin: '360 700', duration: 0.18, yoyo: true, repeat: Math.floor(c.dur / 0.18), ease: 'sine.inOut' }, c.at);
+              if (c.act === 'lower') c.tl.fromTo(`#${c.id}-beam`, { rotation: 0 }, { rotation: 22, svgOrigin: '360 700', duration: 1.4, ease: 'power2.inOut' }, c.t(0.3));
+              if (c.act === 'girl') LR.cam(c, { scale: 1.04 }, { scale: 1.1, y: 20 });
+              else LR.cam(c, { scale: 1.02 }, { scale: 1.06 });
+            },
+          },
+          // close on the hem: drops fall, the road under her stays dry
+          feet: {
+            html: (c) => L('<rect width="1920" height="1080" fill="#262b33"/><rect y="760" width="1920" height="320" fill="#2e333b"/>')
+              + `<svg class="lr-layer lr-wet c-lr-mom" viewBox="0 0 1920 1080"><g transform="translate(960 -1500) scale(4.4) translate(-100 0)"><use href="#lr-mom" width="200" height="520"/></g></svg>`
+              + drop(c, 0, 820, 470) + drop(c, 1, 1060, 480) + drop(c, 2, 940, 470) + '<div class="lr-night" style="background:rgba(6,10,26,.3)"></div>',
+            anim: (c) => { drip(c, 0, 0.3, 260); drip(c, 1, 0.8, 250); drip(c, 2, 1.4, 260); LR.cam(c, { scale: 1 }, { scale: 1.06 }); },
+          },
+          // the mother, calm, telling it as if it just happened
+          mom: {
+            html: (c) => road + LR.rear(1640, 900, 0.9, { cls: 'lr-doors-open' })
+              + mom({ id: `${c.id}-mom`, x: 900, feet: 1900, h: 1450, talk: c.who === 'mom', face: c.act === 'down' ? 'sad' : null })
+              + girl({ x: 1300, feet: 1500, h: 760 }) + '<div class="lr-night" style="background:rgba(6,10,26,.3)"></div>',
+            anim: (c) => LR.cam(c, { scale: 1 }, { scale: c.act === 'talk4' ? 1.08 : 1.04 }),
+          },
+          // the pieces come together: the sala, the garland, the wet clothes, the box that said "can't breathe"
+          memory: {
+            html: (c) => [
+              L('<use href="#lr-l-road-sky" width="1920" height="1080"/><use href="#lr-l-road-ground" y="600" width="1920" height="480"/><use href="#lr-road-sala" x="700" y="390" width="520" height="452"/>'),
+              L('<use href="#lr-l-road-sky" width="1920" height="1080"/><use href="#lr-road-sala" x="160" y="-200" width="1380" height="1200"/><use href="#lr-garland" x="330" y="300" width="210" height="630"/>'),
+              `<svg class="lr-layer lr-wet c-lr-mom" viewBox="0 0 1920 1080"><rect width="1920" height="1080" fill="#262b33"/><g transform="translate(960 -1100) scale(3.6) translate(-100 0)"><use href="#lr-mom" width="200" height="520"/></g></svg>`,
+              L('<use href="#lr-l-road-back" width="1920" height="1080"/>') + LR.rear(960, 940, 1.0),
+            ].map((h, i) => `<div class="rv-panel" id="${c.id}-p${i}" style="filter:saturate(.5) brightness(.9)">${h}<div class="lr-night" style="background:rgba(10,20,40,.4)"></div></div>`).join(''),
+            anim: (c) => {
+              for (let i = 0; i < 4; i++) {
+                c.tl.fromTo(`#${c.id}-p${i}`, { opacity: 0, scale: 1.08 }, { opacity: 1, scale: 1, duration: 0.25, ease: 'power2.out' }, c.p(i / 4));
+                if (i < 3) c.tl.fromTo(`#${c.id}-p${i}`, { opacity: 1 }, { opacity: 0, duration: 0.15, immediateRender: false }, c.p((i + 1) / 4));
+              }
+            },
+          },
+          _: { html: () => '' },
+        };
+        LR.run({ comp: 'scene-reveal', prefix: 'rv', tl, shots: S, views });
+        window.__timelines["scene-reveal"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

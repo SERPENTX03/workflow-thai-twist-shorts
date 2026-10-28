@@ -1,0 +1,3494 @@
+{
+ "title": "เที่ยวสุดท้าย หนึ่งล้านบาท",
+ "bpm": 75,
+ "beat": 0.8,
+ "total": 708.2,
+ "totalBeats": 885.25,
+ "shots": [
+  {
+   "i": 0,
+   "scene": "open",
+   "start": 0,
+   "dur": 4.3,
+   "beats": 5.375,
+   "text": "เสียงเคาะดังมาจากท้ายกระบะตู้ทึบ",
+   "style": "plain"
+  },
+  {
+   "i": 1,
+   "scene": "open",
+   "start": 4.3,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 2,
+   "scene": "open",
+   "start": 5.9,
+   "dur": 4.5,
+   "beats": 5.625,
+   "text": "“พี่! ช่วยเปิดหน่อย ลูกหนูหายใจไม่ออก!”",
+   "style": "plain"
+  },
+  {
+   "i": 3,
+   "scene": "open",
+   "start": 10.4,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 4,
+   "scene": "open",
+   "start": 12,
+   "dur": 3.8,
+   "beats": 4.75,
+   "text": "เสียงเด็กไอ ห่างจากมือเขาไม่ถึงคืบ",
+   "style": "plain"
+  },
+  {
+   "i": 5,
+   "scene": "open",
+   "start": 15.8,
+   "dur": 2,
+   "beats": 2.5,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 6,
+   "scene": "open",
+   "start": 17.8,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 7,
+   "scene": "open",
+   "start": 19.4,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "“อย่าเปิด”",
+   "style": "plain"
+  },
+  {
+   "i": 8,
+   "scene": "open",
+   "start": 21,
+   "dur": 3,
+   "beats": 3.75,
+   "text": "“มีเด็กอยู่ข้างใน!”",
+   "style": "plain"
+  },
+  {
+   "i": 9,
+   "scene": "open",
+   "start": 24,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 10,
+   "scene": "open",
+   "start": 25.6,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "“ผมรู้”",
+   "style": "red"
+  },
+  {
+   "i": 11,
+   "scene": "open",
+   "start": 27.2,
+   "dur": 2.9,
+   "beats": 3.625,
+   "text": "“ผมจ้างคุณหนึ่งล้านให้ไปส่งถึงท่าเรือ”",
+   "style": "plain"
+  },
+  {
+   "i": 12,
+   "scene": "open",
+   "start": 30.1,
+   "dur": 3.6,
+   "beats": 4.5,
+   "text": "“ถ้าคุณเปิดตอนนี้… คุณอาจไม่อยากขับต่อ”",
+   "style": "plain"
+  },
+  {
+   "i": 13,
+   "scene": "open",
+   "start": 33.7,
+   "dur": 4.1,
+   "beats": 5.125,
+   "text": "เสียงเด็กร้องไห้เบาลง แล้วก็เงียบไป",
+   "style": "plain"
+  },
+  {
+   "i": 14,
+   "scene": "open",
+   "start": 37.8,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 15,
+   "scene": "title",
+   "start": 40.2,
+   "dur": 3.6,
+   "beats": 4.5,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 16,
+   "scene": "arrive",
+   "start": 43.8,
+   "dur": 4.6,
+   "beats": 5.75,
+   "text": "ขับรถรับจ้างมาสิบกว่าปี\nเอกไม่เคยได้ค่าจ้าง[หนึ่งล้านบาท]",
+   "style": "plain"
+  },
+  {
+   "i": 17,
+   "scene": "arrive",
+   "start": 48.4,
+   "dur": 2.1,
+   "beats": 2.625,
+   "text": "คืนนั้นฝนตกหนัก",
+   "style": "plain"
+  },
+  {
+   "i": 18,
+   "scene": "arrive",
+   "start": 50.5,
+   "dur": 4.6,
+   "beats": 5.75,
+   "text": "ไฟรถสวนมาวูบหนึ่ง\nแล้วทุกอย่างก็พร่าเลือน",
+   "style": "plain"
+  },
+  {
+   "i": 19,
+   "scene": "arrive",
+   "start": 55.1,
+   "dur": 3.3,
+   "beats": 4.125,
+   "text": "รู้ตัวอีกที เขาก็ยืนอยู่หน้าโกดังแล้ว",
+   "style": "plain"
+  },
+  {
+   "i": 20,
+   "scene": "arrive",
+   "start": 58.4,
+   "dur": 3.5,
+   "beats": 4.375,
+   "text": "นาฬิกาข้อมือกระจกร้าว เข็มไม่เดิน",
+   "style": "plain"
+  },
+  {
+   "i": 21,
+   "scene": "arrive",
+   "start": 61.9,
+   "dur": 2.9,
+   "beats": 3.625,
+   "text": "สองทุ่มสี่สิบเจ็ด",
+   "style": "plain"
+  },
+  {
+   "i": 22,
+   "scene": "arrive",
+   "start": 64.8,
+   "dur": 3.6,
+   "beats": 4.5,
+   "text": "เขาคิดว่าคงกระแทกอะไรตอนลงรถ",
+   "style": "plain"
+  },
+  {
+   "i": 23,
+   "scene": "arrive",
+   "start": 68.4,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 24,
+   "scene": "arrive",
+   "start": 70,
+   "dur": 2,
+   "beats": 2.5,
+   "text": "“เอกใช่ไหม”",
+   "style": "plain"
+  },
+  {
+   "i": 25,
+   "scene": "arrive",
+   "start": 72,
+   "dur": 2.5,
+   "beats": 3.125,
+   "text": "ชายคนนั้นชื่อชาญ",
+   "style": "plain"
+  },
+  {
+   "i": 26,
+   "scene": "inside",
+   "start": 74.5,
+   "dur": 6.2,
+   "beats": 7.75,
+   "text": "“ไปตามพิกัด รับให้ครบสามจุด\nแล้วส่งที่ท่าเรือก่อนฟ้าสาง”",
+   "style": "plain"
+  },
+  {
+   "i": 27,
+   "scene": "inside",
+   "start": 80.7,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 28,
+   "scene": "inside",
+   "start": 82.3,
+   "dur": 3.4,
+   "beats": 4.25,
+   "text": "“ขนอะไรครับ”",
+   "style": "plain"
+  },
+  {
+   "i": 29,
+   "scene": "inside",
+   "start": 85.7,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 30,
+   "scene": "inside",
+   "start": 87.3,
+   "dur": 1.9,
+   "beats": 2.375,
+   "text": "ข้างในว่างเปล่า",
+   "style": "plain"
+  },
+  {
+   "i": 31,
+   "scene": "inside",
+   "start": 89.2,
+   "dur": 5.8,
+   "beats": 7.25,
+   "text": "“เดี๋ยวมีคนขึ้นระหว่างทาง\nคุณแค่จอดรอ ไม่ต้องลงไปช่วย”",
+   "style": "plain"
+  },
+  {
+   "i": 32,
+   "scene": "inside",
+   "start": 95,
+   "dur": 3.1,
+   "beats": 3.875,
+   "text": "“รับคน ทำไมไม่ใช้รถตู้”",
+   "style": "plain"
+  },
+  {
+   "i": 33,
+   "scene": "inside",
+   "start": 98.1,
+   "dur": 4,
+   "beats": 5,
+   "text": "ชายชราไม่ตอบ เขาลูบรอยขีดรอบกลอน",
+   "style": "plain"
+  },
+  {
+   "i": 34,
+   "scene": "inside",
+   "start": 102.1,
+   "dur": 2.7,
+   "beats": 3.375,
+   "text": "“บางคนขึ้นรถแบบอื่นไม่ได้”",
+   "style": "plain"
+  },
+  {
+   "i": 35,
+   "scene": "inside",
+   "start": 104.8,
+   "dur": 2.1,
+   "beats": 2.625,
+   "text": "เอกเริ่มไม่ชอบงานนี้",
+   "style": "plain"
+  },
+  {
+   "i": 36,
+   "scene": "inside",
+   "start": 106.9,
+   "dur": 3.7,
+   "beats": 4.625,
+   "text": "แต่ภรรยาเพิ่งส่งรูปใบแจ้งหนี้มา",
+   "style": "plain"
+  },
+  {
+   "i": 37,
+   "scene": "inside",
+   "start": 110.6,
+   "dur": 4.8,
+   "beats": 6,
+   "text": "ไม่ต้องรีบขับนะ\nกลับมากินข้าวด้วยกันก็พอ",
+   "style": "plain"
+  },
+  {
+   "i": 38,
+   "scene": "inside",
+   "start": 115.4,
+   "dur": 2.2,
+   "beats": 2.75,
+   "text": "“จ่ายยังไงครับ”",
+   "style": "plain"
+  },
+  {
+   "i": 39,
+   "scene": "sign",
+   "start": 117.6,
+   "dur": 5.2,
+   "beats": 6.5,
+   "text": "ในสมุดมีช่องชื่อคนขับ กับช่อง ผู้รับเงินแทน",
+   "style": "plain"
+  },
+  {
+   "i": 40,
+   "scene": "sign",
+   "start": 122.8,
+   "dur": 2.2,
+   "beats": 2.75,
+   "text": "“ใส่บัญชีภรรยาก็ได้”",
+   "style": "plain"
+  },
+  {
+   "i": 41,
+   "scene": "sign",
+   "start": 125,
+   "dur": 5.2,
+   "beats": 6.5,
+   "text": "“ครึ่งแรกโอนตอนรับกุญแจ\nอีกครึ่งเมื่อส่งครบ”",
+   "style": "plain"
+  },
+  {
+   "i": 42,
+   "scene": "sign",
+   "start": 130.2,
+   "dur": 7.7,
+   "beats": 9.625,
+   "text": "บรรทัดที่ชี้ไว้เขียนว่า\nผู้รับรถยินยอมปฏิบัติหน้าที่จนส่งมอบครบถ้วน",
+   "style": "plain"
+  },
+  {
+   "i": 43,
+   "scene": "sign",
+   "start": 137.9,
+   "dur": 2.6,
+   "beats": 3.25,
+   "text": "“แล้วมีข้อห้ามอะไรอีก”",
+   "style": "plain"
+  },
+  {
+   "i": 44,
+   "scene": "sign",
+   "start": 140.5,
+   "dur": 3.4,
+   "beats": 4.25,
+   "text": "“สองข้อ จอดรับให้ครบทุกจุด”",
+   "style": "plain"
+  },
+  {
+   "i": 45,
+   "scene": "sign",
+   "start": 143.9,
+   "dur": 5.8,
+   "beats": 7.25,
+   "text": "“เมื่อรับคนแรกแล้ว ห้ามเปิดตู้จนถึงท่าเรือ”",
+   "style": "plain"
+  },
+  {
+   "i": 46,
+   "scene": "sign",
+   "start": 149.7,
+   "dur": 2.2,
+   "beats": 2.75,
+   "text": "“ถ้าเขาเรียกให้เปิดล่ะ”",
+   "style": "plain"
+  },
+  {
+   "i": 47,
+   "scene": "sign",
+   "start": 151.9,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "“ขับต่อ”",
+   "style": "plain"
+  },
+  {
+   "i": 48,
+   "scene": "sign",
+   "start": 153.5,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 49,
+   "scene": "sign",
+   "start": 155.1,
+   "dur": 6.3,
+   "beats": 7.875,
+   "text": "“พวกเขาออกเองไม่ได้ คุณต้องเปิดให้\nแต่เปิดที่ปลายทางเท่านั้น”",
+   "style": "plain"
+  },
+  {
+   "i": 50,
+   "scene": "sign",
+   "start": 161.4,
+   "dur": 2,
+   "beats": 2.5,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 51,
+   "scene": "sign",
+   "start": 163.4,
+   "dur": 3.5,
+   "beats": 4.375,
+   "text": "ไม่นาน เงินก็เข้า [ห้าแสนบาท]",
+   "style": "plain"
+  },
+  {
+   "i": 52,
+   "scene": "sign",
+   "start": 166.9,
+   "dur": 2.6,
+   "beats": 3.25,
+   "text": "ชื่อผู้รับเป็นภรรยาของเขา",
+   "style": "plain"
+  },
+  {
+   "i": 53,
+   "scene": "sign",
+   "start": 169.5,
+   "dur": 2,
+   "beats": 2.5,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 54,
+   "scene": "sign",
+   "start": 171.5,
+   "dur": 4,
+   "beats": 5,
+   "text": "ได้เงินแล้วนะ\nเดี๋ยวทำงานเสร็จจะกลับ",
+   "style": "plain"
+  },
+  {
+   "i": 55,
+   "scene": "sign",
+   "start": 175.5,
+   "dur": 3.6,
+   "beats": 4.5,
+   "text": "ลุงชาญยื่นกุญแจให้ มือของแกสั่น",
+   "style": "plain"
+  },
+  {
+   "i": 56,
+   "scene": "sign",
+   "start": 179.1,
+   "dur": 2.2,
+   "beats": 2.75,
+   "text": "เอกคิดว่าเป็นเพราะอายุ",
+   "style": "plain"
+  },
+  {
+   "i": 57,
+   "scene": "sign",
+   "start": 181.3,
+   "dur": 4.5,
+   "beats": 5.625,
+   "text": "เขาเพิ่งมารู้ทีหลังว่า แกกลัวเขาเปลี่ยนใจ",
+   "style": "plain"
+  },
+  {
+   "i": 58,
+   "scene": "stop1",
+   "start": 185.8,
+   "dur": 2.8,
+   "beats": 3.5,
+   "text": "พิกัดแรกคือศาลาไม้เก่า",
+   "style": "plain"
+  },
+  {
+   "i": 59,
+   "scene": "stop1",
+   "start": 188.6,
+   "dur": 3.7,
+   "beats": 4.625,
+   "text": "มีเพียงพวงมาลัยซีด ๆ แขวนอยู่ข้างเสา",
+   "style": "plain"
+  },
+  {
+   "i": 60,
+   "scene": "stop1",
+   "start": 192.3,
+   "dur": 2,
+   "beats": 2.5,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 61,
+   "scene": "stop1",
+   "start": 194.3,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 62,
+   "scene": "stop1",
+   "start": 195.9,
+   "dur": 6.1,
+   "beats": 7.625,
+   "text": "ในกระจกข้าง มีผู้หญิงเสื้อฟ้า\nจูงเด็กหญิงที่กอดตุ๊กตากระต่าย",
+   "style": "plain"
+  },
+  {
+   "i": 63,
+   "scene": "stop1",
+   "start": 202,
+   "dur": 3.4,
+   "beats": 4.25,
+   "text": "“ไปท่าเรือใช่ไหมครับ”",
+   "style": "plain"
+  },
+  {
+   "i": 64,
+   "scene": "stop1",
+   "start": 205.4,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 65,
+   "scene": "stop1",
+   "start": 207,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 66,
+   "scene": "stop1",
+   "start": 208.6,
+   "dur": 2.6,
+   "beats": 3.25,
+   "text": "ทั้งสองคนหายไปแล้ว",
+   "style": "plain"
+  },
+  {
+   "i": 67,
+   "scene": "stop1",
+   "start": 211.2,
+   "dur": 2.7,
+   "beats": 3.375,
+   "text": "ทันใดนั้น ท้ายรถยุบลง",
+   "style": "plain"
+  },
+  {
+   "i": 68,
+   "scene": "stop1",
+   "start": 213.9,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 69,
+   "scene": "stop1",
+   "start": 215.5,
+   "dur": 2.2,
+   "beats": 2.75,
+   "text": "เขาไม่ได้ลงไปเปิดตู้",
+   "style": "plain"
+  },
+  {
+   "i": 70,
+   "scene": "stop1",
+   "start": 217.7,
+   "dur": 2.8,
+   "beats": 3.5,
+   "text": "ลุงชาญ: “รับแล้ว ไปต่อได้”",
+   "style": "plain"
+  },
+  {
+   "i": 71,
+   "scene": "stop23",
+   "start": 220.5,
+   "dur": 3.3,
+   "beats": 4.125,
+   "text": "จุดที่สองคือร้านสะดวกซื้อร้าง",
+   "style": "plain"
+  },
+  {
+   "i": 72,
+   "scene": "stop23",
+   "start": 223.8,
+   "dur": 2.3,
+   "beats": 2.875,
+   "text": "แต่รถก็ยุบลงอีกครั้ง",
+   "style": "plain"
+  },
+  {
+   "i": 73,
+   "scene": "stop23",
+   "start": 226.1,
+   "dur": 2,
+   "beats": 2.5,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 74,
+   "scene": "stop23",
+   "start": 228.1,
+   "dur": 4.5,
+   "beats": 5.625,
+   "text": "จุดที่สามริมสะพาน\nมีรองเท้าข้างหนึ่งใต้ราวกั้น",
+   "style": "plain"
+  },
+  {
+   "i": 75,
+   "scene": "stop23",
+   "start": 232.6,
+   "dur": 4.2,
+   "beats": 5.25,
+   "text": "พอขับเลยพิกัด เสียงเคาะก็ดังขึ้นหลังศีรษะ",
+   "style": "plain"
+  },
+  {
+   "i": 76,
+   "scene": "stop23",
+   "start": 236.8,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 77,
+   "scene": "stop23",
+   "start": 239.2,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 78,
+   "scene": "stop23",
+   "start": 240.8,
+   "dur": 2,
+   "beats": 2.5,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 79,
+   "scene": "night",
+   "start": 242.8,
+   "dur": 4.9,
+   "beats": 6.125,
+   "text": "“แม่ หนูหนาว”",
+   "style": "plain"
+  },
+  {
+   "i": 80,
+   "scene": "night",
+   "start": 247.7,
+   "dur": 4.1,
+   "beats": 5.125,
+   "text": "เอกเปิดฮีตเตอร์\nทั้งที่รู้ว่าลมไปไม่ถึงข้างหลัง",
+   "style": "plain"
+  },
+  {
+   "i": 81,
+   "scene": "night",
+   "start": 251.8,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 82,
+   "scene": "night",
+   "start": 253.4,
+   "dur": 3.8,
+   "beats": 4.75,
+   "text": "ข้อความที่ส่งไปยังไม่ขึ้นว่าส่งสำเร็จ",
+   "style": "plain"
+  },
+  {
+   "i": 83,
+   "scene": "night",
+   "start": 257.2,
+   "dur": 2.1,
+   "beats": 2.625,
+   "text": "“พี่ช่วยจอดหน่อยค่ะ”",
+   "style": "plain"
+  },
+  {
+   "i": 84,
+   "scene": "night",
+   "start": 259.3,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 85,
+   "scene": "night",
+   "start": 260.9,
+   "dur": 2.8,
+   "beats": 3.5,
+   "text": "“ลูกหนูหายใจไม่ออก”",
+   "style": "plain"
+  },
+  {
+   "i": 86,
+   "scene": "reveal",
+   "start": 263.7,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 87,
+   "scene": "reveal",
+   "start": 265.3,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "“ผมเปิดแล้วนะ!”",
+   "style": "plain"
+  },
+  {
+   "i": 88,
+   "scene": "reveal",
+   "start": 266.9,
+   "dur": 2,
+   "beats": 2.5,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 89,
+   "scene": "reveal",
+   "start": 268.9,
+   "dur": 2,
+   "beats": 2.5,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 90,
+   "scene": "reveal",
+   "start": 270.9,
+   "dur": 2,
+   "beats": 2.5,
+   "text": "ตู้ว่างเปล่า",
+   "style": "plain"
+  },
+  {
+   "i": 91,
+   "scene": "reveal",
+   "start": 272.9,
+   "dur": 4.2,
+   "beats": 5.25,
+   "text": "มีเพียงรอยเท้าเปียกหลายคู่\nหันเข้าหาประตู",
+   "style": "plain"
+  },
+  {
+   "i": 92,
+   "scene": "reveal",
+   "start": 277.1,
+   "dur": 5.3,
+   "beats": 6.625,
+   "text": "กลางพื้นมีตุ๊กตากระต่าย\nน้ำหยดจากหูที่พับลง",
+   "style": "plain"
+  },
+  {
+   "i": 93,
+   "scene": "reveal",
+   "start": 282.4,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 94,
+   "scene": "reveal",
+   "start": 284,
+   "dur": 2.6,
+   "beats": 3.25,
+   "text": "“แม่… ลุงเปิดแล้ว”",
+   "style": "plain"
+  },
+  {
+   "i": 95,
+   "scene": "reveal",
+   "start": 286.6,
+   "dur": 5.1,
+   "beats": 6.375,
+   "text": "เด็กหญิงยืนอยู่ข้างเขา\nกอดตุ๊กตาตัวเดียวกัน",
+   "style": "red"
+  },
+  {
+   "i": 96,
+   "scene": "reveal",
+   "start": 291.7,
+   "dur": 4.6,
+   "beats": 5.75,
+   "text": "แม่ของเด็กยืนอยู่ข้างหลัง\nน้ำไหลจากชายกระโปรง",
+   "style": "plain"
+  },
+  {
+   "i": 97,
+   "scene": "reveal",
+   "start": 296.3,
+   "dur": 3.4,
+   "beats": 4.25,
+   "text": "แต่พื้นใต้เธอไม่มีแอ่งน้ำ",
+   "style": "plain"
+  },
+  {
+   "i": 98,
+   "scene": "reveal",
+   "start": 299.7,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 99,
+   "scene": "reveal",
+   "start": 301.3,
+   "dur": 3.8,
+   "beats": 4.75,
+   "text": "“หนูพยายามปลดเข็มขัดให้ลูกแล้วค่ะ”",
+   "style": "plain"
+  },
+  {
+   "i": 100,
+   "scene": "reveal",
+   "start": 305.1,
+   "dur": 5,
+   "beats": 6.25,
+   "text": "“แต่น้ำมันขึ้นเร็ว ประตูเปิดไม่ออก\nหนูเลยให้ลูกยืนบนตัก”",
+   "style": "plain"
+  },
+  {
+   "i": 101,
+   "scene": "reveal",
+   "start": 310.1,
+   "dur": 3.6,
+   "beats": 4.5,
+   "text": "“หนูจำไม่ได้ว่าหลังจากนั้นเกิดอะไรขึ้น”",
+   "style": "plain"
+  },
+  {
+   "i": 102,
+   "scene": "reveal",
+   "start": 313.7,
+   "dur": 2.8,
+   "beats": 3.5,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 103,
+   "scene": "reveal",
+   "start": 316.5,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 104,
+   "scene": "reveal",
+   "start": 318.1,
+   "dur": 3.1,
+   "beats": 3.875,
+   "text": "“รถคันนี้จะพาเราออกไปได้ใช่ไหมคะ”",
+   "style": "plain"
+  },
+  {
+   "i": 105,
+   "scene": "reveal",
+   "start": 321.2,
+   "dur": 4.5,
+   "beats": 5.625,
+   "text": "เอกไม่มีคำตอบ\nแต่เขาเปิดประตูให้กว้างขึ้น",
+   "style": "plain"
+  },
+  {
+   "i": 106,
+   "scene": "reveal",
+   "start": 325.7,
+   "dur": 1.7,
+   "beats": 2.125,
+   "text": "“ขึ้นมาก่อนครับ”",
+   "style": "plain"
+  },
+  {
+   "i": 107,
+   "scene": "ledger",
+   "start": 327.4,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 108,
+   "scene": "ledger",
+   "start": 329,
+   "dur": 3.9,
+   "beats": 4.875,
+   "text": "“คนที่ให้ผมรับ… ตายหมดแล้วใช่ไหม”",
+   "style": "plain"
+  },
+  {
+   "i": 109,
+   "scene": "ledger",
+   "start": 332.9,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 110,
+   "scene": "ledger",
+   "start": 334.5,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "“ตอบสิ!”",
+   "style": "plain"
+  },
+  {
+   "i": 111,
+   "scene": "ledger",
+   "start": 336.1,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "“ใช่”",
+   "style": "plain"
+  },
+  {
+   "i": 112,
+   "scene": "ledger",
+   "start": 337.7,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "“แล้วทำไมไม่บอกตั้งแต่แรก”",
+   "style": "plain"
+  },
+  {
+   "i": 113,
+   "scene": "ledger",
+   "start": 340.1,
+   "dur": 2.5,
+   "beats": 3.125,
+   "text": "“ถ้าบอก คุณจะรับงานไหม”",
+   "style": "plain"
+  },
+  {
+   "i": 114,
+   "scene": "ledger",
+   "start": 342.6,
+   "dur": 2,
+   "beats": 2.5,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 115,
+   "scene": "ledger",
+   "start": 344.6,
+   "dur": 3,
+   "beats": 3.75,
+   "text": "“ท่าเรืออยู่ที่ไหนกันแน่”",
+   "style": "plain"
+  },
+  {
+   "i": 116,
+   "scene": "ledger",
+   "start": 347.6,
+   "dur": 3.3,
+   "beats": 4.125,
+   "text": "“ที่ที่พวกเขาไปต่อได้”",
+   "style": "plain"
+  },
+  {
+   "i": 117,
+   "scene": "ledger",
+   "start": 350.9,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 118,
+   "scene": "ledger",
+   "start": 352.5,
+   "dur": 4.3,
+   "beats": 5.375,
+   "text": "ทุกหน้ามีชื่อคนขับ ทุกชื่อถูกขีดฆ่า",
+   "style": "plain"
+  },
+  {
+   "i": 119,
+   "scene": "ledger",
+   "start": 356.8,
+   "dur": 3.4,
+   "beats": 4.25,
+   "text": "จนถึงหน้าของชาญ ช่องส่งมอบยังว่าง",
+   "style": "plain"
+  },
+  {
+   "i": 120,
+   "scene": "ledger",
+   "start": 360.2,
+   "dur": 2.2,
+   "beats": 2.75,
+   "text": "ถัดไปคือชื่อเอก",
+   "style": "plain"
+  },
+  {
+   "i": 121,
+   "scene": "ledger",
+   "start": 362.4,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 122,
+   "scene": "ledger",
+   "start": 364,
+   "dur": 8.4,
+   "beats": 10.5,
+   "text": "ผู้รับรถยินยอมปฏิบัติหน้าที่\nจนส่งมอบครบถ้วน{แก่ผู้รับหน้าที่รายถัดไป}",
+   "style": "red"
+  },
+  {
+   "i": 123,
+   "scene": "ledger",
+   "start": 372.4,
+   "dur": 5.1,
+   "beats": 6.375,
+   "text": "งานจะจบเมื่อมีคนขับคนใหม่\nไม่ใช่เมื่อถึงท่าเรือ",
+   "style": "plain"
+  },
+  {
+   "i": 124,
+   "scene": "ledger",
+   "start": 377.5,
+   "dur": 2,
+   "beats": 2.5,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 125,
+   "scene": "ledger",
+   "start": 379.5,
+   "dur": 4.5,
+   "beats": 5.625,
+   "text": "“เงินล้านนั่น… ซื้อให้ผมมาทำแทนลุงใช่ไหม”",
+   "style": "plain"
+  },
+  {
+   "i": 126,
+   "scene": "ledger",
+   "start": 384,
+   "dur": 2.2,
+   "beats": 2.75,
+   "text": "“ใช่”",
+   "style": "plain"
+  },
+  {
+   "i": 127,
+   "scene": "ledger",
+   "start": 386.2,
+   "dur": 4.1,
+   "beats": 5.125,
+   "text": "“ถ้าผมขับไปถึง ลุงก็พ้น แล้วผมต้องขับต่อ?”",
+   "style": "plain"
+  },
+  {
+   "i": 128,
+   "scene": "ledger",
+   "start": 390.3,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "“ใช่”",
+   "style": "plain"
+  },
+  {
+   "i": 129,
+   "scene": "ledger",
+   "start": 391.9,
+   "dur": 2,
+   "beats": 2.5,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 130,
+   "scene": "ledger",
+   "start": 393.9,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 131,
+   "scene": "ledger",
+   "start": 395.5,
+   "dur": 2.3,
+   "beats": 2.875,
+   "text": "“งั้นผมจะเอารถไปคืน”",
+   "style": "plain"
+  },
+  {
+   "i": 132,
+   "scene": "crash",
+   "start": 397.8,
+   "dur": 2.9,
+   "beats": 3.625,
+   "text": "ยิ่งขับย้อนกลับ ถนนยิ่งคุ้น",
+   "style": "plain"
+  },
+  {
+   "i": 133,
+   "scene": "crash",
+   "start": 400.7,
+   "dur": 5.3,
+   "beats": 6.625,
+   "text": "ต้นไม้หักครึ่งลำต้น\nป้ายโค้งที่เอียงไปข้างหนึ่ง ราวกั้นสีขาว",
+   "style": "plain"
+  },
+  {
+   "i": 134,
+   "scene": "crash",
+   "start": 406,
+   "dur": 3,
+   "beats": 3.75,
+   "text": "แล้วไฟฉุกเฉินก็ปรากฏข้างหน้า",
+   "style": "plain"
+  },
+  {
+   "i": 135,
+   "scene": "crash",
+   "start": 409,
+   "dur": 3.8,
+   "beats": 4.75,
+   "text": "รถกู้ภัยจอดข้างซากกระบะที่ชนราวกั้น",
+   "style": "plain"
+  },
+  {
+   "i": 136,
+   "scene": "crash",
+   "start": 412.8,
+   "dur": 5,
+   "beats": 6.25,
+   "text": "รอยบุบตรงบังโคลน\nเชือกสีฟ้าที่ผูกไว้ท้ายกระบะ",
+   "style": "plain"
+  },
+  {
+   "i": 137,
+   "scene": "crash",
+   "start": 417.8,
+   "dur": 3.3,
+   "beats": 4.125,
+   "text": "สติกเกอร์ที่ลูกชายติดให้บนกระจกหลัง",
+   "style": "plain"
+  },
+  {
+   "i": 138,
+   "scene": "crash",
+   "start": 421.1,
+   "dur": 2.8,
+   "beats": 3.5,
+   "text": "เป็น[รถของเขา]",
+   "style": "plain"
+  },
+  {
+   "i": 139,
+   "scene": "crash",
+   "start": 423.9,
+   "dur": 4.4,
+   "beats": 5.5,
+   "text": "“พี่ครับ รถผมมาอยู่ตรงนี้ได้ยังไง”",
+   "style": "plain"
+  },
+  {
+   "i": 140,
+   "scene": "crash",
+   "start": 428.3,
+   "dur": 2.1,
+   "beats": 2.625,
+   "text": "ไม่มีใครหันมา",
+   "style": "plain"
+  },
+  {
+   "i": 141,
+   "scene": "crash",
+   "start": 430.4,
+   "dur": 4.5,
+   "beats": 5.625,
+   "text": "ชายคนหนึ่งเดินผ่านตัวเขาไป\nโดยไม่ชะลอฝีเท้า",
+   "style": "plain"
+  },
+  {
+   "i": 142,
+   "scene": "crash",
+   "start": 434.9,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 143,
+   "scene": "crash",
+   "start": 436.5,
+   "dur": 2.8,
+   "beats": 3.5,
+   "text": "“ครับ ผู้หญิงที่ติดต่อเมื่อกี้เป็นภรรยาครับ”",
+   "style": "plain"
+  },
+  {
+   "i": 144,
+   "scene": "crash",
+   "start": 439.3,
+   "dur": 4.3,
+   "beats": 5.375,
+   "text": "“เสียชีวิตในที่เกิดเหตุครับ\nเวลาประมาณสองทุ่มสี่สิบเจ็ด”",
+   "style": "plain"
+  },
+  {
+   "i": 145,
+   "scene": "crash",
+   "start": 443.6,
+   "dur": 3.8,
+   "beats": 4.75,
+   "text": "เขาก้มมองนาฬิกา เข็มยังหยุดอยู่ที่เดิม",
+   "style": "plain"
+  },
+  {
+   "i": 146,
+   "scene": "crash",
+   "start": 447.4,
+   "dur": 4.7,
+   "beats": 5.875,
+   "text": "บนพื้นมีหมวกแก๊ปกรมท่า\nรอยปะสีครีมตรงด้านข้าง",
+   "style": "plain"
+  },
+  {
+   "i": 147,
+   "scene": "crash",
+   "start": 452.1,
+   "dur": 4.6,
+   "beats": 5.75,
+   "text": "เหมือนใบที่เขากำลังสวมอยู่",
+   "style": "plain"
+  },
+  {
+   "i": 148,
+   "scene": "crash",
+   "start": 456.7,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 149,
+   "scene": "flash",
+   "start": 458.3,
+   "dur": 6.2,
+   "beats": 7.75,
+   "text": "ไฟหน้ารถบรรทุก เสียงแตร\nมือที่กระชากพวงมาลัย แรงกระแทก",
+   "style": "plain"
+  },
+  {
+   "i": 150,
+   "scene": "flash",
+   "start": 464.5,
+   "dur": 3,
+   "beats": 3.75,
+   "text": "แล้วความเงียบ",
+   "style": "plain"
+  },
+  {
+   "i": 151,
+   "scene": "flash",
+   "start": 467.5,
+   "dur": 4,
+   "beats": 5,
+   "text": "เขาไม่ได้ขับรถไปถึงโกดัง",
+   "style": "red"
+  },
+  {
+   "i": 152,
+   "scene": "flash",
+   "start": 471.5,
+   "dur": 7.2,
+   "beats": 9,
+   "text": "เขาเดินออกจากอุบัติเหตุ\nโดยทิ้งร่างของตัวเองไว้ข้างหลัง",
+   "style": "plain"
+  },
+  {
+   "i": 153,
+   "scene": "truth",
+   "start": 478.7,
+   "dur": 2.1,
+   "beats": 2.625,
+   "text": "“ลุงรู้ตั้งแต่แรก?”",
+   "style": "plain"
+  },
+  {
+   "i": 154,
+   "scene": "truth",
+   "start": 480.8,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "“รู้”",
+   "style": "plain"
+  },
+  {
+   "i": 155,
+   "scene": "truth",
+   "start": 482.4,
+   "dur": 2.1,
+   "beats": 2.625,
+   "text": "“ว่าผมตายแล้ว?”",
+   "style": "plain"
+  },
+  {
+   "i": 156,
+   "scene": "truth",
+   "start": 484.5,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "“ตอนผมรับรถ ผมก็ไม่รู้เหมือนกัน”",
+   "style": "plain"
+  },
+  {
+   "i": 157,
+   "scene": "truth",
+   "start": 487.7,
+   "dur": 3.8,
+   "beats": 4.75,
+   "text": "เอกมองมือตัวเอง\nมันยังเหมือนเดิมทุกอย่าง",
+   "style": "plain"
+  },
+  {
+   "i": 158,
+   "scene": "truth",
+   "start": 491.5,
+   "dur": 2.7,
+   "beats": 3.375,
+   "text": "“แล้วผมจะเอาเงินไปทำอะไร”",
+   "style": "plain"
+  },
+  {
+   "i": 159,
+   "scene": "truth",
+   "start": 494.2,
+   "dur": 4.7,
+   "beats": 5.875,
+   "text": "“คนที่ยังอยู่ใช้ได้\nเงินครึ่งแรกถึงภรรยาคุณแล้ว”",
+   "style": "plain"
+  },
+  {
+   "i": 160,
+   "scene": "truth",
+   "start": 498.9,
+   "dur": 5.4,
+   "beats": 6.75,
+   "text": "เขาเพิ่งเข้าใจว่าทำไมสมุดต้องมีช่อง\n[ผู้รับเงินแทน]",
+   "style": "plain"
+  },
+  {
+   "i": 161,
+   "scene": "truth",
+   "start": 504.3,
+   "dur": 5.3,
+   "beats": 6.625,
+   "text": "“เงินที่ผมเหลือไว้ก่อนตาย มีอยู่เท่านั้น\nผมเอามันแลกกับคนที่จะมารับรถต่อ”",
+   "style": "plain"
+  },
+  {
+   "i": 162,
+   "scene": "truth",
+   "start": 509.6,
+   "dur": 3.6,
+   "beats": 4.5,
+   "text": "“ลุงก็เลยหลอกผม”",
+   "style": "plain"
+  },
+  {
+   "i": 163,
+   "scene": "truth",
+   "start": 513.2,
+   "dur": 1.9,
+   "beats": 2.375,
+   "text": "“ใช่”",
+   "style": "plain"
+  },
+  {
+   "i": 164,
+   "scene": "truth",
+   "start": 515.1,
+   "dur": 2.5,
+   "beats": 3.125,
+   "text": "คราวนี้แกไม่แก้ตัว",
+   "style": "plain"
+  },
+  {
+   "i": 165,
+   "scene": "truth",
+   "start": 517.6,
+   "dur": 3.1,
+   "beats": 3.875,
+   "text": "“ผมขับมานานจนจำเสียงลูกตัวเองแทบไม่ได้แล้ว”",
+   "style": "plain"
+  },
+  {
+   "i": 166,
+   "scene": "truth",
+   "start": 520.7,
+   "dur": 3.9,
+   "beats": 4.875,
+   "text": "“ผมอยากไป แต่ผมไม่กล้าบอกคุณตรง ๆ”",
+   "style": "plain"
+  },
+  {
+   "i": 167,
+   "scene": "truth",
+   "start": 524.6,
+   "dur": 2.8,
+   "beats": 3.5,
+   "text": "“ถ้าผมไม่ขับต่อ?”",
+   "style": "plain"
+  },
+  {
+   "i": 168,
+   "scene": "truth",
+   "start": 527.4,
+   "dur": 6.4,
+   "beats": 8,
+   "text": "“คืนกุญแจ ผมจะรับหน้าที่กลับ\nคุณขึ้นท้ายรถ แล้วผมจะพาไปส่ง”",
+   "style": "plain"
+  },
+  {
+   "i": 169,
+   "scene": "truth",
+   "start": 533.8,
+   "dur": 2.8,
+   "beats": 3.5,
+   "text": "“เงินที่เหลือล่ะ”",
+   "style": "plain"
+  },
+  {
+   "i": 170,
+   "scene": "truth",
+   "start": 536.6,
+   "dur": 3.4,
+   "beats": 4.25,
+   "text": "“คุณไม่ต้องรับงานก็ได้ เอก”",
+   "style": "plain"
+  },
+  {
+   "i": 171,
+   "scene": "truth",
+   "start": 540,
+   "dur": 4.7,
+   "beats": 5.875,
+   "text": "ลุงชาญหลบคำถาม\nนั่นทำให้เอกเข้าใจคำตอบ",
+   "style": "plain"
+  },
+  {
+   "i": 172,
+   "scene": "home",
+   "start": 544.7,
+   "dur": 2.9,
+   "beats": 3.625,
+   "text": "ก่อนตัดสินใจ เอกขอกลับบ้าน",
+   "style": "plain"
+  },
+  {
+   "i": 173,
+   "scene": "home",
+   "start": 547.6,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 174,
+   "scene": "home",
+   "start": 549.2,
+   "dur": 4,
+   "beats": 5,
+   "text": "ภรรยานั่งอยู่ข้างโต๊ะ\nลูกชายหลับพิงแขนเธอ",
+   "style": "plain"
+  },
+  {
+   "i": 175,
+   "scene": "home",
+   "start": 553.2,
+   "dur": 4.2,
+   "beats": 5.25,
+   "text": "บนโต๊ะมีข้าวสองจาน จานหนึ่งยังไม่ได้แตะ",
+   "style": "plain"
+  },
+  {
+   "i": 176,
+   "scene": "home",
+   "start": 557.4,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 177,
+   "scene": "home",
+   "start": 560.6,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 178,
+   "scene": "home",
+   "start": 562.2,
+   "dur": 4.8,
+   "beats": 6,
+   "text": "ภรรยามองจำนวนเงินที่เข้า\nแล้วร้องไห้ออกมา",
+   "style": "plain"
+  },
+  {
+   "i": 179,
+   "scene": "home",
+   "start": 567,
+   "dur": 2.7,
+   "beats": 3.375,
+   "text": "เอกอยากบอกเธอว่าไม่ต้องกลัว",
+   "style": "plain"
+  },
+  {
+   "i": 180,
+   "scene": "home",
+   "start": 569.7,
+   "dur": 3.5,
+   "beats": 4.375,
+   "text": "ไม่ต้องคอยฟังเสียงรถเขาทุกคืนอีกแล้ว",
+   "style": "plain"
+  },
+  {
+   "i": 181,
+   "scene": "home",
+   "start": 573.2,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "แต่ไม่มีคำไหนไปถึงเธอ",
+   "style": "plain"
+  },
+  {
+   "i": 182,
+   "scene": "home",
+   "start": 576.4,
+   "dur": 4.3,
+   "beats": 5.375,
+   "text": "ลูกชายตื่นขึ้นมาถามแม่ว่า “พ่อกลับหรือยัง”",
+   "style": "plain"
+  },
+  {
+   "i": 183,
+   "scene": "home",
+   "start": 580.7,
+   "dur": 2,
+   "beats": 2.5,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 184,
+   "scene": "home",
+   "start": 582.7,
+   "dur": 6.5,
+   "beats": 8.125,
+   "text": "เอกถอดหมวก ยืนอยู่อย่างนั้น\nจนไฟในห้องถูกหรี่ลง",
+   "style": "plain"
+  },
+  {
+   "i": 185,
+   "scene": "home",
+   "start": 589.2,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 186,
+   "scene": "decide",
+   "start": 590.8,
+   "dur": 1.9,
+   "beats": 2.375,
+   "text": "“ผมจะขับต่อ”",
+   "style": "plain"
+  },
+  {
+   "i": 187,
+   "scene": "decide",
+   "start": 592.7,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 188,
+   "scene": "decide",
+   "start": 594.3,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "“คุณแน่ใจนะ”",
+   "style": "plain"
+  },
+  {
+   "i": 189,
+   "scene": "decide",
+   "start": 595.9,
+   "dur": 2.7,
+   "beats": 3.375,
+   "text": "“โอนอีกครึ่งให้เมียผม”",
+   "style": "plain"
+  },
+  {
+   "i": 190,
+   "scene": "decide",
+   "start": 598.6,
+   "dur": 3.3,
+   "beats": 4.125,
+   "text": "“เอก งานนี้มันไม่รู้ว่าจะจบเมื่อไร”",
+   "style": "plain"
+  },
+  {
+   "i": 191,
+   "scene": "decide",
+   "start": 601.9,
+   "dur": 5.5,
+   "beats": 6.875,
+   "text": "ในกระจกข้าง\nผู้หญิงกำลังกอดลูกอยู่หลังประตูตู้",
+   "style": "plain"
+  },
+  {
+   "i": 192,
+   "scene": "decide",
+   "start": 607.4,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "“ผมรู้แล้ว”",
+   "style": "plain"
+  },
+  {
+   "i": 193,
+   "scene": "decide",
+   "start": 609,
+   "dur": 1.9,
+   "beats": 2.375,
+   "text": "ไม่มีเสียงเคาะอีกแล้ว",
+   "style": "plain"
+  },
+  {
+   "i": 194,
+   "scene": "decide",
+   "start": 610.9,
+   "dur": 5.7,
+   "beats": 7.125,
+   "text": "มีเพียงเสียงแม่กล่อมลูกเบา ๆ จากด้านหลัง",
+   "style": "plain"
+  },
+  {
+   "i": 195,
+   "scene": "pier",
+   "start": 616.6,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 196,
+   "scene": "pier",
+   "start": 619.8,
+   "dur": 2.5,
+   "beats": 3.125,
+   "text": "คราวนี้เขามองเห็นทุกคน",
+   "style": "plain"
+  },
+  {
+   "i": 197,
+   "scene": "pier",
+   "start": 622.3,
+   "dur": 3.2,
+   "beats": 4,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 198,
+   "scene": "pier",
+   "start": 625.5,
+   "dur": 5.7,
+   "beats": 7.125,
+   "text": "ไม่มีใครมีบาดแผล\nทุกคนดูเหมือนคนเหนื่อยที่รอกลับบ้าน",
+   "style": "plain"
+  },
+  {
+   "i": 199,
+   "scene": "pier",
+   "start": 631.2,
+   "dur": 2,
+   "beats": 2.5,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 200,
+   "scene": "pier",
+   "start": 633.2,
+   "dur": 2.6,
+   "beats": 3.25,
+   "text": "“ขอบคุณนะคะ ที่เปิดให้”",
+   "style": "plain"
+  },
+  {
+   "i": 201,
+   "scene": "pier",
+   "start": 635.8,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 202,
+   "scene": "pier",
+   "start": 637.4,
+   "dur": 2.4,
+   "beats": 3,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 203,
+   "scene": "pier",
+   "start": 639.8,
+   "dur": 4.6,
+   "beats": 5.75,
+   "text": "ลุงชาญคืนสมุดให้ ชื่อของแกถูกขีดทับแล้ว",
+   "style": "plain"
+  },
+  {
+   "i": 204,
+   "scene": "pier",
+   "start": 644.4,
+   "dur": 4.2,
+   "beats": 5.25,
+   "text": "เงินอีก[ห้าแสน] เข้าบัญชีภรรยาเขา",
+   "style": "plain"
+  },
+  {
+   "i": 205,
+   "scene": "pier",
+   "start": 648.6,
+   "dur": 3.1,
+   "beats": 3.875,
+   "text": "“ผมขอโทษ”",
+   "style": "plain"
+  },
+  {
+   "i": 206,
+   "scene": "pier",
+   "start": 651.7,
+   "dur": 4.7,
+   "beats": 5.875,
+   "text": "“ถ้ามีคนมารับต่อจากผม ผมจะบอกเขาก่อน”",
+   "style": "plain"
+  },
+  {
+   "i": 207,
+   "scene": "pier",
+   "start": 656.4,
+   "dur": 5,
+   "beats": 6.25,
+   "text": "ลุงชาญก้มหน้า แล้วเดินตามผู้โดยสารไป",
+   "style": "plain"
+  },
+  {
+   "i": 208,
+   "scene": "end",
+   "start": 661.4,
+   "dur": 5.5,
+   "beats": 6.875,
+   "text": "บนเบาะข้างคนขับ\nมีตุ๊กตากระต่ายที่เด็กหญิงลืมไว้",
+   "style": "plain"
+  },
+  {
+   "i": 209,
+   "scene": "end",
+   "start": 666.9,
+   "dur": 2,
+   "beats": 2.5,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 210,
+   "scene": "end",
+   "start": 668.9,
+   "dur": 3.3,
+   "beats": 4.125,
+   "text": "หน้าถัดไปของสมุด คือพิกัดเที่ยวใหม่",
+   "style": "plain"
+  },
+  {
+   "i": 211,
+   "scene": "end",
+   "start": 672.2,
+   "dur": 5.3,
+   "beats": 6.625,
+   "text": "หนึ่งคน\nยังไม่ทราบว่าตัวเองเสียชีวิต",
+   "style": "red"
+  },
+  {
+   "i": 212,
+   "scene": "end",
+   "start": 677.5,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 213,
+   "scene": "end",
+   "start": 679.1,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 214,
+   "scene": "end",
+   "start": 680.7,
+   "dur": 4.9,
+   "beats": 6.125,
+   "text": "เขาสตาร์ตรถ หมุนหมวกให้เข้าที่\nแล้วขับออกไป",
+   "style": "plain"
+  },
+  {
+   "i": 215,
+   "scene": "end",
+   "start": 685.6,
+   "dur": 2.8,
+   "beats": 3.5,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 216,
+   "scene": "end",
+   "start": 688.4,
+   "dur": 1.6,
+   "beats": 2,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 217,
+   "scene": "end",
+   "start": 690,
+   "dur": 2,
+   "beats": 2.5,
+   "text": "“พี่ รถไปไหนครับ”",
+   "style": "plain"
+  },
+  {
+   "i": 218,
+   "scene": "end",
+   "start": 692,
+   "dur": 3.6,
+   "beats": 4.5,
+   "text": "เอกมองเขา เหมือนเห็นตัวเองเมื่อคืน",
+   "style": "plain"
+  },
+  {
+   "i": 219,
+   "scene": "end",
+   "start": 695.6,
+   "dur": 3.8,
+   "beats": 4.75,
+   "text": "“ขึ้นมาก่อนครับ… เดี๋ยวผมเล่าให้ฟังทั้งหมด”",
+   "style": "plain"
+  },
+  {
+   "i": 220,
+   "scene": "end",
+   "start": 699.4,
+   "dur": 4,
+   "beats": 5,
+   "text": "",
+   "style": "plain"
+  },
+  {
+   "i": 221,
+   "scene": "end",
+   "start": 703.4,
+   "dur": 4.8,
+   "beats": 6,
+   "text": "",
+   "style": "plain"
+  }
+ ],
+ "scenes": [
+  {
+   "id": "open-0",
+   "scene": "open",
+   "file": "scene-open.html",
+   "start": 0,
+   "dur": 40.2,
+   "local": [
+    {
+     "shot": 0,
+     "at": 0,
+     "dur": 4.3,
+     "text": "เสียงเคาะดังมาจากท้ายกระบะตู้ทึบ"
+    },
+    {
+     "shot": 1,
+     "at": 4.3,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 2,
+     "at": 5.9,
+     "dur": 4.5,
+     "text": "“พี่! ช่วยเปิดหน่อย ลูกหนูหายใจไม่ออก!”"
+    },
+    {
+     "shot": 3,
+     "at": 10.4,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 4,
+     "at": 12,
+     "dur": 3.8,
+     "text": "เสียงเด็กไอ ห่างจากมือเขาไม่ถึงคืบ"
+    },
+    {
+     "shot": 5,
+     "at": 15.8,
+     "dur": 2,
+     "text": ""
+    },
+    {
+     "shot": 6,
+     "at": 17.8,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 7,
+     "at": 19.4,
+     "dur": 1.6,
+     "text": "“อย่าเปิด”"
+    },
+    {
+     "shot": 8,
+     "at": 21,
+     "dur": 3,
+     "text": "“มีเด็กอยู่ข้างใน!”"
+    },
+    {
+     "shot": 9,
+     "at": 24,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 10,
+     "at": 25.6,
+     "dur": 1.6,
+     "text": "“ผมรู้”"
+    },
+    {
+     "shot": 11,
+     "at": 27.2,
+     "dur": 2.9,
+     "text": "“ผมจ้างคุณหนึ่งล้านให้ไปส่งถึงท่าเรือ”"
+    },
+    {
+     "shot": 12,
+     "at": 30.1,
+     "dur": 3.6,
+     "text": "“ถ้าคุณเปิดตอนนี้… คุณอาจไม่อยากขับต่อ”"
+    },
+    {
+     "shot": 13,
+     "at": 33.7,
+     "dur": 4.1,
+     "text": "เสียงเด็กร้องไห้เบาลง แล้วก็เงียบไป"
+    },
+    {
+     "shot": 14,
+     "at": 37.8,
+     "dur": 2.4,
+     "text": ""
+    }
+   ]
+  },
+  {
+   "id": "title-1",
+   "scene": "title",
+   "file": "scene-title.html",
+   "start": 40.2,
+   "dur": 3.6,
+   "local": [
+    {
+     "shot": 15,
+     "at": 0,
+     "dur": 3.6,
+     "text": ""
+    }
+   ]
+  },
+  {
+   "id": "arrive-2",
+   "scene": "arrive",
+   "file": "scene-arrive.html",
+   "start": 43.8,
+   "dur": 30.7,
+   "local": [
+    {
+     "shot": 16,
+     "at": 0,
+     "dur": 4.6,
+     "text": "ขับรถรับจ้างมาสิบกว่าปี\nเอกไม่เคยได้ค่าจ้างหนึ่งล้านบาท"
+    },
+    {
+     "shot": 17,
+     "at": 4.6,
+     "dur": 2.1,
+     "text": "คืนนั้นฝนตกหนัก"
+    },
+    {
+     "shot": 18,
+     "at": 6.7,
+     "dur": 4.6,
+     "text": "ไฟรถสวนมาวูบหนึ่ง\nแล้วทุกอย่างก็พร่าเลือน"
+    },
+    {
+     "shot": 19,
+     "at": 11.3,
+     "dur": 3.3,
+     "text": "รู้ตัวอีกที เขาก็ยืนอยู่หน้าโกดังแล้ว"
+    },
+    {
+     "shot": 20,
+     "at": 14.6,
+     "dur": 3.5,
+     "text": "นาฬิกาข้อมือกระจกร้าว เข็มไม่เดิน"
+    },
+    {
+     "shot": 21,
+     "at": 18.1,
+     "dur": 2.9,
+     "text": "สองทุ่มสี่สิบเจ็ด"
+    },
+    {
+     "shot": 22,
+     "at": 21,
+     "dur": 3.6,
+     "text": "เขาคิดว่าคงกระแทกอะไรตอนลงรถ"
+    },
+    {
+     "shot": 23,
+     "at": 24.6,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 24,
+     "at": 26.2,
+     "dur": 2,
+     "text": "“เอกใช่ไหม”"
+    },
+    {
+     "shot": 25,
+     "at": 28.2,
+     "dur": 2.5,
+     "text": "ชายคนนั้นชื่อชาญ"
+    }
+   ]
+  },
+  {
+   "id": "inside-3",
+   "scene": "inside",
+   "file": "scene-inside.html",
+   "start": 74.5,
+   "dur": 43.1,
+   "local": [
+    {
+     "shot": 26,
+     "at": 0,
+     "dur": 6.2,
+     "text": "“ไปตามพิกัด รับให้ครบสามจุด\nแล้วส่งที่ท่าเรือก่อนฟ้าสาง”"
+    },
+    {
+     "shot": 27,
+     "at": 6.2,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 28,
+     "at": 7.8,
+     "dur": 3.4,
+     "text": "“ขนอะไรครับ”"
+    },
+    {
+     "shot": 29,
+     "at": 11.2,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 30,
+     "at": 12.8,
+     "dur": 1.9,
+     "text": "ข้างในว่างเปล่า"
+    },
+    {
+     "shot": 31,
+     "at": 14.7,
+     "dur": 5.8,
+     "text": "“เดี๋ยวมีคนขึ้นระหว่างทาง\nคุณแค่จอดรอ ไม่ต้องลงไปช่วย”"
+    },
+    {
+     "shot": 32,
+     "at": 20.5,
+     "dur": 3.1,
+     "text": "“รับคน ทำไมไม่ใช้รถตู้”"
+    },
+    {
+     "shot": 33,
+     "at": 23.6,
+     "dur": 4,
+     "text": "ชายชราไม่ตอบ เขาลูบรอยขีดรอบกลอน"
+    },
+    {
+     "shot": 34,
+     "at": 27.6,
+     "dur": 2.7,
+     "text": "“บางคนขึ้นรถแบบอื่นไม่ได้”"
+    },
+    {
+     "shot": 35,
+     "at": 30.3,
+     "dur": 2.1,
+     "text": "เอกเริ่มไม่ชอบงานนี้"
+    },
+    {
+     "shot": 36,
+     "at": 32.4,
+     "dur": 3.7,
+     "text": "แต่ภรรยาเพิ่งส่งรูปใบแจ้งหนี้มา"
+    },
+    {
+     "shot": 37,
+     "at": 36.1,
+     "dur": 4.8,
+     "text": "ไม่ต้องรีบขับนะ\nกลับมากินข้าวด้วยกันก็พอ"
+    },
+    {
+     "shot": 38,
+     "at": 40.9,
+     "dur": 2.2,
+     "text": "“จ่ายยังไงครับ”"
+    }
+   ]
+  },
+  {
+   "id": "sign-4",
+   "scene": "sign",
+   "file": "scene-sign.html",
+   "start": 117.6,
+   "dur": 68.2,
+   "local": [
+    {
+     "shot": 39,
+     "at": 0,
+     "dur": 5.2,
+     "text": "ในสมุดมีช่องชื่อคนขับ กับช่อง ผู้รับเงินแทน"
+    },
+    {
+     "shot": 40,
+     "at": 5.2,
+     "dur": 2.2,
+     "text": "“ใส่บัญชีภรรยาก็ได้”"
+    },
+    {
+     "shot": 41,
+     "at": 7.4,
+     "dur": 5.2,
+     "text": "“ครึ่งแรกโอนตอนรับกุญแจ\nอีกครึ่งเมื่อส่งครบ”"
+    },
+    {
+     "shot": 42,
+     "at": 12.6,
+     "dur": 7.7,
+     "text": "บรรทัดที่ชี้ไว้เขียนว่า\nผู้รับรถยินยอมปฏิบัติหน้าที่จนส่งมอบครบถ้วน"
+    },
+    {
+     "shot": 43,
+     "at": 20.3,
+     "dur": 2.6,
+     "text": "“แล้วมีข้อห้ามอะไรอีก”"
+    },
+    {
+     "shot": 44,
+     "at": 22.9,
+     "dur": 3.4,
+     "text": "“สองข้อ จอดรับให้ครบทุกจุด”"
+    },
+    {
+     "shot": 45,
+     "at": 26.3,
+     "dur": 5.8,
+     "text": "“เมื่อรับคนแรกแล้ว ห้ามเปิดตู้จนถึงท่าเรือ”"
+    },
+    {
+     "shot": 46,
+     "at": 32.1,
+     "dur": 2.2,
+     "text": "“ถ้าเขาเรียกให้เปิดล่ะ”"
+    },
+    {
+     "shot": 47,
+     "at": 34.3,
+     "dur": 1.6,
+     "text": "“ขับต่อ”"
+    },
+    {
+     "shot": 48,
+     "at": 35.9,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 49,
+     "at": 37.5,
+     "dur": 6.3,
+     "text": "“พวกเขาออกเองไม่ได้ คุณต้องเปิดให้\nแต่เปิดที่ปลายทางเท่านั้น”"
+    },
+    {
+     "shot": 50,
+     "at": 43.8,
+     "dur": 2,
+     "text": ""
+    },
+    {
+     "shot": 51,
+     "at": 45.8,
+     "dur": 3.5,
+     "text": "ไม่นาน เงินก็เข้า ห้าแสนบาท"
+    },
+    {
+     "shot": 52,
+     "at": 49.3,
+     "dur": 2.6,
+     "text": "ชื่อผู้รับเป็นภรรยาของเขา"
+    },
+    {
+     "shot": 53,
+     "at": 51.9,
+     "dur": 2,
+     "text": ""
+    },
+    {
+     "shot": 54,
+     "at": 53.9,
+     "dur": 4,
+     "text": "ได้เงินแล้วนะ\nเดี๋ยวทำงานเสร็จจะกลับ"
+    },
+    {
+     "shot": 55,
+     "at": 57.9,
+     "dur": 3.6,
+     "text": "ลุงชาญยื่นกุญแจให้ มือของแกสั่น"
+    },
+    {
+     "shot": 56,
+     "at": 61.5,
+     "dur": 2.2,
+     "text": "เอกคิดว่าเป็นเพราะอายุ"
+    },
+    {
+     "shot": 57,
+     "at": 63.7,
+     "dur": 4.5,
+     "text": "เขาเพิ่งมารู้ทีหลังว่า แกกลัวเขาเปลี่ยนใจ"
+    }
+   ]
+  },
+  {
+   "id": "stop1-5",
+   "scene": "stop1",
+   "file": "scene-stop1.html",
+   "start": 185.8,
+   "dur": 34.7,
+   "local": [
+    {
+     "shot": 58,
+     "at": 0,
+     "dur": 2.8,
+     "text": "พิกัดแรกคือศาลาไม้เก่า"
+    },
+    {
+     "shot": 59,
+     "at": 2.8,
+     "dur": 3.7,
+     "text": "มีเพียงพวงมาลัยซีด ๆ แขวนอยู่ข้างเสา"
+    },
+    {
+     "shot": 60,
+     "at": 6.5,
+     "dur": 2,
+     "text": ""
+    },
+    {
+     "shot": 61,
+     "at": 8.5,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 62,
+     "at": 10.1,
+     "dur": 6.1,
+     "text": "ในกระจกข้าง มีผู้หญิงเสื้อฟ้า\nจูงเด็กหญิงที่กอดตุ๊กตากระต่าย"
+    },
+    {
+     "shot": 63,
+     "at": 16.2,
+     "dur": 3.4,
+     "text": "“ไปท่าเรือใช่ไหมครับ”"
+    },
+    {
+     "shot": 64,
+     "at": 19.6,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 65,
+     "at": 21.2,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 66,
+     "at": 22.8,
+     "dur": 2.6,
+     "text": "ทั้งสองคนหายไปแล้ว"
+    },
+    {
+     "shot": 67,
+     "at": 25.4,
+     "dur": 2.7,
+     "text": "ทันใดนั้น ท้ายรถยุบลง"
+    },
+    {
+     "shot": 68,
+     "at": 28.1,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 69,
+     "at": 29.7,
+     "dur": 2.2,
+     "text": "เขาไม่ได้ลงไปเปิดตู้"
+    },
+    {
+     "shot": 70,
+     "at": 31.9,
+     "dur": 2.8,
+     "text": "ลุงชาญ: “รับแล้ว ไปต่อได้”"
+    }
+   ]
+  },
+  {
+   "id": "stop23-6",
+   "scene": "stop23",
+   "file": "scene-stop23.html",
+   "start": 220.5,
+   "dur": 22.3,
+   "local": [
+    {
+     "shot": 71,
+     "at": 0,
+     "dur": 3.3,
+     "text": "จุดที่สองคือร้านสะดวกซื้อร้าง"
+    },
+    {
+     "shot": 72,
+     "at": 3.3,
+     "dur": 2.3,
+     "text": "แต่รถก็ยุบลงอีกครั้ง"
+    },
+    {
+     "shot": 73,
+     "at": 5.6,
+     "dur": 2,
+     "text": ""
+    },
+    {
+     "shot": 74,
+     "at": 7.6,
+     "dur": 4.5,
+     "text": "จุดที่สามริมสะพาน\nมีรองเท้าข้างหนึ่งใต้ราวกั้น"
+    },
+    {
+     "shot": 75,
+     "at": 12.1,
+     "dur": 4.2,
+     "text": "พอขับเลยพิกัด เสียงเคาะก็ดังขึ้นหลังศีรษะ"
+    },
+    {
+     "shot": 76,
+     "at": 16.3,
+     "dur": 2.4,
+     "text": ""
+    },
+    {
+     "shot": 77,
+     "at": 18.7,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 78,
+     "at": 20.3,
+     "dur": 2,
+     "text": ""
+    }
+   ]
+  },
+  {
+   "id": "night-7",
+   "scene": "night",
+   "file": "scene-night.html",
+   "start": 242.8,
+   "dur": 20.9,
+   "local": [
+    {
+     "shot": 79,
+     "at": 0,
+     "dur": 4.9,
+     "text": "“แม่ หนูหนาว”"
+    },
+    {
+     "shot": 80,
+     "at": 4.9,
+     "dur": 4.1,
+     "text": "เอกเปิดฮีตเตอร์\nทั้งที่รู้ว่าลมไปไม่ถึงข้างหลัง"
+    },
+    {
+     "shot": 81,
+     "at": 9,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 82,
+     "at": 10.6,
+     "dur": 3.8,
+     "text": "ข้อความที่ส่งไปยังไม่ขึ้นว่าส่งสำเร็จ"
+    },
+    {
+     "shot": 83,
+     "at": 14.4,
+     "dur": 2.1,
+     "text": "“พี่ช่วยจอดหน่อยค่ะ”"
+    },
+    {
+     "shot": 84,
+     "at": 16.5,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 85,
+     "at": 18.1,
+     "dur": 2.8,
+     "text": "“ลูกหนูหายใจไม่ออก”"
+    }
+   ]
+  },
+  {
+   "id": "reveal-8",
+   "scene": "reveal",
+   "file": "scene-reveal.html",
+   "start": 263.7,
+   "dur": 63.7,
+   "local": [
+    {
+     "shot": 86,
+     "at": 0,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 87,
+     "at": 1.6,
+     "dur": 1.6,
+     "text": "“ผมเปิดแล้วนะ!”"
+    },
+    {
+     "shot": 88,
+     "at": 3.2,
+     "dur": 2,
+     "text": ""
+    },
+    {
+     "shot": 89,
+     "at": 5.2,
+     "dur": 2,
+     "text": ""
+    },
+    {
+     "shot": 90,
+     "at": 7.2,
+     "dur": 2,
+     "text": "ตู้ว่างเปล่า"
+    },
+    {
+     "shot": 91,
+     "at": 9.2,
+     "dur": 4.2,
+     "text": "มีเพียงรอยเท้าเปียกหลายคู่\nหันเข้าหาประตู"
+    },
+    {
+     "shot": 92,
+     "at": 13.4,
+     "dur": 5.3,
+     "text": "กลางพื้นมีตุ๊กตากระต่าย\nน้ำหยดจากหูที่พับลง"
+    },
+    {
+     "shot": 93,
+     "at": 18.7,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 94,
+     "at": 20.3,
+     "dur": 2.6,
+     "text": "“แม่… ลุงเปิดแล้ว”"
+    },
+    {
+     "shot": 95,
+     "at": 22.9,
+     "dur": 5.1,
+     "text": "เด็กหญิงยืนอยู่ข้างเขา\nกอดตุ๊กตาตัวเดียวกัน"
+    },
+    {
+     "shot": 96,
+     "at": 28,
+     "dur": 4.6,
+     "text": "แม่ของเด็กยืนอยู่ข้างหลัง\nน้ำไหลจากชายกระโปรง"
+    },
+    {
+     "shot": 97,
+     "at": 32.6,
+     "dur": 3.4,
+     "text": "แต่พื้นใต้เธอไม่มีแอ่งน้ำ"
+    },
+    {
+     "shot": 98,
+     "at": 36,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 99,
+     "at": 37.6,
+     "dur": 3.8,
+     "text": "“หนูพยายามปลดเข็มขัดให้ลูกแล้วค่ะ”"
+    },
+    {
+     "shot": 100,
+     "at": 41.4,
+     "dur": 5,
+     "text": "“แต่น้ำมันขึ้นเร็ว ประตูเปิดไม่ออก\nหนูเลยให้ลูกยืนบนตัก”"
+    },
+    {
+     "shot": 101,
+     "at": 46.4,
+     "dur": 3.6,
+     "text": "“หนูจำไม่ได้ว่าหลังจากนั้นเกิดอะไรขึ้น”"
+    },
+    {
+     "shot": 102,
+     "at": 50,
+     "dur": 2.8,
+     "text": ""
+    },
+    {
+     "shot": 103,
+     "at": 52.8,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 104,
+     "at": 54.4,
+     "dur": 3.1,
+     "text": "“รถคันนี้จะพาเราออกไปได้ใช่ไหมคะ”"
+    },
+    {
+     "shot": 105,
+     "at": 57.5,
+     "dur": 4.5,
+     "text": "เอกไม่มีคำตอบ\nแต่เขาเปิดประตูให้กว้างขึ้น"
+    },
+    {
+     "shot": 106,
+     "at": 62,
+     "dur": 1.7,
+     "text": "“ขึ้นมาก่อนครับ”"
+    }
+   ]
+  },
+  {
+   "id": "ledger-9",
+   "scene": "ledger",
+   "file": "scene-ledger.html",
+   "start": 327.4,
+   "dur": 70.4,
+   "local": [
+    {
+     "shot": 107,
+     "at": 0,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 108,
+     "at": 1.6,
+     "dur": 3.9,
+     "text": "“คนที่ให้ผมรับ… ตายหมดแล้วใช่ไหม”"
+    },
+    {
+     "shot": 109,
+     "at": 5.5,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 110,
+     "at": 7.1,
+     "dur": 1.6,
+     "text": "“ตอบสิ!”"
+    },
+    {
+     "shot": 111,
+     "at": 8.7,
+     "dur": 1.6,
+     "text": "“ใช่”"
+    },
+    {
+     "shot": 112,
+     "at": 10.3,
+     "dur": 2.4,
+     "text": "“แล้วทำไมไม่บอกตั้งแต่แรก”"
+    },
+    {
+     "shot": 113,
+     "at": 12.7,
+     "dur": 2.5,
+     "text": "“ถ้าบอก คุณจะรับงานไหม”"
+    },
+    {
+     "shot": 114,
+     "at": 15.2,
+     "dur": 2,
+     "text": ""
+    },
+    {
+     "shot": 115,
+     "at": 17.2,
+     "dur": 3,
+     "text": "“ท่าเรืออยู่ที่ไหนกันแน่”"
+    },
+    {
+     "shot": 116,
+     "at": 20.2,
+     "dur": 3.3,
+     "text": "“ที่ที่พวกเขาไปต่อได้”"
+    },
+    {
+     "shot": 117,
+     "at": 23.5,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 118,
+     "at": 25.1,
+     "dur": 4.3,
+     "text": "ทุกหน้ามีชื่อคนขับ ทุกชื่อถูกขีดฆ่า"
+    },
+    {
+     "shot": 119,
+     "at": 29.4,
+     "dur": 3.4,
+     "text": "จนถึงหน้าของชาญ ช่องส่งมอบยังว่าง"
+    },
+    {
+     "shot": 120,
+     "at": 32.8,
+     "dur": 2.2,
+     "text": "ถัดไปคือชื่อเอก"
+    },
+    {
+     "shot": 121,
+     "at": 35,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 122,
+     "at": 36.6,
+     "dur": 8.4,
+     "text": "ผู้รับรถยินยอมปฏิบัติหน้าที่\nจนส่งมอบครบถ้วนแก่ผู้รับหน้าที่รายถัดไป"
+    },
+    {
+     "shot": 123,
+     "at": 45,
+     "dur": 5.1,
+     "text": "งานจะจบเมื่อมีคนขับคนใหม่\nไม่ใช่เมื่อถึงท่าเรือ"
+    },
+    {
+     "shot": 124,
+     "at": 50.1,
+     "dur": 2,
+     "text": ""
+    },
+    {
+     "shot": 125,
+     "at": 52.1,
+     "dur": 4.5,
+     "text": "“เงินล้านนั่น… ซื้อให้ผมมาทำแทนลุงใช่ไหม”"
+    },
+    {
+     "shot": 126,
+     "at": 56.6,
+     "dur": 2.2,
+     "text": "“ใช่”"
+    },
+    {
+     "shot": 127,
+     "at": 58.8,
+     "dur": 4.1,
+     "text": "“ถ้าผมขับไปถึง ลุงก็พ้น แล้วผมต้องขับต่อ?”"
+    },
+    {
+     "shot": 128,
+     "at": 62.9,
+     "dur": 1.6,
+     "text": "“ใช่”"
+    },
+    {
+     "shot": 129,
+     "at": 64.5,
+     "dur": 2,
+     "text": ""
+    },
+    {
+     "shot": 130,
+     "at": 66.5,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 131,
+     "at": 68.1,
+     "dur": 2.3,
+     "text": "“งั้นผมจะเอารถไปคืน”"
+    }
+   ]
+  },
+  {
+   "id": "crash-10",
+   "scene": "crash",
+   "file": "scene-crash.html",
+   "start": 397.8,
+   "dur": 60.5,
+   "local": [
+    {
+     "shot": 132,
+     "at": 0,
+     "dur": 2.9,
+     "text": "ยิ่งขับย้อนกลับ ถนนยิ่งคุ้น"
+    },
+    {
+     "shot": 133,
+     "at": 2.9,
+     "dur": 5.3,
+     "text": "ต้นไม้หักครึ่งลำต้น\nป้ายโค้งที่เอียงไปข้างหนึ่ง ราวกั้นสีขาว"
+    },
+    {
+     "shot": 134,
+     "at": 8.2,
+     "dur": 3,
+     "text": "แล้วไฟฉุกเฉินก็ปรากฏข้างหน้า"
+    },
+    {
+     "shot": 135,
+     "at": 11.2,
+     "dur": 3.8,
+     "text": "รถกู้ภัยจอดข้างซากกระบะที่ชนราวกั้น"
+    },
+    {
+     "shot": 136,
+     "at": 15,
+     "dur": 5,
+     "text": "รอยบุบตรงบังโคลน\nเชือกสีฟ้าที่ผูกไว้ท้ายกระบะ"
+    },
+    {
+     "shot": 137,
+     "at": 20,
+     "dur": 3.3,
+     "text": "สติกเกอร์ที่ลูกชายติดให้บนกระจกหลัง"
+    },
+    {
+     "shot": 138,
+     "at": 23.3,
+     "dur": 2.8,
+     "text": "เป็นรถของเขา"
+    },
+    {
+     "shot": 139,
+     "at": 26.1,
+     "dur": 4.4,
+     "text": "“พี่ครับ รถผมมาอยู่ตรงนี้ได้ยังไง”"
+    },
+    {
+     "shot": 140,
+     "at": 30.5,
+     "dur": 2.1,
+     "text": "ไม่มีใครหันมา"
+    },
+    {
+     "shot": 141,
+     "at": 32.6,
+     "dur": 4.5,
+     "text": "ชายคนหนึ่งเดินผ่านตัวเขาไป\nโดยไม่ชะลอฝีเท้า"
+    },
+    {
+     "shot": 142,
+     "at": 37.1,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 143,
+     "at": 38.7,
+     "dur": 2.8,
+     "text": "“ครับ ผู้หญิงที่ติดต่อเมื่อกี้เป็นภรรยาครับ”"
+    },
+    {
+     "shot": 144,
+     "at": 41.5,
+     "dur": 4.3,
+     "text": "“เสียชีวิตในที่เกิดเหตุครับ\nเวลาประมาณสองทุ่มสี่สิบเจ็ด”"
+    },
+    {
+     "shot": 145,
+     "at": 45.8,
+     "dur": 3.8,
+     "text": "เขาก้มมองนาฬิกา เข็มยังหยุดอยู่ที่เดิม"
+    },
+    {
+     "shot": 146,
+     "at": 49.6,
+     "dur": 4.7,
+     "text": "บนพื้นมีหมวกแก๊ปกรมท่า\nรอยปะสีครีมตรงด้านข้าง"
+    },
+    {
+     "shot": 147,
+     "at": 54.3,
+     "dur": 4.6,
+     "text": "เหมือนใบที่เขากำลังสวมอยู่"
+    },
+    {
+     "shot": 148,
+     "at": 58.9,
+     "dur": 1.6,
+     "text": ""
+    }
+   ]
+  },
+  {
+   "id": "flash-11",
+   "scene": "flash",
+   "file": "scene-flash.html",
+   "start": 458.3,
+   "dur": 20.4,
+   "local": [
+    {
+     "shot": 149,
+     "at": 0,
+     "dur": 6.2,
+     "text": "ไฟหน้ารถบรรทุก เสียงแตร\nมือที่กระชากพวงมาลัย แรงกระแทก"
+    },
+    {
+     "shot": 150,
+     "at": 6.2,
+     "dur": 3,
+     "text": "แล้วความเงียบ"
+    },
+    {
+     "shot": 151,
+     "at": 9.2,
+     "dur": 4,
+     "text": "เขาไม่ได้ขับรถไปถึงโกดัง"
+    },
+    {
+     "shot": 152,
+     "at": 13.2,
+     "dur": 7.2,
+     "text": "เขาเดินออกจากอุบัติเหตุ\nโดยทิ้งร่างของตัวเองไว้ข้างหลัง"
+    }
+   ]
+  },
+  {
+   "id": "truth-12",
+   "scene": "truth",
+   "file": "scene-truth.html",
+   "start": 478.7,
+   "dur": 66,
+   "local": [
+    {
+     "shot": 153,
+     "at": 0,
+     "dur": 2.1,
+     "text": "“ลุงรู้ตั้งแต่แรก?”"
+    },
+    {
+     "shot": 154,
+     "at": 2.1,
+     "dur": 1.6,
+     "text": "“รู้”"
+    },
+    {
+     "shot": 155,
+     "at": 3.7,
+     "dur": 2.1,
+     "text": "“ว่าผมตายแล้ว?”"
+    },
+    {
+     "shot": 156,
+     "at": 5.8,
+     "dur": 3.2,
+     "text": "“ตอนผมรับรถ ผมก็ไม่รู้เหมือนกัน”"
+    },
+    {
+     "shot": 157,
+     "at": 9,
+     "dur": 3.8,
+     "text": "เอกมองมือตัวเอง\nมันยังเหมือนเดิมทุกอย่าง"
+    },
+    {
+     "shot": 158,
+     "at": 12.8,
+     "dur": 2.7,
+     "text": "“แล้วผมจะเอาเงินไปทำอะไร”"
+    },
+    {
+     "shot": 159,
+     "at": 15.5,
+     "dur": 4.7,
+     "text": "“คนที่ยังอยู่ใช้ได้\nเงินครึ่งแรกถึงภรรยาคุณแล้ว”"
+    },
+    {
+     "shot": 160,
+     "at": 20.2,
+     "dur": 5.4,
+     "text": "เขาเพิ่งเข้าใจว่าทำไมสมุดต้องมีช่อง\nผู้รับเงินแทน"
+    },
+    {
+     "shot": 161,
+     "at": 25.6,
+     "dur": 5.3,
+     "text": "“เงินที่ผมเหลือไว้ก่อนตาย มีอยู่เท่านั้น\nผมเอามันแลกกับคนที่จะมารับรถต่อ”"
+    },
+    {
+     "shot": 162,
+     "at": 30.9,
+     "dur": 3.6,
+     "text": "“ลุงก็เลยหลอกผม”"
+    },
+    {
+     "shot": 163,
+     "at": 34.5,
+     "dur": 1.9,
+     "text": "“ใช่”"
+    },
+    {
+     "shot": 164,
+     "at": 36.4,
+     "dur": 2.5,
+     "text": "คราวนี้แกไม่แก้ตัว"
+    },
+    {
+     "shot": 165,
+     "at": 38.9,
+     "dur": 3.1,
+     "text": "“ผมขับมานานจนจำเสียงลูกตัวเองแทบไม่ได้แล้ว”"
+    },
+    {
+     "shot": 166,
+     "at": 42,
+     "dur": 3.9,
+     "text": "“ผมอยากไป แต่ผมไม่กล้าบอกคุณตรง ๆ”"
+    },
+    {
+     "shot": 167,
+     "at": 45.9,
+     "dur": 2.8,
+     "text": "“ถ้าผมไม่ขับต่อ?”"
+    },
+    {
+     "shot": 168,
+     "at": 48.7,
+     "dur": 6.4,
+     "text": "“คืนกุญแจ ผมจะรับหน้าที่กลับ\nคุณขึ้นท้ายรถ แล้วผมจะพาไปส่ง”"
+    },
+    {
+     "shot": 169,
+     "at": 55.1,
+     "dur": 2.8,
+     "text": "“เงินที่เหลือล่ะ”"
+    },
+    {
+     "shot": 170,
+     "at": 57.9,
+     "dur": 3.4,
+     "text": "“คุณไม่ต้องรับงานก็ได้ เอก”"
+    },
+    {
+     "shot": 171,
+     "at": 61.3,
+     "dur": 4.7,
+     "text": "ลุงชาญหลบคำถาม\nนั่นทำให้เอกเข้าใจคำตอบ"
+    }
+   ]
+  },
+  {
+   "id": "home-13",
+   "scene": "home",
+   "file": "scene-home.html",
+   "start": 544.7,
+   "dur": 46.1,
+   "local": [
+    {
+     "shot": 172,
+     "at": 0,
+     "dur": 2.9,
+     "text": "ก่อนตัดสินใจ เอกขอกลับบ้าน"
+    },
+    {
+     "shot": 173,
+     "at": 2.9,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 174,
+     "at": 4.5,
+     "dur": 4,
+     "text": "ภรรยานั่งอยู่ข้างโต๊ะ\nลูกชายหลับพิงแขนเธอ"
+    },
+    {
+     "shot": 175,
+     "at": 8.5,
+     "dur": 4.2,
+     "text": "บนโต๊ะมีข้าวสองจาน จานหนึ่งยังไม่ได้แตะ"
+    },
+    {
+     "shot": 176,
+     "at": 12.7,
+     "dur": 3.2,
+     "text": ""
+    },
+    {
+     "shot": 177,
+     "at": 15.9,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 178,
+     "at": 17.5,
+     "dur": 4.8,
+     "text": "ภรรยามองจำนวนเงินที่เข้า\nแล้วร้องไห้ออกมา"
+    },
+    {
+     "shot": 179,
+     "at": 22.3,
+     "dur": 2.7,
+     "text": "เอกอยากบอกเธอว่าไม่ต้องกลัว"
+    },
+    {
+     "shot": 180,
+     "at": 25,
+     "dur": 3.5,
+     "text": "ไม่ต้องคอยฟังเสียงรถเขาทุกคืนอีกแล้ว"
+    },
+    {
+     "shot": 181,
+     "at": 28.5,
+     "dur": 3.2,
+     "text": "แต่ไม่มีคำไหนไปถึงเธอ"
+    },
+    {
+     "shot": 182,
+     "at": 31.7,
+     "dur": 4.3,
+     "text": "ลูกชายตื่นขึ้นมาถามแม่ว่า “พ่อกลับหรือยัง”"
+    },
+    {
+     "shot": 183,
+     "at": 36,
+     "dur": 2,
+     "text": ""
+    },
+    {
+     "shot": 184,
+     "at": 38,
+     "dur": 6.5,
+     "text": "เอกถอดหมวก ยืนอยู่อย่างนั้น\nจนไฟในห้องถูกหรี่ลง"
+    },
+    {
+     "shot": 185,
+     "at": 44.5,
+     "dur": 1.6,
+     "text": ""
+    }
+   ]
+  },
+  {
+   "id": "decide-14",
+   "scene": "decide",
+   "file": "scene-decide.html",
+   "start": 590.8,
+   "dur": 25.8,
+   "local": [
+    {
+     "shot": 186,
+     "at": 0,
+     "dur": 1.9,
+     "text": "“ผมจะขับต่อ”"
+    },
+    {
+     "shot": 187,
+     "at": 1.9,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 188,
+     "at": 3.5,
+     "dur": 1.6,
+     "text": "“คุณแน่ใจนะ”"
+    },
+    {
+     "shot": 189,
+     "at": 5.1,
+     "dur": 2.7,
+     "text": "“โอนอีกครึ่งให้เมียผม”"
+    },
+    {
+     "shot": 190,
+     "at": 7.8,
+     "dur": 3.3,
+     "text": "“เอก งานนี้มันไม่รู้ว่าจะจบเมื่อไร”"
+    },
+    {
+     "shot": 191,
+     "at": 11.1,
+     "dur": 5.5,
+     "text": "ในกระจกข้าง\nผู้หญิงกำลังกอดลูกอยู่หลังประตูตู้"
+    },
+    {
+     "shot": 192,
+     "at": 16.6,
+     "dur": 1.6,
+     "text": "“ผมรู้แล้ว”"
+    },
+    {
+     "shot": 193,
+     "at": 18.2,
+     "dur": 1.9,
+     "text": "ไม่มีเสียงเคาะอีกแล้ว"
+    },
+    {
+     "shot": 194,
+     "at": 20.1,
+     "dur": 5.7,
+     "text": "มีเพียงเสียงแม่กล่อมลูกเบา ๆ จากด้านหลัง"
+    }
+   ]
+  },
+  {
+   "id": "pier-15",
+   "scene": "pier",
+   "file": "scene-pier.html",
+   "start": 616.6,
+   "dur": 44.8,
+   "local": [
+    {
+     "shot": 195,
+     "at": 0,
+     "dur": 3.2,
+     "text": ""
+    },
+    {
+     "shot": 196,
+     "at": 3.2,
+     "dur": 2.5,
+     "text": "คราวนี้เขามองเห็นทุกคน"
+    },
+    {
+     "shot": 197,
+     "at": 5.7,
+     "dur": 3.2,
+     "text": ""
+    },
+    {
+     "shot": 198,
+     "at": 8.9,
+     "dur": 5.7,
+     "text": "ไม่มีใครมีบาดแผล\nทุกคนดูเหมือนคนเหนื่อยที่รอกลับบ้าน"
+    },
+    {
+     "shot": 199,
+     "at": 14.6,
+     "dur": 2,
+     "text": ""
+    },
+    {
+     "shot": 200,
+     "at": 16.6,
+     "dur": 2.6,
+     "text": "“ขอบคุณนะคะ ที่เปิดให้”"
+    },
+    {
+     "shot": 201,
+     "at": 19.2,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 202,
+     "at": 20.8,
+     "dur": 2.4,
+     "text": ""
+    },
+    {
+     "shot": 203,
+     "at": 23.2,
+     "dur": 4.6,
+     "text": "ลุงชาญคืนสมุดให้ ชื่อของแกถูกขีดทับแล้ว"
+    },
+    {
+     "shot": 204,
+     "at": 27.8,
+     "dur": 4.2,
+     "text": "เงินอีกห้าแสน เข้าบัญชีภรรยาเขา"
+    },
+    {
+     "shot": 205,
+     "at": 32,
+     "dur": 3.1,
+     "text": "“ผมขอโทษ”"
+    },
+    {
+     "shot": 206,
+     "at": 35.1,
+     "dur": 4.7,
+     "text": "“ถ้ามีคนมารับต่อจากผม ผมจะบอกเขาก่อน”"
+    },
+    {
+     "shot": 207,
+     "at": 39.8,
+     "dur": 5,
+     "text": "ลุงชาญก้มหน้า แล้วเดินตามผู้โดยสารไป"
+    }
+   ]
+  },
+  {
+   "id": "end-16",
+   "scene": "end",
+   "file": "scene-end.html",
+   "start": 661.4,
+   "dur": 46.8,
+   "local": [
+    {
+     "shot": 208,
+     "at": 0,
+     "dur": 5.5,
+     "text": "บนเบาะข้างคนขับ\nมีตุ๊กตากระต่ายที่เด็กหญิงลืมไว้"
+    },
+    {
+     "shot": 209,
+     "at": 5.5,
+     "dur": 2,
+     "text": ""
+    },
+    {
+     "shot": 210,
+     "at": 7.5,
+     "dur": 3.3,
+     "text": "หน้าถัดไปของสมุด คือพิกัดเที่ยวใหม่"
+    },
+    {
+     "shot": 211,
+     "at": 10.8,
+     "dur": 5.3,
+     "text": "หนึ่งคน\nยังไม่ทราบว่าตัวเองเสียชีวิต"
+    },
+    {
+     "shot": 212,
+     "at": 16.1,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 213,
+     "at": 17.7,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 214,
+     "at": 19.3,
+     "dur": 4.9,
+     "text": "เขาสตาร์ตรถ หมุนหมวกให้เข้าที่\nแล้วขับออกไป"
+    },
+    {
+     "shot": 215,
+     "at": 24.2,
+     "dur": 2.8,
+     "text": ""
+    },
+    {
+     "shot": 216,
+     "at": 27,
+     "dur": 1.6,
+     "text": ""
+    },
+    {
+     "shot": 217,
+     "at": 28.6,
+     "dur": 2,
+     "text": "“พี่ รถไปไหนครับ”"
+    },
+    {
+     "shot": 218,
+     "at": 30.6,
+     "dur": 3.6,
+     "text": "เอกมองเขา เหมือนเห็นตัวเองเมื่อคืน"
+    },
+    {
+     "shot": 219,
+     "at": 34.2,
+     "dur": 3.8,
+     "text": "“ขึ้นมาก่อนครับ… เดี๋ยวผมเล่าให้ฟังทั้งหมด”"
+    },
+    {
+     "shot": 220,
+     "at": 38,
+     "dur": 4,
+     "text": ""
+    },
+    {
+     "shot": 221,
+     "at": 42,
+     "dur": 4.8,
+     "text": ""
+    }
+   ]
+  }
+ ]
+}

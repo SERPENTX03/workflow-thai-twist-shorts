@@ -1,0 +1,87 @@
+<!doctype html>
+<!-- Inside the warehouse: the cream box truck in full, the empty box, Chan's hand on the scratched latch, the wife's
+     message. Views: truck/chan|walk|ek · rear/open|empty|chan|ek|chan-low · latch/rub · phone/notify|photo|read · two/ask -->
+<html data-composition-variables='[{"id":"shots","type":"string","label":"Shots (from build)","default":"[]"}]'>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <link rel="stylesheet" href="assets/kit/stories/last-ride.css" />
+      <style>#root { position: absolute; inset: 0; overflow: hidden; background: #05070c; }</style>
+      <div data-hf-id="hf-o2cw" id="root" data-composition-id="scene-inside" data-width="1920" data-height="1080"></div>
+      <script src="assets/kit/stories/last-ride.js"></script>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const S = LR.shots("scene-inside", [{ at: 0, dur: 4, view: "truck/chan", who: "chan" }]);
+        const L = LR.layer;
+        const wh = L('<use href="#lr-l-warehouse" width="1920" height="1080"/>');
+        const lamp = L('<use href="#lr-l-warehouse-lamp" width="1920" height="1080"/>');
+        const dim = '<div class="lr-night" style="background:rgba(6,10,26,.22)"></div>';
+
+        const views = {
+          // the whole truck under the lamp, the two men beside its cab
+          truck: {
+            html: (c) => {
+              const close = c.act !== 'walk';
+              return wh + LR.truck(240, 900, 0.78, { id: `${c.id}-truck`, cls: 'lr-cream-box' }) + lamp
+                + LR.who('ek', { id: `${c.id}-ek`, x: c.act === 'walk' ? 1560 : 1330, feet: 960, h: 470, talk: true, cls: 'lr-rim' })
+                + LR.who('chan', { id: `${c.id}-chan`, x: 1640, feet: 960, h: 450, talk: true, cls: 'lr-rim' }) + dim;
+            },
+            anim: (c) => {
+              if (c.act === 'walk') {
+                c.tl.fromTo(`#${c.id}-ek`, { x: 0, opacity: 1 }, { x: -1160, duration: c.dur * 0.9, ease: 'sine.inOut' }, c.at);
+                LR.cam(c, { scale: 1, x: 0 }, { scale: 1.02, x: 80 });
+              } else LR.cam(c, { scale: 1.05, x: -120 }, { scale: 1.1, x: -200 });
+            },
+          },
+          // behind the truck: Chan opens the doors; nothing inside
+          rear: {
+            html: (c) => {
+              const open = c.act !== 'open';
+              const inner = c.act === 'empty';
+              return wh + LR.rear(inner ? 960 : 1040, inner ? 1180 : 960, inner ? 1.55 : 1.0, { id: `${c.id}-rear`, cls: open ? 'lr-doors-open' : '' }) + lamp
+                + (inner ? '' : LR.who('chan', { id: `${c.id}-chan`, x: 640, feet: 1000, h: 470, talk: true, cls: 'lr-rim', face: c.act === 'chan-low' ? 'guilty' : null, r: c.act === 'open' ? 'reach' : null })
+                  + LR.who('ek', { id: `${c.id}-ek`, x: 1500, feet: 1010, h: 500, talk: true, cls: 'lr-rim', face: c.act === 'doubt' ? 'wary' : null }))
+                + dim;
+            },
+            anim: (c) => {
+              if (c.act === 'open') {
+                c.tl.set(c.q('.lr-truck'), { '--lr-doors-shut': 'none', '--lr-doors-open': 'inline' }, c.t(0.6));
+                LR.cam(c, { scale: 1 }, { scale: 1.05 });
+              } else if (c.act === 'empty') LR.cam(c, { scale: 1, y: 0 }, { scale: 1.12, y: -30 });
+              else LR.cam(c, { scale: 1.06, x: 0 }, { scale: 1.1, x: c.who === 'chan' ? 120 : -120 });
+            },
+          },
+          // close-up: the old man's hand slides over the scratches around the latch
+          latch: {
+            html: (c) => L('<rect width="1920" height="1080" fill="#11151c"/>')
+              + `<svg class="lr-layer lr-cream-box" viewBox="0 0 1920 1080"><use href="#lr-latch" x="560" y="40" width="1000" height="1000"/></svg>`
+              + `<svg class="lr-layer c-lr-chan" viewBox="0 0 1920 1080" style="--skin:#d9a982;--sleeve:var(--lr-chan-shirt)"><g id="${c.id}-hand"><g transform="translate(1180 470) rotate(-120) scale(.8)"><use href="#lr-arm-big"/></g></g></svg>`
+              + '<div class="lr-night" style="background:radial-gradient(ellipse at 55% 45%, rgba(6,10,26,0), rgba(6,10,26,.6) 75%)"></div>',
+            anim: (c) => {
+              c.tl.fromTo(`#${c.id}-hand`, { x: 60, y: -40 }, { x: -40, y: 50, duration: c.dur * 0.8, ease: 'sine.inOut' }, c.t(0.2));
+              LR.cam(c, { scale: 1 }, { scale: 1.06 });
+            },
+          },
+          // the wife's chat: the bill photo beside the homework book, then her line
+          phone: LR.V.phone((c) => ({
+            screen: 'chat-wife', time: '22:58', cls: c.act === 'read' ? 'no-mine' : 'no-mine no-text',
+            msg: c.act === 'notify' ? 1.4 : undefined, msgSel: '.lr-photo',
+            zoom0: c.act === 'photo' ? 1.25 : 1, zoom1: c.act === 'photo' ? 1.35 : 1.05,
+            anim: (c) => { if (c.act === 'read') c.tl.fromTo(c.q('.lr-text'), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }, c.t(0.3)); },
+          })),
+          // he puts the phone away and asks how he gets paid
+          two: {
+            html: (c) => wh + lamp
+              + LR.who('ek', { id: `${c.id}-ek`, x: 760, feet: 1500, h: 1050, talk: true, cls: 'lr-rim' })
+              + LR.who('chan', { id: `${c.id}-chan`, x: 1380, feet: 1420, h: 960, cls: 'lr-rim' }) + dim,
+            anim: (c) => LR.cam(c, { scale: 1, x: 0 }, { scale: 1.04, x: 40 }),
+          },
+          _: { html: () => '' },
+        };
+        LR.run({ comp: 'scene-inside', prefix: 'in', tl, shots: S, views });
+        window.__timelines["scene-inside"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

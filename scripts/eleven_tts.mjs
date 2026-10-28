@@ -69,3 +69,21 @@ export async function elevenTTS({ voice, text, out, model, lang, settings }) {
   }
   throw new Error(`ElevenLabs TTS failed: ${lastErr}`);
 }
+
+// One sound effect via ElevenLabs text-to-sound-effects -> mp3. Used by sfx.mjs (always behind its --yes gate).
+// Needs the API key's "Sound Effects" permission. durationSeconds 0.5–30; promptInfluence 0–1 (higher = closer to the text).
+export async function elevenSFX({ text, durationSeconds, promptInfluence, out }) {
+  const body = { text, duration_seconds: durationSeconds, prompt_influence: promptInfluence };
+  let lastErr = '';
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const res = await api('/v1/sound-generation?output_format=mp3_44100_128', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body),
+    });
+    if (res.ok) { fs.writeFileSync(out, Buffer.from(await res.arrayBuffer())); return; }
+    const hint = res.status === 401 || res.status === 403 ? ' — give the API key the "Sound Effects" permission' : '';
+    lastErr = `${res.status} ${(await res.text()).slice(0, 300)}${hint}`;
+    if (res.status !== 429 && res.status < 500) break;
+    await new Promise(r => setTimeout(r, 4000 * (attempt + 1)));
+  }
+  throw new Error(`ElevenLabs sound effect failed: ${lastErr}`);
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<!-- Title after the cold open: black, the title, then "ก่อนหน้านั้น" -->
+<html data-composition-variables='[{"id":"shots","type":"string","label":"Shots (from build)","default":"[]"}]'>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <link rel="stylesheet" href="assets/kit/stories/last-ride.css" />
+      <style>
+        #root { position: absolute; inset: 0; overflow: hidden; background: #05070c; }
+        .ti-title { position: absolute; left: 0; right: 0; top: 380px; text-align: center; font: 700 96px/1.2 var(--font-display); color: var(--lr-cream); letter-spacing: 1px; }
+        .ti-title span { color: var(--gold); }
+        .ti-sub { position: absolute; left: 0; right: 0; top: 560px; text-align: center; font: 500 40px/1.4 var(--font-ui); color: var(--mute); }
+        .ti-line { position: absolute; left: 760px; top: 530px; width: 400px; height: 3px; background: rgba(232, 220, 195, .4); }
+      </style>
+      <div data-hf-id="hf-aue6" id="root" data-composition-id="scene-title" data-width="1920" data-height="1080"></div>
+      <script src="assets/kit/stories/last-ride.js"></script>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const S = LR.shots("scene-title", [{ at: 0, dur: 3.6, view: "card" }]);
+        const views = {
+          card: {
+            html: (c) => LR.layer('<g opacity=".18" transform="translate(560 640) scale(.62)"><use href="#lr-truck-side" width="1300" height="620"/></g>', { cls: 'lr-cream-box' })
+              + `<div class="ti-title">เที่ยวสุดท้าย <span>หนึ่งล้านบาท</span></div><div class="ti-line"></div><div class="ti-sub">ก่อนหน้านั้น</div>`,
+            anim: (c) => {
+              c.tl.fromTo(c.q('.ti-title'), { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, c.t(0.15));
+              c.tl.fromTo(c.q('.ti-line'), { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: 'power2.out' }, c.t(0.5));
+              c.tl.fromTo(c.q('.ti-sub'), { opacity: 0 }, { opacity: 1, duration: 0.6 }, c.t(0.9));
+              LR.fadeOut(c, 0.6);
+            },
+          },
+        };
+        LR.run({ comp: 'scene-title', prefix: 'ti', tl, shots: S, views });
+        window.__timelines["scene-title"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

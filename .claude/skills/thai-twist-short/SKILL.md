@@ -68,6 +68,7 @@ The commands stop at an approved outline or a report; building still follows the
 | `references/art-direction.md` | choosing palette, type, framing, camera, the cast, what is banned |
 | `references/scene-kit.md` | building a scene file — kit classes, cast sprite, example scenes, HyperFrames gotchas found in this repo |
 | `references/cast-library.md` | before drawing any person, pose, face, prop, icon or set piece — the reusable library in cast.svg (`npm run gallery` shows it) |
+| `references/last-ride.md` | the story kit for เที่ยวสุดท้าย หนึ่งล้านบาท (`lr-*` characters, truck, props, sets) |
 | `references/hands-poses.md` | drawing any hand, gesture, hand-over or held object — one-hand rule, pose library, grip props |
 | `references/audio.md` | voice, score, SFX cues, ducking, loudness |
 | `references/review.md` | the contact-sheet scoring loop and the fix list |

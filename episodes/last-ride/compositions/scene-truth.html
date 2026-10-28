@@ -1,0 +1,54 @@
+<!doctype html>
+<!-- The whole truth on the phone: Ek (drained now) by the box truck at the crash site, intercut with Chan alone under
+     the warehouse lamp. Chan unreadable at first, guilty once he admits it.
+     Views: seat/call · ek/ask2|money|accuse|if|rest|know · chan/lamp|talk|talk2|talk3|yes|bow|confess|confess2|offer|dodge ·
+     hands/look · insert/field -->
+<html data-composition-variables='[{"id":"shots","type":"string","label":"Shots (from build)","default":"[]"}]'>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <link rel="stylesheet" href="assets/kit/kit.css" />
+      <link rel="stylesheet" href="assets/kit/stories/last-ride.css" />
+      <style>#root { position: absolute; inset: 0; overflow: hidden; background: #05070c; }</style>
+      <div data-hf-id="hf-kewl" id="root" data-composition-id="scene-truth" data-width="1920" data-height="1080"></div>
+      <script src="assets/kit/stories/last-ride.js"></script>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        const S = LR.shots("scene-truth", [{ at: 0, dur: 4, view: "seat/call", who: "ek" }]);
+        const L = LR.layer;
+        // the crash site behind him, out of focus; the cream box truck beside him
+        const site = L('<use href="#lr-l-road-sky" width="1920" height="1080"/><use href="#lr-l-road-ground" y="600" width="1920" height="480"/><use href="#lr-road-rail-bent" x="1100" y="470" width="680" height="292"/>')
+          + `<div style="position:absolute;inset:0;filter:blur(5px)"><svg class="lr-truck lr-own lr-no-box lr-damaged" viewBox="0 0 1300 620" overflow="visible" style="left:1100px;top:500px;width:780px;height:372px"><g transform="rotate(-5 680 520)"><use href="#lr-truck-side-body" width="1300" height="620"/><use href="#lr-own-marks" width="1300" height="620"/><use href="#lr-truck-damage-side" width="1300" height="620"/></g><use href="#lr-truck-wheel" x="330" y="520"/><use href="#lr-truck-wheel" x="1030" y="490"/></svg></div>`
+          + LR.truck(-520, 900, 0.8, { cls: 'lr-cream-box lr-lights-on', lights: true });
+        const red = '<div style="position:absolute;inset:0;background:radial-gradient(ellipse at 80% 40%, rgba(229,56,59,.18), rgba(0,0,0,0) 55%);mix-blend-mode:screen"></div>';
+        const wh = L('<use href="#lr-l-warehouse" width="1920" height="1080"/><use href="#lr-l-warehouse-lamp" width="1920" height="1080"/>');
+        const GUILT = ['yes', 'bow', 'confess2'];
+        const views = {
+          // Ek, phone in hand, by the box truck
+          seat: { html: (c) => views.ek.html(c), anim: (c) => views.ek.anim(c) },
+          ek: {
+            html: (c) => site + LR.who('ek', { id: `${c.id}-ek`, x: 1000, feet: 1650, h: 1250, l: 'hold', lProp: 'phone', talk: c.who === 'ek', face: c.act === 'know' ? 'sad' : null, cls: 'lr-spirit lr-rim' }) + red + LR.NIGHT,
+            anim: (c) => LR.cam(c, { scale: 1, x: 0 }, { scale: c.act === 'know' ? 1.1 : 1.04, x: c.act === 'know' ? 0 : 30 }),
+          },
+          // Chan alone under the lamp, the phone held low
+          chan: {
+            html: (c) => wh + LR.who('chan', { id: `${c.id}-chan`, x: 960, feet: 1650, h: 1250, l: 'hold', lProp: 'phone', talk: !GUILT.includes(c.act), face: GUILT.includes(c.act) ? 'guilty' : null, cls: 'lr-rim' })
+              + '<div class="lr-night" style="background:rgba(6,10,26,.35)"></div>',
+            anim: (c) => LR.cam(c, { scale: 1, y: 0 }, { scale: c.act === 'bow' || c.act === 'confess2' ? 1.12 : 1.05, y: c.act === 'bow' ? 30 : 0 }),
+          },
+          // his own hands: the same as ever
+          hands: {
+            html: (c) => site + '<div class="lr-night" style="background:rgba(6,10,26,.55)"></div>'
+              + `<svg class="lr-layer c-lr-ek lr-spirit" viewBox="0 0 1920 1080"><g transform="translate(700 470) rotate(200) scale(.9)"><use href="#lr-arm-big"/></g><g transform="translate(1220 470) rotate(160) scale(.9)"><use href="#lr-arm-big"/><use href="#lr-watch-big"/></g></svg>`,
+            anim: (c) => LR.cam(c, { scale: 1, y: 0 }, { scale: 1.06, y: -20 }),
+          },
+          // the field on his page: ผู้รับเงินแทน — ภรรยา
+          insert: LR.V.ledger({ page: 'unfold', bg: 'lap', dim: 0.2, name: 'เอก', date: 'วันนี้', payee: 'ภรรยา', signed: true, glow: '.lr-payee', glowAt: 0.3, zoom0: 1.5, zoom1: 1.56, pan0X: -435, pan0Y: 150, panX: -460, panY: 160 }),
+          _: { html: () => '' },
+        };
+        LR.run({ comp: 'scene-truth', prefix: 'tr', tl, shots: S, views });
+        window.__timelines["scene-truth"] = tl;
+      </script>
+    </template>
+  </body>
+</html>
