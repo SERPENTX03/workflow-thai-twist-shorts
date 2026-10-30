@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thai Twist Studio</title>
+<style>
+  :root { --bg:#0f1626; --card:#1a2540; --ink:#e8ecf4; --mute:#8a97ab; --gold:#f6c445; --red:#e5383b; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:"IBM Plex Sans Thai", system-ui, sans-serif; }
+  header { padding:20px 28px; display:flex; gap:20px; align-items:baseline; position:sticky; top:0; background:var(--bg); z-index:2; border-bottom:1px solid #243150; }
+  h1 { margin:0; font-size:22px; color:var(--gold); }
+  nav a { color:var(--mute); margin-right:14px; text-decoration:none; font-size:15px; }
+  nav a:hover { color:var(--ink); }
+  section { padding:24px 28px; }
+  h2 { margin:0 0 14px; font-size:20px; color:var(--gold); }
+  .stills img { width:100%; max-width:1200px; border-radius:12px; display:block; margin-bottom:22px; cursor:zoom-in; }
+  .stills h3 { margin:0 0 8px; font-weight:600; font-size:16px; color:var(--mute); }
+  table { border-collapse:collapse; width:100%; max-width:1000px; }
+  td, th { text-align:left; padding:8px 12px; border-bottom:1px solid #243150; font-size:15px; }
+  code { background:var(--card); padding:2px 6px; border-radius:6px; font-size:13px; cursor:pointer; }
+  input { background:var(--card); color:var(--ink); border:1px solid #2c3b60; border-radius:8px; padding:8px 12px; width:320px; margin-bottom:12px; }
+  .sfx { display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:10px; max-width:1200px; }
+  .sfx div { background:var(--card); border-radius:10px; padding:10px 12px; font-size:13px; }
+  .sfx b { display:block; margin-bottom:4px; }
+  audio { width:100%; height:32px; margin-top:6px; }
+  #lb { position:fixed; inset:0; background:#000d; display:none; align-items:center; justify-content:center; z-index:9; cursor:zoom-out; }
+  #lb img { max-width:96vw; max-height:96vh; }
+</style>
+</head>
+<body>
+<header><h1>Thai Twist Studio</h1><nav><a href="#cast">ตัวละคร &amp; props</a><a href="#eps">ตอน</a><a href="#sfx">เสียงประกอบ</a></nav></header>
+<section id="cast"><h2>ตัวละคร &amp; props</h2><div class="stills" id="stills"></div></section>
+<section id="eps"><h2>ตอน</h2>
+  <table><thead><tr><th>ตอน</th><th>รูปแบบ</th><th>ช็อต</th><th>ความยาว</th><th>Composition (คัดลอก)</th></tr></thead><tbody id="eptbody"></tbody></table>
+  <p style="color:var(--mute);font-size:14px">เปิดใน Remotion Studio: <code>npm run studio</code> แล้วเลือก composition ตามชื่อ (ลงท้าย <code>Board</code> = 1 เฟรมต่อ 1 ช็อต)</p>
+</section>
+<section id="sfx"><h2>เสียงประกอบ</h2><input id="q" placeholder="ค้นหา prompt / ชื่อ…"><div class="sfx" id="sfxlist"></div></section>
+<div id="lb"><img alt=""></div>
+<script src="manifest.js"></script>
+<script>
+  const S = window.STUDIO, $ = id => document.getElementById(id);
+  $('stills').innerHTML = S.stills.map(s => `<h3>${s.label}</h3><img src="${s.src}" alt="${s.id}">`).join('');
+  $('eptbody').innerHTML = S.episodes.map(e => `<tr><td>${e.title}<br><small style="color:var(--mute)">${e.slug}</small></td><td>${e.format}</td><td>${e.shots}</td><td>${e.seconds}s</td><td><code data-c="${e.id}">${e.id}</code> <code data-c="${e.id}Board">${e.id}Board</code></td></tr>`).join('');
+  const sfx = () => { const q = $('q').value.toLowerCase();
+    $('sfxlist').innerHTML = S.sfx.filter(x => (x.name + ' ' + x.prompt).toLowerCase().includes(q)).map(x => `<div><b>${x.name || x.key}</b>${x.prompt || ''} · ${x.dur || ''}s<audio controls preload="none" src="${x.file}"></audio></div>`).join(''); };
+  $('q').oninput = sfx; sfx();
+  document.addEventListener('click', e => {
+    if (e.target.dataset.c) navigator.clipboard.writeText(e.target.dataset.c);
+    if (e.target.matches('.stills img')) { $('lb').firstElementChild.src = e.target.src; $('lb').style.display = 'flex'; }
+    else if (e.target.closest('#lb')) $('lb').style.display = 'none';
+  });
+</script>
+</body>
+</html>

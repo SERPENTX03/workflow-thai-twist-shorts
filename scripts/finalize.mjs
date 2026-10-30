@@ -1,9 +1,9 @@
-// Render the episode with HyperFrames, then normalise the mix to -14 LUFS / -1.5 dBTP (social delivery).
+// Render the episode with Remotion, then normalise the mix to -14 LUFS / -1.5 dBTP (social delivery).
 //   node scripts/finalize.mjs episodes/<slug> [--skip-render]
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { episodeDir, loadStory, run, die, npx } from './lib.mjs';
+import { episodeDir, loadStory, run, die, npx, compId, ROOT } from './lib.mjs';
 
 const dir = episodeDir(process.argv[2]);
 const S = loadStory(dir);
@@ -12,7 +12,8 @@ const rendered = path.join(dir, 'renders', `${slug}.mp4`);
 const final = path.join(dir, 'renders', `${slug}-final.mp4`);
 
 if (!process.argv.includes('--skip-render')) {
-  const r = npx(['hyperframes', 'render', '--quality', 'looks', '-o', rendered], { cwd: dir, stdio: 'inherit' });
+  fs.mkdirSync(path.dirname(rendered), { recursive: true });
+  const r = npx(['remotion', 'render', 'src/index.ts', compId(slug), rendered, '--codec=h264', '--crf=16'], { cwd: ROOT, stdio: 'inherit' });
   if (r.status !== 0) die('render failed');
 }
 if (!fs.existsSync(rendered)) die(`no render at ${rendered}`);

@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "gallery",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["http-server@14.1.1", ".", "-p", "3431", "-c-1"],
+      "port": 3431
+    },
+    {
+      "name": "remotion-studio",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "studio"],
+      "port": 3430
+    }
+  ]
+}

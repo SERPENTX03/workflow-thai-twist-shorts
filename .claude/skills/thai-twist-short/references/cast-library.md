@@ -62,7 +62,7 @@ Short sleeves: set `--forearm: var(--skin)` on the figure (pose arms then show a
 
 ## Faces — `face-off` + one `face-*`
 
-`happy laugh sad cry angry scared shock worried smirk tired hollow wary guilty`. Match the caption line. `hollow` (blank black eyes) is saved for ghosts and the twist frame. One face per figure per shot.
+`happy laugh sad cry angry scared shock worried smirk tired hollow wary guilty grin`. Match the caption line. `grin` (eye bags, small pupils, wide crescent grin with teeth, same look as ลุงชาญ's `face-lr-grin`) is for the creepy smiler. `hollow` (blank black eyes) is saved for ghosts and the twist frame. One face per figure per shot.
 
 ## Talking — `mouth-off` + `talk-*`
 

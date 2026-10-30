@@ -4,7 +4,7 @@
 // Warnings: runtime vs channel target, caption length, estimated voice overrun, cue density, missing scene files.
 import fs from 'node:fs';
 import path from 'node:path';
-import { episodeDir, loadStory, plain, sfxFile } from './lib.mjs';
+import { episodeDir, loadStory, plain, sfxFile, ROOT } from './lib.mjs';
 
 const CUES = new Set(['hit', 'bighit', 'stamp', 'scratch', 'creak', 'scrape', 'step', 'shriek', 'whoosh', 'bell', 'flip', 'tick']);
 const CHARS_PER_SEC = 9;   // median Thai narration rate measured on boat-10-days (range 5–12)
@@ -73,9 +73,12 @@ if (bigs > 1) warn(null, `${bigs} bighits — audio.md says one per film, on the
 const hitShots = [...hardKinds].sort((a, b) => a - b);
 for (let k = 1; k < hitShots.length; k++) if (hitShots[k] - hitShots[k - 1] === 1) warn(hitShots[k], 'hit on consecutive shots — use hits at most every other shot');
 
-const scenesDir = path.join(dir, 'compositions');
+const scenesFile = path.join(ROOT, 'src', 'episodes', path.basename(dir), 'scenes.tsx');
+const scenesSrc = fs.existsSync(scenesFile) ? fs.readFileSync(scenesFile, 'utf8') : '';
 for (const sc of new Set(S.shots.map(s => s.scene))) {
-  if (!fs.existsSync(path.join(scenesDir, `scene-${sc}.html`))) warn(null, `scene "${sc}" has no compositions/scene-${sc}.html — will render as placeholder`);
+  if (!scenesSrc.includes(`'${sc}'`) && !scenesSrc.includes(`"${sc}"`) && !new RegExp(`\\b${sc}\\s*:`).test(scenesSrc)) {
+    warn(null, `scene "${sc}" is not in src/episodes/${path.basename(dir)}/scenes.tsx — will render as placeholder`);
+  }
 }
 
 // actual voice durations, when audio has already been generated

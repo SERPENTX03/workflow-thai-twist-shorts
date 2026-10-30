@@ -17,3 +17,7 @@ episodes/*/assets/score_raw.wav
 # Studio caches
 episodes/*/.thumbnails/
 episodes/*/.waveform-cache/
+node_modules/
+out/
+.env
+studio/renders/
