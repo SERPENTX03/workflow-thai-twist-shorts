@@ -1,0 +1,25 @@
+{
+  "_note": "What the studio gallery shows. Each list is one Remotion composition; frame N draws item N (src/Gallery.tsx). npm run gallery renders them.",
+  "faces": ["face-happy", "face-laugh", "face-sad", "face-cry", "face-angry", "face-scared", "face-shock", "face-worried", "face-smirk", "face-tired", "face-hollow", "face-wary", "face-guilty", "face-grin", "talk-a", "talk-e", "talk-o", "talk-m"],
+  "poses": ["man-walk", "man-run", "man-sit", "man-crouch", "man-back", "man-lie", "woman-back", "woman-sit", "woman-run"],
+  "arms": ["arm-r-hold", "arm-r-chest", "arm-r-offer", "arm-r-raise", "arm-r-pocket", "arm-r-carry", "arm-r-reach"],
+  "props": ["prop-glass", "prop-coin", "prop-phone", "prop-paper", "prop-key", "prop-flashlight", "prop-bowl", "prop-box", "icon-clock", "icon-warn", "icon-check", "icon-cross", "icon-arrow", "icon-pin", "set-door", "set-door-open", "set-window", "set-table", "set-chair"],
+  "marks": ["mark-question", "mark-exclaim", "mark-anger", "mark-drops", "mark-zzz", "mark-dizzy", "mark-idea", "mark-shiver", "mark-gloom", "acc-glasses", "acc-cap", "acc-mask", "acc-headband", "acc-scarf", "acc-amulet", "acc-bag", "acc-backpack", "acc-straps"],
+  "ui": [
+    { "id": "caption", "nameTh": "ซับไตเติล", "code": "story.json: \"text\": \"น้ำเหลือ[ไม่ถึงสามสิบลิตร]\"", "use": "[คำ] = ทอง, {คำ} = แดง · engine วาดให้เอง" },
+    { "id": "caption-red", "nameTh": "ซับกล่องแดง", "code": "story.json: \"style\": \"red\"", "use": "เฉพาะ 2–4 บรรทัดที่พลิกเรื่อง" },
+    { "id": "rule", "nameTh": "การ์ดกฎ", "code": "<RuleCard no=\"กฎข้อ 1\" lines={[...]} />", "use": "กฎ/ข้อห้ามของเรื่อง" },
+    { "id": "stat", "nameTh": "ตัวเลข + มิเตอร์", "code": "<Stat label=\"น้ำที่เหลือ\" value={29} unit=\"ลิตร\" /> <Meter level={0.32} low />", "use": "ตัวเลขที่นับลด/เพิ่มทุก ~10 วิ" },
+    { "id": "checklist", "nameTh": "เช็กลิสต์", "code": "<Checklist rows={[...]} ticks={[1, 1, 0]} />", "use": "ขั้นตอนเอาตัวรอด ติ๊กทีละข้อ" },
+    { "id": "card", "nameTh": "การ์ดข้อมูล", "code": "<Card title=\"รู้หรือไม่\">…</Card>", "use": "ข้อเท็จจริงจริง สันแดง" },
+    { "id": "tags", "nameTh": "ป้ายชื่อ / ชิป / นาฬิกา", "code": "<Tag text=\"คุณ\" tone=\"you\" /> <Chip text=\"คนเป็น\" /> <Hud text=\"03:00\" />", "use": "ติดชื่อครั้งแรกที่ตัวละครโผล่" }
+  ],
+  "scenes": [
+    { "scene": "room", "nameTh": "ห้องกลางคืน + กระจก", "data": { "hud": "03:00" }, "use": "ฉากในห้อง เงาในกระจกคือเครื่องมือหักมุม" },
+    { "scene": "rules", "view": "card", "nameTh": "กฎ (การ์ด)", "data": { "no": "กฎข้อ 1", "lines": ["อย่าวิ่งลงบันได", "ตามเพื่อน"] }, "use": "ฉากกลางวัน + ป้ายชื่อ + การ์ดกฎตกลงมา" },
+    { "scene": "rules", "view": "numbers", "nameTh": "กฎ (ตัวเลข)", "data": {}, "use": "ตัวเลขนับถอยหลัง มิเตอร์ เช็กลิสต์" },
+    { "scene": "map", "nameTh": "แผนที่มุมบน", "data": {}, "use": "god view: จุดทึบ = คนเป็น, จุดประ = คุณ" },
+    { "scene": "news", "nameTh": "ข่าว/หลักฐาน", "data": {}, "use": "ภาพเบลอค่อยชัด + วงแดง (เฉลย)" },
+    { "scene": "next", "nameTh": "ตอนต่อไป", "data": { "ep": "เมื่อไฟดับทั้งเมือง · EP 2" }, "use": "การ์ดปิดซีรีส์ ปล่อยซับว่าง" }
+  ]
+}

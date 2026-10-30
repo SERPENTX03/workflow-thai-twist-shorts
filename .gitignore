@@ -1,5 +1,4 @@
 node_modules/
-.hyperframes/
 renders/
 *.log
 .DS_Store
@@ -21,3 +20,4 @@ node_modules/
 out/
 .env
 studio/renders/
+public/*/*.wav

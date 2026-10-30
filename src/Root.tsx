@@ -2,7 +2,7 @@ import React from 'react';
 import {Composition, Still} from 'remotion';
 import './engine/fonts';
 import {FPS} from './studio.config';
-import {CastSheet, Faces, Props, Sets} from './Gallery';
+import {CastSheet, GALLERY_COMPS} from './Gallery';
 import {EPISODES} from './episodes';
 
 export const Root: React.FC = () => (
@@ -14,8 +14,8 @@ export const Root: React.FC = () => (
       </React.Fragment>
     ))}
     <Still id="Cast" component={CastSheet} width={1920} height={1080} />
-    <Still id="Faces" component={Faces} width={1920} height={1080} />
-    <Still id="Props" component={Props} width={1920} height={1080} />
-    <Still id="Sets" component={Sets} width={1920} height={1080} />
+    {GALLERY_COMPS.map(g => (
+      <Composition key={g.id} id={g.id} component={g.component} durationInFrames={g.count} fps={FPS} width={g.width} height={g.height} />
+    ))}
   </>
 );

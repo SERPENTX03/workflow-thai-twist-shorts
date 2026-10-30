@@ -1,8 +1,8 @@
 # Thai Twist Shorts — agent rules
 
-This repo makes Thai vertical (9:16) and landscape twist-ending short stories with **Remotion** (TSX). It was migrated from HyperFrames on branch `remotion`; the migration state is tracked in `C:\Users\User\.claude\plans\hyperfame-remotion-structured-toast.md`.
+This repo makes Thai vertical (9:16) and landscape twist-ending short stories with **Remotion** (TSX).
 
-**For any request about an episode — a new story idea, writing, scenes, voice, sound, review or render — invoke the `thai-twist-short` skill first** (`.claude/skills/thai-twist-short/SKILL.md`). Its HyperFrames-specific parts (`scene-kit.md`, build/check commands) are being rewritten; where it disagrees with this file, this file wins.
+**For any request about an episode — a new story idea, writing, scenes, voice, sound, review or render — invoke the `thai-twist-short` skill first** (`.claude/skills/thai-twist-short/SKILL.md`). Where it disagrees with this file, this file wins.
 
 ## Hard rules
 
@@ -17,7 +17,7 @@ This repo makes Thai vertical (9:16) and landscape twist-ending short stories wi
 6. Shared things (cast, props, captions, kit components) live in `src/` — improve them there, never only inside one episode.
 7. Deterministic only: no `Math.random()`, `Date.now()` or network in components; use `rnd()` from `src/engine/anim.ts`.
 8. Ask before anything outward-facing (publishing renders, pushing to a remote).
-9. Do not delete old episodes' `assets/` (paid voice/SFX) or untracked files without asking.
+9. Do not delete an episode's `assets/` (paid voice/SFX) or untracked files without asking.
 
 ## Layout
 
@@ -26,7 +26,7 @@ src/
   index.ts, Root.tsx          registers <Id>, <Id>Board per episode + Cast / Faces / Props / Sets stills
   engine/                     story.ts (story.json -> shots), episode.tsx (defineEpisode), anim.ts, fonts.ts, theme.ts
   kit/Captions.tsx            captions with [gold] / {red} marks
-  cast/                       CastSprite.tsx (GENERATED from template/assets/kit/cast.svg), Sprite.tsx
+  cast/                       CastSprite.tsx (GENERATED from source/cast.svg by scripts/svg-to-tsx.mjs), Sprite.tsx
   Gallery.tsx                 gallery compositions
   episodes/index.ts           GENERATED registry; <slug>/scenes.tsx (optional) = {sceneName: ShotComponent}
 scripts/                      timeline, voice, score, sfx, fit, qc, story-check, check, finalize, new-episode, gallery, svg-to-tsx
@@ -36,10 +36,10 @@ episodes/<slug>/              story.json, assets/ (voice, score, vo cache), time
 public/                       fonts + <slug>/voice.wav, score.wav (linked by npm run timeline)
 series/<name>.md              series bible
 sfx-library/                  cached ElevenLabs SFX
-template/                     OLD HyperFrames project — source of cast.svg until removed
 ```
 
 ## Commands
 
 - `npm run studio` — Remotion Studio on :3430. Gallery: `npm run gallery`, then serve the repo root (launch config `gallery`, :3431) and open `/studio/index.html`.
+- Gallery content: cast in `src/cast.json`, item lists in `src/gallery.json`, voice roles in `voices.json`. `npm run voices` makes the voice previews (ElevenLabs credits; only changed lines). `npm run voice-list` searches your ElevenLabs voices.
 - Thinking helpers live as project skills: `/twist-idea`, `/twist-next`, `/twist-hook`, `/twist-series`, `/twist-ref`, `/twist-doctor`, `/twist-cast`. They end at an approved outline or a report; building goes through `thai-twist-short`.

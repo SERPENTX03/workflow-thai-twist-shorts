@@ -1,6 +1,6 @@
 # Review loop (step 6)
 
-Run `npm run check -- episodes/<slug>`. It runs `hyperframes check` and writes the review set to `episodes/<slug>/.hyperframes/review/`:
+Run `npm run check -- episodes/<slug>`. It runs tsc + story-check and writes one Board frame per shot to `out/<slug>-board/`:
 - `review-beats-N.jpg` — every scene start + middle and every beat,
 - `review-phone-N.jpg` — the same frames at phone width,
 - `review-seam-NN.jpg` — 5 frames around each cut.
@@ -19,7 +19,7 @@ Run `npm run check -- episodes/<slug>`. It runs `hyperframes check` and writes t
 
 Frames that fall exactly on a cut show the next caption mid-entrance (not yet visible) — that is expected, not a bug.
 
-Fix the **three worst** problems, rebuild, and score again. Repeat until all seven are ≥ 8. Then show the user the preview (`npx hyperframes preview --background` in the episode) before the final render.
+Fix the **three worst** problems, rebuild, and score again. Repeat until all seven are ≥ 8. Then show the user the preview (`npm run studio`) before the final render.
 
 Report the scores to the user in a short table with one line on what was fixed in each round.
 

@@ -6,7 +6,7 @@ argument-hint: "[บทบาท/ลักษณะตัวละคร เช�
 
 # ออกแบบตัวละคร (สไตล์ประจำช่อง)
 
-Read `references/art-direction.md` → *Cast rules*, and `template/assets/kit/cast.svg` before drawing anything.
+Read `references/art-direction.md` → *Cast rules*, and `src/cast/source/cast.svg` before drawing anything.
 
 ## The house style (copy this when making someone new)
 
@@ -20,8 +20,8 @@ Read `references/art-direction.md` → *Cast rules*, and `template/assets/kit/ca
 ## Steps
 
 1. Ask (or infer from the story) role, age, height in cm, the one trait, the accent colour. Reuse an existing symbol (`man`, `woman`, `auntie`, `elder`, `raincoat`, `cat-black`, `cat-orange`, `beagle`, `dog-patch`, `dog`) when it already fits; recolour via variables instead of redrawing.
-2. For a new figure: copy the nearest symbol in `template/assets/kit/cast.svg`, rename the id (kebab-case, unique), change shapes and variables. Improve shared things in `template/`, never inside one episode (hard rule 5).
+2. For a new figure: copy the nearest symbol in `src/cast/source/cast.svg`, rename the id (kebab-case, unique), change shapes and variables. Improve shared things in `template/`, never inside one episode (hard rule 5).
 3. Show the user a preview before using it: a design canvas (Artifact, Design type) or a throw-away scene snapshot. Wait for a yes; the user tunes colour, build, face.
 4. Record the character in `series/<name>.md` (name, height, trait, symbol id, variables) if the story is a series.
-5. Build and snapshot (`npm run build -- episodes/<slug>`, then `npx hyperframes snapshot --at …`) and look at the frames.
+5. Add the id to `KEEP` in `scripts/svg-to-tsx.mjs`, run `node scripts/svg-to-tsx.mjs`, check `npm run gallery`, and look at the frames.
 

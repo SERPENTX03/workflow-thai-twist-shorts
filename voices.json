@@ -1,0 +1,12 @@
+{
+  "_note": "The fixed voice cast (references/voices.md). Characters pick a role in src/cast.json. `line` + `tone` are the studio preview: npm run voices.",
+  "model": "eleven_v3",
+  "settings": { "stability": 0.5, "similarity_boost": 0.75 },
+  "default": "male",
+  "roles": {
+    "male": { "id": "xYmBpJREC3WfqEFpbPvO", "whoTh": "ผู้ชายวัยผู้ใหญ่ (ผู้บรรยาย)", "use": "ผู้บรรยาย (ค่าเริ่มต้น) และตัวละครชายวัยผู้ใหญ่", "tone": "calm", "line": "ตีสามคืนนั้น... คุณได้ยินเสียงเคาะประตูห้องเจ็ด ทั้งที่ห้องนั้นไม่มีใครเช่ามาสามปีแล้ว" },
+    "female": { "id": "MYZYcGOqrkYQcwDunXl7", "whoTh": "ผู้หญิงและเด็กหญิงที่ไม่ใช่คนสูงอายุ", "use": "ตัวละครหญิงทุกคนที่ไม่ใช่ผู้สูงอายุ และเด็ก (โทน childlike)", "tone": "nervous", "line": "เธอได้ยินไหม... เสียงนั้นมันมาจากข้างในกำแพง" },
+    "old_male": { "id": "5KvpaGteYkNayiswuX2h", "whoTh": "ตา ปู่ ลุง ผู้เฒ่า", "use": "ผู้ชายสูงอายุ พระ ผู้ใหญ่บ้าน", "tone": "slowly, warm", "line": "อย่าออกไปหลังเที่ยงคืนนะลูก คนที่ออกไป... ไม่เคยมีใครกลับมาเหมือนเดิม" },
+    "old_female": { "id": "p2Wol3C7j3rHbfOrbL18", "whoTh": "ยาย ย่า ป้า", "use": "ผู้หญิงสูงอายุ แม่บ้านเจ้าของหอ", "tone": "slowly, warm", "line": "ห้องนี้ถูกจริง แต่ป้าบอกไว้ก่อนนะ ห้ามเปิดม่านตอนตีสาม" }
+  }
+}

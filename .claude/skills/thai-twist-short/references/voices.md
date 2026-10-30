@@ -1,6 +1,6 @@
 # Voice cast
 
-The only ElevenLabs voices new episodes may use. `template/story.json` already carries this map;
+The only ElevenLabs voices new episodes may use. `templates/story.json` already carries this map;
 copy it unchanged into every new episode and never write a raw voice id in a shot.
 
 | Role (`voices` key) | Voice id | Who | Use for |

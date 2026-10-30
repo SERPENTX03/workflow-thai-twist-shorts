@@ -1,6 +1,6 @@
 # Cast library — ready-made pieces in `cast.svg`
 
-Everything here lives in `template/assets/kit/cast.svg` and is inlined into every episode by `build`. See all of it on one page: `npm run gallery` → open `template/assets/kit/gallery.html`. Reuse before drawing; a new piece that will come back goes into `template/` (and this table), never into one episode only.
+Everything here lives in `src/cast/source/cast.svg` and is generated into `src/cast/CastSprite.tsx` (`node scripts/svg-to-tsx.mjs`). See all of it on one page: `npm run gallery` → open `studio/index.html`. Reuse before drawing; a new piece that will come back goes into `template/` (and this table), never into one episode only.
 
 **One rule for every overlay:** hide the default part first, then layer exactly one replacement. Arms → `arm-l-off` / `arm-r-off` (see `hands-poses.md`). Face → `face-off`. Mouth only → `mouth-off`. Never stack a second pair of eyes, a second mouth or a second hand on top of the default one.
 
@@ -56,7 +56,7 @@ Any standing figure can lie down: `<g transform="translate(0 234) rotate(-90)"><
 
 ## Story kits
 
-Story-only pieces live in `template/assets/kit/stories/<story>.svg` + `.css` with their own id prefix; `build.mjs` and the gallery pick them up automatically. Current kits: `last-ride.md` (`lr-`).
+Story-only pieces live in `src/episodes/<slug>/` (own `Sprite`-style components, own id prefix). Promote anything reusable into `cast.svg` and add the id to `KEEP` in `scripts/svg-to-tsx.mjs`.
 
 Short sleeves: set `--forearm: var(--skin)` on the figure (pose arms then show a skin forearm under the sleeve).
 
@@ -79,7 +79,7 @@ function talk(sel, from, to) {
 talk("#ep-mouth", 0.4, 2.1); // the voice line's local start/end from timing.json
 ```
 
-Deterministic (no random). Not yet run through `hyperframes check` in an episode: snapshot it the first time you use it.
+Deterministic (no random). Not yet used in an episode: render a Board frame the first time you use it.
 
 ## Accessories — the one trackable trait
 

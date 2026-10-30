@@ -25,7 +25,7 @@ export type SpriteProps = {
 };
 
 const SLEEVE: Record<string, string> = {
-  man: 'var(--shirt, #2f5f8f)', 'man-wide': 'var(--shirt, #2f5f8f)', 'man-raise': 'var(--shirt, #2f5f8f)',
+  man: 'var(--shirt, #2f5f8f)',
   woman: 'var(--top, #d9c9a8)', auntie: 'var(--top, #d9c9a8)', raincoat: 'var(--coat, #f2c230)',
   kid: 'var(--uniform, #f4f4f0)', 'kid-girl': 'var(--uniform, #f4f4f0)', student: 'var(--uniform, #f4f4f0)',
   elder: 'var(--exo, #e9e4d6)',

@@ -26,12 +26,12 @@ export const Room: ShotComponent = ({shot, f, len}) => {
         <div style={{position: 'absolute', left: 600, top: 380, width: 260, height: 860, borderRadius: 130, border: '20px solid #3c2c22',
           background: 'linear-gradient(160deg, #4d6178, #22303f)', overflow: 'hidden'}}>
           <div style={{position: 'absolute', left: 30 - 20, top: 300 - 20, opacity: refl}}>
-            <Sprite id="man-raise" silhouette />
+            <Sprite id="man" silhouette hideArmL layers={['arm-l-raise']} />
           </div>
         </div>
         <div style={{position: 'absolute', left: -300, top: 300, width: 1100, height: 1100, borderRadius: '50%', mixBlendMode: 'screen',
           background: 'radial-gradient(circle, rgba(255,190,120,.28), rgba(255,190,120,0) 65%)'}} />
-        <div style={{position: 'absolute', left: 250, top: 520}}><Sprite id="man-raise" height={702} /></div>
+        <div style={{position: 'absolute', left: 250, top: 520}}><Sprite id="man" height={702} hideArmL hideFace layers={['face-shock', 'arm-l-raise']} /></div>
         <div style={{position: 'absolute', inset: 0, background: 'rgba(6,10,26,.55)'}} />
         <div style={{position: 'absolute', left: 600, top: 380, width: 260, height: 860, borderRadius: 140, border: `6px dashed ${T.red}`,
           opacity: ring, transform: `scale(${0.2 + 0.8 * ring})`}} />

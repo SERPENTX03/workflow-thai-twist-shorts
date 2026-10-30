@@ -41,7 +41,7 @@ export default {door: Door};   // key = the `scene` name in story.json
 
 Then `npm run timeline -- episodes/<slug>` (or `npm run check`) regenerates the registry. Entries here override the generic scenes of the same name. Promote anything reusable into `src/scenes/` and `src/kit/`.
 
-## Rules found in the HyperFrames era that still apply
+## Rules that still apply
 
 1. **Hands:** never draw a hand beside a resting arm. `hideArmL` / `hideArmR` on the `Sprite`, then layer ONE pose arm + grip prop (`hands-poses.md`). Held props (`prop-*`, `acc-watch`) are anchored at (0,0): put them in their own `<Sprite>` or an `<svg><use href="#prop-coin" transform="translate(x y)"/></svg>`.
 2. **Faces:** `hideFace`, then one `face-*` layer per figure per shot; change mood on a cut or beat. `woman` / `auntie` need `transform="translate(0 4)"` on face layers (see `cast-library.md`).

@@ -31,4 +31,4 @@ All sound is generated from `story.json`; nothing is downloaded or sampled excep
 
 ## Delivery loudness — `scripts/finalize.mjs`
 
-Renders with HyperFrames (`--quality looks`, CRF 16) and runs a two-pass `loudnorm` to **−14 LUFS integrated, −1.5 dBTP** → `renders/<slug>-final.mp4`. The video stream is copied, not re-encoded.
+Renders with Remotion (h264, CRF 16) and runs a two-pass `loudnorm` to **−14 LUFS integrated, −1.5 dBTP** → `renders/<slug>-final.mp4`. The video stream is copied, not re-encoded.

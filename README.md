@@ -1,30 +1,30 @@
 # Thai Twist Shorts
 
-เวิร์กโฟลว์ทำ **คลิปสั้นแนวตั้ง (9:16) เรื่องสั้นหักมุมภาษาไทย** ด้วย [HyperFrames](https://hyperframes.heygen.com) — ไม่มีคนในคลิป เล่าแบบบุรุษที่สอง ("คุณ") ภาพสไตล์ภาพวาดแบนกลางคืน ซับไตเติลไทยตัวหนาไฮไลต์กล่องแดง การ์ดข้อมูล แผนที่มุมบน เสียงพากย์ไทย และดนตรี/เสียงประกอบที่สังเคราะห์ด้วยโค้ด
+เวิร์กโฟลว์ทำ **คลิปสั้นแนวตั้ง (9:16) เรื่องสั้นหักมุมภาษาไทย** ด้วย [Remotion](https://www.remotion.dev) (TSX) — ไม่มีคนในคลิป เล่าแบบบุรุษที่สอง ("คุณ") ภาพสไตล์ภาพวาดแบนกลางคืน ซับไตเติลไทยตัวหนาไฮไลต์กล่องแดง การ์ดข้อมูล แผนที่มุมบน เสียงพากย์ไทย และดนตรี/เสียงประกอบที่สังเคราะห์ด้วยโค้ด
 
 ออกแบบให้ทำงานคู่กับ **Claude Code** (หรือ coding agent อื่น): บอกไอเดียเรื่อง แล้ว agent จะเดินตามขั้นตอนใน `.claude/skills/thai-twist-short/` ตั้งแต่เขียนเรื่อง → animatic → วาดฉาก → เสียง → ตรวจ → เรนเดอร์
 
-> A HyperFrames workflow for Thai vertical twist-ending short stories. Write `story.json`; scripts generate the timeline, captions, Thai voiceover and score; you (or your agent) draw the scenes.
+> A Remotion workflow for Thai vertical twist-ending short stories. Write `story.json`; scripts generate the timeline, captions, Thai voiceover and score; you (or your agent) draw the scenes.
 
 ## ต้องมีอะไรบ้าง
 
 | เครื่องมือ | ใช้ทำ |
 |---|---|
-| Node.js 22+ | สคริปต์ทั้งหมด และ HyperFrames (`npx`) |
+| Node.js 22+ | สคริปต์ทั้งหมด และ Remotion |
 | ffmpeg + ffprobe (อยู่ใน PATH) | ตัดต่อเสียง วัดความดัง |
 | คีย์ ElevenLabs (ค่าเริ่มต้น) หรือ Python 3 + `pip install edge-tts google-genai` | เสียงพากย์ไทย: ElevenLabs (ต้องมีคีย์ ดูหัวข้อ "เสียงพากย์"), `edge-tts` = บริการออนไลน์ของ Microsoft (ไม่ต้องมีคีย์), `google-genai` = เสียง Gemini (ต้องมีคีย์) — ทุกแบบต้องต่อเน็ต และข้อความพากย์จะถูกส่งไปที่บริการนั้น |
-| Google Chrome | HyperFrames ใช้เรนเดอร์ |
+| (Chromium) | Remotion โหลดให้เองตอนเรนเดอร์ครั้งแรก |
 | Claude Code (แนะนำ) | เดินเวิร์กโฟลว์ให้อัตโนมัติ |
 
-ติดตั้ง skill ของ HyperFrames หนึ่งครั้ง (agent จะอ่านกฎการเขียน composition จากตรงนี้):
+ติดตั้งแพ็กเกจหนึ่งครั้ง:
 
 ```bash
-npx hyperframes skills update
+npm install
 ```
 
 ## เสียงพากย์ (ElevenLabs เป็นค่าเริ่มต้น)
 
-ตอนใหม่ใช้ชุดเสียงตายตัวใน [`.claude/skills/thai-twist-short/references/voices.md`](.claude/skills/thai-twist-short/references/voices.md): `male` (ผู้บรรยาย), `female`, `old_male`, `old_female` — `template/story.json` ตั้งไว้ให้แล้ว และกฎการเลือกเสียงต่อบรรทัดอยู่ในไฟล์นั้น ตัวอย่าง Vasko/Jessica ด้านล่างเป็นค่าเดิมของเครื่องมือ
+ตอนใหม่ใช้ชุดเสียงตายตัวใน [`.claude/skills/thai-twist-short/references/voices.md`](.claude/skills/thai-twist-short/references/voices.md): `male` (ผู้บรรยาย), `female`, `old_male`, `old_female` — `templates/story.json` ตั้งไว้ให้แล้ว และกฎการเลือกเสียงต่อบรรทัดอยู่ในไฟล์นั้น ตัวอย่าง Vasko/Jessica ด้านล่างเป็นค่าเดิมของเครื่องมือ
 
 1. สร้าง API key ที่ <https://elevenlabs.io/app/settings/api-keys> เปิดสิทธิ์ **Text to Speech: Access** (ถ้าอยากให้สคริปต์หา voice id จากชื่อ เปิด **Voices: Read** เพิ่ม)
 2. ก๊อป `.env.example` เป็น `.env` แล้วใส่คีย์: `ELEVENLABS_API_KEY=คีย์ของคุณ` (`.env` อยู่ใน `.gitignore` ห้าม commit หรือแชร์)
@@ -65,22 +65,18 @@ npx hyperframes skills update
 ## เริ่มเร็ว
 
 ```bash
-git clone <this-repo> thai-twist-shorts
-cd thai-twist-shorts
-
-npm run new -- my-story "ชื่อเรื่องของฉัน"   # สร้าง episodes/my-story จาก template
+npm run new -- my-story "ชื่อเรื่องของฉัน"   # สร้าง episodes/my-story จาก templates/story.json
 # แก้ episodes/my-story/story.json (หรือบอก Claude ให้เขียนจากไอเดียของคุณ)
-npm run build -- episodes/my-story           # สร้าง animatic (ฉากที่ยังไม่วาดจะเป็น placeholder)
-npm run audio -- episodes/my-story           # เสียงพากย์ + ดนตรี + build ใหม่
-npm run check -- episodes/my-story           # ตรวจ + ชีตภาพสำหรับรีวิว
+npm run check -- episodes/my-story           # tsc + ตรวจเรื่อง + ภาพ Board ต่อช็อตใน out/my-story-board/
+npm run audio -- episodes/my-story           # เสียงพากย์ + ดนตรี + timeline.json
 npm run final -- episodes/my-story           # เรนเดอร์ + ปรับความดัง -14 LUFS → renders/my-story-final.mp4
 ```
 
-ดูตัวอย่าง/แก้ใน Studio (ในโฟลเดอร์ episode):
+เลื่อนดูใน Remotion Studio และดู gallery ตัวละคร:
 
 ```bash
-cd episodes/my-story
-npx hyperframes preview
+npm run studio    # http://localhost:3430
+npm run gallery   # สร้าง studio/index.html (ตัวละคร, props, เสียงประกอบ)
 ```
 
 ### ใช้กับ Claude Code
@@ -95,12 +91,10 @@ Claude จะใช้ skill `thai-twist-short` เอง: เสนอโคร
 
 ```
 .claude/skills/thai-twist-short/   skill เวิร์กโฟลว์ + กฎ (เรื่อง, อาร์ตไดเรกชัน, ชุดฉาก, เสียง, การรีวิว)
-scripts/                           new-episode · build · voice · score · audio · check · finalize
-template/                          โปรเจกต์ HyperFrames ต้นแบบของทุก episode
-  assets/kit/kit.css               สี ฟอนต์ ซับไตเติล การ์ด ชิป นาฬิกา
-  assets/kit/cast.svg              ตัวละคร (คุณ, ผู้หญิง, หมอผี) — ทำเป็นเงาดำได้ด้วย .sil
-  compositions/                    ฉากตัวอย่าง: ห้องกลางคืน+กระจก, แผนที่มุมบน, การ์ดข่าว
-episodes/room-7/                   ตัวอย่างเรื่องเต็ม "ห้องเช่าเลขที่ 7" (story.json พร้อม animatic)
+src/                               Remotion: engine, kit (ซับไตเติล, การ์ด), cast (ตัวละคร), scenes (ฉากทั่วไป)
+scripts/                           new-episode · timeline · voice · score · audio · check · finalize · gallery
+templates/story.json               เรื่องตั้งต้นของ npm run new
+episodes/<slug>/                   story.json + assets (เสียง) + renders
 ```
 
 ## story.json คือหัวใจ

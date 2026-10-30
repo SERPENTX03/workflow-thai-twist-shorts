@@ -13,9 +13,9 @@ Read before drawing any shot where a hand does something (hand over, hold, point
 7. **Facing and side.** r = screen-right arm, l = screen-left arm. The `offer` arm points away from the body, so use the arm on the side of the receiver. Never cross an arm over the face.
 8. **Hands stay in the action zone** (y 160–1180) and ≥ 38 px across on screen (the `r=19` circle at scale 1). For a close-up, draw the hand big (≥ 200 px) on its own shot: palm circle + thumb nub, no fingers (flat style).
 9. **Silhouettes keep the poses** — `.sil` already blacks out the pose arms and props' skin (`--sleeve`, `--skin`); a prop's own colours are not blacked out, so give a silhouette shot only `arm-*-pocket`/`raise`, or no prop.
-10. **Reuse before inventing.** Take a pose from the library below. A new gesture goes into `template/assets/kit/cast.svg` (right-arm version + mirrored left) and into this table, not into one episode.
+10. **Reuse before inventing.** Take a pose from the library below. A new gesture goes into `src/cast/source/cast.svg` (right-arm version + mirrored left) and into this table, not into one episode.
 
-## Pose library (`template/assets/kit/cast.svg`, "Pose library")
+## Pose library (`src/cast/source/cast.svg`, "Pose library")
 
 Frame 200 × 520. Use `viewBox="0 0 200 520"`, `class="who c-<symbol> arm-r-off"` (set `c-man`, `c-woman`, `c-auntie`, `c-raincoat`, `c-elder`, `c-student`, `c-kid`, `c-kid-girl` — it sets the sleeve colour).
 
@@ -32,7 +32,7 @@ Frame 200 × 520. Use `viewBox="0 0 200 520"`, `class="who c-<symbol> arm-r-off"
 
 Grip props (origin = hand centre): `prop-glass`, `-coin`, `-phone`, `-paper`, `-key`, `-flashlight`, `-bottle`, `-radio`, `-candle`, `-map`, `-rope`, `-sack` (hangs below the hand), `-bowl`, `-bandage`. Accessories that sit on a hand (`acc-watch`, `acc-hand-bandage`) use the same anchors — see `cast-library.md`.
 
-Example (a woman hands a coin; a man sets a glass down) → `template/compositions/scene-example-poses.html`.
+Example (a woman hands a coin; a man sets a glass down) → `<Sprite id="woman" hideArmR layers={["arm-r-offer"]}/>` plus a `prop-coin` Sprite at the hand anchor.
 
 ```html
 <svg class="who c-woman arm-r-off" viewBox="0 0 200 520">

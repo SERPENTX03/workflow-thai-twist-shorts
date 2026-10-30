@@ -3,12 +3,12 @@
 import fs from 'node:fs';
 import { DOMParser } from '@xmldom/xmldom';
 
-const SRC = 'template/assets/kit/cast.svg';
+const SRC = 'src/cast/source/cast.svg';
 const OUT = 'src/cast/CastSprite.tsx';
 
 const KEEP = [
   // people + crowd
-  'man', 'man-wide', 'man-raise', 'woman', 'auntie', 'elder', 'raincoat', 'student', 'kid', 'kid-girl', 'crowd',
+  'man', 'woman', 'auntie', 'elder', 'raincoat', 'student', 'kid', 'kid-girl', 'crowd',
   // pets
   'cat-black', 'cat-orange', 'beagle', 'dog-patch',
   // whole-body poses

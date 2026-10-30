@@ -12,6 +12,6 @@ export const T = {
 
 /** Relative heights in cm (520 svg units = 170 cm for adults). */
 export const HEIGHT_CM: Record<string, number> = {
-  man: 170, 'man-wide': 170, 'man-raise': 170, woman: 158, auntie: 150, elder: 160,
+  man: 170, woman: 158, auntie: 150, elder: 160,
   raincoat: 165, student: 165, kid: 120, 'kid-girl': 120,
 };

@@ -1,0 +1,16 @@
+{
+  "_note": "Main cast: who they are and which voice role (voices.json) speaks for them. The drawing lives in src/cast/source/cast.svg. `line` + `tone` are the studio voice preview (npm run voices). Pets and crowd have no role.",
+  "man": { "nameTh": "คุณ (ตัวเอก)", "name": "Man", "role": "male", "cm": 170, "desc": "ตัวเอกเล่าแบบบุรุษที่สอง เสื้อน้ำเงิน ไม่มีเงาเมื่อเป็นผี", "tone": "nervous", "line": "ผมแค่อยากรู้ว่าทำไมค่าเช่ามันถูกขนาดนี้" },
+  "woman": { "nameTh": "ผู้หญิง", "name": "Woman", "role": "female", "cm": 158, "desc": "ผมยาว เสื้อครีม กระโปรงเทา ใส่หน้า/อุปกรณ์ต้องเลื่อนลง 4", "tone": "worried", "line": "ทำไมห้องคุณถึงเปิดไฟทั้งคืน... ฉันเห็นเงาคนยืนอยู่ตรงหน้าต่าง" },
+  "auntie": { "nameTh": "ป้า", "name": "Auntie", "role": "old_female", "cm": 150, "desc": "ป้าเจ้าของหอ ผมมวยเทา ตัวเล็กที่สุดในผู้ใหญ่", "tone": "slowly, warm", "line": "ห้องเจ็ดน่ะเหรอ ป้าให้เช่าครึ่งราคา แต่อย่าถามว่าทำไม" },
+  "elder": { "nameTh": "ตา (ผู้เฒ่า)", "name": "Elder", "role": "old_male", "cm": 160, "desc": "ผ้าคาดหัวขาว ผ้าขาวม้าลายตาราง มือขวาถือเทียน", "tone": "slowly, whispers", "line": "เทียนเล่มนี้ดับเมื่อไร ให้หลับตาแล้วนับหนึ่งถึงสิบ" },
+  "raincoat": { "nameTh": "คนเสื้อกันฝน", "name": "Raincoat", "role": "male", "cm": 165, "desc": "เสื้อกันฝนเหลืองคลุมหัว ใช้เป็นตัวเอกเรื่องน้ำท่วม/พายุ", "tone": "urgent", "line": "น้ำขึ้นเร็วกว่าที่คิด ต้องขึ้นหลังคาก่อนไฟดับ" },
+  "student": { "nameTh": "นักเรียน ม.ปลาย", "name": "Student", "role": "male", "cm": 165, "desc": "ชุดนักเรียนไทย เข็มขัดดำ ตราอก", "tone": "scared", "line": "ประตูห้องน้ำชั้นสามมันล็อกจากข้างใน... แต่ไม่มีใครอยู่ในนั้น" },
+  "kid": { "nameTh": "เด็กชาย", "name": "Kid", "role": "female", "cm": 120, "desc": "เด็กประถม ไม่มีเสียงเด็กโดยตรง ใช้ female + childlike (หรือให้ผู้บรรยายเล่าแทน)", "tone": "childlike, small voice", "line": "พี่ครับ... คนที่ยืนอยู่ข้างหลังพี่เป็นใคร" },
+  "kid-girl": { "nameTh": "เด็กหญิง", "name": "Kid girl", "role": "female", "cm": 120, "desc": "ผมแกละ กระโปรงกรม", "tone": "childlike, small voice", "line": "หนูไม่ได้เล่นกับใครเลยนะ หนูเล่นกับพี่สาวในกระจก" },
+  "crowd": { "nameTh": "ฝูงชน", "name": "Crowd", "desc": "เงาคนเจ็ดคน ซ้อนสองแถว ใส่ opacity .6 ด้านหลังเพื่อความลึก" },
+  "cat-black": { "nameTh": "แมวดำ", "name": "Black cat", "desc": "กรอบสัตว์ 300×340 สัญลักษณ์ลางร้าย" },
+  "cat-orange": { "nameTh": "แมวส้ม", "name": "Orange cat", "desc": "กรอบสัตว์ 300×340" },
+  "beagle": { "nameTh": "บีเกิล", "name": "Beagle", "desc": "กรอบสัตว์ 300×340 ปลอกคอเขียว" },
+  "dog-patch": { "nameTh": "หมาด่าง", "name": "Patch dog", "desc": "กรอบสัตว์ 300×340 ปลอกคอแดง" }
+}
