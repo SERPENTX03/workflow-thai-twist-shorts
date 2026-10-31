@@ -1,6 +1,6 @@
 # Story rules — twist shorts
 
-Evidence for these rules: `ref-library.md` (high-view clips the user picked).
+Evidence for these rules: `ref-library.md` (high-view clips the user picked). These are **Shorts** rules (portrait, under ~2 min); a landscape long-form story follows `thai-long-story` → `longform-rules.md`.
 
 ## Pick a format family first
 
@@ -23,7 +23,7 @@ Survival is the default: it combines a twist with **useful knowledge**, which is
 | Clue beats | spread | 3–5 physical clues planted inside the knowledge shots (see below). Never named yet. |
 | Turn | 2–4 | "ทุกอย่างถูกหมด… ยกเว้นเรื่องเดียว" — the rules were right, one fact was missed. |
 | Reveal | 2–3 | Close-up proof (the bandage, the date, the face) → the twist line, 4 beats, `bighit`. |
-| Cliffhanger + card | 2 | A short line that opens the next episode ("ตีสอง… แล้วเรียกชื่อเขา…"), then the `example-next` end card. |
+| Cliffhanger + card | 2 | A short line that opens the next episode ("ตีสอง… แล้วเรียกชื่อเขา…"), then the `next` end card. |
 
 ## Haunting twist — shape (~20–28 shots)
 
@@ -68,8 +68,8 @@ Plant **3–5 visual clues** before the reveal; each visible on screen at least 
 Good clue devices:
 - **Wrong clothes for the situation** — long sleeves at 36 °C; a coat indoors; wet hair on a dry day.
 - **A number that should have changed** — a calendar stuck on one date; one more person on the count than in the room.
-- **No shadow** — every living character gets `.shadow-blob`; the protagonist-ghost never does.
-- **The mirror copies with no face** — reflection drawn as `.sil`.
+- **No shadow** — every living character gets a `<ShadowBlob>` (`src/kit/fx.tsx`); the protagonist-ghost never does.
+- **The mirror copies with no face** — reflection drawn as `<Sprite silhouette>`.
 - **Hollow dot on the map** — the protagonist is a dashed hollow ring; the living are solid dots.
 - **The animal reacts first** — the dog growls at someone who seems fine; the cat won't go near the door.
 - **Eyes that pass through** — another character's sightline goes past the protagonist.

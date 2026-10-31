@@ -6,7 +6,9 @@ argument-hint: "[episodes/<slug>]"
 
 # ตรวจเรื่อง (ก่อนวาดฉาก)
 
-Read `episodes/<slug>/story.json`, `references/story-rules.md`, `art-direction.md` (shot vocabulary) and `story-json.md`. Run `npm run build -- episodes/<slug>` for the length; read `timing.json` if voice exists.
+Read `episodes/<slug>/story.json`, `references/story-rules.md`, `art-direction.md` (shot vocabulary) and `story-json.md`. Run `npm run story -- episodes/<slug>` for the length and the script warnings (offline, no credits); read `timeline.json` / `assets/vo/index.json` if voice exists.
+
+A landscape (`"format": "landscape"`) story is checked against `thai-long-story` → `references/longform-rules.md` instead: use its *Long-form checklist* in place of checks 1–10 below, keep 11–13.
 
 ## Checks (pass / fix)
 
@@ -23,7 +25,7 @@ Read `episodes/<slug>/story.json`, `references/story-rules.md`, `art-direction.m
 | 9 | Palette arc | not one palette for the whole film; darkest frame at the reveal |
 | 10 | Twist line | ≤ 20 characters, 4 beats, `bighit`, `voLead` ≈ 0.5 |
 | 11 | Voice fit + casting | no `⚠ OVER` in the last voice run; long lines get more beats; `voices` map equals `references/voices.md`; every quoted line of a character carries that character's role (elders → `old_*`), narration carries none, no raw ids |
-| 12 | Ending | series → cliffhanger + `example-next` card, `series.next` set; stand-alone → sting on the iconic image |
+| 12 | Ending | series → cliffhanger + `next` card, `series.next` set; stand-alone → sting on the iconic image |
 | 13 | Continuity | (series) names, traits, counters and rules match the bible |
 
 ## Report

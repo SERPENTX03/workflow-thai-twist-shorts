@@ -91,12 +91,22 @@ if (hasVoice) {
   }
 }
 
+// chapters (long-form): each one a review + preview-render unit
+if (S.format === 'landscape' && !S.chapters.length) warn(null, 'no chapters — mark the first shot of each chapter with "chapter": "<name>" (npm run chapter lists them)');
+for (const c of S.chapters) {
+  if (c.dur > 300) warn(c.first, `chapter ${c.n} "${c.name}" runs ${Math.round(c.dur)}s — over ~5 min is hard to review; split it`);
+  if (c.dur < 20) warn(c.first, `chapter ${c.n} "${c.name}" is only ${c.dur.toFixed(1)}s — merge it (YouTube needs chapters ≥ 10s, and short ones add little)`);
+}
+if (S.chapters.length && S.chapters[0].start !== 0) warn(null, 'first chapter does not start at 0:00 (YouTube needs it)');
+
 const brief = path.join(dir, 'brief.md');
-if (!fs.existsSync(brief)) warn(null, 'no brief.md — copy brand/episode-brief.md and fill the speaker table and preflight gate');
+if (!fs.existsSync(brief)) warn(null, S.format === 'landscape'
+  ? 'no brief.md — copy .claude/skills/thai-long-story/references/brief-template.md and fill it'
+  : 'no brief.md — add one with the speaker table (references/voices.md) and the clue list');
 
 console.log(`${path.basename(dir)}: ${S.shots.length} shots, ${S.total.toFixed(1)}s, ${S.totalBeats} beats @ ${S.bpm} BPM`);
 for (const e of errors) console.log('✖ ' + e);
 for (const w of warns) console.log('⚠ ' + w);
 if (!errors.length && !warns.length) console.log('✓ clean');
-else console.log(`\n${errors.length} error(s), ${warns.length} warning(s). This is a script gate only — also work through references/story-rules.md (pillar, evidence, Milo's choice).`);
+else console.log(`\n${errors.length} error(s), ${warns.length} warning(s). This is a script gate only — also work through the story checklist (story-rules.md, or longform-rules.md for landscape).`);
 process.exit(errors.length ? 1 : 0);

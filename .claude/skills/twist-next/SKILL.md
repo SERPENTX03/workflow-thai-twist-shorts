@@ -29,4 +29,4 @@ For each: ชื่อตอน · ฮุก (frame-0 text) · คำตอบ�
 
 After the user picks: write the full outline (same shape as `/twist-idea` step 3), then update the bible (episode list, open threads, cast status). Create the folder with `npm run new -- <slug>-ep<N> "ชื่อตอน"` and set `"series": { "name", "ep": N, "next" }` and `"bible"` in its `story.json`, copying `voice`, `voices`, `voiceStyle`, `captionLook` and `bpm` from the previous episode. Then continue with the `thai-twist-short` workflow.
 
-Scenes that recur (the same room, the map) may be copied from the previous episode's `compositions/` — say which ones you reused.
+Scenes that recur (the same room, the map) may be imported from the previous episode's `src/episodes/<slug>/` (or promoted into `src/kit/` when a third episode needs them) — say which ones you reused.

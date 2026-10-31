@@ -25,6 +25,7 @@ const timeline = {
   slug, id: compId(slug), format: S.format, W: S.W, H: S.H, bpm: S.bpm, total: S.total,
   audio,
   shots: S.shots.map(s => ({ i: s.i, scene: s.scene, start: s.start, dur: s.dur })),
+  chapters: S.chapters,
   vo: fs.existsSync(voIdx) ? JSON.parse(fs.readFileSync(voIdx, 'utf8')) : [],
 };
 fs.writeFileSync(path.join(dir, 'timeline.json'), JSON.stringify(timeline, null, 2) + '\n');

@@ -11,6 +11,9 @@ A **scene** is a React component for one shot: `ShotComponent = ({shot, f, len, 
 | silhouette (shadow, reflection, ghost) | `<Sprite id="man" silhouette />` | |
 | cards / chips / tags / rule card / stat / meter / checklist / hud | `Card Chip Tag RuleCard Stat Meter Checklist Hud` | `src/kit/ui.tsx` |
 | vignette, shadow blob, soft-focus `Far`, `Rain` | | `src/kit/fx.tsx` |
+| landscape stage: `Stage`, `Plate`, `Actors`, `makeSpeaking`, actor strings, `camAt`, `Grade` | | `src/kit/stage.tsx` |
+| landscape backdrops: `Sky Planks Boards Glow Beam beamAt WallClock`; temple sets `Gate Road Sala Path BenchSet TowerShape WellSet Corridor Porch` | | `src/kit/world.tsx`, `src/kit/temple.tsx` |
+| close-ups: `Hand`, `RainStreaks`, `Drips`, notebook `Page`/`Ink`, `RuleCardScene` | | `src/kit/inserts.tsx` |
 | tokens (colours, fonts, caption y) | `T` | `src/engine/theme.ts` |
 | easing / keyframes / pop-in | `kf(f, [[0,0],[12,1]])`, `appear(f, start, dur, ease)`, `backOut(k)`, `sec(s)`, `easeOut`, `easeInOut` | `src/engine/anim.ts` |
 

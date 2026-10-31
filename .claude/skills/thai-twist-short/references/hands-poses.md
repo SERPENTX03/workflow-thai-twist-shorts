@@ -5,19 +5,19 @@ Read before drawing any shot where a hand does something (hand over, hold, point
 ## Hard rules
 
 1. **One arm = one sleeve + one hand.** Two arms per character, so at most **two hands visible per figure**. Count them in every frame you check.
-2. **Never draw a loose hand or arm next to a resting one.** Each character symbol in `cast.svg` already draws both arms hanging down. To pose an arm: put `arm-l-off` / `arm-r-off` on the `<svg class="who">` (hides that resting arm), then layer one pose symbol (`#arm-r-hold` …) after the character `<use>`.
-3. **The hand belongs to the arm.** The pose arm is drawn shoulder → elbow → hand as one continuous stroke, so the hand can never float. Do not move a hand with GSAP separately from its arm; animate the whole pose `<svg>`/`<use>` or swap pose symbols on a cut.
-4. **Props sit on the hand anchor** with a grip prop (`#prop-glass`, `-coin`, `-phone`, `-paper`, `-key`, `-flashlight`): `<use href="#prop-glass" transform="translate(88 244)"/>`. The prop draws the object and then the hand over its lower part — the hand is in front of what it holds, and there is still only one hand. A new prop must do the same (object first, hand circle `r=19` last, origin at the hand centre).
-5. **A hand holding something never also hangs at the side.** A hand with nothing to do either rests (default arm) or is hidden on purpose (`arm-*-pocket`, behind the back = `arm-*-off` with no pose).
+2. **Never draw a loose hand or arm next to a resting one.** Each character symbol in `cast.svg` already draws both arms hanging down. To pose an arm: set `hideArmL` / `hideArmR` on the `Sprite` (hides that resting arm), then add one pose symbol (`arm-r-hold` …) to `layers`. Stage actor strings (`arm=r-hold`) do both.
+3. **The hand belongs to the arm.** The pose arm is drawn shoulder → elbow → hand as one continuous stroke, so the hand can never float. Do not move a hand separately from its arm; animate the whole `Sprite` or swap pose symbols on a cut.
+4. **Props sit on the hand anchor** with a grip prop (`prop-glass`, `-coin`, `-phone`, `-paper`, `-key`, `-flashlight`): place the prop Sprite at the anchor, e.g. (88,244) for `arm-l-hold`; stage strings do it with `prop=glass`. The prop draws the object and then the hand over its lower part — the hand is in front of what it holds, and there is still only one hand. A new prop must do the same (object first, hand circle `r=19` last, origin at the hand centre).
+5. **A hand holding something never also hangs at the side.** A hand with nothing to do either rests (default arm) or is hidden on purpose (`arm-*-pocket`, behind the back = `hideArm*` with no pose).
 6. **Handing over = two figures, two arms, one prop.** Giver: `offer` arm toward the receiver with the prop on its hand. Receiver: `offer`/`hold` arm reaching the same point. Move the prop from one hand anchor to the other **on a cut** or by tweening the prop's `x/y` — never copy it onto both hands at once.
 7. **Facing and side.** r = screen-right arm, l = screen-left arm. The `offer` arm points away from the body, so use the arm on the side of the receiver. Never cross an arm over the face.
 8. **Hands stay in the action zone** (y 160–1180) and ≥ 38 px across on screen (the `r=19` circle at scale 1). For a close-up, draw the hand big (≥ 200 px) on its own shot: palm circle + thumb nub, no fingers (flat style).
-9. **Silhouettes keep the poses** — `.sil` already blacks out the pose arms and props' skin (`--sleeve`, `--skin`); a prop's own colours are not blacked out, so give a silhouette shot only `arm-*-pocket`/`raise`, or no prop.
+9. **Silhouettes keep the poses** — `silhouette` already blacks out the pose arms and props' skin (`--sleeve`, `--skin`); a prop's own colours are not blacked out, so give a silhouette shot only `arm-*-pocket`/`raise`, or no prop.
 10. **Reuse before inventing.** Take a pose from the library below. A new gesture goes into `src/cast/source/cast.svg` (right-arm version + mirrored left) and into this table, not into one episode.
 
 ## Pose library (`src/cast/source/cast.svg`, "Pose library")
 
-Frame 200 × 520. Use `viewBox="0 0 200 520"`, `class="who c-<symbol> arm-r-off"` (set `c-man`, `c-woman`, `c-auntie`, `c-raincoat`, `c-elder`, `c-student`, `c-kid`, `c-kid-girl` — it sets the sleeve colour).
+Frame 200 × 520. `Sprite` sets the sleeve colour per character itself (`SLEEVE` in `src/cast/Sprite.tsx`); a new character needs an entry there.
 
 | Pose | Symbols | Hand anchor r / l | Use for |
 |---|---|---|---|
@@ -32,12 +32,12 @@ Frame 200 × 520. Use `viewBox="0 0 200 520"`, `class="who c-<symbol> arm-r-off"
 
 Grip props (origin = hand centre): `prop-glass`, `-coin`, `-phone`, `-paper`, `-key`, `-flashlight`, `-bottle`, `-radio`, `-candle`, `-map`, `-rope`, `-sack` (hangs below the hand), `-bowl`, `-bandage`. Accessories that sit on a hand (`acc-watch`, `acc-hand-bandage`) use the same anchors — see `cast-library.md`.
 
-Example (a woman hands a coin; a man sets a glass down) → `<Sprite id="woman" hideArmR layers={["arm-r-offer"]}/>` plus a `prop-coin` Sprite at the hand anchor.
+Example (a woman hands a coin):
 
-```html
-<svg class="who c-woman arm-r-off" viewBox="0 0 200 520">
-  <use href="#woman"/><use href="#arm-r-offer"/><use href="#prop-coin" transform="translate(214 222)"/>
-</svg>
+```tsx
+<Sprite id="woman" hideArmR layers={['arm-r-offer']} layerTransform="translate(0 4)" />
+// + a prop-coin Sprite at the offer anchor (214,222)
+// stage actor string: "porn@700 arm=r-offer prop=coin"
 ```
 
 ## Pose continuity (cast turnaround set)
@@ -50,7 +50,7 @@ Example (a woman hands a coin; a man sets a glass down) → `<Sprite id="woman" 
 ## Check list (add to every frame you snapshot)
 
 - [ ] Each figure shows ≤ 2 hands; none is doubled on one side.
-- [ ] Every posed arm has its resting arm hidden (`arm-*-off`).
+- [ ] Every posed arm has its resting arm hidden (`hideArmL` / `hideArmR`).
 - [ ] Every held object is under a hand (the hand circle overlaps its lower part).
 - [ ] A handing-over shot has the prop on exactly one hand.
 - [ ] The hand is attached to the sleeve (no gap at the wrist).

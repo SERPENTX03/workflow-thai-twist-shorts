@@ -9,6 +9,8 @@ This repo turns a short story idea into a 45–130 s vertical video. **`story.js
 
 Scenes are React components (`references/scene-kit.md`); the shared cast, props and UI live in `src/`. This skill owns the format and the process.
 
+**Long-form landscape episodes** (`"format": "landscape"`, 10–25 min) use the `thai-long-story` skill for story rules, pacing, review and render; the shared references here (story-json, scene-kit, cast, hands, voices, audio) still apply.
+
 ## Pipeline
 
 ```

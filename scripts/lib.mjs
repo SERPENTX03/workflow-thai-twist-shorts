@@ -37,6 +37,7 @@ export function loadStory(dir) {
       fx: s.fx,
       view: s.view,
       who: s.who,
+      chapter: s.chapter,
       hush: !!s.hush,
       voice: s.voice,
       tone: s.tone,
@@ -51,8 +52,27 @@ export function loadStory(dir) {
     return shot;
   });
   const F = FORMATS[story.format === 'landscape' ? 'landscape' : 'portrait'];
-  return { ...story, bpm, beat, shots, totalBeats: b, total: round(b * beat), ...F, target: story.target || F.target };
+  const total = round(b * beat);
+  return { ...story, bpm, beat, shots, totalBeats: b, total, chapters: chaptersOf(shots, total), ...F, target: story.target || F.target };
 }
+
+// Chapters: a shot with `"chapter": "name"` starts one; it runs until the next. Shots before the first marker form
+// chapter 0 ("เปิดเรื่อง"). No markers = no chapters. `from`/`to` are frames (to is inclusive), for remotion --frames.
+export const FPS = 30;
+export function chaptersOf(shots, total) {
+  if (!shots.some(s => s.chapter)) return [];
+  const out = [];
+  for (const s of shots) {
+    if (s.chapter || !out.length) out.push({ n: out.length, name: s.chapter || 'เปิดเรื่อง', first: s.i, start: s.start });
+    out[out.length - 1].last = s.i;
+  }
+  return out.map((c, k) => {
+    const end = k + 1 < out.length ? out[k + 1].start : total;
+    return { ...c, dur: round(end - c.start), from: Math.round(c.start * FPS), to: Math.round(end * FPS) - 1 };
+  });
+}
+
+export const clock = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
 
 // story.json `format`: "portrait" (default, 9:16 Shorts) or "landscape" (16:9 long-form for YouTube).
 // target = runtime range in seconds that story-check and qc compare against; capChars = max Thai characters per caption line.

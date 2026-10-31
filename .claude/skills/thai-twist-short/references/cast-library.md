@@ -1,10 +1,10 @@
 # Cast library — ready-made pieces in `cast.svg`
 
-Everything here lives in `src/cast/source/cast.svg` and is generated into `src/cast/CastSprite.tsx` (`node scripts/svg-to-tsx.mjs`). See all of it on one page: `npm run gallery` → open `studio/index.html`. Reuse before drawing; a new piece that will come back goes into `template/` (and this table), never into one episode only.
+Everything here lives in `src/cast/source/cast.svg` and is generated into `src/cast/CastSprite.tsx` (`node scripts/svg-to-tsx.mjs`). See all of it on one page: `npm run gallery` → open `studio/index.html`. Reuse before drawing; a new piece that will come back goes into `cast.svg` (and this table), never into one episode only.
 
-**One rule for every overlay:** hide the default part first, then layer exactly one replacement. Arms → `arm-l-off` / `arm-r-off` (see `hands-poses.md`). Face → `face-off`. Mouth only → `mouth-off`. Never stack a second pair of eyes, a second mouth or a second hand on top of the default one.
+**One rule for every overlay:** hide the default part first, then layer exactly one replacement. `Sprite` props: arms → `hideArmL` / `hideArmR` (see `hands-poses.md`), face → `hideFace`, mouth only → `hideMouth`; the replacement goes in `layers`. Never stack a second pair of eyes, a second mouth or a second hand on top of the default one. On the landscape stage, actor strings (`src/kit/stage.tsx`) do the hiding for you.
 
-## Layer order inside one figure `<svg class="who …">`
+## Layer order inside one figure (`<Sprite layers={…}>`)
 
 ```
 behind pieces (acc-backpack) → body (man, man-sit…) → face-* / talk-* → acc-* → arm-* → props on the hand → mark-*
@@ -43,15 +43,16 @@ Anything layered on a posed body (face, talk mouth, accessory, mark) takes the *
 | `woman-back` | 200×520 | — | rest only |
 | carry | `man` + `arm-l-carry` + `arm-r-carry` + `prop-box` at `translate(100 262)` | none | it is a pose-arm pair |
 
-Any standing figure can lie down: `<g transform="translate(0 234) rotate(-90)"><use href="#woman" width="200" height="520"/></g>` in a `viewBox="0 0 520 200"` svg. Change pose **on a cut or a beat**, never by morphing.
+Any standing figure can lie down: draw it rotated with `translate(0 234) rotate(-90)` in a 520×200 frame (the stage `lie` pose does this). Change pose **on a cut or a beat**, never by morphing.
 
-```html
-<!-- sitting, scared, phone in the right hand -->
-<svg class="who c-man face-off arm-r-off" viewBox="0 0 200 520">
-  <use href="#man-sit"/>
-  <use href="#face-scared" transform="translate(0 110)"/>
-  <g transform="translate(0 110)"><use href="#arm-r-hold"/><use href="#prop-phone" transform="translate(112 244)"/></g>
-</svg>
+```tsx
+// sitting, scared, phone in the right hand (layers share layerTransform)
+<Sprite id="man-sit" height={600} hideFace hideArmR layerTransform="translate(0 110)"
+  layers={['face-scared', 'arm-r-hold']} />
+// + a prop-phone Sprite placed at the hand anchor (112,244) shifted by the same translate(0 110)
+
+// the same on the landscape stage (data.cast in story.json)
+"man@900 sit scared arm=r-hold prop=phone"
 ```
 
 ## Story kits
@@ -60,26 +61,21 @@ Story-only pieces live in `src/episodes/<slug>/` (own `Sprite`-style components,
 
 Short sleeves: set `--forearm: var(--skin)` on the figure (pose arms then show a skin forearm under the sleeve).
 
-## Faces — `face-off` + one `face-*`
+## Faces — `hideFace` + one `face-*`
 
 `happy laugh sad cry angry scared shock worried smirk tired hollow wary guilty grin`. Match the caption line. `grin` (eye bags, small pupils, wide crescent grin with teeth, same look as ลุงชาญ's `face-lr-grin`) is for the creepy smiler. `hollow` (blank black eyes) is saved for ghosts and the twist frame. One face per figure per shot.
 
-## Talking — `mouth-off` + `talk-*`
+## Talking — `hideMouth` + `talk-*`
 
-`talk-a` (open) `talk-e` (wide) `talk-o` (round) `talk-m` (closed). Eyes stay neutral. A `face-*` brings its own mouth, so use a face **or** talk mouths. Animate by swapping the `href` on a fixed 0.12 s grid while the line is voiced, and end on `talk-m`:
+`talk-a` (open) `talk-e` (wide) `talk-o` (round) `talk-m` (closed). Eyes stay neutral. A `face-*` brings its own mouth, so use a face **or** talk mouths. Swap the shape on a fixed grid while the line is voiced and end on `talk-m` — `talkShape(f, on)` in `src/kit/stage.tsx` does it from the local frame:
 
-```js
-// in the scene script; #ep-mouth is <use id="ep-mouth" href="#talk-m"/> inside the figure svg
-const SHAPES = ["#talk-a", "#talk-m", "#talk-e", "#talk-o", "#talk-m"];
-function talk(sel, from, to) {
-  let i = 0;
-  for (let t = from; t < to; t += 0.12) tl.set(sel, { attr: { href: SHAPES[i++ % SHAPES.length] } }, t);
-  tl.set(sel, { attr: { href: "#talk-m" } }, to);
-}
-talk("#ep-mouth", 0.4, 2.1); // the voice line's local start/end from timing.json
+```tsx
+const speaking = shot.who === 'non' && f >= sec(shot.voLead ?? 0.12);
+<Sprite id="kid" hideMouth layers={[talkShape(f, speaking)]} />
+// stage actor string: add `talk` → "non@900 talk"
 ```
 
-Deterministic (no random). Not yet used in an episode: render a Board frame the first time you use it.
+Deterministic (no random). Used on the landscape stage in `temple-boy`.
 
 ## Accessories — the one trackable trait
 
@@ -94,7 +90,7 @@ Resting hand anchors: man r (148,330) l (52,330) · woman/auntie r (146,318) l (
 
 ## Emotion marks — `mark-*`
 
-`question exclaim anger drops zzz dizzy idea shiver gloom`. Pop in with `back.out` on the beat the line lands, hold ≥ 0.8 s, one mark per figure at a time. Outlined in ink so they read on bright and dark sets.
+`question exclaim anger drops zzz dizzy idea shiver gloom`. Pop in with `backOut` on the beat the line lands, hold ≥ 0.8 s, one mark per figure at a time. Outlined in ink so they read on bright and dark sets.
 
 ## Props — origin = the hand centre
 
@@ -102,7 +98,7 @@ One-hand grip props (object first, hand last): `prop-glass coin phone paper key 
 
 ## Info icons — `icon-*`, viewBox 0 0 100 100
 
-`clock thermo warn check cross arrow drop bolt fire pin skull eye`. For cards, HUD, checklists and maps; draw at 64–140 px; `<svg viewBox="0 0 100 100"><use href="#icon-warn"/></svg>`. Colours read `--ink --paper --red --gold --ok` (`--icon` for the arrow).
+`clock thermo warn check cross arrow drop bolt fire pin skull eye`. For cards, HUD, checklists and maps; draw at 64–140 px; `<Sprite id="icon-warn" height={96} />`. Colours read `--ink --paper --red --gold --ok` (`--icon` for the arrow).
 
 ## Set pieces — `set-*`
 
@@ -120,4 +116,4 @@ The viewBox is the piece's size in px at the cast scale (cm × 2.6), so drawn at
 | `set-bed` | 520×200 | `--blanket` |
 | `set-shrine` (ศาลพระภูมิ) | 200×360 | `--shrine` `--shrine-roof` `--shrine-pole` |
 
-Silhouettes: `.sil` blacks out people, accessories and uniforms; props, icons, marks and set pieces keep their colours.
+Silhouettes: `<Sprite silhouette>` blacks out people, accessories and uniforms; props, icons, marks and set pieces keep their colours.

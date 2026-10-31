@@ -2,18 +2,18 @@
 
 This repo makes Thai vertical (9:16) and landscape twist-ending short stories with **Remotion** (TSX).
 
-**For any request about an episode — a new story idea, writing, scenes, voice, sound, review or render — invoke the `thai-twist-short` skill first** (`.claude/skills/thai-twist-short/SKILL.md`). Where it disagrees with this file, this file wins.
+**For any request about an episode — a new story idea, writing, scenes, voice, sound, review or render — invoke the `thai-twist-short` skill first** (`.claude/skills/thai-twist-short/SKILL.md`). For a landscape long-form episode (`"format": "landscape"`, 10–25 min) invoke `thai-long-story` instead (`.claude/skills/thai-long-story/SKILL.md`). Where a skill disagrees with this file, this file wins.
 
 ## Hard rules
 
 1. `episodes/<slug>/story.json` is the single source of truth. Never hand-edit generated files: `episodes/<slug>/timeline.json`, `assets/voice.wav`, `assets/score.wav`, `src/episodes/index.ts`, `src/cast/CastSprite.tsx`.
-2. Run scripts from the repo root: `npm run <new|timeline|audio|voice|score|fit|story|check|qc|final|gallery|studio> -- episodes/<slug>`.
+2. Run scripts from the repo root: `npm run <new|timeline|audio|voice|score|fit|story|chapter|check|qc|final|gallery|studio> -- episodes/<slug>`.
 3. After any change: `npm run check -- episodes/<slug>` (tsc + story-check + Board frames in `out/<slug>-board/`), then open the frames and look. A passing check is not proof it looks right.
 4. Do not render a video (`npm run final`, `remotion render`) until you have looked at stills of the scenes you changed and told the user what the frames show.
    - While editing, use `remotion still` / Board frames only; never render to "see how it looks".
    - Render the full video once, after the frames pass, to check timing, voice sync and captions over time.
    - Exception: the user explicitly asks for a render.
-5. Review loop before the final render: all seven scores in `references/review.md` ≥ 8.
+5. Review loop before the final render: all seven scores in `references/review.md` ≥ 8 (long-form: per chapter, `thai-long-story/references/review-long.md`).
 6. Shared things (cast, props, captions, kit components) live in `src/` — improve them there, never only inside one episode.
 7. Deterministic only: no `Math.random()`, `Date.now()` or network in components; use `rnd()` from `src/engine/anim.ts`.
 8. Ask before anything outward-facing (publishing renders, pushing to a remote).
