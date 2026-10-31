@@ -25,6 +25,9 @@ export const shake = (f: number, amp: number, seed = 1) => ({
   y: (rnd(seed, f * 2 + 1) - 0.5) * 2 * amp,
 });
 
+/** A wobble that dies away after frame 0: for things that land, get hit or get knocked. */
+export const settle = (t: number, amp: number, speed = 1.4, decay = 8) => (t > 0 ? Math.sin(t * speed) * amp * Math.exp(-t / decay) : 0);
+
 export const sec = (s: number) => s * 30;
 export const backOut = (k = 1.8) => Easing.out(Easing.back(k));
 
