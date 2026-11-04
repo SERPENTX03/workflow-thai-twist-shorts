@@ -22,7 +22,7 @@ idea ─► 1 story ─► 2 story.json ─► 3 animatic ─► 4 scenes ─►
 |---|---|---|---|
 | 0 | New episode folder | `npm run new -- <slug> "ชื่อเรื่อง"` | `episodes/<slug>/story.json` exists |
 | 1 | Write the story beats | — | passes every check in `references/story-rules.md` → *Twist checklist*; show the user the logline + twist + clue list and get a yes |
-| 2 | Write `story.json` | — | schema in `references/story-json.md`; each caption ≤ 2 lines, ≤ ~18 Thai characters per line; cast voices from `references/voices.md` (list each speaker, gender, age, role first) |
+| 2 | Write `story.json` | `npm run shots -- episodes/<slug>` | schema in `references/story-json.md`; each caption ≤ 2 lines, ≤ ~18 Thai characters per line; cast voices from `references/voices.md` (list each speaker, gender, age, role first); every `view` names its camera setup and the shot plan passes `story-rules.md` → *Shot-plan checklist* (`references/cinematography.md`) |
 | 3 | Animatic | `npm run check -- episodes/<slug>` | typechecks, lints the story, renders Board frames; every missing scene shows as a placeholder; length fits the format family (`story-rules.md`) |
 | 4 | Draw scenes, one component per `scene` name | edit `src/episodes/<slug>/scenes.tsx`, then `npm run check` | tsc = 0 errors; Board frames looked at |
 | 5 | Voice + score | `npm run audio -- episodes/<slug>` | no `⚠ OVER` lines from voice; score says *ducked under voice*; then do the `voices.md` listening check per speaking character |
@@ -68,6 +68,7 @@ The commands stop at an approved outline or a report; building still follows the
 | `references/story-rules.md` | writing or judging the story — format families, structure, knowledge layer, cast, twist types, clue planting, Thai caption voice |
 | `references/story-json.md` | writing `story.json` — every field, cue types, timing math |
 | `references/art-direction.md` | choosing palette, type, framing, camera, the cast, what is banned |
+| `references/cinematography.md` | planning the shot list and drawing scenes — setup vocabulary for `view`, 18 signature setups, scene archetypes (phone call, clue, villain, travel, flashback…), when to switch angle, FG/MG/BG layering, variety quotas; audit with `npm run shots -- episodes/<slug>` |
 | `references/scene-kit.md` | building a scene file — Remotion scene components, `Sprite`, kit UI, generic scenes, rules |
 | `references/cast-library.md` | before drawing any person, pose, face, prop, icon or set piece — the reusable library in cast.svg (`npm run gallery` shows it) |
 | `references/hands-poses.md` | drawing any hand, gesture, hand-over or held object — one-hand rule, pose library, grip props |

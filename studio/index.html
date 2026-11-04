@@ -312,7 +312,7 @@
     </section>
 
     <section id="stage">
-      <div class="sec-head"><h2>ฉากแนวนอน (คลิปยาว)<small>${S.world.length} ฉากหลัง · ${S.places.length} ฉากสำเร็จ · ${S.inserts.length} close-up · ${S.grades.length} แสง</small></h2>
+      <div class="sec-head"><h2>ฉากแนวนอน (คลิปยาว)<small>${S.world.length} ฉากหลัง · ${S.places.length} ฉากสำเร็จ · ${S.inserts.length} close-up · ${(S.camera || []).length} มุมกล้อง · ${S.grades.length} แสง</small></h2>
         <p class="hint">1920×1080 · <code>thai-long-story</code> · ชิ้นส่วนใน <code>src/kit/world.tsx</code> · <code>temple.tsx</code> · <code>places.tsx</code> · <code>inserts.tsx</code> · <code>stage.tsx</code> · คนในภาพ = <code>man</code> 170 ซม. ไว้เทียบขนาด</p></div>
       <h3>ฉากหลัง (วาดครั้งเดียว ใช้ซ้ำด้วย <code>view</code> + <code>data.cam</code>)</h3>
       ${landGrid(S.world)}
@@ -320,6 +320,8 @@
       ${landGrid(S.places)}
       <h3>Close-up และของประกอบ (มือไดนามิกและของแทรก)</h3>
       ${landGrid(S.inserts)}
+      <h3>มุมกล้องและอุปกรณ์ภาพ <span class="hint">· <code>src/kit/pov.tsx</code> · <code>Tilt</code> / <code>Fore</code> ใน <code>stage.tsx</code> · คู่มือ <code>cinematography.md</code></span></h3>
+      ${landGrid(S.camera || [])}
       <h3>แสงและความทรงจำ <span class="hint">· <code>data.light</code> / <code>data.past</code> ใน story.json</span></h3>
       ${landGrid(S.grades, (x) => (x.id === 'past' ? 'past' : 'light: ' + x.id))}
     </section>

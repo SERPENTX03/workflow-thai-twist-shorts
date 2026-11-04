@@ -57,6 +57,16 @@ Survival is the default: it combines a twist with **useful knowledge**, which is
 - **Coordinate consistency**: Keep each character's $x$-coordinate consistent (e.g., Lead at 900, Partner at 1120). Do not let a character jump chairs/positions between consecutive cuts in the same room.
 - **Preflight check**: `npm run story episodes/<slug>` will warn on any vanishing actors, coordinate jumps, or unframed close-ups.
 
+## Shot plan & visual variety (มิติภาพ)
+
+The camera is part of the story: it stays plain while the story gives information and changes when truth, power or safety changes. Full guide, setup vocabulary and per-scene patterns: `cinematography.md`.
+
+- **Name the setup in `view`** with a suffix from `cinematography.md` §1 (`-close` `-ecu` `-ins` `-low` `-high` `-top` `-dutch` `-ots` `-pov` `-fif` `-sil` `-split` `-mirror` `-cctv` `-snap`). A view with no suffix counts as a flat eye-level side view (EYE).
+- **Story beat decides the angle** (`cinematography.md` §4.2): a lie gets an `-ecu`/`-ins` on the liar's tell; a clue gets a macro insert framed the same way every time; a villain reveal goes `-sil` → `-low`; a cornered or guilty character goes `-high`; paranoia gets `-fif` or empty space behind them; a flashback gets `data.past` and **mirror framing** (the reveal reuses the planting shot's `data.cam` and staging, with the missing piece now visible).
+- **Three layers** in every set shot: sharp lit midground (cast and clue), soft `Far` background, and on level-1+ shots a dark blurred foreground frame (door edge, mosquito net, shoulder). `cinematography.md` §5.
+- **Quotas for a Short**: no setup twice in a row; EYE ≤ 40 % of camera shots; close/insert ≥ 30 %; ≥ 3 angle shots (at least one low and one high/top); ≥ 2 device shots; ≥ 6 distinct setups; ≤ 2 dutch; level-3 shots (`-snap`, the reveal frame) only on the 2–4 red-box lines.
+- **Contrast before impact**: the shot before a twist, a jump or a villain reveal is its opposite: wide, still and quiet before tight, fast and loud.
+
 ## Twist types that work
 
 - **The danger is already inside** — the friend in long sleeves was bitten from the start; someone was already inside the fence.
@@ -94,6 +104,15 @@ Name each clue in the outline next to the shots that plant it and the shot that 
 - [ ] Series: the last line opens a question the next episode answers; `series.next` is set.
 - [ ] Narrative clarity: no obscure subtext leap; motives paired with actions; the twist punchline is unmistakable.
 - [ ] No plot hole a commenter would point at in one sentence.
+
+## Shot-plan checklist (gate for step 2 → 3, before any scene is drawn)
+
+- [ ] Every shot's `view` carries a setup suffix (or the scene is an insert/card); every new view will get a preset in its scene.
+- [ ] `npm run shots -- episodes/<slug>` shows no `✗` (same setup twice in a row, EYE share, close share, angle/device counts, distinct setups, dutch, snap).
+- [ ] Every trigger in the story (lie, clue found, villain reveal, paranoia, cornered, flashback, off-screen voice) has the setup `cinematography.md` §4.2 gives it.
+- [ ] Each clue is framed the same way each time it appears; the reveal shot names the planting shot it mirrors, or uses a setup not seen in the 10 shots before it.
+- [ ] The shot before each impact moment is its opposite (wide/still/quiet).
+- [ ] After drawing: on the Board frames each view looks like its name (a `-low` that reads flat fails, whatever the audit says), and the midground separates from the background at 360 px wide.
 
 ## Narrative clarity (ความชัดเจนในการสื่อสาร)
 

@@ -40,6 +40,8 @@ Arc: open bright or warm → drift darker each act → the reveal is the darkest
 
 ## Shot vocabulary (rotate them: no two consecutive shots of the same type)
 
+These are shot *types*. Camera angle, framing and layering for each one (low, high, OTS, POV, silhouette, frame-in-frame…) and when to use which: `cinematography.md`.
+
 | Type | Example | Use for |
 |---|---|---|
 | Side-view set + cast | generic `room` | most story beats |

@@ -11,7 +11,8 @@ import {T} from './engine/theme';
 import {Caption} from './kit/Captions';
 import {Card, Checklist, Chip, Hud, Meter, RuleCard, Stat, Tag} from './kit/ui';
 import {Grain, LightMask} from './kit/horror';
-import {Grade, GRADES, PAST_FILTER} from './kit/stage';
+import {Fore, Grade, GRADES, PAST_FILTER, Tilt} from './kit/stage';
+import {Cctv, MirrorFrame, Pov, Split, cctvFrame, type PovKind} from './kit/pov';
 import {Beam, Boards, FLOOR, Glow, Planks, Sky, WallClock, beamAt} from './kit/world';
 import {BenchSet, Corridor, Gate, Path, Porch, Road, Sala, TowerShape, WellSet} from './kit/temple';
 import {BusStop, Canal, Classroom, DormHall, HospitalHall, Minimart, Motorcycle, RiceField, ShopRow, SideRoadSet, SpiritHouse, StiltHouse} from './kit/places';
@@ -281,6 +282,48 @@ export const GInserts: React.FC = () => {
   );
 };
 
+/** 1920x1080 camera devices (src/kit/pov.tsx, Tilt / Fore in stage.tsx) over one demo view: a night shop row + a man. */
+const camView = (f: number, x = 960, extra?: React.ReactNode) => (
+  <div style={{position: 'absolute', inset: 0, overflow: 'hidden'}}>
+    <ShopRow tone="night" f={f} />
+    {extra}
+    <div style={{position: 'absolute', left: x - 98, top: FLOOR - 510}}><Sprite id="man" height={510} rim="r" light="night" outline={OUTLINE} /></div>
+    <Grade light="night" />
+  </div>
+);
+const DoorEdge: React.FC = () => (
+  <>
+    <div style={{position: 'absolute', left: -40, top: -40, width: 420, height: 1160, background: '#3a2a1c'}} />
+    <div style={{position: 'absolute', left: 380, top: -40, width: 40, height: 1160, background: '#5a4030'}} />
+    <div style={{position: 'absolute', left: 1640, top: 760, width: 400, height: 400, borderRadius: '50%', background: '#2a3a24'}} />
+  </>
+);
+export const GCamera: React.FC = () => {
+  const {id} = usePick(G.camera);
+  const W = 1920, H = 1080, f = WORLD_F;
+  let node: React.ReactNode;
+  if (id === 'dutch') node = <Tilt deg={-6} W={W} H={H}>{camView(f)}</Tilt>;
+  else if (id === 'fore') node = <>{camView(f, 1080)}<Fore><DoorEdge /></Fore></>;
+  else if (id === 'phone-cam') node = <Pov kind="phone" rec="00:01:42" W={W} H={H} f={f}>{camView(f)}</Pov>;
+  else if (['peephole', 'keyhole', 'crack', 'binoculars', 'blinds'].includes(id)) node = <Pov kind={id as PovKind} open={0.45} W={W} H={H} f={f}>{camView(f)}</Pov>;
+  else if (id === 'split') node = <Split W={W} H={H} angle={8} a={camView(f, 960)} b={<div style={{position: 'absolute', inset: 0}}><Planks /><Boards /><Glow x={960} y={500} r={500} a={0.3} /><div style={{position: 'absolute', left: 960 - 98, top: FLOOR - 510}}><Sprite id="woman" height={480} rim="l" light="lamp" outline={OUTLINE} /></div><Grade light="lamp" /></div>} />;
+  else if (id === 'cctv') node = <Cctv W={W} H={H} f={f} cam="CAM 03" time="02:14:07">{camView(cctvFrame(f), 700)}</Cctv>;
+  else node = (
+    <>
+      <Planks /><Boards /><Glow x={500} y={460} r={600} a={0.3} />
+      <div style={{position: 'absolute', left: 500 - 98, top: FLOOR - 510}}><Sprite id="man" height={510} rim="r" light="lamp" outline={OUTLINE} /></div>
+      <MirrorFrame x={1060} y={160} w={700} h={420} W={W} H={H} ox={700} oy={560}>
+        <div style={{position: 'absolute', inset: 0}}><Planks /><Boards />
+          <div style={{position: 'absolute', left: 500 - 98, top: FLOOR - 510}}><Sprite id="man" height={510} outline={OUTLINE} /></div>
+          <div style={{position: 'absolute', left: 820 - 98, top: FLOOR - 500}}><Sprite id="woman" height={480} silhouette /></div>
+        </div>
+      </MirrorFrame>
+      <Grade light="lamp" />
+    </>
+  );
+  return <Pane bg="#07090d"><div style={{position: 'absolute', inset: 0, overflow: 'hidden'}}>{node}</div></Pane>;
+};
+
 /** 1920x1080 light grades on one set (floor, wall, lamp glow, a man) + the flashback filter. */
 export const GGrades: React.FC = () => {
   const {id} = usePick(G.grades);
@@ -333,5 +376,6 @@ export const GALLERY_COMPS = [
   {id: 'GWorld', component: GWorld, width: 1920, height: 1080, count: G.world.length},
   {id: 'GPlaces', component: GPlaces, width: 1920, height: 1080, count: G.places.length},
   {id: 'GInserts', component: GInserts, width: 1920, height: 1080, count: G.inserts.length},
+  {id: 'GCamera', component: GCamera, width: 1920, height: 1080, count: G.camera.length},
   {id: 'GGrades', component: GGrades, width: 1920, height: 1080, count: G.grades.length},
 ];

@@ -21,7 +21,7 @@ A landscape (`"format": "landscape"`) story is checked against `thai-long-story`
 | 5 | Keyword marks | about 1 in 2 lines has one `[gold]` or `{red}`; never more than one mark per line |
 | 6 | Knowledge | survival/ตำนาน: a fact or rule every 3–5 shots; each names the visual that shows it |
 | 7 | Clues | 3–5 clues, each planted in 3+ shots before the turn, none named early |
-| 8 | Variety | plan a shot type per shot (set / close-up / diagram / map / card / exterior / silhouette); no two in a row the same; ≥ 4 types; ≥ 1 close-up and 1 diagram |
+| 8 | Variety | plan a shot type per shot (set / close-up / diagram / map / card / exterior / silhouette); no two in a row the same; ≥ 4 types; ≥ 1 close-up and 1 diagram; every `view` names its camera setup and `npm run shots` is clean (`thai-twist-short/references/cinematography.md`) |
 | 9 | Palette arc | not one palette for the whole film; darkest frame at the reveal |
 | 10 | Twist line | ≤ 20 characters, 4 beats, `bighit`, `voLead` ≈ 0.5 |
 | 11 | Voice fit + casting | no `⚠ OVER` in the last voice run; long lines get more beats; `voices` map equals `references/voices.md`; every quoted line of a character carries that character's role (elders → `old_*`), narration carries none, no raw ids |

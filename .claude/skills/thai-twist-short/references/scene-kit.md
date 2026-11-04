@@ -15,6 +15,7 @@ A **scene** is a React component for one shot: `ShotComponent = ({shot, f, len, 
 | landscape backdrops: `Sky Planks Boards Glow Beam beamAt WallClock`; temple sets `Gate Road Sala Path BenchSet TowerShape WellSet Corridor Porch` | | `src/kit/world.tsx`, `src/kit/temple.tsx` |
 | everyday Thai locations & vehicles: `ShopRow StiltHouse Canal SpiritHouse Minimart HospitalHall Classroom DormHall RiceField BusStop SideRoadSet Motorcycle` | | `src/kit/places.tsx` |
 | close-ups: `Hand`, `RainStreaks`, `Drips`, notebook `Page`/`Ink`, `RuleCardScene` | | `src/kit/inserts.tsx` |
+| camera devices: `Pov` (peephole / keyhole / crack / binoculars / blinds / phone), `Split`, `Cctv` + `cctvFrame`, `MirrorFrame`; Dutch `data.tilt` / `Tilt` and foreground `Stage fore` / `Fore` | | `src/kit/pov.tsx`, `src/kit/stage.tsx` (when to use each: `cinematography.md`) |
 | tokens (colours, fonts, caption y) | `T` | `src/engine/theme.ts` |
 | easing / keyframes / pop-in | `kf(f, [[0,0],[12,1]])`, `appear(f, start, dur, ease)`, `backOut(k)`, `sec(s)`, `easeOut`, `easeInOut` | `src/engine/anim.ts` |
 

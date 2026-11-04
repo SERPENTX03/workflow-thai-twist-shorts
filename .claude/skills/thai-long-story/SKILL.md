@@ -17,7 +17,7 @@ Reference build: `episodes/temple-boy` (20:30, 442 shots, 25 scenes / 115 views,
 | 1 | **Brief + outline** — copy `references/brief-template.md` to `episodes/<slug>/brief.md`: logline, twist, speakers, chapter plan with timestamps, clue table, continuity facts | — | passes the *Long-form checklist* in `references/longform-rules.md`; user says yes to the brief |
 | 2 | Write story.json **one chapter at a time**: the chapter's first shot carries `"chapter": "<name>"`; draft beats roughly, `fit` sizes them later | `npm run story -- episodes/<slug>` after each chapter; `npm run chapter -- episodes/<slug>` lists them | 0 errors; caption + chapter warnings fixed |
 | 3 | Voice draft (cached per line; only new/changed lines cost credits) → fit → audio | `npm run voice`, `npm run fit`, `npm run audio` (each `-- episodes/<slug>`) | no `⚠ OVER`; runtime inside `target`; listen to one line per speaker (`thai-twist-short/references/voices.md`) |
-| 4 | Roster + sets + inserts, then scenes switching on `view` | edit `src/episodes/<slug>/`, then `npm run check -- episodes/<slug>` | tsc 0 errors; placeholders only where not drawn yet |
+| 4 | Roster + sets + inserts, then scenes switching on `view` — each recurring set with its coverage presets (`longform-rules.md` → *Camera & visual variety*) | edit `src/episodes/<slug>/`, then `npm run shots` and `npm run check` (each `-- episodes/<slug>`) | tsc 0 errors; placeholders only where not drawn yet; `shots` clean |
 | 5 | **Chapter review loop** | `npm run chapter -- episodes/<slug> <n> --board` → `out/<slug>-ch<n>-sheet-*.jpg` (`references/review-long.md`) | every criterion ≥ 8 for that chapter |
 | 6 | Chapter preview render (timing, voice sync, captions over time) | `npm run chapter -- episodes/<slug> <n> --render` | the user has seen the chapter frames first (CLAUDE.md rule 4) |
 | 7 | Final render + loudness + QC | `npm run final -- episodes/<slug>` | `renders/<slug>-final.mp4`, QC all ✓ |
@@ -45,6 +45,7 @@ Reference build: `episodes/temple-boy` (20:30, 442 shots, 25 scenes / 115 views,
 | `src/kit/world.tsx` | 1920×1080 world with `FLOOR` 930: `Sky`, `Planks`, `Boards`, `Glow`, `Beam` + `beamAt` (flashlight), `WallClock`, `full`, `WOOD` tones |
 | `src/kit/temple.tsx` | Thai temple backdrops: `Gate` (sign text as a prop), `Road`, `Sala`, `Path` (ตะเคียน tree), `BenchSet`, `TowerShape` (bell tower), `WellSet`, `Corridor`, `Porch` |
 | `src/kit/places.tsx` | everyday Thai locations, each with `tone` day / dusk / night (lamps, lit windows and signs stay bright): `ShopRow` (ตึกแถว, signs + shutters per shop), `StiltHouse` (บ้านใต้ถุนสูง, `far` = whole roof), `Canal` (คลอง + ท่าน้ำ + เรือ), `SpiritHouse` (ศาลพระภูมิ), `Minimart` (ร้านสะดวกซื้อ, `dark`), `HospitalHall` (`flick` / `off` / `bed`), `Classroom` (`board` chalk text), `DormHall` (หอพัก), `RiceField` (คันนา, `ripe`), `BusStop` (ศาลารอรถ, `poster`); `Toned` darkens any set you draw yourself the same way |
+| `src/kit/pov.tsx` | camera devices: `Pov` (peephole, keyhole, door crack, binoculars, blinds, phone camera), `Split` screen, `Cctv` footage, `MirrorFrame`; with `data.tilt` (Dutch) and `Stage fore` (foreground parallax) in `stage.tsx` — `thai-twist-short/references/cinematography.md` |
 | `src/kit/inserts.tsx` | close-up `Hand` (grip/open/flat, cut pinky, wrist thread), `RainStreaks`, `Drips`, notebook `Page` + `Ink`, `RuleCardScene` (`data {no, text}`) |
 | `src/kit/horror.tsx` | grain, flicker, light mask, night grade, ripples, rooms, beds, bulbs |
 
@@ -61,4 +62,5 @@ story.json knobs: `chapter`, `voiceTempo`, `breath`, `switchBreath`, `minBeats`,
 | `references/longform-rules.md` | outlining, writing story.json, pacing, captions, cast, sound, safe zones — and the gate checklist |
 | `references/brief-template.md` | step 1, starting `episodes/<slug>/brief.md` |
 | `references/review-long.md` | steps 5–8: contact sheets, scoring, chapter renders, final, packaging |
+| `thai-twist-short/references/cinematography.md` | steps 2 and 4: camera setups per scene, set coverage presets, angle triggers, layering, variety quotas (`npm run shots -- episodes/<slug>` audits per chapter) |
 | `thai-twist-short/references/*` | the shared parts: story-json fields, scene kit, cast library, hands, voices, audio |

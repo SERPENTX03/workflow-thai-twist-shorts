@@ -29,7 +29,7 @@ Evidence: `episodes/temple-boy` (the first long film; QC 10/10) and the general 
 - **Act-boundary recap**: one narrator sentence that restates what we know and what is still wrong ("สามคืนแล้ว… แต่ไม่มีใครบอกเขาว่าทำไม"). Viewers join late and skip.
 - **Pattern change every 30–60 s**: new set, new light (`Grade`), an insert, a flashback, a map, a card. Longest same-scene run in temple-boy: 65 s — keep runs under ~90 s.
 - **Average shot 2.5–4 s** (*temple-boy 2.8 s*, 21 shots/min). Long holds (> 12 beats, `story` warns) only on purpose: inspecting a clue, a silence (`hush`).
-- **Dialogue coverage**: alternate wide two-shot → speaker close → listener reaction → insert of what they talk about. Never more than 4 shots of the same `view` in a row.
+- **Dialogue coverage**: alternate wide two-shot → speaker close (or `-ots`) → listener reaction → insert of what they talk about. Never more than 4 shots of the same `view` in a row, never more than 3 of the same setup (`cinematography.md` §6).
 - **The tracked device**: one list or count the viewer follows across the film (10 rules, years returned, nights left). Show progress on screen each time it moves ("กฎข้อ 4 / 10"). This is the long-form knowledge layer.
 
 ## Clues and continuity
@@ -108,6 +108,18 @@ Evidence: `episodes/temple-boy` (the first long film; QC 10/10) and the general 
 - **Light tells time**: a HUD clock and a grade per time of night (`dusk` → `lamp` → `night` → `dim` → `dawn`). Flashbacks use `PAST_FILTER` + `Grade past`.
 - Darkest frames at the reveal; the aftermath gets morning light.
 
+## Camera & visual variety (มิติภาพ)
+
+A 20 min film shot mostly from one flat eye-level side view feels like a slideshow. `ghost-money` shows the failure: all five sala presets (`wide` `desk` `row` `behind` `exit`) are z 1.0–1.2 at cy 540–600, the same angle shifted sideways, and `sala:row` alone is 17 of 112 shots (`npm run shots` reports 0 angle and 0 device shots). Full guide: `thai-twist-short/references/cinematography.md`.
+
+1. **Set coverage rule.** Every recurring set ships with a preset table that covers at least **6 setups across 3 sizes and 2 angles**: `-wide` (or `-ew`), a medium two-shot, a `-close` per regular speaker, one `-ots`, one angle (`-low` or `-high`; draw a real high-angle view of the set if it needs one) and one `-fif`/`-pov` (through a door, net, window or under the floor). Name presets with the `cinematography.md` §1 suffixes so `npm run shots` can read them. Add an `-ins` insert for every clue object the set holds.
+2. **Beats pick the angle**, not habit: use the trigger table in `cinematography.md` §4.2 (lie → tell insert / split light; trust broken → `-dutch` for the rest of the scene; villain → `-sil` then `-low`; cornered or guilty → `-high`; watched → `-fif` / empty space behind; off-screen voice → listener close, source as `-sil`/`-ins`).
+3. **Escalation ladder** (`cinematography.md` §4.3): level 0 (eye-level wide/medium) for information, 1 (close, insert, OTS, top) for emotion and clues, 2 (low, high, silhouette, frame-in-frame, POV, mirror, CCTV, split, dutch) for power shifts and threat, 3 (snap zoom, red rim, the darkest frame) only on the 3–5 red-box lines. Climb one level at a time; drop back to 0–1 for at least one shot after a level-3 moment.
+4. **Per-chapter quotas**: EYE ≤ 50 % of camera shots; close/insert ≥ 30 %; ≥ 4 distinct setups; chapters over 90 s have ≥ 1 angle and ≥ 1 device shot. Film: ≥ 10 distinct setups; at least one ANGLE and one DEVICE shot per 90 s of runtime; both a low and a high/top; dutch ≤ 3 % and never in a calm chapter; 3–5 level-3 shots.
+5. **Three layers** in every set shot (`cinematography.md` §5): sharp rim-lit midground, soft `Far` background, a dark blurred foreground frame on level-1+ shots, parallax on pans. The midground must separate from the background on the contact sheet at 480 px.
+6. **Flashback look stays fixed**: `data.past` (warm desaturated + grain) is always the past, the present stays cool; the past is framed one size tighter with a heavier vignette. The final reveal **mirrors the planting shot** (same `data.cam`, same staging, the missing piece visible): write both shot numbers in the clue table of `brief.md`.
+7. **The 180° line**: each pair keeps its sides for a whole scene (`story` warns on x jumps). Cross it on purpose once, when the scene turns (the questioner becomes the accused).
+
 ## Safe zones (1920×1080)
 
 - Subtitles live in the bottom ~220 px band; faces and clue objects stay above y ≈ 840.
@@ -138,3 +150,4 @@ Evidence: `episodes/temple-boy` (the first long film; QC 10/10) and the general 
 - [ ] Pacing & Dead-air: no consecutive empty text shots; max silence cap ≤ 2.5s; total silence beats ≤ 8%.
 - [ ] Blind-spot check: grounded body-count (no serial killer creep); competent protagonist (no unforced idiot moves in act 3); living world pressure; earned catharsis.
 - [ ] No plot hole a commenter would point at in one sentence.
+- [ ] Shot plan (before step 4): each recurring set has its coverage presets (6+ setups, 3 sizes, 2 angles) named with `cinematography.md` suffixes; `npm run shots -- episodes/<slug>` shows no `✗` per chapter or for the film; every lie / clue / villain / paranoia / flashback beat has its §4.2 setup; the reveal shot names the planting shot it mirrors.

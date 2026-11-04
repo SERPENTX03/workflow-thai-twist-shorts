@@ -430,6 +430,74 @@
       "use": "แสงกรวย + ตำแหน่งดวงไฟที่เคลื่อน (LightMask ใน horror.tsx)"
     }
   ],
+  "camera": [
+    {
+      "id": "dutch",
+      "nameTh": "กล้องเอียง (Dutch tilt)",
+      "code": "\"data\": {\"tilt\": -6}   // หรือ [0, -7] = ค่อยๆ เอียงตลอดช็อต\n// ฉากที่ไม่ใช้ Stage: <Tilt deg={-6} W={W} H={H}>…</Tilt>",
+      "use": "ความระแวง, หลังรู้ว่ามีคนโกหก · 5–8° เอียงทางเดียวทั้งฉาก · การ์ด/HUD ไม่เอียง (S9)"
+    },
+    {
+      "id": "fore",
+      "nameTh": "ฉากหน้า FG + parallax",
+      "code": "<Stage p={p} world={set} fore={<DoorEdge />} foreK={0.4} />\n// ฉากที่ไม่ใช้ Stage: <Fore shift={[dx, dy]} blur={7} dark={0.45}>…</Fore>",
+      "use": "วงกบ, มุ้ง, ไหล่ OTS, เสาไฟ · เบลอ+มืด เลื่อน 1.4× ของกล้อง · ห้ามบังหน้า/เบาะแส (§5)"
+    },
+    {
+      "id": "peephole",
+      "nameTh": "ตาแมวประตู",
+      "code": "<Pov kind=\"peephole\" W={W} H={H} f={f}>{view}</Pov>",
+      "use": "มองผ่านตาแมว เลนส์โป่ง ขอบดำ · ใช้กับคนยืนหน้าประตู (S13)"
+    },
+    {
+      "id": "keyhole",
+      "nameTh": "รูกุญแจ",
+      "code": "<Pov kind=\"keyhole\" W={W} H={H} f={f}>{view}</Pov>",
+      "use": "แอบมองห้องต้องห้าม (S13)"
+    },
+    {
+      "id": "crack",
+      "nameTh": "ประตูแง้ม",
+      "code": "<Pov kind=\"crack\" open={0.4} W={W} H={H} f={f}>{view}</Pov>",
+      "use": "ช่องประตูแคบ · animate open 0→1 = ประตูค่อยๆ เปิด (S13)"
+    },
+    {
+      "id": "binoculars",
+      "nameTh": "กล้องส่องทางไกล",
+      "code": "<Pov kind=\"binoculars\" W={W} H={H} f={f}>{view}</Pov>",
+      "use": "สะกดรอยจากระยะไกล (S13)"
+    },
+    {
+      "id": "blinds",
+      "nameTh": "ผ่านบานเกล็ด / มู่ลี่",
+      "code": "<Pov kind=\"blinds\" open={0.5} sway={0} W={W} H={H} f={f}>{view}</Pov>",
+      "use": "แอบดูจากในบ้าน, voyeur (S12)"
+    },
+    {
+      "id": "phone-cam",
+      "nameTh": "กล้องมือถือ (REC)",
+      "code": "<Pov kind=\"phone\" rec=\"00:01:42\" W={W} H={H} f={f}>{view}</Pov>",
+      "use": "คลิปที่ตัวละครถ่าย, ไลฟ์, หลักฐานวิดีโอ (S13)"
+    },
+    {
+      "id": "split",
+      "nameTh": "แบ่งจอ (โทรศัพท์)",
+      "code": "<Split W={W} H={H} angle={8} a={<CallerA />} b={<CallerB />} />",
+      "use": "16:9 ซ้าย/ขวา · 9:16 บน/ล่าง (อัตโนมัติ) · แต่ละช่องจัดเฟรมเหมือนเป็นช็อตเต็ม (S14)"
+    },
+    {
+      "id": "cctv",
+      "nameTh": "กล้องวงจรปิด",
+      "code": "<Cctv W={W} H={H} f={f} cam=\"CAM 03\" time=\"02:14:07\">{view(cctvFrame(f))}</Cctv>",
+      "use": "หลักฐานวิดีโอ · เวลาเดินเอง ต้องตรงกับ HUD · cctvFrame ทำให้ภาพกระตุก (S16)"
+    },
+    {
+      "id": "mirror",
+      "nameTh": "กระจก / กระจกมองหลัง",
+      "code": "<MirrorFrame x={1200} y={120} w={560} h={220} W={W} H={H}>{backSeat}</MirrorFrame>",
+      "use": "ภาพสะท้อนกลับด้าน ซีด · สิ่งที่ต่างจากห้องจริงคือเบาะแส (S15)"
+    }
+  ],
   "grades": [
     {
       "id": "day",

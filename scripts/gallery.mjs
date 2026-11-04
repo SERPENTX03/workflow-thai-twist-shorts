@@ -1,6 +1,6 @@
 // Studio gallery: renders every gallery item (src/Gallery.tsx G* compositions) and each episode's Board with Remotion,
 // then writes studio/manifest.js for studio/index.html. Voice previews come from `npm run voices` (studio/audio).
-// Landscape stage kit (src/kit/world, temple, inserts + light grades): GWorld, GInserts, GGrades, listed in src/gallery.json.
+// Landscape stage kit (src/kit/world, temple, inserts + light grades): GWorld, GInserts, GCamera, GGrades, listed in src/gallery.json.
 //   npm run gallery [-- --no-render] [-- --boards] [-- --only=GCast,GUi,GWorld,GPlaces,GInserts,GGrades]
 // View: launch config "gallery" (serves the repo root on :3431) -> /studio/index.html
 import fs from 'node:fs';
@@ -33,9 +33,10 @@ const LISTS = {
   GWorld: G.world.map(w => `world-${w.id}`),
   GPlaces: G.places.map(w => `place-${w.id}`),
   GInserts: G.inserts.map(w => `insert-${w.id}`),
+  GCamera: G.camera.map(w => `camera-${w.id}`),
   GGrades: G.grades.map(w => `grade-${w.id}`),
 };
-const SCALE = { GScenes: 0.4, GUi: 0.75, GWorld: 0.3, GPlaces: 0.3, GInserts: 0.3, GGrades: 0.3 };
+const SCALE = { GScenes: 0.4, GUi: 0.75, GWorld: 0.3, GPlaces: 0.3, GInserts: 0.3, GCamera: 0.3, GGrades: 0.3 };
 
 const episodes = withBoards ? fs.readdirSync(path.join(ROOT, 'episodes'), { withFileTypes: true })
   .filter(d => d.isDirectory() && fs.existsSync(path.join(ROOT, 'episodes', d.name, 'story.json')))
@@ -115,6 +116,7 @@ const manifest = {
   world: G.world.map(w => ({ ...w, image: img(`world-${w.id}.png`) })),
   places: G.places.map(w => ({ ...w, image: img(`place-${w.id}.png`) })),
   inserts: G.inserts.map(w => ({ ...w, image: img(`insert-${w.id}.png`) })),
+  camera: G.camera.map(w => ({ ...w, image: img(`camera-${w.id}.png`) })),
   grades: G.grades.map(w => ({ ...w, image: img(`grade-${w.id}.png`) })),
   episodes: episodes.map(({ slug, S }) => ({
     slug, id: compId(slug), title: S.title, format: S.format, seconds: Math.round(S.total),

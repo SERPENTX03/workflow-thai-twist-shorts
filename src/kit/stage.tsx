@@ -352,6 +352,35 @@ export const Actors: React.FC<ActorsProps> = ({p, roster, speaking, cast, floor,
   );
 };
 
+/** Scale that keeps a W×H frame covered after rotating its content by `deg` (no empty corners). */
+export const tiltCover = (deg: number, W: number, H: number) => {
+  const r = (Math.abs(deg) * Math.PI) / 180;
+  return Math.cos(r) + (Math.max(W, H) / Math.min(W, H)) * Math.sin(r);
+};
+
+/** `data.tilt` → degrees at frame f: a number, or [from, to] eased across the shot (a slow drift into a Dutch angle). */
+export function tiltAt(f: number, len: number, tilt: number | number[] | undefined) {
+  if (tilt === undefined) return 0;
+  if (typeof tilt === 'number') return tilt;
+  const [a, b = a] = tilt;
+  return a + (b - a) * kf(f, [[0, 0], [len, 1]]);
+}
+
+/** Dutch angle: rotates the camera (everything inside) around the frame centre and scales up so no corner shows.
+ *  Use 5–8°; keep one direction for a whole scene (cinematography.md S9). Cards and HUD stay outside it. */
+export const Tilt: React.FC<{deg: number; W: number; H: number; children: React.ReactNode}> = ({deg, W, H, children}) =>
+  deg ? (
+    <div style={{position: 'absolute', inset: 0, transformOrigin: `${W / 2}px ${H / 2}px`, transform: `rotate(${deg}deg) scale(${tiltCover(deg, W, H)})`}}>{children}</div>
+  ) : <>{children}</>;
+
+/** Foreground layer (cinematography.md §5): drawn in frame px, soft and dark, moving `k` × more than the world on a
+ *  pan / push so it reads as nearer than the cast. `shift` = [dx, dy] in frame px, `scale` about the frame centre
+ *  (Stage computes both from the camera; pass them yourself in a scene that has no Stage). */
+export const Fore: React.FC<{children: React.ReactNode; shift?: [number, number]; scale?: number; blur?: number; dark?: number}> = ({children, shift = [0, 0], scale = 1, blur = 7, dark = 0.45}) => (
+  <div style={{position: 'absolute', inset: 0, pointerEvents: 'none', transform: `translate(${shift[0]}px, ${shift[1]}px) scale(${scale})`,
+    filter: `blur(${blur}px) brightness(${dark})`}}>{children}</div>
+);
+
 /** small time chip, top-left, fades in */
 export const ClockChip: React.FC<{text: string; f: number}> = ({text, f}) => (
   <Hud text={text} x={60} y={50} style={{transform: 'scale(.82)', transformOrigin: '0 0', opacity: Math.min(1, f / 10) * 0.92}} />
@@ -368,8 +397,13 @@ export const Stage: React.FC<{
   presets?: Record<string, number[]>;
   bg?: string;
   grain?: number;
+  /** foreground layer in frame px (door edge, net, OTS shoulder): blurred, darkened, parallax `foreK` × the camera */
+  fore?: React.ReactNode;
+  foreK?: number;
+  foreBlur?: number;
+  foreDark?: number;
 }> = ({
-  p, world, over, light, cam, presets, bg = "#07090d", grain = 0.12,
+  p, world, over, light, cam, presets, bg = "#07090d", grain = 0.12, fore, foreK = 0.4, foreBlur, foreDark,
 }) => {
   const d = p.shot.data ?? {};
   const v = p.shot.view ?? "";
@@ -391,10 +425,19 @@ export const Stage: React.FC<{
 
   const c = camAt(p.f, p.len, effectiveCam);
   const past = !!d.past;
+  const deg = tiltAt(p.f, p.len, d.tilt);
+  // foreground parallax: the FG travels (1 + foreK) × as far as the world does on a pan, and grows faster on a push
+  const c0 = camAt(0, p.len, effectiveCam);
+  const k1 = 1 + foreK;
+  const foreShift: [number, number] = [-(c.cx - c0.cx) * c.z * k1, -(c.cy - c0.cy) * c.z * k1];
+  const foreScale = Math.pow(c.z / c0.z, k1);
   return (
     <AbsoluteFill style={{background: bg, overflow: 'hidden'}}>
       <div style={{position: 'absolute', inset: 0, filter: past ? PAST_FILTER : undefined}}>
-        <Cam W={p.W} H={p.H} z={c.z} cx={c.cx} cy={c.cy}>{world}</Cam>
+        <Tilt deg={deg} W={p.W} H={p.H}>
+          <Cam W={p.W} H={p.H} z={c.z} cx={c.cx} cy={c.cy}>{world}</Cam>
+          {fore && <Fore shift={foreShift} scale={foreScale} blur={foreBlur} dark={foreDark}>{fore}</Fore>}
+        </Tilt>
         <Grade light={light ?? d.light} past={past} />
         {over}
       </div>

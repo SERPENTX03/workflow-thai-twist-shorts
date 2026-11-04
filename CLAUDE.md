@@ -7,7 +7,7 @@ This repo makes Thai vertical (9:16) and landscape twist-ending short stories wi
 ## Hard rules
 
 1. `episodes/<slug>/story.json` is the single source of truth. Never hand-edit generated files: `episodes/<slug>/timeline.json`, `assets/voice.wav`, `assets/score.wav`, `src/episodes/index.ts`, `src/cast/CastSprite.tsx`.
-2. Run scripts from the repo root: `npm run <new|timeline|audio|voice|score|fit|story|chapter|check|qc|final|gallery|studio> -- episodes/<slug>`.
+2. Run scripts from the repo root: `npm run <new|timeline|audio|voice|score|fit|story|shots|chapter|check|qc|final|gallery|studio> -- episodes/<slug>`. `shots` audits camera-setup variety (`.claude/skills/thai-twist-short/references/cinematography.md`).
 3. After any change: `npm run check -- episodes/<slug>` (tsc + story-check + Board frames in `out/<slug>-board/`), then open the frames and look. A passing check is not proof it looks right.
 4. Do not render a video (`npm run final`, `remotion render`) until you have looked at stills of the scenes you changed and told the user what the frames show.
    - While editing, use `remotion still` / Board frames only; never render to "see how it looks".

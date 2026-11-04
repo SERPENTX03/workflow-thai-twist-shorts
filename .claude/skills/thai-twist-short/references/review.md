@@ -12,7 +12,7 @@ Run `npm run check -- episodes/<slug>`. It runs tsc + story-check and writes one
 | Hook (first 2 s) | the anomaly + a specific number/rule/time is readable at frame 0; something moves within 0.5 s |
 | Readability at phone size | every caption readable with the frame at phone width; nothing important under the caption band or in the bottom 380 px; faces ≥ ~120 px |
 | Motion quality | **hands: ≤ 2 per figure, none doubled on one side, held objects under a hand (`hands-poses.md`)** — any doubled hand caps this at 5; no dead shot; camera moves eased; pops land on beats; nothing jitters across seams |
-| Variety | no two consecutive shots of the same type (see art-direction → shot vocabulary); at least 4 types used; not one palette for the whole film; a new visual event every 2–4 s |
+| Variety | no two consecutive shots of the same type or setup (see art-direction → shot vocabulary); `npm run shots` clean; each `-low` / `-high` / `-fif` / `-pov` view really looks like its name, with foreground / midground / background separated (`cinematography.md`); not one palette for the whole film; a new visual event every 2–4 s |
 | Story clarity | each clue is visible on screen 3+ times before the reveal; the reveal frame shows its proof (photo, date, bandage, hollow dot) |
 | Sound sync | `hit`/`bighit` on cuts; voice never crosses a cut (no `⚠ OVER`); drone dip before the reveal; every speaker matches the cast in `voices.md` (gender, age, one role each) when listened to — any wrong voice caps this score at 5 |
 | Value + pull | a fact, rule or number on screen every 3–5 shots (survival/folklore); something counts at least every ~10 s; at least one close-up and one diagram; the ending opens the next episode (cliffhanger + ตอนต่อไป card) when it is a series |
