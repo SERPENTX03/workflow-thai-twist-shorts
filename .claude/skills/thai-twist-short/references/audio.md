@@ -7,7 +7,9 @@ All sound is generated from `story.json`; nothing is downloaded or sampled excep
 - **Casting is fixed by `references/voices.md`**: roles `male` (narrator), `female`, `old_male`, `old_female`. Every character line sets its role, narration never does, and no raw ids or new voices without owner approval.
 - Three providers, chosen by the voice id prefix: `eleven:<Name or voice_id>` (ElevenLabs, key `ELEVENLABS_API_KEY` in `.env`; ids in `scripts/eleven-voices.json`, `npm run voices -- <name>` looks one up), `gemini:<Name>`, or a plain edge-tts voice id.
 - **Acting (ElevenLabs v3 only)**: a shot's `"tone"` (or the episode default `voiceTone`) is sent as audio tags in front of the line, e.g. `"tone": "whispers, scared"` → `[whispers] [scared] …`. Tags are English words: `whispers`, `softly`, `sad`, `scared`, `nervous`, `tense`, `urgent`, `warm`, `crying`, `sighs`, `gasps`. Use them to follow the episode's emotional arc: calm narration early, tense in the problem, whisper on the reveal. The caption is unaffected.
+- ElevenLabs v3 clips the final syllable of a Thai line that ends bare (heard as "เคาะกลับ" → "เคาะกระ…"), so `voice.mjs` sends lines without closing punctuation with a trailing "…" (voice only; the caption is unchanged). If an ending still sounds cut, end the `vo` on an open syllable.
 - Every synthesized line is cached by (voice, settings, text) in `assets/vo/cache`, so re-running only pays for changed lines (credits are per character on ElevenLabs).
+- For an existing episode whose timing changed, use `npm run voice -- episodes/<slug> --cache-only` to reassemble matching cached takes without speech synthesis. A missing exact cache key stops the command instead of calling a provider. Then run `npm run audio -- episodes/<slug> --no-voice` to update score ducking and timeline.
 - edge-tts (Microsoft online neural voices). Needs internet; the line text is sent to Microsoft's read-aloud service. Install once: `pip install edge-tts` (if synthesis fails with HTTP 403, upgrade: `pip install -U edge-tts`).
 - One line per shot (`vo`, default = caption without line breaks), silence trimmed, placed at `shot.start + voLead`.
 - If a line is longer than its shot it is sped up, max 1.3×. Above that the script prints `⚠ OVER` — shorten the line or give the shot more beats. Never let a line run across a cut.
@@ -31,4 +33,8 @@ All sound is generated from `story.json`; nothing is downloaded or sampled excep
 
 ## Delivery loudness — `scripts/finalize.mjs`
 
-Renders with HyperFrames (`--quality looks`, CRF 16) and runs a two-pass `loudnorm` to **−14 LUFS integrated, −1.5 dBTP** → `renders/<slug>-final.mp4`. The video stream is copied, not re-encoded.
+Renders with Remotion (h264, CRF 16) and runs a two-pass `loudnorm` to **−14 LUFS integrated, −1.5 dBTP** → `renders/<slug>-final.mp4`. The video stream is copied, not re-encoded.
+
+## Background level (`bed`) — keep it quiet
+
+The drone bed plays under the whole film, so a loud one reads as ringing in the ears (rain-night, 2026-11-02: "อื้อหู"). `score.mjs` now scales the drone by `bed` in story.json (default **0.4**, about −8 dB against the old level; `1` = the old level). Long films should stay at the default or lower. Sustained room tones declared in `sfx` (night, evening, fan, shop-amb, water, rain) use `gain` 0.15–0.3, never above 0.35; the bed must sit under the voice, not beside it. After changing either, `npm run audio -- episodes/<slug> --no-voice` and listen to a silent stretch.

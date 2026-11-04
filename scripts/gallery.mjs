@@ -1,147 +1,131 @@
-// Cast gallery: every symbol in template/assets/kit/cast.svg on one page.
-// npm run gallery  ->  template/assets/kit/gallery.html (open it in a browser)
-import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
-import { resolve } from "node:path";
-import { lastRideSection } from "./gallery-last-ride.mjs";
+// Studio gallery: renders every gallery item (src/Gallery.tsx G* compositions) and each episode's Board with Remotion,
+// then writes studio/manifest.js for studio/index.html. Voice previews come from `npm run voices` (studio/audio).
+// Landscape stage kit (src/kit/world, temple, inserts + light grades): GWorld, GInserts, GGrades, listed in src/gallery.json.
+//   npm run gallery [-- --no-render] [-- --boards] [-- --only=GCast,GUi,GWorld,GPlaces,GInserts,GGrades]
+// View: launch config "gallery" (serves the repo root on :3431) -> /studio/index.html
+import fs from 'node:fs';
+import path from 'node:path';
+import { ROOT, compId, loadStory } from './lib.mjs';
 
-const kit = resolve("template/assets/kit");
-const cast = readFileSync(resolve(kit, "cast.svg"), "utf8");
-const css = readFileSync(resolve(kit, "kit.css"), "utf8");
+const OUT = path.join(ROOT, 'studio');
+const R = path.join(OUT, 'renders');
+const only = (process.argv.find(a => a.startsWith('--only=')) || '').slice(7).split(',').filter(Boolean);
+const withBoards = process.argv.includes('--with-boards') || process.argv.includes('--boards') || only.includes('boards');
+const want = k => (k === 'boards' ? withBoards : (!only.length || only.includes(k)));
+const epArg = (process.argv.find(a => a.startsWith('--episode=')) || '').slice(10);
+const matchArg = (process.argv.find(a => a.startsWith('--match=')) || '').slice(8).toLowerCase();
+const skipExisting = process.argv.includes('--skip-existing') || process.argv.includes('--cached');
+const readJson = f => JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
 
-// story kits: assets/kit/stories/*.svg + *.css (ids/classes prefixed per story)
-const storyDir = resolve(kit, "stories");
-const storyFiles = existsSync(storyDir) ? readdirSync(storyDir).sort() : [];
-const storySvg = storyFiles.filter((f) => f.endsWith(".svg")).map((f) => readFileSync(resolve(storyDir, f), "utf8").replace(/^[\s\S]*?<svg[^>]*>/, "").replace(/<\/svg>\s*$/, "")).join("");
-const storyCss = storyFiles.filter((f) => f.endsWith(".css")).map((f) => readFileSync(resolve(storyDir, f), "utf8")).join("\n");
-
-const inline = cast.replace(/^<svg[^>]*>/, '<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute">');
-const ids = [...cast.matchAll(/<symbol id="([^"]+)"([^>]*)>/g)].map((m) => ({ id: m[1], attrs: m[2] }));
-const vb = (a) => /viewBox="([^"]+)"/.exec(a)?.[1];
-const has = (id) => ids.some((s) => s.id === id);
-const box = (id) => vb(ids.find((s) => s.id === id).attrs).split(" ").map(Number);
-const prefixed = (p) => ids.filter((s) => s.id.startsWith(p)).map((s) => s.id);
-
-// people at their real relative height (cm), 520 units = 170 cm
-const people = [["man", 170], ["man-wide", 170], ["man-raise", 170], ["woman", 158], ["auntie", 150], ["elder", 160],
-  ["raincoat", 165], ["student", 165], ["kid", 120], ["kid-girl", 120]].filter(([id]) => has(id));
-const animals = ["cat-black", "cat-orange", "beagle", "dog-patch", "dog", "dog-growl"].filter(has);
-const props = prefixed("prop-");
-const faces = prefixed("face-");
-const talks = prefixed("talk-");
-const accs = prefixed("acc-");
-const marks = prefixed("mark-");
-const icons = prefixed("icon-");
-const sets = prefixed("set-");
-const poses = ["hold", "chest", "offer", "raise", "reach", "pocket", "carry"];
-const cls = (id) => (id === "kid-girl" ? "c-kid-girl" : `c-${id.split("-")[0]}`);
-const FIG = 'width="200" height="520"';
-
-const card = (label, svg, w = 200, h = 260) =>
-  `<figure><div class="art" style="width:${w}px;height:${h}px">${svg}</div><figcaption>${label}</figcaption></figure>`;
-
-const person = ([id, cm]) => {
-  const [, , fw, fh] = box(id);
-  const h = (520 * cm) / 170, w = (h * fw) / fh;
-  return card(`${id} · ${cm}`, `<svg class="w ${cls(id)}" viewBox="-20 -20 240 560"><use href="#${id}" x="${(200 - w) / 2}" y="${520 - h}" width="${w}" height="${h}"/></svg>`, 130, 300);
+const CAST = Object.entries(readJson('src/cast.json')).filter(([k, c]) => !k.startsWith('_') && !c.retired);
+const wardrobe = readJson('src/cast/wardrobe.json');
+const G = readJson('src/gallery.json');
+const V = readJson('voices.json');
+const LISTS = {
+  GCast: CAST.map(([id]) => `cast-${id}`),
+  GFaces: G.faces,
+  GPoses: [...G.poses, ...G.arms],
+  GGait: G.gait,
+  GProps: G.props,
+  GMarks: G.marks,
+  GUi: G.ui.map(u => `ui-${u.id}`),
+  GScenes: G.scenes.map((s, i) => `scene-${i}-${s.scene}${s.view ? '-' + s.view : ''}`),
+  GWorld: G.world.map(w => `world-${w.id}`),
+  GPlaces: G.places.map(w => `place-${w.id}`),
+  GInserts: G.inserts.map(w => `insert-${w.id}`),
+  GGrades: G.grades.map(w => `grade-${w.id}`),
 };
-const animal = (id) => {
-  const [, , w, h] = box(id);
-  return card(id, `<svg class="w" viewBox="-20 -20 ${w + 40} ${h + 40}"><use href="#${id}"/></svg>`, 220, 190);
+const SCALE = { GScenes: 0.4, GUi: 0.75, GWorld: 0.3, GPlaces: 0.3, GInserts: 0.3, GGrades: 0.3 };
+
+const episodes = withBoards ? fs.readdirSync(path.join(ROOT, 'episodes'), { withFileTypes: true })
+  .filter(d => d.isDirectory() && fs.existsSync(path.join(ROOT, 'episodes', d.name, 'story.json')))
+  .map(d => ({ slug: d.name, S: loadStory(path.join(ROOT, 'episodes', d.name)) })) : [];
+
+if (!process.argv.includes('--no-render')) {
+  const { bundle } = await import('@remotion/bundler');
+  const { openBrowser, selectComposition, renderStill } = await import('@remotion/renderer');
+  fs.mkdirSync(R, { recursive: true });
+  process.stdout.write('bundling ... ');
+  const serveUrl = await bundle({ entryPoint: path.join(ROOT, 'src', 'index.ts') });
+  console.log('ok');
+  const browser = await openBrowser('chrome');
+  const still = async (id, frame, file, scale = 1) => {
+    const composition = await selectComposition({ serveUrl, id, puppeteerInstance: browser });
+    await renderStill({ serveUrl, composition, frame, output: path.join(R, file), imageFormat: 'png', scale, puppeteerInstance: browser, overwrite: true });
+  };
+  try {
+    for (const [comp, names] of Object.entries(LISTS)) {
+      if (!want(comp)) continue;
+      let count = 0;
+      for (let i = 0; i < names.length; i++) {
+        if (matchArg && !names[i].toLowerCase().includes(matchArg)) continue;
+        const outFile = `${names[i]}.png`;
+        if (skipExisting && fs.existsSync(path.join(R, outFile))) continue;
+        await still(comp, i, outFile, SCALE[comp] || 1);
+        count++;
+      }
+      console.log(`✓ ${comp}  ${count}/${names.length}`);
+    }
+    if (want('Cast') && (!matchArg || 'cast-sheet'.includes(matchArg))) {
+      if (!skipExisting || !fs.existsSync(path.join(R, 'cast-sheet.png'))) {
+        await still('Cast', 0, 'cast-sheet.png');
+        console.log('✓ Cast sheet');
+      }
+    }
+    if (want('boards')) {
+      for (const { slug, S } of episodes) {
+        if (epArg && slug !== epArg) continue;
+        let count = 0;
+        for (let i = 0; i < S.shots.length; i++) {
+          const outFile = `board-${slug}-${i}.png`;
+          if (skipExisting && fs.existsSync(path.join(R, outFile))) continue;
+          await still(`${compId(slug)}Board`, i, outFile, 0.3);
+          count++;
+        }
+        console.log(`✓ board ${slug}  ${count}/${S.shots.length}`);
+      }
+    }
+  } finally {
+    await browser.close({ silent: true });
+  }
+}
+
+const img = f => (fs.existsSync(path.join(R, f)) ? `renders/${f}` : null);
+const audio = f => (fs.existsSync(path.join(OUT, 'audio', f)) ? `audio/${f}` : null);
+const sfxIdx = path.join(ROOT, 'sfx-library', 'index.json');
+
+const manifest = {
+  built: new Date().toISOString(),
+  castSheet: img('cast-sheet.png'),
+  cast: CAST.map(([id, c]) => ({ id, ...c, image: img(`cast-${id}.png`), audio: c.role ? (audio(`cast-${id}.mp3`) || audio(`role-${c.role}.mp3`)) : null })),
+  voices: {
+    model: V.model, settings: V.settings, default: V.default,
+    roles: Object.entries(V.roles).map(([role, r]) => ({ role, ...r, audio: audio(`role-${role}.mp3`), cast: CAST.filter(([, c]) => c.role === role).map(([k]) => k) })),
+  },
+  faces: G.faces.map(id => ({ id, image: img(`${id}.png`) })),
+  gait: G.gait.map(id => {
+    const [, who, pose, step] = id.match(/^(.+)-(walk|run)-(\d)$/);
+    return { id, image: img(`${id}.png`), code: `<Actors cast={["who@900 ${pose}"]} />  // จังหวะ ${step} (แทน who ด้วย id ตัวละคร)` };
+  }),
+  poses: [...G.poses, ...G.arms].map(id => ({ id, image: img(`${id}.png`), code: id.startsWith('arm-') ? `<Sprite id="man" hideArm${id[4].toUpperCase()} layers={['${id}']} />` : `<Sprite id="${id}" />` })),
+  props: G.props.map(id => ({ id, image: img(`${id}.png`), code: `<Sprite id="${id}" />` })),
+  marks: G.marks.map(id => ({ id, label: wardrobe[id]?.label, image: img(`${id}.png`), code: id.startsWith('hair-') ? `hair="${id.slice(5)}"` : `layers={['${id}']}` })),
+  ui: G.ui.map(u => ({ ...u, image: img(`ui-${u.id}.png`) })),
+  scenes: G.scenes.map((s, i) => ({ ...s, image: img(`${LISTS.GScenes[i]}.png`), code: JSON.stringify({ scene: s.scene, ...(s.view ? { view: s.view } : {}), data: s.data }) })),
+  world: G.world.map(w => ({ ...w, image: img(`world-${w.id}.png`) })),
+  places: G.places.map(w => ({ ...w, image: img(`place-${w.id}.png`) })),
+  inserts: G.inserts.map(w => ({ ...w, image: img(`insert-${w.id}.png`) })),
+  grades: G.grades.map(w => ({ ...w, image: img(`grade-${w.id}.png`) })),
+  episodes: episodes.map(({ slug, S }) => ({
+    slug, id: compId(slug), title: S.title, format: S.format, seconds: Math.round(S.total),
+    chapters: S.chapters.map(c => ({ n: c.n, name: c.name, start: c.start, dur: c.dur, first: c.first, last: c.last })),
+    tracks: [['voice', 'voice.wav'], ['score', 'score.wav']].filter(([, f]) => fs.existsSync(path.join(ROOT, 'public', slug, f))).map(([k, f]) => ({ k, src: `../public/${slug}/${f}` })),
+    final: fs.existsSync(path.join(ROOT, 'episodes', slug, 'renders', `${slug}-final.mp4`)) ? `../episodes/${slug}/renders/${slug}-final.mp4` : null,
+    shots: S.shots.map(s => ({ i: s.i, scene: s.scene, view: s.view, text: s.text, image: img(`board-${slug}-${s.i}.png`) })),
+  })),
+  sfx: fs.existsSync(sfxIdx)
+    ? Object.entries(JSON.parse(fs.readFileSync(sfxIdx, 'utf8'))).map(([key, v]) => ({ name: v.name || key, prompt: v.prompt, src: `../sfx-library/${key}.mp3` }))
+    : [],
 };
-const body = (label, inner, c = "c-man") =>
-  card(label, `<svg class="w ${c}" viewBox="-40 -40 280 580">${inner}</svg>`, 170, 330);
-const pose = (side, p) =>
-  card(`arm-${side}-${p}`, `<svg class="w c-man arm-${side}-off" viewBox="-90 -20 380 560"><use href="#man" ${FIG}/><use href="#arm-${side}-${p}" ${FIG}/></svg>`, 190, 280);
-const head = (label, cls2, inner, dy = 0) =>
-  card(label, `<svg class="w ${cls2}" style="overflow:hidden" viewBox="15 -20 170 190"><use href="#man" ${FIG}/>${inner}</svg>`, 170, 190);
-const face = (who, id, dy = 0) =>
-  card(id.slice(5), `<svg class="w c-${who} face-off" style="overflow:hidden" viewBox="15 -20 170 190"><use href="#${who}" ${FIG}/><use href="#${id}" ${FIG} transform="translate(0 ${dy})"/></svg>`, 170, 190);
-const acc = (id) => {
-  const hand = id === "acc-watch" || id === "acc-hand-bandage";
-  const inner = id === "acc-backpack"
-    ? `<use href="#acc-backpack" ${FIG}/><use href="#man" ${FIG}/><use href="#acc-straps" ${FIG}/>`
-    : `<use href="#man" ${FIG}/>` + (hand ? `<use href="#${id}" transform="translate(148 330)"/>` : `<use href="#${id}" ${FIG}/>`);
-  return card(id.slice(4), `<svg class="w c-man" style="overflow:hidden" viewBox="-40 -50 280 420">${inner}</svg>`, 180, 270);
-};
-const mark = (id) =>
-  card(id.slice(5), `<svg class="w c-man" style="overflow:hidden" viewBox="-30 -135 270 310"><use href="#man" ${FIG}/><use href="#${id}" ${FIG}/></svg>`, 180, 206);
-const prop = (id) =>
-  id === "prop-box"
-    ? card(id, `<svg class="w" viewBox="-90 -90 180 140"><use href="#${id}"/></svg>`, 200, 156)
-    : card(id, `<svg class="w" viewBox="-70 -125 140 225"><use href="#${id}"/></svg>`, 124, 200);
-const icon = (id) => card(id.slice(5), `<svg class="w" viewBox="-12 -12 124 124"><use href="#${id}" width="100" height="100"/></svg>`, 110, 110);
-const setp = (id) => {
-  const [, , w, h] = box(id);
-  return card(`${id.slice(4)} · ${w}×${h}`, `<svg class="w" viewBox="-20 -20 ${w + 40} ${h + 40}"><use href="#${id}" width="${w}" height="${h}"/></svg>`, 220, 220);
-};
-
-const bodies = [
-  body("man-walk", `<use href="#man-walk" ${FIG}/>`),
-  body("man-run", `<use href="#man-run" ${FIG}/>`),
-  body("man-sit", `<use href="#man-sit" ${FIG}/>`),
-  body("man-crouch", `<use href="#man-crouch" ${FIG}/>`),
-  body("man-back", `<use href="#man-back" ${FIG}/>`),
-  body("carry + prop-box", `<use href="#man" ${FIG}/><use href="#arm-l-carry" ${FIG}/><use href="#arm-r-carry" ${FIG}/><use href="#prop-box" transform="translate(100 262)"/>`, "c-man arm-l-off arm-r-off"),
-  body("woman-sit", `<use href="#woman-sit" ${FIG}/>`, "c-woman"),
-  body("woman-run", `<use href="#woman-run" ${FIG}/>`, "c-woman"),
-  body("woman-back", `<use href="#woman-back" ${FIG}/>`, "c-woman"),
-  body("sit + face-scared", `<use href="#man-sit" ${FIG}/><use href="#face-scared" ${FIG} transform="translate(0 110)"/>`, "c-man face-off"),
-  body("run + face-shock", `<use href="#man-run" ${FIG}/><use href="#face-shock" ${FIG} transform="rotate(8 100 300)"/>`, "c-man face-off"),
-  body("sit + arm-r-hold + phone", `<use href="#man-sit" ${FIG}/><g transform="translate(0 110)"><use href="#arm-r-hold" ${FIG}/><use href="#prop-phone" transform="translate(112 244)"/></g>`, "c-man arm-r-off"),
-].join("");
-const lying = card("man-lie (520×200)", `<svg class="w c-man" viewBox="-20 -20 560 240"><use href="#man-lie" width="520" height="200"/></svg>`, 300, 150);
-const crowd = card("crowd (640×520)", `<svg class="w" viewBox="-20 -20 680 560"><use href="#crowd" width="640" height="520"/></svg>`, 300, 250);
-
-const vars = [...css.matchAll(/--([a-z0-9-]+):\s*(#[0-9a-fA-F]{3,8})/g)].filter((m, i, a) => a.findIndex((n) => n[1] === m[1]) === i);
-const swatches = vars
-  .map((m) => `<div class="sw"><i style="background:${m[2]}"></i><b>${m[1]}</b><span>${m[2]}</span></div>`)
-  .join("");
-
-const html = `<!doctype html>
-<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Cast gallery</title>
-<style>
-${css}
-${storyCss}
-
-body{margin:0;padding:40px;background:#131a2b;color:#efe8da;font-family:"Plex Thai",sans-serif}
-h1{font-family:Kanit,sans-serif;font-size:36px;margin:0 0 6px}
-h2{font-family:Kanit,sans-serif;font-size:24px;margin:44px 0 6px;color:#f6c445}
-p.n{margin:0 0 14px;color:#8a97ab;font-size:15px}
-code{color:#efe8da;background:#ffffff14;padding:1px 6px;border-radius:5px}
-.row{display:flex;flex-wrap:wrap;gap:18px}
-figure{margin:0;text-align:center}
-.art{background:linear-gradient(#33465c,#26364a);border-radius:14px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
-.art .w{width:100%;height:100%;overflow:visible}
-figcaption{margin-top:8px;font-size:15px;color:#c9d2e0;max-width:220px}
-.sw{display:flex;align-items:center;gap:10px;width:230px;font-size:14px}
-.sw i{width:30px;height:30px;border-radius:8px;border:1px solid #fff3}
-.sw span{color:#8a97ab;margin-left:auto}
-h3{font-family:Kanit,sans-serif;font-size:21px;margin:30px 0 10px;color:#efe8da}
-h4{font-family:"Plex Thai",sans-serif;font-size:16px;margin:22px 0 10px;color:#c9d2e0}
-.art.lr-flat{background:#d9d4c7}
-</style></head><body>
-${inline}
-<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute">${storySvg}</svg>
-<h1>Cast gallery</h1>
-<p class="n">ทุก symbol ใน assets/kit/cast.svg &nbsp;·&nbsp; สร้างจาก npm run gallery &nbsp;·&nbsp; วิธีใช้: .claude/skills/thai-twist-short/references/cast-library.md</p>
-<h2>ตัวละคร (สูงตามจริง · ซม.)</h2><p class="n">วาดที่ ซม. × 2.6 px · kid / kid-girl ใช้กรอบ 200×420</p><div class="row">${people.map(person).join("")}</div>
-<h2>ฝูงชน</h2><div class="row">${crowd}</div>
-<h2>สัตว์</h2><div class="row">${animals.map(animal).join("")}</div>
-<h2>ท่าทั้งตัว</h2><p class="n">สีหน้า / ปาก / เครื่องประกอบ / mark บนท่าเหล่านี้ใส่ transform เดียวกับท่า (ดูตารางใน cast-library.md)</p><div class="row">${bodies}${lying}</div>
-<h2>ท่ามือขวา (บนตัว man)</h2><p class="n"><code>arm-r-off</code> แล้ววาง <code>arm-r-*</code> ทับ · แขนหนึ่งข้าง = มือเดียว</p><div class="row">${poses.map((p) => pose("r", p)).join("")}</div>
-<h2>ท่ามือซ้าย (บนตัว man)</h2><div class="row">${poses.map((p) => pose("l", p)).join("")}</div>
-<h2>สีหน้า (man)</h2><p class="n"><code>face-off</code> แล้ววาง <code>face-*</code> ทับ</p><div class="row">${faces.map((f) => face("man", f)).join("")}</div>
-<h2>สีหน้า (woman, translate 0 4)</h2><div class="row">${faces.map((f) => face("woman", f, 4)).join("")}</div>
-<h2>ปากพูด</h2><p class="n"><code>mouth-off</code> (ตายังอยู่) แล้วสลับ href ของ <code>talk-*</code> ทุก 0.12 วิ ตอนพูด</p><div class="row">${talks.map((t) => head(t.slice(5), "c-man mouth-off", `<use href="#${t}" ${FIG}/>`)).join("")}</div>
-<h2>เครื่องประกอบ (trait ประจำตัว)</h2><p class="n">backpack วางก่อนตัวละคร · watch / hand-bandage วางที่จุดมือ</p><div class="row">${accs.filter((a) => a !== "acc-straps").map(acc).join("")}</div>
-<h2>สัญลักษณ์อารมณ์</h2><div class="row">${marks.map(mark).join("")}</div>
-<h2>prop (จุดกำเนิด = กลางมือ)</h2><div class="row">${props.map(prop).join("")}</div>
-<h2>ไอคอนอินโฟกราฟิก</h2><div class="row">${icons.map(icon).join("")}</div>
-<h2>ชิ้นฉาก (viewBox = px ที่สเกลตัวละคร)</h2><div class="row">${sets.map(setp).join("")}</div>
-${lastRideSection(card)}
-<h2>สีใน kit.css</h2><div class="row">${swatches}</div>
-</body></html>`;
-
-writeFileSync(resolve(kit, "gallery.html"), html);
-console.log(`gallery.html: ${people.length} people, ${animals.length} animals, ${props.length} props, ${faces.length} faces, ${accs.length} accessories, ${marks.length} marks, ${icons.length} icons, ${sets.length} set pieces`);
+fs.writeFileSync(path.join(OUT, 'manifest.js'), 'window.STUDIO = ' + JSON.stringify(manifest, null, 1) + ';\n');
+console.log(`✓ studio/manifest.js  ${manifest.cast.length} cast, ${manifest.episodes.length} episodes, ${manifest.sfx.length} sfx`);

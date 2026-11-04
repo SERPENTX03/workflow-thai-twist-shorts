@@ -1,0 +1,162 @@
+{
+  "acc-denim": {
+    "label": "แจ็กเก็ตยีนส์",
+    "model": "M1",
+    "vars": {
+      "shirt": "#426285",
+      "pants": "#283246",
+      "skirt": "#283246",
+      "shorts": "#283246"
+    }
+  },
+  "acc-rescue": {
+    "label": "เสื้อกู้ภัย",
+    "model": "M2",
+    "vars": {
+      "shirt": "#cc6132",
+      "pants": "#283946",
+      "skirt": "#283946",
+      "shorts": "#283946"
+    }
+  },
+  "acc-track": {
+    "label": "เสื้อวอร์ม",
+    "model": "W1",
+    "vars": {
+      "shirt": "#4d3976",
+      "pants": "#353048",
+      "skirt": "#353048",
+      "shorts": "#353048"
+    }
+  },
+  "acc-blazer": {
+    "label": "สูททำงาน",
+    "model": "W2",
+    "vars": {
+      "shirt": "#433f54",
+      "pants": "#3c3548",
+      "skirt": "#3c3548",
+      "shorts": "#3c3548"
+    }
+  },
+  "acc-floral": {
+    "label": "เสื้อลายดอก",
+    "model": "A1",
+    "vars": {
+      "shirt": "#884761",
+      "pants": "#4c384e",
+      "skirt": "#4c384e",
+      "shorts": "#4c384e"
+    }
+  },
+  "acc-cotton": {
+    "label": "เสื้อม่อฮ่อม",
+    "model": "E1",
+    "vars": {
+      "shirt": "#334e6a",
+      "pants": "#282c35",
+      "skirt": "#282c35",
+      "shorts": "#282c35"
+    }
+  },
+  "acc-courier": {
+    "label": "เสื้อส่งพัสดุ",
+    "model": "M1",
+    "vars": {
+      "shirt": "#40715c",
+      "pants": "#2d3d38",
+      "skirt": "#2d3d38",
+      "shorts": "#2d3d38"
+    }
+  },
+  "acc-chef": {
+    "label": "เสื้อครัว",
+    "model": "W1",
+    "vars": {
+      "shirt": "#ede5ce",
+      "pants": "#403d44",
+      "skirt": "#403d44",
+      "shorts": "#403d44"
+    }
+  },
+  "acc-varsity": {
+    "label": "เสื้อทีมกีฬา",
+    "model": "B1",
+    "vars": {
+      "shirt": "#9d423c",
+      "pants": "#293851",
+      "skirt": "#293851",
+      "shorts": "#293851"
+    }
+  },
+  "acc-sailor": {
+    "label": "เสื้อคอปกกะลาสี",
+    "model": "G1",
+    "vars": {
+      "shirt": "#f1e9d3",
+      "pants": "#344966",
+      "skirt": "#344966",
+      "shorts": "#344966"
+    }
+  },
+  "acc-stripe": {
+    "label": "เสื้อยืดลายขวาง",
+    "model": "B1",
+    "vars": {
+      "shirt": "#e3c16c",
+      "pants": "#4a4d53",
+      "skirt": "#4a4d53",
+      "shorts": "#4a4d53"
+    }
+  },
+  "acc-overalls": {
+    "label": "ชุดเอี๊ยม",
+    "model": "G1",
+    "vars": {
+      "shirt": "#e4d9c7",
+      "pants": "#586587",
+      "skirt": "#586587",
+      "shorts": "#586587"
+    }
+  },
+  "acc-police": {
+    "label": "เครื่องแบบตำรวจไทย",
+    "model": "police-A",
+    "vars": {
+      "shirt": "#8b7355",
+      "pants": "#4a3b2c",
+      "skirt": "#4a3b2c",
+      "shorts": "#4a3b2c"
+    }
+  },
+  "acc-mechanic": {
+    "label": "เสื้อช็อปช่างไทย",
+    "model": "mechanic-A",
+    "vars": {
+      "shirt": "#2f4659",
+      "pants": "#232c36",
+      "skirt": "#232c36",
+      "shorts": "#232c36"
+    }
+  },
+  "acc-photographer": {
+    "label": "เสื้อกั๊กช่างภาพสนาม",
+    "model": "photographer-A",
+    "vars": {
+      "shirt": "#2f3540",
+      "pants": "#3b424c",
+      "skirt": "#3b424c",
+      "shorts": "#3b424c"
+    }
+  },
+  "acc-taxi": {
+    "label": "เสื้อวินมอเตอร์ไซค์",
+    "model": "M1",
+    "vars": {
+      "shirt": "#2b5043",
+      "pants": "#1b2430",
+      "skirt": "#1b2430",
+      "shorts": "#1b2430"
+    }
+  }
+}

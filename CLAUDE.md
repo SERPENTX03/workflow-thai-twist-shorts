@@ -1,31 +1,50 @@
 # Thai Twist Shorts — agent rules
 
-This repo makes Thai vertical (9:16) twist-ending short stories with HyperFrames.
+This repo makes Thai vertical (9:16) and landscape twist-ending short stories with **Remotion** (TSX).
 
-**For any request about an episode — a new story idea, writing, scenes, voice, sound, review or render — invoke the `thai-twist-short` skill first** (`.claude/skills/thai-twist-short/SKILL.md`). It owns the format and the step-by-step workflow; load `/hyperframes-core` before writing composition HTML.
+**For any request about an episode — a new story idea, writing, scenes, voice, sound, review or render — invoke the `thai-twist-short` skill first** (`.claude/skills/thai-twist-short/SKILL.md`). For a landscape long-form episode (`"format": "landscape"`, 10–25 min) invoke `thai-long-story` instead (`.claude/skills/thai-long-story/SKILL.md`). Where a skill disagrees with this file, this file wins.
 
 ## Hard rules
 
-1. `episodes/<slug>/story.json` is the single source of truth. Never hand-edit `index.html`, `compositions/captions.html`, `timing.json`, `assets/voice.wav`, `assets/score.wav` — they are regenerated.
-2. Run scripts from the repo root: `npm run <new|build|audio|voice|score|check|final> -- episodes/<slug>`.
-3. After any change: build, then look at frames (`npx hyperframes snapshot --at …` inside the episode). A passing check is not proof it looks right.
-4. Review loop before the final render: all seven scores in `references/review.md` ≥ 8.
-5. `template/` is the starting point for every episode. Improve shared things (kit.css, cast.svg, example scenes) there, never only inside one episode.
-6. Deterministic only: no `Math.random()`, `Date.now()` or network in compositions.
-7. Ask before anything outward-facing (publishing renders, pushing to a remote).
+1. `episodes/<slug>/story.json` is the single source of truth. Never hand-edit generated files: `episodes/<slug>/timeline.json`, `assets/voice.wav`, `assets/score.wav`, `src/episodes/index.ts`, `src/cast/CastSprite.tsx`.
+2. Run scripts from the repo root: `npm run <new|timeline|audio|voice|score|fit|story|chapter|check|qc|final|gallery|studio> -- episodes/<slug>`.
+3. After any change: `npm run check -- episodes/<slug>` (tsc + story-check + Board frames in `out/<slug>-board/`), then open the frames and look. A passing check is not proof it looks right.
+4. Do not render a video (`npm run final`, `remotion render`) until you have looked at stills of the scenes you changed and told the user what the frames show.
+   - While editing, use `remotion still` / Board frames only; never render to "see how it looks".
+   - Render the full video once, after the frames pass, to check timing, voice sync and captions over time.
+   - Exception: the user explicitly asks for a render.
+5. Review loop before the final render: all seven scores in `references/review.md` ≥ 8 (long-form: per chapter, `thai-long-story/references/review-long.md`).
+6. Shared things (cast, props, captions, kit components) live in `src/` — improve them there, never only inside one episode.
+7. Deterministic only: no `Math.random()`, `Date.now()` or network in components; use `rnd()` from `src/engine/anim.ts`.
+8. Ask before anything outward-facing (publishing renders, pushing to a remote).
+9. Do not delete an episode's `assets/` (paid voice/SFX) or untracked files without asking.
+10. Only the character who is actually speaking moves their mouth. `talk` goes only on the actor whose id is the shot's `who`; everyone else on screen (listeners, the near end of a phone call, anyone during narration) gets a listening face that fits the moment (`worried`, `sad`, `shock`…), never `talk`. When the speaker is off screen (a phone voice, a recording, a voice from another room), nobody on screen talks. The speaker's face matches what they are saying. `src/kit/stage.tsx` mutes every non-speaker and `npm run story` warns on a stray `talk` — fix the warning in story.json, don't ignore it.
+11. **Motorcycle & riding posture (shot `021` standard):** For any motorcycle riding or parked motorcycle scene across all future projects, use the global `<SideRoadSet>` and `<Motorcycle>` from `src/kit/places.tsx` (registered in `src/gallery.json` under `places`: `highway-road`, `motorcycle-ride`, `motorcycle-parked`). When any character is riding a motorcycle, always use `<Motorcycle rider={{shirt, pants, skin, hair, face, vest}} />` (the side-riding sitting posture established in `ghost-money` shot `021`).
+12. **Cast single source of truth:** `src/cast.json` is the SINGLE SOURCE OF TRUTH for character selection, metadata, heights, voice roles, and outfits. Always cast from active, non-retired characters in `src/cast.json` (`lead-male-A/B`, `lead-female-A/B`, `villain-male-A/B`, `father-A/B`, `mother-A/B`, `brother-A/B`, `sister-A/B`, `police-A/B`, etc.). Never use legacy retired characters (`man`, `woman`, `auntie`, `elder`, `M1`...`B1`, `din`, etc., marked `"retired": true`). Whole-body pose symbols (`man-sit`, `man-crouch`, `man-back`, `woman-sit`, etc.) are only base pose shapes for sitting, crouching or lying down, while the character's base identity symbol must always come from `src/cast.json`.
 
 ## Layout
 
 ```
-.claude/skills/thai-twist-short/   workflow skill + references (story, art, scene kit, audio, review)
-scripts/                           new-episode, build, voice, score, audio, check, finalize
-template/                          HyperFrames project every episode is copied from
-  assets/kit/                      kit.css (tokens + components), cast.svg (characters), fonts (OFL)
-  compositions/                    _placeholder + example scenes (example-room, example-map, example-news)
-episodes/<slug>/                   one HyperFrames project per episode
-series/<name>.md                   series bible: cast, animal, world rules, episode list, open threads
+src/
+  index.ts, Root.tsx          registers <Id>, <Id>Board per episode + Cast / Faces / Props / Sets stills
+  engine/                     story.ts (story.json -> shots), episode.tsx (defineEpisode), anim.ts, fonts.ts, theme.ts
+  kit/Captions.tsx            captions with [gold] / {red} marks
+  cast/                       CastSprite.tsx (GENERATED from source/cast.svg by scripts/svg-to-tsx.mjs), Sprite.tsx
+  Gallery.tsx                 gallery compositions
+  episodes/index.ts           GENERATED registry; <slug>/scenes.tsx (optional) = {sceneName: ShotComponent}
+scripts/                      timeline, voice, score, sfx, fit, qc, story-check, check, finalize, new-episode, gallery, svg-to-tsx
+studio/                       static gallery (index.html + manifest.js, generated by npm run gallery)
+templates/story.json          starting story for npm run new
+episodes/<slug>/              story.json, assets/ (voice, score, vo cache), timeline.json, renders/
+public/                       fonts + <slug>/voice.wav, score.wav (linked by npm run timeline)
+series/<name>.md              series bible
+sfx-library/                  cached ElevenLabs SFX
 ```
 
 ## Commands
 
-Thinking helpers live as project skills next to the workflow skill: `/twist-idea` (ช่วยคิดไอเดีย), `/twist-next` (ช่วยคิดตอนต่อไป), `/twist-hook` (ฮุก/ชื่อเรื่อง), `/twist-series` (วางซีรีส์), `/twist-ref` (วิเคราะห์คลิป ref), `/twist-doctor` (ตรวจเรื่องก่อนวาด), `/twist-cast` (ออกแบบตัวละครสไตล์ประจำช่อง). They end at an approved outline or a report; building always goes through `thai-twist-short`.
+- `npm run dev` — static gallery at http://localhost:3431/studio/index.html (run `npm run gallery` when cast/kit images need refreshing). `npm run studio` — Remotion Studio on :3430.
+- `npm run gallery` — renders reusable asset library (Cast, Places, Sets, Props, Poses, UI, Grades). Excludes episode board stills by default for maximum speed. Pass `--boards` or `--boards --episode=<slug>` if board stills are needed.
+- `npm run archive <slug>` — archives completed episodes out of active Remotion bundling into `archive/<slug>/` (keeps bundling instant ~2s and prevents workspace bloat). Use `npm run archive -- --list` to view episodes or `npm run archive -- --restore <slug>` to reactivate.
+- Gallery content: cast in `src/cast.json`, item lists in `src/gallery.json` (incl. the landscape stage kit: `world`, `places` (ready Thai locations, `src/kit/places.tsx`), `inserts`, `grades`; compositions `GWorld` `GPlaces` `GInserts` `GGrades` in `src/Gallery.tsx`), voice roles in `voices.json`. A new shared kit piece goes into the matching `gallery.json` list so it shows in the studio. `npm run voices` makes the voice previews (ElevenLabs credits; only changed lines). `npm run voice-list` searches your ElevenLabs voices.
+- Thinking helpers live as project skills: `/twist-idea`, `/twist-next`, `/twist-hook`, `/twist-series`, `/twist-ref`, `/twist-doctor`, `/twist-cast`. They end at an approved outline or a report; building goes through `thai-twist-short`.

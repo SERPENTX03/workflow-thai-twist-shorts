@@ -2,25 +2,47 @@
   "name": "thai-twist-shorts",
   "version": "1.0.0",
   "private": true,
-  "description": "HyperFrames workflow for Thai vertical twist-ending short stories",
+  "description": "Remotion workflow for Thai vertical twist-ending short stories",
   "type": "module",
   "license": "MIT",
   "engines": {
     "node": ">=22"
   },
   "scripts": {
+    "dev": "http-server . -p 3431 -c-1 -o /studio/index.html",
+    "predev": "node --input-type=module -e \"import fs from 'node:fs'; if (!fs.existsSync('studio/manifest.js')) console.warn('\\n⚠  ยังไม่มี studio/manifest.js — รัน npm run gallery ก่อน (หน้า gallery จะว่าง)\\n');\"",
+    "studio": "remotion studio src/index.ts --port 3430",
+    "typecheck": "tsc --noEmit",
+    "check": "node scripts/check.mjs",
     "new": "node scripts/new-episode.mjs",
-    "build": "node scripts/build.mjs",
+    "timeline": "node scripts/timeline.mjs",
     "voice": "node scripts/voice.mjs",
-    "voices": "node scripts/eleven_voices.mjs",
+    "voices": "node scripts/voices.mjs",
+    "voice-list": "node scripts/eleven_voices.mjs",
     "sfx": "node scripts/sfx.mjs",
     "score": "node scripts/score.mjs",
     "audio": "node scripts/audio.mjs",
     "fit": "node scripts/fit.mjs",
+    "chapter": "node scripts/chapter.mjs",
     "story": "node scripts/story-check.mjs",
-    "check": "node scripts/check.mjs",
     "qc": "node scripts/qc.mjs",
     "gallery": "node scripts/gallery.mjs",
-    "final": "node scripts/finalize.mjs"
+    "final": "node scripts/finalize.mjs",
+    "archive": "node scripts/archive.mjs"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.530",
+    "@remotion/cli": "4.0.530",
+    "@remotion/fonts": "4.0.530",
+    "@remotion/renderer": "4.0.530",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "remotion": "4.0.530"
+  },
+  "devDependencies": {
+    "@types/react": "19.0.0",
+    "@xmldom/xmldom": "^0.8.10",
+    "http-server": "14.1.1",
+    "typescript": "5.8.2"
   }
 }

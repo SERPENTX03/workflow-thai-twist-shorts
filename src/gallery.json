@@ -1,0 +1,501 @@
+{
+  "_note": "What the studio gallery shows. Each list is one Remotion composition; frame N draws item N (src/Gallery.tsx). npm run gallery renders them.",
+  "faces": [
+    "face-happy",
+    "face-laugh",
+    "face-sad",
+    "face-cry",
+    "face-angry",
+    "face-scared",
+    "face-shock",
+    "face-worried",
+    "face-smirk",
+    "face-tired",
+    "face-hollow",
+    "face-wary",
+    "face-guilty",
+    "face-grin",
+    "talk-a",
+    "talk-e",
+    "talk-o",
+    "talk-m"
+  ],
+  "poses": [
+    "man-sit",
+    "man-crouch",
+    "man-back",
+    "man-lie",
+    "woman-back",
+    "woman-sit",
+    "monk-sit",
+    "auntie-sit"
+  ],
+  "gait": [
+    "man-walk-0",
+    "man-walk-1",
+    "man-walk-2",
+    "man-run-0",
+    "man-run-1",
+    "man-run-2"
+  ],
+  "arms": [
+    "arm-r-hold",
+    "arm-r-chest",
+    "arm-r-offer",
+    "arm-r-raise",
+    "arm-r-pocket",
+    "arm-r-carry",
+    "arm-r-reach"
+  ],
+  "props": [
+    "prop-glass",
+    "prop-coin",
+    "prop-phone",
+    "prop-paper",
+    "prop-key",
+    "prop-flashlight",
+    "prop-bowl",
+    "prop-box",
+    "icon-clock",
+    "icon-warn",
+    "icon-check",
+    "icon-cross",
+    "icon-arrow",
+    "icon-pin",
+    "icon-fire",
+    "set-door",
+    "set-door-open",
+    "set-window",
+    "set-table",
+    "set-chair",
+    "set-bulb"
+  ],
+  "marks": [
+    "mark-question",
+    "mark-exclaim",
+    "mark-anger",
+    "mark-drops",
+    "mark-zzz",
+    "mark-dizzy",
+    "mark-idea",
+    "mark-shiver",
+    "mark-gloom",
+    "acc-glasses",
+    "acc-square-glasses",
+    "acc-cap",
+    "acc-bucket-hat",
+    "acc-bag",
+    "acc-tote",
+    "acc-backpack",
+    "acc-amulet",
+    "acc-wristwatch",
+    "acc-beads",
+    "acc-necklace",
+    "acc-denim",
+    "acc-rescue",
+    "acc-track",
+    "acc-blazer",
+    "acc-floral",
+    "acc-cotton",
+    "acc-courier",
+    "acc-chef",
+    "acc-varsity",
+    "acc-sailor",
+    "acc-stripe",
+    "acc-overalls",
+    "acc-police",
+    "acc-mechanic",
+    "acc-photographer",
+    "acc-taxi"
+  ],
+  "ui": [
+    {
+      "id": "caption",
+      "nameTh": "ซับไตเติล",
+      "code": "story.json: \"text\": \"น้ำเหลือ[ไม่ถึงสามสิบลิตร]\"",
+      "use": "[คำ] = ทอง, {คำ} = แดง · engine วาดให้เอง"
+    },
+    {
+      "id": "caption-red",
+      "nameTh": "ซับกล่องแดง",
+      "code": "story.json: \"style\": \"red\"",
+      "use": "เฉพาะ 2–4 บรรทัดที่พลิกเรื่อง"
+    },
+    {
+      "id": "rule",
+      "nameTh": "การ์ดกฎ",
+      "code": "<RuleCard no=\"กฎข้อ 1\" lines={[...]} />",
+      "use": "กฎ/ข้อห้ามของเรื่อง"
+    },
+    {
+      "id": "stat",
+      "nameTh": "ตัวเลข + มิเตอร์",
+      "code": "<Stat label=\"น้ำที่เหลือ\" value={29} unit=\"ลิตร\" /> <Meter level={0.32} low />",
+      "use": "ตัวเลขที่นับลด/เพิ่มทุก ~10 วิ"
+    },
+    {
+      "id": "checklist",
+      "nameTh": "เช็กลิสต์",
+      "code": "<Checklist rows={[...]} ticks={[1, 1, 0]} />",
+      "use": "ขั้นตอนเอาตัวรอด ติ๊กทีละข้อ"
+    },
+    {
+      "id": "card",
+      "nameTh": "การ์ดข้อมูล",
+      "code": "<Card title=\"รู้หรือไม่\">…</Card>",
+      "use": "ข้อเท็จจริงจริง สันแดง"
+    },
+    {
+      "id": "tags",
+      "nameTh": "ป้ายชื่อ / ชิป / นาฬิกา",
+      "code": "<Tag text=\"คุณ\" tone=\"you\" /> <Chip text=\"คนเป็น\" /> <Hud text=\"03:00\" />",
+      "use": "ติดชื่อครั้งแรกที่ตัวละครโผล่"
+    }
+  ],
+  "scenes": [
+    {
+      "scene": "room",
+      "nameTh": "ห้องกลางคืน + กระจก",
+      "data": {
+        "hud": "03:00"
+      },
+      "use": "ฉากในห้อง เงาในกระจกคือเครื่องมือหักมุม"
+    },
+    {
+      "scene": "rules",
+      "view": "card",
+      "nameTh": "กฎ (การ์ด)",
+      "data": {
+        "no": "กฎข้อ 1",
+        "lines": [
+          "อย่าวิ่งลงบันได",
+          "ตามเพื่อน"
+        ]
+      },
+      "use": "ฉากกลางวัน + ป้ายชื่อ + การ์ดกฎตกลงมา"
+    },
+    {
+      "scene": "rules",
+      "view": "numbers",
+      "nameTh": "กฎ (ตัวเลข)",
+      "data": {},
+      "use": "ตัวเลขนับถอยหลัง มิเตอร์ เช็กลิสต์"
+    },
+    {
+      "scene": "map",
+      "nameTh": "แผนที่มุมบน",
+      "data": {},
+      "use": "god view: จุดทึบ = คนเป็น, จุดประ = คุณ"
+    },
+    {
+      "scene": "news",
+      "nameTh": "ข่าว/หลักฐาน",
+      "data": {},
+      "use": "ภาพเบลอค่อยชัด + วงแดง (เฉลย)"
+    },
+    {
+      "scene": "next",
+      "nameTh": "ตอนต่อไป",
+      "data": {
+        "ep": "เมื่อไฟดับทั้งเมือง · EP 2"
+      },
+      "use": "การ์ดปิดซีรีส์ ปล่อยซับว่าง"
+    }
+  ],
+  "world": [
+    {
+      "id": "sky-night",
+      "nameTh": "ท้องฟ้ากลางคืน + แนวต้นไม้",
+      "code": "<Sky tone=\"night\" />",
+      "use": "dusk · night · dawn · morning (คนละ tone)"
+    },
+    {
+      "id": "sky-dusk",
+      "nameTh": "ท้องฟ้าเย็น",
+      "code": "<Sky tone=\"dusk\" />",
+      "use": "ย้อนเวลา / ก่อนค่ำ"
+    },
+    {
+      "id": "sky-dawn",
+      "nameTh": "ท้องฟ้ารุ่งเช้า",
+      "code": "<Sky tone=\"dawn\" />",
+      "use": "ฉากจบ / เช้าวันใหม่"
+    },
+    {
+      "id": "sky-morning",
+      "nameTh": "ท้องฟ้าเช้า",
+      "code": "<Sky tone=\"morning\" />",
+      "use": "ฉากโล่ง หลังเรื่องจบ"
+    },
+    {
+      "id": "planks-boards",
+      "nameTh": "ผนังไม้ + พื้นไม้",
+      "code": "<Planks /><Boards />",
+      "use": "พื้นฐานของห้อง / กุฏิ / ทางเดิน"
+    },
+    {
+      "id": "gate-dusk",
+      "nameTh": "ประตูวัด (เย็น)",
+      "code": "<Gate tone=\"dusk\" sign=\"วัดโคกตะเคียน\" />",
+      "use": "sign = ชื่อวัด · year 0–9 = ไทม์แลปส์ผนังเก่า/ต้นไม้โต · open = ประตูเปิดกว้างแค่ไหน"
+    },
+    {
+      "id": "gate-night",
+      "nameTh": "ประตูวัด (กลางคืน)",
+      "code": "<Gate tone=\"night\" sign=\"…\" />",
+      "use": "ฉากหน้าประตูตอนค่ำ"
+    },
+    {
+      "id": "gate-morning",
+      "nameTh": "ประตูวัด (เช้า)",
+      "code": "<Gate tone=\"morning\" sign=\"…\" />",
+      "use": "ฉากจบ"
+    },
+    {
+      "id": "road",
+      "nameTh": "ถนนมองออกจากประตู",
+      "code": "<Road tone=\"dusk\" />",
+      "use": "มองจากในวัดออกไป · voided = ไม่มีอะไรอยู่ข้างนอกเลย"
+    },
+    {
+      "id": "road-voided",
+      "nameTh": "ถนนว่างเปล่า",
+      "code": "<Road tone=\"night\" voided />",
+      "use": "เสาไฟหายไป ท้องฟ้าสีดำ"
+    },
+    {
+      "id": "sala",
+      "nameTh": "ศาลา",
+      "code": "<Sala />",
+      "use": "ศาลาโล่ง หลังคากระเบื้อง เสาขาว เสื่อ"
+    },
+    {
+      "id": "path",
+      "nameTh": "ทางเดินในวัดตอนกลางคืน",
+      "code": "<Path f={f} mud={0} />",
+      "use": "ต้นตะเคียนผูกผ้าแดง เสาไฟ ทางคอนกรีต · mud = พื้นเปียกโคลน"
+    },
+    {
+      "id": "bench",
+      "nameTh": "ม้านั่งหน้าครัว",
+      "code": "<BenchSet f={f} tower />",
+      "use": "tower = เห็นหอระฆังไกล ๆ ด้านขวา"
+    },
+    {
+      "id": "tower",
+      "nameTh": "หอระฆัง",
+      "code": "<TowerShape x={960} y={100} f={f} swing={4} ropeSwing={2} />",
+      "use": "swing = ระฆังแกว่ง · ropeSwing = เชือก · far = เงาไกล"
+    },
+    {
+      "id": "well",
+      "nameTh": "บ่อน้ำเก่า",
+      "code": "<WellSet f={f} />",
+      "use": "ตะแกรงเหล็ก ใบกล้วย ใบไม้เปียกรอบขอบบ่อ"
+    },
+    {
+      "id": "corridor",
+      "nameTh": "ทางเดินระหว่างกุฏิ",
+      "code": "<Corridor f={f} drip={0.5} />",
+      "use": "หลอดไฟกะพริบ · drip = พื้นเปียก"
+    },
+    {
+      "id": "porch",
+      "nameTh": "ระเบียงกุฏิ",
+      "code": "<Porch f={f} />",
+      "use": "ผนังไม้ ประตู ราวระเบียง"
+    }
+  ],
+  "places": [
+    {
+      "id": "shop-row",
+      "nameTh": "ร้านค้าแถว / ตลาด",
+      "code": "<ShopRow tone=\"day\" />  // หรือ tone=\"dusk\" | \"night\"",
+      "use": "ร้านค้าห้องแถว ตลาดสดริมทาง · เปลี่ยน tone กลางวัน/พลบค่ำ/กลางคืนได้"
+    },
+    {
+      "id": "stilt-house",
+      "nameTh": "บ้านไม้ใต้ถุนสูง",
+      "code": "<StiltHouse tone=\"night\" />  // หรือ tone=\"day\" | \"dusk\"",
+      "use": "บ้านไม้ชนบทไทย ชานเรือน บันไดไม้ · เปลี่ยน tone ได้"
+    },
+    {
+      "id": "canal",
+      "nameTh": "ริมคลอง / สะพานปูน",
+      "code": "<Canal tone=\"dusk\" />  // หรือ tone=\"day\" | \"night\"",
+      "use": "คลองไทย สะพานปูน เสาไฟและเสาโทรเลข · เปลี่ยน tone ได้"
+    },
+    {
+      "id": "spirit-house",
+      "nameTh": "ศาลพระภูมิ",
+      "code": "<SpiritHouse tone=\"night\" />  // หรือ tone=\"day\" | \"dusk\"",
+      "use": "ศาลพระภูมิริมรั้ว จานเครื่องเซ่น ธูปเทียน · เปลี่ยน tone ได้"
+    },
+    {
+      "id": "minimart",
+      "nameTh": "ร้านสะดวกซื้อ",
+      "code": "<Minimart tone=\"night\" />  // มืดไฟดับ: <Minimart tone=\"night\" dark />",
+      "use": "เคาน์เตอร์ กระจกร้านสะดวกซื้อ · มีโหมด dark สำหรับฉากไฟดับหรือสยองขวัญ"
+    },
+    {
+      "id": "hospital",
+      "nameTh": "ทางเดินโรงพยาบาล",
+      "code": "<HospitalHall />  // ไฟกะพริบ/มีเตียง: <HospitalHall flick bed />",
+      "use": "โถงโรงพยาบาล ป้ายฉุกเฉิน ม้านั่ง · รองรับไฟกะพริบและเตียงเข็น"
+    },
+    {
+      "id": "classroom",
+      "nameTh": "ห้องเรียน",
+      "code": "<Classroom tone=\"day\" />  // หรือ tone=\"night\"",
+      "use": "กระดานดำ โต๊ะเรียนไม้ หน้าต่างเปิด · เปลี่ยน tone กลางวันหรือกลางคืนได้"
+    },
+    {
+      "id": "dorm",
+      "nameTh": "หอพัก / ทางเดินห้องพัก",
+      "code": "<DormHall />",
+      "use": "ทางเดินหอพัก ประตูห้องเรียงแถว ป้ายเลขห้อง แสงไฟหลอดนีออน"
+    },
+    {
+      "id": "rice-field",
+      "nameTh": "ทุ่งนาชนบท",
+      "code": "<RiceField tone=\"dusk\" ripe />  // หรือ tone=\"day\"",
+      "use": "ท้องนา คันดิน รวงข้าวสุกสีทองและกระท่อมปลายนา · เปลี่ยน tone ได้"
+    },
+    {
+      "id": "bus-stop",
+      "nameTh": "ศาลารอรถเมล์",
+      "code": "<BusStop tone=\"night\" />  // หรือ tone=\"day\" | \"dusk\"",
+      "use": "ป้ายรถเมล์ริมถนน ม้านั่ง ป้ายตารางเดินรถ · เปลี่ยน tone ได้"
+    },
+    {
+      "id": "highway-road",
+      "nameTh": "ถนนทางหลวง (ถนนเปลี่ยว)",
+      "code": "<SideRoadSet tone=\"dusk\" />  // หรือ tone=\"night\" | \"day\"",
+      "use": "ถนนทางหลวงชนบท เสาหลักกิโลและต้นไม้ · ใช้เดี่ยวๆ หรือนำ Prop มอเตอร์ไซค์มาวางซ้อนได้"
+    }
+  ],
+  "inserts": [
+    {
+      "id": "hand-grip",
+      "nameTh": "มือ: กำของ (ปรับสีผิวและแขนเสื้อได้)",
+      "code": "<Hand mode=\"grip\" skin=\"#e2b08a\" sleeve=\"#2f5f8f\" />\n// หรือมือเปล่า (แขนสั้น / พับแขน):\n<Hand mode=\"grip\" skin=\"#e2b08a\" />",
+      "use": "กำของแนวนอน (ถือไฟฉาย, ปากกา, พวงมาลัย) · ปรับ sleeve ตามสีเสื้อของตัวละคร หรือละเว้นเพื่อแสดงมือเปล่า"
+    },
+    {
+      "id": "hand-open",
+      "nameTh": "มือ: แบ / เอื้อม (ปรับสีผิวและแขนเสื้อได้)",
+      "code": "<Hand mode=\"open\" skin=\"#e2b08a\" sleeve=\"#2f5f8f\" />\n// ใส่รอยย่นมือผู้สูงวัย:\n<Hand mode=\"open\" skin=\"#e2b08a\" wrinkles />",
+      "use": "ยื่นมือ, รับของ, แตะไหล่, วางมือ · ใส่ wrinkles={true} เพื่อแสดงมือผู้สูงวัย"
+    },
+    {
+      "id": "rain",
+      "nameTh": "เส้นฝนทับ close-up",
+      "code": "<RainStreaks f={f} />",
+      "use": "ใช้ในฉาก close-up (ฝนในฉากด้านข้างคือ Rain ใน fx.tsx)"
+    },
+    {
+      "id": "drips",
+      "nameTh": "หยดน้ำ",
+      "code": "<Drips x={960} y={300} f={f} n={3} to={900} />",
+      "use": "หยดตก วนทุก 40 เฟรม"
+    },
+    {
+      "id": "notebook",
+      "nameTh": "สมุด + ลายมือ",
+      "code": "<Page x y w h rot><Ink text=\"…\" /></Page>",
+      "use": "บันทึก / กฎ · Ink shake 0–1 = ลายมือสั่น"
+    },
+    {
+      "id": "rule-card",
+      "nameTh": "การ์ดกฎเต็มจอ",
+      "code": "{\"scene\": \"rule\",\"data\": {\"no\": \"กฎข้อ 1\",\"text\": \"บรรทัด 1\nบรรทัด 2\"}}",
+      "use": "RuleCardScene · การ์ดตกลงมา มีเส้นแดงด้านบน"
+    },
+    {
+      "id": "end-card",
+      "nameTh": "การ์ดท้าย: กดไลค์ กดติดตาม",
+      "code": "{\"scene\": \"endcard\", \"data\": {\"step\": \"like\", \"title\": \"ชื่อเรื่อง\", \"note\": \"เรื่องแต่ง\"}}",
+      "use": "EndCardScene · step like → subscribe → done ลูกศรกดปุ่มให้เอง"
+    },
+    {
+      "id": "wall-clock",
+      "nameTh": "นาฬิกาแขวน",
+      "code": "<WallClock x y t=\"03:52\" r={330} tick={…} />",
+      "use": "เวลาเป็นเบาะแส · tick = เข็มวินาที (เรเดียน)"
+    },
+    {
+      "id": "flashlight",
+      "nameTh": "ไฟฉาย",
+      "code": "<Beam x y angle len spread a /> · beamAt(f,len,keys)",
+      "use": "แสงกรวย + ตำแหน่งดวงไฟที่เคลื่อน (LightMask ใน horror.tsx)"
+    }
+  ],
+  "grades": [
+    {
+      "id": "day",
+      "nameTh": "กลางวัน",
+      "code": "\"data\": {\"light\": \"day\"}",
+      "use": "Grade: สีทับ + วิกเนตต์"
+    },
+    {
+      "id": "morning",
+      "nameTh": "เช้า",
+      "code": "\"data\": {\"light\": \"morning\"}",
+      "use": "Grade: สีทับ + วิกเนตต์"
+    },
+    {
+      "id": "dusk",
+      "nameTh": "เย็น",
+      "code": "\"data\": {\"light\": \"dusk\"}",
+      "use": "Grade: สีทับ + วิกเนตต์"
+    },
+    {
+      "id": "warm",
+      "nameTh": "ไฟอุ่น",
+      "code": "\"data\": {\"light\": \"warm\"}",
+      "use": "Grade: สีทับ + วิกเนตต์"
+    },
+    {
+      "id": "lamp",
+      "nameTh": "ตะเกียง",
+      "code": "\"data\": {\"light\": \"lamp\"}",
+      "use": "Grade: สีทับ + วิกเนตต์"
+    },
+    {
+      "id": "lantern",
+      "nameTh": "โคมไฟ",
+      "code": "\"data\": {\"light\": \"lantern\"}",
+      "use": "Grade: สีทับ + วิกเนตต์"
+    },
+    {
+      "id": "night",
+      "nameTh": "กลางคืน",
+      "code": "\"data\": {\"light\": \"night\"}",
+      "use": "Grade: สีทับ + วิกเนตต์"
+    },
+    {
+      "id": "dim",
+      "nameTh": "มืดสลัว",
+      "code": "\"data\": {\"light\": \"dim\"}",
+      "use": "Grade: สีทับ + วิกเนตต์"
+    },
+    {
+      "id": "dark",
+      "nameTh": "มืดสนิท",
+      "code": "\"data\": {\"light\": \"dark\"}",
+      "use": "Grade: สีทับ + วิกเนตต์"
+    },
+    {
+      "id": "dawn",
+      "nameTh": "รุ่งสาง",
+      "code": "\"data\": {\"light\": \"dawn\"}",
+      "use": "Grade: สีทับ + วิกเนตต์"
+    },
+    {
+      "id": "past",
+      "nameTh": "ความทรงจำ (flashback)",
+      "code": "\"data\": {\"past\": 1}",
+      "use": "ฟิลเตอร์จาง + เม็ดเกรนมากขึ้น (PAST_FILTER)"
+    }
+  ]
+}

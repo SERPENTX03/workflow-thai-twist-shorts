@@ -130,14 +130,16 @@ const moodAt = t => {
   let hush = 1;
   for (let i = 0; i < N; i++) {
     const t = i / SR, m = moodAt(t);
-    let g = 0.1 + 0.16 * m;
+    // a calm bed breathes (slow swell) instead of sitting at one level; hard-pressed scenes (mood) keep it steady
+    let g = (S.bed ?? 0.4) * (0.07 + 0.2 * m) * (1 - (1 - Math.min(1, m / 0.6)) * 0.45 * (0.5 + 0.5 * Math.sin(2 * Math.PI * t / 19)));
     if (shotAt(t).hush || hush !== 1) { hush += ((shotAt(t).hush ? 0.02 : 1) - hush) * hushK; if (Math.abs(hush - 1) < 1e-4) hush = 1; g *= hush; }
     if (BIG.some(b => t > b - 0.45 && t < b)) g *= 0.05;
     if (t > S.total - 2) g *= Math.max(0, (S.total - t) / 2);
     if (t < 0.05) g *= t / 0.05;
     const det = 0.4 * Math.sin(t * 0.3);
-    const v = Math.sin(2 * Math.PI * 55 * t) + 0.7 * Math.sin(2 * Math.PI * (82.41 + det) * t) + 0.5 * Math.sin(2 * Math.PI * (110 - det) * t) + 0.25 * m * Math.sin(2 * Math.PI * 116.5 * t);
-    const n = (rnd() * 2 - 1) * 0.3 * m;
+    // the minor-2nd rub (116.5 vs 110 Hz) and the hiss only come in with real dread; a calm bed is a clean open fifth
+    const v = Math.sin(2 * Math.PI * 55 * t) + 0.7 * Math.sin(2 * Math.PI * (82.41 + det) * t) + 0.5 * Math.sin(2 * Math.PI * (110 - det) * t) + 0.25 * m * m * Math.sin(2 * Math.PI * 116.5 * t);
+    const n = (rnd() * 2 - 1) * 0.3 * Math.max(0, m - 0.4);
     bus.music[0][i] += lpL(v + n) * g * 0.9;
     bus.music[1][i] += lpR(v * 0.98 + n) * g * 0.9;
   }
@@ -205,7 +207,9 @@ const reverb = (buf, mix) => {
   }
   return out;
 };
-const M = bus.music.map(b => reverb(b, 0.35)), X = bus.sfx.map(b => reverb(b, 0.35));
+// the music bed is high-passed: below ~80 Hz it is only sub-rumble that pressures earbuds/headphones and is inaudible on phones
+const hpBed = bus.music.map(b => { const f1 = biquad('hp', 80, 0.7), f2 = biquad('hp', 80, 0.7); for (let i = 0; i < N; i++) b[i] = f2(f1(b[i])); return b; });
+const M = hpBed.map(b => reverb(b, 0.2)), X = bus.sfx.map(b => reverb(b, 0.35));
 
 // ---------- duck under the voice ----------
 const duck = new Float32Array(N);

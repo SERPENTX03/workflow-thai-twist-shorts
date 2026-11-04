@@ -1,0 +1,2166 @@
+{
+  "title": "เงินปากผี",
+  "format": "landscape",
+  "target": [
+    360,
+    480
+  ],
+  "bpm": 75,
+  "voice": "narrator",
+  "voices": {
+    "narrator": "eleven:weRAVUYgqjjfUEEu5BsB",
+    "lead_male": "eleven:xYmBpJREC3WfqEFpbPvO",
+    "lead_female": "eleven:MYZYcGOqrkYQcwDunXl7",
+    "male": "eleven:xYmBpJREC3WfqEFpbPvO",
+    "female": "eleven:MYZYcGOqrkYQcwDunXl7",
+    "old_male": "eleven:5KvpaGteYkNayiswuX2h",
+    "old_female": "eleven:p2Wol3C7j3rHbfOrbL18",
+    "boy": "eleven:yq05eeRaHPMGuWTVpqeP",
+    "young_female": "eleven:cgSgspJ2msm6clMCkdW9",
+    "father": "eleven:KhBRXgEQjvfdIyXOu7G3",
+    "officer": "eleven:JTfQv1rq84UdcXVunY5m",
+    "casual_male": "eleven:RwilAvCC3o05RLuACpAn",
+    "villain_male": "eleven:Vl27Cllkuw8BhyPqus2n",
+    "villain_female": "eleven:EXAVITQu4vr4xnSDxMaL"
+  },
+  "voiceModel": "eleven_v3",
+  "voiceTone": "calm",
+  "voiceTempo": 1.1,
+  "breath": 0.2,
+  "switchBreath": 0.2,
+  "minBeats": 2,
+  "fitStep": 0.125,
+  "sfx": {
+    "night": {
+      "prompt": "quiet night ambience at a rural Thai temple, crickets, distant dogs, light wind through trees",
+      "dur": 6,
+      "influence": 0.5,
+      "gain": 0.35
+    },
+    "chant": {
+      "prompt": "distant Thai Buddhist monks chanting in a temple hall at night, low steady drone of voices, soft reverb",
+      "dur": 6,
+      "influence": 0.5,
+      "gain": 0.3
+    },
+    "sob": {
+      "prompt": "a middle-aged woman quietly sobbing and sniffling behind a row of chairs in a quiet hall",
+      "dur": 3,
+      "influence": 0.5,
+      "gain": 0.55
+    },
+    "cash": {
+      "prompt": "three crisp paper banknotes laid one by one onto a wooden table, close, quiet room",
+      "dur": 1.5,
+      "influence": 0.6,
+      "gain": 0.65
+    },
+    "clapper": {
+      "prompt": "one sharp knock of a wooden stick on a wooden coffin lid in a silent temple hall, dry hollow, short echo",
+      "dur": 1.2,
+      "influence": 0.6,
+      "gain": 0.95
+    },
+    "grab": {
+      "prompt": "a hand suddenly gripping a knee through cloth trousers, quick fabric rustle, close",
+      "dur": 0.8,
+      "influence": 0.5,
+      "gain": 0.75
+    },
+    "cloth": {
+      "prompt": "a cotton sarong hem pulled out from under someone sitting on a plastic chair, short cloth slide",
+      "dur": 1,
+      "influence": 0.5,
+      "gain": 0.6
+    },
+    "moto": {
+      "prompt": "small Thai motorcycle idling then pulling away on an asphalt road at dusk",
+      "dur": 3,
+      "influence": 0.5,
+      "gain": 0.55
+    },
+    "ping": {
+      "prompt": "single short smartphone message notification ping",
+      "dur": 0.6,
+      "influence": 0.6,
+      "gain": 0.6
+    },
+    "bag": {
+      "prompt": "plastic bag of boiled eggs rustling and being tied to a motorcycle handlebar",
+      "dur": 1.2,
+      "influence": 0.5,
+      "gain": 0.55
+    },
+    "pen": {
+      "prompt": "ballpoint pen writing firmly on carbon paper in a notebook, a few strokes, quiet room",
+      "dur": 1.5,
+      "influence": 0.5,
+      "gain": 0.55
+    },
+    "rec": {
+      "prompt": "smartphone voice message recording start beep, short soft tone",
+      "dur": 0.5,
+      "influence": 0.6,
+      "gain": 0.55
+    },
+    "fail": {
+      "prompt": "smartphone error tone, two short low beeps, message failed to send",
+      "dur": 0.8,
+      "influence": 0.6,
+      "gain": 0.55
+    },
+    "bowl": {
+      "prompt": "ceramic bowl of hot rice porridge set down on a wooden tray, spoon clinks once, quiet hall",
+      "dur": 1.2,
+      "influence": 0.5,
+      "gain": 0.6
+    },
+    "candle": {
+      "prompt": "several candle flames snuffed out one after another in a silent hall, soft puffs, faint smoke hiss",
+      "dur": 1.5,
+      "influence": 0.5,
+      "gain": 0.6
+    },
+    "whisper": {
+      "prompt": "faint unintelligible male whisper from inside a wooden box in a silent temple hall, breathy, eerie",
+      "dur": 2,
+      "influence": 0.5,
+      "gain": 0.5
+    },
+    "rooster": {
+      "prompt": "distant rooster crowing in a Thai village in the morning, birds, light breeze",
+      "dur": 3,
+      "influence": 0.5,
+      "gain": 0.45
+    },
+    "radio": {
+      "prompt": "short burst of police walkie-talkie static and a click, quiet night",
+      "dur": 1,
+      "influence": 0.5,
+      "gain": 0.55
+    },
+    "spill": {
+      "prompt": "ceramic bowl knocked off a wooden tray, porridge splashing onto a tiled floor, bowl rattles to a stop",
+      "dur": 1.5,
+      "influence": 0.5,
+      "gain": 0.75
+    },
+    "rush": {
+      "prompt": "two people suddenly running across a tiled temple hall floor, quick heavy footsteps, close",
+      "dur": 1.5,
+      "influence": 0.5,
+      "gain": 0.7
+    },
+    "fan": {
+      "prompt": "old electric desk fan spinning steadily with a soft rhythmic hum and a faint tick, warm quiet room",
+      "dur": 6,
+      "influence": 0.5,
+      "gain": 0.4
+    },
+    "morning": {
+      "prompt": "bright morning ambience on a quiet Thai village road, birds chirping, distant motorbike, light breeze",
+      "dur": 6,
+      "influence": 0.5,
+      "gain": 0.35
+    }
+  },
+  "shots": [
+    {
+      "chapter": "เก้าอี้แถวหน้า",
+      "scene": "hand",
+      "view": "notes",
+      "text": "บนโต๊ะลงชื่อ แบงก์พัน[สามใบ]ถูกวางลงอย่างประณีต",
+      "beats": 5.25,
+      "mood": 0.45,
+      "cues": [
+        [
+          0,
+          "chant"
+        ],
+        [
+          0.6,
+          "cash"
+        ]
+      ],
+      "data": {
+        "notes": 3,
+        "light": "lamp",
+        "hud": "21:40"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "desk",
+      "text": "ด้านหลังมีเสียงผู้หญิงร้องไห้สะอึกสะอื้น",
+      "beats": 3.75,
+      "mood": 0.45,
+      "cues": [
+        [
+          0,
+          "sob"
+        ]
+      ],
+      "data": {
+        "cast": [
+          "headman@700 sit",
+          "tham@1100 wary",
+          "mourner@1480 sit cry"
+        ],
+        "cam": [
+          1,
+          1.06,
+          960,
+          540
+        ],
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "desk-close",
+      "text": "\"[สามพัน]พอดี นับดูอีกรอบก็ได้พ่อหนุ่ม จะได้สบายใจ\"",
+      "who": "headman",
+      "voice": "father",
+      "tone": "warm, friendly",
+      "beats": 5.375,
+      "mood": 0.45,
+      "data": {
+        "cast": [
+          "headman@820 sit happy talk",
+          "tham@1220 wary"
+        ],
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "hand",
+      "view": "pocket",
+      "text": "ธามเก็บเงินเข้ากระเป๋า",
+      "beats": 2.625,
+      "mood": 0.45,
+      "data": {
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "row",
+      "text": "การรับจ้างนั่งฟังสวดเพียง[หนึ่งชั่วโมง]\nแลกกับเงิน[สามพันบาท]",
+      "beats": 5.875,
+      "mood": 0.45,
+      "data": {
+        "cast": [
+          "tham@900 sit tired",
+          "mek@1120 sit worried"
+        ],
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "row",
+      "text": "เป็นเรื่องง่ายจนน่าประหลาดใจ",
+      "beats": 3.5,
+      "mood": 0.45,
+      "data": {
+        "cast": [
+          "tham@900 sit smirk",
+          "mek@1120 sit worried"
+        ],
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "behind",
+      "text": "เสียงสะอื้นด้านหลัง{หยุดลงกะทันหัน}",
+      "beats": 3.5,
+      "mood": 0.6,
+      "hush": true,
+      "cues": [
+        [
+          0,
+          "sob"
+        ]
+      ],
+      "data": {
+        "cast": [
+          "tham@820 sit back",
+          "mourner@1180 sit hollow"
+        ],
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "hand",
+      "view": "sarong",
+      "text": "เมื่อหญิงวัยกลางคนดึงชายผ้าถุง\nที่ธามนั่งทับออก",
+      "beats": 4.5,
+      "mood": 0.6,
+      "cues": [
+        [
+          0.5,
+          "cloth"
+        ]
+      ],
+      "data": {
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "behind",
+      "text": "ก่อนจะก้มหน้าร้องไห้ต่อ เหมือน{เปิดสวิตช์}",
+      "beats": 4.625,
+      "mood": 0.6,
+      "cues": [
+        [
+          0.8,
+          "sob"
+        ]
+      ],
+      "data": {
+        "cast": [
+          "tham@820 sit shock",
+          "mourner@1180 sit cry"
+        ],
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "row",
+      "text": "ชายหนุ่ม[เสื้อแจ็กเก็ตสีน้ำเงิน]ข้าง ๆ สะกิดเขาเบา ๆ",
+      "beats": 4.875,
+      "mood": 0.55,
+      "data": {
+        "cast": [
+          "tham@900 sit worried",
+          "mek@1120 sit scared arm=l-offer"
+        ],
+        "tag": {
+          "mek": "เมฆ",
+          "tham": "ธาม"
+        },
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "row",
+      "text": "\"พี่… ถ้าจะหัวเราะให้มองพื้นนะ\"",
+      "who": "mek",
+      "voice": "casual_male",
+      "tone": "whispers, nervous",
+      "beats": 3.25,
+      "mood": 0.6,
+      "data": {
+        "cast": [
+          "tham@900 sit worried",
+          "mek@1120 sit scared talk"
+        ],
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "coffin",
+      "style": "red",
+      "text": "\"อย่าเงยหน้ามอง[รูปหน้าโลง]{เด็ดขาด}\"",
+      "who": "mek",
+      "voice": "casual_male",
+      "tone": "whispers, scared",
+      "beats": 3.625,
+      "mood": 0.7,
+      "data": {
+        "photo": "covered",
+        "cam": [
+          1,
+          1.12,
+          960,
+          470
+        ],
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "row",
+      "text": "\"ทำไม รู้จักคนในรูปเหรอ\"",
+      "who": "tham",
+      "voice": "lead_male",
+      "tone": "whispers, curious",
+      "beats": 3.25,
+      "mood": 0.6,
+      "data": {
+        "cast": [
+          "tham@900 sit wary talk",
+          "mek@1120 sit scared"
+        ],
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "row",
+      "text": "\"เมื่อคืนแกยังช่วยผม[เข็นรถ]อยู่เลย…\"",
+      "who": "mek",
+      "voice": "casual_male",
+      "tone": "whispers, scared",
+      "beats": 3.875,
+      "mood": 0.75,
+      "data": {
+        "cast": [
+          "tham@900 sit shock",
+          "mek@1120 sit scared talk"
+        ],
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "hand",
+      "view": "knee",
+      "text": "",
+      "beats": 3,
+      "mood": 0.8,
+      "hush": true,
+      "cues": [
+        [
+          0,
+          "clapper"
+        ],
+        [
+          0.6,
+          "grab"
+        ]
+      ],
+      "data": {
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "title",
+      "text": "",
+      "vo": "เงินปากผี",
+      "voLead": 0.6,
+      "beats": 2.75,
+      "mood": 0.4,
+      "music": true,
+      "cues": [
+        [
+          0.3,
+          "bell"
+        ]
+      ],
+      "data": {
+        "title": "เงินปากผี",
+        "note": "เรื่องแต่ง เหตุการณ์และพิธีกรรมเป็นเรื่องสมมติ",
+        "light": "night"
+      }
+    },
+    {
+      "chapter": "สามพันก่อนเก้าโมง",
+      "scene": "road",
+      "view": "parked",
+      "text": "ก่อนหน้านั้นไม่กี่ชั่วโมง",
+      "beats": 2.625,
+      "mood": 0.35,
+      "cues": [
+        [
+          0,
+          "whoosh"
+        ]
+      ],
+      "data": {
+        "cast": [
+          "tham@860 tired"
+        ],
+        "light": "dusk",
+        "hud": "17:50"
+      }
+    },
+    {
+      "scene": "phone",
+      "view": "repo",
+      "text": "ธามกำลังจะถูก{ยึดรถ}มอเตอร์ไซค์รับจ้าง",
+      "beats": 3.75,
+      "mood": 0.4,
+      "cues": [
+        [
+          0.2,
+          "ping"
+        ]
+      ],
+      "data": {
+        "from": "ไฟแนนซ์",
+        "msg": "ค้างค่างวด 3,000 บาท ชำระก่อน 09:00 น. มิฉะนั้นจะดำเนินการยึดรถ",
+        "light": "dusk"
+      }
+    },
+    {
+      "scene": "road",
+      "view": "bike",
+      "text": "ซึ่งเป็นเครื่องมือทำกินเพียงชิ้นเดียว",
+      "beats": 3.375,
+      "mood": 0.4,
+      "data": {
+        "cast": [
+          "tham@760 worried"
+        ],
+        "light": "dusk"
+      }
+    },
+    {
+      "scene": "clock",
+      "view": "deadline",
+      "text": "หากหาเงิน[สามพัน]มาจ่ายไม่ได้ก่อน[เก้าโมงเช้า]",
+      "beats": 4,
+      "mood": 0.45,
+      "cues": [
+        [
+          0.5,
+          "tick"
+        ],
+        [
+          1.5,
+          "tick"
+        ],
+        [
+          2.5,
+          "tick"
+        ]
+      ],
+      "data": {
+        "need": 3000,
+        "have": 0,
+        "due": "09:00",
+        "light": "dusk"
+      }
+    },
+    {
+      "scene": "phone",
+      "view": "ad",
+      "text": "ข้อความประกาศรับสมัครคนนั่งฟังสวดกะดึก\nที่[วัดดงสะเดา]",
+      "beats": 5.375,
+      "mood": 0.4,
+      "cues": [
+        [
+          0.2,
+          "ping"
+        ]
+      ],
+      "data": {
+        "from": "กลุ่มหางานด่วน",
+        "msg": "รับคนนั่งฟังสวด กะดึก ค่าจ้าง 3,000 บาท จ่ายสด วัดดงสะเดา",
+        "light": "dusk"
+      }
+    },
+    {
+      "scene": "road",
+      "view": "ride",
+      "text": "จึงเป็น[ทางรอดเดียว]ของเขา",
+      "beats": 2.875,
+      "mood": 0.4,
+      "cues": [
+        [
+          0,
+          "moto"
+        ]
+      ],
+      "data": {
+        "cast": [
+          "tham@900 sit"
+        ],
+        "light": "dusk"
+      }
+    },
+    {
+      "scene": "store",
+      "view": "front",
+      "text": "ระหว่างทาง ธามแวะถามทาง\nที่ร้านขายของชำริมถนนลาดยาง",
+      "beats": 6,
+      "mood": 0.4,
+      "data": {
+        "cast": [
+          "tham@700 walk",
+          "auntie@1260"
+        ],
+        "light": "dusk",
+        "hud": "18:40"
+      }
+    },
+    {
+      "scene": "store",
+      "view": "counter",
+      "text": "ป้าเจ้าของร้านมองเสื้อไรเดอร์ของเขา\nด้วยสายตาเป็นห่วง",
+      "beats": 4.875,
+      "mood": 0.45,
+      "data": {
+        "cast": [
+          "tham@760",
+          "auntie@1180 worried"
+        ],
+        "tag": {
+          "auntie": "ป้าร้านชำ"
+        },
+        "light": "dusk"
+      }
+    },
+    {
+      "scene": "store",
+      "view": "auntie-close",
+      "text": "\"[คนเมื่อคืน]ก็มาถามทางแบบแกนี่แหละ…\"",
+      "who": "auntie",
+      "voice": "old_female",
+      "tone": "worried",
+      "beats": 3.5,
+      "mood": 0.5,
+      "data": {
+        "cast": [
+          "auntie@960 worried talk"
+        ],
+        "light": "dusk"
+      }
+    },
+    {
+      "scene": "store",
+      "view": "eggs",
+      "text": "\"ได้เงินแล้วตอนกลับ อย่าลืมแวะซื้อ[ไข่ต้ม]ป้าด้วยนะ\"",
+      "who": "auntie",
+      "voice": "old_female",
+      "tone": "gentle",
+      "beats": 4.75,
+      "mood": 0.5,
+      "data": {
+        "eggs": 3,
+        "light": "dusk"
+      }
+    },
+    {
+      "scene": "store",
+      "view": "counter",
+      "text": "\"ป่านนี้ยัง{ไม่มีใครกลับมาเอา}เลย\"",
+      "who": "auntie",
+      "voice": "old_female",
+      "tone": "low, uneasy",
+      "beats": 3.5,
+      "mood": 0.6,
+      "data": {
+        "cast": [
+          "tham@760 wary",
+          "auntie@1180 sad talk"
+        ],
+        "light": "dusk"
+      }
+    },
+    {
+      "scene": "store",
+      "view": "glass",
+      "text": "ใต้กระจกเคาน์เตอร์\nมี[ใบประกาศงานศพ]วางเรียงกันสามใบ",
+      "beats": 6.5,
+      "hold": 1,
+      "mood": 0.65,
+      "data": {
+        "notices": [
+          "31 ต.ค.",
+          "1 พ.ย.",
+          "2 พ.ย."
+        ],
+        "light": "dusk"
+      }
+    },
+    {
+      "scene": "store",
+      "view": "glass-close",
+      "text": "ทุกใบระบุ{วันที่ต่อเนื่องกัน}อย่างน่าสงสัย",
+      "beats": 5.25,
+      "hold": 0.5,
+      "mood": 0.7,
+      "data": {
+        "notices": [
+          "31 ต.ค.",
+          "1 พ.ย.",
+          "2 พ.ย."
+        ],
+        "mark": "dates",
+        "light": "dusk"
+      }
+    },
+    {
+      "scene": "hand",
+      "view": "eggs-bar",
+      "text": "ธามรับไข่ต้มมาผูกไว้ที่แฮนด์รถ",
+      "beats": 3.125,
+      "mood": 0.5,
+      "cues": [
+        [
+          0.3,
+          "bag"
+        ]
+      ],
+      "data": {
+        "eggs": 3,
+        "light": "dusk"
+      }
+    },
+    {
+      "scene": "gate",
+      "view": "approach",
+      "text": "แล้วมุ่งหน้าเข้าสู่วัด",
+      "beats": 2,
+      "mood": 0.55,
+      "cues": [
+        [
+          0,
+          "moto"
+        ],
+        [
+          0,
+          "night"
+        ]
+      ],
+      "data": {
+        "sign": "วัดดงสะเดา",
+        "cast": [
+          "tham@820 sit"
+        ],
+        "light": "night",
+        "hud": "21:20"
+      }
+    },
+    {
+      "chapter": "กฎสี่ข้อ",
+      "scene": "sala",
+      "view": "wide",
+      "text": "ที่ศาลาวัด ผู้ใหญ่บ้านทำหน้าที่จดบันทึกรายชื่อผู้มาร่วมงาน",
+      "beats": 6.375,
+      "mood": 0.5,
+      "cues": [
+        [
+          0,
+          "bell"
+        ],
+        [
+          0,
+          "chant"
+        ]
+      ],
+      "data": {
+        "cast": [
+          "headman@700 sit",
+          "tham@1080 walk"
+        ],
+        "tag": {
+          "headman": "ผู้ใหญ่บ้าน"
+        },
+        "light": "lamp",
+        "hud": "21:30"
+      }
+    },
+    {
+      "scene": "hand",
+      "view": "ledger",
+      "text": "ลงบน[กระดาษคาร์บอน]อย่างละเอียด",
+      "beats": 3.125,
+      "mood": 0.5,
+      "cues": [
+        [
+          0.3,
+          "pen"
+        ]
+      ],
+      "data": {
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "desk",
+      "text": "พร้อมแจ้งกฎประจำพิธี",
+      "beats": 3.5,
+      "mood": 0.5,
+      "data": {
+        "cast": [
+          "headman@700 sit",
+          "tham@1100 wary"
+        ],
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "desk-close",
+      "text": "\"จำไว้[สี่ข้อ]\"",
+      "who": "headman",
+      "voice": "father",
+      "tone": "serious",
+      "beats": 2.125,
+      "mood": 0.55,
+      "data": {
+        "cast": [
+          "headman@820 sit talk",
+          "tham@1220 wary"
+        ],
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "rule",
+      "text": "\"หนึ่ง พระสวดไม่ครบ[สี่จบ] ห้ามลุกจากแถวหน้า\"",
+      "who": "headman",
+      "voice": "father",
+      "tone": "serious",
+      "beats": 4.375,
+      "mood": 0.55,
+      "cues": [
+        [
+          0.4,
+          "stamp"
+        ]
+      ],
+      "data": {
+        "no": "กฎข้อ 1 / 4",
+        "text": "สวดไม่ครบสี่จบ ห้ามลุกจากแถวหน้า",
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "rule",
+      "text": "\"สอง [ผ้าคลุมรูป]จะขยับก็อย่าจ้อง\"",
+      "who": "headman",
+      "voice": "father",
+      "tone": "serious",
+      "beats": 3.625,
+      "mood": 0.6,
+      "cues": [
+        [
+          0.4,
+          "stamp"
+        ]
+      ],
+      "data": {
+        "no": "กฎข้อ 2 / 4",
+        "text": "ผ้าคลุมรูปขยับ อย่าจ้อง",
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "rule",
+      "text": "\"สาม ข้าวต้มรอบดึก\nต้องรอเสียงเคาะไม้ครบ[สามครั้ง]ถึงจะทานได้\"",
+      "who": "headman",
+      "voice": "father",
+      "tone": "serious",
+      "beats": 5.75,
+      "mood": 0.6,
+      "cues": [
+        [
+          0.4,
+          "stamp"
+        ]
+      ],
+      "data": {
+        "no": "กฎข้อ 3 / 4",
+        "text": "ข้าวต้มรอบดึก รอเคาะไม้ครบสามครั้ง",
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "desk-close",
+      "text": "\"และสี่ พอ[ตีสี่]ดับเทียน ให้เดินออกไปทันที\"",
+      "who": "headman",
+      "voice": "father",
+      "tone": "serious, low",
+      "beats": 4.375,
+      "mood": 0.65,
+      "data": {
+        "cast": [
+          "headman@820 sit talk",
+          "tham@1220 worried"
+        ],
+        "cam": [
+          1.05,
+          1.15,
+          820,
+          500
+        ],
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "rule",
+      "text": "\"ใครเรียกก็{ห้ามหันมอง}\"",
+      "who": "headman",
+      "voice": "father",
+      "tone": "whispers, serious",
+      "beats": 2.75,
+      "mood": 0.7,
+      "cues": [
+        [
+          0.4,
+          "stamp"
+        ]
+      ],
+      "data": {
+        "no": "กฎข้อ 4 / 4",
+        "text": "ตีสี่ดับเทียน เดินออกทันที ใครเรียกห้ามหันมอง",
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "row",
+      "text": "ธามรับคำ แล้วเดินไปนั่งประจำที่ข้าง[เมฆ]",
+      "beats": 5.125,
+      "mood": 0.55,
+      "data": {
+        "cast": [
+          "tham@900 sit",
+          "mek@1120 sit worried"
+        ],
+        "light": "lamp",
+        "hud": "21:40"
+      }
+    },
+    {
+      "scene": "hand",
+      "view": "patch",
+      "text": "ชายหนุ่มเสื้อสีน้ำเงิน\nที่มี[รอยปะด้ายเหลือง]รูปกากบาทตรงข้อศอก",
+      "beats": 8.5,
+      "hold": 1,
+      "mood": 0.65,
+      "data": {
+        "patch": "yellow-cross",
+        "light": "lamp"
+      }
+    },
+    {
+      "chapter": "ข้อความที่ส่งไม่ถึง",
+      "scene": "sala",
+      "view": "row",
+      "text": "ระหว่างรองานเริ่ม เมฆพยายามอัดข้อความเสียง",
+      "beats": 4.375,
+      "mood": 0.45,
+      "cues": [
+        [
+          0,
+          "chant"
+        ]
+      ],
+      "data": {
+        "cast": [
+          "tham@900 sit",
+          "mek@1120 sit worried arm=r-hold prop=phone"
+        ],
+        "light": "lamp",
+        "hud": "22:10"
+      }
+    },
+    {
+      "scene": "phone",
+      "view": "record",
+      "text": "เพื่อส่งหาน้องสาว ผ่าน[โทรศัพท์มือถือจอร้าว]",
+      "beats": 5.125,
+      "mood": 0.45,
+      "cues": [
+        [
+          0.6,
+          "rec"
+        ]
+      ],
+      "data": {
+        "cracked": true,
+        "to": "ติ๊ก",
+        "status": "กำลังอัด…",
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "row",
+      "text": "\"[ติ๊ก] พี่ได้เงินแล้วนะ\"",
+      "who": "mek",
+      "voice": "casual_male",
+      "tone": "soft, warm",
+      "beats": 2,
+      "mood": 0.4,
+      "data": {
+        "cast": [
+          "tham@900 sit",
+          "mek@1120 sit happy talk arm=r-hold prop=phone"
+        ],
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "row",
+      "text": "\"พรุ่งนี้เอา[พัดลมแม่]ไปซ่อมได้เลย ไม่ต้องรอพี่ตื่น\"",
+      "who": "mek",
+      "voice": "casual_male",
+      "tone": "soft, warm",
+      "beats": 4.5,
+      "mood": 0.4,
+      "data": {
+        "cast": [
+          "tham@900 sit sad",
+          "mek@1120 sit happy talk arm=r-hold prop=phone"
+        ],
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "phone",
+      "view": "record",
+      "text": "สัญญาณเน็ตขาดหาย ข้อความจึง{ยังค้างอยู่}บนหน้าจอ",
+      "beats": 5.25,
+      "mood": 0.5,
+      "cues": [
+        [
+          0.4,
+          "fail"
+        ]
+      ],
+      "data": {
+        "cracked": true,
+        "to": "ติ๊ก",
+        "status": "ส่งไม่สำเร็จ",
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "coffin",
+      "text": "เมื่อพระสวดจบ[รอบที่สอง]",
+      "beats": 3,
+      "mood": 0.5,
+      "data": {
+        "photo": "covered",
+        "monks": true,
+        "chant": "สวดจบ 2 / 4",
+        "light": "lamp",
+        "hud": "00:30"
+      }
+    },
+    {
+      "scene": "hand",
+      "view": "clapper",
+      "text": "เสียงเคาะไม้ดังขึ้น[สองจังหวะ]",
+      "beats": 3.125,
+      "mood": 0.55,
+      "cues": [
+        [
+          0.5,
+          "clapper"
+        ],
+        [
+          1.4,
+          "clapper"
+        ]
+      ],
+      "data": {
+        "knocks": 2,
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "row",
+      "text": "ชามข้าวต้มส่งกลิ่นหอมถูกนำมาเสิร์ฟ",
+      "beats": 3.875,
+      "mood": 0.5,
+      "cues": [
+        [
+          0.4,
+          "bowl"
+        ]
+      ],
+      "data": {
+        "cast": [
+          "tham@900 sit wary",
+          "mek@1120 sit happy"
+        ],
+        "bowls": true,
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "hand",
+      "view": "bowl",
+      "text": "ธามสังเกตเห็น[เส้นด้ายสีแดง]เส้นเล็ก ๆ พันอยู่รอบอาหาร",
+      "beats": 5.875,
+      "hold": 1,
+      "mood": 0.6,
+      "data": {
+        "thread": "red",
+        "eaten": 0,
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "row",
+      "text": "จึงเลือกที่จะ{ไม่แตะต้อง}",
+      "beats": 3.125,
+      "mood": 0.6,
+      "data": {
+        "bowls": true,
+        "cast": [
+          "tham@900 sit wary",
+          "mek@1120 sit happy arm=r-hold prop=spoon"
+        ],
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "row",
+      "text": "แต่เมฆซึ่งกำลังหิวจัด รอจนเสียงเคาะ[ครั้งที่สาม]ดังขึ้น",
+      "beats": 5.25,
+      "mood": 0.6,
+      "cues": [
+        [
+          3.5,
+          "clapper"
+        ]
+      ],
+      "data": {
+        "bowls": true,
+        "cast": [
+          "tham@900 sit wary",
+          "mek@1120 sit happy arm=r-hold prop=spoon"
+        ],
+        "knocks": 3,
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "hand",
+      "view": "bowl",
+      "text": "แล้วรับประทาน{จนหมด}",
+      "beats": 2.75,
+      "mood": 0.65,
+      "cues": [
+        [
+          0.6,
+          "bowl"
+        ]
+      ],
+      "data": {
+        "thread": "red",
+        "eaten": 1,
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "coffin",
+      "text": "เมื่อถึงเวลา[ตีสี่] เทียนดับลง",
+      "beats": 3.625,
+      "mood": 0.65,
+      "cues": [
+        [
+          0.8,
+          "candle"
+        ]
+      ],
+      "data": {
+        "photo": "covered",
+        "candles": "out",
+        "light": "dim",
+        "hud": "04:00"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "exit",
+      "text": "ธามเดินออกจากศาลาตามกฎ",
+      "beats": 3.125,
+      "mood": 0.65,
+      "cues": [
+        [
+          0.3,
+          "step"
+        ],
+        [
+          1,
+          "step"
+        ],
+        [
+          1.7,
+          "step"
+        ]
+      ],
+      "data": {
+        "cast": [
+          "tham@1100 walk worried"
+        ],
+        "light": "dim"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "exit",
+      "text": "เมฆฝากข้อความถึงน้องสาวอีกครั้ง",
+      "beats": 3.125,
+      "mood": 0.7,
+      "data": {
+        "cast": [
+          "tham@1240 walk scared",
+          "mek@560 sit worried o=0.7"
+        ],
+        "light": "dim"
+      }
+    },
+    {
+      "scene": "gate",
+      "view": "stairs",
+      "text": "ก่อนที่เสียงฝีเท้าจะ{หยุดลง}ที่บันไดวัด",
+      "beats": 4.75,
+      "hold": 0.5,
+      "mood": 0.8,
+      "hush": true,
+      "cues": [
+        [
+          0.2,
+          "step"
+        ],
+        [
+          0.8,
+          "step"
+        ],
+        [
+          1.4,
+          "step"
+        ],
+        [
+          0,
+          "night"
+        ]
+      ],
+      "data": {
+        "light": "dim"
+      }
+    },
+    {
+      "chapter": "เงาในกระจกนาฬิกา",
+      "scene": "phone",
+      "view": "chat",
+      "text": "คืนถัดมา ธามได้รับการติดต่อให้กลับไปรับจ้างอีกครั้ง\nด้วยค่าจ้างที่[สูงขึ้น]",
+      "beats": 6.375,
+      "mood": 0.45,
+      "cues": [
+        [
+          0,
+          "bell"
+        ],
+        [
+          0.4,
+          "ping"
+        ]
+      ],
+      "data": {
+        "from": "ผู้ใหญ่บ้าน",
+        "msg": "คืนนี้มาอีกได้ไหม เพิ่มค่าจ้างให้",
+        "light": "dusk",
+        "hud": "19:00"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "row",
+      "text": "แต่คนที่นั่งข้างเขาคืนนี้ กลับเป็น[ชายชรา]ท่าทางอิดโรย",
+      "beats": 5.75,
+      "mood": 0.5,
+      "cues": [
+        [
+          0,
+          "chant"
+        ]
+      ],
+      "data": {
+        "cast": [
+          "tham@900 sit wary",
+          "oldman@1120 sit tired"
+        ],
+        "tag": {
+          "oldman": "ชายชรา"
+        },
+        "light": "lamp",
+        "hud": "21:40"
+      }
+    },
+    {
+      "scene": "hand",
+      "view": "hearing-aid",
+      "text": "ที่สวม[เครื่องช่วยฟัง]",
+      "beats": 2.375,
+      "mood": 0.5,
+      "data": {
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "under-chair",
+      "text": "เมื่อธามก้มลงเก็บของใต้เก้าอี้",
+      "beats": 3.125,
+      "mood": 0.55,
+      "data": {
+        "cast": [
+          "tham@900 crouch wary"
+        ],
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "clock-glass",
+      "text": "แสงไฟส่องผ่าน[ผ้าคลุมหน้าโลงศพ]",
+      "beats": 3.375,
+      "mood": 0.65,
+      "hush": true,
+      "data": {
+        "photo": "glow",
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "coffin",
+      "text": "เผยให้เห็นรูปภาพผู้เสียชีวิตของคืนนี้…",
+      "beats": 4.25,
+      "mood": 0.75,
+      "data": {
+        "photo": "glow",
+        "cam": [
+          1,
+          1.15,
+          960,
+          450
+        ],
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "hand",
+      "view": "photo",
+      "style": "red",
+      "text": "เป็นภาพของ{เมฆ} ในชุดแจ็กเก็ตปะ[ด้ายเหลือง]ที่ข้อศอก!",
+      "beats": 5.125,
+      "hold": 1,
+      "mood": 0.9,
+      "cues": [
+        [
+          0,
+          "hit"
+        ]
+      ],
+      "data": {
+        "photo": "mek",
+        "patch": "yellow-cross",
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "coffin",
+      "text": "ทันใดนั้น เสียงกระซิบลอดออกมาจากบริเวณหน้าโลงศพ",
+      "beats": 4.625,
+      "mood": 0.8,
+      "cues": [
+        [
+          0.8,
+          "whisper"
+        ]
+      ],
+      "data": {
+        "photo": "covered",
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "coffin",
+      "text": "\"พรุ่งนี้เอา[พัดลมแม่]ไปซ่อมได้เลย…\"",
+      "who": "mek",
+      "voice": "casual_male",
+      "tone": "whispers",
+      "fx": "muffled",
+      "beats": 3.625,
+      "mood": 0.85,
+      "data": {
+        "photo": "covered",
+        "cloth": "move",
+        "cam": [
+          1.12,
+          1.2,
+          960,
+          450
+        ],
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "under-chair",
+      "text": "กลับเป็นเสียงของ{เมฆ} ที่กำลังพูดถึงเรื่องพัดลมของแม่",
+      "beats": 4.625,
+      "mood": 0.8,
+      "data": {
+        "cast": [
+          "tham@900 crouch shock"
+        ],
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "row",
+      "text": "ธามพยายามเตือนชายชราข้าง ๆ\nไม่ให้รับประทานอาหารในพิธี",
+      "beats": 5.25,
+      "mood": 0.7,
+      "data": {
+        "cast": [
+          "tham@900 sit worried arm=l-offer",
+          "oldman@1120 sit tired arm=r-hold prop=spoon"
+        ],
+        "bowls": true,
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "hand",
+      "view": "bowl",
+      "text": "แต่ชายชราคิดว่าเขาเพียงแค่เตือนเรื่องสุขอนามัยทั่วไป",
+      "beats": 5.125,
+      "mood": 0.7,
+      "data": {
+        "thread": "red",
+        "eaten": 0.4,
+        "hand": "old",
+        "light": "lamp"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "row",
+      "text": "จึงรับประทานต่อไปด้วย{ความหิว}",
+      "beats": 4.625,
+      "hold": 0.5,
+      "mood": 0.75,
+      "cues": [
+        [
+          0.5,
+          "bowl"
+        ]
+      ],
+      "data": {
+        "cast": [
+          "tham@900 sit scared",
+          "oldman@1120 sit happy arm=r-hold prop=spoon"
+        ],
+        "bowls": true,
+        "light": "lamp"
+      }
+    },
+    {
+      "chapter": "การสืบค้นความจริง",
+      "scene": "house",
+      "view": "yard",
+      "text": "เช้าวันรุ่งขึ้น ธามตัดสินใจติดต่อ[ติ๊ก] น้องสาวของเมฆ\nเพื่อตรวจสอบความจริง",
+      "beats": 7.25,
+      "mood": 0.4,
+      "cues": [
+        [
+          0,
+          "rooster"
+        ]
+      ],
+      "data": {
+        "cast": [
+          "tham@760",
+          "tik@1180 sad"
+        ],
+        "tag": {
+          "tik": "ติ๊ก"
+        },
+        "light": "day",
+        "hud": "08:30"
+      }
+    },
+    {
+      "scene": "house",
+      "view": "porch",
+      "text": "ติ๊กยืนยันว่าได้รับแจ้งข่าว ว่าพี่ชาย{ประสบอุบัติเหตุ}",
+      "beats": 5.75,
+      "mood": 0.45,
+      "data": {
+        "cast": [
+          "tik@960 cry"
+        ],
+        "fan": true,
+        "light": "day"
+      }
+    },
+    {
+      "scene": "house",
+      "view": "bike",
+      "text": "แต่[รถมอเตอร์ไซค์ของเมฆ] ยังคงจอดอยู่ที่บ้านอย่างน่าสงสัย",
+      "beats": 7.75,
+      "hold": 1,
+      "mood": 0.55,
+      "data": {
+        "light": "day"
+      }
+    },
+    {
+      "scene": "phone",
+      "view": "ad",
+      "text": "ธามไม่ปล่อยให้เรื่องเงียบหาย",
+      "beats": 3.125,
+      "mood": 0.45,
+      "data": {
+        "from": "กลุ่มหางานด่วน",
+        "msg": "รับคนนั่งฟังสวด กะดึก ค่าจ้าง 3,000 บาท จ่ายสด วัดดงสะเดา",
+        "light": "day"
+      }
+    },
+    {
+      "scene": "police",
+      "view": "desk",
+      "text": "เขาพาติ๊กพร้อม[หลักฐานข้อความว่าจ้าง]\nไปแจ้งเจ้าหน้าที่ตำรวจในพื้นที่",
+      "beats": 6.125,
+      "mood": 0.45,
+      "data": {
+        "cast": [
+          "tham@700 worried",
+          "tik@920 sad",
+          "cop@1320 sit"
+        ],
+        "tag": {
+          "cop": "ตำรวจ"
+        },
+        "light": "day",
+        "hud": "11:00"
+      }
+    },
+    {
+      "scene": "police",
+      "view": "plan",
+      "text": "เพื่อวางแผนเข้าตรวจสอบความผิดปกติในคืนนั้น",
+      "beats": 4.625,
+      "mood": 0.5,
+      "data": {
+        "map": "วัดดงสะเดา",
+        "light": "day"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "back",
+      "text": "ช่วงดึก ธามและเจ้าหน้าที่\nสังเกตการณ์อยู่บริเวณด้านหลังศาลา",
+      "beats": 8.125,
+      "mood": 0.6,
+      "cues": [
+        [
+          0,
+          "night"
+        ],
+        [
+          1,
+          "radio"
+        ]
+      ],
+      "data": {
+        "cast": [
+          "tham@760 crouch wary",
+          "cop@1020 wary arm=r-hold prop=flashlight"
+        ],
+        "light": "night",
+        "hud": "23:30"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "altar-back",
+      "text": "และพบ[หลักฐานสำคัญ]",
+      "beats": 2.375,
+      "mood": 0.65,
+      "data": {
+        "beam": 1,
+        "light": "night"
+      }
+    },
+    {
+      "scene": "hand",
+      "view": "belongings",
+      "text": "คือโทรศัพท์มือถือและของใช้ส่วนตัว\nของ[ผู้รับจ้างในคืนก่อน ๆ]",
+      "beats": 8.625,
+      "hold": 1,
+      "mood": 0.7,
+      "data": {
+        "items": [
+          "phone-cracked",
+          "phone",
+          "phone",
+          "wallet",
+          "helmet"
+        ],
+        "light": "night"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "altar-back",
+      "text": "ถูกเก็บรวบรวมไว้{หลังโต๊ะทำพิธี}",
+      "beats": 4.875,
+      "hold": 0.5,
+      "mood": 0.75,
+      "data": {
+        "beam": 1,
+        "pile": true,
+        "light": "night"
+      }
+    },
+    {
+      "chapter": "การเปิดโปงพิธีกรรม",
+      "scene": "sala",
+      "view": "desk",
+      "text": "ความจริงถูกเปิดเผย เมื่อผู้ใหญ่บ้านเปิด[สมุดบันทึกรายชื่อ]",
+      "beats": 6,
+      "mood": 0.7,
+      "cues": [
+        [
+          0,
+          "bell"
+        ],
+        [
+          0,
+          "night"
+        ]
+      ],
+      "data": {
+        "cast": [
+          "headman@760 sit wary arm=r-hold prop=book"
+        ],
+        "spy": true,
+        "light": "night",
+        "hud": "02:10"
+      }
+    },
+    {
+      "scene": "hand",
+      "view": "ledger-open",
+      "text": "พิธีกรรมนี้แท้จริงแล้ว คือการจัดฉาก[สะเดาะเคราะห์]",
+      "beats": 5.75,
+      "hold": 0.5,
+      "mood": 0.75,
+      "cues": [
+        [
+          0.3,
+          "flip"
+        ]
+      ],
+      "data": {
+        "rows": [
+          {
+            "date": "31 ต.ค.",
+            "mark": "x"
+          },
+          {
+            "date": "1 พ.ย.",
+            "mark": "x"
+          },
+          {
+            "date": "2 พ.ย.",
+            "mark": "x"
+          },
+          {
+            "date": "3 พ.ย.",
+            "name": "เมฆ",
+            "mark": "x"
+          },
+          {
+            "date": "4 พ.ย.",
+            "mark": "?"
+          }
+        ],
+        "light": "night"
+      }
+    },
+    {
+      "scene": "mansion",
+      "view": "sickbed",
+      "text": "ตามความเชื่อของ[ตระกูลผู้มีอิทธิพล]",
+      "beats": 3.75,
+      "mood": 0.75,
+      "data": {
+        "cast": [
+          "patient@1100 lie tired"
+        ],
+        "light": "dim"
+      }
+    },
+    {
+      "scene": "diagram",
+      "view": "transfer",
+      "style": "red",
+      "text": "โดยจ้าง{คนภายนอก}มารับเคราะห์แทน[ผู้ป่วยติดเตียง]",
+      "beats": 4.875,
+      "hold": 0.5,
+      "mood": 1,
+      "cues": [
+        [
+          0,
+          "bighit"
+        ]
+      ],
+      "data": {
+        "from": "ผู้รับจ้าง",
+        "to": "ผู้ป่วยติดเตียง",
+        "label": "รับเคราะห์แทน",
+        "light": "night"
+      }
+    },
+    {
+      "scene": "hand",
+      "view": "bowl",
+      "text": "ข้าวต้มผสม[เครื่องรางด้ายแดง]",
+      "beats": 3.25,
+      "mood": 0.75,
+      "data": {
+        "thread": "red",
+        "eaten": 0,
+        "label": "เครื่องราง",
+        "light": "night"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "coffin",
+      "text": "และการจัด[งานศพจำลอง]",
+      "beats": 2.875,
+      "mood": 0.75,
+      "data": {
+        "photo": "covered",
+        "empty": true,
+        "light": "night"
+      }
+    },
+    {
+      "scene": "diagram",
+      "view": "transfer",
+      "text": "ถูกใช้เป็นเครื่องมือ{ผูกมัดทางความเชื่อ}",
+      "beats": 3.625,
+      "mood": 0.75,
+      "data": {
+        "from": "ผู้รับจ้าง",
+        "to": "ผู้ป่วยติดเตียง",
+        "label": "ข้าวต้ม · ด้ายแดง · งานศพ",
+        "bind": true,
+        "light": "night"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "row",
+      "text": "เมื่อไม่มี[ผู้รับจ้างคนใหม่]",
+      "beats": 2.875,
+      "mood": 0.8,
+      "data": {
+        "cast": [
+          "kin@1000 sit scared"
+        ],
+        "bowls": true,
+        "light": "night"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "desk",
+      "text": "ผู้ใหญ่บ้านพยายามจะดำเนินพิธีต่อ\nกับ{คนในครอบครัวตนเอง}",
+      "beats": 5.375,
+      "mood": 0.85,
+      "cues": [
+        [
+          1.5,
+          "clapper"
+        ],
+        [
+          3,
+          "clapper"
+        ]
+      ],
+      "data": {
+        "cast": [
+          "headman@700 sit guilty",
+          "kin@1180 sit scared"
+        ],
+        "tag": {
+          "kin": "ญาติผู้ใหญ่บ้าน"
+        },
+        "light": "night"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "back",
+      "text": "ธามและเจ้าหน้าที่ตำรวจจึงแสดงตัว",
+      "beats": 3.25,
+      "mood": 0.9,
+      "cues": [
+        [
+          0,
+          "hit"
+        ],
+        [
+          0.2,
+          "rush"
+        ]
+      ],
+      "data": {
+        "cast": [
+          "tham@760 run angry",
+          "cop@1040 run arm=r-hold prop=flashlight"
+        ],
+        "light": "night"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "desk",
+      "text": "เข้ายุติพิธีกรรมได้ทันท่วงที",
+      "beats": 3.75,
+      "mood": 0.85,
+      "cues": [
+        [
+          0.6,
+          "spill"
+        ]
+      ],
+      "data": {
+        "cast": [
+          "headman@640 sit shock",
+          "cop@940 angry",
+          "tham@1180 worried",
+          "kin@1420 sit shock"
+        ],
+        "spilled": true,
+        "light": "night"
+      }
+    },
+    {
+      "scene": "hand",
+      "view": "bowl",
+      "text": "ก่อนที่จะเกิด{ความสูญเสีย}ขึ้นอีก",
+      "beats": 3.5,
+      "hold": 0.5,
+      "mood": 0.8,
+      "data": {
+        "thread": "red",
+        "spilled": true,
+        "light": "night"
+      }
+    },
+    {
+      "chapter": "ความจริงปรากฏ",
+      "scene": "sala",
+      "view": "wide",
+      "text": "เจ้าหน้าที่ตำรวจเข้าควบคุมพื้นที่",
+      "beats": 3.5,
+      "mood": 0.5,
+      "cues": [
+        [
+          0,
+          "bell"
+        ]
+      ],
+      "data": {
+        "cast": [
+          "headman@700 sit guilty",
+          "cop@980",
+          "cop2@1260"
+        ],
+        "light": "dawn",
+        "hud": "05:40"
+      }
+    },
+    {
+      "scene": "hand",
+      "view": "ledger-bag",
+      "text": "และยึด[สมุดบันทึกรายชื่อ]ไว้เป็นหลักฐานสำคัญ",
+      "beats": 4.125,
+      "mood": 0.45,
+      "data": {
+        "label": "ของกลาง",
+        "light": "dawn"
+      }
+    },
+    {
+      "scene": "sala",
+      "view": "desk-close",
+      "text": "ผู้ใหญ่บ้านยอมรับสารภาพ ถึงการรับจ้างจัด{พิธีอำพราง}",
+      "beats": 6,
+      "mood": 0.45,
+      "data": {
+        "cast": [
+          "headman@820 sit guilty",
+          "cop@1220"
+        ],
+        "light": "dawn"
+      }
+    },
+    {
+      "scene": "phone",
+      "view": "chat",
+      "text": "และให้[ข้อมูลเท็จ]แก่ญาติของผู้เสียหาย",
+      "beats": 3.75,
+      "mood": 0.45,
+      "data": {
+        "from": "ผู้ใหญ่บ้าน",
+        "msg": "พี่ชายหนูประสบอุบัติเหตุ ขอแสดงความเสียใจด้วย",
+        "stamp": "ข้อมูลเท็จ",
+        "light": "dawn"
+      }
+    },
+    {
+      "scene": "police",
+      "view": "desk",
+      "text": "ติ๊กได้รับ[โทรศัพท์ของพี่ชาย]คืนมา",
+      "beats": 3.625,
+      "mood": 0.4,
+      "data": {
+        "cast": [
+          "tham@700",
+          "tik@920 sad arm=r-hold prop=phone",
+          "cop@1320 sit"
+        ],
+        "light": "day",
+        "hud": "10:20"
+      }
+    },
+    {
+      "scene": "phone",
+      "view": "record",
+      "text": "ทันทีที่สัญญาณเชื่อมต่อ",
+      "beats": 2.625,
+      "mood": 0.4,
+      "cues": [
+        [
+          0.8,
+          "ping"
+        ]
+      ],
+      "data": {
+        "cracked": true,
+        "to": "ติ๊ก",
+        "status": "กำลังส่ง…",
+        "light": "day"
+      }
+    },
+    {
+      "scene": "phone",
+      "view": "record",
+      "text": "ข้อความเสียงที่เมฆเคยอัดไว้เมื่อ[สามวันก่อน]",
+      "beats": 5.875,
+      "mood": 0.4,
+      "data": {
+        "cracked": true,
+        "to": "ติ๊ก",
+        "status": "ส่งแล้ว",
+        "date": "3 พ.ย. 22:14",
+        "light": "day"
+      }
+    },
+    {
+      "scene": "police",
+      "view": "tik-close",
+      "text": "ก็ถูกส่งถึงเครื่องของเธอในที่สุด",
+      "beats": 3.5,
+      "mood": 0.4,
+      "data": {
+        "cast": [
+          "tik@960 sad arm=r-hold prop=phone"
+        ],
+        "light": "day"
+      }
+    },
+    {
+      "scene": "police",
+      "view": "tik-close",
+      "text": "\"ติ๊ก พี่ได้เงินแล้วนะ\nพรุ่งนี้เอา[พัดลมแม่]ไปซ่อมได้เลย\"",
+      "who": "mek",
+      "voice": "casual_male",
+      "tone": "soft, warm",
+      "fx": "phone",
+      "beats": 5.75,
+      "hold": 1,
+      "mood": 0.35,
+      "music": true,
+      "data": {
+        "cast": [
+          "tik@960 cry arm=r-hold prop=phone"
+        ],
+        "light": "day"
+      }
+    },
+    {
+      "scene": "house",
+      "view": "porch",
+      "text": "เมฆได้รับการพิสูจน์ความจริง ว่าไม่ได้หลบหนี\nหรือประสบอุบัติเหตุจากความประมาท",
+      "beats": 7.5,
+      "mood": 0.35,
+      "data": {
+        "memorial": "mek",
+        "fan": true,
+        "light": "day"
+      }
+    },
+    {
+      "scene": "hand",
+      "view": "photo",
+      "text": "แต่เป็น[ผู้บริสุทธิ์]ที่ทำงานเพื่อหาเงินมาจุนเจือครอบครัว",
+      "beats": 5.75,
+      "hold": 1,
+      "mood": 0.3,
+      "music": true,
+      "data": {
+        "photo": "mek",
+        "patch": "yellow-cross",
+        "flowers": true,
+        "light": "day"
+      }
+    },
+    {
+      "chapter": "บทส่งท้าย",
+      "scene": "road",
+      "view": "ride",
+      "text": "สองสัปดาห์ต่อมา ธามกลับมาทำงานตามปกติ",
+      "beats": 4.625,
+      "mood": 0.2,
+      "cues": [
+        [
+          0,
+          "morning"
+        ],
+        [
+          0,
+          "moto"
+        ]
+      ],
+      "data": {
+        "cast": [
+          "tham@900 sit happy"
+        ],
+        "light": "day",
+        "hud": "สองสัปดาห์ต่อมา"
+      }
+    },
+    {
+      "scene": "hand",
+      "view": "handlebar",
+      "text": "ข้อมือที่หายดีแล้ว จับแฮนด์มอเตอร์ไซค์อย่างมั่นคง",
+      "beats": 4.625,
+      "mood": 0.2,
+      "data": {
+        "light": "day"
+      }
+    },
+    {
+      "scene": "phone",
+      "view": "voice-msg",
+      "text": "โทรศัพท์ของเขามี[ข้อความเสียง]สั้น ๆ ส่งมาจากติ๊ก",
+      "beats": 4.375,
+      "mood": 0.2,
+      "cues": [
+        [
+          0.4,
+          "ping"
+        ]
+      ],
+      "data": {
+        "from": "ติ๊ก",
+        "light": "day"
+      }
+    },
+    {
+      "scene": "house",
+      "view": "fan",
+      "text": "\"พัดลมซ่อมเสร็จแล้วนะลูก… ลมเย็นดีจริง ๆ\nขอบใจมากนะ\"",
+      "who": "mom",
+      "voice": "lead_female",
+      "tone": "warm, grateful",
+      "fx": "phone",
+      "voLead": 0.6,
+      "beats": 7,
+      "hold": 0.5,
+      "mood": 0.15,
+      "music": true,
+      "cues": [
+        [
+          0,
+          "fan"
+        ]
+      ],
+      "data": {
+        "fan": "spin",
+        "light": "day"
+      }
+    },
+    {
+      "scene": "road",
+      "view": "tham-close",
+      "text": "ธามยิ้มรับกับเสียงนั้น",
+      "beats": 2.5,
+      "mood": 0.15,
+      "music": true,
+      "data": {
+        "cast": [
+          "tham@960 sit happy arm=r-hold prop=phone"
+        ],
+        "light": "day"
+      }
+    },
+    {
+      "scene": "road",
+      "view": "ride",
+      "text": "ความจริงได้รับการเปิดเผย\nความเสียสละของเพื่อนร่วมทางไม่สูญเปล่า",
+      "beats": 7,
+      "mood": 0.15,
+      "music": true,
+      "data": {
+        "cast": [
+          "tham@900 sit happy"
+        ],
+        "light": "day"
+      }
+    },
+    {
+      "scene": "gate",
+      "view": "approach",
+      "text": "และพิธีกรรมที่บิดเบือนในเงามืด\nก็ได้ยุติลงอย่างสมบูรณ์",
+      "beats": 7.25,
+      "hold": 1,
+      "mood": 0.15,
+      "music": true,
+      "data": {
+        "sign": "วัดดงสะเดา",
+        "light": "day"
+      }
+    },
+    {
+      "scene": "end",
+      "text": "",
+      "beats": 8,
+      "mood": 0.15,
+      "music": true,
+      "data": {
+        "title": "เงินปากผี",
+        "note": "เรื่องแต่ง เหตุการณ์และพิธีกรรมเป็นเรื่องสมมติ",
+        "cta": "กดติดตามไว้ ไม่พลาดเรื่องต่อไป",
+        "light": "day"
+      }
+    }
+  ]
+}

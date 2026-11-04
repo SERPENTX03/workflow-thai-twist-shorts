@@ -1,6 +1,6 @@
 # Story rules — twist shorts
 
-Evidence for these rules: `ref-library.md` (high-view clips the user picked).
+Evidence for these rules: `ref-library.md` (high-view clips the user picked). These are **Shorts** rules (portrait, under ~2 min); a landscape long-form story follows `thai-long-story` → `longform-rules.md`.
 
 ## Pick a format family first
 
@@ -23,7 +23,7 @@ Survival is the default: it combines a twist with **useful knowledge**, which is
 | Clue beats | spread | 3–5 physical clues planted inside the knowledge shots (see below). Never named yet. |
 | Turn | 2–4 | "ทุกอย่างถูกหมด… ยกเว้นเรื่องเดียว" — the rules were right, one fact was missed. |
 | Reveal | 2–3 | Close-up proof (the bandage, the date, the face) → the twist line, 4 beats, `bighit`. |
-| Cliffhanger + card | 2 | A short line that opens the next episode ("ตีสอง… แล้วเรียกชื่อเขา…"), then the `example-next` end card. |
+| Cliffhanger + card | 2 | A short line that opens the next episode ("ตีสอง… แล้วเรียกชื่อเขา…"), then the `next` end card. |
 
 ## Haunting twist — shape (~20–28 shots)
 
@@ -50,6 +50,13 @@ Survival is the default: it combines a twist with **useful knowledge**, which is
 - At most 3 named humans per episode; each has one visual trait the viewer can track (long sleeves, a cap, glasses).
 - "คุณ" stories can still have named friends ("ต้น", "ฟ้า-หัวหน้าห้อง").
 
+### Staging & Dialogue Continuity (Never vanish or jump)
+
+- **Two-shot baseline for dialogues**: When two characters converse in the same room (e.g. sitting in a sala), keep both characters in `data.cast` for all shots of that dialogue sequence. The speaker gets `talk`; the partner gets an appropriate listening/reaction pose (`wary`, `worried`, `shock`, `sad`). Never remove the partner from `cast` unless they explicitly walk out (`exit`, `move`).
+- **True close-ups vs. fake close-ups**: A close-up view (`view: "*-close"`) must actually frame the character closely via `data.cam` (zoom $\ge 1.7$) or use scene presets. Never isolate an actor in the same wide room shot by simply deleting the partner from `cast`.
+- **Coordinate consistency**: Keep each character's $x$-coordinate consistent (e.g., Lead at 900, Partner at 1120). Do not let a character jump chairs/positions between consecutive cuts in the same room.
+- **Preflight check**: `npm run story episodes/<slug>` will warn on any vanishing actors, coordinate jumps, or unframed close-ups.
+
 ## Twist types that work
 
 - **The danger is already inside** — the friend in long sleeves was bitten from the start; someone was already inside the fence.
@@ -68,8 +75,8 @@ Plant **3–5 visual clues** before the reveal; each visible on screen at least 
 Good clue devices:
 - **Wrong clothes for the situation** — long sleeves at 36 °C; a coat indoors; wet hair on a dry day.
 - **A number that should have changed** — a calendar stuck on one date; one more person on the count than in the room.
-- **No shadow** — every living character gets `.shadow-blob`; the protagonist-ghost never does.
-- **The mirror copies with no face** — reflection drawn as `.sil`.
+- **No shadow** — every living character gets a `<ShadowBlob>` (`src/kit/fx.tsx`); the protagonist-ghost never does.
+- **The mirror copies with no face** — reflection drawn as `<Sprite silhouette>`.
 - **Hollow dot on the map** — the protagonist is a dashed hollow ring; the living are solid dots.
 - **The animal reacts first** — the dog growls at someone who seems fine; the cat won't go near the door.
 - **Eyes that pass through** — another character's sightline goes past the protagonist.
@@ -85,7 +92,14 @@ Name each clue in the outline next to the shots that plant it and the shot that 
 - [ ] The twist line is short (≤ 20 Thai characters) and lands on its own 4-beat shot.
 - [ ] Hook is on screen at frame 0 and contains a place + a threat or a number.
 - [ ] Series: the last line opens a question the next episode answers; `series.next` is set.
+- [ ] Narrative clarity: no obscure subtext leap; motives paired with actions; the twist punchline is unmistakable.
 - [ ] No plot hole a commenter would point at in one sentence.
+
+## Narrative clarity (ความชัดเจนในการสื่อสาร)
+
+- **One-punchline rule:** คนดูฟังเสียงแค่รอบเดียว ห้ามทิ้งปมที่ต้องอนุมานเกิน 1 ทอดไว้ลอยๆ ต้องมีประโยคสรุปตรรกะหรือแรงจูงใจที่ชัดเจนเสมอ
+- **Action-Motive pair:** เมื่อตัวละครทำสิ่งผิดปกติ (โกหก, แอบซ่อน, ละเมิดกฎ) ต้องบอกความกลัว/แรงจูงใจประกบคู่ทันที ไม่ปล่อยให้คนดูสงสัยว่า "ทำไปทำไม"
+- **Narrator clarity:** คำบรรยายช่วยเสริมความเข้าใจ ไม่ปล่อยให้บทสนทนากำกวมจนคนดูหลุดโฟกัส
 
 ## Thai caption voice
 

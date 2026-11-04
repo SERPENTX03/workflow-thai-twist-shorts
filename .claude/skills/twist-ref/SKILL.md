@@ -35,4 +35,4 @@ Scene detection misses slow pushes and over-counts flashes — treat cut counts 
 
 - Table: ref vs the project's current rules (`story-rules.md`, `art-direction.md`, `review.md`) — where the ref does something our rules forbid or don't cover.
 - Append a row to `references/ref-library.md` → *The clips* and *Log* (date, clip, new pattern). Only add a pattern to *Patterns shared* when at least two refs show it.
-- Propose rule changes as a short list; apply them to the reference files only after the user agrees. Kit changes go in `template/`.
+- Propose rule changes as a short list; apply them to the reference files only after the user agrees. Kit changes go in `src/`.

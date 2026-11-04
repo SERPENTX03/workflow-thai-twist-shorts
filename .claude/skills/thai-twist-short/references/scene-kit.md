@@ -1,92 +1,62 @@
-# Scene kit — building `compositions/scene-<name>.html`
+# Scene kit — building scenes in Remotion (TSX)
 
-Start by copying the closest example (`scene-example-room.html`, `scene-example-rules.html`, `scene-example-map.html`, `scene-example-news.html`, `scene-example-next.html`) to `scene-<name>.html`, rename every id prefix and the composition id, then run `npm run build`. The build wires it in automatically (the host id becomes `scene-<name>`).
+A **scene** is a React component for one shot: `ShotComponent = ({shot, f, len, W, H}) => JSX`. `f` is the frame inside the shot (0 … `len`), `shot` is the story.json entry (`shot.view`, `shot.data`, `shot.who`). It is a **pure function of `f`**: no state, no `Math.random()` / `Date.now()` (use `rnd(seed, i)` from `src/engine/anim.ts`), no network. Captions are drawn by the engine above the scene, never inside it.
 
-## File shape (HyperFrames sub-composition)
+## Where things live
 
-```html
-<!doctype html>
-<html>
-  <head><meta charset="UTF-8" /></head>
-  <body>
-    <template>
-      <link rel="stylesheet" href="assets/kit/kit.css" />
-      <style>
-        #root { position: absolute; inset: 0; overflow: hidden; background: #05070c; }
-        #door-panel { … }              /* prefix every id with the scene name */
-      </style>
-      <div id="root" data-composition-id="scene-door" data-width="1080" data-height="1920">
-        …
-      </div>
-      <script>
-        const tl = gsap.timeline({ paused: true });
-        tl.fromTo("#door-panel", { x: 0 }, { x: -200, duration: 1.2, ease: "power2.inOut" }, 0.4);
-        window.__timelines["scene-door"] = tl;
-      </script>
-    </template>
-  </body>
-</html>
+| Need | Use | File |
+|---|---|---|
+| a character, pet, pose, prop, icon, mark | `<Sprite id="man" height={600} />` | `src/cast/Sprite.tsx` (symbols are generated into `src/cast/CastSprite.tsx`) |
+| extra layers on one figure (face, accessory, arm pose, mark) | `layers={['face-angry', 'acc-cap']}` + `hideFace` / `hideArmL` / `hideArmR` | `Sprite` props |
+| silhouette (shadow, reflection, ghost) | `<Sprite id="man" silhouette />` | |
+| cards / chips / tags / rule card / stat / meter / checklist / hud | `Card Chip Tag RuleCard Stat Meter Checklist Hud` | `src/kit/ui.tsx` |
+| vignette, shadow blob, soft-focus `Far`, `Rain` | | `src/kit/fx.tsx` |
+| landscape stage: `Stage`, `Plate`, `Actors`, `makeSpeaking`, actor strings, `camAt`, `Grade` | | `src/kit/stage.tsx` |
+| landscape backdrops: `Sky Planks Boards Glow Beam beamAt WallClock`; temple sets `Gate Road Sala Path BenchSet TowerShape WellSet Corridor Porch` | | `src/kit/world.tsx`, `src/kit/temple.tsx` |
+| everyday Thai locations & vehicles: `ShopRow StiltHouse Canal SpiritHouse Minimart HospitalHall Classroom DormHall RiceField BusStop SideRoadSet Motorcycle` | | `src/kit/places.tsx` |
+| close-ups: `Hand`, `RainStreaks`, `Drips`, notebook `Page`/`Ink`, `RuleCardScene` | | `src/kit/inserts.tsx` |
+| tokens (colours, fonts, caption y) | `T` | `src/engine/theme.ts` |
+| easing / keyframes / pop-in | `kf(f, [[0,0],[12,1]])`, `appear(f, start, dur, ease)`, `backOut(k)`, `sec(s)`, `easeOut`, `easeInOut` | `src/engine/anim.ts` |
+
+## Generic scenes (ready, parameterised by `data` in story.json)
+
+| Scene name | `view` | `data` | Shows |
+|---|---|---|---|
+| `room` | — | `{hud, reflection}` | side-view night room, mirror silhouette, HUD clock |
+| `rules` | `card` / `numbers` | card: `{no, lines, tag, who}` · numbers: `{label, unit, from, to, rows}` | day set, name tag, rule card drop · stat count-down, meter, checklist |
+| `map` | — | `{her, me}` | top-down map, dashed path, hollow dot, red ring |
+| `news` | — | `{kicker, date, title[], who}` | newspaper evidence card, blur-to-sharp photo, red ring |
+| `next` | — | `{ep, title[], cta}` | ตอนต่อไป end card (leave the caption empty) |
+
+The old `example-*` names still resolve to the same components. A scene named in story.json that has no component renders a placeholder and `npm run story` warns.
+
+## Episode-specific scenes
+
+Create `src/episodes/<slug>/scenes.tsx`:
+
+```tsx
+import type {ShotComponent} from '../../engine/episode';
+import {Sprite} from '../../cast/Sprite';
+import {appear, backOut} from '../../engine/anim';
+
+const Door: ShotComponent = ({shot, f, len}) => (/* … */);
+export default {door: Door};   // key = the `scene` name in story.json
 ```
 
-- Times in the scene are **local to the clip**. Get each shot's local start from `timing.json → scenes[] → local[].at`.
-- Composition id = `scene-<name>` = the `window.__timelines` key.
-- Styles and scripts go **inside** `<template>`; style the root by `#root`, never a class.
-- Use `gsap.fromTo` (not `from`) so seeking backwards replays cleanly.
+Then `npm run timeline -- episodes/<slug>` (or `npm run check`) regenerates the registry. Entries here override the generic scenes of the same name. Promote anything reusable into `src/scenes/` and `src/kit/`.
 
-## Kit classes (`assets/kit/kit.css`)
+## Rules that still apply
 
-| Class | What |
-|---|---|
-| `.card` + `.card-title` / `.card-big` | cream info card with red spine |
-| `.chip`, `.chip.red` | pill label (names on maps, "ยังไม่ได้…", "ไม่มีเงา") |
-| `.hud` + `.hud-moon` | clock chip, e.g. `<div class="hud"><div class="hud-moon"></div>03:00</div>` |
-| `.who` | an SVG cast member box (200×520 by default — set width/height to scale) |
-| `.sil` | turns any cast member into a featureless black silhouette |
-| `.shadow-blob` | floor shadow under living characters |
-| `.vignette` | already applied over everything by the captions layer |
-| `.tag` (+ `.you`, `.warn`) | name tag with a coloured dot: `<div class="tag you"><i></i>คุณ · ม.4/2</div>` |
-| `.rule-card` + `.rule-no` / `.rule-text > span` | "กฎข้อ 1" card, red top edge |
-| `.stat` + `.stat-label` / `.stat-num` / `.stat-unit` | a number that matters; count it with a tween on a plain object + `onUpdate` (see `scene-example-rules.html`) |
-| `.meter > b` (+ `.low`) | a level that drains or fills — tween the `b`'s `width` |
-| `.checklist > .row > .box > .tick` | rows that tick — pop each `.tick` with `scale` 0 → 1 on a beat |
-| `.next-card` + `.next-kicker` / `.next-title > span` / `.next-cta` | series end card (`scene-example-next.html`) |
-| `.rain` | falling streaks; tween `backgroundPosition` with `ease: "none"` across the clip |
-| `.flood` | flood / canal water band; set `top` + `height`, tween `y` (negative) to make it rise — tweening `top` fails `check` |
-| `.mirror-y` | water reflection wrapper (flipped, faint); a ghost gets none |
-| `.far` | soft-focus wrapper for the far set (depth); keep cast and props outside it |
+1. **Hands:** never draw a hand beside a resting arm. `hideArmL` / `hideArmR` on the `Sprite`, then layer ONE pose arm + grip prop (`hands-poses.md`). Held props (`prop-*`, `acc-watch`) are anchored at (0,0): put them in their own `<Sprite>` or an `<svg><use href="#prop-coin" transform="translate(x y)"/></svg>`.
+2. **Faces:** `hideFace`, then one `face-*` layer per figure per shot; change mood on a cut or beat. `woman` / `auntie` need `transform="translate(0 4)"` on face layers (see `cast-library.md`).
+3. **Layer order:** background → set dressing → light glows (`mixBlendMode: 'screen'`) → shadows (`ShadowBlob`) → people → night grade overlay (`rgba(6,10,26,.55)`) → rings/highlights → HUD. The protagonist who is a ghost gets no shadow.
+4. **Closing lines need ≥ 2 s on screen.** Anything that appears in the last shot must land early.
+5. Anything that enters later starts fully off-canvas; use `appear()` so scrubbing backwards is clean.
+6. SVG shapes: animate geometry (`r`, `strokeDashoffset`) instead of CSS-scaling a shape inside a scaled `<svg>`.
+7. Text under 28 px is unreadable on a phone.
+8. `<use href="#id">` only works inside the same document: mount `<CastSprite/>` once (the engine's `Main` and `Board` already do; gallery frames do too).
+9. **Motorcycle & riding shots (Global standard from `ghost-money` shot `021`):** Whenever any character rides or parks a motorcycle in any episode, import `SideRoadSet` and `Motorcycle` from `src/kit/places.tsx` (gallery: `highway-road`, `motorcycle-ride`, `motorcycle-parked`). Always use the side-riding posture from `ghost-money` shot `021` via `<Motorcycle x={680} y={860} scale={1.06} headlight rider={{shirt, pants, skin, hair, face, vest}} wheelSpin={f * 18} />` — never place a standing `<Actors>` sprite on top of a moving motorcycle.
 
-## Example scenes
+## Checking a scene
 
-| File | Shows |
-|---|---|
-| `scene-example-room.html` | side-view night interior, mirror silhouette, HUD clock |
-| `scene-example-rules.html` | day set in `.far`, name tag, rule card drop, stat count-down, meter drain, checklist ticks — across two shots in one clip |
-| `scene-example-map.html` | top-down map, hollow dot, dashed paths |
-| `scene-example-news.html` | evidence card with blur-to-sharp photo and red ring |
-| `scene-example-next.html` | ตอนต่อไป end card; all text lands by 1.0 s so it is read for ≥ 2 s |
-| `scene-example-poses.html` | hand poses + grip props (offer + coin, hold + glass, pocket + raise) — the one-hand rule in practice, see `hands-poses.md` |
-| `scene-example-cast.html` | dusk line-up: `man` + `dog-patch`, `beagle`, `cat-orange`, `cat-black` (300×340 pet frame), relative heights, staggered pop-in, `.tag` labels |
-
-Cast member: `<svg class="who" viewBox="0 0 200 520"><use href="#man-wide" /></svg>` — symbols: `man`, `man-wide`, `man-raise`, `woman`, `elder`, `raincoat` (hooded lead, `--coat`). Animal companions (`dog-patch`, `beagle`, `cat-orange`, `cat-black`) use the 300×340 pet frame, `viewBox="0 0 300 340"`; the old side-view `dog` / `dog-growl` were removed from the template (older episodes keep their own copy).
-
-**Hands:** never draw a hand beside a resting arm. Add `arm-l-off` / `arm-r-off` to the `<svg class="who">` and layer a pose arm + grip prop — see `hands-poses.md`.
-
-**Library:** body poses, kids, crowd, accessories, talk mouths, emotion marks, props, icons and set pieces are ready in `cast.svg` — see `cast-library.md` and `npm run gallery` before drawing anything new.
-
-**Faces (moods):** `face-off` on the svg hides the neutral face, then layer one of `face-happy laugh sad cry angry scared shock worried smirk tired hollow` right after the character `<use>`: `<svg class="who c-man face-off" viewBox="0 0 200 520"><use href="#man"/><use href="#face-angry"/></svg>`. Fits man, man-wide, raincoat, elder as is; for woman and auntie add `transform="translate(0 4)"`. One face per figure per shot; change mood on a cut or a beat. `hollow` (blank black eyes) is for ghosts and the twist frame. See all of them with `npm run gallery`.
-
-## Gotchas found while building this kit (all verified)
-
-1. **External sprite refs do not render.** `<use href="assets/kit/cast.svg#man">` draws nothing. Use `href="#man"`: `build.mjs` inlines `cast.svg` into `index.html`, so the symbols are in the document. Add new characters to `cast.svg`, then rebuild.
-2. **Don't scale SVG shapes inside a scaled `<svg>` with GSAP `scale`/`transformOrigin`** — the shape drifts off its position. Animate the geometry instead: `tl.fromTo("#ring", { attr: { r: 20 } }, { attr: { r: 72 } }, t)`.
-3. **Intentional overflow** (camera world bigger than the frame, panning grids, a figure cropped by a photo frame, caption lines sliding through their mask) must carry `data-layout-allow-overflow`, or `check` reports layout findings.
-4. **Closing lines need ≥ 2 s on screen.** A chip or label that appears in the last shot must land early enough (check reports `line_unread`).
-5. No `<br>` in text: split lines into block `<span>`s.
-6. Never put a CSS `transform` on an element you also tween (`gsap_css_transform_conflict`) — set the start state in `fromTo`.
-7. A named `font-family` must have an `@font-face` that reaches the file; linking `kit.css` (which declares Kanit and Plex Thai) is enough.
-8. An element that enters later must start **fully** off-canvas in its `fromTo` start state (e.g. `y: 1500`, not `y: 900`), or it sits visible below the frame content during earlier shots.
-9. Reading text under 28 px fails `check` (`text_below_floor`). Mark pure texture with `data-layout-ignore`.
-
-## Layer order inside a scene
-
-background (sky/wall) → set dressing → light glows (`mix-blend-mode: screen`) → shadows → people → night grade overlay (`rgba(6,10,26,.55)`) → rings/highlights → HUD. Captions and vignette come from the captions layer above every scene — don't draw captions in scenes.
+`npm run check -- episodes/<slug>` renders `out/<slug>-board/element-N.jpeg` (one key frame per shot at 60 % of the shot). To see a different moment: `npx remotion still src/index.ts <Id> out/x.png --frame=<global frame>`. Look at the frames before any video render.

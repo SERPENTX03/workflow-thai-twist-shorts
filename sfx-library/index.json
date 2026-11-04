@@ -278,5 +278,642 @@
   "dur": 3,
   "influence": 0.5,
   "episode": "last-ride"
+ },
+ "ab5fd41b2ead8be0": {
+  "name": "spatula",
+  "prompt": "metal spatula scraping a wok, stir frying in a small home kitchen, heard from another room",
+  "dur": 2,
+  "influence": 0.5,
+  "episode": "mom-is-cooking"
+ },
+ "bdeee07853ac8d60": {
+  "name": "tap",
+  "prompt": "kitchen tap running water into a steel sink, steady stream, small room",
+  "dur": 3,
+  "influence": 0.5,
+  "episode": "mom-is-cooking"
+ },
+ "87b1885331776290": {
+  "name": "doorbell",
+  "prompt": "cheap electric doorbell buzzer of a Thai townhouse, rung twice",
+  "dur": 2,
+  "influence": 0.5,
+  "episode": "mom-is-cooking"
+ },
+ "ee3bd9ffc6557463": {
+  "name": "static",
+  "prompt": "small old walkie-talkie baby monitor hiss and crackle static, short burst",
+  "dur": 1.5,
+  "influence": 0.5,
+  "episode": "mom-is-cooking"
+ },
+ "153c7a3726212a0c": {
+  "name": "latch",
+  "prompt": "metal sliding bolt latch on a wooden house door, single loud clank",
+  "dur": 1,
+  "influence": 0.5,
+  "episode": "mom-is-cooking"
+ },
+ "b283c1c4c4c3f866": {
+  "name": "curtain",
+  "prompt": "cloth curtain yanked shut along a metal rail",
+  "dur": 1,
+  "influence": 0.5,
+  "episode": "mom-is-cooking"
+ },
+ "75b52aa2f622a785": {
+  "name": "doorshut",
+  "prompt": "wooden front door closing firmly, single thud",
+  "dur": 1,
+  "influence": 0.5,
+  "episode": "mom-is-cooking"
+ },
+ "119e1e853a282716": {
+  "name": "meow",
+  "prompt": "a cat meowing once, short and nervous",
+  "dur": 1,
+  "influence": 0.5,
+  "episode": "mom-is-cooking"
+ },
+ "e377d22cb6de3f34": {
+  "name": "rain",
+  "prompt": "steady evening rain on a tin roof and concrete street, Thai town",
+  "dur": 6,
+  "influence": 0.5,
+  "episode": "mom-is-cooking"
+ },
+ "f3a4c53cdb5c8785": {
+  "name": "gate",
+  "prompt": "small metal gate of a house sliding open, light rattle",
+  "dur": 1.5,
+  "influence": 0.5,
+  "episode": "mom-is-cooking"
+ },
+ "72cc2b5d01f0dc0c": {
+  "name": "knock3",
+  "prompt": "three slow knocks on a wooden door from inside a house, heard from outside in the rain",
+  "dur": 3,
+  "influence": 0.5,
+  "episode": "mom-is-cooking"
+ },
+ "36615aed10b52741": {
+  "name": "clink",
+  "prompt": "a steel spoon touching a ceramic plate once, quiet room",
+  "dur": 0.6,
+  "influence": 0.5,
+  "episode": "mom-is-cooking"
+ },
+ "3aaa43bf427ac215": {
+  "name": "thud",
+  "prompt": "a knee bumping hard against a wooden dining table edge, dishes rattle slightly",
+  "dur": 1,
+  "influence": 0.5,
+  "episode": "mom-is-cooking"
+ },
+ "cda6be85a72120d3": {
+  "name": "chairscrape",
+  "prompt": "a wooden chair slowly scraping back across a tiled floor, quiet room",
+  "dur": 2,
+  "influence": 0.5,
+  "episode": "mom-is-cooking"
+ },
+ "3b302e42a3183978": {
+  "name": "grab",
+  "prompt": "a hand suddenly grabbing a wrist, quick cloth rustle and a sharp grip, close",
+  "dur": 0.8,
+  "influence": 0.5,
+  "episode": "mom-is-cooking-short"
+ },
+ "2495a594f00240f4": {
+  "name": "buzz",
+  "prompt": "smartphone vibrating twice on a wooden shelf, short buzz buzz",
+  "dur": 1.2,
+  "influence": 0.5,
+  "episode": "mom-is-cooking-short"
+ },
+ "a9f4a9aa159fcd92": {
+  "name": "shutter",
+  "prompt": "single smartphone camera shutter click, heard through a window glass",
+  "dur": 0.5,
+  "influence": 0.5,
+  "episode": "mom-is-cooking-short"
+ },
+ "b4d1f0f586a2de15": {
+  "name": "knocks",
+  "prompt": "fast urgent knocking on a wooden front door, heard from inside the house, then it stops",
+  "dur": 2.5,
+  "influence": 0.5,
+  "episode": "mom-is-cooking-short"
+ },
+ "31eca7224417b35d": {
+  "name": "evening",
+  "prompt": "quiet Thai townhouse street in the evening, distant motorbike, crickets, soft",
+  "dur": 6,
+  "influence": 0.5,
+  "episode": "mom-is-cooking-short"
+ },
+ "8d70ba166883d030": {
+  "name": "knock2",
+  "prompt": "two soft knuckle knocks on a thin plaster wall in a quiet bedroom at night, close and dry",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "next-door-1"
+ },
+ "00b95a44e1c8af37": {
+  "name": "tap1",
+  "prompt": "one single soft knuckle knock on a thin plaster wall, quiet bedroom at night",
+  "dur": 1,
+  "influence": 0.6,
+  "episode": "next-door-1"
+ },
+ "c90f24a24d057d7f": {
+  "name": "knock3",
+  "prompt": "three slow knuckle knocks on a thin plaster wall at night, slightly muffled",
+  "dur": 2,
+  "influence": 0.6,
+  "episode": "next-door-1"
+ },
+ "0edd4e484ae1535d": {
+  "name": "claw",
+  "prompt": "slow fingernails scratching a plaster wall low near the floor, dry creepy scraping, close",
+  "dur": 2.5,
+  "influence": 0.5,
+  "episode": "next-door-1"
+ },
+ "2329bef67dc99e48": {
+  "name": "lockbreak",
+  "prompt": "old rusty padlock snapping open and dropping onto a tiled floor, single metal clank",
+  "dur": 1.5,
+  "influence": 0.5,
+  "episode": "next-door-1"
+ },
+ "7fc655ada5097824": {
+  "name": "ringback",
+  "prompt": "phone call ringback tone heard from a smartphone speaker, two rings, no answer",
+  "dur": 3,
+  "influence": 0.5,
+  "episode": "next-door-1"
+ },
+ "9328ce76f2aac3de": {
+  "name": "hiss",
+  "prompt": "a black cat hissing and growling low, short, close",
+  "dur": 1.5,
+  "influence": 0.5,
+  "episode": "next-door-1"
+ },
+ "894fda57fb9da400": {
+  "name": "click",
+  "prompt": "small flashlight switch clicking off in a silent room",
+  "dur": 0.5,
+  "influence": 0.6,
+  "episode": "next-door-2"
+ },
+ "bad0fa57ee7805d4": {
+  "name": "flee",
+  "prompt": "a man panting hard and running down echoing concrete stairs, fast footsteps, no music",
+  "dur": 3,
+  "influence": 0.5,
+  "episode": "next-door-2"
+ },
+ "1bffa89aae4744fe": {
+  "name": "knock",
+  "prompt": "one slow knuckle knock on an old wooden temple door at night, dry hollow wood, close, no reverb tail",
+  "dur": 1,
+  "influence": 0.6,
+  "episode": "temple-boy"
+ },
+ "b9593a8226033603": {
+  "name": "splash",
+  "prompt": "a body falling into deep water inside a narrow old brick well at night, heavy hollow splash with a short echo",
+  "dur": 2,
+  "influence": 0.5,
+  "episode": "temple-boy"
+ },
+ "f979874079a449d1": {
+  "name": "radio",
+  "prompt": "small old transistor radio crackling, then a Thai luk thung song starts playing clearly from its tiny speaker",
+  "dur": 4,
+  "influence": 0.5,
+  "episode": "rain-night"
+ },
+ "ec8c981a512532dd": {
+  "name": "scooter",
+  "prompt": "small motorbike starting and riding away down a wet street at night",
+  "dur": 3,
+  "influence": 0.5,
+  "episode": "rain-night"
+ },
+ "3e08e8d3d8276298": {
+  "name": "sniff",
+  "prompt": "a man sniffling once, holding back tears, heard through a phone voice message",
+  "dur": 1,
+  "influence": 0.6,
+  "episode": "rain-night"
+ },
+ "cc0e4e5fb78a18c4": {
+  "name": "bag",
+  "prompt": "plastic shopping bag rustling as a small radio is wrapped in it",
+  "dur": 1.2,
+  "influence": 0.5,
+  "episode": "rain-night"
+ },
+ "76811c4ce2054126": {
+  "name": "hanger",
+  "prompt": "two thin wire clothes hangers clinking softly against each other in the breeze of an electric fan, small quiet rented room",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "rain-night"
+ },
+ "2dc5ce0b3a51f546": {
+  "name": "crank",
+  "prompt": "old small truck engine cranking and failing to start, starter whirring twice then silence",
+  "dur": 2.5,
+  "influence": 0.5,
+  "episode": "rain-night"
+ },
+ "90e3afd483c70150": {
+  "name": "gate",
+  "prompt": "heavy old iron sliding gate on a rusty rail, two sharp high-pitched wheel squeals like a large rat, Thai house",
+  "dur": 1.8,
+  "influence": 0.7,
+  "episode": "rain-night"
+ },
+ "66507cdb357a3f7e": {
+  "name": "gate-ok",
+  "prompt": "old iron sliding gate lifted slightly and rolling smoothly along a metal rail, low rumble, no squeal",
+  "dur": 1.5,
+  "influence": 0.5,
+  "episode": "rain-night"
+ },
+ "0e7130caa8690b8d": {
+  "name": "paper",
+  "prompt": "an old folded newspaper being opened on a wooden table, dry paper rustle",
+  "dur": 1.2,
+  "influence": 0.5,
+  "episode": "rain-night"
+ },
+ "84318e18e7e42952": {
+  "name": "pencil",
+  "prompt": "a few wooden pencils rattling in a small tin box, one picked out",
+  "dur": 1,
+  "influence": 0.5,
+  "episode": "rain-night"
+ },
+ "3588b0bee86e6526": {
+  "name": "murmur",
+  "prompt": "quiet murmuring of a few mourners at a Thai temple funeral pavilion in the evening",
+  "dur": 3,
+  "influence": 0.5,
+  "episode": "rain-night"
+ },
+ "841b5d9b9ae2435b": {
+  "name": "umbrella",
+  "prompt": "a long umbrella snapping open outdoors",
+  "dur": 0.8,
+  "influence": 0.6,
+  "episode": "rain-night"
+ },
+ "f39685a1f5e4de9f": {
+  "name": "car",
+  "prompt": "a single car driving fast past a window on a wet street at night in the rain",
+  "dur": 2.5,
+  "influence": 0.5,
+  "episode": "rain-night"
+ },
+ "43ffbe0de8a58315": {
+  "name": "slat",
+  "prompt": "one glass louvre window slat clacking shut",
+  "dur": 0.6,
+  "influence": 0.6,
+  "episode": "rain-night"
+ },
+ "136fa02359fea4fd": {
+  "name": "card",
+  "prompt": "a small paper card placed down on a wooden workbench, soft tap",
+  "dur": 0.5,
+  "influence": 0.6,
+  "episode": "rain-night"
+ },
+ "7a6b0d47277929d1": {
+  "name": "drawer",
+  "prompt": "a small wooden drawer sliding open in a quiet room",
+  "dur": 1,
+  "influence": 0.5,
+  "episode": "rain-night"
+ },
+ "80f50dda00e9bfe9": {
+  "name": "breath",
+  "prompt": "a young man struggling to breathe, short shallow painful breaths, close, quiet room",
+  "dur": 2,
+  "influence": 0.6,
+  "episode": "rain-night"
+ },
+ "fd884eef06153e5a": {
+  "name": "clock",
+  "prompt": "one loud tick of an old wall clock in a silent house",
+  "dur": 0.6,
+  "influence": 0.6,
+  "episode": "rain-night"
+ },
+ "3fbaa008d0944333": {
+  "name": "cloth",
+  "prompt": "a cotton shirt slipping off a wire hanger and dropping into arms, soft cloth rustle",
+  "dur": 1,
+  "influence": 0.5,
+  "episode": "rain-night"
+ },
+ "c8ee6c825bb37130": {
+  "name": "fan",
+  "prompt": "small electric fan humming and oscillating in a quiet rented room",
+  "dur": 5,
+  "influence": 0.5,
+  "episode": "rain-night"
+ },
+ "0256c1308b3e495f": {
+  "name": "magnet",
+  "prompt": "two steel bolts snapping onto a strong magnet, sharp metal click",
+  "dur": 0.6,
+  "influence": 0.6,
+  "episode": "rain-night"
+ },
+ "ba01f2d67bdae734": {
+  "name": "pop",
+  "prompt": "a soft friendly interface pop, short and clean",
+  "dur": 0.5,
+  "influence": 0.6,
+  "episode": "rain-night"
+ },
+ "0550d00fe6560f44": {
+  "name": "radio-news",
+  "prompt": "a small radio playing a Thai morning news bulletin, distant voice, light static, words unclear",
+  "dur": 4,
+  "influence": 0.5,
+  "episode": "rain-night"
+ },
+ "d71e62708370c0e7": {
+  "name": "rip",
+  "prompt": "a paper envelope being torn open with fingers",
+  "dur": 0.8,
+  "influence": 0.6,
+  "episode": "rain-night"
+ },
+ "b5382d49ef80f779": {
+  "name": "shelf-crash",
+  "prompt": "a tall metal storage shelf toppling over onto a concrete floor, pots and tins crashing",
+  "dur": 2,
+  "influence": 0.6,
+  "episode": "rain-night"
+ },
+ "284ae2327d204d1d": {
+  "name": "shop-amb",
+  "prompt": "small Thai car repair garage in the daytime, distant ratchet clicks, radio far away, street traffic",
+  "dur": 6,
+  "influence": 0.5,
+  "episode": "rain-night"
+ },
+ "cc8a5ff04314940b": {
+  "name": "slam",
+  "prompt": "heavy iron sliding gate slamming shut against its post, loud metallic clang",
+  "dur": 1.2,
+  "influence": 0.6,
+  "episode": "rain-night"
+ },
+ "032034ea77f256c6": {
+  "name": "snap",
+  "prompt": "a pencil tip snapping on paper, tiny dry crack, quiet room",
+  "dur": 0.5,
+  "influence": 0.6,
+  "episode": "rain-night"
+ },
+ "9d3f749e7019a444": {
+  "name": "splash-small",
+  "prompt": "a mobile phone dropping into a shallow roadside drain with a small splash",
+  "dur": 1,
+  "influence": 0.6,
+  "episode": "rain-night"
+ },
+ "a29a7ecca3343497": {
+  "name": "spoon",
+  "prompt": "a metal spoon dropping onto a tiled kitchen floor and clattering",
+  "dur": 1,
+  "influence": 0.6,
+  "episode": "rain-night"
+ },
+ "eec87b637c119f68": {
+  "name": "steam",
+  "prompt": "lid lifted off a rice pot, soft hiss of steam",
+  "dur": 1.2,
+  "influence": 0.5,
+  "episode": "rain-night"
+ },
+ "31b47f30915bd13a": {
+  "name": "strain",
+  "prompt": "two men straining to lift a heavy iron gate, grunts and metal creaking on a rail",
+  "dur": 2,
+  "influence": 0.5,
+  "episode": "rain-night"
+ },
+ "f6fc2466b15a453d": {
+  "name": "tape",
+  "prompt": "a strip of old sticky tape being peeled slowly off a wooden door",
+  "dur": 1,
+  "influence": 0.6,
+  "episode": "rain-night"
+ },
+ "8a3db952bb2e9558": {
+  "name": "tapoff",
+  "prompt": "a kitchen tap being turned off, last drops into a steel sink",
+  "dur": 0.8,
+  "influence": 0.6,
+  "episode": "rain-night"
+ },
+ "e5c458b50aca1757": {
+  "name": "umbrella-drop",
+  "prompt": "a long closed umbrella falling and clattering on a concrete street",
+  "dur": 1,
+  "influence": 0.6,
+  "episode": "rain-night"
+ },
+ "81020432ca9d594e": {
+  "name": "water",
+  "prompt": "gentle canal water lapping against a wooden pier, small boat engine far away, daytime",
+  "dur": 6,
+  "influence": 0.5,
+  "episode": "rain-night"
+ },
+ "7732fff61a698b97": {
+  "name": "wind",
+  "prompt": "a short gust of wind sweeping paper across a concrete floor",
+  "dur": 1,
+  "influence": 0.5,
+  "episode": "rain-night"
+ },
+ "e968631b8b852e4e": {
+  "name": "wipers",
+  "prompt": "old car windshield wipers squeaking back and forth in heavy rain, inside the car",
+  "dur": 4,
+  "influence": 0.5,
+  "episode": "rain-night"
+ },
+ "92fce7d56a904e83": {
+  "name": "argue",
+  "prompt": "an old man and an old woman arguing in low voices behind a closed kitchen door, words unclear",
+  "dur": 2.5,
+  "influence": 0.5,
+  "episode": "rain-night"
+ },
+ "c7c1aaed7ff57901": {
+  "name": "night",
+  "prompt": "quiet night ambience at a rural Thai temple, crickets, distant dogs, light wind through trees",
+  "dur": 6,
+  "influence": 0.5,
+  "episode": "ghost-money"
+ },
+ "010459fbbb4e0930": {
+  "name": "chant",
+  "prompt": "distant Thai Buddhist monks chanting in a temple hall at night, low steady drone of voices, soft reverb",
+  "dur": 6,
+  "influence": 0.5,
+  "episode": "ghost-money"
+ },
+ "ddb625af27e487f4": {
+  "name": "sob",
+  "prompt": "a middle-aged woman quietly sobbing and sniffling behind a row of chairs in a quiet hall",
+  "dur": 3,
+  "influence": 0.5,
+  "episode": "ghost-money"
+ },
+ "b5023ae931241d82": {
+  "name": "cash",
+  "prompt": "three crisp paper banknotes laid one by one onto a wooden table, close, quiet room",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "ghost-money"
+ },
+ "38998e69012b6f71": {
+  "name": "clapper",
+  "prompt": "one sharp knock of a wooden stick on a wooden coffin lid in a silent temple hall, dry hollow, short echo",
+  "dur": 1.2,
+  "influence": 0.6,
+  "episode": "ghost-money"
+ },
+ "f612d31ca3f9b861": {
+  "name": "grab",
+  "prompt": "a hand suddenly gripping a knee through cloth trousers, quick fabric rustle, close",
+  "dur": 0.8,
+  "influence": 0.5,
+  "episode": "ghost-money"
+ },
+ "8596ab45bd378132": {
+  "name": "cloth",
+  "prompt": "a cotton sarong hem pulled out from under someone sitting on a plastic chair, short cloth slide",
+  "dur": 1,
+  "influence": 0.5,
+  "episode": "ghost-money"
+ },
+ "8fa016b6c13e06f5": {
+  "name": "moto",
+  "prompt": "small Thai motorcycle idling then pulling away on an asphalt road at dusk",
+  "dur": 3,
+  "influence": 0.5,
+  "episode": "ghost-money"
+ },
+ "254bc08db5adbe38": {
+  "name": "ping",
+  "prompt": "single short smartphone message notification ping",
+  "dur": 0.6,
+  "influence": 0.6,
+  "episode": "ghost-money"
+ },
+ "3db15b6bceec0398": {
+  "name": "bag",
+  "prompt": "plastic bag of boiled eggs rustling and being tied to a motorcycle handlebar",
+  "dur": 1.2,
+  "influence": 0.5,
+  "episode": "ghost-money"
+ },
+ "d5fd897c3849d377": {
+  "name": "pen",
+  "prompt": "ballpoint pen writing firmly on carbon paper in a notebook, a few strokes, quiet room",
+  "dur": 1.5,
+  "influence": 0.5,
+  "episode": "ghost-money"
+ },
+ "805158df7f3279ff": {
+  "name": "rec",
+  "prompt": "smartphone voice message recording start beep, short soft tone",
+  "dur": 0.5,
+  "influence": 0.6,
+  "episode": "ghost-money"
+ },
+ "fa65a2c0d9f93ade": {
+  "name": "fail",
+  "prompt": "smartphone error tone, two short low beeps, message failed to send",
+  "dur": 0.8,
+  "influence": 0.6,
+  "episode": "ghost-money"
+ },
+ "bccf929b9a800aca": {
+  "name": "bowl",
+  "prompt": "ceramic bowl of hot rice porridge set down on a wooden tray, spoon clinks once, quiet hall",
+  "dur": 1.2,
+  "influence": 0.5,
+  "episode": "ghost-money"
+ },
+ "a2e90f5681c9d13a": {
+  "name": "candle",
+  "prompt": "several candle flames snuffed out one after another in a silent hall, soft puffs, faint smoke hiss",
+  "dur": 1.5,
+  "influence": 0.5,
+  "episode": "ghost-money"
+ },
+ "d7f9cb2119347a7e": {
+  "name": "whisper",
+  "prompt": "faint unintelligible male whisper from inside a wooden box in a silent temple hall, breathy, eerie",
+  "dur": 2,
+  "influence": 0.5,
+  "episode": "ghost-money"
+ },
+ "7b81df7f11ace587": {
+  "name": "rooster",
+  "prompt": "distant rooster crowing in a Thai village in the morning, birds, light breeze",
+  "dur": 3,
+  "influence": 0.5,
+  "episode": "ghost-money"
+ },
+ "366fea112b323a03": {
+  "name": "radio",
+  "prompt": "short burst of police walkie-talkie static and a click, quiet night",
+  "dur": 1,
+  "influence": 0.5,
+  "episode": "ghost-money"
+ },
+ "c8cf685cd74188d0": {
+  "name": "spill",
+  "prompt": "ceramic bowl knocked off a wooden tray, porridge splashing onto a tiled floor, bowl rattles to a stop",
+  "dur": 1.5,
+  "influence": 0.5,
+  "episode": "ghost-money"
+ },
+ "2857680093f94f2e": {
+  "name": "rush",
+  "prompt": "two people suddenly running across a tiled temple hall floor, quick heavy footsteps, close",
+  "dur": 1.5,
+  "influence": 0.5,
+  "episode": "ghost-money"
+ },
+ "21f6db0e0833b190": {
+  "name": "fan",
+  "prompt": "old electric desk fan spinning steadily with a soft rhythmic hum and a faint tick, warm quiet room",
+  "dur": 6,
+  "influence": 0.5,
+  "episode": "ghost-money"
+ },
+ "7b5d915a0e8f3c6d": {
+  "name": "morning",
+  "prompt": "bright morning ambience on a quiet Thai village road, birds chirping, distant motorbike, light breeze",
+  "dur": 6,
+  "influence": 0.5,
+  "episode": "ghost-money"
  }
 }

@@ -36,4 +36,4 @@ Logline ของทั้งซีรีส์ (1 ประโยค)
 สิ่งที่ปูไว้แล้วยังไม่เฉลย
 ```
 
-Show the user the cast table and the 5-episode arc and get a yes. Then set `"bible": "series/<name>.md"` and `"series"` in every episode's `story.json` that belongs to it. Add any new cast symbol to `template/assets/kit/cast.svg` (never only in one episode).
+Show the user the cast table and the 5-episode arc and get a yes. Then set `"bible": "series/<name>.md"` and `"series"` in every episode's `story.json` that belongs to it. Add any new cast symbol to `src/cast/source/cast.svg` (never only in one episode).

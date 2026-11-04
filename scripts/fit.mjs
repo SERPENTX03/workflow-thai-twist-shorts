@@ -5,7 +5,7 @@
 // (time to look after the line), never under `minBeats` (default 2). When the next line has another speaker
 // (`who`, default "narrator") it adds `switchBreath` seconds, so two characters on the same voice are heard apart.
 // Silent shots keep their beats. story.json knobs: breath (0.3 s), switchBreath (0.35 s), minBeats (2),
-// fitStep (0.5 = round up to half a beat; a long-form film can use 0.125 for tighter cuts).
+// fitStep (0.5 = round up to half a beat; a long-form film can use 0.125 for tighter cuts), voiceTempo (1 = as read).
 import fs from 'node:fs';
 import path from 'node:path';
 import { episodeDir, loadStory } from './lib.mjs';
@@ -28,7 +28,8 @@ story.shots.forEach((shot, i) => {
   if (!v || v.raw === undefined || v.vo !== s.vo) { stale++; console.log(`⚠ shot ${i}: line not voiced yet (or text changed) — run npm run voice, then fit again`); return; }
   const next = story.shots.slice(i + 1).find((x, k) => S.shots[i + 1 + k].vo);
   const gap = breath + (next && who(next) !== who(shot) ? switchBreath : 0);
-  const need = Math.ceil((s.voLead + v.raw + TAIL + gap) / S.beat / step - 1e-6) * step;
+  const len = v.raw / (s.tempo ?? story.voiceTempo ?? 1);
+  const need = Math.ceil((s.voLead + len + TAIL + gap) / S.beat / step - 1e-6) * step;
   const beats = Math.round(Math.max(minBeats, need + (shot.hold || 0)) * 1000) / 1000;
   if (beats !== shot.beats) { shot.beats = beats; changed++; }
 });
