@@ -1,8 +1,23 @@
 {
   "title": "ตัวอย่าง: เงาในกระจก",
   "bpm": 75,
-  "voice": "male",
-  "voices": { "male": "eleven:xYmBpJREC3WfqEFpbPvO", "female": "eleven:MYZYcGOqrkYQcwDunXl7", "old_male": "eleven:5KvpaGteYkNayiswuX2h", "old_female": "eleven:p2Wol3C7j3rHbfOrbL18" },
+  "voice": "narrator",
+  "voices": {
+    "narrator": "eleven:weRAVUYgqjjfUEEu5BsB",
+    "lead_male": "eleven:xYmBpJREC3WfqEFpbPvO",
+    "lead_female": "eleven:MYZYcGOqrkYQcwDunXl7",
+    "male": "eleven:xYmBpJREC3WfqEFpbPvO",
+    "female": "eleven:MYZYcGOqrkYQcwDunXl7",
+    "old_male": "eleven:5KvpaGteYkNayiswuX2h",
+    "old_female": "eleven:p2Wol3C7j3rHbfOrbL18",
+    "boy": "eleven:yq05eeRaHPMGuWTVpqeP",
+    "young_female": "eleven:cgSgspJ2msm6clMCkdW9",
+    "father": "eleven:KhBRXgEQjvfdIyXOu7G3",
+    "officer": "eleven:JTfQv1rq84UdcXVunY5m",
+    "casual_male": "eleven:RwilAvCC3o05RLuACpAn",
+    "villain_male": "eleven:Vl27Cllkuw8BhyPqus2n",
+    "villain_female": "eleven:EXAVITQu4vr4xnSDxMaL"
+  },
   "voiceModel": "eleven_v3",
   "series": { "name": "เมื่อไฟดับทั้งเมือง", "ep": 1, "next": "ใครอยู่หน้าประตู" },
   "shots": [

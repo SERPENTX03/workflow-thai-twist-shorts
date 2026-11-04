@@ -29,6 +29,16 @@ export function rimFilter(rim: string | number | boolean | undefined, light = 'n
   return `drop-shadow(${px(side * 3.5)} ${px(-1.5)} ${px(1.2)} ${tone[0]}) drop-shadow(0 0 ${px(16)} ${tone[1]})`;
 }
 
+/** The ink of an outline under a light grade: the grade's own light colour pulled halfway to black, so a line
+ *  under lamplight is amber-brown and under moonlight steel blue, never flat black. `k` 0 = the light colour, 1 = black. */
+export function inkFor(light = 'night', k = 0.5): string {
+  const tone = RIM_TONE[light];
+  const rgb = tone ? tone[0].match(/\d+/g)!.slice(0, 3).map(Number) : [200, 190, 180]; // day / unknown: a warm grey
+  const ink = [10, 9, 16];
+  const hex = rgb.map((v, i) => Math.round(v + (ink[i] - v) * k).toString(16).padStart(2, '0')).join('');
+  return '#' + hex;
+}
+
 /** Light falling from a lamp at (x, y) to the floor: a soft trapezoid, a pool on the ground and dust in the beam. */
 export const Cone: React.FC<{x: number; y: number; floor: number; top?: number; spread?: number; f: number; color?: string; a?: number; dust?: number; seed?: number}> = ({
   x, y, floor, top = 30, spread = 260, f, color = '255,214,150', a = 0.22, dust = 18, seed = 1,

@@ -3,7 +3,12 @@ import {Composition, Still} from 'remotion';
 import './engine/fonts';
 import {FPS} from './studio.config';
 import {CastSheet, GALLERY_COMPS} from './Gallery';
+import {RunPreview, RUN_PREVIEW_FRAMES} from './RunPreview';
 import {EPISODES} from './episodes';
+
+
+
+import {GhostMoneyCoverA, GhostMoneyCoverB, GhostMoneyCoverC} from './episodes/ghost-money/cover';
 
 export const Root: React.FC = () => (
   <>
@@ -13,6 +18,17 @@ export const Root: React.FC = () => (
         <Composition id={`${e.id}Board`} component={e.Board} durationInFrames={e.plan.shots.length} fps={FPS} width={e.plan.W} height={e.plan.H} />
       </React.Fragment>
     ))}
+    <Still id="GhostMoneyCoverA" component={GhostMoneyCoverA} width={1920} height={1080} />
+    <Still id="GhostMoneyCoverB" component={GhostMoneyCoverB} width={1920} height={1080} />
+    <Still id="GhostMoneyCoverC" component={GhostMoneyCoverC} width={1920} height={1080} />
+
+
+
+
+
+
+
+    <Composition id="RunPreview" component={RunPreview} durationInFrames={RUN_PREVIEW_FRAMES} fps={FPS} width={1920} height={1080} />
     <Still id="Cast" component={CastSheet} width={1920} height={1080} />
     {GALLERY_COMPS.map(g => (
       <Composition key={g.id} id={g.id} component={g.component} durationInFrames={g.count} fps={FPS} width={g.width} height={g.height} />

@@ -10,8 +10,23 @@ const CUES = new Set(['hit', 'bighit', 'stamp', 'scratch', 'creak', 'scrape', 's
 const CHARS_PER_SEC = 9;   // median Thai narration rate measured on boat-10-days (range 5–12)
 const TAIL = 0.15;
 
+// Staging vocabulary, read from the source of truth so the lint never drifts from the renderer
+const setOf = (src, name) => new Set([...(src.match(new RegExp(`const ${name} = new Set\\(\\[([^\\]]*)\\]`))?.[1] ?? '').matchAll(/'([^']+)'/g)].map(m => m[1]));
+const stageSrc = fs.readFileSync(path.join(ROOT, 'src', 'kit', 'stage.tsx'), 'utf8');
+const STAGE = {
+  poses: setOf(stageSrc, 'POSES'),
+  faces: setOf(stageSrc, 'FACES'),
+  faceMarks: new Set([...(stageSrc.match(/const FACE_MARK[^=]*=\s*\{([^}]*)\}/)?.[1] ?? '').matchAll(/(\w+):/g)].map(m => m[1])),
+};
+const castSpriteSrc = fs.readFileSync(path.join(ROOT, 'src', 'cast', 'CastSprite.tsx'), 'utf8');
+const CAST_IDS = new Set([...(castSpriteSrc.match(/CAST_IDS = \[([^\]]*)\]/)?.[1] ?? '').matchAll(/"([^"]+)"/g)].map(m => m[1]));
+/** poses whose body has no standing shoulders for a pose arm to attach to (keep in step with ActorView's NO_POSE_ARMS) */
+const NO_POSE_ARMS = new Set(['crouch', 'lie']);
+
 const dir = episodeDir(process.argv[2]);
 const S = loadStory(dir);
+// loadStory keeps timing fields only; staging (data.cast) is read from the file itself
+const RAW_SHOTS = JSON.parse(fs.readFileSync(path.join(dir, 'story.json'), 'utf8')).shots;
 const TARGET = S.target;   // per format (lib.mjs FORMATS): portrait = brand/channel.md pilot 55–80 s, landscape = long-form 600–720 s
 const HOLD = S.format === 'landscape' ? 12 : 6;   // beats before a shot counts as a long hold
 const errors = [], warns = [];
@@ -58,6 +73,74 @@ S.shots.forEach(s => {
     const need = thaiLen(s.vo) / CHARS_PER_SEC, room = s.dur - s.voLead - TAIL;
     if (!hasVoice && need > room * 1.3) warn(i, `voice likely OVER: ~${need.toFixed(1)}s of speech in ${room.toFixed(1)}s (1.3× limit ${(room * 1.3).toFixed(1)}s) — shorten or add beats`);
     if (/[“”"]/.test(s.text) && !s.voice) warn(i, 'quoted speech with no "voice" role — fine for Milo/narrator (both `male`), a bug for any other speaker');
+  }
+  // talk mouths belong to the speaker only (CLAUDE.md): a listener or the near end of a phone call must not mouth someone else's line
+  for (const a of RAW_SHOTS[i]?.data?.cast ?? []) {
+    if (!/\btalk\b/.test(a)) continue;
+    const who = String(a).split('@')[0];
+    if (!s.who) warn(i, `"${who}" has talk on a narrated line — only the speaker's mouth moves; drop talk or set "who"`);
+    else if (who !== s.who && who.replace(/\d+$/, '') !== s.who) warn(i, `"${who}" has talk but the line is ${s.who}'s — only the speaker's mouth moves; give ${who} a listening face instead`);
+  }
+
+  // Staging vocabulary + pose-library gaps (hands-poses.md rule 10): every word in an actor string must exist.
+  // An unknown word is silently dropped by parseActor, and an arm drawn for a standing body floats over a crouching one,
+  // so the shot "works" but shows the wrong thing. Report the gap here instead; then draw the missing piece in cast.svg.
+  for (const a of RAW_SHOTS[i]?.data?.cast ?? []) {
+    const [head, ...words] = String(a).trim().split(/\s+/);
+    const who = head.split('@')[0];
+    const pose = words.find(w => STAGE.poses.has(w)) ?? 'stand';
+    for (const w of words) {
+      const [k, v] = w.split('=');
+      if (v === undefined) {
+        if (!STAGE.poses.has(w) && !STAGE.faces.has(w) && !STAGE.faceMarks.has(w) && !['talk', 'flip'].includes(w))
+          err(i, `"${who}": unknown word "${w}" — not a pose, face or flag, so it is ignored. Pick from the library (poses: ${[...STAGE.poses].join(' ')}) or draw the missing one in src/cast/source/cast.svg and list it in hands-poses.md / cast-library.md`);
+      } else if (['arm', 'prop', 'acc', 'mark'].includes(k) && !(k === 'acc' && v === 'none') && !CAST_IDS.has(`${k}-${v}`)) {
+        err(i, `"${who}": ${k}=${v} is not in the library (no "${k}-${v}" symbol) — ASSET GAP: draw it in src/cast/source/cast.svg (right + mirrored left), add it to hands-poses.md, then npm run timeline; do not substitute another pose`);
+      }
+    }
+    if (words.some(w => w.startsWith('arm=') || w.startsWith('prop=')) && NO_POSE_ARMS.has(pose))
+      err(i, `"${who}": arm=/prop= on a "${pose}" body — pose arms are drawn for a standing body and float over the head here (cast-library.md). Stand the actor up, or cut to a hand insert`);
+  }
+
+  // Continuity & Staging checks: catch vanishing actors, teleporting actors, and unframed close-ups
+  const currCast = (RAW_SHOTS[i]?.data?.cast ?? []).map(a => {
+    const [head] = String(a).trim().split(/\s+/);
+    const [who, pos] = head.split('@');
+    const [x] = (pos ?? '960').split(',').map(Number);
+    return {who, x: Number.isFinite(x) ? x : 960};
+  });
+  const prevShot = i > 0 ? S.shots[i - 1] : null;
+  const prevCast = i > 0 ? (RAW_SHOTS[i - 1]?.data?.cast ?? []).map(a => {
+    const [head] = String(a).trim().split(/\s+/);
+    const [who, pos] = head.split('@');
+    const [x] = (pos ?? '960').split(',').map(Number);
+    return {who, x: Number.isFinite(x) ? x : 960};
+  }) : [];
+
+  const isStagedScene = s.scene && !['hand', 'phone', 'clock', 'rule', 'news', 'map', 'next'].includes(s.scene);
+  if (prevShot && prevShot.scene === s.scene && isStagedScene) {
+    const isClose = s.view?.endsWith('-close') || s.view === 'close';
+    const isExit = s.view === 'exit' || RAW_SHOTS[i]?.data?.move;
+    if (!isClose && !isExit && prevCast.length > currCast.length && currCast.length > 0) {
+      for (const prevA of prevCast) {
+        if (!currCast.some(c => c.who === prevA.who)) {
+          warn(i, `actor "${prevA.who}" was present in shot ${i - 1} in scene "${s.scene}" but vanished in shot ${i} — keep both actors in cast or frame with a close-up camera`);
+        }
+      }
+    }
+    for (const ca of currCast) {
+      const pa = prevCast.find(p => p.who === ca.who);
+      if (pa && Math.abs(pa.x - ca.x) > 100 && !RAW_SHOTS[i]?.data?.move && !RAW_SHOTS[i - 1]?.data?.move && s.view === prevShot.view) {
+        warn(i, `actor "${ca.who}" jumped position from x=${pa.x} to x=${ca.x} in consecutive shots of "${s.scene}:${s.view}" — keep positions consistent`);
+      }
+    }
+  }
+
+  if ((s.view?.endsWith('-close') || s.view === 'close') && !RAW_SHOTS[i]?.data?.cam) {
+    const isInsert = ['hand', 'phone', 'clock', 'store'].includes(s.scene);
+    if (!isInsert) {
+      warn(i, `view "${s.view}" suggests a close-up, but "data.cam" is missing (add data.cam or use camera presets so camera zooms in)`);
+    }
   }
   for (const c of s.cues) {
     const [beat, type] = c;

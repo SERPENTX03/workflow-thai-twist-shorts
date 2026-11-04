@@ -1,16 +1,1597 @@
 {
   "_note": "Main cast: who they are and which voice role (voices.json) speaks for them. The drawing lives in src/cast/source/cast.svg. `line` + `tone` are the studio voice preview (npm run voices). Pets and crowd have no role.",
-  "man": { "nameTh": "คุณ (ตัวเอก)", "name": "Man", "role": "male", "cm": 170, "desc": "ตัวเอกเล่าแบบบุรุษที่สอง เสื้อน้ำเงิน ไม่มีเงาเมื่อเป็นผี", "tone": "nervous", "line": "ผมแค่อยากรู้ว่าทำไมค่าเช่ามันถูกขนาดนี้" },
-  "woman": { "nameTh": "ผู้หญิง", "name": "Woman", "role": "female", "cm": 158, "desc": "ผมยาว เสื้อครีม กระโปรงเทา ใส่หน้า/อุปกรณ์ต้องเลื่อนลง 4", "tone": "worried", "line": "ทำไมห้องคุณถึงเปิดไฟทั้งคืน... ฉันเห็นเงาคนยืนอยู่ตรงหน้าต่าง" },
-  "auntie": { "nameTh": "ป้า", "name": "Auntie", "role": "old_female", "cm": 150, "desc": "ป้าเจ้าของหอ ผมมวยเทา ตัวเล็กที่สุดในผู้ใหญ่", "tone": "slowly, warm", "line": "ห้องเจ็ดน่ะเหรอ ป้าให้เช่าครึ่งราคา แต่อย่าถามว่าทำไม" },
-  "elder": { "nameTh": "ตา (ผู้เฒ่า)", "name": "Elder", "role": "old_male", "cm": 160, "desc": "ผ้าคาดหัวขาว ผ้าขาวม้าลายตาราง มือขวาถือเทียน", "tone": "slowly, whispers", "line": "เทียนเล่มนี้ดับเมื่อไร ให้หลับตาแล้วนับหนึ่งถึงสิบ" },
-  "raincoat": { "nameTh": "คนเสื้อกันฝน", "name": "Raincoat", "role": "male", "cm": 165, "desc": "เสื้อกันฝนเหลืองคลุมหัว ใช้เป็นตัวเอกเรื่องน้ำท่วม/พายุ", "tone": "urgent", "line": "น้ำขึ้นเร็วกว่าที่คิด ต้องขึ้นหลังคาก่อนไฟดับ" },
-  "student": { "nameTh": "นักเรียน ม.ปลาย", "name": "Student", "role": "male", "cm": 165, "desc": "ชุดนักเรียนไทย เข็มขัดดำ ตราอก", "tone": "scared", "line": "ประตูห้องน้ำชั้นสามมันล็อกจากข้างใน... แต่ไม่มีใครอยู่ในนั้น" },
-  "kid": { "nameTh": "เด็กชาย", "name": "Kid", "role": "female", "cm": 120, "desc": "เด็กประถม ไม่มีเสียงเด็กโดยตรง ใช้ female + childlike (หรือให้ผู้บรรยายเล่าแทน)", "tone": "childlike, small voice", "line": "พี่ครับ... คนที่ยืนอยู่ข้างหลังพี่เป็นใคร" },
-  "kid-girl": { "nameTh": "เด็กหญิง", "name": "Kid girl", "role": "female", "cm": 120, "desc": "ผมแกละ กระโปรงกรม", "tone": "childlike, small voice", "line": "หนูไม่ได้เล่นกับใครเลยนะ หนูเล่นกับพี่สาวในกระจก" },
-  "crowd": { "nameTh": "ฝูงชน", "name": "Crowd", "desc": "เงาคนเจ็ดคน ซ้อนสองแถว ใส่ opacity .6 ด้านหลังเพื่อความลึก" },
-  "cat-black": { "nameTh": "แมวดำ", "name": "Black cat", "desc": "กรอบสัตว์ 300×340 สัญลักษณ์ลางร้าย" },
-  "cat-orange": { "nameTh": "แมวส้ม", "name": "Orange cat", "desc": "กรอบสัตว์ 300×340" },
-  "beagle": { "nameTh": "บีเกิล", "name": "Beagle", "desc": "กรอบสัตว์ 300×340 ปลอกคอเขียว" },
-  "dog-patch": { "nameTh": "หมาด่าง", "name": "Patch dog", "desc": "กรอบสัตว์ 300×340 ปลอกคอแดง" }
+  "man": {
+    "nameTh": "คุณ (ตัวเอก)",
+    "name": "Man",
+    "role": "male",
+    "cm": 170,
+    "desc": "ตัวเอกเล่าแบบบุรุษที่สอง เสื้อน้ำเงิน ไม่มีเงาเมื่อเป็นผี",
+    "tone": "nervous",
+    "line": "ผมแค่อยากรู้ว่าทำไมค่าเช่ามันถูกขนาดนี้",
+    "group": "ตัวละครเดิม",
+    "defaultOutfitLabel": "ชุดประจำตัว",
+    "retired": true
+  },
+  "M1": {
+    "nameTh": "M1 · ชาย",
+    "name": "M1",
+    "role": "male",
+    "cm": 174,
+    "desc": "พูดเร็ว ชอบลงมือก่อน พอจนมุมจะเสยผม",
+    "tone": "conversational",
+    "line": "รอผมตรงนี้ เดี๋ยวผมไปดูเอง",
+    "group": "ตัวละครเดิม",
+    "defaultOutfit": "acc-denim",
+    "defaultOutfitLabel": "แจ็กเก็ตยีนส์",
+    "retired": true
+  },
+  "M2": {
+    "nameTh": "M2 · ชาย",
+    "name": "M2",
+    "role": "male",
+    "cm": 167,
+    "desc": "ใจเย็น เวลาสงสัยจะทวนคำสุดท้ายที่ได้ยิน",
+    "tone": "conversational",
+    "line": "เมื่อกี้คุณพูดว่าได้ยินอะไรนะ",
+    "group": "ตัวละครเดิม",
+    "defaultOutfit": "acc-rescue",
+    "defaultOutfitLabel": "เสื้อกู้ภัย",
+    "retired": true
+  },
+  "W1": {
+    "nameTh": "W1 · หญิง",
+    "name": "W1",
+    "role": "female",
+    "cm": 166,
+    "desc": "ช่างสังเกต ชอบนับทางออกจากห้อง",
+    "tone": "conversational",
+    "line": "ห้องนี้มีทางออกอีกทางค่ะ",
+    "group": "ตัวละครเดิม",
+    "defaultOutfit": "acc-track",
+    "defaultOutfitLabel": "เสื้อวอร์ม",
+    "retired": true
+  },
+  "W2": {
+    "nameTh": "W2 · หญิง",
+    "name": "W2",
+    "role": "female",
+    "cm": 156,
+    "desc": "กล้าถามตรง ๆ เมื่อตัดสินใจแล้วจะเป็นคนเดินนำ",
+    "tone": "conversational",
+    "line": "ถ้าไม่มีใครเปิด งั้นฉันเปิดเอง",
+    "group": "ตัวละครเดิม",
+    "defaultOutfit": "acc-blazer",
+    "defaultOutfitLabel": "สูททำงาน",
+    "retired": true
+  },
+  "A1": {
+    "nameTh": "A1 · ป้า",
+    "name": "A1",
+    "role": "old_female",
+    "cm": 154,
+    "desc": "เจ้าระเบียบ จำของทุกชิ้นในร้านได้",
+    "tone": "conversational",
+    "line": "ป้าวางมันไว้ตรงนี้ทุกเช้า",
+    "group": "ตัวละครเดิม",
+    "defaultOutfit": "acc-floral",
+    "defaultOutfitLabel": "เสื้อลายดอก",
+    "retired": true
+  },
+  "E1": {
+    "nameTh": "E1 · ตา",
+    "name": "E1",
+    "role": "old_male",
+    "cm": 162,
+    "desc": "ชอบเล่าเรื่องเก่า แต่เมื่อกลัวจะเงียบกลางประโยค",
+    "tone": "conversational",
+    "line": "ตาจำเสียงนั้นได้ดี",
+    "group": "ตัวละครเดิม",
+    "defaultOutfit": "acc-cotton",
+    "defaultOutfitLabel": "เสื้อม่อฮ่อม",
+    "retired": true
+  },
+  "B1": {
+    "nameTh": "B1 · เด็กชาย",
+    "name": "B1",
+    "role": "female",
+    "cm": 127,
+    "desc": "ชอบแกะของเล่น พูดกับตัวเองตอนคิด",
+    "tone": "conversational",
+    "line": "ถ้าถอดตรงนี้ออก มันจะดังอีกไหม",
+    "group": "ตัวละครเดิม",
+    "defaultOutfit": "acc-varsity",
+    "defaultOutfitLabel": "เสื้อทีมกีฬา",
+    "retired": true
+  },
+  "G1": {
+    "nameTh": "G1 · เด็กหญิง",
+    "name": "G1",
+    "role": "female",
+    "cm": 122,
+    "desc": "ชอบวาดแผนที่ เวลาโกหกจะหลบตา",
+    "tone": "conversational",
+    "line": "หนูวาดประตูไว้สองบาน เมื่อกี้ยังมีอยู่เลย",
+    "group": "ตัวละครเดิม",
+    "defaultOutfit": "acc-sailor",
+    "defaultOutfitLabel": "เสื้อคอปกกะลาสี",
+    "retired": true
+  },
+  "din": {
+    "nameTh": "ดิน (ตัวเอก)",
+    "name": "Din",
+    "role": "male",
+    "cm": 170,
+    "desc": "ช่างซ่อมวิทยุ ผมหยิกฟู ไฝคู่ที่แก้มซ้าย พูดน้อย ชอบหยุดฟังจนจบก่อนตัดสินใจ เวลาไม่แน่ใจจะเคาะนิ้วนับจังหวะ",
+    "tone": "quiet, curious",
+    "line": "เดี๋ยวก่อน เสียงเคาะเมื่อกี้ดังสามที แต่บ้านนี้มีแค่เราสองคน",
+    "group": "ตัวละครเดิม",
+    "defaultOutfitLabel": "ชุดประจำตัว",
+    "retired": true
+  },
+  "woman": {
+    "nameTh": "ผู้หญิง",
+    "name": "Woman",
+    "role": "female",
+    "cm": 158,
+    "desc": "ผมยาว เสื้อครีม กระโปรงเทา ใส่หน้า/อุปกรณ์ต้องเลื่อนลง 4",
+    "tone": "worried",
+    "line": "ทำไมห้องคุณถึงเปิดไฟทั้งคืน... ฉันเห็นเงาคนยืนอยู่ตรงหน้าต่าง",
+    "group": "ตัวละครเดิม",
+    "defaultOutfitLabel": "ชุดประจำตัว",
+    "retired": true
+  },
+  "auntie": {
+    "nameTh": "ป้า",
+    "name": "Auntie",
+    "role": "old_female",
+    "cm": 150,
+    "desc": "ป้าเจ้าของหอ ผมมวยเทา ตัวเล็กที่สุดในผู้ใหญ่",
+    "tone": "slowly, warm",
+    "line": "ห้องเจ็ดน่ะเหรอ ป้าให้เช่าครึ่งราคา แต่อย่าถามว่าทำไม",
+    "group": "ตัวละครเดิม",
+    "defaultOutfitLabel": "ชุดประจำตัว",
+    "retired": true
+  },
+  "elder": {
+    "nameTh": "ตา (ผู้เฒ่า)",
+    "name": "Elder",
+    "role": "old_male",
+    "cm": 160,
+    "desc": "ตาผู้เฒ่าเดิม ผ้าคาดหัวขาว เคราขาว ผ้านุ่งตาราง และเทียนประจำตัว เพิ่มรอยวัยให้เข้ากับชุดใหม่",
+    "tone": "slowly, raspy, ominous",
+    "line": "เทียนเล่มนี้ดับเมื่อไร ให้หลับตาแล้วนับหนึ่งถึงสิบ ห้ามลืมตาจนกว่าเสียงฝีเท้าจะผ่านไป",
+    "group": "ปู่ ย่า ตา ยาย",
+    "defaultOutfitLabel": "ชุดประจำตัว",
+    "defaultVars": {
+      "exo": "#d4cbb7",
+      "sarong": "#52677b",
+      "pants": "#303c49",
+      "hair-old": "#e2ddd2"
+    }
+  },
+  "raincoat": {
+    "nameTh": "คนเสื้อกันฝน",
+    "name": "Raincoat",
+    "role": "male",
+    "cm": 165,
+    "desc": "ผมแสกข้าง เสื้อกันฝนเหลือง (เสื้อคือ acc-raincoat, คลุมหัวด้วย acc-hood) ใช้เป็นตัวเอกเรื่องน้ำท่วม/พายุ",
+    "tone": "urgent",
+    "line": "น้ำขึ้นเร็วกว่าที่คิด ต้องขึ้นหลังคาก่อนไฟดับ",
+    "group": "ตัวละครเดิม",
+    "defaultOutfitLabel": "ชุดประจำตัว",
+    "retired": true
+  },
+  "student": {
+    "nameTh": "นักเรียน ม.ปลาย",
+    "name": "Student",
+    "role": "male",
+    "cm": 168,
+    "desc": "ม.ปลายชาย ผมยุ่งชี้ ชุดลำลอง ใส่ชุดนักเรียนด้วย acc-school + เสื้อขาว กางเกงกรม",
+    "tone": "scared",
+    "line": "ประตูห้องน้ำชั้นสามมันล็อกจากข้างใน... แต่ไม่มีใครอยู่ในนั้น",
+    "group": "ตัวละครเดิม",
+    "defaultOutfitLabel": "ชุดประจำตัว",
+    "retired": true
+  },
+  "kid": {
+    "nameTh": "เด็กชาย",
+    "name": "Kid",
+    "role": "female",
+    "cm": 125,
+    "desc": "เด็กชาย ผมเกรียนมีจุก เสื้อยืด กางเกงขาสั้น ชุดนักเรียนคือ acc-school-kid",
+    "tone": "childlike, small voice",
+    "line": "พี่ครับ... คนที่ยืนอยู่ข้างหลังพี่เป็นใคร",
+    "group": "ตัวละครเดิม",
+    "defaultOutfitLabel": "ชุดประจำตัว",
+    "retired": true
+  },
+  "kid-girl": {
+    "nameTh": "เด็กหญิง",
+    "name": "Kid girl",
+    "role": "female",
+    "cm": 120,
+    "desc": "ผมแกละ เสื้อลำลอง กระโปรง ชุดนักเรียนคือเสื้อขาว + acc-bow",
+    "tone": "childlike, small voice",
+    "line": "หนูไม่ได้เล่นกับใครเลยนะ หนูเล่นกับพี่สาวในกระจก",
+    "group": "ตัวละครเดิม",
+    "defaultOutfitLabel": "ชุดประจำตัว",
+    "retired": true
+  },
+  "teen-girl": {
+    "nameTh": "ม.ปลายหญิง",
+    "name": "Teen girl",
+    "role": "female",
+    "cm": 158,
+    "desc": "ผมหางม้าสูงผูกยางแดง (--tie) กระโปรง ชุดนักเรียน = เสื้อขาว + acc-bow",
+    "tone": "scared",
+    "line": "เมื่อกี้ใครเรียกชื่อฉัน... ในห้องนี้ไม่มีใครแล้วนะ",
+    "group": "ตัวละครเดิม",
+    "defaultOutfitLabel": "ชุดประจำตัว",
+    "retired": true
+  },
+  "uncle": {
+    "nameTh": "ลุง",
+    "name": "Uncle",
+    "role": "old_male",
+    "cm": 172,
+    "desc": "ตัวใหญ่ หัวเถิก หนวด",
+    "tone": "gruff",
+    "line": "อย่าไปเดินแถวคลองตอนดึก ลุงบอกแล้วไง",
+    "group": "ตัวละครเดิม",
+    "defaultOutfitLabel": "ชุดประจำตัว",
+    "retired": true
+  },
+  "young-woman": {
+    "nameTh": "หญิงสาวผมบ๊อบ",
+    "name": "Young woman",
+    "role": "female",
+    "cm": 162,
+    "desc": "ผมบ๊อบสั้นติดกิ๊บ (--tie) กางเกงขายาว",
+    "tone": "calm",
+    "line": "ห้องนี้ฉันเช่าไว้คนเดียว แต่ทำไมแปรงสีฟันมีสองอัน",
+    "group": "ตัวละครเดิม",
+    "defaultOutfitLabel": "ชุดประจำตัว",
+    "retired": true
+  },
+  "grandpa": {
+    "nameTh": "ตา",
+    "name": "Grandpa",
+    "role": "old_male",
+    "cm": 162,
+    "desc": "หัวล้านกลาง ผมขาวฟูสองข้าง ริ้วรอย ผ้าขาวม้าคือ acc-pakama",
+    "tone": "slowly",
+    "line": "สมัยตายังเด็ก บ้านหลังนั้นไม่เคยมีใครอยู่ได้เกินเจ็ดวัน",
+    "group": "ตัวละครเดิม",
+    "defaultOutfitLabel": "ชุดประจำตัว",
+    "retired": true
+  },
+  "grandma": {
+    "nameTh": "ยาย",
+    "name": "Grandma",
+    "role": "old_female",
+    "cm": 150,
+    "desc": "ผมเทามวยกลมบนหัว ริ้วรอย ผ้าถุงตั้งสีด้วย --skirt",
+    "tone": "slowly, warm",
+    "line": "หลานเอ๊ย คืนนี้อย่าเปิดประตูให้ใครนะ ถึงจะเป็นเสียงยายก็ตาม",
+    "group": "ตัวละครเดิม",
+    "defaultOutfitLabel": "ชุดประจำตัว",
+    "retired": true
+  },
+  "monk": {
+    "nameTh": "พระ",
+    "name": "Monk",
+    "role": "old_male",
+    "cm": 160,
+    "desc": "ห่มจีวร หัวโล้นมีไรผม ริ้วรอยวัยกลางคน ท่านั่ง monk-sit",
+    "tone": "slowly, calm, solemn",
+    "line": "โยม... ของที่ไม่ใช่ของเรา อย่าเก็บกลับบ้าน อาถรรพ์มันจะติดตัว",
+    "group": "อาชีพ",
+    "defaultOutfitLabel": "ชุดประจำตัว"
+  },
+  "novice": {
+    "nameTh": "เณร",
+    "name": "Novice",
+    "role": "boy",
+    "cm": 135,
+    "desc": "สามเณรน้อย ห่มจีวรเฉียงเปิดไหล่ขวาเห็นอังสะและรัดอก หัวโล้นมีไรผมอ่อน โกนคิ้วเรียบร้อย ใบหน้าเยาว์วัย",
+    "tone": "respectful, youthful",
+    "line": "หลวงตาบอกไว้ว่า หลังหกโมงเย็นอย่าเดินไปหลังกุฏิครับ มีคนเคยได้ยินเสียงร้องไห้",
+    "group": "อาชีพ",
+    "defaultOutfitLabel": "จีวรสามเณรห่มเฉียง",
+    "defaultVars": {
+      "skin": "#ecc09b",
+      "skin-d": "#d19b76",
+      "robe": "#de8728",
+      "robe-d": "#b86914",
+      "stubble": "#5c5346"
+    }
+  },
+  "crowd": {
+    "nameTh": "ฝูงชน",
+    "name": "Crowd",
+    "desc": "เงาคนเจ็ดคน ซ้อนสองแถว ใส่ opacity .6 ด้านหลังเพื่อความลึก",
+    "group": "สัตว์และฝูงชน",
+    "defaultOutfitLabel": "ชุดประจำตัว"
+  },
+  "cat-black": {
+    "nameTh": "แมวดำ",
+    "name": "Black cat",
+    "desc": "กรอบสัตว์ 300×340 สัญลักษณ์ลางร้าย",
+    "group": "สัตว์และฝูงชน",
+    "defaultOutfitLabel": "ชุดประจำตัว"
+  },
+  "cat-orange": {
+    "nameTh": "แมวส้ม",
+    "name": "Orange cat",
+    "desc": "กรอบสัตว์ 300×340",
+    "group": "สัตว์และฝูงชน",
+    "defaultOutfitLabel": "ชุดประจำตัว"
+  },
+  "beagle": {
+    "nameTh": "บีเกิล",
+    "name": "Beagle",
+    "desc": "กรอบสัตว์ 300×340 ปลอกคอเขียว",
+    "group": "สัตว์และฝูงชน",
+    "defaultOutfitLabel": "ชุดประจำตัว"
+  },
+  "dog-patch": {
+    "nameTh": "หมาด่าง",
+    "name": "Patch dog",
+    "desc": "กรอบสัตว์ 300×340 ปลอกคอแดง",
+    "group": "สัตว์และฝูงชน",
+    "defaultOutfitLabel": "ชุดประจำตัว"
+  },
+  "lead-male-A": {
+    "nameTh": "ตัวเอกชาย A",
+    "name": "lead-male-A",
+    "group": "ตัวเอก",
+    "castingRole": "ตัวเอกชาย",
+    "variant": "A",
+    "role": "lead_male",
+    "cm": 170,
+    "defaultVars": {
+      "shirt": "#2f5f8f",
+      "pants": "#26364d",
+      "hair": "#16161c"
+    },
+    "desc": "ตัวเอกชายคงทรงผมสั้นปัดข้างเดิม · เพิ่มคิ้วและดีเทลเสื้อแจ็กเก็ตซิปสีน้ำเงินสวมทับเสื้อยืดขาว กระเป๋าหน้าอก นาฬิกาข้อมือซ้าย",
+    "tone": "nervous",
+    "line": "ผมว่ามีบางอย่างผิดปกติ... เราต้องรีบออกไปจากที่นี่",
+    "hairStyle": "short",
+    "ageRange": "ตามบท",
+    "defaultOutfitLabel": "แจ็กเก็ตซิปสีน้ำเงิน กางเกงกรม",
+    "defaultAccessories": [
+      "acc-wristwatch"
+    ]
+  },
+  "lead-male-B": {
+    "nameTh": "ตัวเอกชาย B",
+    "name": "lead-male-B",
+    "group": "ตัวเอก",
+    "castingRole": "ตัวเอกชาย",
+    "variant": "B",
+    "role": "lead_male",
+    "cm": 170,
+    "defaultOutfit": "acc-denim",
+    "defaultVars": {
+      "skin": "#e8b995",
+      "skin-d": "#c99374",
+      "hair": "#1c202a",
+      "pants": "#2c3c50",
+      "skirt": "#2c3c50"
+    },
+    "desc": "ตัวเอกชายลุคทันสมัย · ทรงผมทูบล็อกแสกข้างหน้าม้าโค้งธรรมชาติ · สวมแจ็กเก็ตยีนส์ทับเสื้อยืดขาว กระเป๋าสะพายข้างหนัง ไฝที่แก้มขวา",
+    "tone": "tense",
+    "line": "ถ้าเราไม่ช่วยกันหาทางออก คืนนี้คงไม่มีใครได้กลับบ้าน",
+    "hairStyle": "identity-lead-male-A",
+    "ageRange": "ตามบท",
+    "defaultAccessories": [
+      "acc-bag"
+    ]
+  },
+  "lead-female-A": {
+    "nameTh": "ตัวเอกหญิง A",
+    "name": "lead-female-A",
+    "group": "ตัวเอก",
+    "castingRole": "ตัวเอกหญิง",
+    "variant": "A",
+    "role": "lead_female",
+    "cm": 160,
+    "defaultVars": {
+      "top": "#e8b93a",
+      "sleeve": "#e8b93a",
+      "skirt": "#3d4656",
+      "hair": "#20191a",
+      "skin": "#e6b993"
+    },
+    "desc": "ตัวเอกหญิงคงทรงผมบ๊อบติดกิ๊บเหลืองเดิม · เพิ่มคิ้วและดีเทลเสื้อคาร์ดิแกนสีเหลืองมัสตาร์ดปกคอบัวสีครีมผูกโบว์กรมท่า เข็มขัดหนัง กระโปรงทรงเอจับจีบ",
+    "tone": "whispers, scared",
+    "line": "เธอได้ยินเสียงเคาะนั่นไหม... มันไม่ได้มาจากหน้าประตูนะ",
+    "hairStyle": "bob",
+    "ageRange": "ตามบท",
+    "defaultAccessories": [],
+    "defaultOutfitLabel": "เสื้อปกคอบัวสีเหลืองมัสตาร์ด กระโปรงกรมท่า",
+    "layerTransform": "translate(0 4)"
+  },
+  "lead-female-B": {
+    "nameTh": "ตัวเอกหญิง B",
+    "name": "lead-female-B",
+    "group": "ตัวเอก",
+    "castingRole": "ตัวเอกหญิง",
+    "variant": "B",
+    "role": "lead_female",
+    "cm": 163,
+    "defaultOutfit": "acc-track",
+    "defaultVars": {
+      "skin": "#c9916d",
+      "skin-d": "#a77253",
+      "hair": "#49352d",
+      "pants": "#443d4f",
+      "skirt": "#443d4f"
+    },
+    "desc": "ตัวเอกหญิงลุคคล่องแคล่ว · ผมแสกข้างรวบหางม้าต่ำคล้องไหล่ซ้ายผูกยางสีชมพูตุ่น · เสื้อคาร์ดิแกนคอวีสีม่วงพาสเทลสวมทับเสื้อครีม สร้อยคอจี้ทอง รอยเฉียงที่แก้มซ้าย",
+    "tone": "determined",
+    "line": "ฉันจะไม่ยอมรออยู่เฉย ๆ แน่นอน ใครจะไปด้วยกันตามมา",
+    "hairStyle": "identity-lead-female-B",
+    "ageRange": "ตามบท",
+    "defaultAccessories": [
+      "acc-necklace"
+    ]
+  },
+  "villain-male-A": {
+    "nameTh": "ตัวร้ายชาย A",
+    "name": "villain-male-A",
+    "group": "ตัวร้าย",
+    "castingRole": "ตัวร้ายชาย",
+    "variant": "A",
+    "role": "villain_male",
+    "cm": 170,
+    "defaultOutfitLabel": "เสื้อคอกว้างแขนสั้น กางเกงเข้ม รอยสักแขนขวาและต้นคอ",
+    "defaultVars": {
+      "skin": "#e8b995",
+      "skin-d": "#c99374",
+      "hair": "#181a22",
+      "shirt": "#262833",
+      "pants": "#1b202a",
+      "forearm": "#e8b995"
+    },
+    "desc": "ตัวร้ายชายลุคเฉียบ · ทรงอันเดอร์คัตปัดข้างปรกหน้าผาก · เสื้อแขนสั้นโชว์รอยสักแขนขวาและต้นคอ สร้อยเงิน ไฝแก้มขวา",
+    "tone": "low, sinister",
+    "line": "ในที่สุด... ก็เดินเข้ามาในกับดักเองจนได้นะ",
+    "hairStyle": "identity-villain-male-A",
+    "ageRange": "ตามบท",
+    "defaultAccessories": [
+      "acc-necklace"
+    ]
+  },
+  "villain-male-B": {
+    "nameTh": "ตัวร้ายชาย B",
+    "name": "villain-male-B",
+    "group": "ตัวร้าย",
+    "castingRole": "ตัวร้ายชาย",
+    "variant": "B",
+    "role": "villain_male",
+    "cm": 175,
+    "defaultOutfitLabel": "เสื้อยืดแขนสั้น กางเกงเข้ม รอยสักแขนสองข้าง",
+    "defaultVars": {
+      "skin": "#c9916d",
+      "skin-d": "#a77253",
+      "hair": "#2b211d",
+      "shirt": "#3b2328",
+      "pants": "#23252c",
+      "forearm": "#c9916d"
+    },
+    "desc": "ตัวร้ายชายร่างใหญ่ · ผมเสยรวบจุกด้านบน (man-bun) ไถข้าง · เสื้อแขนสั้นโชว์รอยสักเต็มแขนซ้ายและคอ แผลเป็นที่แก้มซ้าย",
+    "tone": "deep, menacing",
+    "line": "คิดว่าความมืดจะช่วยซ่อนแกได้งั้นเหรอ... ไม่มีทาง",
+    "hairStyle": "identity-villain-male-B",
+    "ageRange": "ตามบท"
+  },
+  "villain-female-A": {
+    "nameTh": "ตัวร้ายหญิง A",
+    "name": "villain-female-A",
+    "group": "ตัวร้าย",
+    "castingRole": "ตัวร้ายหญิง",
+    "variant": "A",
+    "role": "villain_female",
+    "cm": 158,
+    "defaultOutfitLabel": "เสื้อคอวีสีเลือดหมู กางเกงเข้ม โชกเกอร์ ต่างหูห่วงทอง",
+    "defaultVars": {
+      "skin": "#e8b995",
+      "skin-d": "#c99374",
+      "hair": "#18161c",
+      "shirt": "#5a1f2e",
+      "pants": "#1f2029",
+      "jewel": "#e5c158"
+    },
+    "desc": "ตัวร้ายหญิงลุคเฉี่ยว · ผมบ๊อบยาวแสกข้างเรียบหรู · เสื้อคอวีสีเลือดหมู โชกเกอร์ดำจี้แดง ต่างหูห่วงทอง กำไลข้อมือ ไฝแก้มขวา",
+    "tone": "sarcastic, cold",
+    "line": "น่าสงสารจังเลยนะ... ร้องขอความช่วยเหลือไปก็ไม่มีใครได้ยินหรอก",
+    "hairStyle": "identity-villain-female-A",
+    "ageRange": "ตามบท",
+    "defaultAccessories": [
+      "acc-necklace"
+    ]
+  },
+  "villain-female-B": {
+    "nameTh": "ตัวร้ายหญิง B",
+    "name": "villain-female-B",
+    "group": "ตัวร้าย",
+    "castingRole": "ตัวร้ายหญิง",
+    "variant": "B",
+    "role": "villain_female",
+    "cm": 163,
+    "defaultOutfitLabel": "เสื้อดำคอวี กระโปรงม่วงเข้ม ปิ่นทอง ต่างหูทับทิม",
+    "defaultVars": {
+      "skin": "#c9916d",
+      "skin-d": "#a77253",
+      "hair": "#2b1d1e",
+      "shirt": "#231f2e",
+      "skirt": "#462338",
+      "jewel": "#e5c158"
+    },
+    "desc": "ตัวร้ายหญิงลุคคุณนาย · มวยสูงปักปิ่นทองปล่อยปอยข้าง · สร้อยทองจี้ทับทิมแดง ต่างหูระย้า กำไลทอง แผลเป็นแก้มซ้าย",
+    "tone": "whispers, sinister",
+    "line": "ความลับของที่นี่น่ะ... คนที่รู้จะต้องอยู่ที่นี่ตลอดไป",
+    "hairStyle": "identity-villain-female-B",
+    "ageRange": "ตามบท"
+  },
+  "father-A": {
+    "nameTh": "พ่อ A",
+    "name": "father-A",
+    "group": "พ่อแม่",
+    "castingRole": "พ่อ",
+    "variant": "A",
+    "role": "father",
+    "cm": 170,
+    "defaultOutfit": "acc-cotton",
+    "defaultVars": {
+      "skin": "#e8b995",
+      "skin-d": "#c99374",
+      "hair": "#25212b",
+      "shirt": "#36494e",
+      "pants": "#384f48",
+      "skirt": "#384f48"
+    },
+    "desc": "คุณพ่อมาดสุขุม ผมแสกข้างเรียบร้อยแซมขาวที่ขมับ สวมแว่นทรงเหลี่ยม เสื้อเชิ้ตคอปกผ้าฝ้ายสีเขียวอมเทาเข้มและนาฬิกาข้อมือ · ไฝที่แก้มขวา · อายุ 45–55 ปี",
+    "tone": "protective, tense",
+    "line": "พ่อจะยืนเฝ้าประตูไว้ให้ พาลูก ๆ เข้าไปหลบข้างในก่อน!",
+    "hairStyle": "identity-father-A",
+    "ageRange": "45–55",
+    "defaultAccessories": [
+      "acc-square-glasses",
+      "acc-wristwatch"
+    ]
+  },
+  "father-B": {
+    "nameTh": "พ่อ B",
+    "name": "father-B",
+    "group": "พ่อแม่",
+    "castingRole": "พ่อ",
+    "variant": "B",
+    "role": "father",
+    "cm": 175,
+    "defaultOutfitLabel": "เสื้อเชิ้ตลินินแขนสั้นกระเป๋าคู่อกและสร้อยพระ",
+    "defaultVars": {
+      "skin": "#c9916d",
+      "skin-d": "#a77253",
+      "forearm": "#c9916d",
+      "hair": "#40322b",
+      "shirt": "#58523f",
+      "pants": "#3d372e",
+      "skirt": "#3d372e"
+    },
+    "desc": "คุณพ่อร่างใหญ่ใจดี ผมตัดสั้นเปิดหน้าผากแซมขาวที่ขมับ สวมเสื้อเชิ้ตลินินแขนสั้นสองกระเป๋าและคล้องสร้อยพระเลี่ยมทอง · อายุ 45–55 ปี",
+    "tone": "calm, reassuring",
+    "line": "ไม่ต้องกลัวนะลูก ตราบใดที่พ่อยังอยู่ จะไม่มีอะไรทำร้ายพวกเราได้",
+    "hairStyle": "identity-father-B",
+    "ageRange": "45–55",
+    "defaultAccessories": [
+      "acc-amulet"
+    ]
+  },
+  "mother-A": {
+    "nameTh": "แม่ A",
+    "name": "mother-A",
+    "group": "พ่อแม่",
+    "castingRole": "แม่",
+    "variant": "A",
+    "role": "lead_female",
+    "cm": 158,
+    "defaultOutfit": "acc-floral",
+    "defaultVars": {
+      "skin": "#e8b995",
+      "skin-d": "#c99374",
+      "hair": "#2e242a",
+      "shirt": "#753844",
+      "pants": "#4b4d51",
+      "skirt": "#4b4d51"
+    },
+    "desc": "คุณแม่ลุคอบอุ่นอ่อนโยน ผมบ็อบดัดลอนปลายงุ้มทัดหู ต่างหูมุก สวมเสื้อผ้าฝ้ายคอปาดปักลายดอกไม้และสร้อยลูกปัด · ไฝที่แก้มขวา · อายุ 45–55 ปี",
+    "tone": "trembling, anxious",
+    "line": "ลูกเห็นอะไรในห้องนอนน่ะ... บอกแม่มาตรง ๆ นะลูก",
+    "hairStyle": "identity-mother-A",
+    "ageRange": "45–55",
+    "defaultAccessories": [
+      "acc-beads"
+    ]
+  },
+  "mother-B": {
+    "nameTh": "แม่ B",
+    "name": "mother-B",
+    "group": "พ่อแม่",
+    "castingRole": "แม่",
+    "variant": "B",
+    "role": "lead_female",
+    "cm": 163,
+    "defaultOutfitLabel": "เสื้อคาร์ดิแกนคลุมทับและกระโปรงยาวคลุมเข่า",
+    "defaultVars": {
+      "skin": "#c9916d",
+      "skin-d": "#a77253",
+      "hair": "#422f28",
+      "shirt": "#8c4a58",
+      "pants": "#4a3848",
+      "skirt": "#4a3848"
+    },
+    "desc": "คุณแม่วัยทำงานคล่องแคล่ว ผมประบ่าไล่เลเยอร์ติดกิ๊บทอง สวมแว่นตา เสื้อคาร์ดิแกนคลุมทับเสื้อครีมและกระเป๋าผ้าโท้ท · อายุ 45–55 ปี",
+    "tone": "nervous, panic",
+    "line": "แม่โทรหาใครไม่ได้เลย สัญญาณมือถือมันดับไปหมดแล้ว",
+    "hairStyle": "identity-mother-B",
+    "ageRange": "45–55",
+    "defaultAccessories": [
+      "acc-square-glasses",
+      "acc-tote"
+    ]
+  },
+  "uncle-family-A": {
+    "nameTh": "ลุง A",
+    "name": "uncle-family-A",
+    "group": "ลุง ป้า น้า อา",
+    "castingRole": "ลุง",
+    "variant": "A",
+    "role": "father",
+    "cm": 172,
+    "defaultOutfitLabel": "เสื้อเชิ้ตซาฟารีสองกระเป๋าและกระเป๋าสะพายหนัง",
+    "defaultVars": {
+      "hair": "#3d3530",
+      "shirt": "#5b715f",
+      "pants": "#504639"
+    },
+    "desc": "คุณลุงผู้ใหญ่ใจดี ตัวใหญ่ ผมเถิกแซมขาวที่ขมับ ไว้หนวดงาม สวมเสื้อเชิ้ตซาฟารีสีเขียวขี้ม้าสองกระเป๋าและกระเป๋าสะพายหนัง · อายุ 48–65 ปี",
+    "tone": "calm, gravelly",
+    "line": "ตอนลุงเป็นวัยรุ่น ป่าแถวนี้ไม่มีใครกล้าเดินผ่านหลังพระอาทิตย์ตก",
+    "hairStyle": "identity-uncle-family-A",
+    "ageRange": "48–65",
+    "defaultAccessories": [
+      "acc-bag"
+    ]
+  },
+  "uncle-family-B": {
+    "nameTh": "ลุง B",
+    "name": "uncle-family-B",
+    "group": "ลุง ป้า น้า อา",
+    "castingRole": "ลุง",
+    "variant": "B",
+    "role": "father",
+    "cm": 175,
+    "defaultOutfitLabel": "เสื้อม่อฮ่อมแขนสั้นกระดุมผ้าและผ้าขาวม้าพาดไหล่",
+    "defaultVars": {
+      "skin": "#c9916d",
+      "skin-d": "#a77253",
+      "forearm": "#c9916d",
+      "hair": "#453a34",
+      "shirt": "#354b61",
+      "pants": "#423a32",
+      "skirt": "#423a32"
+    },
+    "desc": "คุณลุงชาวสวนอารมณ์ดี สวมหมวกบักเก็ต เสื้อม่อฮ่อมแขนสั้นติดกระดุมผ้าสีขาว-แดง และผ้าขาวม้าพาดไหล่ · อายุ 48–65 ปี",
+    "tone": "serious",
+    "line": "ลุงว่าเรื่องนี้มันไม่ชอบมาพากลแล้ว รีบแจ้งผู้ใหญ่บ้านเถอะ",
+    "hairStyle": "identity-uncle-family-B",
+    "ageRange": "48–65",
+    "defaultAccessories": [
+      "acc-pakama",
+      "acc-bucket-hat"
+    ]
+  },
+  "aunt-family-A": {
+    "nameTh": "ป้า A",
+    "name": "aunt-family-A",
+    "group": "ลุง ป้า น้า อา",
+    "castingRole": "ป้า",
+    "variant": "A",
+    "role": "old_female",
+    "cm": 158,
+    "defaultOutfit": "acc-floral",
+    "defaultVars": {
+      "skin": "#e8b995",
+      "skin-d": "#c99374",
+      "hair": "#3b3236",
+      "shirt": "#6e3846",
+      "pants": "#34475c",
+      "skirt": "#34475c"
+    },
+    "desc": "คุณป้าผู้ดีเรียบร้อย เกล้ามวยผมประดับปิ่นมุกแซมขาวที่ขมับ สวมแว่นกลม เสื้อผ้าไหมคอปาดติดกระดุมเฉียงปักลายดอกไม้ · ไฝที่แก้มขวา · อายุ 48–65 ปี",
+    "tone": "nervous",
+    "line": "ป้าเห็นเงาคนเดินวนรอบรั้วบ้านเธอเมื่อตอนหัวค่ำนะ",
+    "hairStyle": "identity-aunt-family-A",
+    "ageRange": "48–65",
+    "defaultAccessories": [
+      "acc-glasses"
+    ]
+  },
+  "aunt-family-B": {
+    "nameTh": "ป้า B",
+    "name": "aunt-family-B",
+    "group": "ลุง ป้า น้า อา",
+    "castingRole": "ป้า",
+    "variant": "B",
+    "role": "old_female",
+    "cm": 150,
+    "defaultOutfitLabel": "เสื้อลูกไม้สีครีมและผ้าซิ่นทอเชิงสีม่วงเม็ดมะปราง",
+    "defaultVars": {
+      "hair": "#8c8881",
+      "top": "#d9c9a8",
+      "skirt": "#5d415b"
+    },
+    "desc": "คุณป้าใจดี เกล้ามวยผมสีเทาเงินประดับปิ่นทอง สวมเสื้อลูกไม้สีครีม สร้อยลูกปัดอำพัน และนุ่งผ้าซิ่นสีม่วงทอเชิงทอง · อายุ 48–65 ปี",
+    "tone": "warm, cautious",
+    "line": "อย่าลืมจุดธูปบอกเจ้าที่ก่อนนะลูก เดี๋ยวจะนอนไม่หลับ",
+    "hairStyle": "legacy-aunt-bun",
+    "ageRange": "48–65",
+    "layerTransform": "translate(0 4)",
+    "defaultAccessories": [
+      "acc-beads"
+    ]
+  },
+  "na-male-A": {
+    "nameTh": "น้าชาย A",
+    "name": "na-male-A",
+    "group": "ลุง ป้า น้า อา",
+    "castingRole": "น้าชาย",
+    "variant": "A",
+    "role": "casual_male",
+    "cm": 170,
+    "defaultOutfit": "acc-denim",
+    "defaultVars": {
+      "skin": "#e8b995",
+      "skin-d": "#c99374",
+      "hair": "#232028",
+      "pants": "#384f48",
+      "skirt": "#384f48",
+      "cap": "#a66b3b",
+      "cap-d": "#70442d"
+    },
+    "desc": "น้าชายลุคสบายๆ ผมแสกกลางสวมหมวกแก๊ปสีน้ำตาล เสื้อแจ็กเก็ตยีนส์ทับเสื้อยืดขาว · ไฝที่แก้มขวา · อายุ 35–48 ปี",
+    "tone": "alert",
+    "line": "เดี๋ยวทางนี้ผมจัดการเอง น้าพาเด็ก ๆ ไปขึ้นรถก่อน!",
+    "hairStyle": "identity-na-male-A",
+    "ageRange": "35–48",
+    "defaultAccessories": [
+      "acc-cap",
+      "acc-wristwatch"
+    ]
+  },
+  "na-male-B": {
+    "nameTh": "น้าชาย B",
+    "name": "na-male-B",
+    "group": "ลุง ป้า น้า อา",
+    "castingRole": "น้าชาย",
+    "variant": "B",
+    "role": "casual_male",
+    "cm": 175,
+    "defaultOutfitLabel": "เสื้อโปโลคอปกแขนสั้นและกระเป๋าสะพาย",
+    "defaultVars": {
+      "skin": "#c9916d",
+      "skin-d": "#a77253",
+      "forearm": "#c9916d",
+      "hair": "#362822",
+      "shirt": "#2d4c63",
+      "pants": "#4a433b",
+      "skirt": "#4a433b"
+    },
+    "desc": "น้าชายมาดสมาร์ท ผมแสกข้างเรียบร้อย สวมแว่นทรงเหลี่ยม เสื้อโปโลแขนสั้นสีกรมท่าขลิบปกและสะพายกระเป๋าหนัง · อายุ 35–48 ปี",
+    "tone": "tense",
+    "line": "ไฟหน้ารถมันส่องไปเจออะไรบางอย่าง นั่งอยู่ใต้ต้นไม้...",
+    "hairStyle": "identity-na-male-B",
+    "ageRange": "35–48",
+    "defaultAccessories": [
+      "acc-square-glasses",
+      "acc-bag"
+    ]
+  },
+  "na-female-A": {
+    "nameTh": "น้าสาว A",
+    "name": "na-female-A",
+    "group": "ลุง ป้า น้า อา",
+    "castingRole": "น้าสาว",
+    "variant": "A",
+    "role": "young_female",
+    "cm": 158,
+    "defaultOutfit": "acc-track",
+    "defaultVars": {
+      "skin": "#e8b995",
+      "skin-d": "#c99374",
+      "hair": "#2b2124",
+      "pants": "#3d424a",
+      "skirt": "#3d424a"
+    },
+    "desc": "น้าสาววัยทำงาน ถักเปียข้างเดียวคล้องไหล่ สวมเสื้อคาร์ดิแกนคอวีทับเชิ้ตครีมและสะพายกระเป๋าโท้ท · ไฝที่แก้มขวา · อายุ 35–48 ปี",
+    "tone": "whispers, scared",
+    "line": "น้าได้กลิ่นธูปลอยมาจากห้องใต้หลังคา ทั้งที่ไม่มีใครอยู่ข้างบน",
+    "hairStyle": "identity-na-female-A",
+    "ageRange": "35–48",
+    "defaultAccessories": [
+      "acc-tote"
+    ]
+  },
+  "na-female-B": {
+    "nameTh": "น้าสาว B",
+    "name": "na-female-B",
+    "group": "ลุง ป้า น้า อา",
+    "castingRole": "น้าสาว",
+    "variant": "B",
+    "role": "young_female",
+    "cm": 163,
+    "defaultOutfitLabel": "เสื้อคอป้ายผูกเอวสีม่วงพลัมและกระโปรงพลีท",
+    "defaultVars": {
+      "skin": "#c9916d",
+      "skin-d": "#a77253",
+      "hair": "#3d2b27",
+      "shirt": "#593b63",
+      "pants": "#3d3042",
+      "skirt": "#3d3042"
+    },
+    "desc": "น้าสาวลุคทันสมัย ผมสั้นพิกซี่บ็อบปัดข้าง ต่างหูทอง สวมเสื้อคอป้ายผูกโบว์เอวและสร้อยคอทอง · อายุ 35–48 ปี",
+    "tone": "nervous",
+    "line": "เราต้องรีบไปจากที่นี่แล้วนะ มันเริ่มดึกเกินไปแล้ว",
+    "hairStyle": "identity-na-female-B",
+    "ageRange": "35–48",
+    "defaultAccessories": [
+      "acc-necklace"
+    ]
+  },
+  "ar-male-A": {
+    "nameTh": "อาชาย A",
+    "name": "ar-male-A",
+    "group": "ลุง ป้า น้า อา",
+    "castingRole": "อาชาย",
+    "variant": "A",
+    "role": "casual_male",
+    "cm": 170,
+    "defaultOutfit": "acc-courier",
+    "defaultVars": {
+      "skin": "#e8b995",
+      "skin-d": "#c99374",
+      "hair": "#221f26",
+      "pants": "#34475c",
+      "skirt": "#34475c"
+    },
+    "desc": "อาชายวัยหนุ่มคล่องตัว ผมซอยสั้นธรรมชาติ สวมแจ็กเก็ตคอปกสีเขียวคาดแถบเหลืองและนาฬิกาข้อมือ · ไฝที่แก้มขวา · อายุ 30–42 ปี",
+    "tone": "frustrated, tense",
+    "line": "มอเตอร์ไซค์สตาร์ทไม่ติด ทั้งที่เพิ่งเติมน้ำมันมาเต็มถัง",
+    "hairStyle": "identity-ar-male-A",
+    "ageRange": "30–42",
+    "defaultAccessories": [
+      "acc-wristwatch"
+    ]
+  },
+  "ar-male-B": {
+    "nameTh": "อาชาย B",
+    "name": "ar-male-B",
+    "group": "ลุง ป้า น้า อา",
+    "castingRole": "อาชาย",
+    "variant": "B",
+    "role": "casual_male",
+    "cm": 175,
+    "defaultOutfitLabel": "เสื้อฮู้ดดี้สีเขียวโอลีฟและกระเป๋าสะพายเฉียง",
+    "defaultVars": {
+      "skin": "#c9916d",
+      "skin-d": "#a77253",
+      "hair": "#3b2a22",
+      "shirt": "#4a633d",
+      "pants": "#423a32",
+      "skirt": "#423a32"
+    },
+    "desc": "อาชายสายลุยใจดี ผมหยักศกธรรมชาติ สวมเสื้อฮู้ดดี้สีเขียวโอลีฟกระเป๋าจิงโจ้และกระเป๋าสะพายเฉียง · รอยเฉียงที่แก้มซ้าย · อายุ 30–42 ปี",
+    "tone": "curious, cautious",
+    "line": "อาว่าเสียงมันมาจากในบ่อน้ำร้างหลังบ้าน ตามอามาดูสิ",
+    "hairStyle": "identity-ar-male-B",
+    "ageRange": "30–42",
+    "defaultAccessories": [
+      "acc-bag"
+    ]
+  },
+  "ar-female-A": {
+    "nameTh": "อาสาว A",
+    "name": "ar-female-A",
+    "group": "ลุง ป้า น้า อา",
+    "castingRole": "อาสาว",
+    "variant": "A",
+    "role": "young_female",
+    "cm": 158,
+    "defaultOutfit": "acc-chef",
+    "defaultVars": {
+      "skin": "#e8b995",
+      "skin-d": "#c99374",
+      "hair": "#261e21",
+      "pants": "#384f48",
+      "skirt": "#384f48"
+    },
+    "desc": "อาสาวเจ้าของร้านเบเกอรี่ มัดผมหางม้าสูงคล่องแคล่ว สวมแว่นกลม เสื้อเชฟกระดุมสองแถวผูกผ้าพันคอสีส้มอิฐ · ไฝที่แก้มขวา · อายุ 30–42 ปี",
+    "tone": "puzzled",
+    "line": "กุญแจห้องนี้หายไปไหนนะ เมื่อกี้ยังวางอยู่ตรงนี้แท้ ๆ",
+    "hairStyle": "identity-ar-female-A",
+    "ageRange": "30–42",
+    "defaultAccessories": [
+      "acc-glasses"
+    ]
+  },
+  "ar-female-B": {
+    "nameTh": "อาสาว B",
+    "name": "ar-female-B",
+    "group": "ลุง ป้า น้า อา",
+    "castingRole": "อาสาว",
+    "variant": "B",
+    "role": "young_female",
+    "cm": 163,
+    "defaultOutfitLabel": "เสื้อคอบัวสวมเอี๊ยมกระโปรงคาเฟ่สีน้ำตาลอบอุ่น",
+    "defaultVars": {
+      "skin": "#c9916d",
+      "skin-d": "#a77253",
+      "hair": "#47322b",
+      "shirt": "#d8c3a5",
+      "pants": "#4d382c",
+      "skirt": "#4d382c"
+    },
+    "desc": "อาสาวสายโฮมคาเฟ่ ผมยาวดัดลอนครึ่งศีรษะติดโบว์ชมพู สวมเสื้อคอบัวทับด้วยเอี๊ยมกระโปรงสีน้ำตาลและสร้อยลูกปัด · อายุ 30–42 ปี",
+    "tone": "nervous",
+    "line": "มีคนส่งข้อความมาบอกว่า \"อย่าเปิดไฟ\" จากเบอร์แปลก ๆ ค่ะ",
+    "hairStyle": "identity-ar-female-B",
+    "ageRange": "30–42",
+    "defaultAccessories": [
+      "acc-beads"
+    ]
+  },
+  "brother-A": {
+    "nameTh": "พี่ชาย A",
+    "name": "brother-A",
+    "group": "พี่น้อง",
+    "castingRole": "พี่ชาย",
+    "variant": "A",
+    "role": "casual_male",
+    "cm": 170,
+    "defaultOutfitLabel": "แจ็กเก็ตสตรีทสปอร์ตคาดแถบขาว-แดงและหมวกแก๊ป",
+    "defaultVars": {
+      "skin": "#e8b995",
+      "skin-d": "#c99374",
+      "hair": "#1f1d24",
+      "shirt": "#273b52",
+      "pants": "#3c434d",
+      "skirt": "#3c434d",
+      "cap": "#8c2d38",
+      "cap-d": "#5e1b23"
+    },
+    "desc": "พี่ชายมาดนิ่งพึ่งพาได้ สวมหมวกแก๊ปสีแดงเลือดหมู เสื้อแจ็กเก็ตสตรีทสีกรมท่าคาดแถบขาว-แดงทับเสื้อยืดขาว · ไฝที่แก้มขวา",
+    "tone": "determined",
+    "line": "พี่จะเดินนำหน้าเอง เกาะไหล่พี่ไว้แล้วอย่าปล่อยมือนะ",
+    "hairStyle": "identity-brother-A",
+    "ageRange": "ตามบท",
+    "defaultAccessories": [
+      "acc-cap",
+      "acc-wristwatch"
+    ]
+  },
+  "brother-B": {
+    "nameTh": "พี่ชาย B",
+    "name": "brother-B",
+    "group": "พี่น้อง",
+    "castingRole": "พี่ชาย",
+    "variant": "B",
+    "role": "casual_male",
+    "cm": 175,
+    "defaultOutfitLabel": "เสื้อเบสบอลแขนสั้นกระดุมหน้าและแว่นตากรอบเหลี่ยม",
+    "defaultVars": {
+      "skin": "#c9916d",
+      "skin-d": "#a77253",
+      "forearm": "#c9916d",
+      "hair": "#362822",
+      "shirt": "#2c3f59",
+      "pants": "#4d4339",
+      "skirt": "#4d4339"
+    },
+    "desc": "พี่ชายสายลุยอบอุ่น ผมสั้นเซ็ตเปิดหน้าผาก สวมแว่นทรงเหลี่ยม เสื้อเชิ้ตเบสบอลแขนสั้นติดอาร์ม B และกระเป๋าสะพาย · รอยเฉียงที่แก้มซ้าย",
+    "tone": "shocked, tense",
+    "line": "สะพานขาดแล้วว่ะ... เราข้ามกลับไปฝั่งโน้นไม่ได้แล้ว",
+    "hairStyle": "identity-brother-B",
+    "ageRange": "ตามบท",
+    "defaultAccessories": [
+      "acc-square-glasses",
+      "acc-bag"
+    ]
+  },
+  "sister-A": {
+    "nameTh": "พี่สาว A",
+    "name": "sister-A",
+    "group": "พี่น้อง",
+    "castingRole": "พี่สาว",
+    "variant": "A",
+    "role": "young_female",
+    "cm": 158,
+    "defaultOutfitLabel": "เสื้อกั๊กไหมพรมสีเขียวเทอร์ควอยซ์ทับเชิ้ตขาวผูกโบว์",
+    "defaultVars": {
+      "skin": "#e8b995",
+      "skin-d": "#c99374",
+      "hair": "#261e22",
+      "shirt": "#f2efe9",
+      "pants": "#34475c",
+      "skirt": "#34475c"
+    },
+    "desc": "พี่สาวคนโตเรียบร้อย ถักเปียเดี่ยวผูกโบว์ชมพูพาดไหล่ขวา สวมเสื้อกั๊กไหมพรมสีเขียวทับเชิ้ตปกขาวผูกโบว์และสะพายกระเป๋าโท้ท · ไฝที่แก้มขวา",
+    "tone": "whispers, alarmed",
+    "line": "พี่ได้ยินเสียงกระจกแตกที่ชั้นล่าง... ทุกคนเงียบก่อน!",
+    "hairStyle": "identity-sister-A",
+    "ageRange": "ตามบท",
+    "defaultAccessories": [
+      "acc-tote"
+    ]
+  },
+  "sister-B": {
+    "nameTh": "พี่สาว B",
+    "name": "sister-B",
+    "group": "พี่น้อง",
+    "castingRole": "พี่สาว",
+    "variant": "B",
+    "role": "young_female",
+    "cm": 163,
+    "defaultOutfitLabel": "เสื้อคาร์ดิแกนติดกระดุมมุกและกระโปรงพลีท",
+    "defaultVars": {
+      "skin": "#c9916d",
+      "skin-d": "#a77253",
+      "hair": "#422e27",
+      "shirt": "#b85d6f",
+      "pants": "#42333d",
+      "skirt": "#42333d"
+    },
+    "desc": "พี่สาวคนรองสดใส ผมยาวดัดลอนคลื่นติดกิ๊บมุก สวมเสื้อคาร์ดิแกนสีโรสพาวเดอร์ติดกระดุมมุก สร้อยคอทอง และกระโปรงพลีท · รอยเฉียงที่แก้มซ้าย",
+    "tone": "trembling, horrified",
+    "line": "ทำไมรูปครอบครัวเราในกรอบ... หน้าทุกคนถึงเปลี่ยนไปหมดล่ะ",
+    "hairStyle": "identity-sister-B",
+    "ageRange": "ตามบท",
+    "defaultAccessories": [
+      "acc-necklace"
+    ]
+  },
+  "younger-brother-A": {
+    "nameTh": "น้องชาย A",
+    "name": "younger-brother-A",
+    "group": "พี่น้อง",
+    "castingRole": "น้องชาย",
+    "variant": "A",
+    "role": "boy",
+    "cm": 124,
+    "defaultOutfit": "acc-varsity",
+    "defaultVars": {
+      "skin": "#e8b995",
+      "skin-d": "#c99374",
+      "hair": "#2b221e"
+    },
+    "desc": "น้องชายคนเล็กช่างสังเกต ผมสั้นมีปอยผมตั้งด้านบน สวมเสื้อแจ็กเก็ตวาร์ซิตี้สีแดงเลือดหมูขลิบครีม · ไฝที่แก้มขวา",
+    "tone": "crying, terrified",
+    "line": "พี่ครับ... ในตู้เสื้อผ้ามีคนแอบมองผมอยู่!",
+    "hairStyle": "identity-younger-brother-A",
+    "ageRange": "ตามบท"
+  },
+  "younger-brother-B": {
+    "nameTh": "น้องชาย B",
+    "name": "younger-brother-B",
+    "group": "พี่น้อง",
+    "castingRole": "น้องชาย",
+    "variant": "B",
+    "role": "boy",
+    "cm": 131,
+    "defaultOutfit": "acc-stripe",
+    "defaultVars": {
+      "skin": "#c9916d",
+      "skin-d": "#a77253",
+      "hair": "#3d2c24"
+    },
+    "desc": "น้องชายจอมซน ผมหน้าม้ากะลาครอบธรรมชาติ สวมเสื้อยืดลายขวางติดกระเป๋าดาวสีเหลือง · รอยเฉียงที่แก้มซ้าย",
+    "tone": "confused, scared",
+    "line": "ลูกบอลมันกลิ้งออกไปเอง ทั้งที่พื้นห้องมันเรียบเสมอกันนะพี่",
+    "hairStyle": "identity-younger-brother-B",
+    "ageRange": "ตามบท"
+  },
+  "younger-sister-A": {
+    "nameTh": "น้องสาว A",
+    "name": "younger-sister-A",
+    "group": "พี่น้อง",
+    "castingRole": "น้องสาว",
+    "variant": "A",
+    "role": "young_female",
+    "cm": 124,
+    "defaultOutfit": "acc-sailor",
+    "defaultVars": {
+      "skin": "#e8b995",
+      "skin-d": "#c99374",
+      "hair": "#241e22"
+    },
+    "desc": "น้องสาวตัวเล็กน่ารัก มัดผมแกละสองข้างผูกโบว์แดง สวมชุดกะลาสีคอปกกรมท่าผูกโบว์แดง · ไฝที่แก้มขวา",
+    "tone": "childlike, scared",
+    "line": "หนูกลัว... ตุ๊กตาตัวนี้มันกระพริบตาได้ด้วยค่ะพี่",
+    "hairStyle": "identity-younger-sister-A",
+    "ageRange": "ตามบท"
+  },
+  "younger-sister-B": {
+    "nameTh": "น้องสาว B",
+    "name": "younger-sister-B",
+    "group": "พี่น้อง",
+    "castingRole": "น้องสาว",
+    "variant": "B",
+    "role": "young_female",
+    "cm": 131,
+    "defaultOutfit": "acc-overalls",
+    "defaultVars": {
+      "skin": "#c9916d",
+      "skin-d": "#a77253",
+      "hair": "#402e27"
+    },
+    "desc": "น้องสาวคนรองร่าเริง ผมบ็อบสั้นหน้าม้าติดกิ๊บคู่สีพาสเทล สวมชุดเอี๊ยมยีนส์กระเป๋ารูปหัวใจทับเสื้อชมพู · รอยเฉียงที่แก้มซ้าย",
+    "tone": "childlike, soft",
+    "line": "มีพี่ผู้หญิงชุดขาวยืนกวักมือเรียกหนูอยู่ข้างรั้วค่ะ",
+    "hairStyle": "identity-younger-sister-B",
+    "ageRange": "ตามบท"
+  },
+  "paternal-grandfather-A": {
+    "nameTh": "ปู่ A",
+    "name": "paternal-grandfather-A",
+    "group": "ปู่ ย่า ตา ยาย",
+    "castingRole": "ปู่",
+    "variant": "A",
+    "role": "old_male",
+    "cm": 170,
+    "defaultOutfitLabel": "เสื้อซาฟารีข้าราชการบำนาญ",
+    "defaultVars": {
+      "skin": "#e8b995",
+      "skin-d": "#c99374",
+      "forearm": "#e8b995",
+      "hair": "#e2dfd7",
+      "shirt": "#c8b594",
+      "pants": "#4e3e33"
+    },
+    "desc": "คุณปู่ภูมิฐาน สวมเสื้อซาฟารีสีกากีคาดเข็มขัดหนัง กางเกงสแล็คสีน้ำตาล นาฬิกาข้อมือ · ผมสั้นหวีปาดข้างสีดอกเลา (M1) · ไฝที่แก้มขวา",
+    "tone": "slowly, trembling",
+    "line": "อย่าหันหลังกลับไปมองเด็ดขาดนะลูก เดินตรงไปเรื่อย ๆ",
+    "hairStyle": "identity-paternal-grandfather-A",
+    "ageRange": "68–80",
+    "defaultAccessories": [
+      "acc-wristwatch"
+    ]
+  },
+  "paternal-grandfather-B": {
+    "nameTh": "ปู่ B",
+    "name": "paternal-grandfather-B",
+    "group": "ปู่ ย่า ตา ยาย",
+    "castingRole": "ปู่",
+    "variant": "B",
+    "role": "old_male",
+    "cm": 175,
+    "defaultOutfitLabel": "เสื้อเชิ้ตลายสก็อตผ้าขาวม้า",
+    "defaultVars": {
+      "skin": "#c9916d",
+      "skin-d": "#a77253",
+      "hair": "#c8c5be",
+      "shirt": "#466178",
+      "pants": "#273242"
+    },
+    "desc": "คุณปู่ใจดีอบอุ่น สวมเสื้อเชิ้ตลายตารางผ้าขาวม้า กางเกงขายาวสีกรมท่า แว่นตากลม · ผมหยักศกลอนใหญ่สีเทาเงิน (M4) · รอยเฉียงที่แก้มซ้าย",
+    "tone": "slowly, solemn",
+    "line": "ศาลตรงหัวมุมนั่น... เมื่อก่อนเคยมีคนผูกคอตาย",
+    "hairStyle": "identity-paternal-grandfather-B",
+    "ageRange": "68–80",
+    "defaultAccessories": [
+      "acc-glasses"
+    ]
+  },
+  "paternal-grandmother-A": {
+    "nameTh": "ย่า A",
+    "name": "paternal-grandmother-A",
+    "group": "ปู่ ย่า ตา ยาย",
+    "castingRole": "ย่า",
+    "variant": "A",
+    "role": "old_female",
+    "cm": 158,
+    "defaultOutfitLabel": "ชุดผ้าไหมไทยและผ้าซิ่นขลิบทอง",
+    "defaultVars": {
+      "skin": "#e8b995",
+      "skin-d": "#c99374",
+      "hair": "#e2dfd7",
+      "shirt": "#7c2e52",
+      "skirt": "#541f39",
+      "jewel": "#d9b45b"
+    },
+    "desc": "คุณย่าภูมิฐาน สวมเสื้อผ้าไหมไทยสีม่วงพลัม นุ่งผ้าซิ่นไหมทอเชิงทอง ต่างหูมุกและสร้อยคอทอง · ผมบ็อบสั้นปาดข้างเรียบหรู (F3) · ไฝที่แก้มขวา",
+    "tone": "slowly, warm",
+    "line": "เอาสายสิญจน์นี้พันข้อมือไว้ให้แน่น อย่าให้หลุดนะลูก",
+    "hairStyle": "identity-paternal-grandmother-A",
+    "ageRange": "68–80",
+    "defaultAccessories": [
+      "acc-necklace"
+    ]
+  },
+  "paternal-grandmother-B": {
+    "nameTh": "ย่า B",
+    "name": "paternal-grandmother-B",
+    "group": "ปู่ ย่า ตา ยาย",
+    "castingRole": "ย่า",
+    "variant": "B",
+    "role": "old_female",
+    "cm": 163,
+    "defaultOutfitLabel": "เสื้อผ้าฝ้ายพาสเทลและผ้าถุงปาเต๊ะ",
+    "defaultVars": {
+      "skin": "#c9916d",
+      "skin-d": "#a77253",
+      "hair": "#ceccc6",
+      "shirt": "#88b8a4",
+      "skirt": "#2e5668"
+    },
+    "desc": "คุณย่าอารมณ์ดี สวมเสื้อผ้าฝ้ายคอกลมสีเขียวมิ้นต์กระดุมมุก นุ่งผ้าถุงปาเต๊ะลายดอกไม้ · ผมดัดลอนหยิกสั้นคุณย่า (F2) · รอยเฉียงที่แก้มซ้าย",
+    "tone": "slowly, scared",
+    "line": "ปู่แกไปสบายแล้ว... แล้วคนที่ยืนเรียกหน้าบ้านเมื่อกี้ คือใครกัน",
+    "hairStyle": "identity-paternal-grandmother-B",
+    "ageRange": "68–80"
+  },
+  "maternal-grandfather-A": {
+    "nameTh": "ตา A",
+    "name": "maternal-grandfather-A",
+    "group": "ปู่ ย่า ตา ยาย",
+    "castingRole": "ตา",
+    "variant": "A",
+    "role": "old_male",
+    "cm": 170,
+    "defaultOutfitLabel": "เสื้อม่อฮ่อมคาดผ้าขาวม้า",
+    "defaultVars": {
+      "skin": "#e8b995",
+      "skin-d": "#c99374",
+      "forearm": "#e8b995",
+      "hair": "#d4d1c9",
+      "shirt": "#253d5b",
+      "pants": "#1e2530"
+    },
+    "desc": "คุณตาชาวบ้านคล่องแคล่ว สวมเสื้อม่อฮ่อมแขนสั้นสีกรมท่า คาดผ้าขาวม้าลายตารางสีแดงที่เอว · ผมสั้นเกรียนสีดอกเลา (M3) · ไฝที่แก้มขวา",
+    "tone": "slowly, serious",
+    "line": "ตาเตือนแล้วใช่ไหม... ห้ามเปิดประตูรับใครตอนตีสาม",
+    "hairStyle": "identity-maternal-grandfather-A",
+    "ageRange": "68–80"
+  },
+  "maternal-grandfather-B": {
+    "nameTh": "ตา B",
+    "name": "maternal-grandfather-B",
+    "group": "ปู่ ย่า ตา ยาย",
+    "castingRole": "ตา",
+    "variant": "B",
+    "role": "old_male",
+    "cm": 175,
+    "defaultOutfitLabel": "เสื้อผ้าฝ้ายพาดผ้าขาวม้า",
+    "defaultVars": {
+      "skin": "#c9916d",
+      "skin-d": "#a77253",
+      "hair": "#dfdcd4",
+      "shirt": "#ebe3d2",
+      "pants": "#525862"
+    },
+    "desc": "คุณตาใจดีสายบุญ สวมเสื้อผ้าฝ้ายคอกลมสีครีมกระดุมไม้ พาดผ้าขาวม้าที่บ่าซ้าย · ขวัญล้านด้านบนมีปอยผมขาวข้างหู (M2) · รอยเฉียงที่แก้มซ้าย",
+    "tone": "slowly, eerie",
+    "line": "เรือลำนั้นจมไปสิบปีแล้ว แต่ทำไมคืนนี้มันถึงลอยกลับมา",
+    "hairStyle": "identity-maternal-grandfather-B",
+    "ageRange": "68–80"
+  },
+  "maternal-grandmother-A": {
+    "nameTh": "ยาย A",
+    "name": "maternal-grandmother-A",
+    "group": "ปู่ ย่า ตา ยาย",
+    "castingRole": "ยาย",
+    "variant": "A",
+    "role": "old_female",
+    "cm": 158,
+    "defaultOutfitLabel": "เสื้อคอกระเช้าและผ้าถุงลายไทย",
+    "defaultVars": {
+      "skin": "#e8b995",
+      "skin-d": "#c99374",
+      "hair": "#e2dfd7",
+      "shirt": "#e8b995",
+      "top": "#df8ea2",
+      "sleeve": "#e8b995",
+      "skirt": "#7d4b38"
+    },
+    "desc": "คุณยายไทยดั้งเดิม สวมเสื้อคอกระเช้าสีชมพูกลีบบัวคอระบายลูกไม้ นุ่งผ้าถุงทอลายไทย · ผมแสกกลางเกล้ามวยต่ำท้ายทอย (F1) · ไฝที่แก้มขวา",
+    "tone": "slowly, nervous",
+    "line": "ยายได้ยินเสียงคนเดินบนหลังคามาสามคืนติดแล้วนะ",
+    "hairStyle": "identity-maternal-grandmother-A",
+    "ageRange": "68–80"
+  },
+  "maternal-grandmother-B": {
+    "nameTh": "ยาย B",
+    "name": "maternal-grandmother-B",
+    "group": "ปู่ ย่า ตา ยาย",
+    "castingRole": "ยาย",
+    "variant": "B",
+    "role": "old_female",
+    "cm": 163,
+    "defaultOutfitLabel": "เสื้อลูกไม้พาดสไบและผ้าซิ่นมัดหมี่",
+    "defaultVars": {
+      "skin": "#c9916d",
+      "skin-d": "#a77253",
+      "hair": "#c8c5be",
+      "shirt": "#eee6d6",
+      "skirt": "#3c2d4d"
+    },
+    "desc": "คุณยายสายบุญเรียบร้อย สวมเสื้อลูกไม้สีครีมพาดผ้าสไบเฉียงสีทอง นุ่งผ้าซิ่นมัดหมี่สีม่วงคราม · เกล้ามวยสูงเสียบปิ่นไม้ (F4) · รอยเฉียงที่แก้มซ้าย",
+    "tone": "slowly, warm",
+    "line": "กินข้าวให้อิ่มนะลูก... แล้วรีบเข้านอน อย่าออกไปไหน",
+    "hairStyle": "identity-maternal-grandmother-B",
+    "ageRange": "68–80"
+  },
+  "police-A": {
+    "nameTh": "ตำรวจ A",
+    "name": "police-A",
+    "group": "อาชีพ",
+    "castingRole": "ตำรวจ",
+    "variant": "A",
+    "role": "officer",
+    "cm": 170,
+    "defaultOutfit": "acc-police",
+    "defaultVars": {
+      "skin": "#e8b995",
+      "skin-d": "#c99374",
+      "hair": "#1c202a",
+      "shirt": "#8b7355",
+      "pants": "#4a3b2c",
+      "skirt": "#4a3b2c"
+    },
+    "desc": "ร้อยเวรตำรวจไทย สวมหมวกหม้อตาลสีกากีขลิบแดง เครื่องแบบสีกากีแขนยาวติดอินทรธนู สายยงยศสีแดง ป้ายชื่อ แพรแถบ และตราโล่ · ไฝที่แก้มขวา",
+    "tone": "authoritative",
+    "line": "ตำรวจเข้าควบคุมสถานการณ์แล้วครับ กรุณาอย่าแตะต้องหลักฐาน",
+    "hairStyle": "identity-police-A",
+    "ageRange": "ตามบท",
+    "defaultAccessories": [
+      "acc-wristwatch"
+    ]
+  },
+  "police-B": {
+    "nameTh": "ตำรวจ B",
+    "name": "police-B",
+    "group": "อาชีพ",
+    "castingRole": "ตำรวจ",
+    "variant": "B",
+    "role": "officer",
+    "cm": 175,
+    "defaultOutfitLabel": "ชุดตำรวจสายตรวจแขนสั้นและวิทยุสื่อสาร",
+    "defaultVars": {
+      "skin": "#c9916d",
+      "skin-d": "#a77253",
+      "forearm": "#c9916d",
+      "hair": "#352620",
+      "shirt": "#7d674e",
+      "pants": "#443628",
+      "skirt": "#443628"
+    },
+    "desc": "ตำรวจสายตรวจร่างใหญ่ สวมหมวกแก๊ปตำรวจสีดำปักช่อชัยพฤกษ์ทอง เสื้อสีกากีแขนสั้น วิทยุสื่อสารติดบ่า เข็มขัดสนาม · รอยเฉียงที่แก้มซ้าย",
+    "tone": "urgent, direct",
+    "line": "ตรวจเช็คกล้องวงจรปิดด่วน มีคนวิ่งเข้าไปในโกดังร้างเมื่อสิบนาทีก่อน",
+    "hairStyle": "identity-police-B",
+    "ageRange": "ตามบท"
+  },
+  "mechanic-A": {
+    "nameTh": "ช่าง A",
+    "name": "mechanic-A",
+    "group": "อาชีพ",
+    "castingRole": "ช่าง",
+    "variant": "A",
+    "role": "casual_male",
+    "cm": 170,
+    "defaultOutfit": "acc-mechanic",
+    "defaultVars": {
+      "skin": "#e8b995",
+      "skin-d": "#c99374",
+      "hair": "#1c202a",
+      "shirt": "#2f4659",
+      "pants": "#232c36",
+      "skirt": "#232c36",
+      "cap": "#374f63",
+      "cap-d": "#243544"
+    },
+    "desc": "ช่างเทคนิคไทย สวมหมวกแก๊ปช่าง เสื้อช็อปสีกรมท่าคาดแถบสะท้อนแสงเหลือง-เงิน ไขควงเสียบกระเป๋าเสื้อ ประแจเหน็บเอว · ไฝที่แก้มขวา",
+    "tone": "serious, low",
+    "line": "เบรกรถคันนี้ถูกตัดสาย... ไม่ใช่อุบัติเหตุแน่นอนครับ",
+    "hairStyle": "identity-mechanic-A",
+    "ageRange": "ตามบท",
+    "defaultAccessories": [
+      "acc-cap"
+    ]
+  },
+  "mechanic-B": {
+    "nameTh": "ช่าง B",
+    "name": "mechanic-B",
+    "group": "อาชีพ",
+    "castingRole": "ช่าง",
+    "variant": "B",
+    "role": "casual_male",
+    "cm": 175,
+    "defaultOutfitLabel": "เสื้อช็อปช่างแขนสั้นและผ้าขนหนูพาดคอ",
+    "defaultVars": {
+      "skin": "#c9916d",
+      "skin-d": "#a77253",
+      "forearm": "#c9916d",
+      "hair": "#3b2a22",
+      "shirt": "#3b4754",
+      "pants": "#252c34",
+      "skirt": "#252c34"
+    },
+    "desc": "ช่างอู่/ช่างไฟลุยงาน สวมเสื้อช็อปแขนสั้นปกสีเลือดหมู ผ้าขนหนูซับเหงื่อพาดคอ ปากกาวัดไฟเสียบกระเป๋า เข็มขัดซองเครื่องมือ · รอยเฉียงที่แก้มซ้าย",
+    "tone": "puzzled, gritty",
+    "line": "ผมเช็คเครื่องปั่นไฟแล้ว ระบบสายไฟข้างในมันเหมือนโดนอะไรกัดขาดหมดเลย",
+    "hairStyle": "identity-mechanic-B",
+    "ageRange": "ตามบท"
+  },
+  "photographer-A": {
+    "nameTh": "ช่างภาพ A",
+    "name": "photographer-A",
+    "group": "อาชีพ",
+    "castingRole": "ช่างภาพ",
+    "variant": "A",
+    "role": "young_female",
+    "cm": 158,
+    "defaultOutfit": "acc-photographer",
+    "defaultVars": {
+      "skin": "#e8b995",
+      "skin-d": "#c99374",
+      "hair": "#1c202a",
+      "shirt": "#2f3540",
+      "pants": "#3b424c",
+      "skirt": "#3b424c",
+      "cap": "#879078",
+      "cap-d": "#66715a"
+    },
+    "desc": "ช่างภาพภาคสนาม ถักเปียข้างเดียวคล้องไหล่ สวมหมวกบักเก็ต เสื้อกั๊กสนามหลายกระเป๋าติดบัตร PRESS คล้องกล้อง DSLR เลนส์ขอบแดง · ไฝที่แก้มขวา",
+    "tone": "breathless, shocked",
+    "line": "กล้องของฉันจับภาพติดเงาซ้อน... มีคนยืนอยู่ข้างหลังคุณ!",
+    "hairStyle": "identity-photographer-A",
+    "ageRange": "ตามบท",
+    "defaultAccessories": [
+      "acc-bucket-hat"
+    ]
+  },
+  "photographer-B": {
+    "nameTh": "ช่างภาพ B",
+    "name": "photographer-B",
+    "group": "อาชีพ",
+    "castingRole": "ช่างภาพ",
+    "variant": "B",
+    "role": "young_female",
+    "cm": 163,
+    "defaultOutfitLabel": "เสื้อเชิ้ตซาฟารีคลุมและกล้องวินเทจสะพายเฉียง",
+    "defaultVars": {
+      "skin": "#c9916d",
+      "skin-d": "#a77253",
+      "hair": "#422e25",
+      "shirt": "#cfc0a8",
+      "skirt": "#3d4652",
+      "pants": "#3d4652"
+    },
+    "desc": "ช่างภาพสารคดี ผมประบ่าไล่เลเยอร์รับกรอบหน้า สวมแว่นกลม เสื้อเชิ้ตซาฟารีสีทราย สะพายกล้องเรนจ์ไฟน์เดอร์วินเทจสีเงิน-ดำ · รอยเฉียงที่แก้มซ้าย",
+    "tone": "nervous, focused",
+    "line": "แสงแฟลชติดเองทั้งที่ไม่ได้กดชัตเตอร์... ดูภาพพรีวิวนี้สิคะ",
+    "hairStyle": "identity-photographer-B",
+    "ageRange": "ตามบท",
+    "defaultAccessories": [
+      "acc-glasses"
+    ]
+  },
+  "detective-A": {
+    "nameTh": "นักสืบ A",
+    "name": "detective-A",
+    "group": "อาชีพ",
+    "castingRole": "นักสืบ",
+    "variant": "A",
+    "role": "officer",
+    "cm": 172,
+    "defaultOutfitLabel": "เสื้อโค้ทเทรนช์โค้ทนักสืบและหมวกเฟโดร่า",
+    "defaultVars": {
+      "skin": "#e8b995",
+      "skin-d": "#c99374",
+      "hair": "#221d1a",
+      "shirt": "#b89b74",
+      "pants": "#382e24",
+      "skirt": "#382e24"
+    },
+    "desc": "นักสืบเอกชนลุคคลาสสิก สวมหมวกเฟโดร่าสีน้ำตาลคาดแถบดำ เสื้อเทรนช์โค้ททับเชิ้ตขาวเนกไทแดงเลือดหมู พกแว่นขยายในกระเป๋าเสื้อ · ไฝที่แก้มขวา",
+    "tone": "observant, calm",
+    "line": "รอยเท้าคู่นี้เพิ่งเดินเข้ามาไม่เกินสิบนาที และมันหายไปตรงกำแพงนี้",
+    "hairStyle": "identity-detective-A",
+    "ageRange": "ตามบท",
+    "defaultAccessories": [
+      "acc-wristwatch"
+    ]
+  },
+  "detective-B": {
+    "nameTh": "นักสืบ B",
+    "name": "detective-B",
+    "group": "อาชีพ",
+    "castingRole": "นักสืบ",
+    "variant": "B",
+    "role": "officer",
+    "cm": 175,
+    "defaultOutfitLabel": "เสื้อกั๊กสืบสวนและสายซองปืนพกไหล่",
+    "defaultVars": {
+      "skin": "#c9916d",
+      "skin-d": "#a77253",
+      "hair": "#232026",
+      "shirt": "#c8d9e8",
+      "pants": "#222630",
+      "skirt": "#222630"
+    },
+    "desc": "นักสืบภาคสนามมาดขรึม ผมปาดเรียบ สวมแว่นตา เสื้อเชิ้ตฟ้าทับด้วยเสื้อกั๊กสีเทาดำ สายซองปืนพกไหล่ และบัตรนักสืบติดอก · รอยเฉียงที่แก้มซ้าย",
+    "tone": "serious, calculated",
+    "line": "หลักฐานชิ้นสุดท้ายอยู่ในห้องนั้น ตามผมมา อย่าส่งเสียงดัง",
+    "hairStyle": "identity-detective-B",
+    "ageRange": "ตามบท",
+    "defaultAccessories": [
+      "acc-glasses"
+    ]
+  },
+  "teacher-A": {
+    "nameTh": "ครู A",
+    "name": "teacher-A",
+    "group": "อาชีพ",
+    "castingRole": "ครู",
+    "variant": "A",
+    "role": "officer",
+    "cm": 170,
+    "defaultOutfitLabel": "ชุดข้าราชการครูสีกากีแขนสั้นและสายคล้องบัตร",
+    "defaultVars": {
+      "skin": "#e8b995",
+      "skin-d": "#c99374",
+      "forearm": "#e8b995",
+      "hair": "#242024",
+      "shirt": "#b59b72",
+      "pants": "#423529",
+      "skirt": "#423529"
+    },
+    "desc": "คุณครูผู้ชายชุดข้าราชการครูสีกากีแขนสั้น ติดเข็มกนกคอ ป้ายชื่อ แพรแถบย่อ เสียบปากกาที่กระเป๋าเสื้อ และคล้องบัตรประจำตัวครู · ไฝที่แก้มขวา",
+    "tone": "commanding, stern",
+    "line": "นักเรียนทุกคน กลับเข้าห้องเรียนและปิดหน้าต่างให้สนิทเดี๋ยวนี้ครับ",
+    "hairStyle": "identity-teacher-A",
+    "ageRange": "ตามบท",
+    "defaultAccessories": [
+      "acc-square-glasses",
+      "acc-wristwatch"
+    ]
+  },
+  "teacher-B": {
+    "nameTh": "ครู B",
+    "name": "teacher-B",
+    "group": "อาชีพ",
+    "castingRole": "ครู",
+    "variant": "B",
+    "role": "young_female",
+    "cm": 160,
+    "defaultOutfitLabel": "เสื้อเชิ้ตคุณครูสีฟ้าอ่อนและกระโปรงผ้าซิ่นกรมท่า",
+    "defaultVars": {
+      "skin": "#c9916d",
+      "skin-d": "#a77253",
+      "hair": "#2e221e",
+      "shirt": "#d4e4f2",
+      "skirt": "#2c3a52",
+      "pants": "#2c3a52"
+    },
+    "desc": "คุณครูผู้หญิงใจดี ผมแสกข้างรวบมวยต่ำติดโบว์กรมท่า สวมแว่นกลม เสื้อเชิ้ตสีฟ้าอ่อนติดเข็มกลัดโรงเรียน คล้องบัตรครู นุ่งกระโปรงผ้าไทยทอเชิง · รอยเฉียงที่แก้มซ้าย",
+    "tone": "trembling, serious",
+    "line": "สมุดเช็คชื่อเล่มนี้... มีรายชื่อนักเรียนที่เสียชีวิตไปเมื่อปีที่แล้วโผล่มาค่ะ",
+    "hairStyle": "identity-teacher-B",
+    "ageRange": "ตามบท",
+    "defaultAccessories": [
+      "acc-glasses"
+    ]
+  }
 }

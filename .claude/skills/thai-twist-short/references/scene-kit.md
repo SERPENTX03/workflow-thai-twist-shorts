@@ -13,6 +13,7 @@ A **scene** is a React component for one shot: `ShotComponent = ({shot, f, len, 
 | vignette, shadow blob, soft-focus `Far`, `Rain` | | `src/kit/fx.tsx` |
 | landscape stage: `Stage`, `Plate`, `Actors`, `makeSpeaking`, actor strings, `camAt`, `Grade` | | `src/kit/stage.tsx` |
 | landscape backdrops: `Sky Planks Boards Glow Beam beamAt WallClock`; temple sets `Gate Road Sala Path BenchSet TowerShape WellSet Corridor Porch` | | `src/kit/world.tsx`, `src/kit/temple.tsx` |
+| everyday Thai locations & vehicles: `ShopRow StiltHouse Canal SpiritHouse Minimart HospitalHall Classroom DormHall RiceField BusStop SideRoadSet Motorcycle` | | `src/kit/places.tsx` |
 | close-ups: `Hand`, `RainStreaks`, `Drips`, notebook `Page`/`Ink`, `RuleCardScene` | | `src/kit/inserts.tsx` |
 | tokens (colours, fonts, caption y) | `T` | `src/engine/theme.ts` |
 | easing / keyframes / pop-in | `kf(f, [[0,0],[12,1]])`, `appear(f, start, dur, ease)`, `backOut(k)`, `sec(s)`, `easeOut`, `easeInOut` | `src/engine/anim.ts` |
@@ -54,6 +55,7 @@ Then `npm run timeline -- episodes/<slug>` (or `npm run check`) regenerates the 
 6. SVG shapes: animate geometry (`r`, `strokeDashoffset`) instead of CSS-scaling a shape inside a scaled `<svg>`.
 7. Text under 28 px is unreadable on a phone.
 8. `<use href="#id">` only works inside the same document: mount `<CastSprite/>` once (the engine's `Main` and `Board` already do; gallery frames do too).
+9. **Motorcycle & riding shots (Global standard from `ghost-money` shot `021`):** Whenever any character rides or parks a motorcycle in any episode, import `SideRoadSet` and `Motorcycle` from `src/kit/places.tsx` (gallery: `highway-road`, `motorcycle-ride`, `motorcycle-parked`). Always use the side-riding posture from `ghost-money` shot `021` via `<Motorcycle x={680} y={860} scale={1.06} headlight rider={{shirt, pants, skin, hair, face, vest}} wheelSpin={f * 18} />` — never place a standing `<Actors>` sprite on top of a moving motorcycle.
 
 ## Checking a scene
 

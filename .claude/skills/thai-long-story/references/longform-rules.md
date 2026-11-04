@@ -40,13 +40,59 @@ Evidence: `episodes/temple-boy` (the first long film; QC 10/10) and the general 
 - The culprit is introduced early, helpful, and on screen often — never introduced late.
 - Fair-play test: after the reveal, every earlier scene must still make sense.
 
+## Narrative clarity & communication (กฎความชัดเจนในการสื่อสาร)
+
+ในคลิปเล่าเรื่อง คนดูได้ยินเสียงผ่านหูแค่รอบเดียว การเขียนบทแบบ Subtext ซ้อน Subtext หรือพึ่งพาการตีความเองของคนดูมากเกินไปจะทำให้ "หลุดประเด็น" ต้องยึด 5 กฎนี้เสมอ:
+
+1. **One-Punchline Logic (ตรรกะชั้นเดียว ไม่ปล่อยให้คนดูต่อจุดเกิน 1 ทอด):**
+   - ห้ามทิ้งปมที่ต้องอาศัยการอนุมานซับซ้อนไว้ลอยๆ (เช่น ชู้สาว → กลัวความลับแตก → ย้ายที่ยืน → มุมมองเปลี่ยน → จำใจตัดรถคันแรกออก)
+   - ต้องมี **"ประโยคตบท้าย (Punchline)"** ที่ระบุข้อเท็จจริงหรือแรงจูงใจแท้จริงตรงไปตรงมาเสมอ (ตัวละครพูดหรือผู้บรรยายช่วยขมวดปม เช่น *"เพื่อไม่ให้ใครรู้เรื่องชู้สาว ประจวบเลยเลือกตัดรถสีครีมทิ้ง แล้วปล่อยให้รถน้ำแข็งรับกรรมแทน"*)
+2. **Narrator as Cognitive Anchor (ผู้บรรยายเป็นเข็มทิศความคิด แปลง Subtext ในใจ):**
+   - ผู้บรรยายต้องไม่อ่านเฉพาะการเคลื่อนไหวทางกายภาพ แต่ในจุดสำคัญ/จุดพลิกผัน ต้องช่วยบรรยาย **"การตีความในใจของตัวละคร"** เพื่อให้คนดูเข้าใจทันทีว่าทำไมตัวละครถึงทำแบบนั้น (เช่น ฉากครูเทียน: แทนที่จะปล่อยให้คนดูงงว่า "นับนิ้วถึงสอง" เกี่ยวอะไรกับการปล่อยให้ตาย ผู้บรรยายต้องช่วยชี้: *"ในสายตาคนเป็นพ่อ คำว่าเด็กนับนิ้วได้ถึงสองไม่ใช่การช่วยชีวิต แต่มันคือหลักฐานว่าเด็กยังไม่ตายตอนนั้น แต่ต้นยืนมองดูจนเด็กหมดลม"* )
+3. **Action-Motive Pairing (บอกการกระทำ ต้องประกบคู่เหตุผลทันที):**
+   - เมื่อตัวละครพูดถึงการกระทำผิดปกติ (โกหกตำรวจ, ซ่อนหลักฐาน, ผลักคนลงบ่อ) ห้ามเล่าแต่ Action ลอยๆ ต้องประกบด้วย Motive (ความกลัว, ความเข้าใจผิด, ความละอาย) ในช็อตติดกันเสมอ ตามสูตร: `[Action: ทำอะไร]` + `[Motive: ทำไมถึงทำแบบนั้น]` + `[Cost: ผลร้ายที่เกิดกับเหยื่อ]`
+4. **Clue Re-Anchoring (ดึงความจำเบาะแสเก่าด้วยคำขยายความบริบท):**
+   - ในเรื่องยาว 15–50 นาที เมื่อ Clue เดิมถูกดึงกลับมาใช้ตอน Climax/เฉลย ห้ามใช้คำสั้นโดดๆ (เช่น "นับนิ้ว", "ร่มแดง", "กล่องชอล์ก") ให้ใส่คำขยายความที่กระตุ้นความจำคนดูสั้นๆ เสมอ (เช่น *"สองนิ้วที่เด็กพยายามนับก่อนหมดลม"*, *"ข้ออ้างเรื่องยืนซื้อยากลางฝน"*)
+5. **Multi-modal Support (ภาพหรือซับช่วยเมื่อคำพูดกำกวม):**
+   - หากบทพูดเป็นคำเปรียบเปรยหรืออารมณ์ตัดพ้อ ภาพบนจอ (Insert / Mark / Flashback) หรือคำเน้น `[gold]` / `{red}` ต้องบอกเหตุการณ์ตรงตัวเพื่อให้หูและตาประสานกัน ไม่ปล่อยให้คนดูงง
+
+## Pacing & Dead-Air control (กฎความกระชับและการคุมเดดแอร์)
+
+ช่องว่างเงียบ (Dead Air) ในคลิปวิดีโอ 2D เป็นจุดเสี่ยงอันดับ 1 ที่ทำให้ผู้ชมกดข้ามหรือคิดว่าคลิปค้าง:
+
+1. **Zero Consecutive Empty Shots:** ห้ามมีช็อตว่าง (ช็อตที่ `text: ""`) ติดต่อกันเกิน 1 ช็อตเด็ดขาด ช็อตแทรก (Insert / Cutaway) ให้ใช้เสียงบรรยายหรือเสียงตัวละครพูดคร่อมภาพ (L-cut / J-cut) เสมอ
+2. **Max Silence Cap (เพดานความเงียบ ≤ 2.5 วินาที):** ช็อตว่างเดี่ยวๆ อนุญาตให้ยาวได้ไม่เกิน 3 beats (~2.4 วินาที) สำหรับจังหวะตกใจ (Shock), จังหวะค้นพบเบาะแสสำคัญ, หรือ SFX โดดเด่นเท่านั้น ห้ามแช่ภาพนิ่งของฉาก/สิ่งของโดยไม่มีเสียงนานเกินกว่านี้
+3. **Tight Boundary (เข้าเนื้อเรื่องทันทีหลังตัดฉาก):** เมื่อเปลี่ยนฉากหรือเปลี่ยน `view` บทพูดหรือคำบรรยายต้องเริ่มภายในวินาทีแรก (≤ 1.5 beats) ไม่เว้นช็อตเปิดฉากให้เงียบทิ้งไว้
+4. **Total Silence Ratio ≤ 8%:** ผลรวมของ beats ที่ไม่มีเสียงพูดในทั้งเรื่องต้องไม่เกิน 8% ของความยาวเรื่องทั้งหมด (ตัดเดดแอร์ที่ไม่จำเป็นออกเพื่อเพิ่มความกระชับและดึง Retention)
+
+## Story Blind-Spot Prevention (กฎเหล็กกำจัดจุดบอดเนื้อเรื่อง)
+
+เพื่อป้องกันปัญหาตรรกะพังทลายหรือความไม่สมเหตุสมผลที่มักพบบ่อยในบทสืบสวน/ดราม่า:
+
+1. **Grounded Body-Count (เพดานศพและความสมจริง):**
+   - ในเรื่องดราม่า/สืบสวนสมจริง ห้ามฆ่าพยานทิ้งทุกคนเพียงเพื่อผลักดันเรื่อง (ห้ามติด Serial Killer Syndrome) ตัวร้ายที่เป็นคนธรรมดา (เช่น คนแก่, ครู, พ่อ) จะไม่สามารถออกล่าสังหารคน 3–4 คนในเวลาไม่กี่วันโดยไม่มีใครจับได้
+   - พยานมีวิธีปิดปากอื่นที่สมจริง: หนีไปต่างจังหวัด, ป่วยธรรมชาติ, โดนขู่, หรือเกิดความละอายใจ
+   - หากมีการตายในปัจจุบัน ต้องมีผลกระทบตามมาเสมอ (ชาวบ้านกลัว, ตำรวจเริ่มตั้งข้อสงสัย)
+2. **Competent Protagonist (ตัวเอกต้องไม่โง่กะทันหันในองค์ 3):**
+   - ตัวเอกต้องไม่ตัดสินใจกระทำการที่โง่กว่าคนดู (ห้ามถือ Idiot Ball)
+   - หากตัวเอกรู้แล้วว่าตัวร้ายอันตรายหรือเป็นฆาตกร ตัวเอก **ห้าม** เดินดุ่มๆ เข้าไปในที่รโหฐานคนเดียวโดยไม่มีแผนสำรอง
+   - หากตัวเอกต้องเพลี่ยงพล้ำ ต้องเกิดจากกลลวงใหม่ที่แยบยล, ความจำเป็นในการช่วยชีวิตผู้อื่น, หรือเหตุสุดวิสัยทางกายภาพ แม้ตัวเอกจะระวังตัวเต็มที่แล้ว
+3. **Living World & Institutional Pressure (โลกแวดล้อมไม่สุญญากาศ):**
+   - เรื่องต้องไม่ดำเนินอยู่ในสุญญากาศที่มีแค่ตัวเอกกับตัวร้าย เมื่อมีคดีสะเทือนขวัญ ต้องมีเสียงสะท้อนจากโลกภายนอกเสมอ (วิทยุข่าว, ตำรวจตรวจที่เกิดเหตุ, ชาวบ้านซุบซิบ)
+   - แรงกดดันจากสังคมและตำรวจจะทำหน้าที่เป็น **Ticking Clock** บีบให้ตัวร้ายร้อนรนและก่อความผิดพลาดอย่างสมเหตุสมผล
+4. **Emotional & Motive Consistency (ตรรกะทางอารมณ์ของตัวร้ายต้องไม่ย้อนแย้ง):**
+   - การกระทำของตัวร้ายต้องผูกติดกับบาดแผลในใจ (Core Wound) อย่างแท้จริง
+   - เมื่อตัวร้ายเผชิญกับ "ความจริงที่ทำลายความเชื่อเดิม" (เช่น รู้ว่าความจริงคนที่ฆ่าลูกคือคนในครอบครัวตัวเอง ไม่ใช่เหยื่อที่ตนล้างแค้น) ตัวร้ายต้องเกิดความพังทลายทางอารมณ์ (Emotional Collapse), ความสับสน หรือการยอมรับกรรม ไม่ใช่ก้มหน้าก้มตาฆ่าคนปิดปากต่อไปอย่างไร้หัวใจเหมือนหุ่นยนต์
+5. **Earned Catharsis (ตอนจบต้องให้รางวัลทางอารมณ์ ไม่ใช่สิ้นหวังฟรีๆ):**
+   - ในเรื่องยาว (15–50 นาที) คนดูลงทุนเวลาและอารมณ์มหาศาล ตอนจบสามารถเศร้าหรือสะเทือนใจได้ (Tragic) แต่ต้องมี **Moral Victory**: ความจริงต้องได้รับการเปิดเผย ความเสียสละของตัวเอกต้องมีความหมาย และตราบาปของคนบริสุทธิ์ต้องถูกชำระล้างอย่างสมศักดิ์ศรี
+
 ## Cast and voices
 
 - Up to ~6 speakers. One voice role each from `thai-twist-short/references/voices.md`; children and elders get their own role, never the narrator's. Two speakers on the same voice need `switchBreath` and should never talk in consecutive shots.
 - Every character line has `who` (for fit + talk mouths) and `voice` (TTS role). Narration has neither.
 - Narrator: third person, calm, past or present tense consistently. `voiceTone: "calm"`; per-line `tone` only where it changes (whispers, scared).
-- Roster in `src/episodes/<slug>/cast.tsx` (`RosterEntry`: cm, symbol per pose, vars, extra layers for the trait). Heights from `HEIGHT_CM`.
-- Faces: `hollow` only for the dead/turn; talk mouths (`talk` in the actor string) on every voiced on-screen line.
+- Roster in `src/episodes/<slug>/cast.tsx` (`RosterEntry`: cm, symbol per pose, vars, extra layers for the trait). **Symbols must be chosen from active (non-retired) characters in `src/cast.json` (the Single Source of Truth)**. Heights from `HEIGHT_CM` / `cast.json`.
+- Faces: `hollow` only for the dead/turn; talk mouths (`talk` in the actor string) on every voiced on-screen line — **on the speaker only** (CLAUDE.md rule 10). The actor id must equal the shot's `who` (`win19` counts for `win`). Listeners, the person holding the phone while the other end speaks (`fx: "phone"`), and everyone in a narrated shot get a reaction face instead. Off-screen speaker → no `talk` on screen at all.
 
 ## Captions (subtitles)
 
@@ -88,4 +134,7 @@ Evidence: `episodes/temple-boy` (the first long film; QC 10/10) and the general 
 - [ ] Continuity facts written down (dates, counts, who knows what).
 - [ ] Speakers table: one role each, approved voices, children/elders not on the narrator.
 - [ ] Fiction disclaimer planned if a real institution or practice appears.
+- [ ] Narrative clarity: no subtext-only leaps requiring > 1 deduction; motives paired with actions; clue re-anchoring on late callbacks.
+- [ ] Pacing & Dead-air: no consecutive empty text shots; max silence cap ≤ 2.5s; total silence beats ≤ 8%.
+- [ ] Blind-spot check: grounded body-count (no serial killer creep); competent protagonist (no unforced idiot moves in act 3); living world pressure; earned catharsis.
 - [ ] No plot hole a commenter would point at in one sentence.

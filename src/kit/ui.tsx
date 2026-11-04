@@ -6,8 +6,8 @@ const abs = ({x = 0, y = 0, w}: Pos): React.CSSProperties => ({position: 'absolu
 type Extra = {style?: React.CSSProperties};
 
 export const Hud: React.FC<{text: string; x?: number; y?: number} & Extra> = ({text, x = 70, y = 90, style}) => (
-  <div style={{...abs({x, y}), width: 250, height: 104, borderRadius: 18, background: 'rgba(239,232,218,.94)', color: T.ink,
-    fontFamily: T.ui, fontWeight: 700, fontSize: 50, display: 'flex', alignItems: 'center', gap: 16, paddingLeft: 22, ...style}}>
+  <div style={{...abs({x, y}), minWidth: 250, height: 104, borderRadius: 18, background: 'rgba(239,232,218,.94)', color: T.ink, whiteSpace: 'nowrap',
+    fontFamily: T.ui, fontWeight: 700, fontSize: 50, display: 'flex', alignItems: 'center', gap: 16, paddingLeft: 22, paddingRight: 26, boxSizing: 'border-box', ...style}}>
     <div style={{width: 44, height: 44, borderRadius: '50%', boxShadow: `inset -12px -6px 0 0 ${T.ink}`}} />
     {text}
   </div>

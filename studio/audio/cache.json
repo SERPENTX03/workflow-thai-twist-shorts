@@ -1,5 +1,5 @@
 {
- "role-male.mp3": "24a93290a22623a7",
+ "role-male.mp3": "a2b81dbc87339263",
  "role-female.mp3": "45d146c8187c5274",
  "role-old_male.mp3": "94850ad3bed2c846",
  "role-old_female.mp3": "511ad23ce4e60a13",
@@ -10,5 +10,15 @@
  "cast-raincoat.mp3": "5b517b740ef7de48",
  "cast-student.mp3": "a9723952fddef030",
  "cast-kid.mp3": "8b8aab17f0da4655",
- "cast-kid-girl.mp3": "034a7803573ff88e"
+ "cast-kid-girl.mp3": "034a7803573ff88e",
+ "role-narrator.mp3": "8e6bd24354a1707e",
+ "role-lead_male.mp3": "65d997e7a8ab1f55",
+ "role-lead_female.mp3": "79b03075eba60687",
+ "role-boy.mp3": "d6474f562f702dd9",
+ "role-young_female.mp3": "aab03513a22e64c2",
+ "role-father.mp3": "67758db456c87493",
+ "role-officer.mp3": "0c29437b3493c528",
+ "role-casual_male.mp3": "5d77feec94da1a86",
+ "role-villain_male.mp3": "900ee9f2df7eccbb",
+ "role-villain_female.mp3": "9c25bb3c77abbabf"
 }

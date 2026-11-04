@@ -52,6 +52,11 @@ if (flag('--board') || flag('--sheet')) {
   if (!fs.existsSync(board)) die(`no ${path.relative(ROOT, board)} — run with --board, or npm run check first`);
   const pad = String(S.shots.length - 1).length;
   const frame = i => path.join(board, `element-${String(i).padStart(pad, '0')}.jpeg`);
+  // remotion pads a --frames range by its last frame number (0–52 → element-07), not the whole board: rename to full width
+  for (let i = c.first; i <= c.last; i++) {
+    const short = path.join(board, `element-${String(i).padStart(String(c.last).length, '0')}.jpeg`);
+    if (short !== frame(i) && fs.existsSync(short) && (flag('--board') || !fs.existsSync(frame(i)))) fs.renameSync(short, frame(i));
+  }
   const PER = 30;
   for (let a = c.first; a <= c.last; a += PER) {
     const b = Math.min(c.last, a + PER - 1);

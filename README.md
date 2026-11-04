@@ -75,8 +75,9 @@ npm run final -- episodes/my-story           # เรนเดอร์ + ปร
 เลื่อนดูใน Remotion Studio และดู gallery ตัวละคร:
 
 ```bash
-npm run studio    # http://localhost:3430
-npm run gallery   # สร้าง studio/index.html (ตัวละคร, props, เสียงประกอบ)
+npm run dev       # เปิด http://localhost:3431/studio/index.html (gallery ตัวละคร / kit)
+npm run studio    # http://localhost:3430 (Remotion — เลื่อนดูตอน)
+npm run gallery   # สร้าง/อัปเดตรูปใน gallery (รันก่อนหรือหลังแก้ cast / gallery.json)
 ```
 
 ### ใช้กับ Claude Code

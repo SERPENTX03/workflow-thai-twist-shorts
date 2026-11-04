@@ -2,11 +2,119 @@
   "_note": "The fixed voice cast (references/voices.md). Characters pick a role in src/cast.json. `line` + `tone` are the studio preview: npm run voices.",
   "model": "eleven_v3",
   "settings": { "stability": 0.5, "similarity_boost": 0.75 },
-  "default": "male",
+  "default": "narrator",
   "roles": {
-    "male": { "id": "xYmBpJREC3WfqEFpbPvO", "whoTh": "ผู้ชายวัยผู้ใหญ่ (ผู้บรรยาย)", "use": "ผู้บรรยาย (ค่าเริ่มต้น) และตัวละครชายวัยผู้ใหญ่", "tone": "calm", "line": "ตีสามคืนนั้น... คุณได้ยินเสียงเคาะประตูห้องเจ็ด ทั้งที่ห้องนั้นไม่มีใครเช่ามาสามปีแล้ว" },
-    "female": { "id": "MYZYcGOqrkYQcwDunXl7", "whoTh": "ผู้หญิงและเด็กหญิงที่ไม่ใช่คนสูงอายุ", "use": "ตัวละครหญิงทุกคนที่ไม่ใช่ผู้สูงอายุ และเด็ก (โทน childlike)", "tone": "nervous", "line": "เธอได้ยินไหม... เสียงนั้นมันมาจากข้างในกำแพง" },
-    "old_male": { "id": "5KvpaGteYkNayiswuX2h", "whoTh": "ตา ปู่ ลุง ผู้เฒ่า", "use": "ผู้ชายสูงอายุ พระ ผู้ใหญ่บ้าน", "tone": "slowly, warm", "line": "อย่าออกไปหลังเที่ยงคืนนะลูก คนที่ออกไป... ไม่เคยมีใครกลับมาเหมือนเดิม" },
-    "old_female": { "id": "p2Wol3C7j3rHbfOrbL18", "whoTh": "ยาย ย่า ป้า", "use": "ผู้หญิงสูงอายุ แม่บ้านเจ้าของหอ", "tone": "slowly, warm", "line": "ห้องนี้ถูกจริง แต่ป้าบอกไว้ก่อนนะ ห้ามเปิดม่านตอนตีสาม" }
+    "narrator": {
+      "id": "weRAVUYgqjjfUEEu5BsB",
+      "name": "Patinya",
+      "whoTh": "ผู้บรรยายเรื่อง (Patinya - สุขุม ชัดเจน มั่นคง เสถียรสูง)",
+      "use": "เสียงผู้บรรยายเรื่องหลัก (Episode Narrator Default)",
+      "tone": "calm",
+      "line": "ตีสามคืนนั้น... คุณได้ยินเสียงเคาะประตูห้องเจ็ด ทั้งที่ห้องนั้นไม่มีใครเช่ามาสามปีแล้ว"
+    },
+    "lead_male": {
+      "id": "xYmBpJREC3WfqEFpbPvO",
+      "name": "Songkran",
+      "whoTh": "ตัวเอกชาย (Songkran - สุภาพ จริงใจ เอาใจช่วย)",
+      "use": "ตัวเอกชายหลัก (Lead Male A/B, คุณ)",
+      "tone": "nervous",
+      "line": "ผมว่ามีบางอย่างผิดปกติ... เราต้องรีบออกไปจากที่นี่"
+    },
+    "lead_female": {
+      "id": "MYZYcGOqrkYQcwDunXl7",
+      "name": "HammyTH",
+      "whoTh": "ตัวเอกหญิง / นางเอก (HammyTH - อบอุ่น เป็นมิตร สดใส)",
+      "use": "นางเอก ตัวเอกหญิงหลัก (Lead Female A/B, คุณแม่)",
+      "tone": "nervous",
+      "line": "เธอได้ยินเสียงเคาะนั่นไหม... มันไม่ได้มาจากหน้าประตูนะ"
+    },
+    "male": {
+      "id": "xYmBpJREC3WfqEFpbPvO",
+      "name": "Songkran",
+      "whoTh": "ผู้ชายทั่วไป (Songkran - ค่าเริ่มต้นย้อนหลัง)",
+      "use": "บทชายทั่วไป เพื่อรองรับความเข้ากันได้ย้อนหลัง",
+      "tone": "calm",
+      "line": "รอฟังให้จบก่อน แล้วเราค่อยตัดสินใจ"
+    },
+    "female": {
+      "id": "MYZYcGOqrkYQcwDunXl7",
+      "name": "HammyTH",
+      "whoTh": "ผู้หญิงทั่วไป (HammyTH - ค่าเริ่มต้นย้อนหลัง)",
+      "use": "บทหญิงทั่วไป เพื่อรองรับความเข้ากันได้ย้อนหลัง",
+      "tone": "nervous",
+      "line": "เธอได้ยินไหม... เสียงนั้นมันมาจากข้างในกำแพง"
+    },
+    "old_male": {
+      "id": "5KvpaGteYkNayiswuX2h",
+      "name": "Helmut",
+      "whoTh": "ปู่ ตา พระผู้ใหญ่ ผู้เฒ่า",
+      "use": "ผู้ชายสูงอายุ พระสงฆ์ ผู้ใหญ่บ้าน ชายชรา",
+      "tone": "slowly, warm",
+      "line": "อย่าออกไปหลังเที่ยงคืนนะลูก คนที่ออกไป... ไม่เคยมีใครกลับมาเหมือนเดิม"
+    },
+    "old_female": {
+      "id": "p2Wol3C7j3rHbfOrbL18",
+      "name": "Lisa",
+      "whoTh": "ย่า ยาย ป้า หญิงสูงอายุ",
+      "use": "ผู้หญิงสูงอายุ แม่บ้าน เจ้าของหอ ย่า ยาย ป้า",
+      "tone": "slowly, warm",
+      "line": "ห้องนี้ถูกจริง แต่ป้าบอกไว้ก่อนนะ ห้ามเปิดม่านตอนตีสาม"
+    },
+    "boy": {
+      "id": "yq05eeRaHPMGuWTVpqeP",
+      "name": "ToNCe",
+      "whoTh": "เณรน้อย เด็กหนุ่ม น้องชาย (ToNCe)",
+      "use": "เณรน้อย เด็กหนุ่ม น้องชาย วัยรุ่นชาย",
+      "tone": "youthful",
+      "line": "หลวงตาบอกไว้ว่า หลังหกโมงเย็นอย่าเดินไปหลังกุฏิครับ"
+    },
+    "young_female": {
+      "id": "cgSgspJ2msm6clMCkdW9",
+      "name": "Jessica",
+      "whoTh": "หญิงสาวรุ่น ช่างภาพ ครูหญิง พี่สาว น้าสาว อาสาว (Jessica)",
+      "use": "ผู้หญิงวัยรุ่น วัยทำงาน ช่างภาพ ครูหญิง พี่สาว น้องสาว น้าสาว อาสาว",
+      "tone": "clear, curious",
+      "line": "กล้องของฉันจับภาพติดเงาซ้อน... มีคนยืนอยู่ข้างหลังคุณ!"
+    },
+    "father": {
+      "id": "KhBRXgEQjvfdIyXOu7G3",
+      "name": "PapaAndy",
+      "whoTh": "คุณพ่อ ลุง ชายวัยกลางคนอบอุ่น (PapaAndy)",
+      "use": "คุณพ่อ ลุง ชายวัยกลางคนที่มีความเป็นผู้นำและอบอุ่น",
+      "tone": "warm, protective",
+      "line": "พ่อจะยืนเฝ้าประตูไว้ให้ พาลูก ๆ เข้าไปหลบข้างในก่อน!"
+    },
+    "officer": {
+      "id": "JTfQv1rq84UdcXVunY5m",
+      "name": "AKE",
+      "whoTh": "ตำรวจ นักสืบ ครูชาย (AKE - ชัดเจน เด็ดขาด มั่นใจ)",
+      "use": "ตำรวจ เจ้าหน้าที่สืบสวน ครูชาย บทที่มีความมั่นใจและเด็ดขาด",
+      "tone": "confident, serious",
+      "line": "ตำรวจเข้าควบคุมสถานการณ์แล้วครับ กรุณาอย่าแตะต้องหลักฐาน"
+    },
+    "casual_male": {
+      "id": "RwilAvCC3o05RLuACpAn",
+      "name": "Bankky",
+      "whoTh": "ชายหนุ่ม ช่าง พี่ชาย น้าชาย อาชาย (Bankky - ลุยๆ เป็นกันเอง)",
+      "use": "ช่าง พี่ชาย น้าชาย อาชาย บทชายหนุ่มคล่องแคล่ว ลุยๆ",
+      "tone": "casual, alert",
+      "line": "เบรกรถคันนี้ถูกตัดสาย... ไม่ใช่อุบัติเหตุแน่นอนครับ"
+    },
+    "villain_male": {
+      "id": "Vl27Cllkuw8BhyPqus2n",
+      "name": "VASKO",
+      "whoTh": "ตัวร้ายชาย (VASKO - เสียงทุ้มลึก ดุดัน น่าเกรงขาม)",
+      "use": "ตัวร้ายชาย ชายลึกลับ ผู้ต้องสงสัย เสียงโทนต่ำคุกคาม",
+      "tone": "deep, menacing",
+      "line": "ในที่สุด... ก็เดินเข้ามาในกับดักเองจนได้นะ"
+    },
+    "villain_female": {
+      "id": "EXAVITQu4vr4xnSDxMaL",
+      "name": "Sarah",
+      "whoTh": "ตัวร้ายหญิง (Sarah - เสียงเยือกเย็น ลึกลับ มีอำนาจ)",
+      "use": "ตัวร้ายหญิง หญิงสาวเจ้าเล่ห์ ผู้บงการลับ",
+      "tone": "sarcastic, cold",
+      "line": "น่าสงสารจังเลยนะ... ร้องขอความช่วยเหลือไปก็ไม่มีใครได้ยินหรอก"
+    }
   }
 }

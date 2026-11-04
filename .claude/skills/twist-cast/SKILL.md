@@ -19,9 +19,10 @@ Read `references/art-direction.md` → *Cast rules*, and `src/cast/source/cast.s
 
 ## Steps
 
-1. Ask (or infer from the story) role, age, height in cm, the one trait, the accent colour. Reuse an existing symbol (`man`, `woman`, `auntie`, `elder`, `raincoat`, `cat-black`, `cat-orange`, `beagle`, `dog-patch`, `dog`) when it already fits; recolour via variables instead of redrawing.
+1. **Single Source of Truth:** Check `src/cast.json` first for available active characters. Ask (or infer from the story) role, age, height in cm, the one trait, the accent colour. Reuse an active (non-retired) symbol from `src/cast.json` (`lead-male-A/B`, `lead-female-A/B`, `villain-male-A/B`, `father-A/B`, `mother-A/B`, `brother-A/B`, `sister-A/B`, `police-A/B`, `teacher-A/B`, `cat-black`, `cat-orange`, `beagle`, `dog-patch`) when it already fits; recolour via variables (`vars`) or accessories instead of redrawing. **Never use legacy characters marked `"retired": true` (`man`, `woman`, `auntie`, `elder`, etc.) as a base character.**
 2. For a new figure: copy the nearest symbol in `src/cast/source/cast.svg`, rename the id (kebab-case, unique), change shapes and variables. Add the height to `HEIGHT_CM` in `src/engine/theme.ts`. Improve shared things in `src/`, never inside one episode (hard rule 6).
 3. Show the user a preview before using it: a design canvas (Artifact, Design type) or a throw-away scene snapshot. Wait for a yes; the user tunes colour, build, face.
 4. Record the character in `series/<name>.md` (name, height, trait, symbol id, variables) if the story is a series.
-5. Add the id to `KEEP` in `scripts/svg-to-tsx.mjs`, run `node scripts/svg-to-tsx.mjs`, check `npm run gallery`, and look at the frames.
+5. Build the body from a shared one (`legs-pants`, `body-wide`, `body-skirt`, `body-kid`) so walk / run works for free (`src/cast/Rig.tsx`); a hand-drawn body needs its legs in a `display:var(--legs-rest,inline)` group and `data-rig="…"` on the symbol (see `woman`).
+6. Add the id to `KEEP` in `scripts/svg-to-tsx.mjs`, run `node scripts/svg-to-tsx.mjs`, check `npm run gallery`, and look at the frames.
 

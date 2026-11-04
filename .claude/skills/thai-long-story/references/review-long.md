@@ -24,9 +24,9 @@ renders only that chapter's Board frames (one key frame per shot, into `out/<slu
 |---|---|
 | Opening (cold open chapter) / chapter start | the question is clear within 10 s of the film; each chapter starts on a new image, not a continuation of the last frame |
 | Readability | every subtitle readable on the sheet at 480 px wide; no face or clue under the subtitle band; faces in wides ≥ ~90 px |
-| Motion + hands | ≤ 2 hands per figure, none doubled (`hands-poses.md`, a doubled hand caps this at 5); every shot moves (camera or entrance); talk mouths on voiced on-screen lines |
-| Variety + pace | no more than 4 same-view shots in a row; a pattern change every 30–60 s; no same-scene run over ~90 s |
-| Story clarity + continuity | each clue in this chapter matches the brief table (side, trait, prop); HUD time only moves forward (except flashbacks, which are graded `past`); counts and dates match the continuity list |
+| Motion + hands | ≤ 2 hands per figure, none doubled (`hands-poses.md`, a doubled hand caps this at 5); every shot moves (camera or entrance); talk mouths on voiced on-screen lines, on the speaker only (a listener or phone-holder mouthing someone else's line caps this at 5) |
+| Variety + pace | no more than 4 same-view shots in a row; a pattern change every 30–60 s; no same-scene run over ~90 s; passes Dead-Air control (no consecutive empty text shots, no dead air > 2.5s) |
+| Story clarity + continuity | each clue in this chapter matches the brief table (side, trait, prop); HUD time only moves forward (except flashbacks, which are graded `past`); counts and dates match the continuity list; passes Narrative Clarity (no obscure subtext leap; motives paired with actions) |
 | Sound | no `⚠ OVER`; every speaker in their role (a wrong voice caps this at 5); ambience under silent stretches; cues land on the action |
 | Retention | the chapter has its planned re-hook(s) and ends on an open question; the tracked device advances visibly where planned |
 

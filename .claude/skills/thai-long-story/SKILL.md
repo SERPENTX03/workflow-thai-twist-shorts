@@ -44,10 +44,13 @@ Reference build: `episodes/temple-boy` (20:30, 442 shots, 25 scenes / 115 views,
 | `src/kit/stage.tsx` | `Stage` (camera from `data.cam`, light `Grade`, flashback `data.past`, grain, HUD `data.hud`), `Plate` (close-up), `Actors` (needs your roster + `makeSpeaking(timeline)`), **actor strings** in `data.cast` (`"non@900 sit worried talk arm=r-hold prop=flashlight"`), `at` |
 | `src/kit/world.tsx` | 1920×1080 world with `FLOOR` 930: `Sky`, `Planks`, `Boards`, `Glow`, `Beam` + `beamAt` (flashlight), `WallClock`, `full`, `WOOD` tones |
 | `src/kit/temple.tsx` | Thai temple backdrops: `Gate` (sign text as a prop), `Road`, `Sala`, `Path` (ตะเคียน tree), `BenchSet`, `TowerShape` (bell tower), `WellSet`, `Corridor`, `Porch` |
+| `src/kit/places.tsx` | everyday Thai locations, each with `tone` day / dusk / night (lamps, lit windows and signs stay bright): `ShopRow` (ตึกแถว, signs + shutters per shop), `StiltHouse` (บ้านใต้ถุนสูง, `far` = whole roof), `Canal` (คลอง + ท่าน้ำ + เรือ), `SpiritHouse` (ศาลพระภูมิ), `Minimart` (ร้านสะดวกซื้อ, `dark`), `HospitalHall` (`flick` / `off` / `bed`), `Classroom` (`board` chalk text), `DormHall` (หอพัก), `RiceField` (คันนา, `ripe`), `BusStop` (ศาลารอรถ, `poster`); `Toned` darkens any set you draw yourself the same way |
 | `src/kit/inserts.tsx` | close-up `Hand` (grip/open/flat, cut pinky, wrist thread), `RainStreaks`, `Drips`, notebook `Page` + `Ink`, `RuleCardScene` (`data {no, text}`) |
 | `src/kit/horror.tsx` | grain, flicker, light mask, night grade, ripples, rooms, beds, bulbs |
 
-An episode keeps only its own pieces: roster and palette (`cast.tsx`, ~70 lines in temple-boy), story rooms holding clue props, and its scene switch. Start a new episode by copying `src/episodes/temple-boy/cast.tsx` and changing the roster. When a story room from one episode is needed by a second, move it into `src/kit/` (CLAUDE.md rule 6).
+See them all with their code: `npm run gallery -- --only=GWorld,GPlaces,GInserts,GGrades`, serve the repo root, open `/studio/index.html#stage` (also lists each episode's chapters). Add any new kit piece to `src/gallery.json` and `src/Gallery.tsx`.
+
+An episode keeps only its own pieces: roster and palette (`cast.tsx`), story rooms holding clue props, and its scene switch. Start a new episode by setting up `cast.tsx` with character symbols selected from `src/cast.json` (the Single Source of Truth for cast, e.g. `lead-male-A/B`, `lead-female-A/B`, `father-A/B`, `sister-A/B`, `police-A/B`, never legacy retired characters like `man`/`woman`). When a story room from one episode is needed by a second, move it into `src/kit/` (CLAUDE.md rule 6).
 
 story.json knobs: `chapter`, `voiceTempo`, `breath`, `switchBreath`, `minBeats`, `fitStep`, `who`, `hold`, `hush`, `fx`, custom `sfx` (`thai-twist-short/references/story-json.md` → *Long-form landscape*).
 

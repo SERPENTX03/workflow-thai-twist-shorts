@@ -43,7 +43,11 @@ for (const [name, e] of todo) {
   try { await elevenSFX({ text: sp.prompt, durationSeconds: sp.dur, promptInfluence: sp.influence, out: sfxFile(e) }); }
   catch (err) { die(`sfx "${name}": ${err.message}`); }
   idx[sfxKey(e)] = { name, ...sp, episode: path.basename(dir) };
-  fs.writeFileSync(idxFile, JSON.stringify(idx, null, 1));
+  // Windows can hold index.json open for a moment (a mix reading it, a virus scan): retry instead of dying after a paid generation
+  for (let tries = 0; ; tries++) {
+    try { fs.writeFileSync(idxFile, JSON.stringify(idx, null, 1)); break; }
+    catch (err) { if (tries >= 20) throw err; await new Promise(r => setTimeout(r, 500)); }
+  }
   console.log(`✓ generated ${name} -> sfx-library/${sfxKey(e)}.mp3`);
 }
 console.log('\nListen to the files before approving the mix, then run npm run audio -- ' + path.relative(process.cwd(), dir));

@@ -75,9 +75,10 @@ Workflow and rules: the `thai-long-story` skill. Fields:
 | Field | Where | Meaning |
 |---|---|---|
 | `format` | top | `"landscape"` → 1920×1080, subtitles in the bottom band (`Caption` with `landscape`, max 2 lines, ≤ ~42 chars), runtime target 600–720 s. Default `"portrait"` keeps every Shorts rule. `target: [min, max]` overrides the range. |
+| `voiceTempo` | top (or `tempo` per shot) | Base speed for every voiced line, e.g. `1.1` when a slow TTS read makes the film run long. `voice` applies it, `fit` sizes shots with it. No re-synthesis (and no credits): lines stay cached. |
 | `breath`, `switchBreath`, `minBeats`, `fitStep` | top | `npm run fit -- episodes/<slug>` sizes every voiced shot to its measured line: voLead + line + 0.15 + breath (+ switchBreath when the next line has another `who`), rounded up to `fitStep` beats, plus the shot's `hold`. Run voice first; lines are cached, so re-running costs nothing. |
 | `chapter` | shot | `"ชื่อบท"` starts a chapter on this shot; it runs until the next. Shots before the first marker are chapter 0. Written to `timeline.json` → `chapters`; `npm run chapter` lists them, renders one chapter's Board sheets or preview, and prints YouTube chapter lines. |
-| `who` | shot | Who speaks (`non`, `monk`…; default narrator). Used by `fit` (switch breath) and read by scenes for talk mouths (`talkShape` in `src/kit/stage.tsx`). `voice` still picks the TTS role. |
+| `who` | shot | Who speaks (`non`, `monk`…; default narrator). Used by `fit` (switch breath) and read by scenes for talk mouths (`talkShape` in `src/kit/stage.tsx`): only the actor whose id equals `who` moves its mouth, so put `talk` on the speaker alone (CLAUDE.md rule 10). `voice` still picks the TTS role. |
 | `hold` | shot | Extra beats after the line (time to look at a clue). |
 | `data.cast`, `data.cam` | shot | Landscape stage staging: actor strings like `"non@900 sit worried talk arm=r-hold prop=flashlight"` and a camera `[zFrom, zTo, cx, cy]` — format in `src/kit/stage.tsx`. |
 | `fx` | shot | `"phone"` (band-limited call) or `"muffled"` (through a steel wall); same voice, only the sound changes. |

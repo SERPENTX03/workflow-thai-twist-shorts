@@ -21,7 +21,10 @@ if (!fs.existsSync(rendered)) die(`no render at ${rendered}`);
 const m = spawnSync('ffmpeg', ['-hide_banner', '-i', rendered, '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json', '-f', 'null', '-'], { encoding: 'utf8' });
 const j = JSON.parse(m.stderr.match(/\{[^{}]*"input_i"[^{}]*\}/)[0]);
 const ln = `loudnorm=I=-14:TP=-1.5:LRA=11:measured_I=${j.input_i}:measured_TP=${j.input_tp}:measured_LRA=${j.input_lra}:measured_thresh=${j.input_thresh}:offset=${j.target_offset}:linear=true`;
-run('ffmpeg', ['-v', 'error', '-y', '-i', rendered, '-af', ln + ',aresample=48000', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '256k', final]);
+// linear loudnorm cannot hold TP when it has to raise the level, and AAC adds inter-sample overs: a 4× oversampled
+// limiter at -2 dBFS keeps the delivered file under -1 dBTP (qc.mjs)
+const limit = 'aresample=192000,alimiter=limit=0.794:attack=1:release=60:level=false,aresample=48000';
+run('ffmpeg', ['-v', 'error', '-y', '-i', rendered, '-af', `${ln},${limit}`, '-c:v', 'copy', '-c:a', 'aac', '-b:a', '256k', final]);
 const chk = spawnSync('ffmpeg', ['-hide_banner', '-i', final, '-af', 'ebur128=peak=true', '-f', 'null', '-'], { encoding: 'utf8' }).stderr;
 const I = (chk.match(/I:\s+(-?[\d.]+) LUFS/g) || []).pop();
 console.log(`✓ ${path.relative(process.cwd(), final)}  ${S.total.toFixed(1)}s  ${I || ''}`);

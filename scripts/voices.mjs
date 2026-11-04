@@ -12,6 +12,7 @@ import { elevenKey } from './eleven_tts.mjs';
 const OUT = path.join(ROOT, 'studio', 'audio');
 const CACHE = path.join(OUT, 'cache.json');
 const force = process.argv.includes('--force');
+const rolesOnly = process.argv.includes('--roles-only');
 
 async function tts({ voiceId, model, settings, text, out }) {
   const body = JSON.stringify({ text, model_id: model, voice_settings: settings });
@@ -37,9 +38,22 @@ const cache = fs.existsSync(CACHE) ? JSON.parse(fs.readFileSync(CACHE, 'utf8')) 
 const tagged = (tone, line) => (tone ? tone.split(',').map(t => `[${t.trim()}]`).join(' ') + ' ' + line : line);
 const jobs = [
   ...Object.entries(V.roles).map(([id, r]) => ({ file: `role-${id}.mp3`, role: id, text: tagged(r.tone, r.line) })),
-  ...Object.entries(CAST).filter(([id, c]) => !id.startsWith('_') && c.role && c.line)
-    .map(([id, c]) => ({ file: `cast-${id}.mp3`, role: c.role, text: tagged(c.tone, c.line) })),
+  ...(rolesOnly ? [] : Object.entries(CAST).filter(([id, c]) => !id.startsWith('_') && !c.retired && c.role && c.line)
+    .map(([id, c]) => ({ file: `cast-${id}.mp3`, role: c.role, text: tagged(c.tone, c.line) }))),
 ];
+
+async function safeWriteJson(filePath, data) {
+  const content = JSON.stringify(data, null, 1);
+  for (let i = 0; i < 5; i++) {
+    try {
+      fs.writeFileSync(filePath, content);
+      return;
+    } catch (e) {
+      if (i === 4) throw e;
+      await new Promise(r => setTimeout(r, 150));
+    }
+  }
+}
 
 let made = 0;
 for (const j of jobs) {
@@ -51,7 +65,7 @@ for (const j of jobs) {
   process.stdout.write(`${j.file} (${j.role}) ... `);
   await tts({ voiceId: role.id, model: V.model, settings: V.settings, text: j.text, out });
   cache[j.file] = hash;
-  fs.writeFileSync(CACHE, JSON.stringify(cache, null, 1));
+  await safeWriteJson(CACHE, cache);
   made++;
   console.log('ok');
 }

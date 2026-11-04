@@ -95,6 +95,14 @@
   .scene-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
   .scene .pic { aspect-ratio: 9 / 16; }
   .scene .body { gap: 6px; }
+  .land-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+  .land .pic { aspect-ratio: 16 / 9; }
+  .land .body { gap: 6px; }
+  .land .body .copy { font-family: var(--mono); font-size: 11.5px; text-align: left; white-space: normal; overflow-wrap: anywhere; }
+  .chapters { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 16px; }
+  .chapters .chip b { font-family: var(--mono); color: var(--gold); font-weight: 500; }
+  .strip.land { grid-auto-columns: 240px; }
+  .strip.land .shot img { aspect-ratio: 16 / 9; }
 
   .sheet { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); cursor: zoom-in; margin-top: 16px; }
 
@@ -143,7 +151,8 @@
       <a href="#marks">เครื่องหมาย</a>
       <a href="#ui">UI ไทย</a>
       <a href="#scenes">ฉาก</a>
-      <a href="#episodes">ตอน</a>
+      <a href="#stage">ฉากแนวนอน</a>
+
       <a href="#sfx">เสียงประกอบ</a>
     </nav>
   </div>
@@ -177,24 +186,29 @@
   const roleChip = (id) => id ? `<span class="chip"><span class="dot" style="background:${ROLE_COL[id] || '#999'}"></span>${esc(id)}</span>` : '<span class="chip">ไม่มีเสียง</span>';
   const tile = (x, cls = '') => `
     <article class="card tile ${cls}"><div class="pic">${pic(x.image, x.id)}</div>
-      <div class="body"><span>${esc(x.id)}</span>${x.code ? copyBtn(x.code) : ''}</div></article>`;
+      <div class="body"><span>${esc(x.label || x.id)}</span>${x.code ? copyBtn(x.code) : ''}</div></article>`;
 
-  const castHTML = S.cast.map((c) => `
-    <article class="card">
+  const accessoryNames = {'acc-cap':'หมวกแก๊ป','acc-bucket-hat':'หมวกบักเก็ต','acc-wristwatch':'นาฬิกาข้อมือ','acc-necklace':'สร้อยจี้','acc-beads':'สร้อยลูกปัด','acc-glasses':'แว่นกลม','acc-square-glasses':'แว่นเหลี่ยม','acc-bag':'กระเป๋าสะพาย','acc-tote':'กระเป๋าผ้า'};
+  const castCard = (c) => `
+    <article class="card" data-cast-search="${esc([c.nameTh,c.id,c.desc,c.group].join(' ').toLowerCase())}">
       <div class="pic">${pic(c.image, c.name)}</div>
       <div class="body">
         <div class="name"><b>${esc(c.nameTh)}</b><span class="en">${esc(c.name)}</span></div>
         <p class="desc">${esc(c.desc)}</p>
+        <p class="hint">ชุดเริ่มต้น: ${esc(S.marks.find(m => m.id === c.defaultOutfit)?.label || c.defaultOutfitLabel || 'ชุดประจำตัว')} · เปลี่ยนชุดได้ตามฉาก</p>
+        <div class="row">${(c.defaultAccessories || []).map(id => `<span class="chip">${esc(accessoryNames[id] || id)}</span>`).join('')}${c.defaultVars?.pants ? `<span class="chip">กางเกง <span class="dot" style="background:${esc(c.defaultVars.pants)}"></span>${esc(c.defaultVars.pants)}</span>` : ''}</div>
         <div class="row">${roleChip(c.role)}${c.cm ? `<span class="chip">${c.cm} ซม.</span>` : ''}${copyBtn(`<Sprite id="${c.id}" />`)}</div>
         ${tagsLine(c.tone, c.line)}
         ${c.role ? playBtn(c.audio, 'ฟังเสียง') : ''}
       </div>
-    </article>`).join('');
+    </article>`;
+  const castGroups = ['ตัวเอก','ตัวร้าย','พ่อแม่','พี่น้อง','ลุง ป้า น้า อา','ปู่ ย่า ตา ยาย','อาชีพ','สัตว์และฝูงชน'];
+  const castHTML = castGroups.map(group => `<div data-cast-group><h3>${esc(group)}</h3><div class="grid cast-grid">${S.cast.filter(c => (c.group || 'ตัวละครเดิม') === group).map(castCard).join('')}</div></div>`).join('');
 
   const voicesHTML = S.voices.roles.map((r) => `
     <article class="card voice">
       <div class="body">
-        <div class="name"><b>${esc(r.whoTh)}</b><span class="role">${esc(r.id)}</span></div>
+        <div class="name"><b>${esc(r.whoTh)}</b><span class="role">${esc(r.role || r.id)}</span></div>
         <div class="meta"><span>Voice id</span><span>${copyBtn(r.id)}</span><span>ใช้กับ</span><b>${esc(r.use)}</b></div>
         ${tagsLine(r.tone, r.line)}
         ${playBtn(r.audio, 'ฟังเสียงตัวอย่าง')}
@@ -225,16 +239,18 @@
       </div>
     </article>`).join('');
 
-  const epsHTML = S.episodes.map((e) => `
-    <article class="ep">
-      <h3>${esc(e.title)}</h3>
-      <p class="topic"><span class="mono">${esc(e.slug)}</span> · ${esc(e.format)} · ${e.seconds} วิ · ${e.shots.length} ช็อต · ${copyBtn(e.id)} ${copyBtn(e.id + 'Board')}</p>
-      ${e.final ? `<video controls preload="none" src="${esc(e.final)}"></video>` : ''}
-      <div class="tracks">${e.tracks.map((t) => playBtn(t.src, { voice: 'เสียงพากย์', score: 'ดนตรี + SFX' }[t.k] || t.k, 'small')).join('') || '<span class="hint">ยังไม่มีเสียง: npm run audio</span>'}</div>
-      <div class="strip">${e.shots.map((s) => `
-        <div class="shot">${s.image ? `<img src="${esc(s.image)}" alt="shot ${s.i}" loading="lazy" data-zoom>` : '<div class="missing" style="aspect-ratio:9/16">ยังไม่ได้เรนเดอร์</div>'}
-          <div><span class="sid">#${s.i}</span> · ${esc(s.scene)}${s.view ? ' / ' + esc(s.view) : ''}<br><span class="note">${esc(s.text.replace(/[\[\]{}]/g, ''))}</span></div></div>`).join('')}</div>
-    </article>`).join('') || '<p class="hint">ยังไม่มีตอน: <code>npm run new -- &lt;slug&gt; "ชื่อเรื่อง"</code></p>';
+  const clock = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
+  // landscape stage kit: backdrops, close-ups and light grades (src/kit/world, temple, inserts, stage)
+  const landCard = (x, label) => `
+    <article class="card land">
+      <div class="pic">${pic(x.image, x.id)}</div>
+      <div class="body">
+        <div class="name"><b>${esc(x.nameTh)}</b><span class="en">${esc(label ?? x.id)}</span></div>
+        <p class="desc">${esc(x.use)}</p>
+        ${copyBtn(x.code, 'คัดลอกโค้ด')}
+      </div>
+    </article>`;
+  const landGrid = (list, label) => `<div class="grid land-grid">${list.map((x) => landCard(x, label?.(x))).join('')}</div>`;
 
   const arms = S.poses.filter((p) => p.id.startsWith('arm-'));
   const bodies = S.poses.filter((p) => !p.id.startsWith('arm-'));
@@ -243,8 +259,11 @@
     <section id="cast">
       <div class="sec-head"><h2>ตัวละคร<small>${S.cast.length} ตัว · ความสูงจริง</small></h2>
         <p class="hint">ภาพวาดใน <code>src/cast/source/cast.svg</code> · ชื่อ เสียง และบทตัวอย่างใน <code>src/cast.json</code></p></div>
-      <div class="grid cast-grid">${castHTML}</div>
-      ${S.castSheet ? `<img class="sheet" src="${esc(S.castSheet)}" alt="Cast sheet" data-zoom>` : ''}
+      <p class="hint">เลือกคนก่อน ชุดพร้อมใช้ทันที · A/B เป็นคนละคน · ในเรื่องเดียวกันให้หนึ่งตัวละครใช้หนึ่ง ID ตลอดเรื่อง</p>
+      <label>ค้นหาตัวละคร <input class="search" id="castq" placeholder="เช่น แม่, พี่ชาย, ตำรวจ"></label>
+      <label>หมวด <select id="castgroup"><option value="">ทุกหมวด</option>${castGroups.map(g => `<option>${esc(g)}</option>`).join('')}</select></label>
+      <p id="castcount" class="hint" aria-live="polite"></p>
+      ${castHTML}
     </section>
 
     <section id="voices">
@@ -261,7 +280,10 @@
 
     <section id="poses">
       <div class="sec-head"><h2>ท่าทาง<small>${bodies.length} ท่าเต็มตัว · ${arms.length} แขน</small></h2><p class="hint">แสดงบน <code>man</code> ตัวเดียว · แขน: ซ่อนแขนพัก แล้วซ้อนแขนท่า (กฎมือเดียว <code>hands-poses.md</code>) · แขนซ้าย = <code>arm-l-*</code></p></div>
-      <h3>ท่าเต็มตัว</h3>
+      <h3>เดิน / วิ่ง (rig ข้อต่อ — ที่ใช้จริงในทุกเรื่อง)</h3>
+      <p class="hint">pose <code>walk</code> / <code>run</code> ใน <code>data.cast</code> วาดจาก <code>src/cast/Rig.tsx</code> ทุกเฟรม ไม่ใช้ภาพนิ่ง <code>man-walk</code> / <code>man-run</code> · ภาพนี้คือ 3 จังหวะของก้าวเดียว</p>
+      <div class="grid tile-grid">${S.gait.map((x) => tile(x, 'tall')).join('')}</div>
+      <h3>ท่าเต็มตัว (ภาพนิ่ง)</h3>
       <div class="grid tile-grid">${bodies.map((x) => tile(x, 'tall')).join('')}</div>
       <h3>แขน (ถือของ / ยื่น / ยก)</h3>
       <div class="grid tile-grid">${arms.map((x) => tile(x, 'tall')).join('')}</div>
@@ -274,7 +296,9 @@
 
     <section id="marks">
       <div class="sec-head"><h2>เครื่องหมาย &amp; อุปกรณ์<small>${S.marks.length} แบบ</small></h2><p class="hint">ซ้อนบนตัวละครด้วย <code>layers</code> · woman/auntie เลื่อนลง 4</p></div>
-      <div class="grid tile-grid">${S.marks.map((x) => tile(x)).join('')}</div>
+      <div class="grid tile-grid">${S.marks.filter(x => !x.label).map((x) => tile(x)).join('')}</div>
+      <h3>ชุดสำเร็จรูป</h3><p class="hint">คัดลอกชุดไปใช้กับตัวละครได้ทันที ชุดสี่แบบท้ายออกแบบสำหรับเด็ก</p>
+      <div class="grid tile-grid">${S.marks.filter(x => x.label).map((x) => tile(x)).join('')}</div>
     </section>
 
     <section id="ui">
@@ -287,9 +311,17 @@
       <div class="grid scene-grid">${scenesHTML}</div>
     </section>
 
-    <section id="episodes">
-      <div class="sec-head"><h2>ตอน<small>${S.episodes.length} ตอน</small></h2><p class="hint">Board จาก <code>&lt;Id&gt;Board</code> · <code>npm run studio</code> เพื่อเลื่อนดูทีละเฟรม</p></div>
-      ${epsHTML}
+    <section id="stage">
+      <div class="sec-head"><h2>ฉากแนวนอน (คลิปยาว)<small>${S.world.length} ฉากหลัง · ${S.places.length} ฉากสำเร็จ · ${S.inserts.length} close-up · ${S.grades.length} แสง</small></h2>
+        <p class="hint">1920×1080 · <code>thai-long-story</code> · ชิ้นส่วนใน <code>src/kit/world.tsx</code> · <code>temple.tsx</code> · <code>places.tsx</code> · <code>inserts.tsx</code> · <code>stage.tsx</code> · คนในภาพ = <code>man</code> 170 ซม. ไว้เทียบขนาด</p></div>
+      <h3>ฉากหลัง (วาดครั้งเดียว ใช้ซ้ำด้วย <code>view</code> + <code>data.cam</code>)</h3>
+      ${landGrid(S.world)}
+      <h3>ฉากสำเร็จ: สถานที่ไทยใช้บ่อย <span class="hint">· <code>src/kit/places.tsx</code> · <code>tone</code> = day / dusk / night</span></h3>
+      ${landGrid(S.places)}
+      <h3>Close-up และของประกอบ (มือไดนามิกและของแทรก)</h3>
+      ${landGrid(S.inserts)}
+      <h3>แสงและความทรงจำ <span class="hint">· <code>data.light</code> / <code>data.past</code> ใน story.json</span></h3>
+      ${landGrid(S.grades, (x) => (x.id === 'past' ? 'past' : 'light: ' + x.id))}
     </section>
 
     <section id="sfx">
@@ -300,6 +332,24 @@
   document.getElementById('foot').textContent = `สร้างเมื่อ ${new Date(S.built).toLocaleString('th-TH')} · npm run gallery เพื่ออัปเดต`;
 
   // one sound at a time
+  const filterCast = () => {
+    const q = document.getElementById('castq').value.trim().toLowerCase();
+    const group = document.getElementById('castgroup').value;
+    let count = 0;
+    document.querySelectorAll('[data-cast-group]').forEach(section => {
+      let visible = 0;
+      section.querySelectorAll('[data-cast-search]').forEach(card => {
+        const show = (!group || section.querySelector('h3').textContent === group) && (!q || card.dataset.castSearch.includes(q));
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+      section.style.display = visible ? '' : 'none'; count += visible;
+    });
+    document.getElementById('castcount').textContent = count ? `พบ ${count} ตัวละคร` : 'ไม่พบตัวละคร ลองเปลี่ยนคำค้นหรือหมวด';
+  };
+  document.getElementById('castq').addEventListener('input', filterCast);
+  document.getElementById('castgroup').addEventListener('change', filterCast);
+  filterCast();
   const audio = new Audio();
   let cur = null;
   const stop = () => { audio.pause(); if (cur) { cur.classList.remove('on'); cur.querySelector('svg').outerHTML = ICON_PLAY; } cur = null; };

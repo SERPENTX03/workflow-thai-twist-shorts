@@ -1,23 +1,32 @@
 node_modules/
-renders/
 *.log
 .DS_Store
 Thumbs.db
 
-# regenerated per episode (story.json is the source)
+# Media and video renders (too large for GitHub)
+*.mp4
+*.wav
+**/renders/
+renders/
+
+# Regenerated per episode (story.json is the source)
 episodes/*/assets/vo/
 episodes/*/assets/voice.wav
 episodes/*/assets/score.wav
 episodes/*/assets/score_raw.wav
-
-# secrets
-.env
-
-# Studio caches
 episodes/*/.thumbnails/
 episodes/*/.waveform-cache/
-node_modules/
+
+# Local episode archive
+archive/
+
+# Remotion output & temp
 out/
+.tmp-clip-review/
+
+# Secrets
 .env
+
+# Studio renders
 studio/renders/
 public/*/*.wav

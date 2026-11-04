@@ -1,3 +1,4 @@
+import cast from '../cast.json';
 // Tokens from the old kit.css :root, as TS constants.
 export const T = {
   sky0: '#0b1328', sky1: '#1c2c4f', moon: '#f4ecd4',
@@ -12,6 +13,9 @@ export const T = {
 
 /** Relative heights in cm (520 svg units = 170 cm for adults). */
 export const HEIGHT_CM: Record<string, number> = {
+  M1: 174, M2: 167, W1: 166, W2: 156, A1: 154, E1: 162, B1: 127, G1: 122,
   man: 170, woman: 158, auntie: 150, elder: 160,
-  raincoat: 165, student: 165, kid: 120, 'kid-girl': 120,
+  raincoat: 165, student: 168, kid: 125, 'kid-girl': 120, monk: 160,
+  'teen-girl': 158, uncle: 172, 'young-woman': 162, grandpa: 162, grandma: 150,
+  ...Object.fromEntries(Object.entries(cast).filter(([, c]) => typeof c === 'object' && 'cm' in c).map(([id, c]) => [id, (c as {cm: number}).cm])),
 };
