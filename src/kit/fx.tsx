@@ -1,8 +1,10 @@
 import React from 'react';
 
-export const Vignette: React.FC = () => (
+/** Corner darkness. `at` = [x, y] in 0–1 of the frame where the light stays (put it on the subject or the lamp,
+ *  not the dead centre); `a` = edge darkness (≈ .55 day, .8–.9 suspense); `inner` = % of the radius left clear. */
+export const Vignette: React.FC<{at?: [number, number]; a?: number; inner?: number}> = ({at = [0.5, 0.46], a = 0.55, inner = 40}) => (
   <div style={{position: 'absolute', inset: 0, pointerEvents: 'none',
-    background: 'radial-gradient(ellipse at 50% 46%, rgba(0,0,0,0) 40%, rgba(0,0,0,.55) 100%)'}} />
+    background: `radial-gradient(ellipse at ${at[0] * 100}% ${at[1] * 100}%, rgba(0,0,0,0) ${inner}%, rgba(0,0,0,${a}) 100%)`}} />
 );
 
 /** someone who casts a shadow is alive; the protagonist never gets one */
@@ -10,9 +12,10 @@ export const ShadowBlob: React.FC<{x: number; y: number; w?: number}> = ({x, y, 
   <div style={{position: 'absolute', left: x, top: y, width: w, height: 36, borderRadius: '50%', background: 'rgba(5,7,12,.45)'}} />
 );
 
-/** soft-focus layer for far sets */
-export const Far: React.FC<{children: React.ReactNode; blur?: number}> = ({children, blur = 6}) => (
-  <div style={{position: 'absolute', inset: 0, filter: `blur(${blur}px)`}}>{children}</div>
+/** soft-focus layer for far sets; `dim` < 1 darkens it so the midground (cast, clue) stays the brightest thing
+ *  (depth-light.md: background 30–50 % darker than the midground at night → dim 0.5–0.7) */
+export const Far: React.FC<{children: React.ReactNode; blur?: number; dim?: number}> = ({children, blur = 6, dim}) => (
+  <div style={{position: 'absolute', inset: 0, filter: `blur(${blur}px)${dim !== undefined ? ` brightness(${dim})` : ''}`}}>{children}</div>
 );
 
 /** falling rain streaks; `f` drives the scroll */

@@ -1,8 +1,9 @@
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
 import {CAST_SIZE, type CastId} from '../cast/CastSprite';
-import {kf} from '../engine/anim';
+import {clamp, kf} from '../engine/anim';
 import type {ShotProps} from '../engine/episode';
+import {CastShadow} from './depth';
 import {Grain} from './horror';
 import {rimFilter} from './light';
 import {blinkAt, breathe, gait, motionCss, seedOf} from './motion';
@@ -81,7 +82,7 @@ const ARM_T: Record<string, string> = {'man-sit': 'translate(0 110)', 'monk-sit'
 /** hand anchors for grip props, 200×520 frame (hands-poses.md) */
 const ANCHOR: Record<string, [number, number]> = {
   'r-hold': [112, 244], 'l-hold': [88, 244], 'r-chest': [116, 196], 'l-chest': [84, 196], 'r-offer': [214, 222], 'l-offer': [-14, 222],
-  'r-raise': [190, 110], 'l-raise': [10, 110], 'r-reach': [226, 176], 'l-reach': [-26, 176], 'r-rest': [148, 330], 'l-rest': [52, 330],
+  'r-raise': [190, 110], 'l-raise': [10, 110], 'r-reach': [226, 176], 'l-reach': [-26, 176], 'r-rest': [148, 330], 'l-rest': [52, 330], 'b-wheel': [100, 297],
 };
 
 const SIL_VARS = ['skin', 'skin-d', 'hair', 'shirt', 'pants', 'top', 'skirt', 'shoe', 'eye', 'eye-white', 'blush', 'tear', 'robe', 'robe-d', 'stubble', 'sleeve', 'forearm', 'uniform', 'detail', 'shorts', 'mouth', 'brow', 'tattoo', 'jewel', 'red', 'tie'];
@@ -153,6 +154,7 @@ export const ActorView: React.FC<ActorProps> = ({a, roster, floor, pxPerCm, f, t
   const armSide = poseArm?.[0];
   if (armSide === 'r') css['--arm-r-rest'] = 'none';
   if (armSide === 'l') css['--arm-l-rest'] = 'none';
+  if (armSide === 'b') {css['--arm-r-rest'] = 'none'; css['--arm-l-rest'] = 'none';}
   const showFace = !!a.face && !r.sil && a.pose !== 'back';
   // a body with no back view (monk, auntie) turned away: hide the features
   const fakeBack = a.pose === 'back' && !sym.endsWith('-back');
@@ -181,8 +183,13 @@ export const ActorView: React.FC<ActorProps> = ({a, roster, floor, pxPerCm, f, t
           {talkOn && <use width={200} height={520} href={`#${talkShape(f, true)}`} transform={showFace ? 'translate(0 6)' : undefined} />}
           {acc && acc !== 'none' && !fakeBack && <use width={200} height={outfit ? CAST_SIZE['acc-' + acc][1] : 520} href={`#acc-${acc}`} />}
           {accessory && !fakeBack && <use width={200} height={520} href={`#acc-${accessory}`} />}
-          {!fakeBack && a.acc !== 'none' && (defaults.defaultAccessories ?? []).filter(id => id !== 'acc-' + accessory && !(id === 'acc-wristwatch' && (body || a.arm?.startsWith('l-') || sym.endsWith('-sit')))).map(id => <use key={id} width={200} height={520} href={`#${id}`} />)}
+          {!fakeBack && a.acc !== 'none' && (defaults.defaultAccessories ?? []).filter(id => id !== 'acc-' + accessory && !(id === 'acc-wristwatch' && (body || a.arm?.startsWith('l-') || sym.endsWith('-sit') || sym === 'man-crouch' || sym === 'man-lie'))).map(id => <use key={id} width={200} height={520} href={`#${id}`} />)}
         </g>
+        {!fakeBack && a.acc !== 'none' && (defaults.defaultAccessories ?? []).includes('acc-wristwatch') && sym === 'man-crouch' && (
+          <g transform="translate(66 396) rotate(62 0 -30)">
+            <use href="#acc-watch" />
+          </g>
+        )}
         <g transform={at}>
           {poseArm && <use width={200} height={520} href={`#arm-${poseArm}`} />}
           {anchor && <use href={`#prop-${a.prop}`} transform={`translate(${anchor[0]} ${anchor[1]})`} />}
@@ -214,8 +221,10 @@ export function camAt(f: number, len: number, cam: number[] | undefined, def: nu
   return {z: z0 + (z1 - z0) * t, cx: cx + (cx1 - cx) * t, cy: cy + (cy1 - cy) * t};
 }
 
-/** Light grades for landscape sets: a colour wash + vignette. `past` = desaturated memory look. */
-export const GRADES: Record<string, {wash: string; vig: number; filter?: string}> = {
+/** Light grades for landscape sets: a colour wash + vignette (`inner` = % of the radius left clear, default 38).
+ *  `past` = desaturated memory look. `noir` = chiaroscuro: one pool of light, the rest of the frame black
+ *  (depth-light.md); pair it with data.focus or data.lightAt so the pool sits on the subject. */
+export const GRADES: Record<string, {wash: string; vig: number; filter?: string; inner?: number}> = {
   day: {wash: 'rgba(255,240,210,0)', vig: 0.25},
   morning: {wash: 'rgba(200,220,235,.08)', vig: 0.3},
   dusk: {wash: 'rgba(120,60,90,.18)', vig: 0.45},
@@ -225,16 +234,18 @@ export const GRADES: Record<string, {wash: string; vig: number; filter?: string}
   night: {wash: 'rgba(6,12,26,.48)', vig: 0.72},
   dim: {wash: 'rgba(6,10,20,.62)', vig: 0.8},
   dark: {wash: 'rgba(3,5,10,.74)', vig: 0.86},
+  noir: {wash: 'rgba(2,4,10,.28)', vig: 0.97, inner: 14},
   dawn: {wash: 'rgba(70,80,120,.25)', vig: 0.5},
 };
 
-export const Grade: React.FC<{light?: string; past?: boolean}> = ({light = 'night', past}) => {
+/** `focus` = [x, y] in 0–1 of the frame: where the vignette leaves light (default the centre, 0.5 / 0.45). */
+export const Grade: React.FC<{light?: string; past?: boolean; focus?: [number, number]}> = ({light = 'night', past, focus = [0.5, 0.45]}) => {
   const g = GRADES[light] ?? GRADES.night;
   return (
     <>
       <div style={{position: 'absolute', inset: 0, background: g.wash, pointerEvents: 'none'}} />
       <div style={{position: 'absolute', inset: 0, pointerEvents: 'none',
-        background: `radial-gradient(ellipse at 50% 45%, rgba(0,0,0,0) 38%, rgba(0,0,0,${g.vig}) 100%)`}} />
+        background: `radial-gradient(ellipse at ${(focus[0] * 100).toFixed(1)}% ${(focus[1] * 100).toFixed(1)}%, rgba(0,0,0,0) ${g.inner ?? 38}%, rgba(0,0,0,${g.vig}) 100%)`}} />
       {past && <div style={{position: 'absolute', inset: 0, pointerEvents: 'none', background: 'rgba(120,100,70,.16)', mixBlendMode: 'multiply'}} />}
     </>
   );
@@ -300,7 +311,9 @@ export const SeatChair: React.FC<{x: number; y: number; h: number; wood?: string
 /** Actors from `cast` (default data.cast) on the floor line, with shadows for the living. `data.move` = [x0, x1]
  *  walks the first actor across the shot; other walkers drift `data.drift` px/frame (default 1.2, 0 = stay put).
  *  Everyone breathes and blinks, walkers step (kit/motion.ts), and `data.rim` (l | r | red | 0, default r) puts a
- *  rim light in the colour of `data.light` on them (kit/light.tsx). Episodes wrap it with their roster: see temple-boy/cast.tsx. */
+ *  rim light in the colour of `data.light` on them (kit/light.tsx). `data.lightAt` = [x, y] world px of the one light
+ *  in the shot: each living actor throws a long CastShadow away from it (kit/depth.tsx) and, without data.rim, the rim
+ *  sits on the side facing it. Episodes wrap it with their roster: see temple-boy/cast.tsx. */
 export const Actors: React.FC<ActorsProps> = ({p, roster, speaking, cast, floor, pxPerCm, tint, chairs}) => {
   const list: Actor[] = ((cast ?? p.shot.data?.cast ?? []) as string[]).map(parseActor);
   const talking = speaking(p.shot, p.f, p.len);
@@ -336,13 +349,17 @@ export const Actors: React.FC<ActorsProps> = ({p, roster, speaking, cast, floor,
           body = {node: <RigBody plan={plan} phase={m.phase} dir={local} run={run} holdR={holdR} />, layerT: LAYER_T[plan.base]};
           m.dy += rigDrop(plan, m.phase, local, run) * (bodyH / 520);
         }
-        const rim = rimFilter(a.rim ?? d.rim ?? 'r', d.light ?? 'night', bodyH / 500);
+        const lightAt: [number, number] | undefined = Array.isArray(d.lightAt) ? (d.lightAt as [number, number]) : undefined;
+        const rimSide = a.rim ?? d.rim ?? (lightAt ? (lightAt[0] < x ? 'l' : 'r') : 'r');
+        const rim = rimFilter(rimSide, d.light ?? 'night', bodyH / 500);
         const filter = [rim, tint].filter(Boolean).join(' ') || undefined;
         const w = (a.pose === 'sit' ? 1.0 : 0.75) * r.cm * pxPerCm * 0.42;
+        const living = !r.noShadow && !r.sil;
         return (
           <React.Fragment key={i}>
             {chairs && a.pose === 'sit' && !r.sil && <SeatChair x={x} y={a.y ?? floor} h={bodyH} o={a.o} {...(typeof chairs === 'object' ? chairs : {})} />}
-            {!r.noShadow && !r.sil && <FloorShadow x={x} w={w * (m?.shadow ?? 1)} y={a.y ?? floor} />}
+            {living && lightAt && <CastShadow x={x} y={a.y ?? floor} h={a.pose === 'sit' ? bodyH * 0.75 : bodyH} light={lightAt} o={a.o} />}
+            {living && <FloorShadow x={x} w={w * (m?.shadow ?? 1)} y={a.y ?? floor} />}
             <ActorView a={{...a, x}} roster={roster} floor={floor} pxPerCm={pxPerCm} f={p.f} talking={talking && ownsLine(a.who)} blink={blinkAt(p.f, seed)} body={body}
               style={{filter, transform: m && motionCss(m), transformOrigin: '50% 100%'}} />
           </React.Fragment>
@@ -431,6 +448,12 @@ export const Stage: React.FC<{
   const k1 = 1 + foreK;
   const foreShift: [number, number] = [-(c.cx - c0.cx) * c.z * k1, -(c.cy - c0.cy) * c.z * k1];
   const foreScale = Math.pow(c.z / c0.z, k1);
+  // the vignette leaves light where the shot's light is (data.focus, else leaning toward data.lightAt on screen)
+  let focus: [number, number] | undefined = Array.isArray(d.focus) ? (d.focus as [number, number]) : undefined;
+  if (!focus && Array.isArray(d.lightAt)) {
+    const sx = (p.W / 2 + (d.lightAt[0] - c.cx) * c.z) / p.W, sy = (p.H / 2 + (d.lightAt[1] - c.cy) * c.z) / p.H;
+    focus = [clamp(0.5 + (sx - 0.5) * 0.45, 0.2, 0.8), clamp(0.45 + (sy - 0.45) * 0.3, 0.25, 0.7)];
+  }
   return (
     <AbsoluteFill style={{background: bg, overflow: 'hidden'}}>
       <div style={{position: 'absolute', inset: 0, filter: past ? PAST_FILTER : undefined}}>
@@ -438,7 +461,7 @@ export const Stage: React.FC<{
           <Cam W={p.W} H={p.H} z={c.z} cx={c.cx} cy={c.cy}>{world}</Cam>
           {fore && <Fore shift={foreShift} scale={foreScale} blur={foreBlur} dark={foreDark}>{fore}</Fore>}
         </Tilt>
-        <Grade light={light ?? d.light} past={past} />
+        <Grade light={light ?? d.light} past={past} focus={focus} />
         {over}
       </div>
       <Grain f={p.f} opacity={past ? 0.24 : grain} />

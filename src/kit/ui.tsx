@@ -5,10 +5,20 @@ type Pos = {x?: number; y?: number; w?: number};
 const abs = ({x = 0, y = 0, w}: Pos): React.CSSProperties => ({position: 'absolute', left: x, top: y, width: w});
 type Extra = {style?: React.CSSProperties};
 
+/** 06:00–17:59 in a HUD text reads as day (sun icon); anything else, or no time, keeps the moon */
+const isDayTime = (text: string) => {
+  const m = text.match(/(\d{1,2}):(\d{2})/);
+  if (!m) return false;
+  const h = Number(m[1]);
+  return h >= 6 && h < 18;
+};
+
 export const Hud: React.FC<{text: string; x?: number; y?: number} & Extra> = ({text, x = 70, y = 90, style}) => (
   <div style={{...abs({x, y}), minWidth: 250, height: 104, borderRadius: 18, background: 'rgba(239,232,218,.94)', color: T.ink, whiteSpace: 'nowrap',
     fontFamily: T.ui, fontWeight: 700, fontSize: 50, display: 'flex', alignItems: 'center', gap: 16, paddingLeft: 22, paddingRight: 26, boxSizing: 'border-box', ...style}}>
-    <div style={{width: 44, height: 44, borderRadius: '50%', boxShadow: `inset -12px -6px 0 0 ${T.ink}`}} />
+    {isDayTime(text)
+      ? <div style={{width: 40, height: 40, margin: 2, borderRadius: '50%', background: '#e0a020', boxShadow: '0 0 0 5px rgba(224,160,32,.3)'}} />
+      : <div style={{width: 44, height: 44, borderRadius: '50%', boxShadow: `inset -12px -6px 0 0 ${T.ink}`}} />}
     {text}
   </div>
 );

@@ -1,5 +1,5 @@
 window.STUDIO = {
- "built": "2026-11-04T06:33:37.976Z",
+ "built": "2026-11-06T02:38:16.105Z",
  "castSheet": "renders/cast-sheet.png",
  "cast": [
   {
@@ -1920,6 +1920,11 @@ window.STUDIO = {
    "id": "arm-r-reach",
    "image": "renders/arm-r-reach.png",
    "code": "<Sprite id=\"man\" hideArmR layers={['arm-r-reach']} />"
+  },
+  {
+   "id": "arm-b-wheel",
+   "image": "renders/arm-b-wheel.png",
+   "code": "<Sprite id=\"man\" hideArmB layers={['arm-b-wheel']} />"
   }
  ],
  "props": [
@@ -1962,6 +1967,11 @@ window.STUDIO = {
    "id": "prop-box",
    "image": "renders/prop-box.png",
    "code": "<Sprite id=\"prop-box\" />"
+  },
+  {
+   "id": "prop-wheel",
+   "image": "renders/prop-wheel.png",
+   "code": "<Sprite id=\"prop-wheel\" />"
   },
   {
    "id": "icon-clock",
@@ -2538,6 +2548,90 @@ window.STUDIO = {
    "code": "<SideRoadSet tone=\"dusk\" />  // หรือ tone=\"night\" | \"day\"",
    "use": "ถนนทางหลวงชนบท เสาหลักกิโลและต้นไม้ · ใช้เดี่ยวๆ หรือนำ Prop มอเตอร์ไซค์มาวางซ้อนได้",
    "image": "renders/place-highway-road.png"
+  },
+  {
+   "id": "child-room",
+   "nameTh": "ห้องนอนเด็ก (แต่งได้ทีละบ้าน)",
+   "code": "<ChildRoom f={f} wall=\"#cfa98a\" blanket=\"rocket\" under=\"shoe\" reflect=\"girl\" door=\"closed\" />  // src/kit/childroom.tsx · กล้อง CHILD_ROOM_CAMS",
+   "use": "ห้องเด็กห้องเดียววาดครั้งเดียว เปลี่ยนสีฝา ผ้าห่ม (rocket/duck) ขีดส่วนสูง ของใต้เตียง กระจกสะท้อน ประตูหลังเปิดเป็นทางมืด · ChildPhoto, KidShoe, ToyCar ใช้เป็น insert ได้",
+   "image": "renders/place-child-room.png"
+  },
+  {
+   "id": "wood-kitchen",
+   "nameTh": "ห้องไม้: ครัว",
+   "code": "<WoodRoom view=\"kitchen\" paper={...} />  // หรือ view=\"dining\" plates={2} | \"hall\" | \"closet\"",
+   "use": "บ้านไม้ไทย ครัว/โต๊ะกินข้าว/ทางเดิน/ตู้เสื้อผ้า · src/kit/village.tsx",
+   "image": "renders/place-wood-kitchen.png"
+  },
+  {
+   "id": "wood-closet",
+   "nameTh": "ห้องไม้: ตู้เสื้อผ้า",
+   "code": "<WoodRoom view=\"closet\" jacket />",
+   "use": "ตู้เปิด เสื้อแขวน · jacket = เสื้อคลุมฟ้ามีรอยปะ",
+   "image": "renders/place-wood-closet.png"
+  },
+  {
+   "id": "house-front",
+   "nameTh": "หน้าบ้านไม้ + ประตู",
+   "code": "<HouseFront c=\"#b98a62\" open={0.6} night />",
+   "use": "หน้าบ้าน ประตูแง้ม รั้วเตี้ย · night = หน้าต่างมีไฟ",
+   "image": "renders/place-house-front.png"
+  },
+  {
+   "id": "car-cabin",
+   "nameTh": "ในรถเก๋ง: มุมคนขับมองผ่านกระจกหน้า",
+   "code": "<CarInterior view=\"drive\" f={f} night? moving />  <CarWheel />  <Actors floor={DRIVER.floor} pxPerCm={DRIVER.pxPerCm} />  <CarKnee />  // phak@740 arm=b-wheel prop=wheel · src/kit/car.tsx",
+   "use": "ห้องโดยสารมองจากด้านหน้าผ่านกระจกหน้า: เบาะคนขับซ้าย เบาะข้างคนขับขวา กระจกข้างนอกเสา A แผงหน้าปัดล่าง · คนขับเป็นท่า stand (ใส่เสื้อของตัวละครจริง) มือจับพวงมาลัยด้วย arm=b-wheel prop=wheel · CarKnee บังขา",
+   "image": "renders/place-car-cabin.png"
+  },
+  {
+   "id": "car-seat",
+   "nameTh": "ในรถเก๋ง: เบาะข้างคนขับ",
+   "code": "<CarInterior view=\"seat\" f={f} seat=\"new\" />",
+   "use": "โคลสอัพเบาะข้างคนขับ แสงเช้าจากกระจกข้าง · seat=\"torn\" = เบาะเก่ามีสปริงโผล่",
+   "image": "renders/place-car-seat.png"
+  },
+  {
+   "id": "school-front",
+   "nameTh": "โรงเรียนชนบท: หน้าอาคาร",
+   "code": "<SchoolFront sign=\"โรงเรียนบ้านท่าน้อย\" />  // + StaffBoard",
+   "use": "อาคารเรียน ป้ายชื่อ เสาธง · StaffBoard = ป้ายครูเวร (peeled = ชื่อถูกลอก)",
+   "image": "renders/place-school-front.png"
+  },
+  {
+   "id": "school-office",
+   "nameTh": "โรงเรียน: ห้องธุรการ / ทางเดิน",
+   "code": "<SchoolRoom view=\"office\" f={f} />  // หรือ view=\"hall\" · วาง <OfficeDesk /> หลัง Actors",
+   "use": "ห้องเวร สมุดลงเวลา พัดลม / ระเบียงทางเดินหน้าห้องเรียน",
+   "image": "renders/place-school-office.png"
+  },
+  {
+   "id": "copy-shop",
+   "nameTh": "ร้านถ่ายเอกสาร",
+   "code": "<CopyCounter f={f} />",
+   "use": "เคาน์เตอร์ เครื่องถ่ายเอกสาร ชั้นกระดาษ (เคาน์เตอร์อยู่หน้าตัวละคร)",
+   "image": "renders/place-copy-shop.png"
+  },
+  {
+   "id": "school-store",
+   "nameTh": "โรงเรียน: ห้องเก็บอุปกรณ์",
+   "code": "<SchoolStore f={f} camera envelopes={6} />  // src/kit/village.tsx",
+   "use": "ตู้รางวัลกระจกมีรูปนักเรียนแต่ละรุ่น ตู้เหล็กแขวนกล้องระดับเด็ก กล่อง ลูกบอล · reach = มือล้วงหลังตู้",
+   "image": "renders/place-school-store.png"
+  },
+  {
+   "id": "dark-passage",
+   "nameTh": "ทางเดินมืดหลังผนัง",
+   "code": "<DarkPassage f={f} view=\"passage\" from=\"left\" />  // view: passage | line | deep | meet · src/kit/passage.tsx",
+   "use": "ทางไม้แคบหลังกำแพง หัวตะปูบนพื้น แสงจากประตูทางเข้าทางเดียว · deep + cloth = ผ้าอุดร่องไม้",
+   "image": "renders/place-dark-passage.png"
+  },
+  {
+   "id": "car-outside",
+   "nameTh": "รถเก๋งด้านข้าง + รถตำรวจ",
+   "code": "<CarOutside x={1320} camera />  <PoliceTruck x={300} f={f} />  // src/kit/village.tsx",
+   "use": "รถเก๋งด้านข้าง (camera = กล้องวางบนฝากระโปรง) · กระบะตำรวจไฟไซเรนกะพริบ",
+   "image": "renders/place-car-outside.png"
   }
  ],
  "inserts": [
@@ -2603,6 +2697,134 @@ window.STUDIO = {
    "code": "<Beam x y angle len spread a /> · beamAt(f,len,keys)",
    "use": "แสงกรวย + ตำแหน่งดวงไฟที่เคลื่อน (LightMask ใน horror.tsx)",
    "image": "renders/insert-flashlight.png"
+  },
+  {
+   "id": "phone-voice",
+   "nameTh": "โทรศัพท์ในมือ (ข้อความเสียง/แชต/โทร)",
+   "code": "<PhoneScene p={p} photo={v => ...} />  // src/kit/phone.tsx · view: voice | chat | call | calls | send",
+   "use": "ข้อความทุกคำมาจาก shot.data · view อื่น ๆ (รูปบนจอ) ส่ง photo มาวาดเอง",
+   "image": "renders/insert-phone-voice.png"
+  },
+  {
+   "id": "memory-notebook",
+   "nameTh": "สมุดจดความจำ (tracked device)",
+   "code": "<MemoryNotebook p={p} title=\"สิ่งที่รู้แน่ ๆ\" counter={n => `จำได้ ${n} ข้อ`} />",
+   "use": "data.facts = [[ข้อความ, ok|bad|lost]] · ข้อใหม่เขียนตัวเอง ข้อปลอมสีแดง ข้อที่หายขีดฆ่า + ชิปนับจำนวน",
+   "image": "renders/insert-memory-notebook.png"
+  }
+ ],
+ "camera": [
+  {
+   "id": "dutch",
+   "nameTh": "กล้องเอียง (Dutch tilt)",
+   "code": "\"data\": {\"tilt\": -6}   // หรือ [0, -7] = ค่อยๆ เอียงตลอดช็อต\n// ฉากที่ไม่ใช้ Stage: <Tilt deg={-6} W={W} H={H}>…</Tilt>",
+   "use": "ความระแวง, หลังรู้ว่ามีคนโกหก · 5–8° เอียงทางเดียวทั้งฉาก · การ์ด/HUD ไม่เอียง (S9)",
+   "image": "renders/camera-dutch.png"
+  },
+  {
+   "id": "fore",
+   "nameTh": "ฉากหน้า FG + parallax",
+   "code": "<Stage p={p} world={set} fore={<DoorEdge />} foreK={0.4} />\n// ฉากที่ไม่ใช้ Stage: <Fore shift={[dx, dy]} blur={7} dark={0.45}>…</Fore>",
+   "use": "วงกบ, มุ้ง, ไหล่ OTS, เสาไฟ · เบลอ+มืด เลื่อน 1.4× ของกล้อง · ห้ามบังหน้า/เบาะแส (§5)",
+   "image": "renders/camera-fore.png"
+  },
+  {
+   "id": "peephole",
+   "nameTh": "ตาแมวประตู",
+   "code": "<Pov kind=\"peephole\" W={W} H={H} f={f}>{view}</Pov>",
+   "use": "มองผ่านตาแมว เลนส์โป่ง ขอบดำ · ใช้กับคนยืนหน้าประตู (S13)",
+   "image": "renders/camera-peephole.png"
+  },
+  {
+   "id": "keyhole",
+   "nameTh": "รูกุญแจ",
+   "code": "<Pov kind=\"keyhole\" W={W} H={H} f={f}>{view}</Pov>",
+   "use": "แอบมองห้องต้องห้าม (S13)",
+   "image": "renders/camera-keyhole.png"
+  },
+  {
+   "id": "crack",
+   "nameTh": "ประตูแง้ม",
+   "code": "<Pov kind=\"crack\" open={0.4} W={W} H={H} f={f}>{view}</Pov>",
+   "use": "ช่องประตูแคบ · animate open 0→1 = ประตูค่อยๆ เปิด (S13)",
+   "image": "renders/camera-crack.png"
+  },
+  {
+   "id": "binoculars",
+   "nameTh": "กล้องส่องทางไกล",
+   "code": "<Pov kind=\"binoculars\" W={W} H={H} f={f}>{view}</Pov>",
+   "use": "สะกดรอยจากระยะไกล (S13)",
+   "image": "renders/camera-binoculars.png"
+  },
+  {
+   "id": "blinds",
+   "nameTh": "ผ่านบานเกล็ด / มู่ลี่",
+   "code": "<Pov kind=\"blinds\" open={0.5} sway={0} W={W} H={H} f={f}>{view}</Pov>",
+   "use": "แอบดูจากในบ้าน, voyeur (S12)",
+   "image": "renders/camera-blinds.png"
+  },
+  {
+   "id": "phone-cam",
+   "nameTh": "กล้องมือถือ (REC)",
+   "code": "<Pov kind=\"phone\" rec=\"00:01:42\" W={W} H={H} f={f}>{view}</Pov>",
+   "use": "คลิปที่ตัวละครถ่าย, ไลฟ์, หลักฐานวิดีโอ (S13)",
+   "image": "renders/camera-phone-cam.png"
+  },
+  {
+   "id": "split",
+   "nameTh": "แบ่งจอ (โทรศัพท์)",
+   "code": "<Split W={W} H={H} angle={8} a={<CallerA />} b={<CallerB />} />",
+   "use": "16:9 ซ้าย/ขวา · 9:16 บน/ล่าง (อัตโนมัติ) · แต่ละช่องจัดเฟรมเหมือนเป็นช็อตเต็ม (S14)",
+   "image": "renders/camera-split.png"
+  },
+  {
+   "id": "cctv",
+   "nameTh": "กล้องวงจรปิด",
+   "code": "<Cctv W={W} H={H} f={f} cam=\"CAM 03\" time=\"02:14:07\">{view(cctvFrame(f))}</Cctv>",
+   "use": "หลักฐานวิดีโอ · เวลาเดินเอง ต้องตรงกับ HUD · cctvFrame ทำให้ภาพกระตุก (S16)",
+   "image": "renders/camera-cctv.png"
+  },
+  {
+   "id": "mirror",
+   "nameTh": "กระจก / กระจกมองหลัง",
+   "code": "<MirrorFrame x={1200} y={120} w={560} h={220} W={W} H={H}>{backSeat}</MirrorFrame>",
+   "use": "ภาพสะท้อนกลับด้าน ซีด · สิ่งที่ต่างจากห้องจริงคือเบาะแส (S15)",
+   "image": "renders/camera-mirror.png"
+  },
+  {
+   "id": "anti-flat",
+   "nameTh": "เฟรม 4 ชั้น (กันภาพแบน)",
+   "code": "\"data\": {\"light\": \"noir\", \"lightAt\": [1420, 250], \"cast\": [\"lead-male-A@620\"]}\n<Stage p={p} fore={<Post />} world={<><Far blur={3}><ShopRow tone=\"night\" f={f} /></Far><PerspFloor vx={1250} vy={560} /><Haze y={800} f={f} /><Cone x={1420} y={250} floor={FLOOR} f={f} /><Actors … /></>} />",
+   "use": "FG เสาไฟเบลอ · MG ตัวละครที่ 1/3 + rim + เงายาว · BG ตึกแถวเบลอ + พื้นสอบเข้า · ATMO หมอก · ไฟดวงเดียว มืด ≥ 60 % (depth-light.md)",
+   "image": "renders/camera-anti-flat.png"
+  },
+  {
+   "id": "cast-shadow",
+   "nameTh": "เงาทอดยาวจากไฟดวงเดียว",
+   "code": "\"data\": {\"lightAt\": [260, 740]}   // Actors วาด CastShadow + rim ฝั่งไฟให้ทุกคน\n<CastShadow x={820} y={FLOOR} h={515} light={[260, 740]} />",
+   "use": "ไฟต่ำ/ไกล = เงายาว, ไฟเหนือหัว = เงาสั้น · ทุกคนในช็อตชี้ไปทางเดียวกัน · ผีไม่มีเงา (noShadow)",
+   "image": "renders/camera-cast-shadow.png"
+  },
+  {
+   "id": "persp-room",
+   "nameTh": "ห้องมีมิติ (ผนังข้าง + พื้นสอบเข้า)",
+   "code": "<SideWall side=\"l\" x={420} top={180} vx={960} vy={500} opening={[0.35, 0.6]} />\n<SideWall side=\"r\" x={1500} top={180} vx={960} vy={500} light={0.7} />\n<PerspFloor vx={960} vy={500} c0=\"#6a4a32\" c1=\"#33251a\" />",
+   "use": "จุดรวมสายตา (vx, vy) เดียวกันทุกชิ้น · vy = ระดับสายตากล้อง (ต่ำ = มุมช้อน) · ใส่ PerspFloor ทับพื้นเดิมของ set ไหนก็ได้",
+   "image": "renders/camera-persp-room.png"
+  },
+  {
+   "id": "room-wide",
+   "nameTh": "ห้องสามมิติ (room kit) · ภาพกว้าง",
+   "code": "const R = makeRoom({x: 700, y: 470}, {x0: 520, x1: 1500, y0: 220, y1: 760}, 3.4);\n<RoomShell r={R} id=\"sh7\" />\n<RFace r={R} pts={[[0.62,0.2,0],[0.86,0.2,0],[0.86,0.55,0],[0.62,0.55,0]]} fill=\"#8fb0d8\" />\n<RBox r={R} u={[0.04,0.4]} v={[0.82,1]} w={[0.12,0.6]} front=\"#4a3020\" top=\"#d8d2c4\" />\n<LightVeil id=\"sh7\" lights={[[x, y, 300]]} o={0.55} />\nconst s = standAt(R, 0.7, 0.45); // เท้า + สเกล · roomPxPerCm(R, 0.45)",
+   "use": "ห้องที่กล้องเดินเข้าไปได้: วาดครั้งเดียว แล้วถ่ายกว้าง/กลาง/ใกล้/มุมต่ำ/มุมสูงได้ทุกมุม โดยผนัง พื้น เฟอร์นิเจอร์ยังถูกต้อง · LightVeil กดโทนกลางให้มืด เหลือแสงตรงที่แสงตก (directing.md §3–4)",
+   "image": "renders/camera-room-wide.png"
+  },
+  {
+   "id": "room-close",
+   "nameTh": "ห้องเดิม · ภาพใกล้ (z 3)",
+   "code": "\"data\": {\"cam\": [3, 3.15, 1500, 470]}   // ห้องเดียวกับ room-wide แค่ย้ายกล้อง",
+   "use": "close จริงคือ z ≈ 3–4.5 (หัวกินครึ่งเฟรม) ไม่ใช่ 1.8 · ฉากหลังของ close คือส่วนหนึ่งของห้องเดิม — หน้าต่าง/แสงเดิม ต่อเนื่อง",
+   "image": "renders/camera-room-close.png"
   }
  ],
  "grades": [
@@ -2675,6 +2897,13 @@ window.STUDIO = {
    "code": "\"data\": {\"light\": \"dawn\"}",
    "use": "Grade: สีทับ + วิกเนตต์",
    "image": "renders/grade-dawn.png"
+  },
+  {
+   "id": "noir",
+   "nameTh": "แสงเงาตัดจัด (chiaroscuro)",
+   "code": "\"data\": {\"light\": \"noir\", \"focus\": [0.35, 0.5]}",
+   "use": "แสงวงเดียว ที่เหลือดำ · คู่กับ data.focus หรือ data.lightAt ให้วงแสงอยู่บนหน้า/เบาะแส · ฉากสารภาพ ซักถาม เฉลย",
+   "image": "renders/grade-noir.png"
   },
   {
    "id": "past",
@@ -3340,6 +3569,56 @@ window.STUDIO = {
    "name": "morning",
    "prompt": "bright morning ambience on a quiet Thai village road, birds chirping, distant motorbike, light breeze",
    "src": "../sfx-library/7b5d915a0e8f3c6d.mp3"
+  },
+  {
+   "name": "knock1",
+   "prompt": "one soft knuckle knock on a thin wooden wall inside a quiet Thai house at night, close, dry",
+   "src": "../sfx-library/c0cfb5c2aa0e8e84.mp3"
+  },
+  {
+   "name": "knock2",
+   "prompt": "two soft knuckle knocks on a thin wooden wall inside a quiet Thai house at night, evenly spaced, close, dry",
+   "src": "../sfx-library/47599e48f4f9c787.mp3"
+  },
+  {
+   "name": "knock3",
+   "prompt": "three slow knocks of a metal spoon tapping a wooden cabinet back, quiet room at night, close",
+   "src": "../sfx-library/92f51bd837620fbb.mp3"
+  },
+  {
+   "name": "shutter",
+   "prompt": "single smartphone camera shutter click, close, quiet room",
+   "src": "../sfx-library/7d45e7e017b1a8ac.mp3"
+  },
+  {
+   "name": "rec",
+   "prompt": "smartphone voice message playback start beep, short soft tone",
+   "src": "../sfx-library/1e1c4e79d4e61e41.mp3"
+  },
+  {
+   "name": "drip",
+   "prompt": "slow water drops falling onto a cotton blanket in a silent wooden bedroom, soft dull taps",
+   "src": "../sfx-library/0981dcf50a053688.mp3"
+  },
+  {
+   "name": "cloth",
+   "prompt": "a cotton blanket pulled back off a small bed, short cloth slide",
+   "src": "../sfx-library/089d0be1097f4ed4.mp3"
+  },
+  {
+   "name": "bowl",
+   "prompt": "ceramic bowl of rice porridge with a spoon, set down softly on a wooden shelf, one clink",
+   "src": "../sfx-library/ba3335440b8b4391.mp3"
+  },
+  {
+   "name": "night",
+   "prompt": "quiet night ambience by a rural Thai canal, crickets, frogs, distant dog, light water lapping",
+   "src": "../sfx-library/12a352c112e91c6c.mp3"
+  },
+  {
+   "name": "morning",
+   "prompt": "bright early morning ambience in a Thai canal village, birds, distant rooster, light breeze",
+   "src": "../sfx-library/7bcb61746048a214.mp3"
   }
  ]
 };

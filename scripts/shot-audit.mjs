@@ -2,7 +2,9 @@
 // pacing / quota rules in .claude/skills/thai-twist-short/references/cinematography.md (§1 vocabulary, §6 quotas).
 //   node scripts/shot-audit.mjs episodes/<slug> [--list]        (npm run shots -- episodes/<slug>)
 // Portrait: one report for the whole film. Landscape: one per chapter (chapters over 90 s get the angle/device
-// quota) plus film-wide totals. Advisory: always exits 0; fix every ✗ before drawing scenes.
+// quota) plus film-wide totals. Advisory: always exits 0. Every ✗ is a question to answer on the Board frame (fix it,
+// or write one line on why the shot is right as it is): the numbers serve the picture (directing.md §8), not the reverse.
+// Also: shots with no `note` (the one-sentence picture, directing.md §2) and the same framing of one set repeated.
 import fs from 'node:fs';
 import path from 'node:path';
 import { episodeDir, loadStory, clock } from './lib.mjs';
@@ -103,6 +105,23 @@ if (landscape && S.chapters.length) {
   ok(shots.filter(s => s.tokens.includes('snap')).length <= 3, `snap shots ${shots.filter(s => s.tokens.includes('snap')).length} (level 3: ≤ 3)`);
 }
 
+// directing.md §2: every camera shot carries its picture in one sentence before anything is drawn
+const camShots = shots.filter(s => s.group !== 'CARD');
+const noNote = camShots.filter(s => !String(RAW[s.i]?.note ?? '').trim());
+lines.push('\npictures');
+ok(noNote.length === 0, `${camShots.length - noNote.length}/${camShots.length} camera shots have a "note" (the picture in one sentence)${noNote.length ? ` — missing: ${noNote.slice(0, 12).map(s => s.i).join(' ')}${noNote.length > 12 ? ' …' : ''}` : ''}`);
+// the same set from the same camera, again and again: one picture zoomed is not coverage (directing.md §0)
+const frameKey = s => { const d = RAW[s.i]?.data ?? {}; return `${s.scene}:${s.view ?? ''}:${JSON.stringify(d.cam ?? null)}`; };
+const seen = new Map();
+// inserts of a clue repeat their frame on purpose (cinematography.md A2), so only sets are counted
+for (const s of camShots.filter(s => !INSERT_SCENE.test(s.scene))) seen.set(frameKey(s), [...(seen.get(frameKey(s)) ?? []), s.i]);
+const repeats = [...seen.entries()].filter(([, v]) => v.length > (landscape ? 6 : 2)).sort((a, b) => b[1].length - a[1].length);
+for (const [k, v] of repeats.slice(0, 6)) ok(false, `same framing ${v.length}× (${k.split(':').slice(0, 2).join(':')}, shots ${v.slice(0, 8).join(' ')}${v.length > 8 ? ' …' : ''}) — move the camera inside the place, or build the place as a room (room.tsx)`);
+const byScene = new Map();
+for (const s of camShots) byScene.set(s.scene, (byScene.get(s.scene) ?? 0) + 1);
+const top = [...byScene.entries()].sort((a, b) => b[1] - a[1]).slice(0, 3);
+lines.push(`  · busiest scenes: ${top.map(([k, n]) => `${k} ${n}`).join(' · ')} — a scene used this often must be a place the camera moves through, not one backdrop`);
+
 console.log(lines.join('\n'));
 const bad = lines.filter(l => l.includes('✗')).length;
-console.log(bad ? `\n${bad} ✗ — see cinematography.md §4 (triggers) and §6 (quotas) for what to swap in.` : '\nall variety checks pass — now check on the Board frames that each view really looks like its name.');
+console.log(bad ? `\n${bad} ✗ — each is a question for the Board frame: directing.md (the picture), cinematography.md §4 (triggers) and §6 (guides).` : '\nall variety checks pass — now check on the Board frames that each view really looks like its name.');

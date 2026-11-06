@@ -107,8 +107,10 @@ Name each clue in the outline next to the shots that plant it and the shot that 
 
 ## Shot-plan checklist (gate for step 2 → 3, before any scene is drawn)
 
-- [ ] Every shot's `view` carries a setup suffix (or the scene is an insert/card); every new view will get a preset in its scene.
-- [ ] `npm run shots -- episodes/<slug>` shows no `✗` (same setup twice in a row, EYE share, close share, angle/device counts, distinct setups, dutch, snap).
+- [ ] Every camera shot has a `note`: the picture in one sentence — who does what with what, from where, lit by what (`directing.md` §1). A shot whose note you cannot write is not ready.
+- [ ] Every shot's `view` names what the picture is (a setup suffix, or the scene is an insert/card).
+- [ ] Every cut changes size or angle; each place is seen from several positions, with real close-ups and inserts.
+- [ ] Every `npm run shots -- episodes/<slug>` `✗` is fixed or answered in one line (the numbers are guides; the picture wins).
 - [ ] Every trigger in the story (lie, clue found, villain reveal, paranoia, cornered, flashback, off-screen voice) has the setup `cinematography.md` §4.2 gives it.
 - [ ] Each clue is framed the same way each time it appears; the reveal shot names the planting shot it mirrors, or uses a setup not seen in the 10 shots before it.
 - [ ] The shot before each impact moment is its opposite (wide/still/quiet).

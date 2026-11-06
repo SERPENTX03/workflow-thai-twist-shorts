@@ -12,7 +12,7 @@ Run `npm run check -- episodes/<slug>`. It runs tsc + story-check and writes one
 | Hook (first 2 s) | the anomaly + a specific number/rule/time is readable at frame 0; something moves within 0.5 s |
 | Readability at phone size | every caption readable with the frame at phone width; nothing important under the caption band or in the bottom 380 px; faces ≥ ~120 px |
 | Motion quality | **hands: ≤ 2 per figure, none doubled on one side, held objects under a hand (`hands-poses.md`)** — any doubled hand caps this at 5; no dead shot; camera moves eased; pops land on beats; nothing jitters across seams |
-| Variety | no two consecutive shots of the same type or setup (see art-direction → shot vocabulary); `npm run shots` clean; each `-low` / `-high` / `-fif` / `-pov` view really looks like its name, with foreground / midground / background separated (`cinematography.md`); not one palette for the whole film; a new visual event every 2–4 s |
+| Direction + light | every Board frame matches its `note` and runs the storyboard check in `directing.md` §7: it reads in one second at phone size; sizes change on every cut and the film has real close-ups (head about half the frame), inserts, wides that show the place, and low / high angles; places are seen from several positions, not one backdrop zoomed (`npm run shots` "same framing" lines answered); light comes from something in the frame and pools, mid-tones sink, the face is the brightest thing near it; perspective holds; the world is dressed, not an empty wall; each `-low` / `-pov` / `-fif` view looks like its name. A frame lit evenly from nowhere, or a run of the same picture, caps this at 6; a contact-sheet row that looks like one image caps it at 5 |
 | Story clarity | each clue is visible on screen 3+ times before the reveal; the reveal frame shows its proof (photo, date, bandage, hollow dot) |
 | Sound sync | `hit`/`bighit` on cuts; voice never crosses a cut (no `⚠ OVER`); drone dip before the reveal; every speaker matches the cast in `voices.md` (gender, age, one role each) when listened to — any wrong voice caps this score at 5 |
 | Value + pull | a fact, rule or number on screen every 3–5 shots (survival/folklore); something counts at least every ~10 s; at least one close-up and one diagram; the ending opens the next episode (cliffhanger + ตอนต่อไป card) when it is a series |
@@ -31,7 +31,10 @@ Report the scores to the user in a short table with one line on what was fixed i
 - Clue missed → hold it longer, ring it in red on its own shot, or put it on the map.
 - Reveal flat → make it a 4-beat shot, `bighit` on beat 0, `voLead` 0.5, red caption, and a blur-to-sharp or flip on the proof.
 - Too many red boxes → keep the full box on 2–4 turn lines; turn the rest into `[gold]` or `{red}` keyword marks.
-- Same-looking shots in a row → swap one for a close-up of the object the line is about, or a diagram of the mechanism.
+- Same-looking shots in a row → rewrite their `note`s as different pictures: a close-up of the object the line is about, the listener's face, a hand, the place from the other side of the room, or a diagram of the mechanism.
+- One backdrop for a whole scene → build the place with `room.tsx` and shoot it from several positions (`directing.md` §3).
+- "Close-up" that is really waist-up → set `data.cam` at z ≈ 3–3.6 on the head (the `Stage` auto-close is a medium).
+- Flat frame (even light, figure dead centre, wall parallel to the screen, floating feet) → one source you can see + `data.lightAt`, `LightVeil` with a hole at that light, the lead moved to a third (`cx = x ± W/(6z)`), the place rebuilt in perspective (or `PerspFloor` + `SideWall` over an old set), `Far dim` at night (`depth-light.md` §9 fix table).
 - Nothing to learn → add a stat tile, meter or checklist with a checked fact to the knowledge shots.
 - Flat ending → cliffhanger line with "…" on a 4-beat shot, then the `next` card.
 

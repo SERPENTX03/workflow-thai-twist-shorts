@@ -9,6 +9,7 @@ import {EPISODES} from './episodes';
 
 
 import {GhostMoneyCoverA, GhostMoneyCoverB, GhostMoneyCoverC} from './episodes/ghost-money/cover';
+import {SameChildCoverA, SameChildCoverB, SameChildCoverC} from './episodes/same-child/cover';
 
 export const Root: React.FC = () => (
   <>
@@ -21,6 +22,9 @@ export const Root: React.FC = () => (
     <Still id="GhostMoneyCoverA" component={GhostMoneyCoverA} width={1920} height={1080} />
     <Still id="GhostMoneyCoverB" component={GhostMoneyCoverB} width={1920} height={1080} />
     <Still id="GhostMoneyCoverC" component={GhostMoneyCoverC} width={1920} height={1080} />
+    <Still id="SameChildCoverA" component={SameChildCoverA} width={1920} height={1080} />
+    <Still id="SameChildCoverB" component={SameChildCoverB} width={1920} height={1080} />
+    <Still id="SameChildCoverC" component={SameChildCoverC} width={1920} height={1080} />
 
 
 

@@ -5,6 +5,17 @@ import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 
+// Route temp directory to .remotion-temp in workspace to avoid filling C: drive
+// (ROOT is declared further down; a const can't be read before its line, so resolve the repo root here directly)
+const remotionTempDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '.remotion-temp');
+if (!fs.existsSync(remotionTempDir)) {
+  try {
+    fs.mkdirSync(remotionTempDir, { recursive: true });
+  } catch {}
+}
+process.env.TEMP = remotionTempDir;
+process.env.TMP = remotionTempDir;
+
 export function episodeDir(arg) {
   if (!arg) die('usage: node scripts/<script>.mjs episodes/<slug>');
   const dir = path.resolve(arg);

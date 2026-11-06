@@ -26,6 +26,7 @@
     "chapter": "node scripts/chapter.mjs",
     "story": "node scripts/story-check.mjs",
     "shots": "node scripts/shot-audit.mjs",
+    "look": "node scripts/look-audit.mjs",
     "qc": "node scripts/qc.mjs",
     "gallery": "node scripts/gallery.mjs",
     "final": "node scripts/finalize.mjs",

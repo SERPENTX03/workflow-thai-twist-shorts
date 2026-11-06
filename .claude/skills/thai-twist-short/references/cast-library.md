@@ -105,6 +105,12 @@ export const ROSTER: Record<string, RosterEntry> = {
 };
 ```
 
+> [!CAUTION]
+> **กฎเหล็ก: ห้ามปล่อยให้ตัวละครในท่าทาง Pose หรือของที่ดึงจาก Gallery สวมชุด Template เริ่มต้น**
+> โมเดล Pose เช่น `man-sit`, `woman-sit`, `man-crouch` หรือยานพาหนะ/ฉากจาก Gallery (เช่น `Motorcycle`, `CarInterior`) โดยค่าเริ่มต้นจะมีเพียงเสื้อยืดสีพื้นเรียบๆ (`#torso-shirt`) ซึ่งเป็นของตัวละครเดิม
+> หากตัวละครหลักมีการแต่งกายเฉพาะตัว (เช่น `lead-male-A` สวมแจ็กเก็ตซิปทับเสื้อยืดขาว มีกระเป๋าหน้าอก, `teacher-B` มีปกคอเสื้อ, หรือมีรอยปะ/สัญลักษณ์เฉพาะ) **ต้องนำรายละเอียดชุดจริงของตัวละครตาม `src/cast.json` มาแสดงทับบน Pose นั้นๆ เสมอ** ผ่านพร็อพ `extra: (sym) => ...`, Custom Overlay, หรือ Layering ให้ชุดตรงกับตัวจริง 100% ตลอดทั้งเรื่อง ห้ามหลุดเป็นชุดเสื้อยืดธรรมดาของ Template เป็นอันขาด
+
+
 ## Layer order inside one figure (`<Sprite layers={…}>`)
 
 ```

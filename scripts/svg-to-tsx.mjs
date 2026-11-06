@@ -19,6 +19,7 @@ const KEEP = [...new Set([
   'man-walk', 'man-run', 'man-sit', 'man-crouch', 'man-back', 'man-lie', 'woman-back', 'woman-sit', 'woman-run',
   // arms
   ...['r', 'l'].flatMap(s => ['hold', 'chest', 'offer', 'raise', 'pocket', 'carry', 'reach'].map(p => `arm-${s}-${p}`)),
+  'arm-b-wheel', 'prop-wheel',
   // faces + mouths
   ...['happy', 'laugh', 'sad', 'cry', 'angry', 'scared', 'shock', 'worried', 'smirk', 'tired', 'hollow', 'wary', 'guilty', 'grin'].map(f => `face-${f}`),
   'talk-a', 'talk-e', 'talk-o', 'talk-m',

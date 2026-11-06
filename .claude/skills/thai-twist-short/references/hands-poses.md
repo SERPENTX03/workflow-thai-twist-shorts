@@ -29,6 +29,7 @@ Frame 200 × 520. `Sprite` sets the sleeve colour per character itself (`SLEEVE`
 | pocket | `arm-r-pocket` `arm-l-pocket` | hand hidden | hand in pocket, hiding a hand (a clue device) |
 | rest | (default arm) | — | nothing to do |
 | carry | `arm-r-carry` + `arm-l-carry` | (150,262) / (50,262) | both hands on one big object: `prop-box` at (100,262) draws both hands |
+| wheel | `arm-b-wheel` + `prop-wheel` | (100,297) | both hands on a steering wheel, driver seen from the front: stage string `arm=b-wheel prop=wheel` on a **stand** pose (the dashboard in the scene hides the legs). `b` = both arms; the prop draws the rim, spokes, hub and then both hands over the rim. For a driver who is not driving (phone, notebook) use `arm=r-hold prop=…` and draw the wheel in the scene |
 
 Grip props (origin = hand centre): `prop-glass`, `-coin`, `-phone`, `-paper`, `-key`, `-flashlight`, `-bottle`, `-radio`, `-candle`, `-map`, `-rope`, `-sack` (hangs below the hand), `-bowl`, `-bandage`. Accessories that sit on a hand (`acc-watch`, `acc-hand-bandage`) use the same anchors — see `cast-library.md`.
 

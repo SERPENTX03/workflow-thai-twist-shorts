@@ -915,5 +915,75 @@
   "dur": 6,
   "influence": 0.5,
   "episode": "ghost-money"
+ },
+ "c0cfb5c2aa0e8e84": {
+  "name": "knock1",
+  "prompt": "one soft knuckle knock on a thin wooden wall inside a quiet Thai house at night, close, dry",
+  "dur": 0.8,
+  "influence": 0.6,
+  "episode": "same-child"
+ },
+ "47599e48f4f9c787": {
+  "name": "knock2",
+  "prompt": "two soft knuckle knocks on a thin wooden wall inside a quiet Thai house at night, evenly spaced, close, dry",
+  "dur": 1.2,
+  "influence": 0.6,
+  "episode": "same-child"
+ },
+ "92f51bd837620fbb": {
+  "name": "knock3",
+  "prompt": "three slow knocks of a metal spoon tapping a wooden cabinet back, quiet room at night, close",
+  "dur": 1.8,
+  "influence": 0.6,
+  "episode": "same-child"
+ },
+ "7d45e7e017b1a8ac": {
+  "name": "shutter",
+  "prompt": "single smartphone camera shutter click, close, quiet room",
+  "dur": 0.5,
+  "influence": 0.6,
+  "episode": "same-child"
+ },
+ "1e1c4e79d4e61e41": {
+  "name": "rec",
+  "prompt": "smartphone voice message playback start beep, short soft tone",
+  "dur": 0.5,
+  "influence": 0.6,
+  "episode": "same-child"
+ },
+ "0981dcf50a053688": {
+  "name": "drip",
+  "prompt": "slow water drops falling onto a cotton blanket in a silent wooden bedroom, soft dull taps",
+  "dur": 2.5,
+  "influence": 0.5,
+  "episode": "same-child"
+ },
+ "089d0be1097f4ed4": {
+  "name": "cloth",
+  "prompt": "a cotton blanket pulled back off a small bed, short cloth slide",
+  "dur": 1,
+  "influence": 0.5,
+  "episode": "same-child"
+ },
+ "ba3335440b8b4391": {
+  "name": "bowl",
+  "prompt": "ceramic bowl of rice porridge with a spoon, set down softly on a wooden shelf, one clink",
+  "dur": 1,
+  "influence": 0.5,
+  "episode": "same-child"
+ },
+ "12a352c112e91c6c": {
+  "name": "night",
+  "prompt": "quiet night ambience by a rural Thai canal, crickets, frogs, distant dog, light water lapping",
+  "dur": 6,
+  "influence": 0.5,
+  "episode": "same-child"
+ },
+ "7bcb61746048a214": {
+  "name": "morning",
+  "prompt": "bright early morning ambience in a Thai canal village, birds, distant rooster, light breeze",
+  "dur": 6,
+  "influence": 0.5,
+  "episode": "same-child"
  }
 }

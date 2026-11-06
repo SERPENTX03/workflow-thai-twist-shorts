@@ -726,6 +726,19 @@
   <symbol id="arm-l-offer" viewBox="0 0 200 520" overflow="visible"><g transform="matrix(-1 0 0 1 200 0)"><use href="#pose-r-offer"/></g></symbol>
   <symbol id="arm-l-raise" viewBox="0 0 200 520" overflow="visible"><g transform="matrix(-1 0 0 1 200 0)"><use href="#pose-r-raise"/></g></symbol>
   <symbol id="arm-l-pocket" viewBox="0 0 200 520" overflow="visible"><g transform="matrix(-1 0 0 1 200 0)"><use href="#pose-r-pocket"/></g></symbol>
+  <!-- wheel: both arms forward onto a steering wheel. arm-b-wheel draws both arms down to the wrists at (62,270) / (138,270);
+       prop-wheel (origin (100,297) = the hands' anchor 'b-wheel') draws the rim, spokes, hub and then both hands over the rim.
+       stage string: "phak@740 arm=b-wheel prop=wheel" (stand pose; the dashboard in the scene hides the legs) -->
+  <symbol id="arm-b-wheel" viewBox="0 0 200 520" overflow="visible"><path d="M58 160 L50 232 L62 268" fill="none" stroke="rgba(0,0,0,.26)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" transform="translate(3 6)"/><path d="M58 160 L50 232 L62 268" fill="none" stroke="var(--sleeve, var(--shirt, #2f5f8f))" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/><path d="M58 160 L50 232 L62 268" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/><path d="M142 160 L150 232 L138 268" fill="none" stroke="rgba(0,0,0,.26)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" transform="translate(3 6)"/><path d="M142 160 L150 232 L138 268" fill="none" stroke="var(--sleeve, var(--shirt, #2f5f8f))" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/><path d="M142 160 L150 232 L138 268" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="prop-wheel" overflow="visible">
+    <ellipse cx="0" cy="40" rx="104" ry="66" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="20" transform="translate(3 6)"/>
+    <ellipse cx="0" cy="40" rx="104" ry="66" fill="none" stroke="#1c1f24" stroke-width="18"/>
+    <ellipse cx="0" cy="40" rx="104" ry="66" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="3"/>
+    <path d="M-92 52 Q0 70 92 52" fill="none" stroke="#1c1f24" stroke-width="14" stroke-linecap="round"/>
+    <path d="M0 52 L0 100" stroke="#1c1f24" stroke-width="16" stroke-linecap="round"/>
+    <ellipse cx="0" cy="46" rx="30" ry="22" fill="#2a2e35" stroke="#3a3f48" stroke-width="3"/>
+    <circle cx="-38" cy="-21" r="19" fill="var(--skin, #e7b38c)"/><circle cx="38" cy="-21" r="19" fill="var(--skin, #e7b38c)"/>
+  </symbol>
 
   <!-- grip props: origin (0,0) = the hand centre. Draw with transform="translate(x y)" at a hand anchor above. -->
   <symbol id="prop-glass" overflow="visible"><rect x="-17" y="-64" width="34" height="76" rx="5" fill="#dfe9ee" opacity=".85"/><rect x="-15" y="-34" width="30" height="44" rx="3" fill="#8fc4e6" opacity=".9"/><rect x="-17" y="-64" width="34" height="76" rx="5" fill="none" stroke="#9fb4c0" stroke-width="3"/><circle cx="0" cy="0" r="15" fill="var(--skin, #e7b38c)"/></symbol>
