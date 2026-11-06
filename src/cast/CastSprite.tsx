@@ -8,6 +8,9 @@ export const CAST_ANCHORED: readonly string[] = ["prop-wheel","acc-watch","acc-h
 export type CastId = (typeof CAST_IDS)[number];
 /** the jointed build each body walks / runs with (cast/Rig.tsx) */
 export const CAST_BUILD: Record<string, 'pants' | 'wide' | 'skirt' | 'kid' | 'robe'> = {"man":"pants","M1":"pants","M2":"wide","W1":"pants","W2":"skirt","A1":"skirt","E1":"pants","B1":"kid","G1":"kid","din":"pants","woman":"skirt","auntie":"skirt","elder":"pants","raincoat":"pants","student":"pants","kid":"kid","kid-girl":"kid","teen-girl":"skirt","uncle":"wide","young-woman":"pants","grandpa":"pants","grandma":"skirt","monk":"robe","novice":"robe","lead-male-A":"pants","lead-male-B":"pants","lead-female-A":"skirt","lead-female-B":"skirt","villain-male-A":"pants","villain-male-B":"wide","villain-female-A":"pants","villain-female-B":"skirt","father-A":"pants","father-B":"wide","mother-A":"pants","mother-B":"skirt","uncle-family-A":"wide","uncle-family-B":"wide","aunt-family-A":"pants","aunt-family-B":"skirt","na-male-A":"pants","na-male-B":"wide","na-female-A":"pants","na-female-B":"skirt","ar-male-A":"pants","ar-male-B":"wide","ar-female-A":"pants","ar-female-B":"skirt","brother-A":"pants","brother-B":"wide","sister-A":"pants","sister-B":"skirt","younger-brother-A":"kid","younger-brother-B":"kid","younger-sister-A":"kid","younger-sister-B":"kid","paternal-grandfather-A":"pants","paternal-grandfather-B":"wide","paternal-grandmother-A":"skirt","paternal-grandmother-B":"skirt","maternal-grandfather-A":"pants","maternal-grandfather-B":"wide","maternal-grandmother-A":"skirt","maternal-grandmother-B":"skirt","police-A":"pants","police-B":"wide","mechanic-A":"pants","mechanic-B":"wide","photographer-A":"pants","photographer-B":"skirt","detective-A":"pants","detective-B":"wide","teacher-A":"pants","teacher-B":"skirt","man-back":"pants"};
+/** pose-rig parts per person (cast/Pose.tsx): which <id>--skull / --hair / --backhair / --marks-l|r symbols exist,
+ *  whether the head has the shared ears, and short sleeves */
+export const CAST_PARTS: Record<string, {skull?: 1; hair?: 1; backhair?: 1; ears?: 1; short?: 1; marks?: ('l' | 'r')[]}> = {"man":{"skull":1,"hair":1,"ears":1},"M1":{"skull":1,"hair":1,"ears":1},"M2":{"skull":1,"hair":1,"ears":1},"W1":{"skull":1,"hair":1,"ears":1},"W2":{"skull":1,"hair":1,"ears":1},"A1":{"skull":1,"hair":1,"ears":1},"E1":{"skull":1,"hair":1,"ears":1},"B1":{"skull":1,"hair":1,"ears":1},"G1":{"skull":1,"hair":1,"ears":1},"din":{"skull":1,"hair":1,"ears":1},"woman":{"skull":1,"hair":1,"backhair":1},"raincoat":{"skull":1,"hair":1,"ears":1},"student":{"skull":1,"hair":1,"ears":1},"kid":{"skull":1,"hair":1,"ears":1},"teen-girl":{"skull":1,"hair":1,"ears":1},"uncle":{"skull":1,"hair":1,"ears":1},"young-woman":{"skull":1,"hair":1},"grandpa":{"skull":1,"hair":1,"ears":1},"grandma":{"skull":1,"hair":1,"ears":1},"lead-male-A":{"skull":1,"hair":1,"ears":1},"lead-male-B":{"skull":1,"hair":1,"ears":1},"lead-female-A":{"skull":1,"hair":1,"backhair":1},"lead-female-B":{"skull":1,"hair":1,"ears":1},"villain-male-A":{"skull":1,"hair":1,"ears":1,"marks":["r"],"short":1},"villain-male-B":{"skull":1,"hair":1,"ears":1,"marks":["l","r"],"short":1},"villain-female-A":{"skull":1,"hair":1,"ears":1,"marks":["r"]},"villain-female-B":{"skull":1,"hair":1,"ears":1,"marks":["l"]},"father-A":{"skull":1,"hair":1,"ears":1},"father-B":{"skull":1,"hair":1,"ears":1,"short":1},"mother-A":{"skull":1,"hair":1,"ears":1},"mother-B":{"skull":1,"hair":1,"ears":1},"uncle-family-A":{"skull":1,"hair":1,"ears":1},"uncle-family-B":{"skull":1,"hair":1,"ears":1,"short":1},"aunt-family-A":{"skull":1,"hair":1,"ears":1},"na-male-A":{"skull":1,"hair":1,"ears":1},"na-male-B":{"skull":1,"hair":1,"ears":1,"short":1},"na-female-A":{"skull":1,"hair":1,"ears":1},"na-female-B":{"skull":1,"hair":1,"ears":1},"ar-male-A":{"skull":1,"hair":1,"ears":1},"ar-male-B":{"skull":1,"hair":1,"ears":1},"ar-female-A":{"skull":1,"hair":1,"ears":1},"ar-female-B":{"skull":1,"hair":1,"ears":1},"brother-A":{"skull":1,"hair":1,"ears":1},"brother-B":{"skull":1,"hair":1,"ears":1,"short":1},"sister-A":{"skull":1,"hair":1,"ears":1},"sister-B":{"skull":1,"hair":1,"ears":1},"younger-brother-A":{"skull":1,"hair":1,"ears":1},"younger-brother-B":{"skull":1,"hair":1,"ears":1},"younger-sister-A":{"skull":1,"hair":1,"ears":1},"younger-sister-B":{"skull":1,"hair":1,"ears":1},"paternal-grandfather-A":{"skull":1,"hair":1,"ears":1,"short":1},"paternal-grandfather-B":{"skull":1,"hair":1,"ears":1},"paternal-grandmother-A":{"skull":1,"hair":1,"ears":1},"paternal-grandmother-B":{"skull":1,"hair":1,"ears":1},"maternal-grandfather-A":{"skull":1,"hair":1,"ears":1,"short":1},"maternal-grandfather-B":{"skull":1,"hair":1,"ears":1},"maternal-grandmother-A":{"skull":1,"hair":1,"ears":1},"maternal-grandmother-B":{"skull":1,"hair":1,"ears":1},"police-A":{"skull":1,"hair":1,"ears":1},"police-B":{"skull":1,"hair":1,"ears":1,"short":1},"mechanic-A":{"skull":1,"hair":1,"ears":1},"mechanic-B":{"skull":1,"hair":1,"ears":1,"short":1},"photographer-A":{"skull":1,"hair":1,"ears":1},"photographer-B":{"skull":1,"hair":1,"ears":1},"detective-A":{"skull":1,"hair":1,"ears":1},"detective-B":{"skull":1,"hair":1,"ears":1},"teacher-A":{"skull":1,"hair":1,"ears":1,"short":1},"teacher-B":{"skull":1,"hair":1,"ears":1}};
 
 /** Mount once at the top of a composition; <Sprite id="man"/> then references these symbols. */
 export const CastSprite: React.FC = () => (
@@ -67,13 +70,13 @@ export const CastSprite: React.FC = () => (
       <g id="woman-backhair">
         <rect x="30" y="20" width="140" height="190" rx="60" fill="var(--hair, #2a1d18)" />
       </g>
-      <g id="head-bare">
+      <g id="head-bare" style={{ display: "var(--skull-rest,inline)" }}>
         <rect x="88" y="118" width="24" height="26" fill="var(--skin-d, #c98f6b)" />
         <circle cx="100" cy="65" r="65" fill="var(--skin, #e7b38c)" />
       </g>
       <g id="ears">
-        <circle cx="35" cy="78" r="10" fill="var(--skin-d, #c98f6b)" />
-        <circle cx="165" cy="78" r="10" fill="var(--skin-d, #c98f6b)" />
+        <circle cx="35" cy="78" r="10" fill="var(--skin-d, #c98f6b)" style={{ display: "var(--ear-l,inline)" }} />
+        <circle cx="165" cy="78" r="10" fill="var(--skin-d, #c98f6b)" style={{ display: "var(--ear-r,inline)" }} />
       </g>
       <g id="hair-quiff">
         <path d="M29 79 Q16 52 36 26 Q17 22 21 1 Q42 11 57 3 Q76 -22 121 -13 Q177 -12 173 76 L157 52 Q145 32 124 34 Q73 59 48 40Z" fill="var(--hair, #24212a)" />
@@ -807,9 +810,13 @@ export const CastSprite: React.FC = () => (
         </g>
       </g>
       <rect x="60" y="140" width="80" height="160" rx="30" fill="var(--top, #d9c9a8)" />
-      <rect x="89" y="118" width="22" height="26" fill="var(--skin-d, #c98f6b)" />
-      <circle cx="100" cy="68" r="60" fill="var(--skin, #e7b38c)" />
-      <path d="M34 90 C24 20 70 0 100 0 C134 0 178 20 166 90 C160 64 148 46 128 36 C116 52 108 56 100 56 C92 56 84 52 72 36 C52 46 40 64 34 90Z" fill="var(--hair, #2a1d18)" />
+      <g style={{ display: "var(--skull-rest,inline)" }}>
+        <rect x="89" y="118" width="22" height="26" fill="var(--skin-d, #c98f6b)" />
+        <circle cx="100" cy="68" r="60" fill="var(--skin, #e7b38c)" />
+      </g>
+      <g style={{ display: "var(--hair-rest,inline)" }}>
+        <path d="M34 90 C24 20 70 0 100 0 C134 0 178 20 166 90 C160 64 148 46 128 36 C116 52 108 56 100 56 C92 56 84 52 72 36 C52 46 40 64 34 90Z" fill="var(--hair, #2a1d18)" />
+      </g>
       <g style={{ display: "var(--face-rest,inline)" }}>
         <circle cx="78" cy="76" r="6" fill="var(--eye, #1a1a22)" />
         <circle cx="122" cy="76" r="6" fill="var(--eye, #1a1a22)" />
@@ -1272,7 +1279,9 @@ export const CastSprite: React.FC = () => (
       <path d="M100 152 L90 147 L92 157 Z M100 152 L110 147 L108 157 Z" fill="#2d3646" />
       <circle cx="100" cy="152" r="3" fill="#2d3646" />
       <g transform="translate(0 4)">
-        <use href="#hair-bob" />
+        <g style={{ display: "var(--hair-rest,inline)" }}>
+          <use href="#hair-bob" />
+        </g>
         <path d="M66 58 Q78 55 88 58 M112 58 Q122 55 134 58" fill="none" stroke="var(--hair,#20191a)" strokeWidth="3.8" strokeLinecap="round" style={{ display: "var(--face-rest,inline)" }} />
       </g>
     </symbol>
@@ -3302,6 +3311,598 @@ export const CastSprite: React.FC = () => (
       <rect x="48" y="126" width="24" height="20" rx="4" fill="#5c5f66" />
       <circle cx="60" cy="166" r="22" fill="var(--lamp, #ffcf8a)" />
       <circle cx="54" cy="160" r="7" fill="#fff3d6" />
+    </symbol>
+    <symbol id="man--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="man--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-short" />
+        </g>
+    </symbol>
+    <symbol id="M1--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="M1--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-quiff" />
+        </g>
+    </symbol>
+    <symbol id="M2--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="M2--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-curtain" />
+        </g>
+    </symbol>
+    <symbol id="W1--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="W1--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-braid" />
+        </g>
+    </symbol>
+    <symbol id="W2--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="W2--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-pixie" />
+        </g>
+    </symbol>
+    <symbol id="A1--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="A1--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-roll" />
+        </g>
+    </symbol>
+    <symbol id="E1--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="E1--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-part" />
+        </g>
+    </symbol>
+    <symbol id="B1--skull" viewBox="0 0 200 420" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="B1--hair" viewBox="0 0 200 420" overflow="visible">
+        <g>
+          <use href="#hair-tuft" />
+        </g>
+    </symbol>
+    <symbol id="G1--skull" viewBox="0 0 200 420" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="G1--hair" viewBox="0 0 200 420" overflow="visible">
+        <g>
+          <use href="#hair-twins" />
+        </g>
+    </symbol>
+    <symbol id="din--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="din--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-cloud" />
+        </g>
+    </symbol>
+    <symbol id="woman--skull" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <rect x="89" y="118" width="22" height="26" fill="var(--skin-d, #c98f6b)" />
+          <circle cx="100" cy="68" r="60" fill="var(--skin, #e7b38c)" />
+        </g>
+    </symbol>
+    <symbol id="woman--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <path d="M34 90 C24 20 70 0 100 0 C134 0 178 20 166 90 C160 64 148 46 128 36 C116 52 108 56 100 56 C92 56 84 52 72 36 C52 46 40 64 34 90Z" fill="var(--hair, #2a1d18)" />
+        </g>
+    </symbol>
+    <symbol id="woman--backhair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#woman-backhair" />
+        </g>
+    </symbol>
+    <symbol id="raincoat--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="raincoat--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-side" />
+        </g>
+    </symbol>
+    <symbol id="student--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="student--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-messy" />
+        </g>
+    </symbol>
+    <symbol id="kid--skull" viewBox="0 0 200 420" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="kid--hair" viewBox="0 0 200 420" overflow="visible">
+        <g>
+          <use href="#hair-buzz" />
+        </g>
+    </symbol>
+    <symbol id="teen-girl--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="teen-girl--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-ponytail" />
+        </g>
+    </symbol>
+    <symbol id="uncle--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="uncle--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-receding" />
+        </g>
+    </symbol>
+    <symbol id="young-woman--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="young-woman--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-bob" />
+        </g>
+    </symbol>
+    <symbol id="grandpa--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="grandpa--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-tufts" />
+        </g>
+    </symbol>
+    <symbol id="grandma--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="grandma--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-bun" />
+        </g>
+    </symbol>
+    <symbol id="lead-male-A--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="lead-male-A--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-short" />
+        </g>
+    </symbol>
+    <symbol id="lead-male-B--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="lead-male-B--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-lead-male-A" />
+        </g>
+    </symbol>
+    <symbol id="lead-female-A--skull" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <rect x="89" y="118" width="22" height="26" fill="var(--skin-d, #c98f6b)" />
+          <circle cx="100" cy="68" r="60" fill="var(--skin, #e7b38c)" />
+        </g>
+    </symbol>
+    <symbol id="lead-female-A--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <path d="M34 90 C24 20 70 0 100 0 C134 0 178 20 166 90 C160 64 148 46 128 36 C116 52 108 56 100 56 C92 56 84 52 72 36 C52 46 40 64 34 90Z" fill="var(--hair, #2a1d18)" />
+        </g>
+<g transform="translate(0 4)">
+        <g>
+          <use href="#hair-bob" />
+        </g>
+</g>
+    </symbol>
+    <symbol id="lead-female-A--backhair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#woman-backhair" />
+        </g>
+    </symbol>
+    <symbol id="lead-female-B--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="lead-female-B--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-lead-female-B" />
+        </g>
+    </symbol>
+    <symbol id="villain-male-A--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="villain-male-A--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-villain-male-A" />
+        </g>
+    </symbol>
+    <symbol id="villain-male-A--marks-r" viewBox="0 0 200 520" overflow="visible">
+        <g fill="none" stroke="var(--tattoo,#223548)" strokeWidth="2.5" strokeLinecap="round">
+          <path d="M144 252q8 5 16 0M144 264q8-5 16 0M146 274l12 12m0-12-12 12M145 294q8 5 16 0" />
+          <circle cx="152" cy="280" r="2" fill="var(--tattoo,#223548)" stroke="none" />
+        </g>
+    </symbol>
+    <symbol id="villain-male-B--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="villain-male-B--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-villain-male-B" />
+        </g>
+    </symbol>
+    <symbol id="villain-male-B--marks-l" viewBox="0 0 200 520" overflow="visible">
+        <g fill="none" stroke="var(--tattoo,#263834)" strokeWidth="2.6" strokeLinecap="round">
+          <path d="M30 256h16M29 268q8 6 16 0M28 280q8-6 16 0M28 292h16" />
+          <path d="M36 251v46" strokeWidth="2" />
+        </g>
+    </symbol>
+    <symbol id="villain-male-B--marks-r" viewBox="0 0 200 520" overflow="visible">
+        <g fill="none" stroke="var(--tattoo,#263834)" strokeWidth="2.6" strokeLinecap="round">
+          <path d="M154 260q8 6 16 0M155 274q8-6 16 0" />
+        </g>
+    </symbol>
+    <symbol id="villain-female-A--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="villain-female-A--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-villain-female-A" />
+        </g>
+    </symbol>
+    <symbol id="villain-female-A--marks-r" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <rect x="136" y="308" width="24" height="7" rx="3.5" fill="var(--jewel, #e5c158)" />
+        </g>
+    </symbol>
+    <symbol id="villain-female-B--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="villain-female-B--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-villain-female-B" />
+        </g>
+    </symbol>
+    <symbol id="villain-female-B--marks-l" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <rect x="42" y="298" width="22" height="7" rx="3.5" fill="var(--jewel, #e5c158)" />
+        </g>
+    </symbol>
+    <symbol id="father-A--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="father-A--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-father-A" />
+        </g>
+    </symbol>
+    <symbol id="father-B--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="father-B--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-father-B" />
+        </g>
+    </symbol>
+    <symbol id="mother-A--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="mother-A--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-mother-A" />
+        </g>
+    </symbol>
+    <symbol id="mother-B--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="mother-B--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-mother-B" />
+        </g>
+    </symbol>
+    <symbol id="uncle-family-A--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="uncle-family-A--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-uncle-family-A" />
+        </g>
+    </symbol>
+    <symbol id="uncle-family-B--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="uncle-family-B--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-uncle-family-B" />
+        </g>
+    </symbol>
+    <symbol id="aunt-family-A--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="aunt-family-A--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-aunt-family-A" />
+        </g>
+    </symbol>
+    <symbol id="na-male-A--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="na-male-A--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-na-male-A" />
+        </g>
+    </symbol>
+    <symbol id="na-male-B--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="na-male-B--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-na-male-B" />
+        </g>
+    </symbol>
+    <symbol id="na-female-A--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="na-female-A--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-na-female-A" />
+        </g>
+    </symbol>
+    <symbol id="na-female-B--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="na-female-B--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-na-female-B" />
+        </g>
+    </symbol>
+    <symbol id="ar-male-A--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="ar-male-A--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-ar-male-A" />
+        </g>
+    </symbol>
+    <symbol id="ar-male-B--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="ar-male-B--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-ar-male-B" />
+        </g>
+    </symbol>
+    <symbol id="ar-female-A--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="ar-female-A--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-ar-female-A" />
+        </g>
+    </symbol>
+    <symbol id="ar-female-B--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="ar-female-B--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-ar-female-B" />
+        </g>
+    </symbol>
+    <symbol id="brother-A--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="brother-A--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-brother-A" />
+        </g>
+    </symbol>
+    <symbol id="brother-B--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="brother-B--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-brother-B" />
+        </g>
+    </symbol>
+    <symbol id="sister-A--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="sister-A--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-sister-A" />
+        </g>
+    </symbol>
+    <symbol id="sister-B--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="sister-B--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-sister-B" />
+        </g>
+    </symbol>
+    <symbol id="younger-brother-A--skull" viewBox="0 0 200 420" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="younger-brother-A--hair" viewBox="0 0 200 420" overflow="visible">
+        <g>
+          <use href="#hair-identity-younger-brother-A" />
+        </g>
+    </symbol>
+    <symbol id="younger-brother-B--skull" viewBox="0 0 200 420" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="younger-brother-B--hair" viewBox="0 0 200 420" overflow="visible">
+        <g>
+          <use href="#hair-identity-younger-brother-B" />
+        </g>
+    </symbol>
+    <symbol id="younger-sister-A--skull" viewBox="0 0 200 420" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="younger-sister-A--hair" viewBox="0 0 200 420" overflow="visible">
+        <g>
+          <use href="#hair-identity-younger-sister-A" />
+        </g>
+    </symbol>
+    <symbol id="younger-sister-B--skull" viewBox="0 0 200 420" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="younger-sister-B--hair" viewBox="0 0 200 420" overflow="visible">
+        <g>
+          <use href="#hair-identity-younger-sister-B" />
+        </g>
+    </symbol>
+    <symbol id="paternal-grandfather-A--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="paternal-grandfather-A--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-paternal-grandfather-A" />
+        </g>
+    </symbol>
+    <symbol id="paternal-grandfather-B--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="paternal-grandfather-B--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-paternal-grandfather-B" />
+        </g>
+    </symbol>
+    <symbol id="paternal-grandmother-A--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="paternal-grandmother-A--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-paternal-grandmother-A" />
+        </g>
+    </symbol>
+    <symbol id="paternal-grandmother-B--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="paternal-grandmother-B--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-paternal-grandmother-B" />
+        </g>
+    </symbol>
+    <symbol id="maternal-grandfather-A--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="maternal-grandfather-A--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-maternal-grandfather-A" />
+        </g>
+    </symbol>
+    <symbol id="maternal-grandfather-B--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="maternal-grandfather-B--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-maternal-grandfather-B" />
+        </g>
+    </symbol>
+    <symbol id="maternal-grandmother-A--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="maternal-grandmother-A--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-maternal-grandmother-A" />
+        </g>
+    </symbol>
+    <symbol id="maternal-grandmother-B--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="maternal-grandmother-B--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-maternal-grandmother-B" />
+        </g>
+    </symbol>
+    <symbol id="police-A--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="police-A--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-police-A" />
+        </g>
+    </symbol>
+    <symbol id="police-B--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="police-B--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-police-B" />
+        </g>
+    </symbol>
+    <symbol id="mechanic-A--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="mechanic-A--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-mechanic-A" />
+        </g>
+    </symbol>
+    <symbol id="mechanic-B--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="mechanic-B--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-mechanic-B" />
+        </g>
+    </symbol>
+    <symbol id="photographer-A--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="photographer-A--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-photographer-A" />
+        </g>
+    </symbol>
+    <symbol id="photographer-B--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="photographer-B--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-photographer-B" />
+        </g>
+    </symbol>
+    <symbol id="detective-A--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="detective-A--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-detective-A" />
+        </g>
+    </symbol>
+    <symbol id="detective-B--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="detective-B--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-detective-B" />
+        </g>
+    </symbol>
+    <symbol id="teacher-A--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="teacher-A--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-teacher-A" />
+        </g>
+    </symbol>
+    <symbol id="teacher-B--skull" viewBox="0 0 200 520" overflow="visible">
+<use href="#head-bare" />
+    </symbol>
+    <symbol id="teacher-B--hair" viewBox="0 0 200 520" overflow="visible">
+        <g>
+          <use href="#hair-identity-teacher-B" />
+        </g>
     </symbol>
   </svg>
 );

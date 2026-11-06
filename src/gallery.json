@@ -38,6 +38,108 @@
     "man-run-1",
     "man-run-2"
   ],
+  "rig": [
+    {
+      "id": "lead-male-A-turn",
+      "who": "lead-male-A",
+      "figures": [
+        "yaw=-0.5",
+        "",
+        "yaw=0.5"
+      ],
+      "label": "หัน 3/4 · แจ็กเก็ต กระเป๋าอก นาฬิกา"
+    },
+    {
+      "id": "lead-male-A-act",
+      "who": "lead-male-A",
+      "figures": [
+        "yaw=-0.5 armR=raise armL=hold prop=phone worried",
+        "armR=wave armL=chest happy",
+        "yaw=0.5 armR=reach armL=point head=-6 look=0.8"
+      ],
+      "label": "ยก / ถือโทรศัพท์ · โบก · เอื้อม ชี้"
+    },
+    {
+      "id": "lead-female-A-turn",
+      "who": "lead-female-A",
+      "figures": [
+        "yaw=-0.5",
+        "",
+        "yaw=0.5"
+      ],
+      "label": "หัน 3/4 · ผมบ๊อบ ผมยาวด้านหลัง"
+    },
+    {
+      "id": "lead-female-A-act",
+      "who": "lead-female-A",
+      "figures": [
+        "yaw=-0.45 armL=mouth shock",
+        "armL=hip armR=face sad",
+        "yaw=0.5 armR=offer prop=key armL=rest"
+      ],
+      "label": "ปิดปาก · เท้าเอว · ยื่นกุญแจ"
+    },
+    {
+      "id": "villain-male-B-act",
+      "who": "villain-male-B",
+      "figures": [
+        "yaw=-0.4 armL=reach armR=hip angry",
+        "armR=150,-30 armL=pocket smirk",
+        "yaw=0.5 armR=out armL=chest wary"
+      ],
+      "label": "แขนสั้น · รอยสักตามแขน"
+    },
+    {
+      "id": "father-A-act",
+      "who": "father-A",
+      "figures": [
+        "yaw=-0.5 armR=chin armL=hold prop=paper",
+        "armR=head armL=rest tired",
+        "yaw=0.5 armL=offer armR=hold prop=glass"
+      ],
+      "label": "ชุด cotton · แว่น · นาฬิกาข้อมือซ้าย"
+    },
+    {
+      "id": "mother-B-act",
+      "who": "mother-B",
+      "figures": [
+        "yaw=-0.5 armR=lap armL=lap worried",
+        "armR=wave armL=hip",
+        "yaw=0.5 armR=reach head=8 scared"
+      ],
+      "label": "กระโปรง · กระเป๋าผ้า · แว่น"
+    },
+    {
+      "id": "younger-sister-A-act",
+      "who": "younger-sister-A",
+      "figures": [
+        "yaw=-0.5 armR=raise armL=raise happy",
+        "armR=mouth armL=chest scared",
+        "yaw=0.5 armR=point armL=rest"
+      ],
+      "label": "เด็ก · โครง 200×420"
+    },
+    {
+      "id": "police-A-act",
+      "who": "police-A",
+      "figures": [
+        "yaw=-0.5 armR=raise armL=rest angry",
+        "armR=hold armL=hold prop=flashlight",
+        "yaw=0.5 armR=point armL=hip wary"
+      ],
+      "label": "ชุดตำรวจ · นาฬิกา"
+    },
+    {
+      "id": "elder-turn",
+      "who": "elder",
+      "figures": [
+        "yaw=-0.5 armL=chest",
+        "armL=wave",
+        "yaw=0.5 armL=hold"
+      ],
+      "label": "หัวที่วาดเอง: หันทั้งหัว · มือขวาถือเทียน"
+    }
+  ],
   "arms": [
     "arm-r-hold",
     "arm-r-chest",

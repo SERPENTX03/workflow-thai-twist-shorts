@@ -20,6 +20,25 @@ const STAGE = {
 };
 const castSpriteSrc = fs.readFileSync(path.join(ROOT, 'src', 'cast', 'CastSprite.tsx'), 'utf8');
 const CAST_IDS = new Set([...(castSpriteSrc.match(/CAST_IDS = \[([^\]]*)\]/)?.[1] ?? '').matchAll(/"([^"]+)"/g)].map(m => m[1]));
+// pose rig words (src/cast/Pose.tsx): arm presets are the keys of ANCHOR_R
+const poseSrc = fs.readFileSync(path.join(ROOT, 'src', 'cast', 'Pose.tsx'), 'utf8');
+const ARM_PRESETS = new Set([...[...(poseSrc.match(/const ANCHOR_R[^=]*=\s*\{([\s\S]*?)\};/)?.[1] ?? '').matchAll(/(\w+):\s*\[/g)].map(m => m[1]), 'rest', 'none']);
+const RIG_KEYS = new Set(['yaw', 'armL', 'armR', 'head', 'look']);
+const num = v => v !== '' && Number.isFinite(+v);
+/** a rig value, maybe tweened: "0.4", "0>0.5", "rest>wave@6-20" → the problem with it, or '' */
+function rigProblem(k, v) {
+  const [vals, win] = v.split('@');
+  if (win !== undefined && !/^\d+-\d+$/.test(win)) return `"@${win}" should be frames "from-to" (e.g. @6-20)`;
+  for (const x of vals.split('>')) {
+    if (k === 'armL' || k === 'armR') {
+      const [a, b, h] = x.split(',');
+      if (!ARM_PRESETS.has(x) && !(num(a) && (b === undefined || num(b)) && (h === undefined || h === 'nohand')))
+        return `"${x}" is not an arm: use "a,b" degrees or a preset (${[...ARM_PRESETS].join(' ')})`;
+    } else if (!num(x)) return `"${x}" is not a number`;
+    else if ((k === 'yaw' || k === 'look') && Math.abs(+x) > 1) return `${k} runs −1 … 1`;
+  }
+  return '';
+}
 /** poses whose body has no standing shoulders for a pose arm to attach to (keep in step with ActorView's NO_POSE_ARMS) */
 const NO_POSE_ARMS = new Set(['crouch', 'lie']);
 
@@ -94,6 +113,22 @@ S.shots.forEach(s => {
       if (v === undefined) {
         if (!STAGE.poses.has(w) && !STAGE.faces.has(w) && !STAGE.faceMarks.has(w) && !['talk', 'flip'].includes(w))
           err(i, `"${who}": unknown word "${w}" — not a pose, face or flag, so it is ignored. Pick from the library (poses: ${[...STAGE.poses].join(' ')}) or draw the missing one in src/cast/source/cast.svg and list it in hands-poses.md / cast-library.md`);
+      } else if (RIG_KEYS.has(k)) {
+        const why = rigProblem(k, v);
+        if (why) err(i, `"${who}": ${k}=${v} — ${why} (cast-library.md → pose rig)`);
+        else if (pose !== 'stand') warn(i, `"${who}": ${k}= is ignored on a "${pose}" body — the pose rig turns and poses standing people only`);
+        else if (k === 'yaw' && v.split('@')[0].split('>').some(x => Math.abs(+x) > 0.7)) warn(i, `"${who}": yaw=${v} — past ±0.7 the front-view face slides off the skull; use back, a silhouette or a cut instead`);
+      } else if (k === 'faces') {
+        for (const key of v.split(',')) {
+          const [face, at] = key.split('@');
+          if (face !== 'own' && !STAGE.faces.has(face)) err(i, `"${who}": faces=${v} — "${face}" is not a face (${[...STAGE.faces].join(' ')}, or own)`);
+          if (at !== undefined && !/^\d+$/.test(at)) err(i, `"${who}": faces=${v} — "@${at}" should be a frame number`);
+        }
+      } else if (k === 'prop' && v.includes('@')) {
+        const [id, at] = v.split('@');
+        if (!CAST_IDS.has(`prop-${id}`)) err(i, `"${who}": prop=${id} is not in the library (no "prop-${id}" symbol)`);
+        if (!['l', 'r'].includes(at)) err(i, `"${who}": prop=${v} — the hand is @l or @r`);
+        if (!words.some(w => RIG_KEYS.has(w.split('=')[0]))) err(i, `"${who}": prop=${v} — @l / @r picks a hand on the pose rig only; add armL= / armR=, or use arm=l-hold prop=${id}`);
       } else if (['arm', 'prop', 'acc', 'mark'].includes(k) && !(k === 'acc' && v === 'none') && !CAST_IDS.has(`${k}-${v}`)) {
         err(i, `"${who}": ${k}=${v} is not in the library (no "${k}-${v}" symbol) — ASSET GAP: draw it in src/cast/source/cast.svg (right + mirrored left), add it to hands-poses.md, then npm run timeline; do not substitute another pose`);
       }

@@ -26,6 +26,7 @@ const LISTS = {
   GFaces: G.faces,
   GPoses: [...G.poses, ...G.arms],
   GGait: G.gait,
+  GRig: G.rig.map(r => `rig-${r.id}`),
   GProps: G.props,
   GMarks: G.marks,
   GUi: G.ui.map(u => `ui-${u.id}`),
@@ -108,6 +109,7 @@ const manifest = {
     const [, who, pose, step] = id.match(/^(.+)-(walk|run)-(\d)$/);
     return { id, image: img(`${id}.png`), code: `<Actors cast={["who@900 ${pose}"]} />  // จังหวะ ${step} (แทน who ด้วย id ตัวละคร)` };
   }),
+  rig: G.rig.map(r => ({ id: r.id, label: r.label, image: img(`rig-${r.id}.png`), code: r.figures.filter(Boolean).map(f => `"${r.who}@960 ${f}"`).join('  ') })),
   poses: [...G.poses, ...G.arms].map(id => ({ id, image: img(`${id}.png`), code: id.startsWith('arm-') ? `<Sprite id="man" hideArm${id[4].toUpperCase()} layers={['${id}']} />` : `<Sprite id="${id}" />` })),
   props: G.props.map(id => ({ id, image: img(`${id}.png`), code: `<Sprite id="${id}" />` })),
   marks: G.marks.map(id => ({ id, label: wardrobe[id]?.label, image: img(`${id}.png`), code: id.startsWith('hair-') ? `hair="${id.slice(5)}"` : `layers={['${id}']}` })),

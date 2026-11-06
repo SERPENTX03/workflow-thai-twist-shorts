@@ -87,6 +87,7 @@
   .tile-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
   .tile .pic { aspect-ratio: 1; }
   .tile.tall .pic { aspect-ratio: 400 / 560; }
+  .tile.rig .pic { aspect-ratio: 1200 / 560; }
   .tile .body { padding: 8px 10px 10px; gap: 6px; font-family: var(--mono); font-size: 12.5px; }
   .tile .body .copy { font-size: 11px; }
 
@@ -283,6 +284,9 @@
       <h3>เดิน / วิ่ง (rig ข้อต่อ — ที่ใช้จริงในทุกเรื่อง)</h3>
       <p class="hint">pose <code>walk</code> / <code>run</code> ใน <code>data.cast</code> วาดจาก <code>src/cast/Rig.tsx</code> ทุกเฟรม ไม่ใช้ภาพนิ่ง <code>man-walk</code> / <code>man-run</code> · ภาพนี้คือ 3 จังหวะของก้าวเดียว</p>
       <div class="grid tile-grid">${S.gait.map((x) => tile(x, 'tall')).join('')}</div>
+      <h3>หัน 3/4 + แขนข้อต่อ (pose rig)</h3>
+      <p class="hint">ทุกคนที่ยืนได้: <code>yaw=-1…1</code> (0.5 = หันสามส่วนสี่) · <code>armL=</code> / <code>armR=</code> องศา <code>a,b</code> หรือชื่อท่า (hold chest offer raise reach wave point face mouth chin head hip pocket lap out) · <code>head=</code> เอียงหัว · <code>look=</code> เหลือบตา · ใส่ <code>&gt;</code> ให้ขยับในช็อต (<code>yaw=0&gt;0.5</code>) · <code>faces=worried@0,shock@40</code> เปลี่ยนหน้าผ่านการกะพริบ · ใน TSX: <code>&lt;Sprite pose={{yaw: .5, armR: ARM_PRESETS.raise}} /&gt;</code> (<code>src/cast/Pose.tsx</code>)</p>
+      <div class="grid wide-grid">${(S.rig || []).map((x) => tile(x, 'rig')).join('')}</div>
       <h3>ท่าเต็มตัว (ภาพนิ่ง)</h3>
       <div class="grid tile-grid">${bodies.map((x) => tile(x, 'tall')).join('')}</div>
       <h3>แขน (ถือของ / ยื่น / ยก)</h3>

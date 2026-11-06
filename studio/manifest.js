@@ -1,5 +1,5 @@
 window.STUDIO = {
- "built": "2026-11-06T02:38:16.105Z",
+ "built": "2026-11-06T03:06:17.363Z",
  "castSheet": "renders/cast-sheet.png",
  "cast": [
   {
@@ -1843,6 +1843,68 @@ window.STUDIO = {
    "id": "man-run-2",
    "image": "renders/man-run-2.png",
    "code": "<Actors cast={[\"who@900 run\"]} />  // จังหวะ 2 (แทน who ด้วย id ตัวละคร)"
+  }
+ ],
+ "rig": [
+  {
+   "id": "lead-male-A-turn",
+   "label": "หัน 3/4 · แจ็กเก็ต กระเป๋าอก นาฬิกา",
+   "image": "renders/rig-lead-male-A-turn.png",
+   "code": "\"lead-male-A@960 yaw=-0.5\"  \"lead-male-A@960 yaw=0.5\""
+  },
+  {
+   "id": "lead-male-A-act",
+   "label": "ยก / ถือโทรศัพท์ · โบก · เอื้อม ชี้",
+   "image": "renders/rig-lead-male-A-act.png",
+   "code": "\"lead-male-A@960 yaw=-0.5 armR=raise armL=hold prop=phone worried\"  \"lead-male-A@960 armR=wave armL=chest happy\"  \"lead-male-A@960 yaw=0.5 armR=reach armL=point head=-6 look=0.8\""
+  },
+  {
+   "id": "lead-female-A-turn",
+   "label": "หัน 3/4 · ผมบ๊อบ ผมยาวด้านหลัง",
+   "image": "renders/rig-lead-female-A-turn.png",
+   "code": "\"lead-female-A@960 yaw=-0.5\"  \"lead-female-A@960 yaw=0.5\""
+  },
+  {
+   "id": "lead-female-A-act",
+   "label": "ปิดปาก · เท้าเอว · ยื่นกุญแจ",
+   "image": "renders/rig-lead-female-A-act.png",
+   "code": "\"lead-female-A@960 yaw=-0.45 armL=mouth shock\"  \"lead-female-A@960 armL=hip armR=face sad\"  \"lead-female-A@960 yaw=0.5 armR=offer prop=key armL=rest\""
+  },
+  {
+   "id": "villain-male-B-act",
+   "label": "แขนสั้น · รอยสักตามแขน",
+   "image": "renders/rig-villain-male-B-act.png",
+   "code": "\"villain-male-B@960 yaw=-0.4 armL=reach armR=hip angry\"  \"villain-male-B@960 armR=150,-30 armL=pocket smirk\"  \"villain-male-B@960 yaw=0.5 armR=out armL=chest wary\""
+  },
+  {
+   "id": "father-A-act",
+   "label": "ชุด cotton · แว่น · นาฬิกาข้อมือซ้าย",
+   "image": "renders/rig-father-A-act.png",
+   "code": "\"father-A@960 yaw=-0.5 armR=chin armL=hold prop=paper\"  \"father-A@960 armR=head armL=rest tired\"  \"father-A@960 yaw=0.5 armL=offer armR=hold prop=glass\""
+  },
+  {
+   "id": "mother-B-act",
+   "label": "กระโปรง · กระเป๋าผ้า · แว่น",
+   "image": "renders/rig-mother-B-act.png",
+   "code": "\"mother-B@960 yaw=-0.5 armR=lap armL=lap worried\"  \"mother-B@960 armR=wave armL=hip\"  \"mother-B@960 yaw=0.5 armR=reach head=8 scared\""
+  },
+  {
+   "id": "younger-sister-A-act",
+   "label": "เด็ก · โครง 200×420",
+   "image": "renders/rig-younger-sister-A-act.png",
+   "code": "\"younger-sister-A@960 yaw=-0.5 armR=raise armL=raise happy\"  \"younger-sister-A@960 armR=mouth armL=chest scared\"  \"younger-sister-A@960 yaw=0.5 armR=point armL=rest\""
+  },
+  {
+   "id": "police-A-act",
+   "label": "ชุดตำรวจ · นาฬิกา",
+   "image": "renders/rig-police-A-act.png",
+   "code": "\"police-A@960 yaw=-0.5 armR=raise armL=rest angry\"  \"police-A@960 armR=hold armL=hold prop=flashlight\"  \"police-A@960 yaw=0.5 armR=point armL=hip wary\""
+  },
+  {
+   "id": "elder-turn",
+   "label": "หัวที่วาดเอง: หันทั้งหัว · มือขวาถือเทียน",
+   "image": "renders/rig-elder-turn.png",
+   "code": "\"elder@960 yaw=-0.5 armL=chest\"  \"elder@960 armL=wave\"  \"elder@960 yaw=0.5 armL=hold\""
   }
  ],
  "poses": [

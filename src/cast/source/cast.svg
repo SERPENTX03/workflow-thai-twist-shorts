@@ -44,8 +44,8 @@
          so every face-* fits with no offset. A person = body + head-bare + hair-* + ears + eyes-dot.
          Clothes are plain colours (shirt, pants, skirt, shorts vars); a uniform or a raincoat is an acc-* layer on top
          (Sprite layers acc-school, stage acc=school), never drawn into the body. -->
-    <g id="head-bare"><rect x="88" y="118" width="24" height="26" fill="var(--skin-d, #c98f6b)"/><circle cx="100" cy="65" r="65" fill="var(--skin, #e7b38c)"/></g>
-    <g id="ears"><circle cx="35" cy="78" r="10" fill="var(--skin-d, #c98f6b)"/><circle cx="165" cy="78" r="10" fill="var(--skin-d, #c98f6b)"/></g>
+    <g id="head-bare" style="display:var(--skull-rest,inline)"><rect x="88" y="118" width="24" height="26" fill="var(--skin-d, #c98f6b)"/><circle cx="100" cy="65" r="65" fill="var(--skin, #e7b38c)"/></g>
+    <g id="ears"><circle cx="35" cy="78" r="10" fill="var(--skin-d, #c98f6b)" style="display:var(--ear-l,inline)"/><circle cx="165" cy="78" r="10" fill="var(--skin-d, #c98f6b)" style="display:var(--ear-r,inline)"/></g>
     <!-- hair: drawn after head-bare, before ears (the bob covers the ears: skip them) -->
     <g id="hair-quiff"><path d="M29 79 Q16 52 36 26 Q17 22 21 1 Q42 11 57 3 Q76 -22 121 -13 Q177 -12 173 76 L157 52 Q145 32 124 34 Q73 59 48 40Z" fill="var(--hair, #24212a)"/></g>
     <g id="hair-curtain"><path d="M30 86 Q12 2 81 -7 Q96 -9 101 4 Q129 -19 154 0 Q184 17 174 90 L154 69 Q155 38 116 26 L101 13 Q97 43 72 52 L49 66 L47 87Z" fill="var(--hair, #24212a)"/></g>
@@ -541,10 +541,10 @@
     <g style="display:var(--arm-l-rest,inline)"><line x1="60" y1="160" x2="54" y2="310" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/><line x1="60" y1="160" x2="54" y2="310" stroke="rgba(255,255,255,.07)" stroke-width="32" stroke-linecap="round"/><g transform="translate(54 318) rotate(2.3)"><ellipse cx="9" cy="-2.7" rx="5.6" ry="9" transform="rotate(-30 9 -2.7)" fill="var(--skin, #e7b38c)"/><ellipse cx="0" cy="1.8" rx="12.6" ry="14.8" fill="var(--skin, #e7b38c)"/></g></g>
     <g style="display:var(--arm-r-rest,inline)"><line x1="140" y1="160" x2="146" y2="310" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/><line x1="140" y1="160" x2="146" y2="310" stroke="rgba(255,255,255,.07)" stroke-width="32" stroke-linecap="round"/><g transform="translate(146 318) rotate(-2.3)"><ellipse cx="-9" cy="-2.7" rx="5.6" ry="9" transform="rotate(30 -9 -2.7)" fill="var(--skin, #e7b38c)"/><ellipse cx="0" cy="1.8" rx="12.6" ry="14.8" fill="var(--skin, #e7b38c)"/></g></g>
         <rect x="60" y="140" width="80" height="160" rx="30" fill="var(--top, #d9c9a8)"/>
-    <rect x="89" y="118" width="22" height="26" fill="var(--skin-d, #c98f6b)"/>
-    <circle cx="100" cy="68" r="60" fill="var(--skin, #e7b38c)"/>
+    <g style="display:var(--skull-rest,inline)"><rect x="89" y="118" width="22" height="26" fill="var(--skin-d, #c98f6b)"/>
+    <circle cx="100" cy="68" r="60" fill="var(--skin, #e7b38c)"/></g>
     <!-- centre-parted hair framing the face, over the long back hair -->
-    <path d="M34 90 C24 20 70 0 100 0 C134 0 178 20 166 90 C160 64 148 46 128 36 C116 52 108 56 100 56 C92 56 84 52 72 36 C52 46 40 64 34 90Z" fill="var(--hair, #2a1d18)"/>
+    <g style="display:var(--hair-rest,inline)"><path d="M34 90 C24 20 70 0 100 0 C134 0 178 20 166 90 C160 64 148 46 128 36 C116 52 108 56 100 56 C92 56 84 52 72 36 C52 46 40 64 34 90Z" fill="var(--hair, #2a1d18)"/></g>
     <g style="display:var(--face-rest,inline)"><circle cx="78" cy="76" r="6" fill="var(--eye, #1a1a22)"/><circle cx="122" cy="76" r="6" fill="var(--eye, #1a1a22)"/></g>
     <g style="display:var(--face-rest,inline)"><g style="display:var(--mouth-rest,inline)"><ellipse cx="100" cy="99" rx="8" ry="3" fill="var(--eye, #7a3b34)"/></g></g>
   </symbol>
@@ -1527,7 +1527,7 @@
   <path d="M100 152 L90 147 L92 157 Z M100 152 L110 147 L108 157 Z" fill="#2d3646"/>
   <circle cx="100" cy="152" r="3" fill="#2d3646"/>
   <g transform="translate(0 4)">
-    <use href="#hair-bob"/>
+    <g style="display:var(--hair-rest,inline)"><use href="#hair-bob"/></g>
     <path d="M66 58 Q78 55 88 58 M112 58 Q122 55 134 58" fill="none" stroke="var(--hair,#20191a)" stroke-width="3.8" stroke-linecap="round" style="display:var(--face-rest,inline)"/>
   </g>
 </symbol>

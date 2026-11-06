@@ -6,7 +6,7 @@ import {CAST_ANCHORED, CAST_SIZE, CastSprite, type CastId} from './cast/CastSpri
 import {wardrobe} from './cast/outfitPresets';
 import {Sprite} from './cast/Sprite';
 import {RigBody, rigDrop, rigPlan} from './cast/Rig';
-import {ActorView, LAYER_T} from './kit/stage';
+import {ActorView, LAYER_T, parseActor} from './kit/stage';
 import {T} from './engine/theme';
 import {Caption} from './kit/Captions';
 import {Card, Checklist, Chip, Hud, Meter, RuleCard, Stat, Tag} from './kit/ui';
@@ -102,6 +102,29 @@ export const GGait: React.FC = () => {
     <Pane>
       <ActorView a={{who: 'x', x: 200, pose: run ? 'run' : 'walk', face: 'happy'} as any} roster={roster} floor={520} pxPerCm={3} f={0}
         body={{node: <RigBody plan={plan} phase={phase} dir={1} run={run} />, layerT: LAYER_T[plan.base]}} style={{transform: `translateY(${dy}px)`, filter: 'drop-shadow(0 0 0 #000)'}} />
+    </Pane>
+  );
+};
+
+/** 1200x560 pose rig (cast/Pose.tsx): one person three times, each an actor string `who@x <tokens>` — the same
+ *  strings work in data.cast. Shows the turn (yaw −0.5 / 0 / 0.5) and the jointed arms with the costume intact. */
+export const GRig: React.FC = () => {
+  const item = usePick(G.rig);
+  const cm = (castJson as Record<string, {cm?: number}>)[item.who]?.cm ?? 170;
+  const roster = {[item.who]: {cm, symbol: () => item.who as CastId, vars: {}}};
+  return (
+    <Pane bg={`linear-gradient(180deg, ${T.sky1}, ${T.sky0})`}>
+      {item.figures.map((tokens, i) => {
+        const x = 220 + i * 380;
+        return (
+          <React.Fragment key={i}>
+            <FloorShadow x={x} w={cm * 1.15} y={520} />
+            <ActorView a={parseActor(`${item.who}@${x},520 ${tokens}`)} roster={roster} floor={520} pxPerCm={2.75} f={0}
+              style={{filter: 'drop-shadow(3px 0 0 #15121c) drop-shadow(-3px 0 0 #15121c) drop-shadow(0 3px 0 #15121c) drop-shadow(0 -3px 0 #15121c)'}} />
+            <div style={{position: 'absolute', left: x - 180, width: 360, top: 528, textAlign: 'center', fontFamily: 'monospace', fontSize: 15, color: '#e8e2d0'}}>{tokens || '(rest)'}</div>
+          </React.Fragment>
+        );
+      })}
     </Pane>
   );
 };
@@ -517,6 +540,7 @@ export const CastSheet: React.FC = () => (
 export const GALLERY_COMPS = [
   {id: 'GCast', component: GCast, width: 600, height: 640, count: CAST.length},
   {id: 'GGait', component: GGait, width: 400, height: 560, count: G.gait.length},
+  {id: 'GRig', component: GRig, width: 1200, height: 560, count: G.rig.length},
   {id: 'GFaces', component: GFaces, width: 400, height: 400, count: G.faces.length},
   {id: 'GPoses', component: GPoses, width: 400, height: 560, count: G.poses.length + G.arms.length},
   {id: 'GProps', component: GProps, width: 360, height: 360, count: G.props.length},

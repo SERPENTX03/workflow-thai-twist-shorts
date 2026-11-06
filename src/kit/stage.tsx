@@ -11,6 +11,7 @@ import {wardrobe} from '../cast/outfitPresets';
 import {castDefaults} from '../cast/defaults';
 import {RigBody, rigDrop, rigHasLegs, rigPlan} from '../cast/Rig';
 import {HairLayer} from '../cast/Sprite';
+import {ARM_PRESETS, faceAt, layerRole, parseFaceKeys, PoseFigure, propHand, restPose, RIG_ARM, tweenLimb, tweenNum, type Pose} from '../cast/Pose';
 import {Hud} from './ui';
 
 // Landscape "stage": a world drawn in px, a camera that pushes / pans across it, and actors described by short
@@ -22,11 +23,21 @@ import {Hud} from './ui';
 //                   arm=<side>-<pose> (r-hold, l-offer…) · prop=<grip prop> · acc=<accessory> · mark=<mark> · h=<px> · o=<opacity>
 //                   rim=l|r|red|0 (rim light side; default from data.rim, colour from data.light)
 //                   hair=<style> (bob, ponytail, bun… swaps the hairstyle on any standard head)
+//                   pose rig (cast/Pose.tsx, standing people): yaw=-1…1 (0.4 = three-quarter toward screen-right) ·
+//                   armL= / armR= <a,b> degrees or a preset (hold chest offer raise reach wave point face mouth chin head
+//                   hip pocket lap out rest none) · head=<tilt°> · look=-1…1 (dot eyes glance). Any of them tweens across
+//                   the shot with ">" ("yaw=0>0.5", "armR=rest>wave@6-20" = frames 6–20).
+//                   faces=worried@0,shock@40 swaps the face on those frames through a blink ("own" = their own face)
 
 export type Actor = {
   who: string; x: number; y?: number; pose: string; face?: string; talk: boolean; flip: boolean;
   arm?: string; prop?: string; acc?: string; mark?: string; h?: number; o?: number; rim?: string; hair?: string;
+  /** pose rig tokens, raw (tweened per frame in ActorView) */
+  rig?: {yaw?: string; armL?: string; armR?: string; head?: string; look?: string};
+  faces?: string;
 };
+
+const RIG_KEYS = new Set(['yaw', 'armL', 'armR', 'head', 'look']);
 
 const POSES = new Set(['sit', 'back', 'walk', 'run', 'crouch', 'lie', 'stand']);
 const FACES = new Set(['happy', 'laugh', 'sad', 'cry', 'angry', 'scared', 'shock', 'worried', 'smirk', 'tired', 'hollow', 'wary', 'guilty', 'grin']);
@@ -49,6 +60,8 @@ export function parseActor(s: string): Actor {
       else if (k === 'o') a.o = +v;
       else if (k === 'rim') a.rim = v;
       else if (k === 'hair') a.hair = v;
+      else if (k === 'faces') a.faces = v;
+      else if (RIG_KEYS.has(k)) a.rig = {...a.rig, [k]: v};
     } else if (POSES.has(t)) a.pose = t;
     else if (FACES.has(t)) a.face = t;
     else if (FACE_MARK[t]) [a.face, a.mark] = FACE_MARK[t];
@@ -95,15 +108,24 @@ export type ActorProps = {a: Actor; roster: Record<string, RosterEntry>; floor: 
   /** eyes shut this frame (Actors drives it with blinkAt) */
   blink?: boolean;
   /** a jointed body (cast/Rig.tsx) drawn instead of the symbol; layerT replaces the symbol's layer transform */
-  body?: {node: React.ReactNode; layerT?: string}};
+  body?: {node: React.ReactNode; layerT?: string};
+  /** the shot's length in frames, for tweened pose tokens (yaw=0>0.5) */
+  len?: number};
 
 /** faces whose eyes are already shut or curved: no blink over them */
 const NO_BLINK = new Set(['happy', 'laugh', 'cry', 'tired']);
 
 /** One actor standing on the floor line at a.x (feet centre). */
-export const ActorView: React.FC<ActorProps> = ({a, roster, floor, pxPerCm, f, talking, style, blink, body}) => {
-  const r = roster[a.who];
+export const ActorView: React.FC<ActorProps> = ({a: a0, roster, floor, pxPerCm, f, talking, style, blink: blink0, body, len = 90}) => {
+  const r = roster[a0.who];
   if (!r) return null;
+  // faces=worried@0,shock@40: the face of this frame, and a blink on each change
+  let a = a0, blink = blink0;
+  if (a0.faces) {
+    const fk = faceAt(f, parseFaceKeys(a0.faces));
+    a = {...a0, face: fk.face || undefined};
+    blink = blink0 || fk.blink;
+  }
   const sym = r.symbol(a.pose);
   const baseSym = r.symbol('stand');
   const baseDef = castDefaults(baseSym);
@@ -171,37 +193,90 @@ export const ActorView: React.FC<ActorProps> = ({a, roster, floor, pxPerCm, f, t
   const shut = !!blink && !r.sil && !fakeBack && a.pose !== 'back' && !frozen && !NO_BLINK.has(a.face ?? '');
   const top = (a.y ?? floor) - H;
   const left = a.x - W / 2;
+  const lids = shut && (
+    // lids over whatever eyes are drawn: skin patches and a closed line (eyes at 77/123, 72 in the 200×520 frame)
+    <g transform={lt}>
+      <ellipse cx={77} cy={73} rx={13} ry={11} fill="var(--skin, #e0b48c)" />
+      <ellipse cx={123} cy={73} rx={13} ry={11} fill="var(--skin, #e0b48c)" />
+      <path d="M67 74 Q77 79 87 74 M113 74 Q123 79 133 74" stroke="var(--eye, #1a1a22)" strokeWidth={4.5} fill="none" strokeLinecap="round" />
+    </g>
+  );
+  const faceUse = showFace && <use width={200} height={520} href={`#face-${a.face}`} style={talkOn ? ({'--mouth': 'transparent'} as React.CSSProperties) : undefined} />;
+  const talkUse = talkOn && <use width={200} height={520} href={`#${talkShape(f, true)}`} transform={showFace ? 'translate(0 6)' : undefined} />;
+
+  // the pose rig (cast/Pose.tsx): a standing person with yaw= / armL= / armR= / head= / look= turns and acts
+  const plan = a.rig && a.pose === 'stand' && !body ? rigPlan(sym) : undefined;
+  let posed: React.ReactNode;
+  if (plan && a.rig) {
+    const rest = restPose(plan);
+    // arm=r-hold …: the rig draws hold / chest / offer / raise / reach / pocket itself; two-hand poses (carry, wheel)
+    // stay symbols over the body and take both arms (b-) or their own side off the rig
+    const side = poseArm?.[0], name = poseArm?.slice(2) ?? '';
+    const legacy = poseArm && !RIG_ARM.has(name) ? poseArm : undefined;
+    const fromArm = (s: string) => (poseArm && !legacy && side === s ? ARM_PRESETS[name] : undefined);
+    const pose: Pose = {
+      yaw: tweenNum(a.rig.yaw, f, len) ?? 0,
+      headTilt: tweenNum(a.rig.head, f, len) ?? 0,
+      look: tweenNum(a.rig.look, f, len) ?? 0,
+      armL: tweenLimb(a.rig.armL, f, len, plan) ?? fromArm('l') ?? rest.armL,
+      armR: tweenLimb(a.rig.armR, f, len, plan) ?? fromArm('r') ?? rest.armR,
+    };
+    if (legacy && (side === 'l' || side === 'b')) pose.armL = null;
+    if (legacy && (side === 'r' || side === 'b')) pose.armR = null;
+    // a grip prop goes in the posed hand of its side (arm=l-… or only armL= set), else the right
+    const held = a.prop && !legacy ? propHand(a.prop, a.rig.armL, a.rig.armR, poseArm ? side : undefined) : undefined;
+    const accIds = (fakeBack ? [] : [
+      acc && acc !== 'none' ? 'acc-' + acc : '',
+      accessory ? 'acc-' + accessory : '',
+      ...(a.acc !== 'none' ? (defaults.defaultAccessories ?? []).filter(id => id !== 'acc-' + accessory) : []),
+    ]).filter(Boolean);
+    const useAcc = (role: string) => accIds.filter(id => layerRole(id) === role).map(id => (
+      <use key={id} width={200} height={wardrobe[id] ? CAST_SIZE[id as CastId][1] : 520} href={`#${id}`} />
+    ));
+    posed = (
+      <PoseFigure sym={sym} pose={pose} hair={swapHair ? activeHair : undefined} lt={lt} ownFace={!showFace && !talkOn}
+        watch={accIds.includes('acc-wristwatch')}
+        propR={held?.side === 'r' ? held.id : undefined} propL={held?.side === 'l' ? held.id : undefined}
+        under={useAcc('under')}
+        face={<><g transform={lt}>{faceUse}{talkUse}{useAcc('face')}</g>{lids}</>}
+        hat={<><g transform={lt}>{useAcc('hat')}</g>{a.mark && <g transform={lt}><use width={200} height={520} href={`#mark-${a.mark}`} /></g>}</>}
+        body={<>{r.extra?.(sym)}<g transform={lt}>{useAcc('body')}</g></>}
+        over={legacy && (
+          <g transform={at}>
+            <use width={200} height={520} href={`#arm-${legacy}`} />
+            {anchor && <use href={`#prop-${a.prop!.split("@")[0]}`} transform={`translate(${anchor[0]} ${anchor[1]})`} />}
+          </g>
+        )} />
+    );
+  }
   return (
     <div style={{position: 'absolute', left, top, width: W, height: H, opacity: a.o, ...style}}>
       <svg viewBox={`0 0 ${w} ${h}`} width={W} height={H}
         style={{overflow: 'visible', transform: a.flip ? 'scaleX(-1)' : undefined, ...(css as React.CSSProperties)}}>
-        {body ? body.node : <use href={`#${sym}`} />}
-        {r.extra?.(sym)}
-        <g transform={lt}>
-          {swapHair && <HairLayer hair={activeHair!} />}
-          {showFace && <use width={200} height={520} href={`#face-${a.face}`} style={talkOn ? ({'--mouth': 'transparent'} as React.CSSProperties) : undefined} />}
-          {talkOn && <use width={200} height={520} href={`#${talkShape(f, true)}`} transform={showFace ? 'translate(0 6)' : undefined} />}
-          {acc && acc !== 'none' && !fakeBack && <use width={200} height={outfit ? CAST_SIZE['acc-' + acc][1] : 520} href={`#acc-${acc}`} />}
-          {accessory && !fakeBack && <use width={200} height={520} href={`#acc-${accessory}`} />}
-          {!fakeBack && a.acc !== 'none' && (defaults.defaultAccessories ?? []).filter(id => id !== 'acc-' + accessory && !(id === 'acc-wristwatch' && (body || a.arm?.startsWith('l-') || sym.endsWith('-sit') || sym === 'man-crouch' || sym === 'man-lie'))).map(id => <use key={id} width={200} height={520} href={`#${id}`} />)}
-        </g>
-        {!fakeBack && a.acc !== 'none' && (defaults.defaultAccessories ?? []).includes('acc-wristwatch') && sym === 'man-crouch' && (
-          <g transform="translate(66 396) rotate(62 0 -30)">
-            <use href="#acc-watch" />
-          </g>
-        )}
-        <g transform={at}>
-          {poseArm && <use width={200} height={520} href={`#arm-${poseArm}`} />}
-          {anchor && <use href={`#prop-${a.prop}`} transform={`translate(${anchor[0]} ${anchor[1]})`} />}
-        </g>
-        {a.mark && <g transform={lt}><use width={200} height={520} href={`#mark-${a.mark}`} /></g>}
-        {shut && (
-          // lids over whatever eyes are drawn: skin patches and a closed line (eyes at 77/123, 72 in the 200×520 frame)
-          <g transform={lt}>
-            <ellipse cx={77} cy={73} rx={13} ry={11} fill="var(--skin, #e0b48c)" />
-            <ellipse cx={123} cy={73} rx={13} ry={11} fill="var(--skin, #e0b48c)" />
-            <path d="M67 74 Q77 79 87 74 M113 74 Q123 79 133 74" stroke="var(--eye, #1a1a22)" strokeWidth={4.5} fill="none" strokeLinecap="round" />
-          </g>
+        {posed ?? (
+          <>
+            {body ? body.node : <use href={`#${sym}`} />}
+            {r.extra?.(sym)}
+            <g transform={lt}>
+              {swapHair && <HairLayer hair={activeHair!} />}
+              {faceUse}
+              {talkUse}
+              {acc && acc !== 'none' && !fakeBack && <use width={200} height={outfit ? CAST_SIZE['acc-' + acc][1] : 520} href={`#acc-${acc}`} />}
+              {accessory && !fakeBack && <use width={200} height={520} href={`#acc-${accessory}`} />}
+              {!fakeBack && a.acc !== 'none' && (defaults.defaultAccessories ?? []).filter(id => id !== 'acc-' + accessory && !(id === 'acc-wristwatch' && (body || a.arm?.startsWith('l-') || sym.endsWith('-sit') || sym === 'man-crouch' || sym === 'man-lie'))).map(id => <use key={id} width={200} height={520} href={`#${id}`} />)}
+            </g>
+            {!fakeBack && a.acc !== 'none' && (defaults.defaultAccessories ?? []).includes('acc-wristwatch') && sym === 'man-crouch' && (
+              <g transform="translate(66 396) rotate(62 0 -30)">
+                <use href="#acc-watch" />
+              </g>
+            )}
+            <g transform={at}>
+              {poseArm && <use width={200} height={520} href={`#arm-${poseArm}`} />}
+              {anchor && <use href={`#prop-${a.prop!.split("@")[0]}`} transform={`translate(${anchor[0]} ${anchor[1]})`} />}
+            </g>
+            {a.mark && <g transform={lt}><use width={200} height={520} href={`#mark-${a.mark}`} /></g>}
+            {lids}
+          </>
         )}
       </svg>
     </div>
@@ -360,7 +435,7 @@ export const Actors: React.FC<ActorsProps> = ({p, roster, speaking, cast, floor,
             {chairs && a.pose === 'sit' && !r.sil && <SeatChair x={x} y={a.y ?? floor} h={bodyH} o={a.o} {...(typeof chairs === 'object' ? chairs : {})} />}
             {living && lightAt && <CastShadow x={x} y={a.y ?? floor} h={a.pose === 'sit' ? bodyH * 0.75 : bodyH} light={lightAt} o={a.o} />}
             {living && <FloorShadow x={x} w={w * (m?.shadow ?? 1)} y={a.y ?? floor} />}
-            <ActorView a={{...a, x}} roster={roster} floor={floor} pxPerCm={pxPerCm} f={p.f} talking={talking && ownsLine(a.who)} blink={blinkAt(p.f, seed)} body={body}
+            <ActorView a={{...a, x}} roster={roster} floor={floor} pxPerCm={pxPerCm} f={p.f} len={p.len} talking={talking && ownsLine(a.who)} blink={blinkAt(p.f, seed)} body={body}
               style={{filter, transform: m && motionCss(m), transformOrigin: '50% 100%'}} />
           </React.Fragment>
         );

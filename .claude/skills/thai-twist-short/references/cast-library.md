@@ -136,6 +136,48 @@ Anything layered on a posed body (face, talk mouth, accessory, mark) takes the *
 
 On the landscape stage, pose `walk` / `run` works for **every person** in the cast: `src/cast/Rig.tsx` redraws legs and arms from joints and puts the figure's own symbol (head, hair, outfit) on top, so faces, `arm=`, `prop=` and `acc=` still fit. The build comes from the body the symbol uses (`legs-pants`, `body-wide`, `body-skirt`, `body-kid`; the monk shuffles under his robe). A new hand-drawn person needs its standing legs in a `display:var(--legs-rest,inline)` group and `data-rig="pants|wide|skirt|kid|robe"` on the symbol. Pets and `crowd` have no rig. Gallery: `GGait`.
 
+## Pose rig — turn three-quarter, act with the arms (`src/cast/Pose.tsx`)
+
+Every **standing** person in `src/cast.json` can turn and gesture without a new drawing. The rig draws the character's own symbol in passes and moves each one its own way, so the costume is the real one (rules 12–13): jacket, collar, chest pocket, outfit `acc-*`, glasses, hats, bags, the wristwatch (moved onto the jointed left wrist), short sleeves, and tattoos / bracelets (carried on the forearm). After what-if-studio's `rig.tsx`, adapted to our drawn cast.
+
+| Field | Range | What it does |
+|---|---|---|
+| `yaw` | −1 … 1, use ±0.3–0.6 | 0.5 = three-quarter toward screen-right. The body narrows and a darker copy shows its turned-away side; the face (eyes, brows, mouth, moles, glasses) slides toward the turn, the hair slides back, the near ear comes onto the cheek, the far ear goes behind the skull, a shade crescent darkens the back of the head. Past ±0.7 the front-view face slides off the skull (story-check warns): use `back` or a silhouette instead. |
+| `armL` / `armR` | `{a, b}` degrees, or a preset | **a** = upper arm from hanging straight down, **+ out** to that arm's own side, − in across the body. **b** = elbow, added to a for the forearm: − folds back in / up. l = screen-left arm. One arm = one sleeve + one hand (`hands-poses.md` rule 1): the rig draws both arms itself, the resting arms are switched off. `null` / `none` = no arm on that side. |
+| presets | `rest hold chest offer raise reach pocket` (= the `arm-*` symbols) · `wave point face mouth chin head hip lap out` | solved once from hand anchors (`ANCHOR_R`, elbows hang down and out), so they fit every build — adults, kids, skirts. `pocket` has no hand. |
+| `headTilt` | degrees, + toward screen-right | the head rocks on the neck |
+| `look` | −1 … 1 | the dot eyes glance inside the face (the character's own face only, not a `face-*`) |
+
+Draw order is automatic: arms hang behind the torso's edge as the drawings do (and over the legs / skirt), a hand across the chest is drawn in front, a hand at the mouth / cheek in front of the head.
+
+**On the stage (actor strings, `data.cast`):**
+
+```
+"phak@820 yaw=0.4 armR=reach armL=hold prop=phone worried"
+"prae@1200 yaw=-0.5 armL=mouth shock head=-6"
+"phak@820 yaw=0>0.5 armR=rest>wave@6-20"        // ">" tweens across the shot, "@from-to" = those frames
+"mali@700 armL=chest faces=worried@0,shock@40"  // face swaps on frame 40 through a blink ("own" = their own face)
+"pho@900 armR=150,-30 armL=pocket prop=key@r"   // prop@l / @r picks the hand
+```
+
+`prop=` goes into a posed hand: the one named with `@l` / `@r`, else the arm in a holding preset (hold offer reach raise out lap point), else the posed arm, else the right. Old `arm=r-hold` strings still work on a posed actor (the rig draws hold / chest / offer / raise / reach / pocket itself; `carry` and `b-wheel` stay symbols and take their arms off the rig). Only `stand` poses: on `sit`, `walk`, `crouch`… the words are ignored and `npm run story` says so.
+
+**In a custom shot (TSX):**
+
+```tsx
+import {ARM_PRESETS, faceAt, poseAt} from '../../cast/Pose';
+// one pose
+<Sprite id="lead-male-A" height={620} pose={{yaw: 0.45, armR: ARM_PRESETS.reach, headTilt: -4}} propL="phone" />
+// keyed: every number eases between keys, a key carries the earlier values forward
+const pose = poseAt(f, [{f: 0, p: {yaw: 0}}, {f: 18, p: {yaw: 0.5, armR: ARM_PRESETS.raise}}, {f: 40, p: {armR: {a: 160, b: -20}}}]);
+const {face, blink} = faceAt(f, [[0, 'worried'], [40, 'shock']]); // swaps through a two-frame blink
+<Sprite id="lead-female-A" pose={pose} hideFace layers={[`face-${face}` as CastId]} />
+```
+
+Helpers: `reachLimb(side, shoulder, target, upper, fore)` solves an arm to a point in the frame (a hand on a door handle), `shouldersOf(plan, yaw)` gives the shoulders, `turnOf(yaw)` the slides. `<PoseFigure>` is the drawing itself, for a hand-built figure.
+
+How it works (for a new character): `scripts/svg-to-tsx.mjs` finds each person's skull (`head-bare` or a `display:var(--skull-rest)` group), hair (`--hair-rest`), back hair (`--backhair-rest`) and arm marks (`--arm-l/r-rest` groups on top of a shared arm) and writes them out as `<id>--skull` / `--hair` / `--backhair` / `--marks-l|r` with `CAST_PARTS`. Ears switch one at a time with `--ear-l` / `--ear-r`. Build a new person from `head-bare` + a hair group in `--hair-rest` and the rig works with no extra step. A hand-drawn head without those groups (`elder`, `monk`, `novice`, `aunt-family-B`) turns as one piece, which reads much weaker: stage those with arms, `back` or close-ups, or give the head the groups. Gallery: `GRig` (studio → ท่าทาง → pose rig).
+
 Any standing figure can lie down: draw it rotated with `translate(0 234) rotate(-90)` in a 520×200 frame (the stage `lie` pose does this). Change pose **on a cut or a beat**, never by morphing.
 
 **Never use `lie` for "looking / reaching under furniture" (bed, car, sofa).** The lying sprite is a standing front view turned 90°, so the face and both hands end up on the same side and the body reads as a flat log beside the dark gap. Use `back` (seen from behind, no face to get wrong) with `prop=flashlight` and `h=` about the furniture height, and aim the light into the gap with `beamX/beamY/beamAngle/beamLen` in the shot `data` (temple-boy `underbed` / `side`). To show something under the furniture, cut to a POV or insert (`planks`, `coin`, a hand) instead of drawing the lying person.
