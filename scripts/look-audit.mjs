@@ -108,6 +108,11 @@ const cam = have.filter(i => !CARD_SCENE.test(S.shots[i].scene));
 const means = cam.map(i => metrics.get(i).mean).sort((a, b) => a - b);
 const median = means.length ? means[Math.floor(means.length / 2)] : 0;
 
+// the first three camera shots are the hook: they must read on a phone with the sound off (directing.md §7.1). The
+// opening frames of rear-cam that failed this measured contrast 49–57, the ones that replaced them 124–184.
+const HOOK = new Set(S.shots.map((_, i) => i).filter(i => !CARD_SCENE.test(S.shots[i].scene)).slice(0, 3));
+const HOOK_CONTRAST = 80;
+
 const issues = [];
 const rowsOut = [];
 for (const i of have) {
@@ -117,6 +122,7 @@ for (const i of have) {
   const why = [];
   if (!card) {
     if (NEED[mood] && m.shadow < NEED[mood]) why.push(`${mood} shot only ${pct(m.shadow)} in shadow (≥ ${pct(NEED[mood])})`);
+    if (HOOK.has(i) && m.contrast < HOOK_CONTRAST) why.push(`opening shot: contrast ${Math.round(m.contrast)} (≥ ${HOOK_CONTRAST}) — "dark on purpose" is no answer here; name the subject you can see in the frame, or light it`);
     const murky = m.shadow >= 0.9 && m.contrast < 50;
     if (murky) why.push(`murky: ${pct(m.shadow)} black and contrast ${Math.round(m.contrast)} — nothing is lit; give the subject the one light (pool, rim, phone glow)`);
     else {

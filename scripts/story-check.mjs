@@ -40,7 +40,7 @@ function rigProblem(k, v) {
   return '';
 }
 /** poses whose body has no standing shoulders for a pose arm to attach to (keep in step with ActorView's NO_POSE_ARMS) */
-const NO_POSE_ARMS = new Set(['crouch', 'lie']);
+const NO_POSE_ARMS = new Set([]);
 
 const dir = episodeDir(process.argv[2]);
 const S = loadStory(dir);
@@ -191,6 +191,17 @@ if (bigs > 1) warn(null, `${bigs} bighits — audio.md says one per film, on the
 const hitShots = [...hardKinds].sort((a, b) => a - b);
 for (let k = 1; k < hitShots.length; k++) if (hitShots[k] - hitShots[k - 1] === 1) warn(hitShots[k], 'hit on consecutive shots — use hits at most every other shot');
 
+// a hand or arm drawn beside an actor is a third arm: the actor already has two (hands-poses.md rules 1–2)
+{
+  const epDir = path.join(ROOT, 'src', 'episodes', path.basename(dir));
+  for (const file of fs.existsSync(epDir) ? fs.readdirSync(epDir).filter(n => n.endsWith('.tsx')) : []) {
+    for (const block of fs.readFileSync(path.join(epDir, file), 'utf8').split(/^(?=(?:export )?const \w+)/m)) {
+      const together = block.split(/^\s*if \(/m).some(b => /<(Actors|JayBike|ActorView|Motorcycle)\b/.test(b) && /<Hand\b/.test(b));
+      if (!together) continue;
+      warn(null, `${file} ${block.match(/const (\w+)/)?.[1] ?? ''}: draws <Hand> next to an actor. Three hands? Pose the actor's own arm instead (arm=r-phone, armR=…), which takes the resting arm away`);
+    }
+  }
+}
 const scenesFile = path.join(ROOT, 'src', 'episodes', path.basename(dir), 'scenes.tsx');
 const scenesSrc = fs.existsSync(scenesFile) ? fs.readFileSync(scenesFile, 'utf8') : '';
 for (const sc of new Set(S.shots.map(s => s.scene))) {

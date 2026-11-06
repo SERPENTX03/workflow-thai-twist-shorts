@@ -15,30 +15,96 @@
     "face-wary",
     "face-guilty",
     "face-grin",
-    "talk-a",
-    "talk-e",
-    "talk-o",
-    "talk-m"
-  ],
-  "poses": [
-    "man-sit",
-    "man-crouch",
-    "man-back",
-    "man-lie",
-    "woman-back",
-    "woman-sit",
-    "monk-sit",
-    "auntie-sit"
+    "face-sleep"
   ],
   "gait": [
-    "man-walk-0",
-    "man-walk-1",
-    "man-walk-2",
-    "man-run-0",
-    "man-run-1",
-    "man-run-2"
+    "lead-male-A-walk-0",
+    "lead-male-A-walk-1",
+    "lead-male-A-walk-2",
+    "lead-male-A-run-0",
+    "lead-male-A-run-1",
+    "lead-male-A-run-2"
   ],
   "rig": [
+    {
+      "id": "lead-male-A-body",
+      "who": "lead-male-A",
+      "figures": [
+        "sit worried",
+        "sit yaw=0.55 armR=hold prop=phone wary",
+        "crouch scared"
+      ],
+      "label": "นั่งหันหน้า · นั่ง 3/4 ถือโทรศัพท์ · ย่อกอดเข่า · แจ็กเก็ตมาเอง"
+    },
+    {
+      "id": "lead-male-A-lie",
+      "who": "lead-male-A",
+      "figures": [
+        "lie sleep mark=zzz",
+        "lie worried armR=chest"
+      ],
+      "label": "นอนหงาย ชันเข่า · flip = หัวไปทางขวา · ใส่ mark=zzz ได้"
+    },
+    {
+      "id": "lead-female-A-body",
+      "who": "lead-female-A",
+      "figures": [
+        "sit sad",
+        "sit yaw=-0.55 armL=hold prop=book@l worried",
+        "crouch cry"
+      ],
+      "label": "นั่ง · นั่ง 3/4 ถือหนังสือ · ย่อร้องไห้ · กระโปรงคลุมเข่า"
+    },
+    {
+      "id": "villain-male-A-body",
+      "who": "villain-male-A",
+      "figures": [
+        "sit smirk",
+        "sit yaw=0.55 angry armR=out",
+        "crouch wary"
+      ],
+      "label": "แขนสั้น รอยสักไปกับแขน"
+    },
+    {
+      "id": "police-A-body",
+      "who": "police-A",
+      "figures": [
+        "sit tired",
+        "sit yaw=-0.5 armL=hold prop=paper wary",
+        "lie sleep"
+      ],
+      "label": "เครื่องแบบครบทุกท่า"
+    },
+    {
+      "id": "mother-B-body",
+      "who": "mother-B",
+      "figures": [
+        "sit worried",
+        "sit yaw=0.5 armR=chest sad",
+        "crouch scared"
+      ],
+      "label": "กระโปรงยาว · แว่น"
+    },
+    {
+      "id": "younger-sister-A-body",
+      "who": "younger-sister-A",
+      "figures": [
+        "sit happy",
+        "sit yaw=0.55 worried",
+        "crouch scared"
+      ],
+      "label": "เด็ก · โครง 200×420"
+    },
+    {
+      "id": "maternal-grandfather-A-body",
+      "who": "maternal-grandfather-A",
+      "figures": [
+        "sit tired",
+        "sit yaw=0.5 armR=chin worried",
+        "lie sleep"
+      ],
+      "label": "หมอฮ้อม ผ้าขาวม้า · ผู้สูงอายุ"
+    },
     {
       "id": "lead-male-A-turn",
       "who": "lead-male-A",
@@ -140,39 +206,20 @@
       "label": "หัวที่วาดเอง: หันทั้งหัว · มือขวาถือเทียน"
     }
   ],
-  "arms": [
-    "arm-r-hold",
-    "arm-r-chest",
-    "arm-r-offer",
-    "arm-r-raise",
-    "arm-r-pocket",
-    "arm-r-carry",
-    "arm-r-reach",
-    "arm-b-wheel"
-  ],
   "props": [
-    "prop-glass",
-    "prop-coin",
     "prop-phone",
+    "prop-flashlight",
+    "prop-book",
     "prop-paper",
     "prop-key",
-    "prop-flashlight",
+    "prop-lantern",
+    "prop-mug",
+    "prop-glass",
     "prop-bowl",
+    "prop-spoon",
+    "prop-coin",
     "prop-box",
-    "prop-wheel",
-    "icon-clock",
-    "icon-warn",
-    "icon-check",
-    "icon-cross",
-    "icon-arrow",
-    "icon-pin",
-    "icon-fire",
-    "set-door",
-    "set-door-open",
-    "set-window",
-    "set-table",
-    "set-chair",
-    "set-bulb"
+    "prop-wheel"
   ],
   "marks": [
     "mark-question",
@@ -256,366 +303,315 @@
       "use": "ติดชื่อครั้งแรกที่ตัวละครโผล่"
     }
   ],
-  "scenes": [
-    {
-      "scene": "room",
-      "nameTh": "ห้องกลางคืน + กระจก",
-      "data": {
-        "hud": "03:00"
-      },
-      "use": "ฉากในห้อง เงาในกระจกคือเครื่องมือหักมุม"
-    },
-    {
-      "scene": "rules",
-      "view": "card",
-      "nameTh": "กฎ (การ์ด)",
-      "data": {
-        "no": "กฎข้อ 1",
-        "lines": [
-          "อย่าวิ่งลงบันได",
-          "ตามเพื่อน"
-        ]
-      },
-      "use": "ฉากกลางวัน + ป้ายชื่อ + การ์ดกฎตกลงมา"
-    },
-    {
-      "scene": "rules",
-      "view": "numbers",
-      "nameTh": "กฎ (ตัวเลข)",
-      "data": {},
-      "use": "ตัวเลขนับถอยหลัง มิเตอร์ เช็กลิสต์"
-    },
-    {
-      "scene": "map",
-      "nameTh": "แผนที่มุมบน",
-      "data": {},
-      "use": "god view: จุดทึบ = คนเป็น, จุดประ = คุณ"
-    },
-    {
-      "scene": "news",
-      "nameTh": "ข่าว/หลักฐาน",
-      "data": {},
-      "use": "ภาพเบลอค่อยชัด + วงแดง (เฉลย)"
-    },
-    {
-      "scene": "next",
-      "nameTh": "ตอนต่อไป",
-      "data": {
-        "ep": "เมื่อไฟดับทั้งเมือง · EP 2"
-      },
-      "use": "การ์ดปิดซีรีส์ ปล่อยซับว่าง"
-    }
-  ],
-  "world": [
-    {
-      "id": "sky-night",
-      "nameTh": "ท้องฟ้ากลางคืน + แนวต้นไม้",
-      "code": "<Sky tone=\"night\" />",
-      "use": "dusk · night · dawn · morning (คนละ tone)"
-    },
-    {
-      "id": "sky-dusk",
-      "nameTh": "ท้องฟ้าเย็น",
-      "code": "<Sky tone=\"dusk\" />",
-      "use": "ย้อนเวลา / ก่อนค่ำ"
-    },
-    {
-      "id": "sky-dawn",
-      "nameTh": "ท้องฟ้ารุ่งเช้า",
-      "code": "<Sky tone=\"dawn\" />",
-      "use": "ฉากจบ / เช้าวันใหม่"
-    },
-    {
-      "id": "sky-morning",
-      "nameTh": "ท้องฟ้าเช้า",
-      "code": "<Sky tone=\"morning\" />",
-      "use": "ฉากโล่ง หลังเรื่องจบ"
-    },
-    {
-      "id": "planks-boards",
-      "nameTh": "ผนังไม้ + พื้นไม้",
-      "code": "<Planks /><Boards />",
-      "use": "พื้นฐานของห้อง / กุฏิ / ทางเดิน"
-    },
-    {
-      "id": "gate-dusk",
-      "nameTh": "ประตูวัด (เย็น)",
-      "code": "<Gate tone=\"dusk\" sign=\"วัดโคกตะเคียน\" />",
-      "use": "sign = ชื่อวัด · year 0–9 = ไทม์แลปส์ผนังเก่า/ต้นไม้โต · open = ประตูเปิดกว้างแค่ไหน"
-    },
-    {
-      "id": "gate-night",
-      "nameTh": "ประตูวัด (กลางคืน)",
-      "code": "<Gate tone=\"night\" sign=\"…\" />",
-      "use": "ฉากหน้าประตูตอนค่ำ"
-    },
-    {
-      "id": "gate-morning",
-      "nameTh": "ประตูวัด (เช้า)",
-      "code": "<Gate tone=\"morning\" sign=\"…\" />",
-      "use": "ฉากจบ"
-    },
-    {
-      "id": "road",
-      "nameTh": "ถนนมองออกจากประตู",
-      "code": "<Road tone=\"dusk\" />",
-      "use": "มองจากในวัดออกไป · voided = ไม่มีอะไรอยู่ข้างนอกเลย"
-    },
-    {
-      "id": "road-voided",
-      "nameTh": "ถนนว่างเปล่า",
-      "code": "<Road tone=\"night\" voided />",
-      "use": "เสาไฟหายไป ท้องฟ้าสีดำ"
-    },
-    {
-      "id": "sala",
-      "nameTh": "ศาลา",
-      "code": "<Sala />",
-      "use": "ศาลาโล่ง หลังคากระเบื้อง เสาขาว เสื่อ"
-    },
-    {
-      "id": "path",
-      "nameTh": "ทางเดินในวัดตอนกลางคืน",
-      "code": "<Path f={f} mud={0} />",
-      "use": "ต้นตะเคียนผูกผ้าแดง เสาไฟ ทางคอนกรีต · mud = พื้นเปียกโคลน"
-    },
-    {
-      "id": "bench",
-      "nameTh": "ม้านั่งหน้าครัว",
-      "code": "<BenchSet f={f} tower />",
-      "use": "tower = เห็นหอระฆังไกล ๆ ด้านขวา"
-    },
-    {
-      "id": "tower",
-      "nameTh": "หอระฆัง",
-      "code": "<TowerShape x={960} y={100} f={f} swing={4} ropeSwing={2} />",
-      "use": "swing = ระฆังแกว่ง · ropeSwing = เชือก · far = เงาไกล"
-    },
-    {
-      "id": "well",
-      "nameTh": "บ่อน้ำเก่า",
-      "code": "<WellSet f={f} />",
-      "use": "ตะแกรงเหล็ก ใบกล้วย ใบไม้เปียกรอบขอบบ่อ"
-    },
-    {
-      "id": "corridor",
-      "nameTh": "ทางเดินระหว่างกุฏิ",
-      "code": "<Corridor f={f} drip={0.5} />",
-      "use": "หลอดไฟกะพริบ · drip = พื้นเปียก"
-    },
-    {
-      "id": "porch",
-      "nameTh": "ระเบียงกุฏิ",
-      "code": "<Porch f={f} />",
-      "use": "ผนังไม้ ประตู ราวระเบียง"
-    }
-  ],
   "places": [
     {
-      "id": "shop-row",
-      "nameTh": "ร้านค้าแถว / ตลาด",
-      "code": "<ShopRow tone=\"day\" />  // หรือ tone=\"dusk\" | \"night\"",
-      "use": "ร้านค้าห้องแถว ตลาดสดริมทาง · เปลี่ยน tone กลางวัน/พลบค่ำ/กลางคืนได้"
+      "id": "gas-station",
+      "nameTh": "ปั๊มน้ำมันริมถนนหลวง",
+      "code": "<GasStation f={f} view=\"front\" tone=\"night\" neon=\"on\" />  // view=\"back\" gate=\"opening\" · truck · patrol · kit/gasstation.tsx",
+      "uses": "GasStation",
+      "cams": "ถนนกว้าง · ข้ามไหล่สองคน · ใกล้ · CCTV ใต้หลังคา · ผ่านสายหัวจ่าย",
+      "good": "ไฟนีออนเป็นแสงหลัก ใช้ neon=\"flick\" ก่อนเกิดเรื่อง",
+      "bad": "ฉากกลางวันสว่างจ้า: ของเด่นคือป้ายไฟ",
+      "tier": "a"
     },
     {
-      "id": "stilt-house",
-      "nameTh": "บ้านไม้ใต้ถุนสูง",
-      "code": "<StiltHouse tone=\"night\" />  // หรือ tone=\"day\" | \"dusk\"",
-      "use": "บ้านไม้ชนบทไทย ชานเรือน บันไดไม้ · เปลี่ยน tone ได้"
+      "id": "gas-station-back",
+      "nameTh": "ปั๊ม: หลังร้าน ประตูสังกะสี",
+      "code": "<GasStation f={f} view=\"back\" gate=\"opening\" />",
+      "uses": "GasStation",
+      "cams": "จากหัวจ่ายมองประตูหลัง · ผ่านช่องประตู",
+      "good": "ทางเข้าที่ไม่ควรเปิด คนมาจากข้างหลัง",
+      "bad": "ฉากที่ต้องเห็นหน้าคนชัด: แสงอยู่หลังเขา",
+      "tier": "a"
     },
     {
-      "id": "canal",
-      "nameTh": "ริมคลอง / สะพานปูน",
-      "code": "<Canal tone=\"dusk\" />  // หรือ tone=\"day\" | \"night\"",
-      "use": "คลองไทย สะพานปูน เสาไฟและเสาโทรเลข · เปลี่ยน tone ได้"
+      "id": "checkpoint",
+      "nameTh": "ด่านตำรวจปากซอย",
+      "code": "<Checkpoint f={f} raise={0} />  // empty · beaconColor(f) ไฟหมุน · kit/checkpoint.tsx",
+      "uses": "Checkpoint",
+      "cams": "ต่ำจากกรวย · ข้ามไหล่ตำรวจ · สายตาตำรวจมองท้ายรถ",
+      "good": "ไฟไซเรนแดง-น้ำเงินกวาดหน้า สลับสีทุกช็อตได้",
+      "bad": "งานเดินกล้องยาว: ไฟหมุนกะพริบทั้งเฟรม",
+      "tier": "a"
     },
     {
-      "id": "spirit-house",
-      "nameTh": "ศาลพระภูมิ",
-      "code": "<SpiritHouse tone=\"night\" />  // หรือ tone=\"day\" | \"dusk\"",
-      "use": "ศาลพระภูมิริมรั้ว จานเครื่องเซ่น ธูปเทียน · เปลี่ยน tone ได้"
+      "id": "cemetery-road",
+      "nameTh": "ถนนลูกรังเข้าสุสาน + ซุ้มประตู",
+      "code": "<CemeteryRoad f={f} tone=\"night\" horizon={470} fog /><CemeteryGate x y s aged />  // tone: night | day | dawn · kit/cemetery.tsx",
+      "uses": "CemeteryRoad",
+      "cams": "กว้างในหมอก · ต่ำจากล้อ · ซุ้มจากล่าง · แสงไฟหน้ารถ",
+      "good": "แสงจากไฟหน้ารถเท่านั้น ฉากหลังหายในหมอก",
+      "bad": "ฉากต้องเล่าเยอะ: โล่งมาก ต้องมีคนหรือรถเป็นจุดเด่น",
+      "tier": "a"
     },
     {
-      "id": "minimart",
-      "nameTh": "ร้านสะดวกซื้อ",
-      "code": "<Minimart tone=\"night\" />  // มืดไฟดับ: <Minimart tone=\"night\" dark />",
-      "use": "เคาน์เตอร์ กระจกร้านสะดวกซื้อ · มีโหมด dark สำหรับฉากไฟดับหรือสยองขวัญ"
+      "id": "sala-8",
+      "nameTh": "ศาลาแปดเหลี่ยมในป่าช้า",
+      "code": "<Sala8 x y s tone=\"night\" box=\"placed\" lit={0.8} />  // box: none | placed | open | can",
+      "uses": "Sala8",
+      "cams": "กว้างผ่านหมอก · ผ่านเสา · โต๊ะจากบน · มุมสูงจากหลังคา",
+      "good": "ที่วางของ จุดนัดพบ แสงตกที่โต๊ะกลาง",
+      "bad": "บทสนทนาหลายคน: พื้นที่เล็ก",
+      "tier": "a"
     },
     {
-      "id": "hospital",
-      "nameTh": "ทางเดินโรงพยาบาล",
-      "code": "<HospitalHall />  // ไฟกะพริบ/มีเตียง: <HospitalHall flick bed />",
-      "use": "โถงโรงพยาบาล ป้ายฉุกเฉิน ม้านั่ง · รองรับไฟกะพริบและเตียงเข็น"
+      "id": "caretaker-hut",
+      "nameTh": "กระท่อมคนเฝ้าสุสาน (กลางวัน)",
+      "code": "<CaretakerHut x y s tone=\"day\" door=\"open\" lantern={0} />  <HutBench />  <Dapple />  <SunRake />  // hutAt() ให้จุดยืน · tone: day | dusk | night",
+      "uses": "CaretakerHut",
+      "cams": "กว้างใต้ต้นไม้ · ต่ำจากประตู · ใกล้ · ข้ามไหล่บนแคร่",
+      "good": "พักความมืดให้คนดู แดดลอดใบไม้ ของในบ้านเป็นเบาะแส",
+      "bad": "ฉากที่ต้องน่ากลัวตลอด: เป็นฉากสว่าง ถ้ากลางคืนใช้ lantern",
+      "tier": "a"
     },
     {
-      "id": "classroom",
-      "nameTh": "ห้องเรียน",
-      "code": "<Classroom tone=\"day\" />  // หรือ tone=\"night\"",
-      "use": "กระดานดำ โต๊ะเรียนไม้ หน้าต่างเปิด · เปลี่ยน tone กลางวันหรือกลางคืนได้"
-    },
-    {
-      "id": "dorm",
-      "nameTh": "หอพัก / ทางเดินห้องพัก",
-      "code": "<DormHall />",
-      "use": "ทางเดินหอพัก ประตูห้องเรียงแถว ป้ายเลขห้อง แสงไฟหลอดนีออน"
-    },
-    {
-      "id": "rice-field",
-      "nameTh": "ทุ่งนาชนบท",
-      "code": "<RiceField tone=\"dusk\" ripe />  // หรือ tone=\"day\"",
-      "use": "ท้องนา คันดิน รวงข้าวสุกสีทองและกระท่อมปลายนา · เปลี่ยน tone ได้"
-    },
-    {
-      "id": "bus-stop",
-      "nameTh": "ศาลารอรถเมล์",
-      "code": "<BusStop tone=\"night\" />  // หรือ tone=\"day\" | \"dusk\"",
-      "use": "ป้ายรถเมล์ริมถนน ม้านั่ง ป้ายตารางเดินรถ · เปลี่ยน tone ได้"
+      "id": "rented-room",
+      "nameTh": "ห้องเช่าแคบ (ในมุมมองจริง)",
+      "code": "<RentedRoom r={RENTED_ROOM.ROOM} screen tube={false} dawn={0} />  // HIGH · CORNER = ตำแหน่งกล้อง · BED_EDGE = จุดนั่ง · kit/rentedroom.tsx",
+      "uses": "RentedRoom",
+      "cams": "จากประตู · จากเพดาน · จากมุมห้อง · ใกล้ขอบเตียง",
+      "good": "แสงเลือกได้ 3 แหล่ง: จอโน้ตบุ๊ก หลอดนีออน หน้าต่างรุ่งสาง",
+      "bad": "บ้านฐานะดี ครอบครัวหลายคน: แคบ คนเดียวเท่านั้น",
+      "tier": "a"
     },
     {
       "id": "highway-road",
-      "nameTh": "ถนนทางหลวง (ถนนเปลี่ยว)",
-      "code": "<SideRoadSet tone=\"dusk\" />  // หรือ tone=\"night\" | \"day\"",
-      "use": "ถนนทางหลวงชนบท เสาหลักกิโลและต้นไม้ · ใช้เดี่ยวๆ หรือนำ Prop มอเตอร์ไซค์มาวางซ้อนได้"
+      "nameTh": "ถนนทางหลวงกลางคืน + คนขี่",
+      "code": "<SideRoadSet tone=\"night\" frame={f} moving />  <Motorcycle x y rider={{...}} />  // tone: dusk | night | day · กฎข้อ 11",
+      "uses": "SideRoadSet",
+      "cams": "ข้างถนน · ต่ำจากล้อ · ไหล่คนขี่ · ไฟหน้าบนถนน · กระจกมองข้าง",
+      "good": "ฉากเดินทาง เล่าเวลาผ่าน คนขี่ท่าเดียวกันทุกเรื่อง",
+      "bad": "มุมหน้าตรง: รถวาดด้านข้าง ใช้มุมต่ำหรือ POV แทน",
+      "tier": "a"
+    },
+    {
+      "id": "shop-row",
+      "nameTh": "ห้องแถว / ตลาด",
+      "code": "<ShopRow tone=\"night\" f={f} signs={[...]} open={[...]} />  // tone: day | dusk | night",
+      "uses": "ShopRow",
+      "cams": "กว้างจากถนน · ต่ำจากประตูเหล็กม้วน · ใกล้",
+      "good": "ถนนร้านปิดตอนดึก คนหนึ่งคนยืนใต้ไฟ",
+      "bad": "ฉากในร้าน: เป็นภาพหน้าร้านด้านเดียว ต้องสร้างห้องเพิ่ม",
+      "tier": "a"
     },
     {
       "id": "child-room",
-      "nameTh": "ห้องนอนเด็ก (แต่งได้ทีละบ้าน)",
-      "code": "<ChildRoom f={f} wall=\"#cfa98a\" blanket=\"rocket\" under=\"shoe\" reflect=\"girl\" door=\"closed\" />  // src/kit/childroom.tsx · กล้อง CHILD_ROOM_CAMS",
-      "use": "ห้องเด็กห้องเดียววาดครั้งเดียว เปลี่ยนสีฝา ผ้าห่ม (rocket/duck) ขีดส่วนสูง ของใต้เตียง กระจกสะท้อน ประตูหลังเปิดเป็นทางมืด · ChildPhoto, KidShoe, ToyCar ใช้เป็น insert ได้"
+      "nameTh": "ห้องนอนเด็ก",
+      "code": "<ChildRoom f={f} wall=\"#cfa98a\" blanket=\"rocket\" under=\"shoe\" reflect=\"girl\" door=\"closed\" />  // CHILD_ROOM_CAMS",
+      "uses": "ChildRoom",
+      "cams": "ตาม CHILD_ROOM_CAMS: room · bed · frame · ใต้เตียง",
+      "good": "ห้องเดิมหลายบ้าน เปลี่ยนสีฝา ผ้าห่ม ของใต้เตียง",
+      "bad": "ห้องวัยรุ่น ผู้ใหญ่: ของในห้องเป็นของเด็ก",
+      "tier": "b"
     },
     {
       "id": "wood-kitchen",
-      "nameTh": "ห้องไม้: ครัว",
-      "code": "<WoodRoom view=\"kitchen\" paper={...} />  // หรือ view=\"dining\" plates={2} | \"hall\" | \"closet\"",
-      "use": "บ้านไม้ไทย ครัว/โต๊ะกินข้าว/ทางเดิน/ตู้เสื้อผ้า · src/kit/village.tsx"
+      "nameTh": "บ้านไม้: ครัว",
+      "code": "<WoodRoom view=\"kitchen\" paper={...} />  // view: kitchen | dining | hall | closet · kit/village.tsx",
+      "uses": "WoodRoom",
+      "cams": "ระยะกลาง ใกล้ · ภาพกว้างยังแบน ใช้เป็นฉากหลังระยะใกล้",
+      "good": "บ้านไม้ชนบท ฉากครอบครัวคุยกัน",
+      "bad": "ภาพกว้างเปิดเรื่อง: เป็นภาพด้านหน้าแบน ควรสร้างด้วย room.tsx",
+      "tier": "b"
     },
     {
       "id": "wood-closet",
-      "nameTh": "ห้องไม้: ตู้เสื้อผ้า",
+      "nameTh": "บ้านไม้: ตู้เสื้อผ้า",
       "code": "<WoodRoom view=\"closet\" jacket />",
-      "use": "ตู้เปิด เสื้อแขวน · jacket = เสื้อคลุมฟ้ามีรอยปะ"
+      "uses": "WoodRoom",
+      "cams": "ใกล้ · ผ่านประตูตู้",
+      "good": "ของในตู้เป็นเบาะแส jacket = เสื้อมีรอยปะ",
+      "bad": "ใช้เป็นฉากหลังยาวนาน: มีจุดสนใจจุดเดียว",
+      "tier": "b"
     },
     {
       "id": "house-front",
-      "nameTh": "หน้าบ้านไม้ + ประตู",
+      "nameTh": "หน้าบ้านไม้ ประตูแง้ม",
       "code": "<HouseFront c=\"#b98a62\" open={0.6} night />",
-      "use": "หน้าบ้าน ประตูแง้ม รั้วเตี้ย · night = หน้าต่างมีไฟ"
+      "uses": "HouseFront",
+      "cams": "จากรั้ว · ใกล้คนหน้าประตู · ผ่านตาแมว (Pov)",
+      "good": "มาถึงบ้าน ประตูเปิดค้าง แสงจากในบ้าน",
+      "bad": "บ้านในเมือง: เป็นบ้านไม้ชนบท",
+      "tier": "b"
     },
     {
       "id": "car-cabin",
-      "nameTh": "ในรถเก๋ง: มุมคนขับมองผ่านกระจกหน้า",
-      "code": "<CarInterior view=\"drive\" f={f} night? moving />  <CarWheel />  <Actors floor={DRIVER.floor} pxPerCm={DRIVER.pxPerCm} />  <CarKnee />  // phak@740 arm=b-wheel prop=wheel · src/kit/car.tsx",
-      "use": "ห้องโดยสารมองจากด้านหน้าผ่านกระจกหน้า: เบาะคนขับซ้าย เบาะข้างคนขับขวา กระจกข้างนอกเสา A แผงหน้าปัดล่าง · คนขับเป็นท่า stand (ใส่เสื้อของตัวละครจริง) มือจับพวงมาลัยด้วย arm=b-wheel prop=wheel · CarKnee บังขา"
+      "nameTh": "ในรถเก๋ง: คนขับ",
+      "code": "<CarInterior view=\"drive\" f={f} night moving />  <CarWheel />  <Actors floor={DRIVER.floor} pxPerCm={DRIVER.pxPerCm} />  <CarKnee />  // arm=b-wheel prop=wheel",
+      "uses": "CarInterior",
+      "cams": "จากฝากระโปรง · กระจกมองหลัง (MirrorFrame)",
+      "good": "คุยกันในรถ เดินทางกลางคืน",
+      "bad": "มุมจากเบาะหลัง: ยังไม่มี ต้องวาดเพิ่ม",
+      "tier": "b"
     },
     {
       "id": "car-seat",
       "nameTh": "ในรถเก๋ง: เบาะข้างคนขับ",
-      "code": "<CarInterior view=\"seat\" f={f} seat=\"new\" />",
-      "use": "โคลสอัพเบาะข้างคนขับ แสงเช้าจากกระจกข้าง · seat=\"torn\" = เบาะเก่ามีสปริงโผล่"
+      "code": "<CarInterior view=\"seat\" f={f} seat=\"torn\" />  // seat=\"new\"",
+      "uses": "CarInterior",
+      "cams": "ใกล้ · insert บนเบาะ",
+      "good": "เบาะแสที่เบาะ ใช้ seat=\"new\"/\"torn\" เล่าเวลาที่ผ่าน",
+      "bad": "ฉากมีคนนั่ง: วาดไว้ไม่มีคน",
+      "tier": "b"
+    },
+    {
+      "id": "car-outside",
+      "nameTh": "รถเก๋ง + กระบะตำรวจ",
+      "code": "<CarOutside x={1360} camera />  <PoliceTruck x={300} f={f} />",
+      "uses": "CarOutside",
+      "cams": "ด้านข้างเท่านั้น",
+      "good": "ตำรวจมาถึง รถจอดหน้าบ้าน",
+      "bad": "รถวิ่งเข้าหากล้อง: วาดด้านข้าง",
+      "tier": "b"
     },
     {
       "id": "school-front",
       "nameTh": "โรงเรียนชนบท: หน้าอาคาร",
-      "code": "<SchoolFront sign=\"โรงเรียนบ้านท่าน้อย\" />  // + StaffBoard",
-      "use": "อาคารเรียน ป้ายชื่อ เสาธง · StaffBoard = ป้ายครูเวร (peeled = ชื่อถูกลอก)"
+      "code": "<SchoolFront sign=\"โรงเรียนบ้านท่าน้อย\" />  <StaffBoard />",
+      "uses": "SchoolFront",
+      "cams": "กว้างเปิดฉาก · ป้ายชื่อใกล้",
+      "good": "ฉากเปิดสถานที่ กลางวัน",
+      "bad": "ฉากกลางคืน: ไม่มีไฟในภาพ",
+      "tier": "b"
     },
     {
       "id": "school-office",
-      "nameTh": "โรงเรียน: ห้องธุรการ / ทางเดิน",
-      "code": "<SchoolRoom view=\"office\" f={f} />  // หรือ view=\"hall\" · วาง <OfficeDesk /> หลัง Actors",
-      "use": "ห้องเวร สมุดลงเวลา พัดลม / ระเบียงทางเดินหน้าห้องเรียน"
+      "nameTh": "โรงเรียน: ห้องธุรการ",
+      "code": "<SchoolRoom view=\"office\" f={f} />  // view=\"hall\" · <OfficeDesk /> หน้าคน",
+      "uses": "SchoolRoom",
+      "cams": "ระยะกลาง ใกล้",
+      "good": "ค้นเอกสาร คุยกับครู",
+      "bad": "ภาพกว้าง: ผนังโล่ง แบน",
+      "tier": "b"
+    },
+    {
+      "id": "school-store",
+      "nameTh": "โรงเรียน: ห้องเก็บอุปกรณ์",
+      "code": "<SchoolStore f={f} camera envelopes={6} />  // reach = มือล้วงหลังตู้",
+      "uses": "SchoolStore",
+      "cams": "ใกล้ตู้ · insert ของในตู้",
+      "good": "ฉากค้นหา เบาะแสในตู้กระจก",
+      "bad": "ห้องทั่วไป: ของเฉพาะเรื่องเยอะ",
+      "tier": "b"
     },
     {
       "id": "copy-shop",
       "nameTh": "ร้านถ่ายเอกสาร",
       "code": "<CopyCounter f={f} />",
-      "use": "เคาน์เตอร์ เครื่องถ่ายเอกสาร ชั้นกระดาษ (เคาน์เตอร์อยู่หน้าตัวละคร)"
-    },
-    {
-      "id": "school-store",
-      "nameTh": "โรงเรียน: ห้องเก็บอุปกรณ์",
-      "code": "<SchoolStore f={f} camera envelopes={6} />  // src/kit/village.tsx",
-      "use": "ตู้รางวัลกระจกมีรูปนักเรียนแต่ละรุ่น ตู้เหล็กแขวนกล้องระดับเด็ก กล่อง ลูกบอล · reach = มือล้วงหลังตู้"
+      "uses": "CopyCounter",
+      "cams": "ข้ามเคาน์เตอร์ ระยะกลาง",
+      "good": "คุยกับคนขาย ตามหาเอกสาร",
+      "bad": "ภาพกว้าง: ฉากหน้าตรง",
+      "tier": "b"
     },
     {
       "id": "dark-passage",
       "nameTh": "ทางเดินมืดหลังผนัง",
-      "code": "<DarkPassage f={f} view=\"passage\" from=\"left\" />  // view: passage | line | deep | meet · src/kit/passage.tsx",
-      "use": "ทางไม้แคบหลังกำแพง หัวตะปูบนพื้น แสงจากประตูทางเข้าทางเดียว · deep + cloth = ผ้าอุดร่องไม้"
+      "code": "<DarkPassage f={f} view=\"passage\" from=\"left\" />  // view: passage | line | deep | meet",
+      "uses": "DarkPassage",
+      "cams": "ทุก view เป็นคนละตำแหน่งกล้องในทางเดินเดียว",
+      "good": "เผยที่ซ่อน แสงเข้าทางเดียว มืดที่สุดของเรื่อง",
+      "bad": "ฉากที่ต้องเห็นรายละเอียด",
+      "tier": "b"
     },
     {
-      "id": "car-outside",
-      "nameTh": "รถเก๋งด้านข้าง + รถตำรวจ",
-      "code": "<CarOutside x={1320} camera />  <PoliceTruck x={300} f={f} />  // src/kit/village.tsx",
-      "use": "รถเก๋งด้านข้าง (camera = กล้องวางบนฝากระโปรง) · กระบะตำรวจไฟไซเรนกะพริบ"
+      "id": "stilt-house",
+      "nameTh": "บ้านไม้ใต้ถุนสูง",
+      "code": "<StiltHouse tone=\"night\" f={f} far />",
+      "uses": "StiltHouse",
+      "cams": "จากลานไกล ๆ เท่านั้น",
+      "good": "ภาพเปิดฉากชนบทกลางคืน ไฟจากในบ้าน",
+      "bad": "ระยะใกล้: เป็นฉากไกล ไม่มีรายละเอียด",
+      "tier": "b"
+    },
+    {
+      "id": "canal",
+      "nameTh": "ริมคลอง สะพานปูน",
+      "code": "<Canal tone=\"dusk\" f={f} />",
+      "uses": "Canal",
+      "cams": "จากฝั่ง ระยะกลาง",
+      "good": "เรื่องน้ำ คนหาย เย็นย่ำ",
+      "bad": "เล่นฉากต่อเนื่องยาว: เป็นฉากด้านเดียว",
+      "tier": "b"
     }
   ],
   "inserts": [
     {
+      "id": "live-stream",
+      "nameTh": "ไลฟ์สด / จอร้าว / กองทอง",
+      "code": "<LiveBadge viewers={214} s f />  <LiveComments items x y faint={i} />  <CrackedGlass w h seed />  <GoldPile x y s f />  // kit/live.tsx",
+      "use": "ภาพไลฟ์จากโทรศัพท์: ป้าย LIVE + จำนวนผู้ชม (viewersAt ไล่ตัวเลขได้), คอมเมนต์ไต่ข้างจอ (faint = คอมเมนต์เล็กจางไว้ซ่อนเบาะแส), รอยร้าวทับจอ, กองเครื่องทองที่จับแสง",
+      "uses": "LiveBadge"
+    },
+    {
       "id": "hand-grip",
       "nameTh": "มือ: กำของ (ปรับสีผิวและแขนเสื้อได้)",
       "code": "<Hand mode=\"grip\" skin=\"#e2b08a\" sleeve=\"#2f5f8f\" />\n// หรือมือเปล่า (แขนสั้น / พับแขน):\n<Hand mode=\"grip\" skin=\"#e2b08a\" />",
-      "use": "กำของแนวนอน (ถือไฟฉาย, ปากกา, พวงมาลัย) · ปรับ sleeve ตามสีเสื้อของตัวละคร หรือละเว้นเพื่อแสดงมือเปล่า"
+      "use": "กำของแนวนอน (ถือไฟฉาย, ปากกา, พวงมาลัย) · ปรับ sleeve ตามสีเสื้อของตัวละคร หรือละเว้นเพื่อแสดงมือเปล่า",
+      "uses": "Hand"
     },
     {
       "id": "hand-open",
       "nameTh": "มือ: แบ / เอื้อม (ปรับสีผิวและแขนเสื้อได้)",
       "code": "<Hand mode=\"open\" skin=\"#e2b08a\" sleeve=\"#2f5f8f\" />\n// ใส่รอยย่นมือผู้สูงวัย:\n<Hand mode=\"open\" skin=\"#e2b08a\" wrinkles />",
-      "use": "ยื่นมือ, รับของ, แตะไหล่, วางมือ · ใส่ wrinkles={true} เพื่อแสดงมือผู้สูงวัย"
+      "use": "ยื่นมือ, รับของ, แตะไหล่, วางมือ · ใส่ wrinkles={true} เพื่อแสดงมือผู้สูงวัย",
+      "uses": "Hand"
     },
     {
       "id": "rain",
       "nameTh": "เส้นฝนทับ close-up",
       "code": "<RainStreaks f={f} />",
-      "use": "ใช้ในฉาก close-up (ฝนในฉากด้านข้างคือ Rain ใน fx.tsx)"
+      "use": "ใช้ในฉาก close-up (ฝนในฉากด้านข้างคือ Rain ใน fx.tsx)",
+      "uses": "RainStreaks"
     },
     {
       "id": "drips",
       "nameTh": "หยดน้ำ",
       "code": "<Drips x={960} y={300} f={f} n={3} to={900} />",
-      "use": "หยดตก วนทุก 40 เฟรม"
+      "use": "หยดตก วนทุก 40 เฟรม",
+      "uses": "Drips"
     },
     {
       "id": "notebook",
       "nameTh": "สมุด + ลายมือ",
       "code": "<Page x y w h rot><Ink text=\"…\" /></Page>",
-      "use": "บันทึก / กฎ · Ink shake 0–1 = ลายมือสั่น"
+      "use": "บันทึก / กฎ · Ink shake 0–1 = ลายมือสั่น",
+      "uses": "Ink"
     },
     {
       "id": "rule-card",
       "nameTh": "การ์ดกฎเต็มจอ",
       "code": "{\"scene\": \"rule\",\"data\": {\"no\": \"กฎข้อ 1\",\"text\": \"บรรทัด 1\nบรรทัด 2\"}}",
-      "use": "RuleCardScene · การ์ดตกลงมา มีเส้นแดงด้านบน"
+      "use": "RuleCardScene · การ์ดตกลงมา มีเส้นแดงด้านบน",
+      "uses": "RuleCardScene"
     },
     {
       "id": "end-card",
       "nameTh": "การ์ดท้าย: กดไลค์ กดติดตาม",
       "code": "{\"scene\": \"endcard\", \"data\": {\"step\": \"like\", \"title\": \"ชื่อเรื่อง\", \"note\": \"เรื่องแต่ง\"}}",
-      "use": "EndCardScene · step like → subscribe → done ลูกศรกดปุ่มให้เอง"
-    },
-    {
-      "id": "wall-clock",
-      "nameTh": "นาฬิกาแขวน",
-      "code": "<WallClock x y t=\"03:52\" r={330} tick={…} />",
-      "use": "เวลาเป็นเบาะแส · tick = เข็มวินาที (เรเดียน)"
+      "use": "EndCardScene · step like → subscribe → done ลูกศรกดปุ่มให้เอง",
+      "uses": "EndCardScene"
     },
     {
       "id": "flashlight",
       "nameTh": "ไฟฉาย",
       "code": "<Beam x y angle len spread a /> · beamAt(f,len,keys)",
-      "use": "แสงกรวย + ตำแหน่งดวงไฟที่เคลื่อน (LightMask ใน horror.tsx)"
+      "use": "แสงกรวย + ตำแหน่งดวงไฟที่เคลื่อน (LightMask ใน horror.tsx)",
+      "uses": "Beam"
     },
     {
       "id": "phone-voice",
       "nameTh": "โทรศัพท์ในมือ (ข้อความเสียง/แชต/โทร)",
       "code": "<PhoneScene p={p} photo={v => ...} />  // src/kit/phone.tsx · view: voice | chat | call | calls | send",
-      "use": "ข้อความทุกคำมาจาก shot.data · view อื่น ๆ (รูปบนจอ) ส่ง photo มาวาดเอง"
+      "use": "ข้อความทุกคำมาจาก shot.data · view อื่น ๆ (รูปบนจอ) ส่ง photo มาวาดเอง",
+      "uses": "PhoneScene"
     },
     {
       "id": "memory-notebook",
       "nameTh": "สมุดจดความจำ (tracked device)",
       "code": "<MemoryNotebook p={p} title=\"สิ่งที่รู้แน่ ๆ\" counter={n => `จำได้ ${n} ข้อ`} />",
-      "use": "data.facts = [[ข้อความ, ok|bad|lost]] · ข้อใหม่เขียนตัวเอง ข้อปลอมสีแดง ข้อที่หายขีดฆ่า + ชิปนับจำนวน"
+      "use": "data.facts = [[ข้อความ, ok|bad|lost]] · ข้อใหม่เขียนตัวเอง ข้อปลอมสีแดง ข้อที่หายขีดฆ่า + ชิปนับจำนวน",
+      "uses": "MemoryNotebook"
     }
   ],
   "camera": [
@@ -623,97 +619,113 @@
       "id": "dutch",
       "nameTh": "กล้องเอียง (Dutch tilt)",
       "code": "\"data\": {\"tilt\": -6}   // หรือ [0, -7] = ค่อยๆ เอียงตลอดช็อต\n// ฉากที่ไม่ใช้ Stage: <Tilt deg={-6} W={W} H={H}>…</Tilt>",
-      "use": "ความระแวง, หลังรู้ว่ามีคนโกหก · 5–8° เอียงทางเดียวทั้งฉาก · การ์ด/HUD ไม่เอียง (S9)"
+      "use": "ความระแวง, หลังรู้ว่ามีคนโกหก · 5–8° เอียงทางเดียวทั้งฉาก · การ์ด/HUD ไม่เอียง (S9)",
+      "uses": "Tilt"
     },
     {
       "id": "fore",
       "nameTh": "ฉากหน้า FG + parallax",
       "code": "<Stage p={p} world={set} fore={<DoorEdge />} foreK={0.4} />\n// ฉากที่ไม่ใช้ Stage: <Fore shift={[dx, dy]} blur={7} dark={0.45}>…</Fore>",
-      "use": "วงกบ, มุ้ง, ไหล่ OTS, เสาไฟ · เบลอ+มืด เลื่อน 1.4× ของกล้อง · ห้ามบังหน้า/เบาะแส (§5)"
+      "use": "วงกบ, มุ้ง, ไหล่ OTS, เสาไฟ · เบลอ+มืด เลื่อน 1.4× ของกล้อง · ห้ามบังหน้า/เบาะแส (§5)",
+      "uses": "Fore"
     },
     {
       "id": "peephole",
       "nameTh": "ตาแมวประตู",
       "code": "<Pov kind=\"peephole\" W={W} H={H} f={f}>{view}</Pov>",
-      "use": "มองผ่านตาแมว เลนส์โป่ง ขอบดำ · ใช้กับคนยืนหน้าประตู (S13)"
+      "use": "มองผ่านตาแมว เลนส์โป่ง ขอบดำ · ใช้กับคนยืนหน้าประตู (S13)",
+      "uses": "Pov"
     },
     {
       "id": "keyhole",
       "nameTh": "รูกุญแจ",
       "code": "<Pov kind=\"keyhole\" W={W} H={H} f={f}>{view}</Pov>",
-      "use": "แอบมองห้องต้องห้าม (S13)"
+      "use": "แอบมองห้องต้องห้าม (S13)",
+      "uses": "Pov"
     },
     {
       "id": "crack",
       "nameTh": "ประตูแง้ม",
       "code": "<Pov kind=\"crack\" open={0.4} W={W} H={H} f={f}>{view}</Pov>",
-      "use": "ช่องประตูแคบ · animate open 0→1 = ประตูค่อยๆ เปิด (S13)"
+      "use": "ช่องประตูแคบ · animate open 0→1 = ประตูค่อยๆ เปิด (S13)",
+      "uses": "Pov"
     },
     {
       "id": "binoculars",
       "nameTh": "กล้องส่องทางไกล",
       "code": "<Pov kind=\"binoculars\" W={W} H={H} f={f}>{view}</Pov>",
-      "use": "สะกดรอยจากระยะไกล (S13)"
+      "use": "สะกดรอยจากระยะไกล (S13)",
+      "uses": "Pov"
     },
     {
       "id": "blinds",
       "nameTh": "ผ่านบานเกล็ด / มู่ลี่",
       "code": "<Pov kind=\"blinds\" open={0.5} sway={0} W={W} H={H} f={f}>{view}</Pov>",
-      "use": "แอบดูจากในบ้าน, voyeur (S12)"
+      "use": "แอบดูจากในบ้าน, voyeur (S12)",
+      "uses": "Pov"
     },
     {
       "id": "phone-cam",
       "nameTh": "กล้องมือถือ (REC)",
       "code": "<Pov kind=\"phone\" rec=\"00:01:42\" W={W} H={H} f={f}>{view}</Pov>",
-      "use": "คลิปที่ตัวละครถ่าย, ไลฟ์, หลักฐานวิดีโอ (S13)"
+      "use": "คลิปที่ตัวละครถ่าย, ไลฟ์, หลักฐานวิดีโอ (S13)",
+      "uses": "Pov"
     },
     {
       "id": "split",
       "nameTh": "แบ่งจอ (โทรศัพท์)",
       "code": "<Split W={W} H={H} angle={8} a={<CallerA />} b={<CallerB />} />",
-      "use": "16:9 ซ้าย/ขวา · 9:16 บน/ล่าง (อัตโนมัติ) · แต่ละช่องจัดเฟรมเหมือนเป็นช็อตเต็ม (S14)"
+      "use": "16:9 ซ้าย/ขวา · 9:16 บน/ล่าง (อัตโนมัติ) · แต่ละช่องจัดเฟรมเหมือนเป็นช็อตเต็ม (S14)",
+      "uses": "Split"
     },
     {
       "id": "cctv",
       "nameTh": "กล้องวงจรปิด",
       "code": "<Cctv W={W} H={H} f={f} cam=\"CAM 03\" time=\"02:14:07\">{view(cctvFrame(f))}</Cctv>",
-      "use": "หลักฐานวิดีโอ · เวลาเดินเอง ต้องตรงกับ HUD · cctvFrame ทำให้ภาพกระตุก (S16)"
+      "use": "หลักฐานวิดีโอ · เวลาเดินเอง ต้องตรงกับ HUD · cctvFrame ทำให้ภาพกระตุก (S16)",
+      "uses": "Cctv"
     },
     {
       "id": "mirror",
       "nameTh": "กระจก / กระจกมองหลัง",
       "code": "<MirrorFrame x={1200} y={120} w={560} h={220} W={W} H={H}>{backSeat}</MirrorFrame>",
-      "use": "ภาพสะท้อนกลับด้าน ซีด · สิ่งที่ต่างจากห้องจริงคือเบาะแส (S15)"
+      "use": "ภาพสะท้อนกลับด้าน ซีด · สิ่งที่ต่างจากห้องจริงคือเบาะแส (S15)",
+      "uses": "MirrorFrame"
     },
     {
       "id": "anti-flat",
       "nameTh": "เฟรม 4 ชั้น (กันภาพแบน)",
       "code": "\"data\": {\"light\": \"noir\", \"lightAt\": [1420, 250], \"cast\": [\"lead-male-A@620\"]}\n<Stage p={p} fore={<Post />} world={<><Far blur={3}><ShopRow tone=\"night\" f={f} /></Far><PerspFloor vx={1250} vy={560} /><Haze y={800} f={f} /><Cone x={1420} y={250} floor={FLOOR} f={f} /><Actors … /></>} />",
-      "use": "FG เสาไฟเบลอ · MG ตัวละครที่ 1/3 + rim + เงายาว · BG ตึกแถวเบลอ + พื้นสอบเข้า · ATMO หมอก · ไฟดวงเดียว มืด ≥ 60 % (depth-light.md)"
+      "use": "FG เสาไฟเบลอ · MG ตัวละครที่ 1/3 + rim + เงายาว · BG ตึกแถวเบลอ + พื้นสอบเข้า · ATMO หมอก · ไฟดวงเดียว มืด ≥ 60 % (depth-light.md)",
+      "uses": "Haze"
     },
     {
       "id": "cast-shadow",
       "nameTh": "เงาทอดยาวจากไฟดวงเดียว",
       "code": "\"data\": {\"lightAt\": [260, 740]}   // Actors วาด CastShadow + rim ฝั่งไฟให้ทุกคน\n<CastShadow x={820} y={FLOOR} h={515} light={[260, 740]} />",
-      "use": "ไฟต่ำ/ไกล = เงายาว, ไฟเหนือหัว = เงาสั้น · ทุกคนในช็อตชี้ไปทางเดียวกัน · ผีไม่มีเงา (noShadow)"
+      "use": "ไฟต่ำ/ไกล = เงายาว, ไฟเหนือหัว = เงาสั้น · ทุกคนในช็อตชี้ไปทางเดียวกัน · ผีไม่มีเงา (noShadow)",
+      "uses": "CastShadow"
     },
     {
       "id": "persp-room",
       "nameTh": "ห้องมีมิติ (ผนังข้าง + พื้นสอบเข้า)",
       "code": "<SideWall side=\"l\" x={420} top={180} vx={960} vy={500} opening={[0.35, 0.6]} />\n<SideWall side=\"r\" x={1500} top={180} vx={960} vy={500} light={0.7} />\n<PerspFloor vx={960} vy={500} c0=\"#6a4a32\" c1=\"#33251a\" />",
-      "use": "จุดรวมสายตา (vx, vy) เดียวกันทุกชิ้น · vy = ระดับสายตากล้อง (ต่ำ = มุมช้อน) · ใส่ PerspFloor ทับพื้นเดิมของ set ไหนก็ได้"
+      "use": "จุดรวมสายตา (vx, vy) เดียวกันทุกชิ้น · vy = ระดับสายตากล้อง (ต่ำ = มุมช้อน) · ใส่ PerspFloor ทับพื้นเดิมของ set ไหนก็ได้",
+      "uses": "SideWall"
     },
     {
       "id": "room-wide",
       "nameTh": "ห้องสามมิติ (room kit) · ภาพกว้าง",
       "code": "const R = makeRoom({x: 700, y: 470}, {x0: 520, x1: 1500, y0: 220, y1: 760}, 3.4);\n<RoomShell r={R} id=\"sh7\" />\n<RFace r={R} pts={[[0.62,0.2,0],[0.86,0.2,0],[0.86,0.55,0],[0.62,0.55,0]]} fill=\"#8fb0d8\" />\n<RBox r={R} u={[0.04,0.4]} v={[0.82,1]} w={[0.12,0.6]} front=\"#4a3020\" top=\"#d8d2c4\" />\n<LightVeil id=\"sh7\" lights={[[x, y, 300]]} o={0.55} />\nconst s = standAt(R, 0.7, 0.45); // เท้า + สเกล · roomPxPerCm(R, 0.45)",
-      "use": "ห้องที่กล้องเดินเข้าไปได้: วาดครั้งเดียว แล้วถ่ายกว้าง/กลาง/ใกล้/มุมต่ำ/มุมสูงได้ทุกมุม โดยผนัง พื้น เฟอร์นิเจอร์ยังถูกต้อง · LightVeil กดโทนกลางให้มืด เหลือแสงตรงที่แสงตก (directing.md §3–4)"
+      "use": "ห้องที่กล้องเดินเข้าไปได้: วาดครั้งเดียว แล้วถ่ายกว้าง/กลาง/ใกล้/มุมต่ำ/มุมสูงได้ทุกมุม โดยผนัง พื้น เฟอร์นิเจอร์ยังถูกต้อง · LightVeil กดโทนกลางให้มืด เหลือแสงตรงที่แสงตก (directing.md §3–4)",
+      "uses": "makeRoom"
     },
     {
       "id": "room-close",
       "nameTh": "ห้องเดิม · ภาพใกล้ (z 3)",
       "code": "\"data\": {\"cam\": [3, 3.15, 1500, 470]}   // ห้องเดียวกับ room-wide แค่ย้ายกล้อง",
-      "use": "close จริงคือ z ≈ 3–4.5 (หัวกินครึ่งเฟรม) ไม่ใช่ 1.8 · ฉากหลังของ close คือส่วนหนึ่งของห้องเดิม — หน้าต่าง/แสงเดิม ต่อเนื่อง"
+      "use": "close จริงคือ z ≈ 3–4.5 (หัวกินครึ่งเฟรม) ไม่ใช่ 1.8 · ฉากหลังของ close คือส่วนหนึ่งของห้องเดิม — หน้าต่าง/แสงเดิม ต่อเนื่อง",
+      "uses": "makeRoom"
     }
   ],
   "grades": [
@@ -788,6 +800,202 @@
       "nameTh": "ความทรงจำ (flashback)",
       "code": "\"data\": {\"past\": 1}",
       "use": "ฟิลเตอร์จาง + เม็ดเกรนมากขึ้น (PAST_FILTER)"
+    }
+  ],
+  "parts": [
+    {
+      "id": "graves",
+      "nameTh": "หลุมศพไทย",
+      "code": "<Grave x y s tone kind={0} lean={-5} />",
+      "uses": "Grave",
+      "use": "kind 0-2 · ใส่ ink สำหรับภาพกล้องหลัง · วางเรียงตามแนวถนน"
+    },
+    {
+      "id": "tamarind",
+      "nameTh": "ต้นมะขามใหญ่",
+      "code": "<Tamarind x y s tone seed={1} />",
+      "uses": "Tamarind",
+      "use": "seed เปลี่ยนทรงต้น · ใช้กรอบฉากหน้าเป็นเงาดำได้"
+    },
+    {
+      "id": "cemetery-gate",
+      "nameTh": "ซุ้มประตูสุสาน",
+      "code": "<CemeteryGate x y s tone aged />",
+      "uses": "CemeteryGate",
+      "use": "aged = ไทม์แลปส์ปูนเก่า"
+    },
+    {
+      "id": "sala-8-part",
+      "nameTh": "ศาลาแปดเหลี่ยม + โต๊ะ",
+      "code": "<Sala8 x y s tone box=\"open\" lit={0.7} />",
+      "uses": "Sala8",
+      "use": "salaTable(x, y, s) ให้จุดกลางโต๊ะ"
+    },
+    {
+      "id": "memorial",
+      "nameTh": "ป้ายไม้ข้างทาง",
+      "code": "<RoadsideMemorial x y s tone fresh name=\"ต้อม\" />",
+      "uses": "RoadsideMemorial",
+      "use": "fresh = ดอกไม้สด · ป้ายบอกเหตุเก่า"
+    },
+    {
+      "id": "pressure-lantern",
+      "nameTh": "ตะเกียงเจ้าพายุ",
+      "code": "<PressureLantern x y s lit={1} soot />",
+      "uses": "PressureLantern",
+      "use": "lit 0-1 คือแหล่งแสงในเฟรม"
+    },
+    {
+      "id": "raincoat",
+      "nameTh": "เสื้อกันฝนแขวน",
+      "code": "<Raincoat x y s logo=\"17\" tag mud />",
+      "uses": "Raincoat",
+      "use": "logo · tag เป็นเบาะแสได้"
+    },
+    {
+      "id": "hut-bench",
+      "nameTh": "แคร่ไม้",
+      "code": "<HutBench x y s tone />",
+      "uses": "HutBench",
+      "use": "ให้ตัวละครนั่งบนแคร่ ใส่ sit"
+    },
+    {
+      "id": "helmet-shell",
+      "nameTh": "หมวกกันน็อก + กล้องติดหมวก",
+      "code": "<HelmetShell shield fog={0.2} />  <HelmetCams side rec f={f} />  // วาดในเฟรม 200×520",
+      "uses": "HelmetShell",
+      "use": "ซ้อนบนหัวตัวละคร · side = มุมข้าง · dead = ไฟกล้องดับ"
+    },
+    {
+      "id": "helmet-back",
+      "nameTh": "หมวกจากด้านหลังเต็มเฟรม",
+      "code": "<HelmetBack f={f} rec cable tilt={-4} />",
+      "uses": "HelmetBack",
+      "use": "ภาพเต็มเฟรม · wet = เม็ดฝน"
+    },
+    {
+      "id": "helmet-seat",
+      "nameTh": "หมวกวางบนเบาะ",
+      "code": "<HelmetOnSeat f={f} rec rearDead />",
+      "uses": "HelmetOnSeat",
+      "use": "insert เต็มเฟรม"
+    },
+    {
+      "id": "bar-screen",
+      "nameTh": "จอติดแฮนด์",
+      "code": "<BarScreen f={f} signal road=\"gravel\" label=\"● REAR\">{ภาพ}</BarScreen>",
+      "uses": "BarScreen",
+      "use": "ใส่ภาพในจอผ่าน children · signal=false จอดับ"
+    },
+    {
+      "id": "gold-pile",
+      "nameTh": "กองทอง",
+      "code": "<GoldPile x y s f={f} />",
+      "uses": "GoldPile",
+      "use": "ของจับแสงเอง"
+    },
+    {
+      "id": "motorcycle-parked",
+      "nameTh": "มอเตอร์ไซค์จอด",
+      "code": "<Motorcycle x y scale color helmetOnBike />",
+      "uses": "Motorcycle",
+      "use": "ไม่มี rider = รถจอด · กฎข้อ 11 ถ้ามีคนขี่"
+    },
+    {
+      "id": "sedan",
+      "nameTh": "รถเก๋งด้านข้าง (มืด)",
+      "code": "<Sedan x y s c lights />",
+      "uses": "Sedan",
+      "use": "kit/vehicles.tsx · จากแฟลชแบ็ก rear-cam"
+    },
+    {
+      "id": "fallen-bike",
+      "nameTh": "รถล้ม",
+      "code": "<FallenBike x y s rot={-78} />",
+      "uses": "FallenBike",
+      "use": "ภาพที่เกิดเหตุ"
+    },
+    {
+      "id": "police-truck",
+      "nameTh": "กระบะตำรวจ",
+      "code": "<PoliceTruck x f={f} />",
+      "uses": "PoliceTruck",
+      "use": "ไฟไซเรนกะพริบตาม f · ยืนบน FLOOR"
+    },
+    {
+      "id": "car-side",
+      "nameTh": "รถเก๋งกล้องบนฝากระโปรง",
+      "code": "<CarOutside x camera />",
+      "uses": "CarOutside",
+      "use": "camera = กล้องหน้ารถ"
+    },
+    {
+      "id": "child-things",
+      "nameTh": "ของเด็ก: รูป รองเท้า รถของเล่น",
+      "code": "<ChildPhoto kind=\"girl\" />  <KidShoe />  <ToyCar />",
+      "uses": "KidShoe",
+      "use": "insert เบาะแส · knot · missing เปลี่ยนรายละเอียดได้"
+    },
+    {
+      "id": "wall-clock-part",
+      "nameTh": "นาฬิกาแขวน",
+      "code": "<WallClock x y t=\"03:52\" r={330} tick={1.2} />",
+      "uses": "WallClock",
+      "use": "เวลาเป็นเบาะแส"
+    }
+  ],
+  "talk": [
+    {
+      "face": "",
+      "who": "lead-male-A",
+      "label": "ปกติ · ไม่ใส่สีหน้า"
+    },
+    {
+      "face": "happy",
+      "who": "lead-male-A",
+      "label": "ยิ้มพูด · happy laugh smirk grin"
+    },
+    {
+      "face": "sad",
+      "who": "lead-female-A",
+      "label": "เศร้า ห่วง กลัว · sad cry worried scared guilty tired"
+    },
+    {
+      "face": "angry",
+      "who": "villain-male-A",
+      "label": "ตึง โกรธ · angry wary"
+    },
+    {
+      "face": "shock",
+      "who": "lead-male-A",
+      "label": "ตกใจ · shock"
+    }
+  ],
+  "retired": [
+    {
+      "what": "ฉากสำเร็จรูป 6 แบบ (room rules map news next)",
+      "why": "แนวตั้ง คนยืนกลาง มีแค่ npm run new ที่ยังเรียก",
+      "where": "src/scenes/ ยังเก็บไว้ให้ templates/story.json"
+    },
+    {
+      "what": "ฉากหลัง 17 แบบ (Sky Gate Road Sala Path Bench Tower Well Corridor Porch)",
+      "why": "ภาพแบนมุมเดียว เรื่องวัดเก่าใช้เท่านั้น",
+      "where": "src/kit/temple.tsx ยังเก็บไว้ให้ ghost-money กับเรื่องในคลังเก่า"
+    },
+    {
+      "what": "สถานที่แบน 7 แบบ (ศาลพระภูมิ มินิมาร์ท โรงพยาบาล ห้องเรียน หอพัก ทุ่งนา ป้ายรถเมล์)",
+      "why": "ไม่มีเรื่องไหนเคยใช้ ภาพด้านหน้าแบน แสงเท่ากันทั้งฉาก",
+      "where": "retired/kit/places-flat.tsx · เรื่องใหม่สร้างใหม่ด้วย room.tsx"
+    },
+    {
+      "what": "ไอคอน 7 ชิ้น + ชิ้นฉาก 6 ชิ้น (ประตู หน้าต่าง โต๊ะ เก้าอี้ หลอดไฟ)",
+      "why": "ภาพไอคอนแบน ไม่เข้าแสงของฉาก ฉากจริงใช้ RBox ของ room.tsx",
+      "where": "symbol ยังอยู่ใน cast.svg เพราะ ghost-money ใช้"
+    },
+    {
+      "what": "ท่า man-sit woman-sit auntie-sit man-crouch man-lie + แขน 9 ภาพ",
+      "why": "เสื้อฟ้าทั่วไป ต้องปะชุดเองทุกเรื่อง แทนด้วยท่าบนตัวละครจริง (cast/Body.tsx)",
+      "where": "symbol ยังอยู่เป็นชื่อให้ roster เดิมเรียก ระบบวาดจากตัวละครแทนอัตโนมัติ"
     }
   ]
 }

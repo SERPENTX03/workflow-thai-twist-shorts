@@ -84,32 +84,27 @@ All active adult characters use `viewBox="0 0 200 520"` (height ≈ cm × 2.6 px
 > ห้ามใช้ตัวละครเหล่านี้เป็นโมเดลหลักในเรื่องใหม่อีกต่อไป:
 > `man`, `woman`, `auntie`, `elder`, `raincoat`, `student`, `kid`, `kid-girl`, `teen-girl`, `uncle`, `young-woman`, `grandpa`, `grandma`, `M1`–`B1`, `din`
 
-### Whole-body Pose Primitives
-สัญลักษณ์ท่าทางด้านล่างนี้เป็น **รูปทรงเรขาคณิตของท่าทาง (Pose geometry primitives)** เท่านั้น ใช้เมื่อตัวละครนั่ง หมอบ หันหลัง หรือนอน:
-* ชาย: `man-sit`, `man-crouch`, `man-back`, `man-lie`
-* หญิง: `woman-sit`, `woman-back`, `woman-run`, `auntie-sit`
-* พระ: `monk-sit`
+### Whole-body poses come with the costume
 
-เวลาเขียน `ROSTER` ใน `cast.tsx` ให้ใช้ฟังก์ชันแมปท่าทาง โดยค่าเริ่มต้น (Default / Standing) **ต้องเป็นโมเดลตัวละครใหม่จาก `src/cast.json` เสมอ**:
-```tsx
-const poseMale = (standing: CastId) => (p: string): CastId =>
-  (({sit: 'man-sit', back: 'man-back', walk: 'man-walk', run: 'man-run', crouch: 'man-crouch', lie: 'man-lie'} as Record<string, CastId>)[p] ?? standing);
+`sit`, `crouch` and `lie` are drawn on the character's own symbol (`src/cast/Body.tsx`), so the jacket, pockets, uniform, tattoos, hair and face come along, and the rig tokens work on them: `win@900 sit yaw=0.5 armR=hold prop=phone worried`.
 
-const poseFemale = (standing: CastId) => (p: string): CastId =>
-  (({sit: 'woman-sit', back: 'woman-back'} as Record<string, CastId>)[p] ?? standing);
+| Token | What it draws |
+|---|---|
+| `sit` | facing us: knees apart, hands on the thighs. Pair it with something to sit on |
+| `sit yaw=0.5` | three-quarter: thighs out to the side, shins hanging. The seat reads in silhouette, prefer it |
+| `crouch` | knees up, arms around the shins: against a wall, under a table |
+| `lie` | on the back, head at frame left (`flip` for right), one knee up, hand on the stomach. Frame 520×200, the floor is its bottom edge. Faces `sleep` and `mark=zzz` go with it |
+| `back` | the shared back view in the character's colours (`man-back`, `woman-back`); kids and robes hide the face instead |
+| `walk` `run` | jointed legs and arms, `src/cast/Rig.tsx` |
 
-export const ROSTER: Record<string, RosterEntry> = {
-  tham: { cm: 172, symbol: poseMale('lead-male-A'), vars: { shirt: C.tham, ... } },
-  mek:  { cm: 170, symbol: poseMale('lead-male-B'), vars: { shirt: C.mek, ... } },
-  tik:  { cm: 160, symbol: poseFemale('sister-A'),   vars: { top: C.tik, ... } },
-};
-```
+The roster only has to name the standing symbol: `symbol: () => 'lead-male-A'`. Rosters that still map `sit: 'man-sit'` keep working: those names now only tell an `extra` overlay which frame it is in, and it stays aligned (sit 110, crouch 160). Robes (`monk`, `novice`) keep their own drawn `monk-sit`.
 
 > [!CAUTION]
-> **กฎเหล็ก: ห้ามปล่อยให้ตัวละครในท่าทาง Pose หรือของที่ดึงจาก Gallery สวมชุด Template เริ่มต้น**
-> โมเดล Pose เช่น `man-sit`, `woman-sit`, `man-crouch` หรือยานพาหนะ/ฉากจาก Gallery (เช่น `Motorcycle`, `CarInterior`) โดยค่าเริ่มต้นจะมีเพียงเสื้อยืดสีพื้นเรียบๆ (`#torso-shirt`) ซึ่งเป็นของตัวละครเดิม
-> หากตัวละครหลักมีการแต่งกายเฉพาะตัว (เช่น `lead-male-A` สวมแจ็กเก็ตซิปทับเสื้อยืดขาว มีกระเป๋าหน้าอก, `teacher-B` มีปกคอเสื้อ, หรือมีรอยปะ/สัญลักษณ์เฉพาะ) **ต้องนำรายละเอียดชุดจริงของตัวละครตาม `src/cast.json` มาแสดงทับบน Pose นั้นๆ เสมอ** ผ่านพร็อพ `extra: (sym) => ...`, Custom Overlay, หรือ Layering ให้ชุดตรงกับตัวจริง 100% ตลอดทั้งเรื่อง ห้ามหลุดเป็นชุดเสื้อยืดธรรมดาของ Template เป็นอันขาด
+> Do not re-draw a costume over a pose in an episode. What still needs the character's colours and details passed by hand is whatever draws its own person: `Motorcycle rider`, `CarInterior`, a shot written as its own SVG (CLAUDE.md rule 13). A trait of one story (a numbered vest, a scar) goes in that episode's roster `extra`.
 
+### Talking mouths follow the face
+
+`worried talk`: the mouth set comes from the face. smile (`happy laugh smirk grin`) · down (`sad cry worried scared guilty tired`) · tense (`angry wary`) · shock (`shock`) · plain (no face, `hollow`). Symbols `talk-<set>-a|e|o|m`; `talkShape(f, on, face)` in `src/kit/stage.tsx` picks them on an uneven cycle. A hand-drawn talker (a rider, an own-SVG shot) should pass its face the same way.
 
 ## Layer order inside one figure (`<Sprite layers={…}>`)
 
@@ -117,22 +112,9 @@ export const ROSTER: Record<string, RosterEntry> = {
 behind pieces (acc-backpack) → body (lead-male-A, man-sit…) → face-* / talk-* → acc-* → arm-* → props on the hand → mark-*
 ```
 
-## Whole-body poses
+## Drawing frames (when you write a Sprite by hand)
 
-Anything layered on a posed body (face, talk mouth, accessory, mark) takes the **same transform** as the pose:
-
-| Pose | Frame | Overlay transform | Pose arms? |
-|---|---|---|---|
-| `man-walk` | 200×520 | none | yes |
-| `man-run` | 200×520 | `rotate(8 100 300)` | no (arms are part of the stride) |
-| `man-sit` | 200×520 (legs reach x ≈ 255) | `translate(0 110)` | yes, with `translate(0 110)` |
-| `man-crouch` | 200×520 | `translate(0 160)` | no (hugging knees) |
-| `man-back` | 200×520 | — (no face) | rest only |
-| `man-lie` | **520×200** | `translate(0 234) rotate(-90)` | no |
-| `woman-sit` | 200×520 | `translate(0 104)` | yes, with `translate(0 100)` |
-| `woman-run` | 200×520 | `rotate(8 100 300) translate(0 4)` | no |
-| `woman-back` | 200×520 | — | rest only |
-| carry | `man` + `arm-l-carry` + `arm-r-carry` + `prop-box` at `translate(100 262)` | none | it is a pose-arm pair |
+Anything layered on a posed body takes the same offset as the upper body: sit `translate(0 110)` (kid 56), crouch `translate(0 160)` (kid 92), lie `translate(0 234) rotate(-90)` in a 520×200 frame. `man-walk` none, `man-run` `rotate(8 100 300)`. Carry: `arm-l-carry` + `arm-r-carry` + `prop-box` at `translate(100 262)`.
 
 On the landscape stage, pose `walk` / `run` works for **every person** in the cast: `src/cast/Rig.tsx` redraws legs and arms from joints and puts the figure's own symbol (head, hair, outfit) on top, so faces, `arm=`, `prop=` and `acc=` still fit. The build comes from the body the symbol uses (`legs-pants`, `body-wide`, `body-skirt`, `body-kid`; the monk shuffles under his robe). A new hand-drawn person needs its standing legs in a `display:var(--legs-rest,inline)` group and `data-rig="pants|wide|skirt|kid|robe"` on the symbol. Pets and `crowd` have no rig. Gallery: `GGait`.
 

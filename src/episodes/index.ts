@@ -5,6 +5,8 @@ import story0 from '../../episodes/ghost-money/story.json';
 import scenes0 from './ghost-money/scenes';
 import timeline0 from '../../episodes/ghost-money/timeline.json';
 import story1 from '../../episodes/rear-cam/story.json';
+import scenes1 from './rear-cam/scenes';
+import timeline1 from '../../episodes/rear-cam/timeline.json';
 import story2 from '../../episodes/same-child/story.json';
 import scenes2 from './same-child/scenes';
 import timeline2 from '../../episodes/same-child/timeline.json';
@@ -13,7 +15,7 @@ import timeline3 from '../../episodes/sample/timeline.json';
 
 export const EPISODES = [
   defineEpisode('GhostMoney', story0 as unknown as Story, scenes0, timeline0.audio),
-  defineEpisode('RearCam', story1 as unknown as Story, {}, undefined),
+  defineEpisode('RearCam', story1 as unknown as Story, scenes1, timeline1.audio),
   defineEpisode('SameChild', story2 as unknown as Story, scenes2, timeline2.audio),
   defineEpisode('Sample', story3 as unknown as Story, {}, timeline3.audio),
 ];

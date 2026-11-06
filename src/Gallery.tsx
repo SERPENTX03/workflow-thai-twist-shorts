@@ -15,21 +15,17 @@ import {Actors, FloorShadow, Fore, Grade, GRADES, PAST_FILTER, Stage, Tilt, type
 import type {ShotProps} from './engine/episode';
 import {CastShadow, Haze, PerspFloor, SideWall} from './kit/depth';
 import {LightVeil, makeRoom, RBox, RFace, RoomShell, roomPxPerCm, standAt} from './kit/room';
-import {Cone, Dust} from './kit/light';
+import {Cone, Dust, rimFilter} from './kit/light';
 import {Far} from './kit/fx';
 import {Cctv, MirrorFrame, Pov, Split, cctvFrame, type PovKind} from './kit/pov';
+import {GParts, GPlaces} from './GalleryPlaces';
 import {Beam, Boards, FLOOR, Glow, Planks, Sky, WallClock, beamAt} from './kit/world';
-import {BenchSet, Corridor, Gate, Path, Porch, Road, Sala, TowerShape, WellSet} from './kit/temple';
-import {BusStop, Canal, Classroom, DormHall, HospitalHall, Minimart, Motorcycle, RiceField, ShopRow, SideRoadSet, SpiritHouse, StiltHouse} from './kit/places';
+import {CrackedGlass, GoldPile, LiveBadge, LiveComments} from './kit/live';
+import {ShopRow} from './kit/places';
 import {Drips, Hand, Ink, Page, RainStreaks, RuleCardScene} from './kit/inserts';
-import {ChildRoom} from './kit/childroom';
-import {CarOutside, CopyCounter, HouseFront, PoliceTruck, SchoolFront, SchoolRoom, SchoolStore, WoodRoom} from './kit/village';
-import {DarkPassage} from './kit/passage';
-import {CarInterior, CarKnee, CarWheel, DRIVER} from './kit/car';
 import {PhoneScene} from './kit/phone';
 import {MemoryNotebook} from './kit/notebook';
 import {EndCardScene} from './kit/EndCard';
-import {genericScenes} from './scenes';
 import type {Shot} from './engine/story';
 import castJson from './cast.json';
 import G from './gallery.json';
@@ -62,31 +58,30 @@ export const GCast: React.FC = () => {
   );
 };
 
-/** head / upper-body crop of `man` with one extra layer, centred in a 400-wide frame. */
+/** head / upper-body crop of a lead with one extra layer, centred in a 400-wide frame. */
 const OnMan: React.FC<{layer?: CastId; hideFace?: boolean; hideMouth?: boolean; scale: number; top: number; hair?: string; vars?: Record<string, string>}> = ({layer, hideFace, hideMouth, scale, top, hair, vars}) => (
   <div style={{position: 'absolute', left: 200 - 100 * scale, top}}>
-    <Sprite id="man" height={520 * scale} hideFace={hideFace} hideMouth={hideMouth} layers={layer ? [layer] : []} hair={hair} vars={vars} outline={OUTLINE} />
+    <Sprite id="lead-male-A" height={520 * scale} hideFace={hideFace} hideMouth={hideMouth} layers={layer ? [layer] : []} hair={hair} vars={vars} />
   </div>
 );
 
-/** 400x400 faces and talk mouths. */
+const castRoster = (ids: string[]): Record<string, RosterEntry> => Object.fromEntries(ids.map(id => [id, {cm: (castJson as Record<string, {cm?: number}>)[id]?.cm ?? 170, symbol: () => id as CastId}]));
+const HEADS = castRoster(['lead-male-A', 'lead-female-A', 'villain-male-A']);
+/** a real cast member's head, large: what a close-up shows. Everything the actor string says goes through ActorView. */
+const Head: React.FC<{who: string; x: number; tokens: string; top?: number; size?: number; f?: number; talking?: boolean}> = ({who, x, tokens, top = 44, size = 660, f = 0, talking}) => (
+  <ActorView a={parseActor(`${who}@${x},${top + size} h=${size} ${tokens}`)} roster={HEADS} floor={top + size} pxPerCm={3} f={f} talking={talking} />
+);
+
+/** 640x400 one face on two leads: faces are layers, they have to work on every head */
 export const GFaces: React.FC = () => {
-  const id = usePick(G.faces) as CastId;
-  return <Pane><OnMan layer={id} hideFace={id.startsWith('face-')} hideMouth={id.startsWith('talk-')} scale={2.2} top={60} /></Pane>;
+  const face = (usePick(G.faces) as string).replace('face-', '');
+  return <Pane><Head who="lead-male-A" x={170} tokens={face} /><Head who="lead-female-A" x={470} tokens={face} /></Pane>;
 };
 
-/** 400x560 whole-body poses and pose arms, all on `man`. */
-export const GPoses: React.FC = () => {
-  const id = usePick([...G.poses, ...G.arms]) as CastId;
-  const [w, h] = CAST_SIZE[id];
-  const fit = Math.min(500 / h, 360 / w);
-  return (
-    <Pane>
-      <div style={{position: 'absolute', bottom: 24}}>
-        {id.startsWith('arm-') ? <Sprite id="man" height={500} hideArmR hideArmL={id.startsWith('arm-b-')} layers={[id]} outline={OUTLINE} /> : <Sprite id={id} height={h * fit} outline={OUTLINE} />}
-      </div>
-    </Pane>
-  );
+/** 1200x300 one mood's four mouth shapes while speaking. talkShape's cycle: a at frame 0, m at 4, e at 8, o at 16 */
+export const GTalk: React.FC = () => {
+  const {face, who} = usePick(G.talk);
+  return <Pane>{[0, 8, 16, 4].map((f, i) => <Head key={f} who={who} x={150 + i * 300} top={22} size={560} tokens={`${face} talk`} f={f} talking />)}</Pane>;
 };
 
 /** 400x560 walk / run frames drawn by the joint rig (cast/Rig.tsx): what Actors draws for pose walk / run. id = <symbol>-<walk|run>-<step 0..2> */
@@ -115,7 +110,7 @@ export const GRig: React.FC = () => {
   return (
     <Pane bg={`linear-gradient(180deg, ${T.sky1}, ${T.sky0})`}>
       {item.figures.map((tokens, i) => {
-        const x = 220 + i * 380;
+        const x = item.figures.length === 2 ? 320 + i * 560 : 220 + i * 380;
         return (
           <React.Fragment key={i}>
             <FloorShadow x={x} w={cm * 1.15} y={520} />
@@ -129,12 +124,18 @@ export const GRig: React.FC = () => {
   );
 };
 
-/** 360x360 props (hand-anchored ones fill the frame), icons and set pieces. */
+/** 360x360 a grip prop in a real hand, close: the hand centred, the arm coming in from the left */
 export const GProps: React.FC = () => {
-  const id = usePick(G.props) as CastId;
-  const [w, h] = CAST_ANCHORED.includes(id) ? [180, 180] : CAST_SIZE[id];
-  const fit = Math.min(300 / h, 300 / w);
-  return <Pane><Sprite id={id} height={h * fit} /></Pane>;
+  const id = usePick(G.props) as string;
+  const prop = id.replace('prop-', '');
+  const k = 1.3, x = 180 - 114 * k, y = 190 + (520 - 222) * k;
+  return (
+    <Pane bg="radial-gradient(ellipse at 50% 50%, #2a3350, #141a2b 75%)">
+      {prop === 'box' || prop === 'wheel'
+        ? <Sprite id={id as CastId} height={prop === 'box' ? 230 : 300} />
+        : <ActorView a={parseActor(`lead-male-A@${x},${y} h=${520 * k} armR=offer prop=${prop}`)} roster={HEADS} floor={y} pxPerCm={3} f={0} />}
+    </Pane>
+  );
 };
 
 /** outfits are shown whole-body on someone they suit, coloured the way a scene would (cast.svg: acc-*) */
@@ -199,94 +200,34 @@ export const GUi: React.FC = () => {
   return <Pane bg={`linear-gradient(180deg, ${T.wall1}, ${T.sky0})`}><AbsoluteFill>{content[id]}</AbsoluteFill></Pane>;
 };
 
-/** 1080x1920 generic scene previews at 60 % of a 3-beat shot. */
-export const GScenes: React.FC = () => {
-  const s = usePick(G.scenes);
-  const Scene = genericScenes[s.scene];
-  const shot = {scene: s.scene, view: s.view, data: s.data, beats: 3, i: 0, from: 0, frames: 72, text: '', style: 'plain'} as Shot;
-  return <Pane><Scene shot={shot} f={44} len={72} W={1080} H={1920} /></Pane>;
-};
-
 // ---------------------------------------------------------------- landscape stage kit (src/kit/world.tsx, temple.tsx, inserts.tsx)
 
 const WORLD_F = 36; // local frame for animated bits (flicker, sway)
 
-/** 1920x1080 stage frame; `man` stands on the floor line as a scale reference (170 cm at 3 px/cm). */
-const StageFrame: React.FC<{children: React.ReactNode; light?: string; man?: boolean; bg?: string}> = ({children, light, man = true, bg = '#07090d'}) => (
+/** 1920x1080 stage frame. */
+const StageFrame: React.FC<{children: React.ReactNode; light?: string; man?: boolean; bg?: string}> = ({children, light, bg = '#07090d'}) => (
   <Pane bg={bg}>
     <div style={{position: 'absolute', inset: 0, overflow: 'hidden'}}>
       {children}
-      {man && <div style={{position: 'absolute', left: 960 - 98, top: FLOOR - 510}}><Sprite id="man" height={510} rim="r" light={light} outline={OUTLINE} /></div>}
       {light && <Grade light={light} />}
     </div>
   </Pane>
 );
-
-const WORLD: Record<string, React.ReactNode> = {
-  'sky-night': <><Sky tone="night" /><Boards /></>,
-  'sky-dusk': <><Sky tone="dusk" /><Boards /></>,
-  'sky-dawn': <><Sky tone="dawn" /><Boards /></>,
-  'sky-morning': <><Sky tone="morning" /><Boards /></>,
-  'planks-boards': <><Planks /><Boards /></>,
-  'gate-dusk': <Gate tone="dusk" sign="วัดตัวอย่าง" />,
-  'gate-night': <Gate tone="night" sign="วัดตัวอย่าง" />,
-  'gate-morning': <Gate tone="morning" sign="วัดตัวอย่าง" />,
-  road: <Road tone="dusk" />,
-  'road-voided': <Road tone="night" voided />,
-  sala: <Sala />,
-  path: <Path f={WORLD_F} />,
-  bench: <BenchSet f={WORLD_F} tower />,
-  tower: <><Sky tone="dusk" y={560} /><Boards c0="#55524b" c1="#2a2925" /><TowerShape x={960} y={70} s={0.95} f={WORLD_F} swing={4} ropeSwing={2} /></>,
-  well: <WellSet f={WORLD_F} />,
-  corridor: <Corridor f={WORLD_F} drip={0.5} />,
-  porch: <Porch f={WORLD_F} />,
-};
-
-/** 1920x1080 backdrops with a 170 cm man for scale. */
-export const GWorld: React.FC = () => {
-  const {id} = usePick(G.world);
-  return <StageFrame light={id.startsWith('sky') || id === 'planks-boards' ? undefined : 'night'} man={id !== 'road' && id !== 'road-voided'}>{WORLD[id]}</StageFrame>;
-};
-
-const PLACES: Record<string, React.ReactNode> = {
-  'shop-row': <ShopRow tone="day" f={WORLD_F} />,
-  'stilt-house': <StiltHouse tone="night" f={WORLD_F} far />,
-  canal: <Canal tone="dusk" f={WORLD_F} />,
-  'spirit-house': <SpiritHouse tone="night" f={WORLD_F} />,
-  minimart: <Minimart tone="night" f={WORLD_F} />,
-  hospital: <HospitalHall f={WORLD_F} />,
-  classroom: <Classroom tone="day" f={WORLD_F} />,
-  dorm: <DormHall f={WORLD_F} />,
-  'rice-field': <RiceField tone="dusk" f={WORLD_F} ripe />,
-  'bus-stop': <BusStop tone="night" f={WORLD_F} />,
-  'highway-road': <SideRoadSet tone="dusk" frame={WORLD_F} />,
-  'child-room': <ChildRoom f={WORLD_F} under="shoe" reflect="girl" />,
-  'wood-kitchen': <WoodRoom view="kitchen" />,
-  'wood-closet': <WoodRoom view="closet" jacket />,
-  'house-front': <HouseFront open={0.6} />,
-  'car-cabin': <><CarInterior view="drive" f={WORLD_F} moving /><CarWheel /><CarKnee /></>,
-  'car-seat': <CarInterior view="seat" f={WORLD_F} seat="new" />,
-  'school-front': <SchoolFront />,
-  'school-office': <SchoolRoom view="office" f={WORLD_F} />,
-  'copy-shop': <CopyCounter f={WORLD_F} />,
-  'school-store': <SchoolStore f={WORLD_F} envelopes={6} />,
-  'dark-passage': <DarkPassage f={WORLD_F} view="passage" />,
-  'car-outside': <><HouseFront windows={false} /><PoliceTruck x={420} f={WORLD_F} /><CarOutside x={1360} camera /></>,
-};
-
-/** 1920x1080 everyday Thai locations (src/kit/places.tsx), `man` for scale; they carry their own day / night tone. */
-export const GPlaces: React.FC = () => {
-  const {id} = usePick(G.places);
-  const hideMan = ['car-cabin', 'car-seat', 'child-room', 'wood-closet'].includes(id);
-  return <StageFrame man={!hideMan}>{PLACES[id]}</StageFrame>;
-};
-
 
 const SKIN = '#e2b08a', SLEEVE = '#8c9ea6';
 const pageText = (n: number) => ['๒๕๕๙', 'มาถึงประตูเวลาหกโมงเย็น', '๒๕๖๑', 'ยังจำป้าพรไม่ได้'].slice(0, n);
 
 /** 1920x1080 close-up pieces on a dark plate. */
 const INSERTS: Record<string, React.ReactNode> = {
+  'live-stream': (
+    <>
+      <div style={{position: 'absolute', inset: 0, background: '#14161a'}} />
+      <GoldPile x={700} y={600} s={1.2} f={WORLD_F} />
+      <LiveBadge x={60} y={60} s={1.4} f={WORLD_F} viewers={214} />
+      <LiveComments items={['ดึกจังเจย์', 'ที่ไหนเนี่ย', 'คอมเมนต์เล็กจาง']} x={1280} y={200} s={1.3} faint={2} />
+      <div style={{position: 'absolute', left: 1320, top: 480, width: 428, height: 500, overflow: 'hidden', background: '#06080c', borderRadius: 30}}><CrackedGlass w={428} h={500} seed={5} /></div>
+    </>
+  ),
   'hand-grip': <Hand x={960} y={540} s={1.7} skin={SKIN} sleeve="#2f5f8f" mode="grip" />,
   'hand-open': <Hand x={960} y={540} s={1.7} skin={SKIN} mode="open" />,
   rain: <RainStreaks f={WORLD_F} />,
@@ -342,7 +283,7 @@ const camView = (f: number, x = 960, extra?: React.ReactNode) => (
   <div style={{position: 'absolute', inset: 0, overflow: 'hidden'}}>
     <ShopRow tone="night" f={f} />
     {extra}
-    <div style={{position: 'absolute', left: x - 98, top: FLOOR - 510}}><Sprite id="man" height={510} rim="r" light="night" outline={OUTLINE} /></div>
+    <div style={{position: 'absolute', left: x - 98, top: FLOOR - 510}}><Sprite id="lead-male-A" height={510} rim="r" light="night" outline={OUTLINE} /></div>
     <Grade light="night" />
   </div>
 );
@@ -456,9 +397,7 @@ const DEPTH: Record<string, (f: number) => React.ReactNode> = {
       <CastShadow x={820} y={FLOOR} h={460} light={[1260, 340]} a={0.7} />
       <FloorShadow x={820} w={180} y={FLOOR} />
       {/* MG: Character staged with intent (sitting on bench, looking worried toward the dark opening) */}
-      <div style={{position: 'absolute', left: 770, top: FLOOR - 470}}>
-        <Sprite id="man-sit" height={470} rim="r" light="noir" flip outline={OUTLINE} layers={['face-worried']} />
-      </div>
+      <ActorView a={parseActor(`lead-male-A@860,${FLOOR} sit yaw=-0.5 worried`)} roster={HEADS} floor={FLOOR} pxPerCm={3} f={f} style={{filter: rimFilter('r', 'noir', 1)}} />
       {/* FG: Dirty lens frame (doorway edge and bedpost cutting the foreground) */}
       <Fore shift={[0, 0]} blur={8} dark={0.65}>
         <div style={{position: 'absolute', left: -40, top: -20, width: 260, height: 1140, background: '#05070a' }} />
@@ -478,17 +417,17 @@ export const GCamera: React.FC = () => {
   else if (id === 'fore') node = <>{camView(f, 1080)}<Fore><DoorEdge /></Fore></>;
   else if (id === 'phone-cam') node = <Pov kind="phone" rec="00:01:42" W={W} H={H} f={f}>{camView(f)}</Pov>;
   else if (['peephole', 'keyhole', 'crack', 'binoculars', 'blinds'].includes(id)) node = <Pov kind={id as PovKind} open={0.45} W={W} H={H} f={f}>{camView(f)}</Pov>;
-  else if (id === 'split') node = <Split W={W} H={H} angle={8} a={camView(f, 960)} b={<div style={{position: 'absolute', inset: 0}}><Planks /><Boards /><Glow x={960} y={500} r={500} a={0.3} /><div style={{position: 'absolute', left: 960 - 98, top: FLOOR - 510}}><Sprite id="woman" height={480} rim="l" light="lamp" outline={OUTLINE} /></div><Grade light="lamp" /></div>} />;
+  else if (id === 'split') node = <Split W={W} H={H} angle={8} a={camView(f, 960)} b={<div style={{position: 'absolute', inset: 0}}><Planks /><Boards /><Glow x={960} y={500} r={500} a={0.3} /><div style={{position: 'absolute', left: 960 - 98, top: FLOOR - 510}}><Sprite id="lead-female-A" height={480} rim="l" light="lamp" outline={OUTLINE} /></div><Grade light="lamp" /></div>} />;
   else if (id === 'cctv') node = <Cctv W={W} H={H} f={f} cam="CAM 03" time="02:14:07">{camView(cctvFrame(f), 700)}</Cctv>;
   else if (DEPTH[id]) node = DEPTH[id](f);
   else node = (
     <>
       <Planks /><Boards /><Glow x={500} y={460} r={600} a={0.3} />
-      <div style={{position: 'absolute', left: 500 - 98, top: FLOOR - 510}}><Sprite id="man" height={510} rim="r" light="lamp" outline={OUTLINE} /></div>
+      <div style={{position: 'absolute', left: 500 - 98, top: FLOOR - 510}}><Sprite id="lead-male-A" height={510} rim="r" light="lamp" outline={OUTLINE} /></div>
       <MirrorFrame x={1060} y={160} w={700} h={420} W={W} H={H} ox={700} oy={560}>
         <div style={{position: 'absolute', inset: 0}}><Planks /><Boards />
-          <div style={{position: 'absolute', left: 500 - 98, top: FLOOR - 510}}><Sprite id="man" height={510} outline={OUTLINE} /></div>
-          <div style={{position: 'absolute', left: 820 - 98, top: FLOOR - 500}}><Sprite id="woman" height={480} silhouette /></div>
+          <div style={{position: 'absolute', left: 500 - 98, top: FLOOR - 510}}><Sprite id="lead-male-A" height={510} outline={OUTLINE} /></div>
+          <div style={{position: 'absolute', left: 820 - 98, top: FLOOR - 500}}><Sprite id="lead-female-A" height={480} silhouette /></div>
         </div>
       </MirrorFrame>
       <Grade light="lamp" />
@@ -508,7 +447,7 @@ export const GGrades: React.FC = () => {
         <Planks c0="#6a4b31" c1="#3f2c1d" />
         <Boards />
         <Glow x={1300} y={420} r={700} a={0.35} />
-        <div style={{position: 'absolute', left: 960 - 98, top: FLOOR - 510}}><Sprite id="man" height={510} rim="r" light={light} outline={OUTLINE} /></div>
+        <div style={{position: 'absolute', left: 960 - 98, top: FLOOR - 510}}><Sprite id="lead-male-A" height={510} rim="r" light={light} outline={OUTLINE} /></div>
         <Grade light={light} past={past} />
       </div>
       <Grain f={WORLD_F} opacity={past ? 0.24 : 0.12} />
@@ -541,14 +480,13 @@ export const GALLERY_COMPS = [
   {id: 'GCast', component: GCast, width: 600, height: 640, count: CAST.length},
   {id: 'GGait', component: GGait, width: 400, height: 560, count: G.gait.length},
   {id: 'GRig', component: GRig, width: 1200, height: 560, count: G.rig.length},
-  {id: 'GFaces', component: GFaces, width: 400, height: 400, count: G.faces.length},
-  {id: 'GPoses', component: GPoses, width: 400, height: 560, count: G.poses.length + G.arms.length},
+  {id: 'GFaces', component: GFaces, width: 640, height: 400, count: G.faces.length},
+  {id: 'GTalk', component: GTalk, width: 1200, height: 300, count: G.talk.length},
   {id: 'GProps', component: GProps, width: 360, height: 360, count: G.props.length},
   {id: 'GMarks', component: GMarks, width: 400, height: 400, count: G.marks.length},
   {id: 'GUi', component: GUi, width: 1080, height: 700, count: G.ui.length},
-  {id: 'GScenes', component: GScenes, width: 1080, height: 1920, count: G.scenes.length},
-  {id: 'GWorld', component: GWorld, width: 1920, height: 1080, count: G.world.length},
-  {id: 'GPlaces', component: GPlaces, width: 1920, height: 1080, count: G.places.length},
+  {id: 'GPlaces', component: GPlaces, width: 1920, height: 720, count: G.places.length},
+  {id: 'GParts', component: GParts, width: 1920, height: 1080, count: G.parts.length},
   {id: 'GInserts', component: GInserts, width: 1920, height: 1080, count: G.inserts.length},
   {id: 'GCamera', component: GCamera, width: 1920, height: 1080, count: G.camera.length},
   {id: 'GGrades', component: GGrades, width: 1920, height: 1080, count: G.grades.length},

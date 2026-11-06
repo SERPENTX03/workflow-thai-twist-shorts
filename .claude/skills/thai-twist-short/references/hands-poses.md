@@ -13,7 +13,12 @@ Read before drawing any shot where a hand does something (hand over, hold, point
 7. **Facing and side.** r = screen-right arm, l = screen-left arm. The `offer` arm points away from the body, so use the arm on the side of the receiver. Never cross an arm over the face.
 8. **Hands stay in the action zone** (y 160–1180) and ≥ 38 px across on screen (the `r=19` circle at scale 1). For a close-up, draw the hand big (≥ 200 px) on its own shot: palm circle + thumb nub, no fingers (flat style).
 9. **Silhouettes keep the poses** — `silhouette` already blacks out the pose arms and props' skin (`--sleeve`, `--skin`); a prop's own colours are not blacked out, so give a silhouette shot only `arm-*-pocket`/`raise`, or no prop.
-10. **Reuse before inventing.** Take a pose from the library below. A new gesture goes into `src/cast/source/cast.svg` (right-arm version + mirrored left) and into this table, not into one episode.
+10. **Pose the arm, never add one.** Before drawing any arm or hand near a cast member, ask which of the two it is, and take that one away (`arm=`, `armR=`/`armL=`). If no pose exists, add it to `cast.svg` (rule 11).
+11. **Reuse before inventing.** Take a pose from the library below. A new gesture goes into `src/cast/source/cast.svg` (right-arm version + mirrored left) and into this table, not into one episode.
+
+## Phone to the ear, glasses, anything held to the face
+
+A call is a pose of the actor's own arm: `jay@700 sit arm=r-phone` (or `arm=l-phone`, standing or sitting). It takes the resting arm and its hand away, so there are still two. Drawing an arm or `<Hand>` over a posed sprite gives three: rear-cam shots 240–247 did exactly that, and `npm run story` now warns when a scene draws `<Hand>` next to an actor. Glasses are the sprite's own accessory (`acc=glasses`, `src/cast.json`) and sit on the eyes in every pose; never draw a second pair by hand, and if a beat needs them off, drop the accessory for that shot rather than floating a drawing beside a hand.
 
 ## Pose library (`src/cast/source/cast.svg`, "Pose library")
 

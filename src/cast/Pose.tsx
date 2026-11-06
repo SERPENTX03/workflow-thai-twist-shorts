@@ -253,6 +253,10 @@ export type PoseFigureProps = {
   lt?: string;
   /** the face is the character's own (no face-* layer): `look` may move its dot eyes */
   ownFace?: boolean;
+  /** cut the symbol's body below this y (a skirt or outfit that would run through the floor on a seated body, cast/Body.tsx) */
+  bodyEnd?: number;
+  /** every arm in front of the body: hands resting on thighs or around knees that `body` draws over the torso */
+  armsFront?: boolean;
 };
 
 const OFF = 'none';
@@ -270,7 +274,7 @@ const RIGID_VARS = {'--arm-l-rest': OFF, '--arm-r-rest': OFF, '--backhair-rest':
 const uid = (s: string) => s.replace(/[^a-zA-Z0-9_-]/g, '');
 
 /** A standing person in the pose rig, drawn in the symbol's own frame (inside its <svg viewBox="0 0 200 520">). */
-export const PoseFigure: React.FC<PoseFigureProps> = ({sym, pose, hair, face, hat, body, under, over, propR, propL, watch, lt, ownFace}) => {
+export const PoseFigure: React.FC<PoseFigureProps> = ({sym, pose, hair, face, hat, body, under, over, propR, propL, watch, lt, ownFace, bodyEnd, armsFront}) => {
   const id = uid(React.useId());
   const plan = rigPlan(sym);
   const parts = CAST_PARTS[sym] ?? {};
@@ -293,7 +297,7 @@ export const PoseFigure: React.FC<PoseFigureProps> = ({sym, pose, hair, face, ha
       const far = t.ay > 0.12 && side === t.s;
       const crossing = g.hand.x > shL.x + 6 && g.hand.x < shR.x - 6 && g.hand.y > 150;
       const atFace = Math.hypot(g.hand.x - (HEAD.x + t.face.dx), g.hand.y - HEAD.y) < HEAD.r + 4 && g.hand.y > 40;
-      const layer = atFace ? 'top' : crossing ? 'front' : 'back';
+      const layer = atFace ? 'top' : crossing || armsFront ? 'front' : 'back';
       arms.push({g, layer, prop, far});
     }
   }
@@ -304,7 +308,7 @@ export const PoseFigure: React.FC<PoseFigureProps> = ({sym, pose, hair, face, ha
   const clips = (
     <defs>
       <clipPath id={headClip} clipPathUnits="userSpaceOnUse"><rect x={-600} y={-900} width={1400} height={900 + CUT} /></clipPath>
-      <clipPath id={bodyClip} clipPathUnits="userSpaceOnUse"><rect x={-600} y={CUT} width={1400} height={1400} /></clipPath>
+      <clipPath id={bodyClip} clipPathUnits="userSpaceOnUse"><rect x={-600} y={CUT} width={1400} height={bodyEnd !== undefined ? bodyEnd - CUT : 1400} /></clipPath>
       <clipPath id={lowClip} clipPathUnits="userSpaceOnUse"><rect x={-600} y={TORSO_END[plan?.build ?? 'pants'] ?? 999} width={1400} height={1400} /></clipPath>
     </defs>
   );

@@ -9,7 +9,7 @@ This repo turns a short story idea into a 45–130 s vertical video. **`story.js
 
 Scenes are React components (`references/scene-kit.md`); the shared cast, props and UI live in `src/`. This skill owns the format and the process.
 
-**You are the director and art director.** Every shot is a picture you design: what it shows, from where, in what light, and you are free to write any shot as its own SVG/React component, build new sets and move the camera anywhere. The kit and the studio gallery are a parts bin and a scale ruler, never a template to copy. How to think a shot through, and why our older frames looked like one flat backdrop: `references/directing.md` — read it before the shot list and before drawing.
+**You are the director and art director.** Every shot is a picture you design: what it shows, from where, in what light, and you are free to write any shot as its own SVG/React component, build new sets and move the camera anywhere. The kit and the studio gallery are a library to search after the shot is designed, never a template to copy. How to think a shot through, and why our older frames looked like one flat backdrop: `references/directing.md` — read it before the shot list and before drawing.
 
 **Long-form landscape episodes** (`"format": "landscape"`, 10–25 min) use the `thai-long-story` skill for story rules, pacing, review and render; the shared references here (story-json, scene-kit, cast, hands, voices, audio) still apply.
 

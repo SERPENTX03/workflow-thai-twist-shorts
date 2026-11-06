@@ -1,0 +1,5547 @@
+{
+  "slug": "rear-cam",
+  "id": "RearCam",
+  "format": "landscape",
+  "W": 1920,
+  "H": 1080,
+  "bpm": 75,
+  "total": 1535.3,
+  "audio": {
+    "voice": "rear-cam/voice.wav",
+    "score": "rear-cam/score.wav"
+  },
+  "shots": [
+    {
+      "i": 0,
+      "scene": "road",
+      "start": 0,
+      "dur": 4.8
+    },
+    {
+      "i": 1,
+      "scene": "road",
+      "start": 4.8,
+      "dur": 4.5
+    },
+    {
+      "i": 2,
+      "scene": "helmet",
+      "start": 9.3,
+      "dur": 2.3
+    },
+    {
+      "i": 3,
+      "scene": "helmet",
+      "start": 11.6,
+      "dur": 5.5
+    },
+    {
+      "i": 4,
+      "scene": "barscreen",
+      "start": 17.1,
+      "dur": 3.1
+    },
+    {
+      "i": 5,
+      "scene": "helmet",
+      "start": 20.2,
+      "dur": 4.3
+    },
+    {
+      "i": 6,
+      "scene": "barscreen",
+      "start": 24.5,
+      "dur": 5
+    },
+    {
+      "i": 7,
+      "scene": "barscreen",
+      "start": 29.5,
+      "dur": 4.1
+    },
+    {
+      "i": 8,
+      "scene": "barscreen",
+      "start": 33.6,
+      "dur": 4.3
+    },
+    {
+      "i": 9,
+      "scene": "barscreen",
+      "start": 37.9,
+      "dur": 1.8
+    },
+    {
+      "i": 10,
+      "scene": "helmet",
+      "start": 39.7,
+      "dur": 5
+    },
+    {
+      "i": 11,
+      "scene": "road",
+      "start": 44.7,
+      "dur": 4.7
+    },
+    {
+      "i": 12,
+      "scene": "title",
+      "start": 49.4,
+      "dur": 3.4
+    },
+    {
+      "i": 13,
+      "scene": "station",
+      "start": 52.8,
+      "dur": 5.4
+    },
+    {
+      "i": 14,
+      "scene": "station",
+      "start": 58.2,
+      "dur": 4.2
+    },
+    {
+      "i": 15,
+      "scene": "hand",
+      "start": 62.4,
+      "dur": 4.2
+    },
+    {
+      "i": 16,
+      "scene": "phone",
+      "start": 66.6,
+      "dur": 4.5
+    },
+    {
+      "i": 17,
+      "scene": "phone",
+      "start": 71.1,
+      "dur": 3.3
+    },
+    {
+      "i": 18,
+      "scene": "station",
+      "start": 74.4,
+      "dur": 3.6
+    },
+    {
+      "i": 19,
+      "scene": "station",
+      "start": 78,
+      "dur": 4.1
+    },
+    {
+      "i": 20,
+      "scene": "station",
+      "start": 82.1,
+      "dur": 3.8
+    },
+    {
+      "i": 21,
+      "scene": "phone",
+      "start": 85.9,
+      "dur": 3.6
+    },
+    {
+      "i": 22,
+      "scene": "helmet",
+      "start": 89.5,
+      "dur": 5.2
+    },
+    {
+      "i": 23,
+      "scene": "station",
+      "start": 94.7,
+      "dur": 4.2
+    },
+    {
+      "i": 24,
+      "scene": "past",
+      "start": 98.9,
+      "dur": 5.3
+    },
+    {
+      "i": 25,
+      "scene": "past",
+      "start": 104.2,
+      "dur": 4.2
+    },
+    {
+      "i": 26,
+      "scene": "past",
+      "start": 108.4,
+      "dur": 4.8
+    },
+    {
+      "i": 27,
+      "scene": "station",
+      "start": 113.2,
+      "dur": 4.4
+    },
+    {
+      "i": 28,
+      "scene": "hand",
+      "start": 117.6,
+      "dur": 3.8
+    },
+    {
+      "i": 29,
+      "scene": "station",
+      "start": 121.4,
+      "dur": 4.7
+    },
+    {
+      "i": 30,
+      "scene": "station",
+      "start": 126.1,
+      "dur": 4.6
+    },
+    {
+      "i": 31,
+      "scene": "station",
+      "start": 130.7,
+      "dur": 5.4
+    },
+    {
+      "i": 32,
+      "scene": "station",
+      "start": 136.1,
+      "dur": 4.5
+    },
+    {
+      "i": 33,
+      "scene": "station",
+      "start": 140.6,
+      "dur": 5.3
+    },
+    {
+      "i": 34,
+      "scene": "station",
+      "start": 145.9,
+      "dur": 2.7
+    },
+    {
+      "i": 35,
+      "scene": "station",
+      "start": 148.6,
+      "dur": 3.4
+    },
+    {
+      "i": 36,
+      "scene": "hand",
+      "start": 152,
+      "dur": 5.6
+    },
+    {
+      "i": 37,
+      "scene": "station",
+      "start": 157.6,
+      "dur": 2.6
+    },
+    {
+      "i": 38,
+      "scene": "station",
+      "start": 160.2,
+      "dur": 5
+    },
+    {
+      "i": 39,
+      "scene": "station",
+      "start": 165.2,
+      "dur": 4.6
+    },
+    {
+      "i": 40,
+      "scene": "station",
+      "start": 169.8,
+      "dur": 2.2
+    },
+    {
+      "i": 41,
+      "scene": "station",
+      "start": 172,
+      "dur": 4.5
+    },
+    {
+      "i": 42,
+      "scene": "station",
+      "start": 176.5,
+      "dur": 3.8
+    },
+    {
+      "i": 43,
+      "scene": "station",
+      "start": 180.3,
+      "dur": 3.5
+    },
+    {
+      "i": 44,
+      "scene": "station",
+      "start": 183.8,
+      "dur": 4
+    },
+    {
+      "i": 45,
+      "scene": "station",
+      "start": 187.8,
+      "dur": 3.2
+    },
+    {
+      "i": 46,
+      "scene": "station",
+      "start": 191,
+      "dur": 4.3
+    },
+    {
+      "i": 47,
+      "scene": "hand",
+      "start": 195.3,
+      "dur": 5.7
+    },
+    {
+      "i": 48,
+      "scene": "station",
+      "start": 201,
+      "dur": 4.6
+    },
+    {
+      "i": 49,
+      "scene": "station",
+      "start": 205.6,
+      "dur": 5.3
+    },
+    {
+      "i": 50,
+      "scene": "station",
+      "start": 210.9,
+      "dur": 2.9
+    },
+    {
+      "i": 51,
+      "scene": "sala",
+      "start": 213.8,
+      "dur": 4.5
+    },
+    {
+      "i": 52,
+      "scene": "station",
+      "start": 218.3,
+      "dur": 5.1
+    },
+    {
+      "i": 53,
+      "scene": "station",
+      "start": 223.4,
+      "dur": 3
+    },
+    {
+      "i": 54,
+      "scene": "map",
+      "start": 226.4,
+      "dur": 6.1
+    },
+    {
+      "i": 55,
+      "scene": "shop",
+      "start": 232.5,
+      "dur": 4.8
+    },
+    {
+      "i": 56,
+      "scene": "station",
+      "start": 237.3,
+      "dur": 2.8
+    },
+    {
+      "i": 57,
+      "scene": "shop",
+      "start": 240.1,
+      "dur": 4.3
+    },
+    {
+      "i": 58,
+      "scene": "card",
+      "start": 244.4,
+      "dur": 5.6
+    },
+    {
+      "i": 59,
+      "scene": "station",
+      "start": 250,
+      "dur": 4.5
+    },
+    {
+      "i": 60,
+      "scene": "station",
+      "start": 254.5,
+      "dur": 4.3
+    },
+    {
+      "i": 61,
+      "scene": "card",
+      "start": 258.8,
+      "dur": 5.5
+    },
+    {
+      "i": 62,
+      "scene": "station",
+      "start": 264.3,
+      "dur": 3.1
+    },
+    {
+      "i": 63,
+      "scene": "hand",
+      "start": 267.4,
+      "dur": 4.6
+    },
+    {
+      "i": 64,
+      "scene": "station",
+      "start": 272,
+      "dur": 3.9
+    },
+    {
+      "i": 65,
+      "scene": "card",
+      "start": 275.9,
+      "dur": 5.1
+    },
+    {
+      "i": 66,
+      "scene": "shortcut",
+      "start": 281,
+      "dur": 4.4
+    },
+    {
+      "i": 67,
+      "scene": "station",
+      "start": 285.4,
+      "dur": 3.6
+    },
+    {
+      "i": 68,
+      "scene": "station",
+      "start": 289,
+      "dur": 5.2
+    },
+    {
+      "i": 69,
+      "scene": "past",
+      "start": 294.2,
+      "dur": 5.1
+    },
+    {
+      "i": 70,
+      "scene": "past",
+      "start": 299.3,
+      "dur": 7
+    },
+    {
+      "i": 71,
+      "scene": "past",
+      "start": 306.3,
+      "dur": 5.8
+    },
+    {
+      "i": 72,
+      "scene": "past",
+      "start": 312.1,
+      "dur": 6.1
+    },
+    {
+      "i": 73,
+      "scene": "station",
+      "start": 318.2,
+      "dur": 2.9
+    },
+    {
+      "i": 74,
+      "scene": "card",
+      "start": 321.1,
+      "dur": 5.1
+    },
+    {
+      "i": 75,
+      "scene": "station",
+      "start": 326.2,
+      "dur": 3.7
+    },
+    {
+      "i": 76,
+      "scene": "station",
+      "start": 329.9,
+      "dur": 2.6
+    },
+    {
+      "i": 77,
+      "scene": "station",
+      "start": 332.5,
+      "dur": 1.7
+    },
+    {
+      "i": 78,
+      "scene": "station",
+      "start": 334.2,
+      "dur": 5.2
+    },
+    {
+      "i": 79,
+      "scene": "card",
+      "start": 339.4,
+      "dur": 4.9
+    },
+    {
+      "i": 80,
+      "scene": "station",
+      "start": 344.3,
+      "dur": 4.7
+    },
+    {
+      "i": 81,
+      "scene": "station",
+      "start": 349,
+      "dur": 5.3
+    },
+    {
+      "i": 82,
+      "scene": "station",
+      "start": 354.3,
+      "dur": 3
+    },
+    {
+      "i": 83,
+      "scene": "hand",
+      "start": 357.3,
+      "dur": 4
+    },
+    {
+      "i": 84,
+      "scene": "station",
+      "start": 361.3,
+      "dur": 3.6
+    },
+    {
+      "i": 85,
+      "scene": "station",
+      "start": 364.9,
+      "dur": 3
+    },
+    {
+      "i": 86,
+      "scene": "station",
+      "start": 367.9,
+      "dur": 4.8
+    },
+    {
+      "i": 87,
+      "scene": "station",
+      "start": 372.7,
+      "dur": 5.3
+    },
+    {
+      "i": 88,
+      "scene": "station",
+      "start": 378,
+      "dur": 4.4
+    },
+    {
+      "i": 89,
+      "scene": "hand",
+      "start": 382.4,
+      "dur": 5.5
+    },
+    {
+      "i": 90,
+      "scene": "helmet",
+      "start": 387.9,
+      "dur": 3.6
+    },
+    {
+      "i": 91,
+      "scene": "station",
+      "start": 391.5,
+      "dur": 3.5
+    },
+    {
+      "i": 92,
+      "scene": "station",
+      "start": 395,
+      "dur": 3.7
+    },
+    {
+      "i": 93,
+      "scene": "road",
+      "start": 398.7,
+      "dur": 4
+    },
+    {
+      "i": 94,
+      "scene": "barscreen",
+      "start": 402.7,
+      "dur": 3.5
+    },
+    {
+      "i": 95,
+      "scene": "shop",
+      "start": 406.2,
+      "dur": 4.6
+    },
+    {
+      "i": 96,
+      "scene": "shop",
+      "start": 410.8,
+      "dur": 3.2
+    },
+    {
+      "i": 97,
+      "scene": "shop",
+      "start": 414,
+      "dur": 3.5
+    },
+    {
+      "i": 98,
+      "scene": "shop",
+      "start": 417.5,
+      "dur": 5
+    },
+    {
+      "i": 99,
+      "scene": "shop",
+      "start": 422.5,
+      "dur": 4.2
+    },
+    {
+      "i": 100,
+      "scene": "shop",
+      "start": 426.7,
+      "dur": 3.4
+    },
+    {
+      "i": 101,
+      "scene": "hand",
+      "start": 430.1,
+      "dur": 5.2
+    },
+    {
+      "i": 102,
+      "scene": "hand",
+      "start": 435.3,
+      "dur": 3.9
+    },
+    {
+      "i": 103,
+      "scene": "shop",
+      "start": 439.2,
+      "dur": 3.1
+    },
+    {
+      "i": 104,
+      "scene": "road",
+      "start": 442.3,
+      "dur": 4.1
+    },
+    {
+      "i": 105,
+      "scene": "checkpoint",
+      "start": 446.4,
+      "dur": 3.5
+    },
+    {
+      "i": 106,
+      "scene": "checkpoint",
+      "start": 449.9,
+      "dur": 4.6
+    },
+    {
+      "i": 107,
+      "scene": "checkpoint",
+      "start": 454.5,
+      "dur": 3.8
+    },
+    {
+      "i": 108,
+      "scene": "checkpoint",
+      "start": 458.3,
+      "dur": 2.9
+    },
+    {
+      "i": 109,
+      "scene": "checkpoint",
+      "start": 461.2,
+      "dur": 2.2
+    },
+    {
+      "i": 110,
+      "scene": "checkpoint",
+      "start": 463.4,
+      "dur": 2.8
+    },
+    {
+      "i": 111,
+      "scene": "checkpoint",
+      "start": 466.2,
+      "dur": 4.6
+    },
+    {
+      "i": 112,
+      "scene": "checkpoint",
+      "start": 470.8,
+      "dur": 3.2
+    },
+    {
+      "i": 113,
+      "scene": "checkpoint",
+      "start": 474,
+      "dur": 4.5
+    },
+    {
+      "i": 114,
+      "scene": "road",
+      "start": 478.5,
+      "dur": 4.2
+    },
+    {
+      "i": 115,
+      "scene": "road",
+      "start": 482.7,
+      "dur": 3.4
+    },
+    {
+      "i": 116,
+      "scene": "road",
+      "start": 486.1,
+      "dur": 5.5
+    },
+    {
+      "i": 117,
+      "scene": "road",
+      "start": 491.6,
+      "dur": 4.6
+    },
+    {
+      "i": 118,
+      "scene": "helmet",
+      "start": 496.2,
+      "dur": 5
+    },
+    {
+      "i": 119,
+      "scene": "sala",
+      "start": 501.2,
+      "dur": 3.6
+    },
+    {
+      "i": 120,
+      "scene": "sala",
+      "start": 504.8,
+      "dur": 3.4
+    },
+    {
+      "i": 121,
+      "scene": "sala",
+      "start": 508.2,
+      "dur": 3.4
+    },
+    {
+      "i": 122,
+      "scene": "sala",
+      "start": 511.6,
+      "dur": 5.5
+    },
+    {
+      "i": 123,
+      "scene": "sala",
+      "start": 517.1,
+      "dur": 3.6
+    },
+    {
+      "i": 124,
+      "scene": "sala",
+      "start": 520.7,
+      "dur": 4.2
+    },
+    {
+      "i": 125,
+      "scene": "barscreen",
+      "start": 524.9,
+      "dur": 6
+    },
+    {
+      "i": 126,
+      "scene": "station",
+      "start": 530.9,
+      "dur": 4
+    },
+    {
+      "i": 127,
+      "scene": "station",
+      "start": 534.9,
+      "dur": 3.4
+    },
+    {
+      "i": 128,
+      "scene": "station",
+      "start": 538.3,
+      "dur": 4.6
+    },
+    {
+      "i": 129,
+      "scene": "station",
+      "start": 542.9,
+      "dur": 5.3
+    },
+    {
+      "i": 130,
+      "scene": "station",
+      "start": 548.2,
+      "dur": 4.4
+    },
+    {
+      "i": 131,
+      "scene": "station",
+      "start": 552.6,
+      "dur": 4.2
+    },
+    {
+      "i": 132,
+      "scene": "station",
+      "start": 556.8,
+      "dur": 3.1
+    },
+    {
+      "i": 133,
+      "scene": "station",
+      "start": 559.9,
+      "dur": 3.9
+    },
+    {
+      "i": 134,
+      "scene": "hand",
+      "start": 563.8,
+      "dur": 2.5
+    },
+    {
+      "i": 135,
+      "scene": "helmet",
+      "start": 566.3,
+      "dur": 5
+    },
+    {
+      "i": 136,
+      "scene": "barscreen",
+      "start": 571.3,
+      "dur": 7.8
+    },
+    {
+      "i": 137,
+      "scene": "shop",
+      "start": 579.1,
+      "dur": 5.5
+    },
+    {
+      "i": 138,
+      "scene": "shop",
+      "start": 584.6,
+      "dur": 5.4
+    },
+    {
+      "i": 139,
+      "scene": "hand",
+      "start": 590,
+      "dur": 5
+    },
+    {
+      "i": 140,
+      "scene": "road",
+      "start": 595,
+      "dur": 3.6
+    },
+    {
+      "i": 141,
+      "scene": "checkpoint",
+      "start": 598.6,
+      "dur": 2.3
+    },
+    {
+      "i": 142,
+      "scene": "card",
+      "start": 600.9,
+      "dur": 3.1
+    },
+    {
+      "i": 143,
+      "scene": "checkpoint",
+      "start": 604,
+      "dur": 2.9
+    },
+    {
+      "i": 144,
+      "scene": "checkpoint",
+      "start": 606.9,
+      "dur": 3.1
+    },
+    {
+      "i": 145,
+      "scene": "checkpoint",
+      "start": 610,
+      "dur": 3.3
+    },
+    {
+      "i": 146,
+      "scene": "helmet",
+      "start": 613.3,
+      "dur": 5.3
+    },
+    {
+      "i": 147,
+      "scene": "checkpoint",
+      "start": 618.6,
+      "dur": 5.4
+    },
+    {
+      "i": 148,
+      "scene": "checkpoint",
+      "start": 624,
+      "dur": 4.6
+    },
+    {
+      "i": 149,
+      "scene": "checkpoint",
+      "start": 628.6,
+      "dur": 4.3
+    },
+    {
+      "i": 150,
+      "scene": "checkpoint",
+      "start": 632.9,
+      "dur": 2.7
+    },
+    {
+      "i": 151,
+      "scene": "road",
+      "start": 635.6,
+      "dur": 2.6
+    },
+    {
+      "i": 152,
+      "scene": "sala",
+      "start": 638.2,
+      "dur": 4.7
+    },
+    {
+      "i": 153,
+      "scene": "sala",
+      "start": 642.9,
+      "dur": 1.6
+    },
+    {
+      "i": 154,
+      "scene": "sala",
+      "start": 644.5,
+      "dur": 4.2
+    },
+    {
+      "i": 155,
+      "scene": "sala",
+      "start": 648.7,
+      "dur": 3.6
+    },
+    {
+      "i": 156,
+      "scene": "sala",
+      "start": 652.3,
+      "dur": 5.9
+    },
+    {
+      "i": 157,
+      "scene": "sala",
+      "start": 658.2,
+      "dur": 4.3
+    },
+    {
+      "i": 158,
+      "scene": "sala",
+      "start": 662.5,
+      "dur": 5.6
+    },
+    {
+      "i": 159,
+      "scene": "sala",
+      "start": 668.1,
+      "dur": 4.1
+    },
+    {
+      "i": 160,
+      "scene": "hand",
+      "start": 672.2,
+      "dur": 3.1
+    },
+    {
+      "i": 161,
+      "scene": "sala",
+      "start": 675.3,
+      "dur": 6.7
+    },
+    {
+      "i": 162,
+      "scene": "sala",
+      "start": 682,
+      "dur": 3
+    },
+    {
+      "i": 163,
+      "scene": "helmet",
+      "start": 685,
+      "dur": 3.1
+    },
+    {
+      "i": 164,
+      "scene": "barscreen",
+      "start": 688.1,
+      "dur": 3.6
+    },
+    {
+      "i": 165,
+      "scene": "barscreen",
+      "start": 691.7,
+      "dur": 4.8
+    },
+    {
+      "i": 166,
+      "scene": "barscreen",
+      "start": 696.5,
+      "dur": 4.8
+    },
+    {
+      "i": 167,
+      "scene": "barscreen",
+      "start": 701.3,
+      "dur": 2
+    },
+    {
+      "i": 168,
+      "scene": "helmet",
+      "start": 703.3,
+      "dur": 4.8
+    },
+    {
+      "i": 169,
+      "scene": "road",
+      "start": 708.1,
+      "dur": 5.2
+    },
+    {
+      "i": 170,
+      "scene": "station",
+      "start": 713.3,
+      "dur": 4.1
+    },
+    {
+      "i": 171,
+      "scene": "room",
+      "start": 717.4,
+      "dur": 2.6
+    },
+    {
+      "i": 172,
+      "scene": "hand",
+      "start": 720,
+      "dur": 4.2
+    },
+    {
+      "i": 173,
+      "scene": "room",
+      "start": 724.2,
+      "dur": 4.2
+    },
+    {
+      "i": 174,
+      "scene": "rearfile",
+      "start": 728.4,
+      "dur": 3.1
+    },
+    {
+      "i": 175,
+      "scene": "rearfile",
+      "start": 731.5,
+      "dur": 4.1
+    },
+    {
+      "i": 176,
+      "scene": "rearfile",
+      "start": 735.6,
+      "dur": 5.8
+    },
+    {
+      "i": 177,
+      "scene": "rearfile",
+      "start": 741.4,
+      "dur": 5.2
+    },
+    {
+      "i": 178,
+      "scene": "room",
+      "start": 746.6,
+      "dur": 4.5
+    },
+    {
+      "i": 179,
+      "scene": "rearfile",
+      "start": 751.1,
+      "dur": 3.1
+    },
+    {
+      "i": 180,
+      "scene": "card",
+      "start": 754.2,
+      "dur": 6.6
+    },
+    {
+      "i": 181,
+      "scene": "room",
+      "start": 760.8,
+      "dur": 4.4
+    },
+    {
+      "i": 182,
+      "scene": "card",
+      "start": 765.2,
+      "dur": 4.9
+    },
+    {
+      "i": 183,
+      "scene": "hand",
+      "start": 770.1,
+      "dur": 5
+    },
+    {
+      "i": 184,
+      "scene": "card",
+      "start": 775.1,
+      "dur": 6.3
+    },
+    {
+      "i": 185,
+      "scene": "hand",
+      "start": 781.4,
+      "dur": 3.8
+    },
+    {
+      "i": 186,
+      "scene": "card",
+      "start": 785.2,
+      "dur": 4.8
+    },
+    {
+      "i": 187,
+      "scene": "map",
+      "start": 790,
+      "dur": 6.5
+    },
+    {
+      "i": 188,
+      "scene": "map",
+      "start": 796.5,
+      "dur": 3.1
+    },
+    {
+      "i": 189,
+      "scene": "card",
+      "start": 799.6,
+      "dur": 5.7
+    },
+    {
+      "i": 190,
+      "scene": "rearfile",
+      "start": 805.3,
+      "dur": 5
+    },
+    {
+      "i": 191,
+      "scene": "card",
+      "start": 810.3,
+      "dur": 4.3
+    },
+    {
+      "i": 192,
+      "scene": "helmet",
+      "start": 814.6,
+      "dur": 4.9
+    },
+    {
+      "i": 193,
+      "scene": "room",
+      "start": 819.5,
+      "dur": 3.5
+    },
+    {
+      "i": 194,
+      "scene": "checkpoint",
+      "start": 823,
+      "dur": 2.8
+    },
+    {
+      "i": 195,
+      "scene": "room",
+      "start": 825.8,
+      "dur": 3.9
+    },
+    {
+      "i": 196,
+      "scene": "phone",
+      "start": 829.7,
+      "dur": 2.1
+    },
+    {
+      "i": 197,
+      "scene": "room",
+      "start": 831.8,
+      "dur": 7
+    },
+    {
+      "i": 198,
+      "scene": "rearfile",
+      "start": 838.8,
+      "dur": 4.3
+    },
+    {
+      "i": 199,
+      "scene": "shortcut",
+      "start": 843.1,
+      "dur": 4.2
+    },
+    {
+      "i": 200,
+      "scene": "room",
+      "start": 847.3,
+      "dur": 4.4
+    },
+    {
+      "i": 201,
+      "scene": "room",
+      "start": 851.7,
+      "dur": 5.1
+    },
+    {
+      "i": 202,
+      "scene": "road",
+      "start": 856.8,
+      "dur": 4
+    },
+    {
+      "i": 203,
+      "scene": "sala",
+      "start": 860.8,
+      "dur": 4.3
+    },
+    {
+      "i": 204,
+      "scene": "sala",
+      "start": 865.1,
+      "dur": 6
+    },
+    {
+      "i": 205,
+      "scene": "hut",
+      "start": 871.1,
+      "dur": 3.4
+    },
+    {
+      "i": 206,
+      "scene": "hut",
+      "start": 874.5,
+      "dur": 4.2
+    },
+    {
+      "i": 207,
+      "scene": "hut",
+      "start": 878.7,
+      "dur": 3.7
+    },
+    {
+      "i": 208,
+      "scene": "hut",
+      "start": 882.4,
+      "dur": 4.6
+    },
+    {
+      "i": 209,
+      "scene": "hut",
+      "start": 887,
+      "dur": 4.3
+    },
+    {
+      "i": 210,
+      "scene": "hut",
+      "start": 891.3,
+      "dur": 4.3
+    },
+    {
+      "i": 211,
+      "scene": "hut",
+      "start": 895.6,
+      "dur": 5.1
+    },
+    {
+      "i": 212,
+      "scene": "hut",
+      "start": 900.7,
+      "dur": 2.4
+    },
+    {
+      "i": 213,
+      "scene": "hut",
+      "start": 903.1,
+      "dur": 2.9
+    },
+    {
+      "i": 214,
+      "scene": "hut",
+      "start": 906,
+      "dur": 5.6
+    },
+    {
+      "i": 215,
+      "scene": "hut",
+      "start": 911.6,
+      "dur": 3.3
+    },
+    {
+      "i": 216,
+      "scene": "hut",
+      "start": 914.9,
+      "dur": 3.4
+    },
+    {
+      "i": 217,
+      "scene": "hut",
+      "start": 918.3,
+      "dur": 2.8
+    },
+    {
+      "i": 218,
+      "scene": "road",
+      "start": 921.1,
+      "dur": 6.1
+    },
+    {
+      "i": 219,
+      "scene": "road",
+      "start": 927.2,
+      "dur": 5.6
+    },
+    {
+      "i": 220,
+      "scene": "road",
+      "start": 932.8,
+      "dur": 4.6
+    },
+    {
+      "i": 221,
+      "scene": "road",
+      "start": 937.4,
+      "dur": 3.5
+    },
+    {
+      "i": 222,
+      "scene": "road",
+      "start": 940.9,
+      "dur": 3.8
+    },
+    {
+      "i": 223,
+      "scene": "road",
+      "start": 944.7,
+      "dur": 2.8
+    },
+    {
+      "i": 224,
+      "scene": "road",
+      "start": 947.5,
+      "dur": 4.1
+    },
+    {
+      "i": 225,
+      "scene": "road",
+      "start": 951.6,
+      "dur": 5.3
+    },
+    {
+      "i": 226,
+      "scene": "hut",
+      "start": 956.9,
+      "dur": 4.7
+    },
+    {
+      "i": 227,
+      "scene": "hut",
+      "start": 961.6,
+      "dur": 2.2
+    },
+    {
+      "i": 228,
+      "scene": "hut",
+      "start": 963.8,
+      "dur": 4.7
+    },
+    {
+      "i": 229,
+      "scene": "hut",
+      "start": 968.5,
+      "dur": 5.3
+    },
+    {
+      "i": 230,
+      "scene": "hut",
+      "start": 973.8,
+      "dur": 4.3
+    },
+    {
+      "i": 231,
+      "scene": "hut",
+      "start": 978.1,
+      "dur": 1.8
+    },
+    {
+      "i": 232,
+      "scene": "shortcut",
+      "start": 979.9,
+      "dur": 5.3
+    },
+    {
+      "i": 233,
+      "scene": "hut",
+      "start": 985.2,
+      "dur": 2.4
+    },
+    {
+      "i": 234,
+      "scene": "hut",
+      "start": 987.6,
+      "dur": 6.7
+    },
+    {
+      "i": 235,
+      "scene": "shortcut",
+      "start": 994.3,
+      "dur": 4.5
+    },
+    {
+      "i": 236,
+      "scene": "shortcut",
+      "start": 998.8,
+      "dur": 3.5
+    },
+    {
+      "i": 237,
+      "scene": "station",
+      "start": 1002.3,
+      "dur": 3.7
+    },
+    {
+      "i": 238,
+      "scene": "station",
+      "start": 1006,
+      "dur": 4.2
+    },
+    {
+      "i": 239,
+      "scene": "station",
+      "start": 1010.2,
+      "dur": 5.9
+    },
+    {
+      "i": 240,
+      "scene": "room",
+      "start": 1016.1,
+      "dur": 4.7
+    },
+    {
+      "i": 241,
+      "scene": "room",
+      "start": 1020.8,
+      "dur": 2.7
+    },
+    {
+      "i": 242,
+      "scene": "phone",
+      "start": 1023.5,
+      "dur": 3.2
+    },
+    {
+      "i": 243,
+      "scene": "phone",
+      "start": 1026.7,
+      "dur": 2.3
+    },
+    {
+      "i": 244,
+      "scene": "room",
+      "start": 1029,
+      "dur": 3.7
+    },
+    {
+      "i": 245,
+      "scene": "room",
+      "start": 1032.7,
+      "dur": 1.6
+    },
+    {
+      "i": 246,
+      "scene": "room",
+      "start": 1034.3,
+      "dur": 5.7
+    },
+    {
+      "i": 247,
+      "scene": "room",
+      "start": 1040,
+      "dur": 1.6
+    },
+    {
+      "i": 248,
+      "scene": "shop",
+      "start": 1041.6,
+      "dur": 3
+    },
+    {
+      "i": 249,
+      "scene": "hand",
+      "start": 1044.6,
+      "dur": 4.7
+    },
+    {
+      "i": 250,
+      "scene": "road",
+      "start": 1049.3,
+      "dur": 3.1
+    },
+    {
+      "i": 251,
+      "scene": "checkpoint",
+      "start": 1052.4,
+      "dur": 4.3
+    },
+    {
+      "i": 252,
+      "scene": "checkpoint",
+      "start": 1056.7,
+      "dur": 3.6
+    },
+    {
+      "i": 253,
+      "scene": "helmet",
+      "start": 1060.3,
+      "dur": 3.9
+    },
+    {
+      "i": 254,
+      "scene": "sala",
+      "start": 1064.2,
+      "dur": 6
+    },
+    {
+      "i": 255,
+      "scene": "helmet",
+      "start": 1070.2,
+      "dur": 5.4
+    },
+    {
+      "i": 256,
+      "scene": "station",
+      "start": 1075.6,
+      "dur": 2.7
+    },
+    {
+      "i": 257,
+      "scene": "station",
+      "start": 1078.3,
+      "dur": 4.4
+    },
+    {
+      "i": 258,
+      "scene": "station",
+      "start": 1082.7,
+      "dur": 5
+    },
+    {
+      "i": 259,
+      "scene": "station",
+      "start": 1087.7,
+      "dur": 4.3
+    },
+    {
+      "i": 260,
+      "scene": "station",
+      "start": 1092,
+      "dur": 2.5
+    },
+    {
+      "i": 261,
+      "scene": "station",
+      "start": 1094.5,
+      "dur": 4.9
+    },
+    {
+      "i": 262,
+      "scene": "station",
+      "start": 1099.4,
+      "dur": 3.8
+    },
+    {
+      "i": 263,
+      "scene": "station",
+      "start": 1103.2,
+      "dur": 1.6
+    },
+    {
+      "i": 264,
+      "scene": "station",
+      "start": 1104.8,
+      "dur": 3.6
+    },
+    {
+      "i": 265,
+      "scene": "station",
+      "start": 1108.4,
+      "dur": 6.1
+    },
+    {
+      "i": 266,
+      "scene": "station",
+      "start": 1114.5,
+      "dur": 5.9
+    },
+    {
+      "i": 267,
+      "scene": "station",
+      "start": 1120.4,
+      "dur": 3.5
+    },
+    {
+      "i": 268,
+      "scene": "station",
+      "start": 1123.9,
+      "dur": 3.6
+    },
+    {
+      "i": 269,
+      "scene": "station",
+      "start": 1127.5,
+      "dur": 5.7
+    },
+    {
+      "i": 270,
+      "scene": "station",
+      "start": 1133.2,
+      "dur": 4.3
+    },
+    {
+      "i": 271,
+      "scene": "hand",
+      "start": 1137.5,
+      "dur": 4.2
+    },
+    {
+      "i": 272,
+      "scene": "station",
+      "start": 1141.7,
+      "dur": 6.3
+    },
+    {
+      "i": 273,
+      "scene": "station",
+      "start": 1148,
+      "dur": 1.6
+    },
+    {
+      "i": 274,
+      "scene": "station",
+      "start": 1149.6,
+      "dur": 3.4
+    },
+    {
+      "i": 275,
+      "scene": "hand",
+      "start": 1153,
+      "dur": 6.3
+    },
+    {
+      "i": 276,
+      "scene": "rearfile",
+      "start": 1159.3,
+      "dur": 6
+    },
+    {
+      "i": 277,
+      "scene": "station",
+      "start": 1165.3,
+      "dur": 2.5
+    },
+    {
+      "i": 278,
+      "scene": "station",
+      "start": 1167.8,
+      "dur": 7.2
+    },
+    {
+      "i": 279,
+      "scene": "hand",
+      "start": 1175,
+      "dur": 3.1
+    },
+    {
+      "i": 280,
+      "scene": "card",
+      "start": 1178.1,
+      "dur": 7.1
+    },
+    {
+      "i": 281,
+      "scene": "room",
+      "start": 1185.2,
+      "dur": 2.8
+    },
+    {
+      "i": 282,
+      "scene": "rearfile",
+      "start": 1188,
+      "dur": 2.3
+    },
+    {
+      "i": 283,
+      "scene": "rearfile",
+      "start": 1190.3,
+      "dur": 5.8
+    },
+    {
+      "i": 284,
+      "scene": "hand",
+      "start": 1196.1,
+      "dur": 4.6
+    },
+    {
+      "i": 285,
+      "scene": "room",
+      "start": 1200.7,
+      "dur": 5.5
+    },
+    {
+      "i": 286,
+      "scene": "hand",
+      "start": 1206.2,
+      "dur": 5.6
+    },
+    {
+      "i": 287,
+      "scene": "room",
+      "start": 1211.8,
+      "dur": 6.2
+    },
+    {
+      "i": 288,
+      "scene": "room",
+      "start": 1218,
+      "dur": 5.6
+    },
+    {
+      "i": 289,
+      "scene": "room",
+      "start": 1223.6,
+      "dur": 2.1
+    },
+    {
+      "i": 290,
+      "scene": "phone",
+      "start": 1225.7,
+      "dur": 3.9
+    },
+    {
+      "i": 291,
+      "scene": "card",
+      "start": 1229.6,
+      "dur": 7.7
+    },
+    {
+      "i": 292,
+      "scene": "checkpoint",
+      "start": 1237.3,
+      "dur": 4.9
+    },
+    {
+      "i": 293,
+      "scene": "helmet",
+      "start": 1242.2,
+      "dur": 3.8
+    },
+    {
+      "i": 294,
+      "scene": "sala",
+      "start": 1246,
+      "dur": 4.9
+    },
+    {
+      "i": 295,
+      "scene": "sala",
+      "start": 1250.9,
+      "dur": 3.7
+    },
+    {
+      "i": 296,
+      "scene": "sala",
+      "start": 1254.6,
+      "dur": 5.1
+    },
+    {
+      "i": 297,
+      "scene": "sala",
+      "start": 1259.7,
+      "dur": 2.8
+    },
+    {
+      "i": 298,
+      "scene": "sala",
+      "start": 1262.5,
+      "dur": 4.2
+    },
+    {
+      "i": 299,
+      "scene": "road",
+      "start": 1266.7,
+      "dur": 5.6
+    },
+    {
+      "i": 300,
+      "scene": "barscreen",
+      "start": 1272.3,
+      "dur": 4
+    },
+    {
+      "i": 301,
+      "scene": "phone",
+      "start": 1276.3,
+      "dur": 3.9
+    },
+    {
+      "i": 302,
+      "scene": "livefeed",
+      "start": 1280.2,
+      "dur": 2.9
+    },
+    {
+      "i": 303,
+      "scene": "livefeed",
+      "start": 1283.1,
+      "dur": 3.5
+    },
+    {
+      "i": 304,
+      "scene": "helmet",
+      "start": 1286.6,
+      "dur": 2.9
+    },
+    {
+      "i": 305,
+      "scene": "livefeed",
+      "start": 1289.5,
+      "dur": 3.2
+    },
+    {
+      "i": 306,
+      "scene": "livefeed",
+      "start": 1292.7,
+      "dur": 2.8
+    },
+    {
+      "i": 307,
+      "scene": "livefeed",
+      "start": 1295.5,
+      "dur": 3.5
+    },
+    {
+      "i": 308,
+      "scene": "phone",
+      "start": 1299,
+      "dur": 5.1
+    },
+    {
+      "i": 309,
+      "scene": "livefeed",
+      "start": 1304.1,
+      "dur": 4
+    },
+    {
+      "i": 310,
+      "scene": "livefeed",
+      "start": 1308.1,
+      "dur": 1.8
+    },
+    {
+      "i": 311,
+      "scene": "sala",
+      "start": 1309.9,
+      "dur": 4.6
+    },
+    {
+      "i": 312,
+      "scene": "barscreen",
+      "start": 1314.5,
+      "dur": 2.2
+    },
+    {
+      "i": 313,
+      "scene": "sala",
+      "start": 1316.7,
+      "dur": 5.2
+    },
+    {
+      "i": 314,
+      "scene": "helmet",
+      "start": 1321.9,
+      "dur": 4.1
+    },
+    {
+      "i": 315,
+      "scene": "phone",
+      "start": 1326,
+      "dur": 3.1
+    },
+    {
+      "i": 316,
+      "scene": "road",
+      "start": 1329.1,
+      "dur": 4.2
+    },
+    {
+      "i": 317,
+      "scene": "sala",
+      "start": 1333.3,
+      "dur": 4.4
+    },
+    {
+      "i": 318,
+      "scene": "sala",
+      "start": 1337.7,
+      "dur": 4.1
+    },
+    {
+      "i": 319,
+      "scene": "sala",
+      "start": 1341.8,
+      "dur": 2.3
+    },
+    {
+      "i": 320,
+      "scene": "sala",
+      "start": 1344.1,
+      "dur": 5
+    },
+    {
+      "i": 321,
+      "scene": "sala",
+      "start": 1349.1,
+      "dur": 4.1
+    },
+    {
+      "i": 322,
+      "scene": "sala",
+      "start": 1353.2,
+      "dur": 3.6
+    },
+    {
+      "i": 323,
+      "scene": "sala",
+      "start": 1356.8,
+      "dur": 1.6
+    },
+    {
+      "i": 324,
+      "scene": "sala",
+      "start": 1358.4,
+      "dur": 1.8
+    },
+    {
+      "i": 325,
+      "scene": "sala",
+      "start": 1360.2,
+      "dur": 4.3
+    },
+    {
+      "i": 326,
+      "scene": "sala",
+      "start": 1364.5,
+      "dur": 3
+    },
+    {
+      "i": 327,
+      "scene": "sala",
+      "start": 1367.5,
+      "dur": 3.1
+    },
+    {
+      "i": 328,
+      "scene": "checkpoint",
+      "start": 1370.6,
+      "dur": 7.8
+    },
+    {
+      "i": 329,
+      "scene": "past",
+      "start": 1378.4,
+      "dur": 3.2
+    },
+    {
+      "i": 330,
+      "scene": "checkpoint",
+      "start": 1381.6,
+      "dur": 7.3
+    },
+    {
+      "i": 331,
+      "scene": "checkpoint",
+      "start": 1388.9,
+      "dur": 3
+    },
+    {
+      "i": 332,
+      "scene": "past",
+      "start": 1391.9,
+      "dur": 6.7
+    },
+    {
+      "i": 333,
+      "scene": "station",
+      "start": 1398.6,
+      "dur": 3.5
+    },
+    {
+      "i": 334,
+      "scene": "station",
+      "start": 1402.1,
+      "dur": 5.8
+    },
+    {
+      "i": 335,
+      "scene": "station",
+      "start": 1407.9,
+      "dur": 5.5
+    },
+    {
+      "i": 336,
+      "scene": "barscreen",
+      "start": 1413.4,
+      "dur": 4.6
+    },
+    {
+      "i": 337,
+      "scene": "card",
+      "start": 1418,
+      "dur": 7.2
+    },
+    {
+      "i": 338,
+      "scene": "sala",
+      "start": 1425.2,
+      "dur": 4.5
+    },
+    {
+      "i": 339,
+      "scene": "sala",
+      "start": 1429.7,
+      "dur": 4.6
+    },
+    {
+      "i": 340,
+      "scene": "past",
+      "start": 1434.3,
+      "dur": 4.7
+    },
+    {
+      "i": 341,
+      "scene": "sala",
+      "start": 1439,
+      "dur": 2.7
+    },
+    {
+      "i": 342,
+      "scene": "sala",
+      "start": 1441.7,
+      "dur": 4.3
+    },
+    {
+      "i": 343,
+      "scene": "hand",
+      "start": 1446,
+      "dur": 2.8
+    },
+    {
+      "i": 344,
+      "scene": "sala",
+      "start": 1448.8,
+      "dur": 4.5
+    },
+    {
+      "i": 345,
+      "scene": "sala",
+      "start": 1453.3,
+      "dur": 4.7
+    },
+    {
+      "i": 346,
+      "scene": "road",
+      "start": 1458,
+      "dur": 3.4
+    },
+    {
+      "i": 347,
+      "scene": "road",
+      "start": 1461.4,
+      "dur": 5.9
+    },
+    {
+      "i": 348,
+      "scene": "sala",
+      "start": 1467.3,
+      "dur": 4.4
+    },
+    {
+      "i": 349,
+      "scene": "hand",
+      "start": 1471.7,
+      "dur": 6.3
+    },
+    {
+      "i": 350,
+      "scene": "shop",
+      "start": 1478,
+      "dur": 5.1
+    },
+    {
+      "i": 351,
+      "scene": "sala",
+      "start": 1483.1,
+      "dur": 4.1
+    },
+    {
+      "i": 352,
+      "scene": "sala",
+      "start": 1487.2,
+      "dur": 4
+    },
+    {
+      "i": 353,
+      "scene": "checkpoint",
+      "start": 1491.2,
+      "dur": 5.4
+    },
+    {
+      "i": 354,
+      "scene": "hand",
+      "start": 1496.6,
+      "dur": 4.3
+    },
+    {
+      "i": 355,
+      "scene": "phone",
+      "start": 1500.9,
+      "dur": 4.2
+    },
+    {
+      "i": 356,
+      "scene": "road",
+      "start": 1505.1,
+      "dur": 4.2
+    },
+    {
+      "i": 357,
+      "scene": "road",
+      "start": 1509.3,
+      "dur": 4.3
+    },
+    {
+      "i": 358,
+      "scene": "sala",
+      "start": 1513.6,
+      "dur": 1.7
+    },
+    {
+      "i": 359,
+      "scene": "sala",
+      "start": 1515.3,
+      "dur": 5
+    },
+    {
+      "i": 360,
+      "scene": "road",
+      "start": 1520.3,
+      "dur": 3.5
+    },
+    {
+      "i": 361,
+      "scene": "road",
+      "start": 1523.8,
+      "dur": 5
+    },
+    {
+      "i": 362,
+      "scene": "endcard",
+      "start": 1528.8,
+      "dur": 6.5
+    }
+  ],
+  "chapters": [
+    {
+      "n": 0,
+      "name": "กฎข้อเดียวที่ห้ามลืม",
+      "first": 0,
+      "start": 0,
+      "last": 12,
+      "dur": 52.8,
+      "from": 0,
+      "to": 1583
+    },
+    {
+      "n": 1,
+      "name": "ไรเดอร์ที่มีตาสองคู่",
+      "first": 13,
+      "start": 52.8,
+      "last": 50,
+      "dur": 161,
+      "from": 1584,
+      "to": 6413
+    },
+    {
+      "n": 2,
+      "name": "กฎห้าข้อ",
+      "first": 51,
+      "start": 213.8,
+      "last": 94,
+      "dur": 192.4,
+      "from": 6414,
+      "to": 12185
+    },
+    {
+      "n": 3,
+      "name": "คืนแรก",
+      "first": 95,
+      "start": 406.2,
+      "last": 136,
+      "dur": 172.9,
+      "from": 12186,
+      "to": 17372
+    },
+    {
+      "n": 4,
+      "name": "คืนที่สอง",
+      "first": 137,
+      "start": 579.1,
+      "last": 170,
+      "dur": 138.3,
+      "from": 17373,
+      "to": 21521
+    },
+    {
+      "n": 5,
+      "name": "กล้องหลังไม่เคยโกหก",
+      "first": 171,
+      "start": 717.4,
+      "last": 201,
+      "dur": 139.4,
+      "from": 21522,
+      "to": 25703
+    },
+    {
+      "n": 6,
+      "name": "ผู้เฝ้าป่าช้า",
+      "first": 202,
+      "start": 856.8,
+      "last": 239,
+      "dur": 159.3,
+      "from": 25704,
+      "to": 30482
+    },
+    {
+      "n": 7,
+      "name": "คนที่จดทุกอย่าง",
+      "first": 240,
+      "start": 1016.1,
+      "last": 266,
+      "dur": 104.3,
+      "from": 30483,
+      "to": 33611
+    },
+    {
+      "n": 8,
+      "name": "เทปรอบที่สี่",
+      "first": 267,
+      "start": 1120.4,
+      "last": 287,
+      "dur": 97.6,
+      "from": 33612,
+      "to": 36539
+    },
+    {
+      "n": 9,
+      "name": "ไลฟ์สด",
+      "first": 288,
+      "start": 1218,
+      "last": 346,
+      "dur": 243.4,
+      "from": 36540,
+      "to": 43841
+    },
+    {
+      "n": 10,
+      "name": "เช้าวันใหม่",
+      "first": 347,
+      "start": 1461.4,
+      "last": 362,
+      "dur": 73.9,
+      "from": 43842,
+      "to": 46058
+    }
+  ],
+  "vo": [
+    {
+      "shot": 0,
+      "file": "00.wav",
+      "start": 0.12,
+      "dur": 4.305,
+      "tempo": 1.1,
+      "raw": 4.72,
+      "vo": "ตีสองสิบห้า ถนนลูกรังสายนี้ ตัดผ่ากลางป่าช้าเก่า"
+    },
+    {
+      "shot": 1,
+      "file": "01.wav",
+      "start": 4.92,
+      "dur": 3.971,
+      "tempo": 1.1,
+      "raw": 4.358,
+      "vo": "ไรเดอร์ทุกคนที่มาส่งของที่นี่ ต้องจำกฎเหล็กให้ขึ้นใจ"
+    },
+    {
+      "shot": 2,
+      "file": "02.wav",
+      "start": 9.42,
+      "dur": 1.823,
+      "tempo": 1.1,
+      "raw": 2,
+      "vo": "ห้ามหันหลังกลับไปมอง"
+    },
+    {
+      "shot": 3,
+      "file": "03.wav",
+      "start": 11.72,
+      "dur": 4.962,
+      "tempo": 1.1,
+      "raw": 5.451,
+      "vo": "ตลอดทางกลับ เจย์ไม่หันหลังไปเลยสักครั้ง ตาจ้องถนนข้างหน้า ไม่กะพริบ"
+    },
+    {
+      "shot": 4,
+      "file": "04.wav",
+      "start": 17.22,
+      "dur": 2.626,
+      "tempo": 1.1,
+      "raw": 2.88,
+      "vo": "แต่บนแฮนด์รถ จอเล็กสองนิ้วยังเปิดอยู่"
+    },
+    {
+      "shot": 5,
+      "file": "05.wav",
+      "start": 20.32,
+      "dur": 3.786,
+      "tempo": 1.1,
+      "raw": 4.159,
+      "vo": "มันฉายภาพจากกล้องตัวที่สอง ที่ติดอยู่ท้ายหมวกของเขา"
+    },
+    {
+      "shot": 6,
+      "file": "06.wav",
+      "start": 24.62,
+      "dur": 4.469,
+      "tempo": 1.1,
+      "raw": 4.898,
+      "vo": "ศาลาแปดเหลี่ยมค่อย ๆ เล็กลงในจอ กล่องข้าววางอยู่บนโต๊ะหินอ่อน"
+    },
+    {
+      "shot": 7,
+      "file": "07.wav",
+      "start": 29.62,
+      "dur": 3.553,
+      "tempo": 1.1,
+      "raw": 3.899,
+      "vo": "แล้วจากความมืดข้างศาลา... มีบางอย่างก้าวออกมา"
+    },
+    {
+      "shot": 8,
+      "file": "08.wav",
+      "start": 33.72,
+      "dur": 3.739,
+      "tempo": 1.1,
+      "raw": 4.121,
+      "vo": "มันยื่นมือไปหยิบกล่องนั้นช้า ๆ เหมือนรู้ว่ากล่องจะมาถึงตอนนี้"
+    },
+    {
+      "shot": 10,
+      "file": "10.wav",
+      "start": 39.82,
+      "dur": 4.459,
+      "tempo": 1.1,
+      "raw": 4.899,
+      "vo": "เจย์ไม่ได้หันไปมอง แต่กล้องตัวที่สองมองแทนเขาตลอดทาง"
+    },
+    {
+      "shot": 11,
+      "file": "11.wav",
+      "start": 44.82,
+      "dur": 4.156,
+      "tempo": 1.1,
+      "raw": 4.56,
+      "vo": "แล้วสิ่งที่มารับกล่องข้าวกล่องนั้นไป คือใคร หรือคืออะไร"
+    },
+    {
+      "shot": 12,
+      "file": "12.wav",
+      "start": 49.9,
+      "dur": 2.542,
+      "tempo": 1.1,
+      "raw": 2.793,
+      "vo": "ออเดอร์ป่าช้า กับกล้องตัวที่สอง"
+    },
+    {
+      "shot": 13,
+      "file": "13.wav",
+      "start": 52.92,
+      "dur": 4.851,
+      "tempo": 1.1,
+      "raw": 5.326,
+      "vo": "ย้อนไปหนึ่งคืนก่อนหน้านั้น ที่ปั๊มน้ำมันเก่าริมถนนเส้นหลัก"
+    },
+    {
+      "shot": 14,
+      "file": "14.wav",
+      "start": 58.32,
+      "dur": 3.712,
+      "tempo": 1.1,
+      "raw": 4.08,
+      "vo": "เจย์ ไรเดอร์กะดึกวัยยี่สิบสี่ นั่งคร่อมรถอยู่ใต้แสงนั้น"
+    },
+    {
+      "shot": 15,
+      "file": "15.wav",
+      "start": 62.52,
+      "dur": 3.723,
+      "tempo": 1.1,
+      "raw": 4.078,
+      "vo": "เขากดปุ่มกล้องท้ายหมวกซ้ำแล้วซ้ำเล่า จอยังดำสนิท"
+    },
+    {
+      "shot": 16,
+      "file": "16.wav",
+      "start": 66.72,
+      "dur": 3.976,
+      "tempo": 1.1,
+      "raw": 4.359,
+      "vo": "ข้อความจากไฟแนนซ์เด้งขึ้นมา เป็นฉบับที่สามของสัปดาห์"
+    },
+    {
+      "shot": 17,
+      "file": "17.wav",
+      "start": 71.22,
+      "dur": 2.78,
+      "tempo": 1.1,
+      "raw": 3.04,
+      "vo": "ค้างค่างวดสามงวด รวมห้าพันหนึ่งร้อยบาท"
+    },
+    {
+      "shot": 18,
+      "file": "18.wav",
+      "start": 74.52,
+      "dur": 3.139,
+      "tempo": 1.1,
+      "raw": 3.44,
+      "vo": "ถ้าไม่จ่ายภายในเย็นวันเสาร์ บริษัทจะยึดรถคืน"
+    },
+    {
+      "shot": 19,
+      "file": "19.wav",
+      "start": 78.12,
+      "dur": 3.621,
+      "tempo": 1.1,
+      "raw": 3.981,
+      "vo": "รถคันนี้คือเครื่องมือทำมาหากิน ชิ้นเดียวที่เขามี"
+    },
+    {
+      "shot": 20,
+      "file": "20.wav",
+      "start": 82.22,
+      "dur": 3.268,
+      "tempo": 1.1,
+      "raw": 3.588,
+      "vo": "ทุกคืนเจย์วิ่งงานจนถึงเช้า และไลฟ์สดไปตลอดทาง"
+    },
+    {
+      "shot": 21,
+      "file": "21.wav",
+      "start": 86.02,
+      "dur": 3.131,
+      "tempo": 1.1,
+      "raw": 3.443,
+      "vo": "เพจ ‘เจย์ไรเดอร์กะดึก’ มีคนติดตามสามร้อยสิบสองคน"
+    },
+    {
+      "shot": 22,
+      "file": "22.wav",
+      "start": 89.62,
+      "dur": 4.654,
+      "tempo": 1.1,
+      "raw": 5.12,
+      "vo": "หมวกของเขามีกล้องสองตัว มองไปข้างหน้า และมองย้อนกลับไปข้างหลัง"
+    },
+    {
+      "shot": 23,
+      "file": "23.wav",
+      "start": 94.82,
+      "dur": 3.721,
+      "tempo": 1.1,
+      "raw": 4.08,
+      "vo": "เพื่อนในวินชอบแซวว่า เจย์เป็นไรเดอร์คนเดียวที่มีตาสองคู่"
+    },
+    {
+      "shot": 24,
+      "file": "24.wav",
+      "start": 99.02,
+      "dur": 4.743,
+      "tempo": 1.1,
+      "raw": 5.218,
+      "vo": "เมื่อปีก่อน รถเก๋งคันหนึ่ง เบียดเขาล้มกลางสี่แยก"
+    },
+    {
+      "shot": 25,
+      "file": "25.wav",
+      "start": 104.32,
+      "dur": 3.689,
+      "tempo": 1.1,
+      "raw": 4.054,
+      "vo": "คนขับยืนยันกับตำรวจว่า ไรเดอร์ปาดหน้าเอง"
+    },
+    {
+      "shot": 26,
+      "file": "26.wav",
+      "start": 108.52,
+      "dur": 4.342,
+      "tempo": 1.1,
+      "raw": 4.763,
+      "vo": "ไฟล์จากกล้องหลังคือพยานคนเดียว ที่พิสูจน์ว่าเขาไม่ผิด"
+    },
+    {
+      "shot": 27,
+      "file": "27.wav",
+      "start": 113.32,
+      "dur": 3.935,
+      "tempo": 1.1,
+      "raw": 4.32,
+      "vo": "ตั้งแต่วันนั้น เจย์ไม่เคยขี่รถ โดยไม่มีตาข้างหลังอีกเลย"
+    },
+    {
+      "shot": 28,
+      "file": "28.wav",
+      "start": 117.72,
+      "dur": 3.266,
+      "tempo": 1.1,
+      "raw": 3.6,
+      "vo": "จนกระทั่งสัปดาห์นี้ สายแพในกล้องหลังขาด"
+    },
+    {
+      "shot": 29,
+      "file": "29.wav",
+      "start": 121.52,
+      "dur": 4.201,
+      "tempo": 1.1,
+      "raw": 4.618,
+      "vo": "สายเส้นใหม่ราคาสองร้อยเก้าสิบบาท ซึ่งคืนนี้เขายังไม่มี"
+    },
+    {
+      "shot": 30,
+      "file": "30.wav",
+      "start": 126.22,
+      "dur": 4.077,
+      "tempo": 1.1,
+      "raw": 4.48,
+      "vo": "เสียงประตูสังกะสีหลังปั๊ม ดังขึ้นเบา ๆ"
+    },
+    {
+      "shot": 31,
+      "file": "31.wav",
+      "start": 130.82,
+      "dur": 4.876,
+      "tempo": 1.1,
+      "raw": 5.352,
+      "vo": "รองเท้าบู๊ตคู่หนึ่งเดินมาตามพื้นปูน ทิ้งรอยโคลนไว้ทุกก้าว"
+    },
+    {
+      "shot": 32,
+      "file": "32.wav",
+      "start": 136.22,
+      "dur": 4.013,
+      "tempo": 1.1,
+      "raw": 4.399,
+      "vo": "พี่ชาติ วินเบอร์สิบเจ็ด ไรเดอร์รุ่นพี่ที่ขี่มายี่สิบปี"
+    },
+    {
+      "shot": 33,
+      "file": "33.wav",
+      "start": 140.72,
+      "dur": 4.586,
+      "tempo": 1.1,
+      "raw": 5.033,
+      "vo": "เขาโยนเครื่องดื่มชูกำลังให้เจย์กระป๋องหนึ่ง แล้วนั่งลงข้าง ๆ"
+    },
+    {
+      "shot": 34,
+      "file": "34.wav",
+      "start": 146.02,
+      "dur": 1.965,
+      "tempo": 1.1,
+      "raw": 2.153,
+      "vo": "ตีหนึ่งแล้ว ยังไม่กลับอีกเหรอวะ"
+    },
+    {
+      "shot": 35,
+      "file": "35.wav",
+      "start": 148.72,
+      "dur": 2.609,
+      "tempo": 1.1,
+      "raw": 2.858,
+      "vo": "ยังครับพี่ งวดรถยังไม่ครบเลย"
+    },
+    {
+      "shot": 36,
+      "file": "36.wav",
+      "start": 152.12,
+      "dur": 4.878,
+      "tempo": 1.1,
+      "raw": 5.36,
+      "vo": "พี่ชาติหมุนพวงกุญแจในมือขวาไปมา เชือกถักสีเขียวนีออนเรืองในความมืด"
+    },
+    {
+      "shot": 37,
+      "file": "37.wav",
+      "start": 157.72,
+      "dur": 1.81,
+      "tempo": 1.1,
+      "raw": 1.998,
+      "vo": "พวงกุญแจพี่สวยดีนะครับ"
+    },
+    {
+      "shot": 38,
+      "file": "38.wav",
+      "start": 160.32,
+      "dur": 4.281,
+      "tempo": 1.1,
+      "raw": 4.695,
+      "vo": "น้องข้าถักให้... มันชอบสีที่มองเห็นได้ในที่มืด"
+    },
+    {
+      "shot": 39,
+      "file": "39.wav",
+      "start": 165.32,
+      "dur": 3.853,
+      "tempo": 1.1,
+      "raw": 4.227,
+      "vo": "สายตาพี่ชาติเลื่อนไปที่หมวกบนตัก แล้วหยุดอยู่ตรงท้ายหมวก"
+    },
+    {
+      "shot": 40,
+      "file": "40.wav",
+      "start": 169.92,
+      "dur": 1.491,
+      "tempo": 1.1,
+      "raw": 1.626,
+      "vo": "กล้องหลังเอ็งยังเสียอยู่เหรอ"
+    },
+    {
+      "shot": 41,
+      "file": "41.wav",
+      "start": 172.12,
+      "dur": 3.795,
+      "tempo": 1.1,
+      "raw": 4.157,
+      "vo": "เสียครับพี่ เหลือแต่ตัวหน้า"
+    },
+    {
+      "shot": 42,
+      "file": "42.wav",
+      "start": 176.62,
+      "dur": 3.067,
+      "tempo": 1.1,
+      "raw": 3.362,
+      "vo": "พี่ชาติพยักหน้าช้า ๆ เหมือนคนที่เพิ่งได้คำตอบที่รอฟัง"
+    },
+    {
+      "shot": 43,
+      "file": "43.wav",
+      "start": 180.42,
+      "dur": 2.969,
+      "tempo": 1.1,
+      "raw": 3.273,
+      "vo": "ข้ามีงานพิเศษ ไม่ผ่านแอป จ่ายเงินสด"
+    },
+    {
+      "shot": 44,
+      "file": "44.wav",
+      "start": 183.92,
+      "dur": 3.208,
+      "tempo": 1.1,
+      "raw": 3.52,
+      "vo": "ออเดอร์ละแปดร้อยห้าสิบบาท ส่งที่เดียว ไม่ต้องรอลูกค้า"
+    },
+    {
+      "shot": 45,
+      "file": "45.wav",
+      "start": 187.92,
+      "dur": 2.393,
+      "tempo": 1.1,
+      "raw": 2.633,
+      "vo": "แปดร้อยห้าสิบ? ส่งอะไรครับพี่"
+    },
+    {
+      "shot": 46,
+      "file": "46.wav",
+      "start": 191.12,
+      "dur": 3.583,
+      "tempo": 1.1,
+      "raw": 3.933,
+      "vo": "ข้าว... ส่งไปให้คนที่ไม่มีวันลงมารับเอง"
+    },
+    {
+      "shot": 47,
+      "file": "47.wav",
+      "start": 195.42,
+      "dur": 5.215,
+      "tempo": 1.1,
+      "raw": 5.73,
+      "vo": "เจย์กดเครื่องคิดเลขในมือถือ 850 คูณ 6 เท่ากับ 5,100"
+    },
+    {
+      "shot": 48,
+      "file": "48.wav",
+      "start": 201.12,
+      "dur": 3.778,
+      "tempo": 1.1,
+      "raw": 4.16,
+      "vo": "หกคืน พอดีกับเวลาที่เหลือ ก่อนรถของเขาจะถูกยึด"
+    },
+    {
+      "shot": 49,
+      "file": "49.wav",
+      "start": 205.72,
+      "dur": 4.524,
+      "tempo": 1.1,
+      "raw": 4.96,
+      "vo": "งานนี้ถ้าเอ็งทำตามกฎห้าข้อได้ รับเงินแล้วกลับไปนอนสบาย"
+    },
+    {
+      "shot": 50,
+      "file": "50.wav",
+      "start": 211.02,
+      "dur": 2.091,
+      "tempo": 1.1,
+      "raw": 2.304,
+      "vo": "กฎอะไรครับ"
+    },
+    {
+      "shot": 51,
+      "file": "51.wav",
+      "start": 213.92,
+      "dur": 3.751,
+      "tempo": 1.1,
+      "raw": 4.125,
+      "vo": "ปลายทางคือศาลาแปดเหลี่ยม ในสุสานเก่าท้ายซอยสิบเอ็ด"
+    },
+    {
+      "shot": 52,
+      "file": "52.wav",
+      "start": 218.42,
+      "dur": 4.341,
+      "tempo": 1.1,
+      "raw": 4.762,
+      "vo": "ป่าช้าเหรอพี่ ตีสองใครจะสั่งข้าวไปป่าช้า"
+    },
+    {
+      "shot": 53,
+      "file": "53.wav",
+      "start": 223.52,
+      "dur": 2.259,
+      "tempo": 1.1,
+      "raw": 2.48,
+      "vo": "ก็คนที่อยู่ในนั้นไง"
+    },
+    {
+      "shot": 54,
+      "file": "54.wav",
+      "start": 226.52,
+      "dur": 5.385,
+      "tempo": 1.1,
+      "raw": 5.909,
+      "vo": "พี่ชาติขีดเส้นทางบนกระดาษทิชชู ร้านข้าวต้มในเมือง ด่านปากซอย ป่าช้า"
+    },
+    {
+      "shot": 55,
+      "file": "55.wav",
+      "start": 232.62,
+      "dur": 4.091,
+      "tempo": 1.1,
+      "raw": 4.486,
+      "vo": "ไปรับกล่องที่ร้านข้าวต้มโต้รุ่ง เคาะประตูเหล็กสามที แล้วรอ"
+    },
+    {
+      "shot": 56,
+      "file": "56.wav",
+      "start": 237.42,
+      "dur": 2.02,
+      "tempo": 1.1,
+      "raw": 2.208,
+      "vo": "แล้วถ้าไม่มีใครเปิดล่ะครับ"
+    },
+    {
+      "shot": 57,
+      "file": "57.wav",
+      "start": 240.22,
+      "dur": 3.519,
+      "tempo": 1.1,
+      "raw": 3.861,
+      "vo": "ไม่ต้องมีใครเปิด ของมันจะออกมาเอง"
+    },
+    {
+      "shot": 58,
+      "file": "58.wav",
+      "start": 244.52,
+      "dur": 4.882,
+      "tempo": 1.1,
+      "raw": 5.359,
+      "vo": "กฎข้อหนึ่ง รับเฉพาะกล่องโฟมที่พันเทปดำสามรอบ ห้ามแกะดูเด็ดขาด"
+    },
+    {
+      "shot": 59,
+      "file": "59.wav",
+      "start": 250.12,
+      "dur": 3.745,
+      "tempo": 1.1,
+      "raw": 4.111,
+      "vo": "มันเป็นของไหว้เจ้าที่ แกะเมื่อไร เจ้าที่โกรธ"
+    },
+    {
+      "shot": 60,
+      "file": "60.wav",
+      "start": 254.62,
+      "dur": 3.761,
+      "tempo": 1.1,
+      "raw": 4.128,
+      "vo": "เจย์อยากถามว่าเจ้าที่องค์ไหนกินข้าวกล่อง แต่เขาเลือกเงียบ"
+    },
+    {
+      "shot": 61,
+      "file": "61.wav",
+      "start": 258.92,
+      "dur": 4.714,
+      "tempo": 1.1,
+      "raw": 5.181,
+      "vo": "กฎข้อสอง ห้ามเปิดแอป ห้ามถ่ายรูปส่งงาน ห้ามแชร์โลเคชัน"
+    },
+    {
+      "shot": 62,
+      "file": "62.wav",
+      "start": 264.42,
+      "dur": 2.346,
+      "tempo": 1.1,
+      "raw": 2.567,
+      "vo": "ผีไม่ชอบให้ใครถ่ายรูปบ้านมัน"
+    },
+    {
+      "shot": 63,
+      "file": "63.wav",
+      "start": 267.52,
+      "dur": 4.087,
+      "tempo": 1.1,
+      "raw": 4.48,
+      "vo": "พี่ชาติเอื้อมมาปัดแอปไรเดอร์ในมือถือเจย์ปิด ต่อหน้าต่อตา"
+    },
+    {
+      "shot": 64,
+      "file": "64.wav",
+      "start": 272.12,
+      "dur": 3.349,
+      "tempo": 1.1,
+      "raw": 3.68,
+      "vo": "แล้วเขามองหมวกกันน็อกบนตักอีกครั้ง ก่อนจะปล่อยมันไว้อย่างนั้น"
+    },
+    {
+      "shot": 65,
+      "file": "65.wav",
+      "start": 276.02,
+      "dur": 4.357,
+      "tempo": 1.1,
+      "raw": 4.798,
+      "vo": "กฎข้อสาม ห้ามใช้ทางลัดหลังปั๊ม ต้องอ้อมไปเข้าทางปากซอยสิบเอ็ด"
+    },
+    {
+      "shot": 66,
+      "file": "66.wav",
+      "start": 281.12,
+      "dur": 3.646,
+      "tempo": 1.1,
+      "raw": 4,
+      "vo": "ทางลัดหลังปั๊มไปถึงป่าช้าแค่สี่นาทีเองนะพี่"
+    },
+    {
+      "shot": 67,
+      "file": "67.wav",
+      "start": 285.52,
+      "dur": 2.867,
+      "tempo": 1.1,
+      "raw": 3.15,
+      "vo": "ทางนั้นผีแรง ไรเดอร์ตายมาแล้วคนหนึ่ง"
+    },
+    {
+      "shot": 68,
+      "file": "68.wav",
+      "start": 289.12,
+      "dur": 4.399,
+      "tempo": 1.1,
+      "raw": 4.833,
+      "vo": "พี่ชาติเหลือบมองประตูสังกะสีหลังปั๊มแวบหนึ่ง แล้วเล่าต่อด้วยเสียงต่ำลง"
+    },
+    {
+      "shot": 69,
+      "file": "69.wav",
+      "start": 294.32,
+      "dur": 4.596,
+      "tempo": 1.1,
+      "raw": 5.04,
+      "vo": "สิบปีก่อน มีไรเดอร์คนหนึ่ง ไปส่งข้าวงานศพที่ศาลานั่น"
+    },
+    {
+      "shot": 70,
+      "file": "70.wav",
+      "start": 299.42,
+      "dur": 6.502,
+      "tempo": 1.1,
+      "raw": 7.153,
+      "vo": "ขากลับ ตรงโค้งหน้าศาลา มันโดนรถชน แล้วรถก็หนีไป"
+    },
+    {
+      "shot": 71,
+      "file": "71.wav",
+      "start": 306.42,
+      "dur": 5.249,
+      "tempo": 1.1,
+      "raw": 5.779,
+      "vo": "มันนอนอยู่ตรงนั้นทั้งคืน ไม่มีใครจอด ไม่มีใครหันกลับไปมอง"
+    },
+    {
+      "shot": 72,
+      "file": "72.wav",
+      "start": 312.22,
+      "dur": 5.312,
+      "tempo": 1.1,
+      "raw": 5.827,
+      "vo": "ทุกวันนี้ยังมีคนสั่งข้าวไปส่งที่ศาลานั่น ทุกคืน... สั่งให้มันกิน"
+    },
+    {
+      "shot": 73,
+      "file": "73.wav",
+      "start": 318.32,
+      "dur": 2.419,
+      "tempo": 1.1,
+      "raw": 2.651,
+      "vo": "ลมพัดผ่านปั๊ม ป้ายนีออนดับไปหนึ่งจังหวะ"
+    },
+    {
+      "shot": 74,
+      "file": "74.wav",
+      "start": 321.22,
+      "dur": 4.383,
+      "tempo": 1.1,
+      "raw": 4.815,
+      "vo": "กฎข้อสี่ วางของบนโต๊ะหินอ่อน ห้ามดับเครื่อง แล้วบิดออกทันที"
+    },
+    {
+      "shot": 75,
+      "file": "75.wav",
+      "start": 326.32,
+      "dur": 2.924,
+      "tempo": 1.1,
+      "raw": 3.208,
+      "vo": "เครื่องดับเมื่อไร มันจะขึ้นมาซ้อนท้ายเอ็ง"
+    },
+    {
+      "shot": 76,
+      "file": "76.wav",
+      "start": 330.02,
+      "dur": 1.815,
+      "tempo": 1.1,
+      "raw": 1.99,
+      "vo": "แล้วถ้ารถผมดับเองล่ะพี่"
+    },
+    {
+      "shot": 77,
+      "file": "77.wav",
+      "start": 332.62,
+      "dur": 0.938,
+      "tempo": 1.1,
+      "raw": 1.026,
+      "vo": "ก็อย่าให้มันดับ"
+    },
+    {
+      "shot": 78,
+      "file": "78.wav",
+      "start": 334.32,
+      "dur": 4.718,
+      "tempo": 1.1,
+      "raw": 5.2,
+      "vo": "พี่ชาติเงียบไปนาน ก่อนจะพูดกฎข้อสุดท้าย"
+    },
+    {
+      "shot": 79,
+      "file": "79.wav",
+      "start": 339.52,
+      "dur": 4.129,
+      "tempo": 1.1,
+      "raw": 4.539,
+      "vo": "กฎข้อห้า ห้ามหันกลับไปมอง ห้ามมองกระจกหลังเด็ดขาด"
+    },
+    {
+      "shot": 80,
+      "file": "80.wav",
+      "start": 344.42,
+      "dur": 3.914,
+      "tempo": 1.1,
+      "raw": 4.291,
+      "vo": "ถ้าเอ็งเห็นคนที่มารับของ มันจะตามเอ็งกลับไปถึงบ้าน"
+    },
+    {
+      "shot": 81,
+      "file": "81.wav",
+      "start": 349.12,
+      "dur": 4.564,
+      "tempo": 1.1,
+      "raw": 5.03,
+      "vo": "คนที่มารับ... หรือผีที่มารับครับพี่"
+    },
+    {
+      "shot": 82,
+      "file": "82.wav",
+      "start": 354.42,
+      "dur": 2.26,
+      "tempo": 1.1,
+      "raw": 2.481,
+      "vo": "เอ็งไม่หันไปดู เอ็งก็ไม่ต้องรู้"
+    },
+    {
+      "shot": 83,
+      "file": "83.wav",
+      "start": 357.42,
+      "dur": 3.475,
+      "tempo": 1.1,
+      "raw": 3.816,
+      "vo": "ห้ากฎ ห้าบรรทัด บนกระดาษทิชชูที่พี่ชาติเขียนให้"
+    },
+    {
+      "shot": 84,
+      "file": "84.wav",
+      "start": 361.42,
+      "dur": 2.873,
+      "tempo": 1.1,
+      "raw": 3.154,
+      "vo": "เจย์หัวเราะออกมา เสียงหัวเราะแห้งกว่าที่เขาตั้งใจ"
+    },
+    {
+      "shot": 85,
+      "file": "85.wav",
+      "start": 365.02,
+      "dur": 2.261,
+      "tempo": 1.1,
+      "raw": 2.48,
+      "vo": "เรื่องเล่าวินมอเตอร์ไซค์ทั้งนั้นแหละพี่"
+    },
+    {
+      "shot": 86,
+      "file": "86.wav",
+      "start": 368.02,
+      "dur": 4.003,
+      "tempo": 1.1,
+      "raw": 4.4,
+      "vo": "เชื่อหรือไม่เชื่อก็ได้ แต่ทำตามกฎ แล้วเอ็งจะไม่เป็นไร"
+    },
+    {
+      "shot": 87,
+      "file": "87.wav",
+      "start": 372.82,
+      "dur": 4.818,
+      "tempo": 1.1,
+      "raw": 5.293,
+      "vo": "พี่ชาติลุกไปที่รถตัวเอง พวงกุญแจสีเขียวแกว่งอยู่บนแฮนด์ขวา"
+    },
+    {
+      "shot": 88,
+      "file": "88.wav",
+      "start": 378.12,
+      "dur": 3.851,
+      "tempo": 1.1,
+      "raw": 4.234,
+      "vo": "แล้วเข็นรถหายเข้าไป ในความมืดหลังปั๊ม"
+    },
+    {
+      "shot": 89,
+      "file": "89.wav",
+      "start": 382.52,
+      "dur": 4.964,
+      "tempo": 1.1,
+      "raw": 5.44,
+      "vo": "เจย์มองกระดาษในมือ สายตาค้างอยู่ที่บรรทัดสุดท้ายนานเกินปกติ"
+    },
+    {
+      "shot": 90,
+      "file": "90.wav",
+      "start": 388.02,
+      "dur": 3.121,
+      "tempo": 1.1,
+      "raw": 3.419,
+      "vo": "กล้องหลังที่เสียอยู่ คงไม่ทำให้เขาเผลอมองข้างหลังหรอก"
+    },
+    {
+      "shot": 91,
+      "file": "91.wav",
+      "start": 391.62,
+      "dur": 3.02,
+      "tempo": 1.1,
+      "raw": 3.315,
+      "vo": "ห้ากฎ หกคืน ห้าพันหนึ่งร้อยบาท"
+    },
+    {
+      "shot": 92,
+      "file": "92.wav",
+      "start": 395.12,
+      "dur": 3.235,
+      "tempo": 1.1,
+      "raw": 3.549,
+      "vo": "เจย์บอกตัวเองว่า มันก็แค่เรื่องเล่าของวินมอเตอร์ไซค์"
+    },
+    {
+      "shot": 93,
+      "file": "93.wav",
+      "start": 398.82,
+      "dur": 3.51,
+      "tempo": 1.1,
+      "raw": 3.85,
+      "vo": "ตีหนึ่งสี่สิบ เขาบิดรถออกจากปั๊ม มุ่งหน้าเข้าเมือง"
+    },
+    {
+      "shot": 94,
+      "file": "94.wav",
+      "start": 402.82,
+      "dur": 2.992,
+      "tempo": 1.1,
+      "raw": 3.28,
+      "vo": "ข้าวกล่องเดียว ทำไมต้องมีกฎมากถึงห้าข้อ"
+    },
+    {
+      "shot": 95,
+      "file": "95.wav",
+      "start": 406.32,
+      "dur": 4.076,
+      "tempo": 1.1,
+      "raw": 4.478,
+      "vo": "ตีหนึ่งห้าสิบ ร้านข้าวต้มโต้รุ่ง ปิดไฟมืดทั้งร้าน"
+    },
+    {
+      "shot": 96,
+      "file": "96.wav",
+      "start": 410.92,
+      "dur": 2.714,
+      "tempo": 1.1,
+      "raw": 2.973,
+      "vo": "เจย์เคาะประตูเหล็กสามที ตามที่พี่ชาติบอก"
+    },
+    {
+      "shot": 97,
+      "file": "97.wav",
+      "start": 414.12,
+      "dur": 2.992,
+      "tempo": 1.1,
+      "raw": 3.28,
+      "vo": "ไม่มีเสียงตอบ ไม่มีเสียงฝีเท้า"
+    },
+    {
+      "shot": 98,
+      "file": "98.wav",
+      "start": 417.62,
+      "dur": 4.479,
+      "tempo": 1.1,
+      "raw": 4.916,
+      "vo": "แล้วกล่องโฟมใบหนึ่ง ก็ค่อย ๆ ไถลออกมาจากใต้ประตู"
+    },
+    {
+      "shot": 99,
+      "file": "99.wav",
+      "start": 422.62,
+      "dur": 3.694,
+      "tempo": 1.1,
+      "raw": 4.051,
+      "vo": "ตามด้วยซองเงิน แล้วมือคู่นั้นก็หายกลับเข้าไป"
+    },
+    {
+      "shot": 100,
+      "file": "100.wav",
+      "start": 426.82,
+      "dur": 2.92,
+      "tempo": 1.1,
+      "raw": 3.2,
+      "vo": "ประตูกระแทกปิด ก่อนเขาจะได้เห็นหน้าใคร"
+    },
+    {
+      "shot": 101,
+      "file": "101.wav",
+      "start": 430.22,
+      "dur": 4.685,
+      "tempo": 1.1,
+      "raw": 5.134,
+      "vo": "เทปดำสามรอบ ป้ายเขียนมือ ‘ศาลา 8’ กับเงินแปดร้อยห้าสิบบาท"
+    },
+    {
+      "shot": 102,
+      "file": "102.wav",
+      "start": 435.42,
+      "dur": 3.432,
+      "tempo": 1.1,
+      "raw": 3.766,
+      "vo": "พอยกขึ้น กล่องเอียงนิดเดียว ข้างในดัง ‘แกร๊ก’"
+    },
+    {
+      "shot": 103,
+      "file": "103.wav",
+      "start": 439.32,
+      "dur": 2.614,
+      "tempo": 1.1,
+      "raw": 2.876,
+      "vo": "ข้าวกล่องหนึ่ง ไม่ควรหนักเท่าอิฐสองก้อน"
+    },
+    {
+      "shot": 104,
+      "file": "104.wav",
+      "start": 442.42,
+      "dur": 3.54,
+      "tempo": 1.1,
+      "raw": 3.888,
+      "vo": "ตีสองห้านาที ไฟหมุนแดงน้ำเงินโผล่ขึ้นที่ปากซอยสิบเอ็ด"
+    },
+    {
+      "shot": 105,
+      "file": "105.wav",
+      "start": 446.52,
+      "dur": 2.998,
+      "tempo": 1.1,
+      "raw": 3.298,
+      "vo": "ด่านตรวจตั้งมาหลายคืนแล้ว ตั้งแต่มีคดีใหญ่ในเมือง"
+    },
+    {
+      "shot": 106,
+      "file": "106.wav",
+      "start": 450.02,
+      "dur": 3.876,
+      "tempo": 1.1,
+      "raw": 4.261,
+      "vo": "ผู้หมวดธีร์ หัวหน้าด่านกะดึก จดทะเบียนรถก่อนจะมองหน้าคน"
+    },
+    {
+      "shot": 107,
+      "file": "107.wav",
+      "start": 454.62,
+      "dur": 3.039,
+      "tempo": 1.1,
+      "raw": 3.335,
+      "vo": "ซอยตันแบบนี้ ตีสองมีคนสั่งข้าวด้วยเหรอ"
+    },
+    {
+      "shot": 108,
+      "file": "108.wav",
+      "start": 458.42,
+      "dur": 2.126,
+      "tempo": 1.1,
+      "raw": 2.32,
+      "vo": "ลูกค้าสั่งไปไหว้ที่ศาลาครับ"
+    },
+    {
+      "shot": 109,
+      "file": "109.wav",
+      "start": 461.32,
+      "dur": 1.388,
+      "tempo": 1.1,
+      "raw": 1.52,
+      "vo": "กล้องติดหมวกด้วย"
+    },
+    {
+      "shot": 110,
+      "file": "110.wav",
+      "start": 463.52,
+      "dur": 2.007,
+      "tempo": 1.1,
+      "raw": 2.2,
+      "vo": "ผมไลฟ์ครับ เพจเจย์ไรเดอร์กะดึก"
+    },
+    {
+      "shot": 111,
+      "file": "111.wav",
+      "start": 466.32,
+      "dur": 3.874,
+      "tempo": 1.1,
+      "raw": 4.247,
+      "vo": "หมวดธีร์จดชื่อเพจต่อท้ายทะเบียนรถ เหมือนเป็นเรื่องธรรมดา"
+    },
+    {
+      "shot": 112,
+      "file": "112.wav",
+      "start": 470.92,
+      "dur": 2.488,
+      "tempo": 1.1,
+      "raw": 2.72,
+      "vo": "ไปได้ รถส่งอาหารไม่ต้องเปิดกล่อง"
+    },
+    {
+      "shot": 113,
+      "file": "113.wav",
+      "start": 474.12,
+      "dur": 3.944,
+      "tempo": 1.1,
+      "raw": 4.33,
+      "vo": "หมวดธีร์ยืนมองไฟท้ายนั้นจนลับโค้ง แล้วจดอะไรเพิ่มอีกบรรทัด"
+    },
+    {
+      "shot": 114,
+      "file": "114.wav",
+      "start": 478.62,
+      "dur": 3.643,
+      "tempo": 1.1,
+      "raw": 4,
+      "vo": "ซอยสิบเอ็ดไม่มีบ้านคนสักหลัง ปลายซอยคือสุสานเก่า"
+    },
+    {
+      "shot": 115,
+      "file": "115.wav",
+      "start": 482.82,
+      "dur": 2.89,
+      "tempo": 1.1,
+      "raw": 3.176,
+      "vo": "หมอกลงจัด จนไฟหน้าส่องได้ไม่เกินห้าเมตร"
+    },
+    {
+      "shot": 116,
+      "file": "116.wav",
+      "start": 486.22,
+      "dur": 4.939,
+      "tempo": 1.1,
+      "raw": 5.44,
+      "vo": "ป้ายไม้ริมโค้งมีพวงมาลัยแห้งแขวนอยู่ เหมือนมีคนมาไหว้ไม่นานนี้"
+    },
+    {
+      "shot": 117,
+      "file": "117.wav",
+      "start": 491.72,
+      "dur": 4.067,
+      "tempo": 1.1,
+      "raw": 4.464,
+      "vo": "ไกลออกไปในหมู่หลุมศพ มีแสงตะเกียงดวงหนึ่งลอยอยู่"
+    },
+    {
+      "shot": 118,
+      "file": "118.wav",
+      "start": 496.32,
+      "dur": 4.537,
+      "tempo": 1.1,
+      "raw": 4.982,
+      "vo": "แล้วดับลง ก่อนเขาจะแน่ใจว่าเห็นจริง"
+    },
+    {
+      "shot": 119,
+      "file": "119.wav",
+      "start": 501.32,
+      "dur": 3.133,
+      "tempo": 1.1,
+      "raw": 3.44,
+      "vo": "เจย์จอดหันหัวรถออกตามกฎ เครื่องยังติดอยู่"
+    },
+    {
+      "shot": 120,
+      "file": "120.wav",
+      "start": 504.92,
+      "dur": 2.849,
+      "tempo": 1.1,
+      "raw": 3.12,
+      "vo": "วางกล่องบนโต๊ะหินอ่อน กลางศาลาแปดเหลี่ยม"
+    },
+    {
+      "shot": 121,
+      "file": "121.wav",
+      "start": 508.32,
+      "dur": 2.9,
+      "tempo": 1.1,
+      "raw": 3.185,
+      "vo": "ทุกอย่างเงียบ จนได้ยินแค่เสียงเครื่องรถตัวเอง"
+    },
+    {
+      "shot": 122,
+      "file": "122.wav",
+      "start": 511.72,
+      "dur": 5.023,
+      "tempo": 1.1,
+      "raw": 5.52,
+      "vo": "ข้างบันไดศาลามีรอยยางมอเตอร์ไซค์ รอยใหม่ ขอบยังไม่แห้ง"
+    },
+    {
+      "shot": 123,
+      "file": "123.wav",
+      "start": 517.22,
+      "dur": 3.078,
+      "tempo": 1.1,
+      "raw": 3.376,
+      "vo": "และมันไม่ได้มาจาก ทางที่เจย์ขี่เข้ามา"
+    },
+    {
+      "shot": 124,
+      "file": "124.wav",
+      "start": 520.82,
+      "dur": 3.67,
+      "tempo": 1.1,
+      "raw": 4.022,
+      "vo": "เจย์ขึ้นรถ บิดออกทันที ไม่หันกลับไปมองแม้แต่ครั้งเดียว"
+    },
+    {
+      "shot": 125,
+      "file": "125.wav",
+      "start": 525.02,
+      "dur": 5.467,
+      "tempo": 1.1,
+      "raw": 6,
+      "vo": "ข้างหลังเขามีอะไร คืนนั้นไม่มีใครรู้ เพราะกล้องหลังยังเสีย"
+    },
+    {
+      "shot": 126,
+      "file": "126.wav",
+      "start": 531.02,
+      "dur": 3.235,
+      "tempo": 1.1,
+      "raw": 3.546,
+      "vo": "ตีสองครึ่ง เจย์กลับมาที่ปั๊ม พี่ชาติยังนั่งอยู่ที่เดิม"
+    },
+    {
+      "shot": 127,
+      "file": "127.wav",
+      "start": 535.02,
+      "dur": 2.685,
+      "tempo": 1.1,
+      "raw": 2.946,
+      "vo": "ส่งถึงแล้วใช่ไหม... ไม่ได้หันไปดูนะ"
+    },
+    {
+      "shot": 128,
+      "file": "128.wav",
+      "start": 538.42,
+      "dur": 3.856,
+      "tempo": 1.1,
+      "raw": 4.24,
+      "vo": "ไม่ได้หันครับ แต่มีไฟตะเกียงลอยอยู่ในป่าช้า"
+    },
+    {
+      "shot": 129,
+      "file": "129.wav",
+      "start": 543.02,
+      "dur": 4.523,
+      "tempo": 1.1,
+      "raw": 4.968,
+      "vo": "ก็ลุงเหม คนเฝ้าสุสานไง แก่แล้ว อย่าไปยุ่งกับแก"
+    },
+    {
+      "shot": 130,
+      "file": "130.wav",
+      "start": 548.32,
+      "dur": 3.843,
+      "tempo": 1.1,
+      "raw": 4.226,
+      "vo": "พี่ชาติบอกว่าเขานั่งเฝ้าปั๊ม อยู่ตรงนี้ทั้งคืน"
+    },
+    {
+      "shot": 131,
+      "file": "131.wav",
+      "start": 552.72,
+      "dur": 3.382,
+      "tempo": 1.1,
+      "raw": 3.719,
+      "vo": "แล้วรถบรรทุกพ่วงคันหนึ่ง ก็เลี้ยวเข้าปั๊มตอนเกือบตีสาม"
+    },
+    {
+      "shot": 132,
+      "file": "132.wav",
+      "start": 556.92,
+      "dur": 2.365,
+      "tempo": 1.1,
+      "raw": 2.592,
+      "vo": "กลับบ้านไปนอนได้แล้วเจย์ พรุ่งนี้มีอีก"
+    },
+    {
+      "shot": 133,
+      "file": "133.wav",
+      "start": 560.02,
+      "dur": 3.433,
+      "tempo": 1.1,
+      "raw": 3.759,
+      "vo": "ก่อนกลับ เจย์แวะมินิมาร์ท ซื้อสายกล้องเส้นนั้นด้วยเงินจากกล่อง"
+    },
+    {
+      "shot": 134,
+      "file": "134.wav",
+      "start": 563.92,
+      "dur": 2.015,
+      "tempo": 1.1,
+      "raw": 2.207,
+      "vo": "ไฟ REC สีแดง ติดขึ้นอีกครั้ง"
+    },
+    {
+      "shot": 135,
+      "file": "135.wav",
+      "start": 566.42,
+      "dur": 4.527,
+      "tempo": 1.1,
+      "raw": 4.972,
+      "vo": "เงินแปดร้อยห้าสิบบาทแรกจากออเดอร์ป่าช้า ซื้อตาข้างหลังคืนให้เขา"
+    },
+    {
+      "shot": 136,
+      "file": "136.wav",
+      "start": 571.42,
+      "dur": 6.991,
+      "tempo": 1.1,
+      "raw": 7.68,
+      "vo": "ไฟตะเกียงกลางหลุมศพ กับรอยยางที่ยังไม่แห้ง เจย์บอกตัวเองว่าไม่ต้องคิดมาก"
+    },
+    {
+      "shot": 137,
+      "file": "137.wav",
+      "start": 579.22,
+      "dur": 4.937,
+      "tempo": 1.1,
+      "raw": 5.426,
+      "vo": "เครื่องทองโบราณสมัยทวารวดีสิบสี่ชิ้น ถูกโจรกรรมจากพิพิธภัณฑ์ในตัวเมือง"
+    },
+    {
+      "shot": 138,
+      "file": "138.wav",
+      "start": 584.72,
+      "dur": 4.654,
+      "tempo": 1.1,
+      "raw": 5.12,
+      "vo": "ตำรวจตั้งด่านตรวจทุกเส้นทางออกจากเมือง เพื่อสกัดไม่ให้ของกลางถูกขนออกไป"
+    },
+    {
+      "shot": 139,
+      "file": "139.wav",
+      "start": 590.12,
+      "dur": 4.49,
+      "tempo": 1.1,
+      "raw": 4.936,
+      "vo": "คืนที่สอง กล่องใบใหม่ หนักเท่าเดิม ดังแกร๊กเหมือนเดิม"
+    },
+    {
+      "shot": 140,
+      "file": "140.wav",
+      "start": 595.12,
+      "dur": 2.861,
+      "tempo": 1.1,
+      "raw": 3.135,
+      "vo": "เจย์ขี่ช้ากว่าเมื่อคืน ทั้งที่ถนนว่างทั้งเส้น"
+    },
+    {
+      "shot": 141,
+      "file": "141.wav",
+      "start": 598.72,
+      "dur": 1.529,
+      "tempo": 1.1,
+      "raw": 1.67,
+      "vo": "จอดก่อนครับ เปิดกล่องให้ดูหน่อย"
+    },
+    {
+      "shot": 142,
+      "file": "142.wav",
+      "start": 601.02,
+      "dur": 2.393,
+      "tempo": 1.1,
+      "raw": 2.616,
+      "vo": "กฎข้อหนึ่ง ห้ามแกะดูเด็ดขาด"
+    },
+    {
+      "shot": 143,
+      "file": "143.wav",
+      "start": 604.12,
+      "dur": 2.111,
+      "tempo": 1.1,
+      "raw": 2.315,
+      "vo": "ข้าวไหว้เจ้าที่ครับ ลูกค้าห้ามแกะ"
+    },
+    {
+      "shot": 144,
+      "file": "144.wav",
+      "start": 607.02,
+      "dur": 2.327,
+      "tempo": 1.1,
+      "raw": 2.552,
+      "vo": "ที่ด่านผมก็มีเจ้าที่เหมือนกันนะครับ"
+    },
+    {
+      "shot": 145,
+      "file": "145.wav",
+      "start": 610.12,
+      "dur": 2.766,
+      "tempo": 1.1,
+      "raw": 3.039,
+      "vo": "หมวดธีร์ดันใบคัตเตอร์ออกมา ทีละคลิก"
+    },
+    {
+      "shot": 146,
+      "file": "146.wav",
+      "start": 613.42,
+      "dur": 4.575,
+      "tempo": 1.1,
+      "raw": 5.018,
+      "vo": "ถ้าเทปขาด กฎข้อแรกก็จบ และเจย์ไม่รู้เลยว่าอะไรจะตามมา"
+    },
+    {
+      "shot": 147,
+      "file": "147.wav",
+      "start": 618.72,
+      "dur": 4.661,
+      "tempo": 1.1,
+      "raw": 5.12,
+      "vo": "ศูนย์แจ้ง รถชนบนถนนเส้นหลัก กิโลสิบสอง มีคนเจ็บ"
+    },
+    {
+      "shot": 148,
+      "file": "148.wav",
+      "start": 624.12,
+      "dur": 3.841,
+      "tempo": 1.1,
+      "raw": 4.208,
+      "vo": "คืนนี้ไปก่อน... พรุ่งนี้ผมดูให้ได้"
+    },
+    {
+      "shot": 149,
+      "file": "149.wav",
+      "start": 628.72,
+      "dur": 3.783,
+      "tempo": 1.1,
+      "raw": 4.159,
+      "vo": "เจย์ไม่รู้ว่าในกล่องมีอะไร แต่เขารู้ว่าในสมุดเล่มนั้น"
+    },
+    {
+      "shot": 150,
+      "file": "150.wav",
+      "start": 633.02,
+      "dur": 2.196,
+      "tempo": 1.1,
+      "raw": 2.415,
+      "vo": "มีทะเบียนรถของเขาอยู่ สองบรรทัดแล้ว"
+    },
+    {
+      "shot": 151,
+      "file": "151.wav",
+      "start": 635.72,
+      "dur": 2.123,
+      "tempo": 1.1,
+      "raw": 2.32,
+      "vo": "คืนนี้หมอกหนากว่าเมื่อวาน"
+    },
+    {
+      "shot": 152,
+      "file": "152.wav",
+      "start": 638.32,
+      "dur": 4.22,
+      "tempo": 1.1,
+      "raw": 4.64,
+      "vo": "เจย์ถือกล่องก้าวขึ้นบันไดศาลา ขั้นที่สามลื่นกว่าที่คิด"
+    },
+    {
+      "shot": 153,
+      "file": "153.wav",
+      "start": 643.02,
+      "dur": 1.109,
+      "tempo": 1.1,
+      "raw": 1.212,
+      "vo": "แล้วกล่องก็หลุดมือ"
+    },
+    {
+      "shot": 154,
+      "file": "154.wav",
+      "start": 644.62,
+      "dur": 3.708,
+      "tempo": 1.1,
+      "raw": 4.061,
+      "vo": "เทปขาดไปหนึ่งรอบ ฝากล่องเผยอขึ้นเป็นร่อง"
+    },
+    {
+      "shot": 155,
+      "file": "155.wav",
+      "start": 648.82,
+      "dur": 3.136,
+      "tempo": 1.1,
+      "raw": 3.44,
+      "vo": "ใต้ห่อข้าวผัด มีสีทองสะท้อนไฟหน้ารถ"
+    },
+    {
+      "shot": 156,
+      "file": "156.wav",
+      "start": 652.42,
+      "dur": 5.16,
+      "tempo": 1.1,
+      "raw": 5.665,
+      "vo": "ป้ายผูกเชือกเขียนว่า ‘ท.0417’ แบบป้ายทะเบียนของในพิพิธภัณฑ์"
+    },
+    {
+      "shot": 157,
+      "file": "157.wav",
+      "start": 658.32,
+      "dur": 3.493,
+      "tempo": 1.1,
+      "raw": 3.84,
+      "vo": "นี่ไม่ใช่ข้าวไหว้เจ้าที่... นี่มันของที่ข่าวพูดถึง"
+    },
+    {
+      "shot": 158,
+      "file": "158.wav",
+      "start": 662.62,
+      "dur": 5.073,
+      "tempo": 1.1,
+      "raw": 5.572,
+      "vo": "เขารู้สึกเหมือนมีใครมองอยู่ แต่กฎข้อห้าห้ามเขาหันไป"
+    },
+    {
+      "shot": 159,
+      "file": "159.wav",
+      "start": 668.22,
+      "dur": 3.564,
+      "tempo": 1.1,
+      "raw": 3.91,
+      "vo": "เขาดึงเทปพันสายไฟม้วนของตัวเองออกมา พันปิดฝากล่อง"
+    },
+    {
+      "shot": 160,
+      "file": "160.wav",
+      "start": 672.32,
+      "dur": 2.628,
+      "tempo": 1.1,
+      "raw": 2.883,
+      "vo": "หนึ่ง สอง สาม... สี่"
+    },
+    {
+      "shot": 161,
+      "file": "161.wav",
+      "start": 675.42,
+      "dur": 6.216,
+      "tempo": 1.1,
+      "raw": 6.834,
+      "vo": "เทปเดิมขาดไปหนึ่งรอบ เขาจึงพันเผื่อไว้อีกรอบ เรื่องเล็ก ๆ ที่ไม่มีใครเห็น"
+    },
+    {
+      "shot": 162,
+      "file": "162.wav",
+      "start": 682.12,
+      "dur": 2.48,
+      "tempo": 1.1,
+      "raw": 2.72,
+      "vo": "เครื่องยนต์ไม่เคยดับ ตามกฎข้อสี่"
+    },
+    {
+      "shot": 163,
+      "file": "163.wav",
+      "start": 685.12,
+      "dur": 2.552,
+      "tempo": 1.1,
+      "raw": 2.801,
+      "vo": "และคืนนี้... กล้องหลังทำงานแล้ว"
+    },
+    {
+      "shot": 164,
+      "file": "164.wav",
+      "start": 688.22,
+      "dur": 3.112,
+      "tempo": 1.1,
+      "raw": 3.424,
+      "vo": "เขาไม่ได้หันไปมอง แต่ตาเหลือบลงที่จอเล็กบนแฮนด์"
+    },
+    {
+      "shot": 165,
+      "file": "165.wav",
+      "start": 691.82,
+      "dur": 4.252,
+      "tempo": 1.1,
+      "raw": 4.668,
+      "vo": "ร่างในเสื้อกันฝนสีดำ ก้าวออกมาจากความมืดข้างศาลา"
+    },
+    {
+      "shot": 166,
+      "file": "166.wav",
+      "start": 696.62,
+      "dur": 4.299,
+      "tempo": 1.1,
+      "raw": 4.72,
+      "vo": "หยิบกล่องที่เพิ่งพันเทปรอบที่สี่ขึ้นมา ในวินาทีที่รถเขาพ้นศาลา"
+    },
+    {
+      "shot": 167,
+      "file": "167.wav",
+      "start": 701.42,
+      "dur": 1.537,
+      "tempo": 1.1,
+      "raw": 1.68,
+      "vo": "แล้วหันหน้ามาทางกล้อง"
+    },
+    {
+      "shot": 168,
+      "file": "168.wav",
+      "start": 703.42,
+      "dur": 4.3,
+      "tempo": 1.1,
+      "raw": 4.72,
+      "vo": "เจย์บิดคันเร่งจนสุด ไม่หยุด ไม่หัน จนพ้นซอยสิบเอ็ด"
+    },
+    {
+      "shot": 169,
+      "file": "169.wav",
+      "start": 708.22,
+      "dur": 4.725,
+      "tempo": 1.1,
+      "raw": 5.18,
+      "vo": "สองคืน สองกล่อง ทองหนึ่งชิ้นที่เขาเห็นกับตา"
+    },
+    {
+      "shot": 170,
+      "file": "170.wav",
+      "start": 713.42,
+      "dur": 3.568,
+      "tempo": 1.1,
+      "raw": 3.917,
+      "vo": "และบางอย่างที่มารับมันไป โดยไม่ยอมให้ใครเห็นหน้า"
+    },
+    {
+      "shot": 171,
+      "file": "171.wav",
+      "start": 717.52,
+      "dur": 2.119,
+      "tempo": 1.1,
+      "raw": 2.32,
+      "vo": "ตีห้ายี่สิบ เจย์ยังไม่ได้นอน"
+    },
+    {
+      "shot": 172,
+      "file": "172.wav",
+      "start": 720.12,
+      "dur": 3.709,
+      "tempo": 1.1,
+      "raw": 4.08,
+      "vo": "เขาดึงไฟล์จากกล้องหลังออกมา ไฟล์เดียวของคืนนั้น"
+    },
+    {
+      "shot": 173,
+      "file": "173.wav",
+      "start": 724.32,
+      "dur": 3.647,
+      "tempo": 1.1,
+      "raw": 4,
+      "vo": "เลื่อนไปที่ตีสองสิบสี่นาที วินาทีที่รถพ้นศาลา"
+    },
+    {
+      "shot": 174,
+      "file": "174.wav",
+      "start": 728.52,
+      "dur": 2.623,
+      "tempo": 1.1,
+      "raw": 2.88,
+      "vo": "บนจอใหญ่ ภาพชัดกว่าจอบนแฮนด์หลายเท่า"
+    },
+    {
+      "shot": 175,
+      "file": "175.wav",
+      "start": 731.62,
+      "dur": 3.574,
+      "tempo": 1.1,
+      "raw": 3.92,
+      "vo": "มอเตอร์ไซค์คันหนึ่งดับไฟ ไหลออกมาจากทางดินหลังศาลา"
+    },
+    {
+      "shot": 176,
+      "file": "176.wav",
+      "start": 735.72,
+      "dur": 5.246,
+      "tempo": 1.1,
+      "raw": 5.762,
+      "vo": "คนขี่ใส่เสื้อกันฝนสีดำ หมวกชิลด์ดำ เดินมาที่โต๊ะ มีเงาทอดบนพื้น"
+    },
+    {
+      "shot": 177,
+      "file": "177.wav",
+      "start": 741.52,
+      "dur": 4.698,
+      "tempo": 1.1,
+      "raw": 5.157,
+      "vo": "มือนั้นไล่นับรอบเทปทีละรอบ แล้วหยุดค้างที่รอบที่สี่"
+    },
+    {
+      "shot": 178,
+      "file": "178.wav",
+      "start": 746.72,
+      "dur": 4.01,
+      "tempo": 1.1,
+      "raw": 4.4,
+      "vo": "ผีไม่ต้องขี่มอเตอร์ไซค์ และผีไม่ต้องนับรอบเทป"
+    },
+    {
+      "shot": 179,
+      "file": "179.wav",
+      "start": 751.22,
+      "dur": 2.567,
+      "tempo": 1.1,
+      "raw": 2.813,
+      "vo": "สิ่งที่มารับกล่องทุกคืน เป็นคน"
+    },
+    {
+      "shot": 180,
+      "file": "180.wav",
+      "start": 754.32,
+      "dur": 6.05,
+      "tempo": 1.1,
+      "raw": 6.652,
+      "vo": "กฎห้าข้อไม่ได้มีไว้กันผี... แต่มีไว้ไม่ให้ไรเดอร์เห็นหน้าคนมารับของ"
+    },
+    {
+      "shot": 181,
+      "file": "181.wav",
+      "start": 760.92,
+      "dur": 3.895,
+      "tempo": 1.1,
+      "raw": 4.276,
+      "vo": "เจย์นั่งนิ่งอยู่นาน แล้วเริ่มอ่านกฎทุกข้อใหม่อีกรอบ"
+    },
+    {
+      "shot": 182,
+      "file": "182.wav",
+      "start": 765.32,
+      "dur": 4.341,
+      "tempo": 1.1,
+      "raw": 4.766,
+      "vo": "กฎข้อหนึ่ง เทปดำสามรอบ ไม่ใช่ของไหว้เจ้าที่ แต่คือซีลกันแกะ"
+    },
+    {
+      "shot": 183,
+      "file": "183.wav",
+      "start": 770.22,
+      "dur": 4.452,
+      "tempo": 1.1,
+      "raw": 4.88,
+      "vo": "คนรับนับรอบได้ทันที ว่าไรเดอร์แอบเปิดกล่องหรือเปล่า"
+    },
+    {
+      "shot": 184,
+      "file": "184.wav",
+      "start": 775.22,
+      "dur": 5.75,
+      "tempo": 1.1,
+      "raw": 6.308,
+      "vo": "กฎข้อสอง ห้ามเปิดแอป ห้ามแชร์โลเคชัน เพื่อไม่ให้มีบันทึกว่าใครจ้างใคร"
+    },
+    {
+      "shot": 185,
+      "file": "185.wav",
+      "start": 781.52,
+      "dur": 3.287,
+      "tempo": 1.1,
+      "raw": 3.6,
+      "vo": "ไม่มีออเดอร์ในระบบ ไม่มีชื่อพี่ชาติอยู่ที่ไหนเลย"
+    },
+    {
+      "shot": 186,
+      "file": "186.wav",
+      "start": 785.32,
+      "dur": 4.33,
+      "tempo": 1.1,
+      "raw": 4.751,
+      "vo": "กฎข้อสาม ห้ามใช้ทางลัดหลังปั๊ม เพราะทางลัดคือทางของคนรับ"
+    },
+    {
+      "shot": 187,
+      "file": "187.wav",
+      "start": 790.12,
+      "dur": 5.977,
+      "tempo": 1.1,
+      "raw": 6.569,
+      "vo": "ทางลัดไม่มีด่าน แต่มันต่อแค่ป่าช้ากับปั๊ม ของจากในเมืองต้องผ่านด่านปากซอยทางเดียว"
+    },
+    {
+      "shot": 188,
+      "file": "188.wav",
+      "start": 796.62,
+      "dur": 2.623,
+      "tempo": 1.1,
+      "raw": 2.879,
+      "vo": "และคนที่ต้องแบกมันผ่านด่าน คือไรเดอร์"
+    },
+    {
+      "shot": 189,
+      "file": "189.wav",
+      "start": 799.72,
+      "dur": 5.179,
+      "tempo": 1.1,
+      "raw": 5.68,
+      "vo": "กฎข้อสี่ ห้ามดับเครื่อง เสียงเครื่องคือสัญญาณบอกคนที่ซุ่มอยู่"
+    },
+    {
+      "shot": 190,
+      "file": "190.wav",
+      "start": 805.42,
+      "dur": 4.515,
+      "tempo": 1.1,
+      "raw": 4.96,
+      "vo": "มันจอดรออยู่ในพงตั้งแต่ก่อนเจย์มาถึง ฟังเสียงเครื่องของเขามาและไป"
+    },
+    {
+      "shot": 191,
+      "file": "191.wav",
+      "start": 810.42,
+      "dur": 3.752,
+      "tempo": 1.1,
+      "raw": 4.114,
+      "vo": "กฎข้อห้า ห้ามหันกลับไปมอง เพื่อไม่ให้ไรเดอร์เห็นหน้าคนรับ"
+    },
+    {
+      "shot": 192,
+      "file": "192.wav",
+      "start": 814.72,
+      "dur": 4.418,
+      "tempo": 1.1,
+      "raw": 4.846,
+      "vo": "ถ้าโดนจับ ไรเดอร์ก็ซัดทอดใครไม่ได้ เพราะไม่เคยเห็นหน้าใครเลย"
+    },
+    {
+      "shot": 193,
+      "file": "193.wav",
+      "start": 819.62,
+      "dur": 3.029,
+      "tempo": 1.1,
+      "raw": 3.315,
+      "vo": "แต่คืนนี้ กล้องตัวที่สอง เห็นแทนเขาแล้ว"
+    },
+    {
+      "shot": 194,
+      "file": "194.wav",
+      "start": 823.12,
+      "dur": 2.271,
+      "tempo": 1.1,
+      "raw": 2.49,
+      "vo": "ถ้าคืนไหนตำรวจกรีดเทปเปิดกล่อง"
+    },
+    {
+      "shot": 195,
+      "file": "195.wav",
+      "start": 825.92,
+      "dur": 3.433,
+      "tempo": 1.1,
+      "raw": 3.76,
+      "vo": "คนเดียวที่มีชื่ออยู่ในสมุดเล่มดำ คือเจย์"
+    },
+    {
+      "shot": 196,
+      "file": "196.wav",
+      "start": 829.82,
+      "dur": 1.614,
+      "tempo": 1.1,
+      "raw": 1.76,
+      "vo": "เขาเกือบกดโทรหาตำรวจ"
+    },
+    {
+      "shot": 197,
+      "file": "197.wav",
+      "start": 831.92,
+      "dur": 6.478,
+      "tempo": 1.1,
+      "raw": 7.115,
+      "vo": "ไฟล์นี้พิสูจน์ได้แค่ว่ามีคนมารับของ แต่พิสูจน์ได้ชัดกว่าว่าเจย์คือคนขนไปส่ง"
+    },
+    {
+      "shot": 198,
+      "file": "198.wav",
+      "start": 838.92,
+      "dur": 3.805,
+      "tempo": 1.1,
+      "raw": 4.178,
+      "vo": "แล้วมันกลับไปทางเดิม ทางลัดที่กฎข้อสามห้ามใช้"
+    },
+    {
+      "shot": 199,
+      "file": "199.wav",
+      "start": 843.22,
+      "dur": 3.697,
+      "tempo": 1.1,
+      "raw": 4.078,
+      "vo": "ปลายอีกด้านของทางลัดนั้น คือประตูหลังของปั๊มน้ำมัน"
+    },
+    {
+      "shot": 200,
+      "file": "200.wav",
+      "start": 847.42,
+      "dur": 3.933,
+      "tempo": 1.1,
+      "raw": 4.314,
+      "vo": "ปั๊มที่ทั้งไรเดอร์ คนขับรถบรรทุก และตำรวจสายตรวจแวะทุกคืน"
+    },
+    {
+      "shot": 201,
+      "file": "201.wav",
+      "start": 851.82,
+      "dur": 4.584,
+      "tempo": 1.1,
+      "raw": 5.04,
+      "vo": "แล้วในหมู่คนพวกนั้น ใครกันที่ขี่รถดับไฟเข้าป่าช้าทุกคืน"
+    },
+    {
+      "shot": 202,
+      "file": "202.wav",
+      "start": 856.92,
+      "dur": 3.495,
+      "tempo": 1.1,
+      "raw": 3.839,
+      "vo": "สิบโมงเช้า เจย์กลับมาที่สุสานอีกครั้ง คราวนี้ตอนกลางวัน"
+    },
+    {
+      "shot": 203,
+      "file": "203.wav",
+      "start": 860.92,
+      "dur": 3.796,
+      "tempo": 1.1,
+      "raw": 4.172,
+      "vo": "ในแสงแดด ศาลาแปดเหลี่ยม ก็เป็นแค่ศาลาเก่า ๆ หลังหนึ่ง"
+    },
+    {
+      "shot": 204,
+      "file": "204.wav",
+      "start": 865.22,
+      "dur": 5.529,
+      "tempo": 1.1,
+      "raw": 6.077,
+      "vo": "รอยยางลายเดิมซ้อนกันหลายชั้น ไม่ใช่คืนเดียว แต่เป็นทุกคืน"
+    },
+    {
+      "shot": 205,
+      "file": "205.wav",
+      "start": 871.22,
+      "dur": 2.905,
+      "tempo": 1.1,
+      "raw": 3.195,
+      "vo": "ห่างจากศาลาไม่ถึงร้อยเมตร มีกระท่อมไม้หลังหนึ่ง"
+    },
+    {
+      "shot": 206,
+      "file": "206.wav",
+      "start": 874.62,
+      "dur": 3.712,
+      "tempo": 1.1,
+      "raw": 4.08,
+      "vo": "ตะเกียงเจ้าพายุ ไส้ยังดำใหม่ เหมือนเพิ่งจุดไปเมื่อคืน"
+    },
+    {
+      "shot": 207,
+      "file": "207.wav",
+      "start": 878.82,
+      "dur": 3.146,
+      "tempo": 1.1,
+      "raw": 3.451,
+      "vo": "และเสื้อกันฝนสีดำ แขวนอยู่หน้าประตู"
+    },
+    {
+      "shot": 208,
+      "file": "208.wav",
+      "start": 882.52,
+      "dur": 4.051,
+      "tempo": 1.1,
+      "raw": 4.458,
+      "vo": "เจย์นึกถึงร่างในเสื้อกันฝนสีดำบนจอ ร่างที่นับรอบเทป"
+    },
+    {
+      "shot": 209,
+      "file": "209.wav",
+      "start": 887.12,
+      "dur": 3.568,
+      "tempo": 1.1,
+      "raw": 3.92,
+      "vo": "ลุงเหม คนเฝ้าสุสาน อยู่ที่นี่มาสามสิบปี"
+    },
+    {
+      "shot": 210,
+      "file": "210.wav",
+      "start": 891.42,
+      "dur": 3.498,
+      "tempo": 1.1,
+      "raw": 3.83,
+      "vo": "มาหาใครพ่อหนุ่ม ที่นี่มีแต่คนที่นอนแล้วทั้งนั้น"
+    },
+    {
+      "shot": 211,
+      "file": "211.wav",
+      "start": 895.72,
+      "dur": 4.313,
+      "tempo": 1.1,
+      "raw": 4.742,
+      "vo": "ผมมาส่งข้าวที่ศาลาทุกคืนครับ ลุงเคยเห็นคนที่มาเอาไปไหม"
+    },
+    {
+      "shot": 212,
+      "file": "212.wav",
+      "start": 900.82,
+      "dur": 1.595,
+      "tempo": 1.1,
+      "raw": 1.753,
+      "vo": "หน้าลุงเหมเปลี่ยนทันที"
+    },
+    {
+      "shot": 213,
+      "file": "213.wav",
+      "start": 903.22,
+      "dur": 2.424,
+      "tempo": 1.1,
+      "raw": 2.648,
+      "vo": "หลังสี่ทุ่ม ลุงไม่ออกจากกระท่อม"
+    },
+    {
+      "shot": 214,
+      "file": "214.wav",
+      "start": 906.12,
+      "dur": 4.857,
+      "tempo": 1.1,
+      "raw": 5.323,
+      "vo": "ลุงจุดตะเกียงไว้ทั้งคืน ให้พวกเขารู้ว่าตรงนี้มีคนอยู่... อย่ามาใกล้"
+    },
+    {
+      "shot": 215,
+      "file": "215.wav",
+      "start": 911.72,
+      "dur": 2.538,
+      "tempo": 1.1,
+      "raw": 2.778,
+      "vo": "พวกเขา... หมายถึงผีเหรอครับ"
+    },
+    {
+      "shot": 216,
+      "file": "216.wav",
+      "start": 915.02,
+      "dur": 2.621,
+      "tempo": 1.1,
+      "raw": 2.872,
+      "vo": "ผีหรือคน ลุงไม่อยากรู้ทั้งสองอย่าง"
+    },
+    {
+      "shot": 217,
+      "file": "217.wav",
+      "start": 918.42,
+      "dur": 2.304,
+      "tempo": 1.1,
+      "raw": 2.522,
+      "vo": "ลุงเหมพาเจย์เดินไปที่โค้งหน้าศาลา"
+    },
+    {
+      "shot": 218,
+      "file": "218.wav",
+      "start": 921.22,
+      "dur": 5.332,
+      "tempo": 1.1,
+      "raw": 5.866,
+      "vo": "ป้ายที่อ่านไม่ออกเมื่อคืน เขียนว่า ‘ต้อม ไรเดอร์ อายุยี่สิบสอง’"
+    },
+    {
+      "shot": 219,
+      "file": "219.wav",
+      "start": 927.32,
+      "dur": 5.101,
+      "tempo": 1.1,
+      "raw": 5.596,
+      "vo": "สิบปีก่อน รถเก๋งชนเด็กคนนี้ ตรงโค้งนี้แหละ แล้วก็หนีไป"
+    },
+    {
+      "shot": 220,
+      "file": "220.wav",
+      "start": 932.92,
+      "dur": 4.09,
+      "tempo": 1.1,
+      "raw": 4.494,
+      "vo": "รถผ่านไปกี่คันก็ไม่มีใครจอด ไม่มีใครหันกลับไปมองมันเลย"
+    },
+    {
+      "shot": 221,
+      "file": "221.wav",
+      "start": 937.52,
+      "dur": 3.041,
+      "tempo": 1.1,
+      "raw": 3.326,
+      "vo": "ตำรวจปิดคดี เพราะไม่มีพยานสักคน"
+    },
+    {
+      "shot": 222,
+      "file": "222.wav",
+      "start": 941.02,
+      "dur": 3.335,
+      "tempo": 1.1,
+      "raw": 3.652,
+      "vo": "ตำนานผีไรเดอร์ ก็เกิดจากเด็กคนนี้แหละ"
+    },
+    {
+      "shot": 223,
+      "file": "223.wav",
+      "start": 944.82,
+      "dur": 2.024,
+      "tempo": 1.1,
+      "raw": 2.22,
+      "vo": "คนเป็นชอบแต่งเรื่องให้คนตายเสมอ"
+    },
+    {
+      "shot": 224,
+      "file": "224.wav",
+      "start": 947.62,
+      "dur": 3.622,
+      "tempo": 1.1,
+      "raw": 3.981,
+      "vo": "เจย์จำได้ว่าพี่ชาติเล่าเรื่องเดียวกันนี้ ด้วยเสียงที่สั่นกว่าลุงเหม"
+    },
+    {
+      "shot": 225,
+      "file": "225.wav",
+      "start": 951.72,
+      "dur": 4.835,
+      "tempo": 1.1,
+      "raw": 5.306,
+      "vo": "แต่พี่ชาติบอกว่าไรเดอร์คนนั้นตายบนทางลัด ทั้งที่ป้ายของต้อมอยู่ตรงนี้"
+    },
+    {
+      "shot": 226,
+      "file": "226.wav",
+      "start": 957.02,
+      "dur": 3.966,
+      "tempo": 1.1,
+      "raw": 4.353,
+      "vo": "แต่ระหว่างทางเดินกลับ เจย์เห็นว่าลุงเหมลากขาขวาทุกก้าว"
+    },
+    {
+      "shot": 227,
+      "file": "227.wav",
+      "start": 961.72,
+      "dur": 1.387,
+      "tempo": 1.1,
+      "raw": 1.531,
+      "vo": "ขาลุงเป็นอะไรครับ"
+    },
+    {
+      "shot": 228,
+      "file": "228.wav",
+      "start": 963.92,
+      "dur": 3.925,
+      "tempo": 1.1,
+      "raw": 4.31,
+      "vo": "อัมพฤกษ์ เป็นมาห้าปีแล้ว ลุงขี่รถไม่ได้หรอก"
+    },
+    {
+      "shot": 229,
+      "file": "229.wav",
+      "start": 968.62,
+      "dur": 4.819,
+      "tempo": 1.1,
+      "raw": 5.28,
+      "vo": "ส่วนเสื้อกันฝนสีดำ เป็นของมูลนิธิแจกฟรี ทุกบ้านแถวนี้มีคนละตัว"
+    },
+    {
+      "shot": 230,
+      "file": "230.wav",
+      "start": 973.92,
+      "dur": 3.589,
+      "tempo": 1.1,
+      "raw": 3.935,
+      "vo": "ผู้ต้องสงสัยคนแรกของเจย์ ขี่มอเตอร์ไซค์ไม่ได้ด้วยซ้ำ"
+    },
+    {
+      "shot": 231,
+      "file": "231.wav",
+      "start": 978.22,
+      "dur": 1.309,
+      "tempo": 1.1,
+      "raw": 1.429,
+      "vo": "แต่ลุงได้ยินเสียงรถมันนะ"
+    },
+    {
+      "shot": 232,
+      "file": "232.wav",
+      "start": 980.02,
+      "dur": 4.523,
+      "tempo": 1.1,
+      "raw": 4.975,
+      "vo": "มันมาจากทางหลังนั่น แล้วรีบกลับไปทางเดิมก่อนตีสามทุกที"
+    },
+    {
+      "shot": 233,
+      "file": "233.wav",
+      "start": 985.32,
+      "dur": 1.649,
+      "tempo": 1.1,
+      "raw": 1.812,
+      "vo": "ทำไมต้องก่อนตีสามครับ"
+    },
+    {
+      "shot": 234,
+      "file": "234.wav",
+      "start": 987.72,
+      "dur": 5.908,
+      "tempo": 1.1,
+      "raw": 6.486,
+      "vo": "ตีสามรถบรรทุกเข้าปั๊ม เสียงดังทั้งซอย ลุงรู้เวลามันแม่นกว่านาฬิกา"
+    },
+    {
+      "shot": 235,
+      "file": "235.wav",
+      "start": 994.42,
+      "dur": 3.959,
+      "tempo": 1.1,
+      "raw": 4.352,
+      "vo": "เจย์เดินตามรอยยางไปตามทางลัด สี่นาที ตามที่เขาเคยพูดไว้"
+    },
+    {
+      "shot": 236,
+      "file": "236.wav",
+      "start": 998.92,
+      "dur": 2.97,
+      "tempo": 1.1,
+      "raw": 3.261,
+      "vo": "รอยยางไปจบที่ประตูสังกะสี หลังปั๊มน้ำมัน"
+    },
+    {
+      "shot": 237,
+      "file": "237.wav",
+      "start": 1002.42,
+      "dur": 3.231,
+      "tempo": 1.1,
+      "raw": 3.552,
+      "vo": "หลังปั๊มมีมอเตอร์ไซค์ของคนในวิน จอดอยู่ห้าคัน"
+    },
+    {
+      "shot": 238,
+      "file": "238.wav",
+      "start": 1006.12,
+      "dur": 3.725,
+      "tempo": 1.1,
+      "raw": 4.088,
+      "vo": "คนที่รู้เวลารถบรรทุก คือคนที่อยู่ที่ปั๊มทุกคืน"
+    },
+    {
+      "shot": 239,
+      "file": "239.wav",
+      "start": 1010.32,
+      "dur": 5.145,
+      "tempo": 1.1,
+      "raw": 5.642,
+      "vo": "ไรเดอร์ในวิน คนขับรถบรรทุก และด่านตำรวจที่อยู่ห่างไปไม่ถึงกิโล"
+    },
+    {
+      "shot": 240,
+      "file": "240.wav",
+      "start": 1016.22,
+      "dur": 3.907,
+      "tempo": 1.1,
+      "raw": 4.279,
+      "vo": "คุณเจย์คะ ไฟแนนซ์นะคะ เหลือเวลาถึงเย็นวันเสาร์นี้นะคะ"
+    },
+    {
+      "shot": 241,
+      "file": "241.wav",
+      "start": 1020.92,
+      "dur": 1.904,
+      "tempo": 1.1,
+      "raw": 2.084,
+      "vo": "ครับ... ผมหาได้ครับ"
+    },
+    {
+      "shot": 242,
+      "file": "242.wav",
+      "start": 1023.62,
+      "dur": 2.69,
+      "tempo": 1.1,
+      "raw": 2.946,
+      "vo": "ยังขาดอีกสามพันสี่ร้อยบาท"
+    },
+    {
+      "shot": 243,
+      "file": "243.wav",
+      "start": 1026.82,
+      "dur": 1.524,
+      "tempo": 1.1,
+      "raw": 1.675,
+      "vo": "แล้วโทรศัพท์ก็ดังอีกครั้ง"
+    },
+    {
+      "shot": 244,
+      "file": "244.wav",
+      "start": 1029.12,
+      "dur": 2.924,
+      "tempo": 1.1,
+      "raw": 3.221,
+      "vo": "คืนนี้มีออเดอร์ เอาไหม"
+    },
+    {
+      "shot": 245,
+      "file": "245.wav",
+      "start": 1032.82,
+      "dur": 1.085,
+      "tempo": 1.1,
+      "raw": 1.18,
+      "vo": "เขาต้องการเงิน"
+    },
+    {
+      "shot": 246,
+      "file": "246.wav",
+      "start": 1034.42,
+      "dur": 4.986,
+      "tempo": 1.1,
+      "raw": 5.47,
+      "vo": "และถ้าเขาเลิกกะทันหัน คนที่ปั๊มจะรู้ทันทีว่าเขาเห็นอะไร"
+    },
+    {
+      "shot": 247,
+      "file": "247.wav",
+      "start": 1040.12,
+      "dur": 0.739,
+      "tempo": 1.1,
+      "raw": 0.815,
+      "vo": "เอาครับพี่"
+    },
+    {
+      "shot": 248,
+      "file": "248.wav",
+      "start": 1041.72,
+      "dur": 2.473,
+      "tempo": 1.1,
+      "raw": 2.72,
+      "vo": "คืนที่สาม ทุกอย่างเหมือนเดิม"
+    },
+    {
+      "shot": 249,
+      "file": "249.wav",
+      "start": 1044.72,
+      "dur": 4.201,
+      "tempo": 1.1,
+      "raw": 4.609,
+      "vo": "เทปดำสามรอบ ป้ายเขียนมือ ซองเงินแปดร้อยห้าสิบบาท"
+    },
+    {
+      "shot": 250,
+      "file": "250.wav",
+      "start": 1049.42,
+      "dur": 2.594,
+      "tempo": 1.1,
+      "raw": 2.85,
+      "vo": "ตีหนึ่งห้าสิบ เขาขี่ถึงปากซอยสิบเอ็ด"
+    },
+    {
+      "shot": 251,
+      "file": "251.wav",
+      "start": 1052.52,
+      "dur": 3.772,
+      "tempo": 1.1,
+      "raw": 4.13,
+      "vo": "แต่คืนนี้ ด่านปากซอยสิบเอ็ด ไม่มีใครอยู่"
+    },
+    {
+      "shot": 252,
+      "file": "252.wav",
+      "start": 1056.82,
+      "dur": 3.068,
+      "tempo": 1.1,
+      "raw": 3.36,
+      "vo": "ไม่มีหมวดธีร์ ไม่มีสมุดปกดำ"
+    },
+    {
+      "shot": 253,
+      "file": "253.wav",
+      "start": 1060.42,
+      "dur": 3.354,
+      "tempo": 1.1,
+      "raw": 3.678,
+      "vo": "คืนที่ของต้องผ่านด่าน ด่านกลับว่างพอดี"
+    },
+    {
+      "shot": 254,
+      "file": "254.wav",
+      "start": 1064.32,
+      "dur": 5.534,
+      "tempo": 1.1,
+      "raw": 6.08,
+      "vo": "ที่ศาลา เขาทำตามกฎครบทุกข้อ เหมือนคนที่ไม่รู้อะไรเลย"
+    },
+    {
+      "shot": 255,
+      "file": "255.wav",
+      "start": 1070.32,
+      "dur": 4.917,
+      "tempo": 1.1,
+      "raw": 5.406,
+      "vo": "กล้องหลังอัดไว้ทุกวินาที แต่คืนนี้เจย์ไม่เหลือบดูจอเลย"
+    },
+    {
+      "shot": 256,
+      "file": "256.wav",
+      "start": 1075.72,
+      "dur": 2.152,
+      "tempo": 1.1,
+      "raw": 2.358,
+      "vo": "ตีสองสี่สิบ เขากลับถึงปั๊ม"
+    },
+    {
+      "shot": 257,
+      "file": "257.wav",
+      "start": 1078.42,
+      "dur": 3.851,
+      "tempo": 1.1,
+      "raw": 4.225,
+      "vo": "ในปั๊ม หมวดธีร์ยืนหัวเราะ อยู่กับพี่ชาติและคนขับรถบรรทุก"
+    },
+    {
+      "shot": 258,
+      "file": "258.wav",
+      "start": 1082.82,
+      "dur": 4.515,
+      "tempo": 1.1,
+      "raw": 4.96,
+      "vo": "เขายื่นอะไรบางอย่างคืนให้คนขับ จากตรงนี้เจย์มองไม่ออกว่าคืออะไร"
+    },
+    {
+      "shot": 259,
+      "file": "259.wav",
+      "start": 1087.82,
+      "dur": 3.819,
+      "tempo": 1.1,
+      "raw": 4.198,
+      "vo": "ตำรวจที่ควรตั้งด่าน มายืนหัวเราะอยู่ที่ปั๊มตอนตีสอง"
+    },
+    {
+      "shot": 260,
+      "file": "260.wav",
+      "start": 1092.12,
+      "dur": 1.97,
+      "tempo": 1.1,
+      "raw": 2.16,
+      "vo": "แล้วหมวดธีร์ก็เดินเข้ามาในร้าน"
+    },
+    {
+      "shot": 261,
+      "file": "261.wav",
+      "start": 1094.62,
+      "dur": 4.111,
+      "tempo": 1.1,
+      "raw": 4.517,
+      "vo": "บนหน้าที่เปิดค้าง ทะเบียนรถของเจย์ถูกวงด้วยปากกาแดง"
+    },
+    {
+      "shot": 262,
+      "file": "262.wav",
+      "start": 1099.52,
+      "dur": 3.034,
+      "tempo": 1.1,
+      "raw": 3.329,
+      "vo": "ขับระวังนะครับ... กข สี่สี่เจ็ดหนึ่ง"
+    },
+    {
+      "shot": 263,
+      "file": "263.wav",
+      "start": 1103.32,
+      "dur": 0.316,
+      "tempo": 1.1,
+      "raw": 0.329,
+      "vo": "ครับ"
+    },
+    {
+      "shot": 264,
+      "file": "264.wav",
+      "start": 1104.92,
+      "dur": 2.876,
+      "tempo": 1.1,
+      "raw": 3.158,
+      "vo": "เขาจำทะเบียนรถเจย์ได้ โดยไม่ต้องเปิดสมุด"
+    },
+    {
+      "shot": 265,
+      "file": "265.wav",
+      "start": 1108.52,
+      "dur": 5.33,
+      "tempo": 1.1,
+      "raw": 5.862,
+      "vo": "ด่านว่างคืนเดียวกับที่ของต้องผ่าน แล้วชื่อผมก็ถูกวงไว้"
+    },
+    {
+      "shot": 266,
+      "file": "266.wav",
+      "start": 1114.62,
+      "dur": 5.138,
+      "tempo": 1.1,
+      "raw": 5.648,
+      "vo": "ตอนนี้เจย์ไม่รู้แล้วว่าใครคือคนรับของ และไม่รู้ว่าควรไว้ใจตำรวจคนไหน"
+    },
+    {
+      "shot": 267,
+      "file": "267.wav",
+      "start": 1120.52,
+      "dur": 2.764,
+      "tempo": 1.1,
+      "raw": 3.038,
+      "vo": "เป็นไงวะเจย์... โดนผีป่าช้าหลอกไหมล่ะ"
+    },
+    {
+      "shot": 268,
+      "file": "268.wav",
+      "start": 1124.02,
+      "dur": 2.845,
+      "tempo": 1.1,
+      "raw": 3.12,
+      "vo": "เจย์ตัดสินใจโกหก เพื่อดูว่าพี่ชาติจะตอบยังไง"
+    },
+    {
+      "shot": 269,
+      "file": "269.wav",
+      "start": 1127.62,
+      "dur": 4.929,
+      "tempo": 1.1,
+      "raw": 5.43,
+      "vo": "ไม่เจออะไรพี่ แต่มีหมาเห่าไล่หลังรถ ตลอดทาง ขนลุกชะมัด"
+    },
+    {
+      "shot": 270,
+      "file": "270.wav",
+      "start": 1133.32,
+      "dur": 3.501,
+      "tempo": 1.1,
+      "raw": 3.845,
+      "vo": "หมาที่ไหน แถวนั้นมีแต่หมาตาย"
+    },
+    {
+      "shot": 271,
+      "file": "271.wav",
+      "start": 1137.62,
+      "dur": 3.428,
+      "tempo": 1.1,
+      "raw": 3.76,
+      "vo": "พี่ชาติหัวเราะ หมุนพวงกุญแจไปมา เหมือนทุกคืน"
+    },
+    {
+      "shot": 272,
+      "file": "272.wav",
+      "start": 1141.82,
+      "dur": 5.76,
+      "tempo": 1.1,
+      "raw": 6.336,
+      "vo": "แล้วทีหลังน่ะ พันเทปสามรอบเหมือนเดิมนะ อย่าไปพันสี่รอบ ของมันจะ—"
+    },
+    {
+      "shot": 274,
+      "file": "274.wav",
+      "start": 1149.72,
+      "dur": 2.621,
+      "tempo": 1.1,
+      "raw": 2.88,
+      "vo": "เจ้าของร้านเขาบ่นมาน่ะ กลับบ้านไปนอนได้แล้ว"
+    },
+    {
+      "shot": 275,
+      "file": "275.wav",
+      "start": 1153.12,
+      "dur": 5.835,
+      "tempo": 1.1,
+      "raw": 6.408,
+      "vo": "เทปรอบที่สี่ ที่เจย์พันด้วยมือสั่น ๆ ในป่าช้าเมื่อคืนก่อน ตอนไม่มีใครเห็น"
+    },
+    {
+      "shot": 276,
+      "file": "276.wav",
+      "start": 1159.42,
+      "dur": 5.524,
+      "tempo": 1.1,
+      "raw": 6.067,
+      "vo": "เจ้าของร้านไม่มีวันได้นับ คนเดียวที่นับได้ คือคนที่มารับกล่องใบนั้นไปแกะ"
+    },
+    {
+      "shot": 277,
+      "file": "277.wav",
+      "start": 1165.42,
+      "dur": 2.037,
+      "tempo": 1.1,
+      "raw": 2.233,
+      "vo": "แล้วรถบรรทุกก็บีบแตรเรียกพี่ชาติ"
+    },
+    {
+      "shot": 278,
+      "file": "278.wav",
+      "start": 1167.92,
+      "dur": 6.696,
+      "tempo": 1.1,
+      "raw": 7.36,
+      "vo": "ใต้เบาะรถพี่ชาติ มีม้วนเทปพันสายไฟสีดำ เสื้อกันฝนสีดำ และถุงมือผ้าเปื้อนโคลน"
+    },
+    {
+      "shot": 279,
+      "file": "279.wav",
+      "start": 1175.12,
+      "dur": 2.581,
+      "tempo": 1.1,
+      "raw": 2.82,
+      "vo": "ถุงมือแบบเดียวกับมือที่นับรอบเทปบนจอ"
+    },
+    {
+      "shot": 280,
+      "file": "280.wav",
+      "start": 1178.22,
+      "dur": 6.609,
+      "tempo": 1.1,
+      "raw": 7.268,
+      "vo": "พี่ชาติใช้ไรเดอร์มือใหม่เป็นม้าเร็วตัดตอน ถ้าโดนจับที่ด่าน คนที่ติดคุกคือไรเดอร์ ไม่ใช่เขา"
+    },
+    {
+      "shot": 281,
+      "file": "281.wav",
+      "start": 1185.32,
+      "dur": 2.337,
+      "tempo": 1.1,
+      "raw": 2.56,
+      "vo": "ตีสี่ เจย์เปิดไฟล์คืนที่สองอีกครั้ง"
+    },
+    {
+      "shot": 282,
+      "file": "282.wav",
+      "start": 1188.12,
+      "dur": 1.778,
+      "tempo": 1.1,
+      "raw": 1.956,
+      "vo": "ซูมเข้าไปที่แฮนด์ขวาของรถคันนั้น"
+    },
+    {
+      "shot": 283,
+      "file": "283.wav",
+      "start": 1190.42,
+      "dur": 5.24,
+      "tempo": 1.1,
+      "raw": 5.762,
+      "vo": "จุดสีเขียวที่เขามองข้ามไปบนจอสองนิ้ว คือพวงกุญแจเชือกถักสีเขียวนีออน"
+    },
+    {
+      "shot": 284,
+      "file": "284.wav",
+      "start": 1196.22,
+      "dur": 3.858,
+      "tempo": 1.1,
+      "raw": 4.24,
+      "vo": "สีที่น้องชายของพี่ชาติเลือก เพราะมันมองเห็นได้ในที่มืด"
+    },
+    {
+      "shot": 285,
+      "file": "285.wav",
+      "start": 1200.82,
+      "dur": 4.734,
+      "tempo": 1.1,
+      "raw": 5.193,
+      "vo": "คนที่มารับของในป่าช้า คือพี่ชาติ คนที่ส่งงานนี้ให้ผมเอง"
+    },
+    {
+      "shot": 286,
+      "file": "286.wav",
+      "start": 1206.32,
+      "dur": 5.087,
+      "tempo": 1.1,
+      "raw": 5.6,
+      "vo": "ผีบนทางลัดที่พี่ชาติเล่า เป็นเรื่องแต่ง ไว้กันไรเดอร์ออกจากทางของเขาเอง"
+    },
+    {
+      "shot": 287,
+      "file": "287.wav",
+      "start": 1211.92,
+      "dur": 5.711,
+      "tempo": 1.1,
+      "raw": 6.274,
+      "vo": "เขามีหลักฐานแล้ว แต่ตำรวจคนเดียวที่รู้เรื่อง คือคนที่วงชื่อเขาไว้ด้วยปากกาแดง"
+    },
+    {
+      "shot": 288,
+      "file": "288.wav",
+      "start": 1218.12,
+      "dur": 5.068,
+      "tempo": 1.1,
+      "raw": 5.573,
+      "vo": "คืนวันพุธ เจย์ไม่ได้นอนอีกคืน เขาไม่รู้ว่าควรไว้ใจตำรวจคนไหน"
+    },
+    {
+      "shot": 289,
+      "file": "289.wav",
+      "start": 1223.72,
+      "dur": 1.63,
+      "tempo": 1.1,
+      "raw": 1.779,
+      "vo": "งั้นก็ให้ทุกคนเป็นพยาน"
+    },
+    {
+      "shot": 290,
+      "file": "290.wav",
+      "start": 1225.82,
+      "dur": 3.432,
+      "tempo": 1.1,
+      "raw": 3.768,
+      "vo": "โทรศัพท์เครื่องเก่าจอร้าว ตั้งไลฟ์ไปที่เพจของเขา"
+    },
+    {
+      "shot": 291,
+      "file": "291.wav",
+      "start": 1229.72,
+      "dur": 7.237,
+      "tempo": 1.1,
+      "raw": 7.953,
+      "vo": "กฎข้อสอง ห้ามถ่ายรูป ห้ามแชร์ คืนนี้ เจย์จะแชร์ทุกอย่าง"
+    },
+    {
+      "shot": 292,
+      "file": "292.wav",
+      "start": 1237.42,
+      "dur": 4.381,
+      "tempo": 1.1,
+      "raw": 4.811,
+      "vo": "กล่องใบที่สี่ออกมาจากใต้ประตูเหมือนเดิม และด่านปากซอยก็ว่างอีกคืน"
+    },
+    {
+      "shot": 293,
+      "file": "293.wav",
+      "start": 1242.32,
+      "dur": 3.298,
+      "tempo": 1.1,
+      "raw": 3.624,
+      "vo": "ถ้าคืนนี้มีอะไรเกิดขึ้น จะไม่มีตำรวจอยู่ใกล้สักคน"
+    },
+    {
+      "shot": 294,
+      "file": "294.wav",
+      "start": 1246.12,
+      "dur": 4.433,
+      "tempo": 1.1,
+      "raw": 4.863,
+      "vo": "ที่ศาลา เจย์ทำทุกอย่าง เหมือนสามคืนที่ผ่านมา"
+    },
+    {
+      "shot": 295,
+      "file": "295.wav",
+      "start": 1251.02,
+      "dur": 3.164,
+      "tempo": 1.1,
+      "raw": 3.465,
+      "vo": "ยกเว้นอย่างเดียว เขาเหน็บโทรศัพท์ไลฟ์ไว้ในซอกคาน"
+    },
+    {
+      "shot": 296,
+      "file": "296.wav",
+      "start": 1254.72,
+      "dur": 4.605,
+      "tempo": 1.1,
+      "raw": 5.053,
+      "vo": "จอดับไว้ เหลือแค่เลนส์ ที่มองลงไปที่โต๊ะหินอ่อน"
+    },
+    {
+      "shot": 297,
+      "file": "297.wav",
+      "start": 1259.82,
+      "dur": 2.322,
+      "tempo": 1.1,
+      "raw": 2.543,
+      "vo": "กล่องใบที่สี่ วางลงตรงเดิม"
+    },
+    {
+      "shot": 298,
+      "file": "298.wav",
+      "start": 1262.62,
+      "dur": 3.728,
+      "tempo": 1.1,
+      "raw": 4.087,
+      "vo": "แล้วบิดออกตามกฎข้อสี่ ไม่หันกลับ ตามกฎข้อห้า"
+    },
+    {
+      "shot": 299,
+      "file": "299.wav",
+      "start": 1266.82,
+      "dur": 5.087,
+      "tempo": 1.1,
+      "raw": 5.576,
+      "vo": "เขาจอดรอที่โค้ง ข้างป้ายไม้ของต้อม เครื่องยังติด หันหลังให้ศาลา"
+    },
+    {
+      "shot": 300,
+      "file": "300.wav",
+      "start": 1272.42,
+      "dur": 3.498,
+      "tempo": 1.1,
+      "raw": 3.84,
+      "vo": "เขาไม่ได้หันไปมอง เขาดูผ่านไลฟ์ของตัวเอง"
+    },
+    {
+      "shot": 301,
+      "file": "301.wav",
+      "start": 1276.42,
+      "dur": 3.346,
+      "tempo": 1.1,
+      "raw": 3.68,
+      "vo": "ผู้ชมแค่สามคน ตอนตีสองของคืนวันพุธ"
+    },
+    {
+      "shot": 302,
+      "file": "302.wav",
+      "start": 1280.32,
+      "dur": 2.388,
+      "tempo": 1.1,
+      "raw": 2.619,
+      "vo": "สองนาทีผ่านไป ไม่มีอะไรขยับ"
+    },
+    {
+      "shot": 303,
+      "file": "303.wav",
+      "start": 1283.22,
+      "dur": 2.955,
+      "tempo": 1.1,
+      "raw": 3.24,
+      "vo": "แล้วรถดับไฟคันเดิม ก็ไหลออกมาจากทางลัด"
+    },
+    {
+      "shot": 304,
+      "file": "304.wav",
+      "start": 1286.72,
+      "dur": 2.394,
+      "tempo": 1.1,
+      "raw": 2.623,
+      "vo": "เจย์กลั้นหายใจ"
+    },
+    {
+      "shot": 305,
+      "file": "305.wav",
+      "start": 1289.62,
+      "dur": 2.688,
+      "tempo": 1.1,
+      "raw": 2.955,
+      "vo": "คนขี่ยกชิลด์ขึ้น เพราะคิดว่าไม่มีใครมอง"
+    },
+    {
+      "shot": 306,
+      "file": "306.wav",
+      "start": 1292.82,
+      "dur": 2.332,
+      "tempo": 1.1,
+      "raw": 2.551,
+      "vo": "เขาไล่นับรอบเทป สามรอบพอดี"
+    },
+    {
+      "shot": 307,
+      "file": "307.wav",
+      "start": 1295.62,
+      "dur": 3.01,
+      "tempo": 1.1,
+      "raw": 3.319,
+      "vo": "แล้วฉีกกล่อง เทเครื่องทองลงบนโต๊ะหินอ่อน"
+    },
+    {
+      "shot": 308,
+      "file": "308.wav",
+      "start": 1299.12,
+      "dur": 4.545,
+      "tempo": 1.1,
+      "raw": 5.007,
+      "vo": "ผู้ชมสามคน กลายเป็นสองร้อยสิบสี่คน ในเวลาไม่ถึงนาที"
+    },
+    {
+      "shot": 309,
+      "file": "309.wav",
+      "start": 1304.22,
+      "dur": 3.438,
+      "tempo": 1.1,
+      "raw": 3.78,
+      "vo": "คอมเมนต์ที่เด้งรัว ทำให้จอโทรศัพท์บนคานสว่างขึ้นเอง"
+    },
+    {
+      "shot": 310,
+      "file": "310.wav",
+      "start": 1308.22,
+      "dur": 1.295,
+      "tempo": 1.1,
+      "raw": 1.412,
+      "vo": "พี่ชาติเงยหน้าขึ้น"
+    },
+    {
+      "shot": 311,
+      "file": "311.wav",
+      "start": 1310.02,
+      "dur": 4.075,
+      "tempo": 1.1,
+      "raw": 4.471,
+      "vo": "ในจอคือหน้าของเขาเอง กับคนสองร้อยกว่าคนที่กำลังดูอยู่"
+    },
+    {
+      "shot": 312,
+      "file": "312.wav",
+      "start": 1314.62,
+      "dur": 1.667,
+      "tempo": 1.1,
+      "raw": 1.84,
+      "vo": "แล้วภาพก็ดับ"
+    },
+    {
+      "shot": 313,
+      "file": "313.wav",
+      "start": 1316.82,
+      "dur": 4.632,
+      "tempo": 1.1,
+      "raw": 5.11,
+      "vo": "พี่ชาติทุบโทรศัพท์ลงพื้น กวาดทองใส่กระเป๋า แล้ววิ่งไปที่รถ"
+    },
+    {
+      "shot": 314,
+      "file": "314.wav",
+      "start": 1322.02,
+      "dur": 3.636,
+      "tempo": 1.1,
+      "raw": 3.992,
+      "vo": "ถ้าพี่ชาติไปถึงรถบรรทุกตีสาม ทองทั้งหมดจะหายไปกับมัน"
+    },
+    {
+      "shot": 315,
+      "file": "315.wav",
+      "start": 1326.12,
+      "dur": 2.608,
+      "tempo": 1.1,
+      "raw": 2.856,
+      "vo": "เจย์กดไลฟ์ใหม่ จากกล้องหน้าบนหมวก"
+    },
+    {
+      "shot": 316,
+      "file": "316.wav",
+      "start": 1329.22,
+      "dur": 3.653,
+      "tempo": 1.1,
+      "raw": 4.013,
+      "vo": "แล้วบิดรถกลับเข้าไปที่ศาลา ไฟสูงเปิดเต็มที่"
+    },
+    {
+      "shot": 317,
+      "file": "317.wav",
+      "start": 1333.42,
+      "dur": 3.642,
+      "tempo": 1.1,
+      "raw": 4,
+      "vo": "ไฟหน้ารถเจย์สาดเข้าหน้าพี่ชาติ ที่ปากทางลัด"
+    },
+    {
+      "shot": 318,
+      "file": "318.wav",
+      "start": 1337.82,
+      "dur": 3.358,
+      "tempo": 1.1,
+      "raw": 3.679,
+      "vo": "ทุบไปก็ไม่มีประโยชน์พี่ กล้องหน้าผมยังไลฟ์อยู่"
+    },
+    {
+      "shot": 319,
+      "file": "319.wav",
+      "start": 1341.92,
+      "dur": 1.833,
+      "tempo": 1.1,
+      "raw": 2,
+      "vo": "มึงเห็นในกล้องหลังแล้วใช่ไหมเจย์"
+    },
+    {
+      "shot": 320,
+      "file": "320.wav",
+      "start": 1344.22,
+      "dur": 4.238,
+      "tempo": 1.1,
+      "raw": 4.651,
+      "vo": "มึงแค่รับเงินแปดร้อยห้าสิบ แล้วแกล้งไม่รู้เรื่อง มันจะตายหรือไงวะ!"
+    },
+    {
+      "shot": 321,
+      "file": "321.wav",
+      "start": 1349.22,
+      "dur": 3.577,
+      "tempo": 1.1,
+      "raw": 3.92,
+      "vo": "พี่ชาติชักเหล็กงัดยางออกมา แล้วก้าวเข้าหาเจย์"
+    },
+    {
+      "shot": 322,
+      "file": "322.wav",
+      "start": 1353.32,
+      "dur": 2.878,
+      "tempo": 1.1,
+      "raw": 3.158,
+      "vo": "เจย์ไม่ถอย แต่ก็ไม่เหลือทางให้ถอยแล้ว"
+    },
+    {
+      "shot": 324,
+      "file": "324.wav",
+      "start": 1358.52,
+      "dur": 1.3,
+      "tempo": 1.1,
+      "raw": 1.415,
+      "vo": "หยุดอยู่ตรงนั้น ชาติ!"
+    },
+    {
+      "shot": 325,
+      "file": "325.wav",
+      "start": 1360.32,
+      "dur": 3.566,
+      "tempo": 1.1,
+      "raw": 3.91,
+      "vo": "ผมดูไลฟ์ของเจย์ มาตั้งแต่ครึ่งชั่วโมงก่อน"
+    },
+    {
+      "shot": 326,
+      "file": "326.wav",
+      "start": 1364.62,
+      "dur": 2.26,
+      "tempo": 1.1,
+      "raw": 2.48,
+      "vo": "พี่ชาติติดอยู่ระหว่างไฟสองฝั่ง"
+    },
+    {
+      "shot": 327,
+      "file": "327.wav",
+      "start": 1367.62,
+      "dur": 2.373,
+      "tempo": 1.1,
+      "raw": 2.607,
+      "vo": "หมวด... อยู่ข้างผมเหรอครับ"
+    },
+    {
+      "shot": 328,
+      "file": "328.wav",
+      "start": 1370.72,
+      "dur": 7.247,
+      "tempo": 1.1,
+      "raw": 7.958,
+      "vo": "หกคืนก่อนคุณ มีไรเดอร์หกคน ขี่เข้าซอยตันนี้ตอนตีสอง ไม่ซ้ำหน้า"
+    },
+    {
+      "shot": 329,
+      "file": "329.wav",
+      "start": 1378.52,
+      "dur": 2.723,
+      "tempo": 1.1,
+      "raw": 2.982,
+      "vo": "แต่ทุกคนรับงานจากวินเบอร์สิบเจ็ด"
+    },
+    {
+      "shot": 330,
+      "file": "330.wav",
+      "start": 1381.72,
+      "dur": 6.805,
+      "tempo": 1.1,
+      "raw": 7.475,
+      "vo": "คืนที่ผมเกือบกรีดเทป ถ้าเปิดได้คืนนั้น ผมจะได้แค่ไรเดอร์คนเดียว"
+    },
+    {
+      "shot": 331,
+      "file": "331.wav",
+      "start": 1389.02,
+      "dur": 2.491,
+      "tempo": 1.1,
+      "raw": 2.735,
+      "vo": "วิทยุเรียกผมไปพอดี ผมเลยเปลี่ยนแผน"
+    },
+    {
+      "shot": 332,
+      "file": "332.wav",
+      "start": 1392.02,
+      "dur": 6.159,
+      "tempo": 1.1,
+      "raw": 6.762,
+      "vo": "คืนที่ด่านว่าง ทีมผมซุ่มอยู่ในทางลัด แต่รถดับไฟคันนั้นหลุดมือเราไปในความมืด"
+    },
+    {
+      "shot": 333,
+      "file": "333.wav",
+      "start": 1398.72,
+      "dur": 2.984,
+      "tempo": 1.1,
+      "raw": 3.269,
+      "vo": "ผมเลยไปรอที่ปลายทาง... ที่ปั๊ม"
+    },
+    {
+      "shot": 334,
+      "file": "334.wav",
+      "start": 1402.22,
+      "dur": 5.281,
+      "tempo": 1.1,
+      "raw": 5.8,
+      "vo": "ที่ปั๊ม ผมไม่ได้หัวเราะกับเขา ผมกำลังจดชื่อคนขับรถบรรทุก"
+    },
+    {
+      "shot": 335,
+      "file": "335.wav",
+      "start": 1408.02,
+      "dur": 4.761,
+      "tempo": 1.1,
+      "raw": 5.22,
+      "vo": "วงแดงในสมุดผม แปลว่าพยานที่ต้องคุ้มครอง"
+    },
+    {
+      "shot": 336,
+      "file": "336.wav",
+      "start": 1413.52,
+      "dur": 4.126,
+      "tempo": 1.1,
+      "raw": 4.524,
+      "vo": "คอมเมนต์เล็ก ๆ ที่ไม่มีใครอ่านทัน คือ ‘ธีร์ สายตรวจ: อย่าลงจากรถ’"
+    },
+    {
+      "shot": 337,
+      "file": "337.wav",
+      "start": 1418.12,
+      "dur": 6.655,
+      "tempo": 1.1,
+      "raw": 7.308,
+      "vo": "กฎที่น่ากลัวที่สุดในคืนนี้ ไม่ใช่กฎของผี... แต่คือกฎของคนที่ใช้ความกลัว มาบังตาความจริง"
+    },
+    {
+      "shot": 338,
+      "file": "338.wav",
+      "start": 1425.32,
+      "dur": 3.722,
+      "tempo": 1.1,
+      "raw": 4.08,
+      "vo": "พี่ชาติทิ้งเหล็กงัดยาง แล้วทรุดลงคุกเข่าบนโคลน"
+    },
+    {
+      "shot": 339,
+      "file": "339.wav",
+      "start": 1429.82,
+      "dur": 4.07,
+      "tempo": 1.1,
+      "raw": 4.467,
+      "vo": "สิบปีก่อน ต้อมน้องข้า นอนอยู่ตรงโค้งนั่น"
+    },
+    {
+      "shot": 340,
+      "file": "340.wav",
+      "start": 1434.42,
+      "dur": 4.141,
+      "tempo": 1.1,
+      "raw": 4.544,
+      "vo": "รถทุกคันขับผ่าน ไม่มีใครหันกลับมามองมันสักคัน"
+    },
+    {
+      "shot": 341,
+      "file": "341.wav",
+      "start": 1439.12,
+      "dur": 2.161,
+      "tempo": 1.1,
+      "raw": 2.361,
+      "vo": "ข้าติดหนี้เสี่ยตั้งแต่งานศพมัน"
+    },
+    {
+      "shot": 342,
+      "file": "342.wav",
+      "start": 1441.82,
+      "dur": 3.528,
+      "tempo": 1.1,
+      "raw": 3.873,
+      "vo": "แล้วข้าก็เอาผีน้องข้า มาหลอกเด็กอย่างเอ็ง"
+    },
+    {
+      "shot": 343,
+      "file": "343.wav",
+      "start": 1446.12,
+      "dur": 2.276,
+      "tempo": 1.1,
+      "raw": 2.492,
+      "vo": "พี่เลือกผม เพราะกล้องหลังผมเสีย"
+    },
+    {
+      "shot": 344,
+      "file": "344.wav",
+      "start": 1448.92,
+      "dur": 3.783,
+      "tempo": 1.1,
+      "raw": 4.155,
+      "vo": "แต่ผมซ่อมมันด้วยเงินแปดร้อยห้าสิบบาทแรก ที่พี่ให้"
+    },
+    {
+      "shot": 345,
+      "file": "345.wav",
+      "start": 1453.42,
+      "dur": 4.169,
+      "tempo": 1.1,
+      "raw": 4.577,
+      "vo": "ชายที่โกรธที่สุดว่าไม่มีใคร หันกลับไปมองน้องชายของเขา"
+    },
+    {
+      "shot": 346,
+      "file": "346.wav",
+      "start": 1458.12,
+      "dur": 2.846,
+      "tempo": 1.1,
+      "raw": 3.12,
+      "vo": "กลับสร้างกฎห้ามหันกลับไปมอง ขึ้นมาเอง"
+    },
+    {
+      "shot": 347,
+      "file": "347.wav",
+      "start": 1461.52,
+      "dur": 5.422,
+      "tempo": 1.1,
+      "raw": 5.951,
+      "vo": "หกโมงเช้า หมอกบนถนนสายนี้ จางลงเป็นครั้งแรกในรอบสัปดาห์"
+    },
+    {
+      "shot": 348,
+      "file": "348.wav",
+      "start": 1467.42,
+      "dur": 3.633,
+      "tempo": 1.1,
+      "raw": 3.991,
+      "vo": "เจย์ถอดหมวกกันน็อกออก เป็นครั้งแรกตั้งแต่เมื่อคืน"
+    },
+    {
+      "shot": 349,
+      "file": "349.wav",
+      "start": 1471.82,
+      "dur": 5.757,
+      "tempo": 1.1,
+      "raw": 6.335,
+      "vo": "รถบรรทุกพ่วงที่ปั๊มน้ำมันถูกตรวจเมื่อตีสาม พบเครื่องทองโบราณครบสิบสี่ชิ้น"
+    },
+    {
+      "shot": 350,
+      "file": "350.wav",
+      "start": 1478.12,
+      "dur": 4.377,
+      "tempo": 1.1,
+      "raw": 4.8,
+      "vo": "ตำรวจค้นร้านข้าวต้มในเมือง และกำลังขยายผลไปถึงผู้ว่าจ้าง"
+    },
+    {
+      "shot": 351,
+      "file": "351.wav",
+      "start": 1483.22,
+      "dur": 3.57,
+      "tempo": 1.1,
+      "raw": 3.92,
+      "vo": "คืนแรกที่คุณบอกชื่อเพจ ผมกดติดตามไว้"
+    },
+    {
+      "shot": 352,
+      "file": "352.wav",
+      "start": 1487.32,
+      "dur": 3.202,
+      "tempo": 1.1,
+      "raw": 3.52,
+      "vo": "ผู้ติดตามคนที่สามร้อยสิบสาม"
+    },
+    {
+      "shot": 353,
+      "file": "353.wav",
+      "start": 1491.32,
+      "dur": 4.93,
+      "tempo": 1.1,
+      "raw": 5.414,
+      "vo": "บรรทัดสุดท้ายในสมุดปกดำ เขียนว่า ‘พยาน · ขอบคุณ’"
+    },
+    {
+      "shot": 354,
+      "file": "354.wav",
+      "start": 1496.72,
+      "dur": 3.825,
+      "tempo": 1.1,
+      "raw": 4.206,
+      "vo": "เงินนำจับจากพิพิธภัณฑ์ มากกว่าค่างวดที่ค้างหลายเท่า"
+    },
+    {
+      "shot": 355,
+      "file": "355.wav",
+      "start": 1501.02,
+      "dur": 3.714,
+      "tempo": 1.1,
+      "raw": 4.071,
+      "vo": "เช้าวันนั้น ค่างวดที่ค้าง ถูกจ่ายครบห้าพันหนึ่งร้อยบาท"
+    },
+    {
+      "shot": 356,
+      "file": "356.wav",
+      "start": 1505.22,
+      "dur": 3.428,
+      "tempo": 1.1,
+      "raw": 3.765,
+      "vo": "ลุงเหมเอาพวงมาลัยพวงใหม่ มาแขวนที่ป้ายของต้อม"
+    },
+    {
+      "shot": 357,
+      "file": "357.wav",
+      "start": 1509.42,
+      "dur": 3.585,
+      "tempo": 1.1,
+      "raw": 3.935,
+      "vo": "สิบปีแล้วนะต้อม เพิ่งมีคนหันกลับมามองเอ็ง"
+    },
+    {
+      "shot": 358,
+      "file": "358.wav",
+      "start": 1513.72,
+      "dur": 0.91,
+      "tempo": 1.1,
+      "raw": 0.986,
+      "vo": "ให้พี่ต้อมครับ"
+    },
+    {
+      "shot": 359,
+      "file": "359.wav",
+      "start": 1515.42,
+      "dur": 4.506,
+      "tempo": 1.1,
+      "raw": 4.94,
+      "vo": "ก่อนออกจากศาลา เจย์หันกลับไปมอง เป็นครั้งแรก ด้วยตาของตัวเอง"
+    },
+    {
+      "shot": 360,
+      "file": "360.wav",
+      "start": 1520.42,
+      "dur": 3,
+      "tempo": 1.1,
+      "raw": 3.301,
+      "vo": "เช้าวันใหม่เริ่มต้นขึ้น และป่าช้าสายนี้"
+    },
+    {
+      "shot": 361,
+      "file": "361.wav",
+      "start": 1523.92,
+      "dur": 4.445,
+      "tempo": 1.1,
+      "raw": 4.88,
+      "vo": "ก็ไม่เคยมีใครต้องมาส่งออเดอร์ปริศนา อีกต่อไป"
+    },
+    {
+      "shot": 362,
+      "file": "362.wav",
+      "start": 1529.2,
+      "dur": 5.687,
+      "tempo": 1.1,
+      "raw": 6.254,
+      "vo": "เรื่องนี้เป็นเรื่องแต่ง ถ้าชอบเรื่องเล่าแบบนี้ กดติดตามไว้ แล้วเจอกันเรื่องหน้า"
+    }
+  ]
+}

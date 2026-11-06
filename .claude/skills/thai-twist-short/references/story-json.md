@@ -35,7 +35,7 @@
 
 | Field | Default | Meaning |
 |---|---|---|
-| `scene` | required | Scene name → a key in `src/episodes/<slug>/scenes.tsx`, else a generic scene in `src/scenes/` (`room`, `rules`, `map`, `news`, `next`). Unknown name = placeholder (`npm run story` warns). Each shot gets its own local frame `f`; carry a camera move across shots through `data` (e.g. `data.cam`). |
+| `scene` | required | Scene name → a key in `src/episodes/<slug>/scenes.tsx`, else a generic scene in `src/scenes/` (`room`, `rules`, `map`, `news`, `next`: only the `npm run new` starter uses these; a real episode writes its own). Unknown name = placeholder (`npm run story` warns). Each shot gets its own local frame `f`; carry a camera move across shots through `data` (e.g. `data.cam`). |
 | `view` | — | Variant the scene draws for this shot (`"planks"`, `"side"`…). One scene component can switch on `view`, so a set is drawn once and reused. |
 | `note` | — (`npm run shots` warns when a camera shot has none) | **The picture in one sentence**, written before anything is drawn: who does what with what, seen from where, lit by what — *"ช่องใต้ประตูระดับพื้น แสงเย็นลอดเข้ามา เงาเท้าสองข้างขยับ"*. The scene must match it on the Board frame (`directing.md` §1–2, §7). Not shown on screen. |
 | `data` | — | Free-form object for the scene: cast strings, camera, HUD, counters (generic scenes document theirs in `scene-kit.md`). |

@@ -125,3 +125,9 @@ export const Haze: React.FC<{y: number; h?: number; f: number; color?: string; a
     })}
   </>
 );
+
+/** the dark blurred shape of the listener's shoulder for an over-the-shoulder shot, frame px */
+export const Shoulder: React.FC<{side: 'l' | 'r'; color: string; w?: number}> = ({side, color, w = 640}) => (
+  <div style={{position: 'absolute', [side === 'l' ? 'left' : 'right']: -120, bottom: -160, width: w, height: 760,
+    borderRadius: '48% 48% 0 0', background: color, boxShadow: `inset ${side === 'l' ? -40 : 40}px 30px 80px rgba(0,0,0,.6)`} as React.CSSProperties} />
+);

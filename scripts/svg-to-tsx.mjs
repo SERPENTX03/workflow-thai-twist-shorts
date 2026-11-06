@@ -18,11 +18,13 @@ const KEEP = [...new Set([
   // whole-body poses
   'man-walk', 'man-run', 'man-sit', 'man-crouch', 'man-back', 'man-lie', 'woman-back', 'woman-sit', 'woman-run',
   // arms
-  ...['r', 'l'].flatMap(s => ['hold', 'chest', 'offer', 'raise', 'pocket', 'carry', 'reach'].map(p => `arm-${s}-${p}`)),
+  ...['r', 'l'].flatMap(s => ['hold', 'chest', 'offer', 'raise', 'pocket', 'carry', 'reach', 'phone'].map(p => `arm-${s}-${p}`)),
   'arm-b-wheel', 'prop-wheel',
   // faces + mouths
   ...['happy', 'laugh', 'sad', 'cry', 'angry', 'scared', 'shock', 'worried', 'smirk', 'tired', 'hollow', 'wary', 'guilty', 'grin'].map(f => `face-${f}`),
   'talk-a', 'talk-e', 'talk-o', 'talk-m',
+  'talk-smile-a', 'talk-smile-e', 'talk-smile-o', 'talk-smile-m', 'talk-down-a', 'talk-down-e', 'talk-down-o', 'talk-down-m', 'talk-tense-a', 'talk-tense-e', 'talk-tense-o', 'talk-tense-m', 'talk-shock-a', 'talk-shock-e', 'talk-shock-o', 'talk-shock-m',
+  'face-sleep',
   // accessories + marks
   "acc-wristwatch", "acc-beads", "acc-necklace", "acc-square-glasses", "acc-bucket-hat", "acc-tote",
   ...['glasses', 'cap', 'mask', 'headband', 'scarf', 'bag', 'amulet', 'backpack', 'straps', 'watch', 'hand-bandage',
