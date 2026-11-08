@@ -1,6 +1,13 @@
 # Review, chapter renders, final and packaging (steps 5–8)
 
-A 20 min film has ~400+ shots; one Board frame each is too many to judge one by one. Review **one chapter at a time** on contact sheets, then check timing with a chapter render. Everything here goes through `npm run chapter` (`scripts/chapter.mjs`).
+**Default (CLAUDE.md rule 5): one pass, no score loop.** A 20 min film has ~400 shots, and scoring chapter after chapter in 30-frame sheets costs a lot and misses the one odd shot. Instead:
+
+1. `npm run review -- episodes/<slug> --board` (renders only changed shots' Board frames; `--all` forces all) prints the suspect list (look ✗, shots ✗, story ⚠ per shot) and writes `out/<slug>-review.html`.
+2. Open only suspect and changed frames at full size and fix each once.
+3. The user scrolls the page once (filters: all / audit-flagged / new), ticks odd shots and pastes the list; fix only those, once.
+4. `npm run review -- episodes/<slug> --accept`. Timing is checked by the single final render (§4); skip §3 chapter previews unless asked.
+
+§1–§3 below (chapter sheets, 1–10 scores, chapter previews) are the older procedure, kept for when the user asks to inspect one chapter; the criteria table is a per-frame checklist, not a scoreboard. Everything here goes through `npm run chapter` (`scripts/chapter.mjs`).
 
 ## 1. Chapters → contact sheets
 

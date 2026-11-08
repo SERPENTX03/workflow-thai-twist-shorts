@@ -28,7 +28,7 @@ idea ─► 1 story ─► 2 story.json ─► 3 animatic ─► 4 scenes ─►
 | 3 | Animatic | `npm run check -- episodes/<slug>` | typechecks, lints the story, renders Board frames; every missing scene shows as a placeholder; length fits the format family (`story-rules.md`) |
 | 4 | Storyboard: draw each shot right at its key frame, then animate — places built once in perspective (`src/kit/room.tsx`) and framed many ways, light from things you can see (`directing.md` §3–4, `depth-light.md`) | edit `src/episodes/<slug>/scenes.tsx` (any number of components; one per shot is fine), then `npm run check` (ends with the look audit) | tsc = 0 errors; every Board frame passes the storyboard check in `directing.md` §7 (it matches its `note`, reads in one second at phone size, light from a source, sizes change); each `shots` / `look` ✗ on a changed shot is fixed or answered in one line |
 | 5 | Voice + score | `npm run audio -- episodes/<slug>` | no `⚠ OVER` lines from voice; score says *ducked under voice*; then do the `voices.md` listening check per speaking character |
-| 6 | Review loop | `npm run check -- episodes/<slug>` → look at `out/<slug>-board/` | every score in `references/review.md` ≥ 8 |
+| 6 | One-pass review (CLAUDE.md rule 5; no score loop) | `npm run review -- episodes/<slug> --board` → suspects + `out/<slug>-review.html` | audit ✗ fixed or answered; suspect/changed frames looked at full size; user has flagged odd shots and they are fixed once; then `--accept` |
 | 7 | Render + loudness | `npm run final -- episodes/<slug>` | `renders/<slug>-final.mp4`, −14 LUFS ±0.5 |
 
 Rules for the loop:

@@ -214,6 +214,8 @@
     "prop-key",
     "prop-lantern",
     "prop-mug",
+    "prop-fan",
+    "prop-phone-ear",
     "prop-glass",
     "prop-bowl",
     "prop-spoon",
@@ -942,6 +944,20 @@
       "code": "<WallClock x y t=\"03:52\" r={330} tick={1.2} />",
       "uses": "WallClock",
       "use": "เวลาเป็นเบาะแส"
+    },
+    {
+      "id": "office-chair",
+      "nameTh": "เก้าอี้สำนักงานล้อเลื่อน",
+      "code": "<OfficeChair x y s coat />",
+      "uses": "OfficeChair",
+      "use": "x,y = พื้นใต้เก้าอี้ · coat = เสื้อกาวน์พาดพนัก · วาดหลังตัวละครที่นั่ง (ฐานล้อกับพนักต้องโผล่ข้างตัว)"
+    },
+    {
+      "id": "iv-stand",
+      "nameTh": "เสาน้ำเกลือพร้อมหูฟังแพทย์",
+      "code": "<IvStand x y s />",
+      "uses": "IvStand",
+      "use": "x,y = พื้น · สูงราว 2 ม. ที่ s=1 · ใช้เป็นของประจำห้องพยาบาล/คลินิก"
     }
   ],
   "talk": [

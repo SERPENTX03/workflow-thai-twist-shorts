@@ -1,6 +1,15 @@
-# Review loop (step 6)
+# Review (step 6) — one pass, not a scoring loop
 
-Run `npm run check -- episodes/<slug>`. It runs tsc + story-check and writes one Board frame per shot (the key frame at 60 % of the shot) to `out/<slug>-board/element-N.jpeg`.
+CLAUDE.md rule 5 wins over the scoring text below. Default flow:
+
+1. `npm run check -- episodes/<slug>` once after drawing (tsc + story + full Board); afterwards `npm run review -- episodes/<slug> --board` re-renders only shots whose story.json entry or scene source changed (`--all` forces everything).
+2. The command prints the **suspect list** (look / shots / story ✗ per shot) and writes `out/<slug>-review.html`. Open **only the suspect and changed frames at full size**; fix each once (fix or one line of why).
+3. Give the user the page. They scroll the whole film once, tick the odd shots (hands, wrong mouth, floating things, a picture you cannot name) and paste the list. Fix only those, once.
+4. `npm run review -- episodes/<slug> --accept` records the state; later runs list only what changed since.
+
+Do not give 1–10 scores, do not loop "fix three worst, re-score", do not open contact sheets of every shot. The seven criteria below are a **checklist for judging a single frame you are already looking at**, not a scoreboard. Hard failures still stand: a doubled hand, a wrong voice, a talking listener, a frame lit evenly from nowhere are fixed whenever seen.
+
+Reference (the old procedure): run `npm run check -- episodes/<slug>`. It runs tsc + story-check and writes one Board frame per shot (the key frame at 60 % of the shot) to `out/<slug>-board/element-N.jpeg`.
 
 - **Phone size**: look at the frames scaled down to ~360 px wide (read them at small scale), not only at full size.
 - **Seams and motion**: Board shows one moment per shot. For a cut or an entrance, take stills either side of it: `npx remotion still src/index.ts <Id> out/x.png --frame=<global frame>` (shot start = `timeline.json` `start` × 30).
@@ -19,9 +28,7 @@ Run `npm run check -- episodes/<slug>`. It runs tsc + story-check and writes one
 
 Frames that fall exactly on a cut show the next caption mid-entrance (not yet visible) — that is expected, not a bug.
 
-Fix the **three worst** problems, rebuild, and score again. Repeat until all seven are ≥ 8. Then show the user the preview (`npm run studio`) before the final render.
-
-Report the scores to the user in a short table with one line on what was fixed in each round.
+Fix what the suspect list and the user's flags point at, once. Then show the user the preview (`npm run studio`) before the final render. Report to the user in a few lines: which suspects were fixed, which were answered and why.
 
 ## Common fixes
 

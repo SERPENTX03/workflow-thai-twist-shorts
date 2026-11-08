@@ -1366,6 +1366,17 @@
     <path d="M-20 -42 H20 M-20 -28 H20 M-20 -14 H10" stroke="#4a5568" stroke-width="3.5" stroke-linecap="round"/>
     <circle cx="0" cy="0" r="15" fill="var(--skin, #e7b38c)"/>
   </symbol>
+  <symbol id="prop-phone-ear" overflow="visible">
+    <rect x="-20" y="-82" width="40" height="92" rx="8" fill="#15171c" stroke="#9fd0ff" stroke-width="2.5"/>
+    <circle cx="-8" cy="-70" r="4.5" fill="#3a3e47"/>
+    <circle cx="0" cy="0" r="15" fill="var(--skin, #e7b38c)"/>
+  </symbol>
+  <symbol id="prop-fan" overflow="visible">
+    <path d="M0 2 L-58 -82 A100 100 0 0 1 58 -82 Z" fill="#f7f4ea" stroke="#b9b39e" stroke-width="3"/>
+    <path d="M0 2 L-40 -92 M0 2 L-20 -98 M0 2 L0 -100 M0 2 L20 -98 M0 2 L40 -92" stroke="#c9c3ae" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="15" fill="var(--skin, #e7b38c)"/>
+    <circle cx="0" cy="-4" r="4" fill="#c79a35"/>
+  </symbol>
   <symbol id="prop-mug" overflow="visible">
     <path d="M16 -50 Q38 -48 37 -28 Q36 -10 16 -10" fill="none" stroke="#2b6a42" stroke-width="7"/>
     <path d="M-22 -60 H18 L16 10 Q-2 16 -20 10 Z" fill="#3f8a5a"/>

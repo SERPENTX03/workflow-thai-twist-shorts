@@ -251,12 +251,13 @@ export const ActorView: React.FC<ActorProps> = ({a: a0, roster, floor, pxPerCm, 
     const side = poseArm?.[0], name = poseArm?.slice(2) ?? '';
     const legacy = poseArm && !RIG_ARM.has(name) ? poseArm : undefined;
     const fromArm = (s: string) => (poseArm && !legacy && side === s ? ARM_PRESETS[name] : undefined);
+    const limL = tweenLimb(rig.armL, f, len, plan), limR = tweenLimb(rig.armR, f, len, plan);
     const pose: Pose = {
       yaw: yaw0,
       headTilt: tweenNum(rig.head, f, len) ?? (kind === 'lie' ? 22 : 0),
       look: tweenNum(rig.look, f, len) ?? 0,
-      armL: tweenLimb(rig.armL, f, len, plan) ?? fromArm('l') ?? rest.armL,
-      armR: tweenLimb(rig.armR, f, len, plan) ?? fromArm('r') ?? rest.armR,
+      armL: limL !== undefined ? limL : (fromArm('l') ?? rest.armL),
+      armR: limR !== undefined ? limR : (fromArm('r') ?? rest.armR),
     };
     if (legacy && (side === 'l' || side === 'b')) pose.armL = null;
     if (legacy && (side === 'r' || side === 'b')) pose.armR = null;
@@ -415,8 +416,21 @@ export type ActorsProps = {
 
 /** Front-view chair behind a seated actor, drawn in the actor's 200x520 frame so it always matches the sit pose:
  *  backrest behind the shoulders, seat edge under the knees, legs to the floor line. */
-export const SeatChair: React.FC<{x: number; y: number; h: number; wood?: string; dark?: string; edge?: string; o?: number}> = ({x, y, h, wood = '#6b4a2f', dark = '#3e2a1b', edge = '#8a6440', o}) => {
+export const SeatChair: React.FC<{x: number; y: number; h: number; wood?: string; dark?: string; edge?: string; o?: number; side?: -1 | 0 | 1}> = ({x, y, h, wood = '#6b4a2f', dark = '#3e2a1b', edge = '#8a6440', o, side = 0}) => {
   const s = h / 520;
+  // a three-quarter sit: the chair side-on under the thighs, its back behind the hips, facing the way the person faces
+  if (side) return (
+    <svg width={200 * s} height={520 * s} viewBox="0 0 200 520" style={{position: 'absolute', left: x - 100 * s, top: y - 520 * s, overflow: 'visible', opacity: o, pointerEvents: 'none'}}>
+      <g transform={side < 0 ? 'translate(200 0) scale(-1 1)' : undefined}>
+        <rect x="52" y="236" width="15" height="280" rx="4" fill={wood} />
+        <rect x="46" y="244" width="27" height="64" rx="6" fill={dark} />
+        <rect x="178" y="436" width="14" height="80" rx="4" fill={dark} />
+        <rect x="66" y="436" width="13" height="80" rx="4" fill={dark} opacity=".8" />
+        <rect x="50" y="424" width="148" height="20" rx="7" fill={wood} />
+        <path d="M54 427 H194" stroke={edge} strokeWidth="3" strokeLinecap="round" />
+      </g>
+    </svg>
+  );
   return (
     <svg width={200 * s} height={520 * s} viewBox="0 0 200 520" style={{position: 'absolute', left: x - 100 * s, top: y - 520 * s, overflow: 'visible', opacity: o, pointerEvents: 'none'}}>
       <rect x="52" y="456" width="12" height="54" rx="3" fill={dark} />
@@ -484,7 +498,7 @@ export const Actors: React.FC<ActorsProps> = ({p, roster, speaking, cast, floor,
         const living = !r.noShadow && !r.sil;
         return (
           <React.Fragment key={i}>
-            {chairs && a.pose === 'sit' && !r.sil && <SeatChair x={x} y={a.y ?? floor} h={bodyH} o={a.o} {...(typeof chairs === 'object' ? chairs : {})} />}
+            {chairs && a.pose === 'sit' && !r.sil && <SeatChair x={x} y={a.y ?? floor} h={bodyH} o={a.o} side={Math.abs(parseFloat(a.rig?.yaw ?? '0')) < 0.15 ? 0 : (Math.sign(parseFloat(a.rig?.yaw ?? '0')) as -1 | 1)} {...(typeof chairs === 'object' ? chairs : {})} />}
             {living && lightAt && <CastShadow x={x} y={a.y ?? floor} h={a.pose === 'sit' ? bodyH * 0.75 : bodyH} light={lightAt} o={a.o} />}
             {living && <FloorShadow x={x} w={w * (m?.shadow ?? 1)} y={a.y ?? floor} />}
             <ActorView a={{...a, x}} roster={roster} floor={floor} pxPerCm={pxPerCm} f={p.f} len={p.len} talking={talking && ownsLine(a.who)} blink={blinkAt(p.f, seed)} body={body}

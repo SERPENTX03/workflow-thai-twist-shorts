@@ -111,6 +111,16 @@ const noNote = camShots.filter(s => !String(RAW[s.i]?.note ?? '').trim());
 lines.push('\npictures');
 ok(noNote.length === 0, `${camShots.length - noNote.length}/${camShots.length} camera shots have a "note" (the picture in one sentence)${noNote.length ? ` — missing: ${noNote.slice(0, 12).map(s => s.i).join(' ')}${noNote.length > 12 ? ' …' : ''}` : ''}`);
 // the same set from the same camera, again and again: one picture zoomed is not coverage (directing.md §0)
+
+// directing.md §9 item 7: a camera shot of 3 s or more whose camera barely moves reads as a still picture. A shot that
+// declares `data.motion` ("walk" | "pan" | "push" | "fx") or `data.move` is checked by npm run motion instead.
+const still = camShots.filter(s => {
+  const d = RAW[s.i]?.data ?? {};
+  if (s.dur < 3 || d.motion || d.move || d.tilt || !d.cam) return false;
+  const [z0, z1, cx, cy, cx1 = cx, cy1 = cy] = d.cam;
+  return Math.abs(z1 / z0 - 1) < 0.06 && Math.hypot((cx1 - cx) * z0, (cy1 - cy) * z0) < 80;
+});
+ok(still.length <= camShots.length * 0.5, `${still.length}/${camShots.length} camera shots of ≥ 3 s move under 6 % push / 80 px pan (≤ 50 %; hold shots with hush are fine, say so in the note)${still.length ? ` — e.g. ${still.slice(0, 10).map(s => s.i).join(' ')}` : ''}`);
 const frameKey = s => { const d = RAW[s.i]?.data ?? {}; return `${s.scene}:${s.view ?? ''}:${JSON.stringify(d.cam ?? null)}`; };
 const seen = new Map();
 // inserts of a clue repeat their frame on purpose (cinematography.md A2), so only sets are counted

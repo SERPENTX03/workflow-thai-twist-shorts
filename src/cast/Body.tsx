@@ -145,15 +145,16 @@ export const BodyLegs: React.FC<{plan: RigPlan; kind: BodyKind; yaw?: number}> =
   }
 
   // facing us: thighs foreshortened toward the camera, knees apart, shins straight down, feet a little out
-  const kneeY = hipY + (kid ? 22 : 44);
-  const kx: [number, number] = [f.hip[0] - (kid ? 8 : 14), f.hip[1] + (kid ? 8 : 14)];
+  // knees barely below the hips: a thigh coming at the lens is short, and the shin is what gives the seat its height
+  const kneeY = hipY + (kid ? 14 : 16);
+  const kx: [number, number] = [f.hip[0] - (kid ? 6 : 8), f.hip[1] + (kid ? 6 : 8)];
   return (
     <>
       {kx.map((x, i) => {
         const ankle = x + (i ? 2 : -2);
         return (
           <React.Fragment key={i}>
-            <Limb2 d={`M${x} ${kneeY} L${ankle} ${foot}`} w={w + 1} color={f.leg} shade />
+            <Limb2 d={`M${x} ${kneeY} L${ankle} ${foot}`} w={w} color={f.leg} shade />
             {socks && <Sock x={ankle} y0={foot - f.sock! + 6} y1={foot} w={w} />}
             <Shoe x={ankle} y={foot + 6} w={f.shoe + 2} h={f.shoeH} dx={i ? 3 : -3} />
           </React.Fragment>
@@ -163,7 +164,7 @@ export const BodyLegs: React.FC<{plan: RigPlan; kind: BodyKind; yaw?: number}> =
         <path d={`M58 288 H142 L${kx[1] + w + 2} ${kneeY + 4} Q100 ${kneeY + 22} ${kx[0] - w - 2} ${kneeY + 4} Z`} fill="var(--skirt, #3b4c5e)" />
       ) : (
         <>
-          {f.hip.map((h, i) => <Limb2 key={i} d={`M${h} ${hipY} L${kx[i]} ${kneeY}`} w={w + 16} color={kid ? 'var(--shorts, #1f2a4a)' : f.leg} />)}
+          {f.hip.map((h, i) => <Limb2 key={i} d={`M${h} ${hipY} L${kx[i]} ${kneeY}`} w={w + 7} color={kid ? 'var(--shorts, #1f2a4a)' : f.leg} />)}
           {kx.map((x, i) => <path key={i} d={`M${x - w * 0.55} ${kneeY - w * 0.36} Q${x} ${kneeY - w * 0.72} ${x + w * 0.55} ${kneeY - w * 0.36}`} stroke="rgba(255,255,255,.09)" strokeWidth={5} {...line} />)}
           <path d={`M100 ${hipY + 4} V${kneeY + 8}`} stroke="rgba(0,0,0,.28)" strokeWidth={3} />
         </>

@@ -36,7 +36,7 @@ export function defineEpisode(id: string, story: Story, scenes: Record<string, S
   const pick = (s: Shot) => scenes[s.scene] ?? genericScenes[s.scene] ?? Placeholder;
 
   const Main: React.FC = () => (
-    <AbsoluteFill style={{background: T.sky0}}>
+    <AbsoluteFill style={{background: T.sky0}} from={2035}>
       <CastSprite />
       {audio.score && <Audio src={staticFile(audio.score)} />}
       {audio.voice && <Audio src={staticFile(audio.voice)} />}

@@ -1,5 +1,5 @@
 window.STUDIO = {
- "built": "2026-11-06T15:47:25.307Z",
+ "built": "2026-11-08T16:57:29.242Z",
  "castSheet": "renders/cast-sheet.png",
  "cast": [
   {
@@ -2037,6 +2037,16 @@ window.STUDIO = {
    "code": "\"who@900 armR=hold prop=mug\""
   },
   {
+   "id": "prop-fan",
+   "image": null,
+   "code": "\"who@900 armR=hold prop=fan\""
+  },
+  {
+   "id": "prop-phone-ear",
+   "image": null,
+   "code": "\"who@900 armR=hold prop=phone-ear\""
+  },
+  {
    "id": "prop-glass",
    "image": "renders/prop-glass.png",
    "code": "\"who@900 armR=hold prop=glass\""
@@ -2440,8 +2450,8 @@ window.STUDIO = {
    "bad": "ฉากในร้าน: เป็นภาพหน้าร้านด้านเดียว ต้องสร้างห้องเพิ่ม",
    "tier": "a",
    "usedIn": [
-    "rear-cam",
-    "rain-night"
+    "rain-night",
+    "rear-cam"
    ],
    "image": "renders/place-shop-row.png"
   },
@@ -2637,8 +2647,8 @@ window.STUDIO = {
    "bad": "เล่นฉากต่อเนื่องยาว: เป็นฉากด้านเดียว",
    "tier": "b",
    "usedIn": [
-    "same-child",
-    "rain-night"
+    "rain-night",
+    "same-child"
    ],
    "image": "renders/place-canal.png"
   }
@@ -2795,6 +2805,7 @@ window.STUDIO = {
    "use": "ไม่มี rider = รถจอด · กฎข้อ 11 ถ้ามีคนขี่",
    "usedIn": [
     "ghost-money",
+    "night-shift-rules",
     "rear-cam"
    ],
    "image": "renders/part-motorcycle-parked.png"
@@ -2866,6 +2877,28 @@ window.STUDIO = {
     "temple-boy"
    ],
    "image": "renders/part-wall-clock-part.png"
+  },
+  {
+   "id": "office-chair",
+   "nameTh": "เก้าอี้สำนักงานล้อเลื่อน",
+   "code": "<OfficeChair x y s coat />",
+   "uses": "OfficeChair",
+   "use": "x,y = พื้นใต้เก้าอี้ · coat = เสื้อกาวน์พาดพนัก · วาดหลังตัวละครที่นั่ง (ฐานล้อกับพนักต้องโผล่ข้างตัว)",
+   "usedIn": [
+    "father-ledger"
+   ],
+   "image": null
+  },
+  {
+   "id": "iv-stand",
+   "nameTh": "เสาน้ำเกลือพร้อมหูฟังแพทย์",
+   "code": "<IvStand x y s />",
+   "uses": "IvStand",
+   "use": "x,y = พื้น · สูงราว 2 ม. ที่ s=1 · ใช้เป็นของประจำห้องพยาบาล/คลินิก",
+   "usedIn": [
+    "father-ledger"
+   ],
+   "image": null
   }
  ],
  "inserts": [
@@ -2887,10 +2920,13 @@ window.STUDIO = {
    "use": "กำของแนวนอน (ถือไฟฉาย, ปากกา, พวงมาลัย) · ปรับ sleeve ตามสีเสื้อของตัวละคร หรือละเว้นเพื่อแสดงมือเปล่า",
    "uses": "Hand",
    "usedIn": [
+    "father-ledger",
+    "dont-open-curtain",
     "ghost-money",
+    "night-shift-rules",
+    "rain-night",
     "rear-cam",
     "same-child",
-    "rain-night",
     "temple-boy"
    ],
    "image": "renders/insert-hand-grip.png"
@@ -2902,10 +2938,13 @@ window.STUDIO = {
    "use": "ยื่นมือ, รับของ, แตะไหล่, วางมือ · ใส่ wrinkles={true} เพื่อแสดงมือผู้สูงวัย",
    "uses": "Hand",
    "usedIn": [
+    "father-ledger",
+    "dont-open-curtain",
     "ghost-money",
+    "night-shift-rules",
+    "rain-night",
     "rear-cam",
     "same-child",
-    "rain-night",
     "temple-boy"
    ],
    "image": "renders/insert-hand-open.png"
@@ -2940,8 +2979,9 @@ window.STUDIO = {
    "use": "บันทึก / กฎ · Ink shake 0–1 = ลายมือสั่น",
    "uses": "Ink",
    "usedIn": [
-    "same-child",
+    "night-shift-rules",
     "rain-night",
+    "same-child",
     "temple-boy"
    ],
    "image": "renders/insert-notebook.png"
@@ -2965,9 +3005,11 @@ window.STUDIO = {
    "use": "EndCardScene · step like → subscribe → done ลูกศรกดปุ่มให้เอง",
    "uses": "EndCardScene",
    "usedIn": [
+    "father-ledger",
     "ghost-money",
-    "same-child",
-    "rain-night"
+    "night-shift-rules",
+    "rain-night",
+    "same-child"
    ],
    "image": "renders/insert-end-card.png"
   },
@@ -2990,10 +3032,12 @@ window.STUDIO = {
    "use": "ข้อความทุกคำมาจาก shot.data · view อื่น ๆ (รูปบนจอ) ส่ง photo มาวาดเอง",
    "uses": "PhoneScene",
    "usedIn": [
+    "father-ledger",
     "ghost-money",
+    "night-shift-rules",
+    "rain-night",
     "rear-cam",
     "same-child",
-    "rain-night",
     "temple-boy"
    ],
    "image": "renders/insert-phone-voice.png"
@@ -3027,6 +3071,7 @@ window.STUDIO = {
    "use": "วงกบ, มุ้ง, ไหล่ OTS, เสาไฟ · เบลอ+มืด เลื่อน 1.4× ของกล้อง · ห้ามบังหน้า/เบาะแส (§5)",
    "uses": "Fore",
    "usedIn": [
+    "night-shift-rules",
     "rear-cam"
    ],
    "image": "renders/camera-fore.png"
@@ -3136,6 +3181,8 @@ window.STUDIO = {
    "use": "FG เสาไฟเบลอ · MG ตัวละครที่ 1/3 + rim + เงายาว · BG ตึกแถวเบลอ + พื้นสอบเข้า · ATMO หมอก · ไฟดวงเดียว มืด ≥ 60 % (depth-light.md)",
    "uses": "Haze",
    "usedIn": [
+    "father-ledger",
+    "night-shift-rules",
     "rear-cam"
    ],
    "image": "renders/camera-anti-flat.png"
@@ -3166,7 +3213,11 @@ window.STUDIO = {
    "code": "const R = makeRoom({x: 700, y: 470}, {x0: 520, x1: 1500, y0: 220, y1: 760}, 3.4);\n<RoomShell r={R} id=\"sh7\" />\n<RFace r={R} pts={[[0.62,0.2,0],[0.86,0.2,0],[0.86,0.55,0],[0.62,0.55,0]]} fill=\"#8fb0d8\" />\n<RBox r={R} u={[0.04,0.4]} v={[0.82,1]} w={[0.12,0.6]} front=\"#4a3020\" top=\"#d8d2c4\" />\n<LightVeil id=\"sh7\" lights={[[x, y, 300]]} o={0.55} />\nconst s = standAt(R, 0.7, 0.45); // เท้า + สเกล · roomPxPerCm(R, 0.45)",
    "use": "ห้องที่กล้องเดินเข้าไปได้: วาดครั้งเดียว แล้วถ่ายกว้าง/กลาง/ใกล้/มุมต่ำ/มุมสูงได้ทุกมุม โดยผนัง พื้น เฟอร์นิเจอร์ยังถูกต้อง · LightVeil กดโทนกลางให้มืด เหลือแสงตรงที่แสงตก (directing.md §3–4)",
    "uses": "makeRoom",
-   "usedIn": [],
+   "usedIn": [
+    "father-ledger",
+    "dont-open-curtain",
+    "night-shift-rules"
+   ],
    "image": "renders/camera-room-wide.png"
   },
   {
@@ -3175,7 +3226,11 @@ window.STUDIO = {
    "code": "\"data\": {\"cam\": [3, 3.15, 1500, 470]}   // ห้องเดียวกับ room-wide แค่ย้ายกล้อง",
    "use": "close จริงคือ z ≈ 3–4.5 (หัวกินครึ่งเฟรม) ไม่ใช่ 1.8 · ฉากหลังของ close คือส่วนหนึ่งของห้องเดิม — หน้าต่าง/แสงเดิม ต่อเนื่อง",
    "uses": "makeRoom",
-   "usedIn": [],
+   "usedIn": [
+    "father-ledger",
+    "dont-open-curtain",
+    "night-shift-rules"
+   ],
    "image": "renders/camera-room-close.png"
   }
  ],
@@ -4068,6 +4123,281 @@ window.STUDIO = {
    "name": "morning",
    "prompt": "early morning in rural Thailand, birds waking up, distant rooster, light breeze, calm",
    "src": "../sfx-library/3b27d9b89b2938e3.mp3"
+  },
+  {
+   "name": "hum",
+   "prompt": "flickering fluorescent tube buzz and a low refrigeration compressor hum in a narrow back corridor of a convenience store at night",
+   "src": "../sfx-library/bc9d235e66b8d5d2.mp3"
+  },
+  {
+   "name": "thump",
+   "prompt": "heavy muffled thud from behind a thick insulated stainless steel walk-in freezer door, something heavy dropped inside, close",
+   "src": "../sfx-library/fdd3ae632c1eee97.mp3"
+  },
+  {
+   "name": "chime",
+   "prompt": "small convenience store door chime, two-tone electronic ding dong, late night, quiet",
+   "src": "../sfx-library/6de1710e7f56dcc0.mp3"
+  },
+  {
+   "name": "engine",
+   "prompt": "white panel van engine starting and pulling into an empty parking lot at night, tyres on concrete, mid distance",
+   "src": "../sfx-library/f217258a52057051.mp3"
+  },
+  {
+   "name": "truck",
+   "prompt": "big truck passing fast on an empty highway at night, doppler whoosh, distant",
+   "src": "../sfx-library/5e8d01cec2f22ea1.mp3"
+  },
+  {
+   "name": "night",
+   "prompt": "empty Thai roadside at night by a lone convenience store: crickets, distant highway traffic, faint neon hum",
+   "src": "../sfx-library/f8d57b0afdddcd2a.mp3"
+  },
+  {
+   "name": "scanner",
+   "prompt": "muffled police radio scanner chatter and static coming from inside a closed van, unintelligible voices, eerie, close",
+   "src": "../sfx-library/bd47ddba376d6b13.mp3"
+  },
+  {
+   "name": "radio",
+   "prompt": "police shoulder radio crackle and squelch, short burst of distorted voice, close",
+   "src": "../sfx-library/4c20d9733191b441.mp3"
+  },
+  {
+   "name": "click",
+   "prompt": "single ballpoint pen click, close and crisp, quiet room",
+   "src": "../sfx-library/12f63dfb60822e99.mp3"
+  },
+  {
+   "name": "lock",
+   "prompt": "electric magnetic door lock clunking shut on a glass shop door, metallic click and low buzz",
+   "src": "../sfx-library/d2b52c0e52dad4af.mp3"
+  },
+  {
+   "name": "cutter",
+   "prompt": "box cutter blade being pushed out notch by notch, ratcheting clicks, close",
+   "src": "../sfx-library/8b7e4f612e87b8f3.mp3"
+  },
+  {
+   "name": "spray",
+   "prompt": "trigger spray bottle squirted hard three times, close",
+   "src": "../sfx-library/9d345063b1cc2df8.mp3"
+  },
+  {
+   "name": "breaker",
+   "prompt": "heavy main circuit breaker lever thrown down, loud clunk, refrigerators and lights powering down with a falling hum",
+   "src": "../sfx-library/37621ee9eeeaa08a.mp3"
+  },
+  {
+   "name": "fizz",
+   "prompt": "shaken soda can bursting open and fizzing hard on a metal floor inside a cold room, echo",
+   "src": "../sfx-library/c3a09c71f54f9b78.mp3"
+  },
+  {
+   "name": "shake",
+   "prompt": "aluminium soda can shaken hard in a hand, liquid sloshing",
+   "src": "../sfx-library/3555708e5f5e3282.mp3"
+  },
+  {
+   "name": "roll",
+   "prompt": "aluminium can rolling across a tiled floor into a metal room",
+   "src": "../sfx-library/a77ce06028d50760.mp3"
+  },
+  {
+   "name": "siren",
+   "prompt": "Thai police pickup sirens arriving fast in an empty parking lot, tyres braking, at night",
+   "src": "../sfx-library/82a990fe0314d254.mp3"
+  },
+  {
+   "name": "alarm",
+   "prompt": "shop emergency alarm bell ringing loudly inside a dark convenience store",
+   "src": "../sfx-library/1d7ab293d1e02a64.mp3"
+  },
+  {
+   "name": "cold",
+   "prompt": "walk-in freezer door seal breaking, cold air hissing out, compressor hum louder",
+   "src": "../sfx-library/f62dcb47d5d41be2.mp3"
+  },
+  {
+   "name": "ring",
+   "prompt": "mobile phone ringtone muffled inside a closed metal locker, vibrating against steel",
+   "src": "../sfx-library/bdb1e3969e35b4ff.mp3"
+  },
+  {
+   "name": "ping",
+   "prompt": "single short smartphone message notification ping",
+   "src": "../sfx-library/27cda28458701648.mp3"
+  },
+  {
+   "name": "flash",
+   "prompt": "smartphone camera shutter sound, single click",
+   "src": "../sfx-library/bc18683b6ca787f0.mp3"
+  },
+  {
+   "name": "unlock",
+   "prompt": "small heavy steel padlock clicking open with a key, close",
+   "src": "../sfx-library/5435e82319dae4f6.mp3"
+  },
+  {
+   "name": "slam",
+   "prompt": "heavy insulated stainless steel door slammed shut, metal latch thrown",
+   "src": "../sfx-library/1e91ee5baa7371c2.mp3"
+  },
+  {
+   "name": "tear",
+   "prompt": "notebook page torn out slowly, long paper rip",
+   "src": "../sfx-library/9002ba301adf9bf0.mp3"
+  },
+  {
+   "name": "morning",
+   "prompt": "early morning by a Thai highway, birds waking up, distant rooster, light traffic, calm",
+   "src": "../sfx-library/3cdc5f697633b7ef.mp3"
+  },
+  {
+   "name": "knock",
+   "prompt": "single dull muffled knock of a small metal belt buckle tapping on thick laminated window glass, heard from inside a quiet dark bedroom, close, short, no music",
+   "src": "../sfx-library/15d4a865aef60666.mp3"
+  },
+  {
+   "name": "knockweak",
+   "prompt": "single very faint weak tap of a metal buckle on thick window glass, barely audible, heard from inside a quiet room at night",
+   "src": "../sfx-library/13a0b72c15777c85.mp3"
+  },
+  {
+   "name": "expressway",
+   "prompt": "distant elevated expressway at night heard through a closed window, sparse cars passing, low city hum, very quiet",
+   "src": "../sfx-library/f291769908e048ec.mp3"
+  },
+  {
+   "name": "car",
+   "prompt": "one car engine climbing a steep expressway ramp at night and passing by, distant, heard through a closed window",
+   "src": "../sfx-library/73266281f8cd2ef2.mp3"
+  },
+  {
+   "name": "daycity",
+   "prompt": "bright daytime Bangkok traffic roar heard through a closed apartment window, steady, distant horns",
+   "src": "../sfx-library/57bb2c08b3529567.mp3"
+  },
+  {
+   "name": "tape",
+   "prompt": "black duct tape pulled off a roll in long screeching strips and pressed onto a window frame",
+   "src": "../sfx-library/33f5e427550703f4.mp3"
+  },
+  {
+   "name": "rip",
+   "prompt": "violent rip of a curtain torn down together with duct tape, tape tearing, curtain rings clatter on a metal rail",
+   "src": "../sfx-library/5dfb8482e63f8880.mp3"
+  },
+  {
+   "name": "rope",
+   "prompt": "rescue rope whizzing down a building facade, carabiners clinking, wind at height, daytime",
+   "src": "../sfx-library/34cc1bfe507de303.mp3"
+  },
+  {
+   "name": "doorknock",
+   "prompt": "three slow heavy knocks on a wooden apartment door at night, heard from inside a dark silent room, ominous",
+   "src": "../sfx-library/9662887f4a21e10a.mp3"
+  },
+  {
+   "name": "glassscrape",
+   "prompt": "slow faint scrape dragging down a glass window pane from outside, like fingernails or a metal buckle, muffled through the glass, quiet room",
+   "src": "../sfx-library/741250c25dd8a2fc.mp3"
+  },
+  {
+   "name": "fire",
+   "prompt": "deep steady roar of a brick crematorium furnace burning inside a Thai temple, low flames, no voices",
+   "src": "../sfx-library/75f4e0371043be64.mp3"
+  },
+  {
+   "name": "temple",
+   "prompt": "quiet Thai temple at dusk, distant small bell, soft wind, faint insects, no voices",
+   "src": "../sfx-library/da220185bf49bcc9.mp3"
+  },
+  {
+   "name": "market",
+   "prompt": "early morning Thai fresh market ambience, distant vendors murmuring indistinct, plastic bags, motorcycle far away",
+   "src": "../sfx-library/85ad7cd308dd7bb3.mp3"
+  },
+  {
+   "name": "cleaver",
+   "prompt": "one heavy cleaver chop into a thick wooden butcher block, close, dry",
+   "src": "../sfx-library/fd58b3c064621314.mp3"
+  },
+  {
+   "name": "coldhum",
+   "prompt": "old walk-in freezer compressor humming in a concrete underground room, low steady electrical hum, faint drips",
+   "src": "../sfx-library/60388d81cfc445b9.mp3"
+  },
+  {
+   "name": "coffin",
+   "prompt": "heavy wooden coffin set down onto a brick platform, dull thud with a slight wood creak",
+   "src": "../sfx-library/39bd4b014eee38f2.mp3"
+  },
+  {
+   "name": "key",
+   "prompt": "small old brass key turning in a padlock, click and release, close",
+   "src": "../sfx-library/7c5886ecc360b32b.mp3"
+  },
+  {
+   "name": "latch",
+   "prompt": "heavy stainless steel freezer door latch unlocked, seal breaking with a soft hiss of cold air",
+   "src": "../sfx-library/198b18fd86e1ada7.mp3"
+  },
+  {
+   "name": "taperec",
+   "prompt": "single chunky mechanical button press on an old cassette recorder, close",
+   "src": "../sfx-library/8b5d31699f0c4142.mp3"
+  },
+  {
+   "name": "tapehiss",
+   "prompt": "soft continuous cassette tape hiss with slow wobble, old recorder playing silence",
+   "src": "../sfx-library/c4a7cbfc57492bd0.mp3"
+  },
+  {
+   "name": "radio",
+   "prompt": "small transistor radio tuning, brief static crackle, no words",
+   "src": "../sfx-library/8c340bb387eeef51.mp3"
+  },
+  {
+   "name": "wheel",
+   "prompt": "old wheelchair rolling slowly over concrete, one squeaky wheel, close",
+   "src": "../sfx-library/c2a23d04bef1a309.mp3"
+  },
+  {
+   "name": "rip",
+   "prompt": "a paper cheque torn in half slowly, close, crisp",
+   "src": "../sfx-library/0053ab4a71b7a617.mp3"
+  },
+  {
+   "name": "siren",
+   "prompt": "Thai police car siren approaching from a distance, heard from inside a concrete room",
+   "src": "../sfx-library/d8d6dbf7bb66833b.mp3"
+  },
+  {
+   "name": "benz",
+   "prompt": "large luxury car rolling slowly on gravel and stopping, soft engine idle, door opening",
+   "src": "../sfx-library/4e28813666805e1a.mp3"
+  },
+  {
+   "name": "knock",
+   "prompt": "three firm knocks on a corrugated metal shutter door, close",
+   "src": "../sfx-library/2d04c3e076f9a426.mp3"
+  },
+  {
+   "name": "coconut",
+   "prompt": "thin stream of coconut water poured slowly, soft trickle onto wood, close",
+   "src": "../sfx-library/545fdfadb40eead2.mp3"
+  },
+  {
+   "name": "morning",
+   "prompt": "calm early morning in a Thai temple yard, birds, distant rooster, light breeze",
+   "src": "../sfx-library/c33c0d313e9784c4.mp3"
+  },
+  {
+   "name": "ring",
+   "prompt": "single short hospital ward phone ringing twice, quiet corridor",
+   "src": "../sfx-library/8a526c424b61011f.mp3"
   }
  ]
 };

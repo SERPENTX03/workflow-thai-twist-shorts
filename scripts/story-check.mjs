@@ -101,6 +101,11 @@ S.shots.forEach(s => {
     else if (who !== s.who && who.replace(/\d+$/, '') !== s.who) warn(i, `"${who}" has talk but the line is ${s.who}'s — only the speaker's mouth moves; give ${who} a listening face instead`);
   }
 
+  // A walker or runner must say how it moves: data.move [x0, x1] (kit Actors travels them) or data.motion ("walk"...) when the
+  // scene moves them itself. Undeclared, the figure may cycle its legs on the spot (dont-open-curtain shot 14). npm run motion checks the declared ones.
+  if ((RAW_SHOTS[i]?.data?.cast ?? []).some(a => String(a).split(/\s+/).some(w => w === 'walk' || w === 'run')) && !RAW_SHOTS[i]?.data?.move && !RAW_SHOTS[i]?.data?.motion)
+    warn(i, 'walk / run with no data.move and no data.motion: declare how the figure travels, or it may run on the spot (npm run motion checks it)');
+
   // Staging vocabulary + pose-library gaps (hands-poses.md rule 10): every word in an actor string must exist.
   // An unknown word is silently dropped by parseActor, and an arm drawn for a standing body floats over a crouching one,
   // so the shot "works" but shows the wrong thing. Report the gap here instead; then draw the missing piece in cast.svg.
@@ -116,7 +121,7 @@ S.shots.forEach(s => {
       } else if (RIG_KEYS.has(k)) {
         const why = rigProblem(k, v);
         if (why) err(i, `"${who}": ${k}=${v} — ${why} (cast-library.md → pose rig)`);
-        else if (pose !== 'stand') warn(i, `"${who}": ${k}= is ignored on a "${pose}" body — the pose rig turns and poses standing people only`);
+        else if (!['stand', 'sit', 'crouch', 'lie'].includes(pose)) warn(i, `"${who}": ${k}= is ignored on a "${pose}" body — the pose rig turns and poses standing people only`);
         else if (k === 'yaw' && v.split('@')[0].split('>').some(x => Math.abs(+x) > 0.7)) warn(i, `"${who}": yaw=${v} — past ±0.7 the front-view face slides off the skull; use back, a silhouette or a cut instead`);
       } else if (k === 'faces') {
         for (const key of v.split(',')) {

@@ -90,7 +90,7 @@ All active adult characters use `viewBox="0 0 200 520"` (height ≈ cm × 2.6 px
 
 | Token | What it draws |
 |---|---|
-| `sit` | facing us: knees apart, hands on the thighs. Pair it with something to sit on |
+| `sit` | facing us: knees apart, hands on the thighs. Must have something under it (CLAUDE.md rule 16): `Actors chairs` or a seat in the set |
 | `sit yaw=0.5` | three-quarter: thighs out to the side, shins hanging. The seat reads in silhouette, prefer it |
 | `crouch` | knees up, arms around the shins: against a wall, under a table |
 | `lie` | on the back, head at frame left (`flip` for right), one knee up, hand on the stomach. Frame 520×200, the floor is its bottom edge. Faces `sleep` and `mark=zzz` go with it |
@@ -142,7 +142,7 @@ Draw order is automatic: arms hang behind the torso's edge as the drawings do (a
 "pho@900 armR=150,-30 armL=pocket prop=key@r"   // prop@l / @r picks the hand
 ```
 
-`prop=` goes into a posed hand: the one named with `@l` / `@r`, else the arm in a holding preset (hold offer reach raise out lap point), else the posed arm, else the right. Old `arm=r-hold` strings still work on a posed actor (the rig draws hold / chest / offer / raise / reach / pocket itself; `carry` and `b-wheel` stay symbols and take their arms off the rig). Only `stand` poses: on `sit`, `walk`, `crouch`… the words are ignored and `npm run story` says so.
+`prop=` goes into a posed hand: the one named with `@l` / `@r`, else the arm in a holding preset (hold offer reach raise out lap point), else the posed arm, else the right. Old `arm=r-hold` strings still work on a posed actor (the rig draws hold / chest / offer / raise / reach / pocket itself; `carry` and `b-wheel` stay symbols and take their arms off the rig). They work on `stand`, `sit`, `crouch` and `lie`; on `back`, `walk` and `run` the words are ignored and `npm run story` says so.
 
 **In a custom shot (TSX):**
 
