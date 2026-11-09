@@ -6,7 +6,7 @@ argument-hint: "[ธีม หรือ สถานที่ เช่น 'น�
 
 # ช่วยคิดไอเดีย
 
-Read first: `.claude/skills/thai-twist-short/references/ref-library.md` and `story-rules.md`. Also list `episodes/` and `series/` so you don't repeat a premise that already exists.
+Read first: `.claude/skills/thai-twist-short/references/ref-library.md` and `story-rules.md`. Also list `episodes/` and `series/` so you don't repeat a premise that already exists. Read `universe/bible.md` and `universe/canon.json` (CLAUDE.md rule 17): ideas may sit anywhere, a place in canon or a new one; never score an idea higher just because it links.
 
 ## 1. Generate 8 raw premises, keep the best 5
 
@@ -29,7 +29,7 @@ Mix the families: at least 3 survival "ถ้า…", 1 haunting twist, 1 ตำ
 | Series potential | the ending opens an obvious next question |
 | Fresh | not already in `episodes/` or a stock creepypasta |
 
-Show the user a table: ชื่อเรื่อง · ครอบครัว (survival/haunting/ตำนาน) · ฮุก (frame 0 text) · หักมุมใน 1 ประโยค · คะแนน. Mark your pick and why in one line.
+Show the user a table: ชื่อเรื่อง · ครอบครัว (survival/haunting/ตำนาน) · ฮุก (frame 0 text) · หักมุมใน 1 ประโยค · จักรวาล (ระดับ 0–4 + สถานที่ canon หรือ "ใหม่") · คะแนน. Mark your pick and why in one line.
 
 ## 3. After the user picks one
 
@@ -42,6 +42,7 @@ Write a one-screen outline:
 - Clues: 3–5, each with where it is planted (×3) and where it pays off
 - Act-by-act beats (≈ shot count per act, per `story-rules.md`)
 - Ending: twist line (≤ 20 characters) + cliffhanger + ตอนต่อไป title if it is a series
+- Universe: link level · place (canon id, or new + where on the map + keep or not, `bible.md` §3.1) · canon characters who appear · what goes into canon (user ticks); after the yes, update `universe/canon.json`
 
 Get a yes, then hand off to the `thai-twist-short` workflow at step 0 (`npm run new -- <slug> "ชื่อเรื่อง"`). If the user wants a series, run `/twist-series` before writing `story.json`.
 

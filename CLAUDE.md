@@ -33,6 +33,8 @@ This repo makes Thai vertical (9:16) and landscape twist-ending short stories wi
 
 16. **Nobody sits on air.** Every `sit` has something visible under it: a chair (the `chairs` prop of `Actors` draws one that fits the pose, front-on or side-on from `yaw`), a bench, crate, bed or stool drawn in the set at the same height. Pure close-ups that cut above the hips need none. Sitting on the floor is `crouch`, not `sit`.
 
+17. **One universe, stories that stand alone.** Every episode lives in the Khlong Mok universe (`universe/bible.md` = rules and map, `universe/canon.json` = facts a script can read). Before any outline or brief (`/create-story-*`, `/twist-idea`, `/twist-next`, `/twist-series`) read both and declare a link level 0–4; 0 is fine, and a story is never bent to fit a place or a canon character. Hard canon (world rules, who is alive or dead, what already happened, the order of events) is never contradicted: change the story, or ask the user to change canon. Every episode must make sense watched alone: its main mystery closes inside it and never answers another episode's. A canon character's face and voice belong to them only (`lead-*` faces reuse freely as different people with new name, `extra` and voice). A new place that matters (the story turns there, it can hold another story, or a canon character works there) is added to `canon.json → places` with its set file, the cameras that worked and what it can tell, so later stories can shoot it again; when a second story uses it, it moves into `src/kit/` and `src/gallery.json` (rule 6). Canon changes only with the user's yes, written in the same turn as the approved outline or brief.
+
 ## Layout
 
 ```
@@ -48,7 +50,8 @@ studio/                       static gallery (index.html + manifest.js, generate
 templates/story.json          starting story for npm run new
 episodes/<slug>/              story.json, assets/ (voice, score, vo cache), timeline.json, renders/
 public/                       fonts + <slug>/voice.wav, score.wav (linked by npm run timeline)
-series/<name>.md              series bible
+series/<name>.md              series bible (a series sits inside the universe)
+universe/                     bible.md (world rules, map, link levels, place keeping) + canon.json (places, characters, events, threads, episodes)
 retired/kit/                  drawings out of the library and out of the bundle, kept as reference
 sfx-library/                  cached ElevenLabs SFX
 ```

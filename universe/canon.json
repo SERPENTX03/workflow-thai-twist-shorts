@@ -1,0 +1,57 @@
+{
+  "_note": "Machine-readable canon for the Khlong Mok universe. Draft 2026-11-09. Rules live in universe/bible.md. Entries marked guess:true are inferred from old briefs and need the owner to confirm. Never hand-wave a contradiction: change this file first, with the owner's say-so, then fix every episode that cites it.",
+  "district": "คลองหมอก",
+  "provinceNamedOnScreen": false,
+  "linkLevels": {
+    "0": "standalone",
+    "1": "easter egg",
+    "2": "cross-episode minor character",
+    "3": "shared event referenced",
+    "4": "direct sequel (series)"
+  },
+  "_placeFields": "name (on screen) · zone · set (drawing file; archive/<slug>/src/... once archived, src/kit/... once promoted) · cams (views that passed review) · tells (what stories it can hold) · state (latest condition) · episodes · keep · guess (inferred, owner to confirm)",
+  "places": {
+    "police-station": { "name": "สภ.คลองหมอก", "zone": "ตัวอำเภอ", "set": "archive/rear-cam/src/station.tsx", "cams": [], "tells": "รับแจ้งความ สอบปากคำ บอร์ดคดี ที่ทำงานหมวดวิชัย", "state": "ปกติ", "episodes": ["night-shift-rules", "rain-night", "rear-cam", "same-child", "ghost-money", "father-ledger"], "keep": true, "guess": true },
+    "market": { "name": "ตลาดสดคลองหมอก", "zone": "ตัวอำเภอ", "set": "src/episodes/father-ledger/stall.tsx", "cams": [], "tells": "ข่าวลือ หนี้ ร้านประจำ คนทั้งอำเภอผ่าน", "state": "ปกติ", "episodes": ["father-ledger"], "keep": true, "guess": true },
+    "temple-kok": { "name": "วัดโคกตะเคียน", "zone": "ชานอำเภอ", "set": "archive/temple-boy/src/sets.tsx", "cams": [], "tells": "ตำนานเด็กวัด ต้นตะเคียน งานประจำปี", "state": "ปกติ", "episodes": ["temple-boy"], "keep": true, "guess": false },
+    "temple-dong": { "name": "วัดดงสะเดา", "zone": "ชนบท ปลายถนน 11", "set": "archive/ghost-money/src/sets.tsx", "cams": [], "tells": "งานศพ สวดกะดึก ศาลา", "state": "ปกติ", "episodes": ["ghost-money"], "keep": true, "guess": true },
+    "canal-village": { "name": "หมู่บ้านริมคลองเจ็ดหลัง + โรงเรียน", "zone": "ริมคลอง", "set": "archive/same-child/src/sets.tsx", "cams": [], "tells": "ครอบครัว เด็กหาย ท่าน้ำ คืนฝนตก", "state": "ปกติ", "episodes": ["same-child", "rain-night"], "keep": true, "guess": true },
+    "road-11": { "name": "ถนนสาย 11 + ปั๊มเก่า + สุสานท้ายซอย 11", "zone": "ถนน 11", "set": "archive/rear-cam/src/night.tsx", "cams": [], "tells": "ขับรถกลางคืน ไรเดอร์ วิน สุสาน", "state": "ปกติ", "episodes": ["rear-cam"], "keep": true, "guess": true },
+    "highway-shop": { "name": "ร้านสะดวกซื้อริมทางหลวง", "zone": "ทางหลวงทางเข้าอำเภอ", "set": "archive/night-shift-rules/src/store.tsx", "cams": [], "tells": "กะดึก คนแปลกหน้าผ่านทาง กล้องวงจรปิด", "state": "ปกติ", "episodes": ["night-shift-rules"], "keep": true, "guess": true },
+    "dorm-tower": { "name": "หอพักตึกสูง (ห้อง 808)", "zone": "ชานเมือง", "set": "archive/dont-open-curtain/src/dorm.tsx", "cams": [], "tells": "คนต่างถิ่น เด็กมหาลัย กฎหอ", "state": "ปกติ (ซีรีส์หอชั้น 8 จะเปลี่ยนเป็นไหม้ ถ้าทำ)", "episodes": ["dont-open-curtain"], "keep": true, "guess": true }
+  },
+  "characters": {
+    "wichai": {
+      "name": "ร.ต.อ.วิชัย (หมวดวิชัย)",
+      "canon": true,
+      "status": "alive",
+      "cast": "police-A",
+      "voiceRole": "police",
+      "traits": ["ไฝแก้มขวา", "สมุดปกดำ", "แว่นกรอบดำ"],
+      "role": "ร้อยเวร สภ.คลองหมอก ตัวประกอบข้ามเรื่อง ไม่แก้คดีบนจอ",
+      "appears": [],
+      "mayAppear": ["night-shift-rules", "rain-night", "rear-cam", "same-child", "ghost-money", "father-ledger"]
+    }
+  },
+  "events": {},
+  "threads": {
+    "repeated-things": {
+      "text": "หมวดวิชัยเริ่มสังเกตว่าคดีแปลกในอำเภอมีของซ้ำ",
+      "answered": false
+    },
+    "rule-author": {
+      "text": "กฎที่โผล่หลายเรื่องมีผู้เขียนคนเดียวหรือไม่",
+      "answered": false
+    }
+  },
+  "episodes": {
+    "dont-open-curtain": { "link": 0, "place": "dorm-tower", "era": null, "status": "rendered, archived" },
+    "temple-boy": { "link": 0, "place": "temple-kok", "era": null, "status": "archived" },
+    "ghost-money": { "link": 0, "place": "temple-dong", "era": null, "status": "archived" },
+    "night-shift-rules": { "link": 0, "place": "highway-shop", "era": null, "status": "archived" },
+    "rain-night": { "link": 0, "place": "canal-village", "era": null, "status": "archived" },
+    "rear-cam": { "link": 0, "place": "road-11", "era": null, "status": "archived" },
+    "same-child": { "link": 0, "place": "canal-village", "era": null, "status": "archived" },
+    "father-ledger": { "link": 0, "place": "market", "era": null, "status": "in progress" }
+  }
+}
