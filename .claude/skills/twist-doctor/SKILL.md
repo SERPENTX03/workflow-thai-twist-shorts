@@ -8,7 +8,7 @@ argument-hint: "[episodes/<slug>]"
 
 Read `episodes/<slug>/story.json`, `references/story-rules.md`, `art-direction.md` (shot vocabulary) and `story-json.md`. Run `npm run story -- episodes/<slug>` for the length and the script warnings (offline, no credits); read `timeline.json` / `assets/vo/index.json` if voice exists.
 
-A landscape (`"format": "landscape"`) story is checked against `thai-long-story` → `references/longform-rules.md` instead: use its *Long-form checklist* in place of checks 1–10 below, keep 11–14.
+A landscape (`"format": "landscape"`) story is checked against `thai-long-story` → `references/longform-rules.md` instead: use its *Long-form checklist* in place of checks 1–10 below, keep 11–16.
 
 ## Checks (pass / fix)
 
@@ -21,14 +21,16 @@ A landscape (`"format": "landscape"`) story is checked against `thai-long-story`
 | 5 | Keyword marks | about 1 in 2 lines has one `[gold]` or `{red}`; never more than one mark per line |
 | 6 | Knowledge | survival/ตำนาน: a fact or rule every 3–5 shots; each names the visual that shows it |
 | 7 | Clues | 3–5 clues, each planted in 3+ shots before the turn, none named early |
-| 8 | Variety | plan a shot type per shot (set / close-up / diagram / map / card / exterior / silhouette); no two in a row the same; ≥ 4 types; ≥ 1 close-up and 1 diagram; every `view` names its camera setup and `npm run shots` is clean (`thai-twist-short/references/cinematography.md`) |
+| 8 | Variety | plan a shot type per shot (set / close-up / diagram / map / card / exterior / silhouette); no two in a row the same; ≥ 4 types; ≥ 1 close-up and 1 diagram; every `view` names its camera setup and every `npm run shots` ✗ is fixed or answered in one line (`thai-twist-short/references/cinematography.md`) |
 | 9 | Palette arc | not one palette for the whole film; darkest frame at the reveal |
 | 10 | Twist line | ≤ 20 characters, 4 beats, `bighit`, `voLead` ≈ 0.5 |
 | 11 | Voice fit + casting | no `⚠ OVER` in the last voice run; long lines get more beats; `voices` map equals `references/voices.md`; every quoted line of a character carries that character's role (elders → `old_*`), narration carries none, no raw ids |
 | 12 | Ending | series → cliffhanger + `next` card, `series.next` set; stand-alone → sting on the iconic image |
 | 13 | Continuity | (series) names, traits, counters and rules match the bible |
 | 14 | Universe | (CLAUDE.md rule 17, `universe/canon.json`) the episode has a link level; nothing contradicts hard canon (a dead canon character, a place's `state`, the order of events); a canon character keeps name, face, traits and voice role; no other character wears a canon face; the story makes sense watched alone and answers no other episode's mystery |
+| 15 | Concealment | (`story-rules.md` → *Hiding the twist*; landscape: `longform-rules.md` → *Concealment*) read the lines in order as a viewer: list every line before the turn/slip that points at a real clue or at the culprit ("ทั้งที่…", a trait remarked on, a detail noted twice) with its shot index; every clue has a cover job; a decoy (Shorts) or two other suspects with real secrets (long) exist and are paid off; cover, title and chapter names give away nothing past the hook / cold open |
+| 16 | Cold read | `npm run coldread -- episodes/<slug>` then the procedure in `.claude/story/cold-read.md`; report the table (cut · first guess · rank of the real answer · the line that gave it away). If no fresh reader can be opened, say the check was not run |
 
 ## Report
 
-A table of the 14 checks (✓ / ✗ + one line), then the **three most important fixes** written as exact `story.json` edits (shot index, old → new). Apply them only after the user says yes, then `npm run audio -- episodes/<slug>`.
+A table of the 16 checks (✓ / ✗ + one line), then the **three most important fixes** written as exact `story.json` edits (shot index, old → new). Apply them only after the user says yes. Then `npm run audio -- episodes/<slug>` once, after all text edits: reworded lines are re-voiced and spend ElevenLabs credits, so say how many lines changed first.

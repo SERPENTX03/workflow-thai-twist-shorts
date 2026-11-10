@@ -1,11 +1,11 @@
 # Long-form rules — landscape story films (10–25 min)
 
-Evidence: `episodes/temple-boy` (the first long film; QC 10/10) and the general retention shape of narrated story channels. Numbers marked *temple-boy* are measured from its `timeline.json`; treat them as a working baseline, not a law, and update this file when a later film beats them.
+Evidence: `temple-boy` (the first long film; QC 10/10; now in `archive/temple-boy/`) and the general retention shape of narrated story channels. Numbers marked *temple-boy* are measured from its `timeline.json`; treat them as a working baseline, not a law, and update this file when a later film beats them.
 
 ## Format
 
 - 1920×1080, 30 fps, 75 BPM grid (the grid only rounds shot lengths; `fit` decides them from the voice).
-- Runtime: set `target` in story.json. 10–12 min for a single-location story, 18–22 min for a multi-act mystery. Do not pad to reach a length — cut to the story.
+- Runtime: 10–25 min. Set `target` (seconds, `[min, max]`) in story.json: 10–12 min for a single-location story, 18–22 min for a multi-act mystery; longer only when the user asks for it. Without `target`, `npm run story` checks against 600–720 s. Do not pad to reach a length — cut to the story.
 - Families: **haunting / grief mystery** (temple-boy), **ตำนานไทย** (folklore told slowly), **true-crime style fiction**. Survival "ถ้า…" stays a Short.
 
 ## Structure — acts with timestamps
@@ -37,8 +37,24 @@ Evidence: `episodes/temple-boy` (the first long film; QC 10/10) and the general 
 - **6–10 clues**, each on screen 3+ times across at least two acts, each paid off by a shot that shows it (not only a line that says it). Keep the table in `brief.md` with shot numbers — update it as shots move.
 - **Continuity facts** (dates, counts, who knows what when) go in `brief.md` *before* writing; check every line against them. A 20 min film gets comments on a wrong year.
 - Same prop, same hand, same side every time (`thai-twist-short/references/hands-poses.md`). A trait that is a clue (short pinky, left-arm wound) is drawn on every appearance.
-- The culprit is introduced early, helpful, and on screen often — never introduced late.
+- The culprit is on screen in act 1 and often after, with a job in the story of their own — never introduced late. They are **not the only helpful person and not the only person with an oddity** (*Concealment* below).
 - Fair-play test: after the reveal, every earlier scene must still make sense.
+
+## Concealment (กฎซ่อนหักมุม) — fair is not enough
+
+The rules above make the twist fair. On their own they also make it easy to call: one character who is always there and always helpful, one physical trait the narrator remarks on, one wrong suspect who looks like a villain. `fifth-room` shows it: the caretaker enters at 1:27 and within 20 seconds the narrator says he came from behind the house and not the lane, that his right little finger is a joint short, and that his boots have fresh mud though it has not rained in a week. All three are the evidence of the reveal at 80 %. A viewer has the answer at 9 % of the film. These rules hide what the clue rules plant.
+
+1. **Every clue has a cover job.** Before the slip the story itself gives an ordinary reason for the detail (muddy boots: he waters the garden in shot N; the short finger: a lathe accident he jokes about, and the scene is about the keys). In the brief's clue table, fill the *Cover* column. A clue with no cover is a spoiler.
+2. **The narrator does not point.** Before the slip the narrator never calls a culprit's detail strange, never says "ทั้งที่…", never notes it twice. The picture carries it; the line in that shot is about something else. The narrator may point freely at details of the *wrong* suspects. Clue re-anchoring (clarity rule 4) starts at the slip, not before.
+3. **A field of suspects, not one decoy.** At least **two** characters besides the culprit each have: a real secret, one lie the viewer can catch, a tell or trait drawn with the same care, and inserts of their own. Each secret is paid off by the aftermath (the debt collector was looking for the same man; the neighbour had heard the knocking and told no one). The wrong answer of act 2b rests on real evidence the viewer has seen, not on a face.
+4. **Same camera weight.** If the culprit's trait gets an insert, a decoy's does too, in the same chapter. If a liar gets an ECU on their tell (`cinematography.md` §4.2), an innocent person hiding something smaller gets one as well. The camera treating only one person as worth a close look is itself the tell.
+5. **Casting tell.** A viewer of this channel learns its habits. In the brief, write the culprit's *role type* (helper, authority, family, victim, the one who hired the lead, the lead) and the face family they wear (`villain-*`, `father-*`…), next to those of the last two long films (`universe/canon.json` → `episodes`, their briefs). Do not repeat the role type of the previous film, and do not put the only `villain-*` face on the decoy every time.
+6. **A guess map.** In the brief, one line each for 25 %, 50 % and 75 %: *what the viewer believes is going on*. Each must be wrong, reasonable from what is on screen, and different from the one before. If the belief at 50 % is already the answer, the structure is the problem, not the wording.
+7. **Early-guess slack.** Mark in the brief the earliest moment a careful viewer could know the answer. From there to the reveal is at most about 10 % of the runtime, unless a second question takes over (they know *who*, and now wait for *why* or *whether she gets out*). `father-ledger`: the wheelchair, the weight column and the half-seen body allow the guess near 40 %; the reveal is at 65 %; a gap that long needs a second question the viewer is still waiting on.
+8. **Cover, title, chapter names and the cold open** may use only what the cold open shows. A cover that states the midpoint ("มีคนอยู่ในห้องลับ") spends it.
+9. **Cold read before voice** (`.claude/story/cold-read.md`): after story.json is written and before `npm run voice`, readers who have not seen the brief get the spoken lines cut at 25 %, 50 % and 75 % and guess. The answer as first guess at 50 % = too easy: fix with rules 1–7, test again with new readers, twice at most, then the table goes to the user.
+
+Clarity and concealment do not fight: clarity rules govern how the reveal and everything after it is told (one punchline, motive paired with action); concealment governs what the narrator stays quiet about before it.
 
 ## Narrative clarity & communication (กฎความชัดเจนในการสื่อสาร)
 
@@ -52,7 +68,7 @@ Evidence: `episodes/temple-boy` (the first long film; QC 10/10) and the general 
 3. **Action-Motive Pairing (บอกการกระทำ ต้องประกบคู่เหตุผลทันที):**
    - เมื่อตัวละครพูดถึงการกระทำผิดปกติ (โกหกตำรวจ, ซ่อนหลักฐาน, ผลักคนลงบ่อ) ห้ามเล่าแต่ Action ลอยๆ ต้องประกบด้วย Motive (ความกลัว, ความเข้าใจผิด, ความละอาย) ในช็อตติดกันเสมอ ตามสูตร: `[Action: ทำอะไร]` + `[Motive: ทำไมถึงทำแบบนั้น]` + `[Cost: ผลร้ายที่เกิดกับเหยื่อ]`
 4. **Clue Re-Anchoring (ดึงความจำเบาะแสเก่าด้วยคำขยายความบริบท):**
-   - ในเรื่องยาว 15–50 นาที เมื่อ Clue เดิมถูกดึงกลับมาใช้ตอน Climax/เฉลย ห้ามใช้คำสั้นโดดๆ (เช่น "นับนิ้ว", "ร่มแดง", "กล่องชอล์ก") ให้ใส่คำขยายความที่กระตุ้นความจำคนดูสั้นๆ เสมอ (เช่น *"สองนิ้วที่เด็กพยายามนับก่อนหมดลม"*, *"ข้ออ้างเรื่องยืนซื้อยากลางฝน"*)
+   - ในเรื่องยาว เมื่อ Clue เดิมถูกดึงกลับมาใช้ตอน Climax/เฉลย ห้ามใช้คำสั้นโดดๆ (เช่น "นับนิ้ว", "ร่มแดง", "กล่องชอล์ก") ให้ใส่คำขยายความที่กระตุ้นความจำคนดูสั้นๆ เสมอ (เช่น *"สองนิ้วที่เด็กพยายามนับก่อนหมดลม"*, *"ข้ออ้างเรื่องยืนซื้อยากลางฝน"*)
 5. **Multi-modal Support (ภาพหรือซับช่วยเมื่อคำพูดกำกวม):**
    - หากบทพูดเป็นคำเปรียบเปรยหรืออารมณ์ตัดพ้อ ภาพบนจอ (Insert / Mark / Flashback) หรือคำเน้น `[gold]` / `{red}` ต้องบอกเหตุการณ์ตรงตัวเพื่อให้หูและตาประสานกัน ไม่ปล่อยให้คนดูงง
 
@@ -84,7 +100,7 @@ Evidence: `episodes/temple-boy` (the first long film; QC 10/10) and the general 
    - การกระทำของตัวร้ายต้องผูกติดกับบาดแผลในใจ (Core Wound) อย่างแท้จริง
    - เมื่อตัวร้ายเผชิญกับ "ความจริงที่ทำลายความเชื่อเดิม" (เช่น รู้ว่าความจริงคนที่ฆ่าลูกคือคนในครอบครัวตัวเอง ไม่ใช่เหยื่อที่ตนล้างแค้น) ตัวร้ายต้องเกิดความพังทลายทางอารมณ์ (Emotional Collapse), ความสับสน หรือการยอมรับกรรม ไม่ใช่ก้มหน้าก้มตาฆ่าคนปิดปากต่อไปอย่างไร้หัวใจเหมือนหุ่นยนต์
 5. **Earned Catharsis (ตอนจบต้องให้รางวัลทางอารมณ์ ไม่ใช่สิ้นหวังฟรีๆ):**
-   - ในเรื่องยาว (15–50 นาที) คนดูลงทุนเวลาและอารมณ์มหาศาล ตอนจบสามารถเศร้าหรือสะเทือนใจได้ (Tragic) แต่ต้องมี **Moral Victory**: ความจริงต้องได้รับการเปิดเผย ความเสียสละของตัวเอกต้องมีความหมาย และตราบาปของคนบริสุทธิ์ต้องถูกชำระล้างอย่างสมศักดิ์ศรี
+   - ในเรื่องยาว คนดูลงทุนเวลาและอารมณ์มหาศาล ตอนจบสามารถเศร้าหรือสะเทือนใจได้ (Tragic) แต่ต้องมี **Moral Victory**: ความจริงต้องได้รับการเปิดเผย ความเสียสละของตัวเอกต้องมีความหมาย และตราบาปของคนบริสุทธิ์ต้องถูกชำระล้างอย่างสมศักดิ์ศรี
 
 ## Cast and voices
 
@@ -145,6 +161,8 @@ A 20 min film shot mostly from one flat eye-level side view feels like a slidesh
 - [ ] One tracked device, shown with progress each time it moves.
 - [ ] 6–10 clues in the brief table, each planted 3+ times in 2+ acts, each with a pay-off shot.
 - [ ] Culprit/answer on screen in act 1.
+- [ ] Concealment: every clue has a cover job; the narrator points at none of the culprit's details before the slip; two other suspects with a real secret, a lie and a tell each, all paid off; equal camera weight; culprit role type differs from the previous film; guess map at 25 / 50 / 75 % written and wrong each time; earliest-guess moment marked; cover and title use only the cold open.
+- [ ] Cold read (step 2, after story.json and before voice): `npm run coldread`, result table shown to the user.
 - [ ] Continuity facts written down (dates, counts, who knows what).
 - [ ] Speakers table: one role each, approved voices, children/elders not on the narrator.
 - [ ] Fiction disclaimer planned if a real institution or practice appears.

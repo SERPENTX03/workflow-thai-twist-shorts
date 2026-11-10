@@ -15,9 +15,9 @@ Skill นี้ **ไม่มีกฎของตัวเอง** มัน�
 1. `CLAUDE.md` (ชนะทุกอย่าง)
 2. `.claude/skills/thai-long-story/references/longform-rules.md` — โครง act, retention, clue, Narrative clarity, Pacing, Blind-spot, **Long-form checklist**
 3. `.claude/skills/thai-long-story/references/brief-template.md` — รูปแบบ brief ที่ต้องส่งออก
-4. `.claude/story/fun-pass.md` — เกณฑ์ยกระดับความสนุก
-5. `ls episodes/` และ `series/` — อย่าซ้ำ premise ที่มีแล้ว ถ้าต่อจากเรื่องเดิม ให้อ่าน `story.json` ของเรื่องนั้นด้วย
-6. อ้างอิงงานจริง: `episodes/temple-boy` (เรื่องยาวต้นแบบ)
+4. `.claude/story/fun-pass.md` — เกณฑ์ยกระดับความสนุก และ `.claude/story/cold-read.md` — วิธีทดสอบว่า twist เดาง่ายไหม
+5. `ls episodes/` และ `series/` — อย่าซ้ำ premise ที่มีแล้ว และอ่าน brief ของเรื่องยาวสองเรื่องล่าสุดเพื่อดู role type ของคนร้าย (Concealment ข้อ 5) ถ้าต่อจากเรื่องเดิม ให้อ่าน `story.json` ของเรื่องนั้นด้วย
+6. อ้างอิงงานจริง: `episodes/fifth-room/brief.md`, `episodes/father-ledger/brief.md` (เรื่องล่าสุด) และ `archive/temple-boy/episode` (เรื่องยาวเรื่องแรก ที่มาของตัวเลข pacing)
 7. `universe/bible.md` และ `universe/canon.json` — กฎโลก สถานที่ ตัวละคร canon ระดับการเชื่อม (ถ้าไฟล์ไม่มี ข้าม §1.5 แล้วบอกผู้ใช้บรรทัดเดียว)
 
 ## 1. Intake — ถอด prompt เป็น Story Brief ดิบ
@@ -42,6 +42,7 @@ Skill นี้ **ไม่มีกฎของตัวเอง** มัน�
 ไล่ทุกข้อใน **Long-form checklist (gate for step 1)** ของ `longform-rules.md` ให้ ✓ / ✗ / (เดา) พร้อมเหตุผลหนึ่งบรรทัดต่อข้อที่ ✗ โดยเฉพาะ:
 - cold open ภายใน 30–60 วินาที, midpoint 45–60%, reveal 80–90%, re-hook ทุก 60–90 วินาที (ลิสต์พร้อมเวลา)
 - tracked device หนึ่งอย่าง, clue 6–10 จุด (แต่ละจุดวาง ≥ 3 ครั้ง ≥ 2 องก์ + มีช็อตคลี่), ตัวร้าย/คำตอบอยู่ในเฟรมตั้งแต่องก์ 1
+- Concealment 9 ข้อ (clue มีงานบังหน้า, ผู้บรรยายไม่ชี้พิรุธของคนร้ายก่อนสลิป, ผู้ต้องสงสัยอื่น ≥ 2 คนที่มีความลับจริง, น้ำหนักกล้องเท่ากัน, casting tell, guess map, early-guess slack, ปก/ชื่อใช้แค่ cold open, cold read)
 - Narrative clarity 5 ข้อ (ตรรกะชั้นเดียว, ผู้บรรยายเป็น anchor, Action-Motive-Cost, clue re-anchoring)
 - Blind-spot 5 ข้อ (body-count, ตัวเอกไม่โง่, โลกภายนอกกดดัน, อารมณ์ตัวร้ายสม่ำเสมอ, Earned Catharsis)
 - continuity facts เขียนเลขคณิตออกมา (ปี อายุ จำนวน ใครรู้อะไรเมื่อไร)
@@ -59,9 +60,9 @@ Skill นี้ **ไม่มีกฎของตัวเอง** มัน�
 แสดงในแชต:
 1. ผลลัพธ์ audit (ตาราง ✓/✗ สั้น ๆ + สิ่งที่แก้แล้ว)
 2. ข้อเสนอ fun pass ให้ติ๊ก
-3. ร่าง brief ตามรูปแบบ `brief-template.md` ครบทุกหัวข้อ: logline, twist, tracked device, ตาราง Speakers (voice role + symbol จาก `src/cast.json` ที่ไม่ retired ตามกฎ 12; ตัวที่เรื่องต้องการจริงแต่ไม่มีในคลัง ให้ระบุเป็น "ตัวใหม่" พร้อมเหตุผลว่าทำไมตัวเดิมใช้ไม่ได้ ดูข้อห้ามด้านล่าง), ตาราง Chapters พร้อมเวลาเป้าหมายและ re-hook, ตาราง Clues (planted → pay-off), Sets/inserts (เสนอที่ที่ต้องสร้างเป็น room ใน perspective), Continuity checks, Blind-spot gate และหัวข้อ **Universe** (ระดับการเชื่อม · สถานที่ รหัส canon หรือ "ใหม่" · ตัวละคร canon ที่ปรากฏ · ผลเช็ก hard canon · สิ่งที่จะลง canon ใหม่ให้ติ๊กรับ-ตัด)
+3. ร่าง brief ตามรูปแบบ `brief-template.md` ครบทุกหัวข้อ: logline, twist, tracked device, ตาราง Speakers (voice role + symbol จาก `src/cast.json` ที่ไม่ retired ตามกฎ 12; ตัวที่เรื่องต้องการจริงแต่ไม่มีในคลัง ให้ระบุเป็น "ตัวใหม่" พร้อมเหตุผลว่าทำไมตัวเดิมใช้ไม่ได้ ดูข้อห้ามด้านล่าง), ตาราง Chapters พร้อมเวลาเป้าหมายและ re-hook, ตาราง Clues (cover → planted → pay-off), ตาราง Suspects and concealment, Sets/inserts (เสนอที่ที่ต้องสร้างเป็น room ใน perspective), Continuity checks, Blind-spot gate และหัวข้อ **Universe** (ระดับการเชื่อม · สถานที่ รหัส canon หรือ "ใหม่" · ตัวละคร canon ที่ปรากฏ · ผลเช็ก hard canon · สิ่งที่จะลง canon ใหม่ให้ติ๊กรับ-ตัด)
 4. **ร่างคำบรรยายเปิด (cold open)** 5–8 บรรทัดภาษาไทย เป็นตัวอย่างน้ำเสียงเรื่อง (ยังไม่ใช่ story.json)
-5. Scorecard ให้ 0–10 พร้อมเหตุผลบรรทัดเดียว: hook/cold open · ความตึงต่อเนื่อง · ความยุติธรรมของ twist · ตรรกะและ blind-spot · อารมณ์ปลายทาง · จำได้/ชวนแชร์ ข้อที่ต่ำกว่า 8 ให้แก้ก่อนส่ง หรือบอกว่าติดอะไร
+5. **การซ่อน twist** (แทน scorecard ให้คะแนนตัวเอง ซึ่งคนเขียนตัดสินเองไม่ได้): ตาราง Suspects, guess map 25 / 50 / 75 %, จุดแรกที่คนดูช่างสังเกตรู้คำตอบได้, role type ของคนร้ายเทียบกับสองเรื่องก่อน และผล cold read รอบ A บน beats (`.claude/story/cold-read.md`) เป็นตาราง จุดที่ยังอ่อนให้บอกตรงๆ ว่าติดอะไร ไม่ต้องให้คะแนน
 
 จบด้วยคำถามเดียว: อนุมัติไหม / ติ๊กข้อเสนอไหนรับ-ตัด
 

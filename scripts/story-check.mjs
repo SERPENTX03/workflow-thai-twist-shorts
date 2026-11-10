@@ -91,7 +91,7 @@ S.shots.forEach(s => {
     // character-count estimate is only for the pre-voice draft; once assets/vo/index.json exists the real durations are used below
     const need = thaiLen(s.vo) / CHARS_PER_SEC, room = s.dur - s.voLead - TAIL;
     if (!hasVoice && need > room * 1.3) warn(i, `voice likely OVER: ~${need.toFixed(1)}s of speech in ${room.toFixed(1)}s (1.3× limit ${(room * 1.3).toFixed(1)}s) — shorten or add beats`);
-    if (/[“”"]/.test(s.text) && !s.voice) warn(i, 'quoted speech with no "voice" role — fine for Milo/narrator (both `male`), a bug for any other speaker');
+    if (/[“”"]/.test(s.text) && !s.voice) warn(i, 'quoted speech with no "voice" role — fine when the narrator quotes someone, a bug when a character speaks the line (add "voice" and "who")');
   }
   // talk mouths belong to the speaker only (CLAUDE.md): a listener or the near end of a phone call must not mouth someone else's line
   for (const a of RAW_SHOTS[i]?.data?.cast ?? []) {
@@ -159,15 +159,11 @@ S.shots.forEach(s => {
 
   const isStagedScene = s.scene && !['hand', 'phone', 'clock', 'rule', 'news', 'map', 'next'].includes(s.scene);
   if (prevShot && prevShot.scene === s.scene && isStagedScene) {
-    const isClose = s.view?.endsWith('-close') || s.view === 'close';
-    const isExit = s.view === 'exit' || RAW_SHOTS[i]?.data?.move;
-    if (!isClose && !isExit && prevCast.length > currCast.length && currCast.length > 0) {
-      for (const prevA of prevCast) {
-        if (!currCast.some(c => c.who === prevA.who)) {
-          warn(i, `actor "${prevA.who}" was present in shot ${i - 1} in scene "${s.scene}" but vanished in shot ${i} — keep both actors in cast or frame with a close-up camera`);
-        }
-      }
-    }
+    // A cut to one person, a hand or an object is coverage, not a continuity error (directing.md §2
+    // "ไม่ต้องเห็นทุกคนทุกช็อต"). Only the SAME view with a person missing or moved is a jump.
+    if (s.view === prevShot.view && !RAW_SHOTS[i]?.data?.move && !RAW_SHOTS[i - 1]?.data?.move && currCast.length > 0)
+      for (const pa of prevCast) if (!currCast.some(c => c.who === pa.who))
+        warn(i, `actor "${pa.who}" is gone from "${s.scene}:${s.view}" though the camera did not move since shot ${i - 1} — keep them, or change the view (a real close-up, an insert)`);
     for (const ca of currCast) {
       const pa = prevCast.find(p => p.who === ca.who);
       if (pa && Math.abs(pa.x - ca.x) > 100 && !RAW_SHOTS[i]?.data?.move && !RAW_SHOTS[i - 1]?.data?.move && s.view === prevShot.view) {

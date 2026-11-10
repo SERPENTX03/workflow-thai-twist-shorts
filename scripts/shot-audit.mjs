@@ -7,7 +7,7 @@
 // Also: shots with no `note` (the one-sentence picture, directing.md §2) and the same framing of one set repeated.
 import fs from 'node:fs';
 import path from 'node:path';
-import { episodeDir, loadStory, clock } from './lib.mjs';
+import { episodeDir, loadStory, clock, ROOT } from './lib.mjs';
 
 const GROUP_OF = {
   ew: 'EYE', wide: 'EYE', med: 'EYE',
@@ -121,6 +121,44 @@ const still = camShots.filter(s => {
   return Math.abs(z1 / z0 - 1) < 0.06 && Math.hypot((cx1 - cx) * z0, (cy1 - cy) * z0) < 80;
 });
 ok(still.length <= camShots.length * 0.5, `${still.length}/${camShots.length} camera shots of ≥ 3 s move under 6 % push / 80 px pan (≤ 50 %; hold shots with hush are fine, say so in the note)${still.length ? ` — e.g. ${still.slice(0, 10).map(s => s.i).join(' ')}` : ''}`);
+
+// Staging (CLAUDE.md rule 14, directing.md §5 and §5.1): the cast are front-facing sprites, so a person who stands
+// face-on with both arms down is a paper cutout, and a "close-up" of a face that looks straight out of the frame is
+// an ID photo with the background swapped. Read from the actor strings; own-SVG shots are not seen here, look at them.
+{
+  const stageSrc = fs.readFileSync(path.join(ROOT, 'src', 'kit', 'stage.tsx'), 'utf8');
+  const POSES = new Set([...(stageSrc.match(/const POSES = new Set\(\[([^\]]*)\]/)?.[1] ?? '').matchAll(/'([^']+)'/g)].map(m => m[1]));
+  POSES.delete('stand');
+  const actors = camShots.flatMap(s => (RAW[s.i]?.data?.cast ?? []).map(a => ({ i: s.i, tokens: s.tokens, words: String(a).trim().split(/\s+/).slice(1) })));
+  const val = (w, k) => w.find(x => x.startsWith(k + '='))?.slice(k.length + 1);
+  // what reads on screen, not what is typed: yaw under ~0.3 still looks face-on (fifth-room shot 126 at yaw −0.35 is
+  // only just turned), head is in degrees, look is the eyes alone
+  const MIN = { yaw: 0.3, look: 0.3, head: 4 };
+  const turned = w => Object.keys(MIN).some(k => { const v = val(w, k); return v !== undefined && v.split('@')[0].split('>').some(x => Math.abs(+x) >= MIN[k]); });
+  const busy = w => w.some(x => /^(arm|armL|armR|prop)=/.test(x) && !/^arm[LR]=rest$/.test(x));
+  const uniq = list => [...new Set(list.map(a => a.i))];
+  const some = list => `${uniq(list).slice(0, 12).join(' ')}${uniq(list).length > 12 ? ' …' : ''}`;
+  if (actors.length) {
+    const stiff = actors.filter(a => !a.words.some(w => POSES.has(w)) && !busy(a.words) && !turned(a.words));
+    ok(stiff.length <= actors.length * 0.1, `${stiff.length}/${actors.length} figures stand face-on with both arms at rest (≤ 10 %): give the hands something to do, turn them to what they look at (yaw=), sit them, or shoot them from behind${stiff.length ? ` — shots ${some(stiff)}` : ''}`);
+    const closeActors = actors.filter(a => a.tokens.includes('close') || a.tokens.includes('ecu'));
+    const idPhoto = closeActors.filter(a => !turned(a.words) && !busy(a.words));
+    if (closeActors.length) ok(idPhoto.length <= closeActors.length * 0.3, `${idPhoto.length}/${closeActors.length} faces in close-ups look straight out with nothing in the hands (≤ 30 %): a close-up is acting — turn the head to the other person or the thing (yaw= head= look=), bring a hand into frame, change the face mid-shot (faces=)${idPhoto.length ? ` — shots ${some(idPhoto)}` : ''}`);
+  }
+  // a film of faces and objects with no room around them: the viewer stops knowing where anyone is
+  const closeShare = camShots.filter(s => s.group === 'CLOSE').length / Math.max(1, camShots.length);
+  ok(closeShare <= 0.6, `CLOSE/insert share ${pct(closeShare)} of the film (≤ 60 %): past that the places disappear — return to a wide when the situation changes`);
+  // each place the cast stands in is seen whole at least once (directing.md §2: open on geography)
+  const WIDE = new Set(['wide', 'ew', 'high', 'top']);
+  const places = new Map();
+  for (const s of camShots) if ((RAW[s.i]?.data?.cast ?? []).length) places.set(s.scene, [...(places.get(s.scene) ?? []), s]);
+  for (const [scene, list] of places) {
+    if (list.length < 8) continue;
+    const all = camShots.filter(s => s.scene === scene);
+    if (!all.some(s => s.tokens.some(t => WIDE.has(t)))) ok(false, `place "${scene}": ${all.length} shots and none is a wide (-wide, -ew, -high, -top): show the whole place once so the close shots have somewhere to be`);
+  }
+}
+
 const frameKey = s => { const d = RAW[s.i]?.data ?? {}; return `${s.scene}:${s.view ?? ''}:${JSON.stringify(d.cam ?? null)}`; };
 const seen = new Map();
 // inserts of a clue repeat their frame on purpose (cinematography.md A2), so only sets are counted

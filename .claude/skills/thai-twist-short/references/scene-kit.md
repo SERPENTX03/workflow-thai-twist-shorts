@@ -6,9 +6,9 @@ A **scene** is a React component for one shot: `ShotComponent = ({shot, f, len, 
 
 | Need | Use | File |
 |---|---|---|
-| a character, pet, pose, prop, icon, mark | `<Sprite id="man" height={600} />` | `src/cast/Sprite.tsx` (symbols are generated into `src/cast/CastSprite.tsx`) |
+| a character, pet, pose, prop, icon, mark | `<Sprite id="lead-male-A" height={600} />` (ids: active entries of `src/cast.json`) | `src/cast/Sprite.tsx` (symbols are generated into `src/cast/CastSprite.tsx`) |
 | extra layers on one figure (face, accessory, arm pose, mark) | `layers={['face-angry', 'acc-cap']}` + `hideFace` / `hideArmL` / `hideArmR` | `Sprite` props |
-| silhouette (shadow, reflection, ghost) | `<Sprite id="man" silhouette />` | |
+| silhouette (shadow, reflection, ghost) | `<Sprite id="lead-male-A" silhouette />` | |
 | cards / chips / tags / rule card / stat / meter / checklist / hud | `Card Chip Tag RuleCard Stat Meter Checklist Hud` | `src/kit/ui.tsx` |
 | vignette (`at` = where the light stays), shadow blob, soft-focus `Far` (`dim` for night backgrounds), `Rain` | | `src/kit/fx.tsx` |
 | **a place the camera can go inside**: `makeRoom` (VP + back-wall box + depth), `RoomShell`, `RFace` (window, door, rug, light pool), `RBox` (furniture with contact shadow), `RShadow`, `standAt` / `roomPxPerCm` (where a person stands and how big), `LightVeil` (mid-tones sink, light stays where it falls) | `directing.md` §3–4, gallery `room-wide` / `room-close` | `src/kit/room.tsx` |
@@ -47,12 +47,12 @@ const Door: ShotComponent = ({shot, f, len}) => (/* … */);
 export default {door: Door};   // key = the `scene` name in story.json
 ```
 
-Then `npm run timeline -- episodes/<slug>` (or `npm run check`) regenerates the registry. Entries here override the generic scenes of the same name. Promote anything reusable into `src/scenes/` and `src/kit/`.
+Then `npm run timeline -- episodes/<slug>` (or `npm run check`) regenerates the registry. Entries here override the generic scenes of the same name. Promote a piece into `src/kit/` once a second episode uses it (CLAUDE.md rule 6).
 
 ## Rules that still apply
 
-1. **Hands:** never draw a hand beside a resting arm. `hideArmL` / `hideArmR` on the `Sprite`, then layer ONE pose arm + grip prop (`hands-poses.md`). Held props (`prop-*`, `acc-watch`) are anchored at (0,0): put them in their own `<Sprite>` or an `<svg><use href="#prop-coin" transform="translate(x y)"/></svg>`.
-2. **Faces:** `hideFace`, then one `face-*` layer per figure per shot; change mood on a cut or beat. `woman` / `auntie` need `transform="translate(0 4)"` on face layers (see `cast-library.md`).
+1. **Hands:** never draw a hand beside a resting arm. Stage actors: pose the figure's own arm (`armR=reach`, `arm=r-phone prop=phone`), which removes the resting one. A bare `Sprite`: `hideArmL` / `hideArmR`, then layer ONE pose arm + grip prop (`hands-poses.md`). Held props (`prop-*`, `acc-watch`) are anchored at (0,0): put them in their own `<Sprite>` or an `<svg><use href="#prop-coin" transform="translate(x y)"/></svg>`.
+2. **Faces:** `hideFace`, then one `face-*` layer per figure per shot; change mood on a cut or beat (stage actors: the face word, or `faces=worried@0,shock@40` to change inside a shot).
 3. **Layer order:** sky → background set (`Far`) → perspective floor/walls (`PerspFloor`, `SideWall`) → haze → light glows / cones (`mixBlendMode: 'screen'`) → shadows (`CastShadow`, `ShadowBlob`) → people → foreground frame (`Fore`) → night grade + vignette (`Grade`, or `rgba(6,10,26,.55)` + `<Vignette at>`) → rings/highlights → HUD. The protagonist who is a ghost gets no shadow. Every set shot passes `depth-light.md` §9.
 4. **Closing lines need ≥ 2 s on screen.** Anything that appears in the last shot must land early.
 5. Anything that enters later starts fully off-canvas; use `appear()` so scrubbing backwards is clean.

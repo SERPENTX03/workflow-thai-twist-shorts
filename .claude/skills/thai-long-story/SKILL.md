@@ -7,15 +7,15 @@ description: Make a Thai long-form landscape (16:9, 10–25 min) narrated story 
 
 Same engine, cast and scripts as `thai-twist-short`; this skill replaces only the **story rules, pacing, review and render steps** that do not scale from a 60 s Short to a 20 min film. Read `thai-twist-short/SKILL.md` once for the shared pipeline; where they disagree for a landscape episode, this file wins (and `CLAUDE.md` wins over both).
 
-Reference build: `episodes/temple-boy` (20:30, 442 shots, 25 scenes / 115 views, 6 voice roles, QC 10/10). Copy its patterns before inventing new ones: `src/episodes/temple-boy/{cast,sets,inserts,scenes}.tsx`.
+Reference builds: `fifth-room` and `father-ledger` (`episodes/<slug>/brief.md`, `src/episodes/<slug>/`) for how a roster, places in perspective, inserts and per-shot components are laid out. `temple-boy` (20:30, 442 shots, the first long film) is archived in `archive/temple-boy/{episode,src}`: its pacing numbers are the baseline in `longform-rules.md`, but its sets are the older flat backdrops, so do not copy its pictures.
 
 ## Pipeline
 
 | Step | Do | Command | Gate |
 |---|---|---|---|
-| 0 | New episode, then set `"format": "landscape"` and `target` in story.json | `npm run new -- <slug> "ชื่อเรื่อง"` | story.json exists |
+| 0 | New episode, then set `"format": "landscape"` and `target` (seconds, `[min, max]`; without it `npm run story` checks against 600–720 s) in story.json | `npm run new -- <slug> "ชื่อเรื่อง"` | story.json exists |
 | 1 | **Brief + outline** — copy `references/brief-template.md` to `episodes/<slug>/brief.md`: logline, twist, speakers, chapter plan with timestamps, clue table, continuity facts | — | passes the *Long-form checklist* in `references/longform-rules.md`; user says yes to the brief |
-| 2 | Write story.json **one chapter at a time**: the chapter's first shot carries `"chapter": "<name>"`; draft beats roughly, `fit` sizes them later | `npm run story -- episodes/<slug>` after each chapter; `npm run chapter -- episodes/<slug>` lists them | 0 errors; caption + chapter warnings fixed |
+| 2 | Write story.json **one chapter at a time**: the chapter's first shot carries `"chapter": "<name>"`; draft beats roughly, `fit` sizes them later | `npm run story -- episodes/<slug>` after each chapter; `npm run chapter -- episodes/<slug>` lists them | 0 errors; caption + chapter warnings fixed; then, with the whole script written and **before step 3 spends voice credits**, the cold read (`npm run coldread -- episodes/<slug>`, `.claude/story/cold-read.md`): readers who have not seen the brief guess at 25 / 50 / 75 %; the table goes into `brief.md` and to the user |
 | 3 | Voice draft (cached per line; only new/changed lines cost credits) → fit → audio | `npm run voice`, `npm run fit`, `npm run audio` (each `-- episodes/<slug>`) | no `⚠ OVER`; runtime inside `target`; listen to one line per speaker (`thai-twist-short/references/voices.md`) |
 | 4 | Roster + places + inserts, then the shots — every camera shot first gets a `note` (the picture in one sentence), each recurring place is built once in perspective (`src/kit/room.tsx`) and framed from several positions (a canon place from `universe/canon.json` starts from its `set`, matches its `state`, and moves into `src/kit/` on its second story; after the review, write the `cams` that worked and the new `state` of every `keep` place back to canon — CLAUDE.md rule 17), light from a source in the frame that pools (`thai-twist-short/references/directing.md`, `depth-light.md`); any shot may be its own component | edit `src/episodes/<slug>/`, then `npm run shots` and `npm run check` (each `-- episodes/<slug>`) | tsc 0 errors; placeholders only where not drawn yet; each Board frame matches its `note` and passes `directing.md` §7; `shots` / `look` ✗ lines fixed or answered in one line |
 | 5 | **One-pass review** (CLAUDE.md rule 5; no per-chapter scoring) | `npm run review -- episodes/<slug> --board` → suspect list + `out/<slug>-review.html` (`references/review-long.md`) | audit ✗ fixed or answered; suspect/changed frames looked at full size; the user scrolls the page once, flags odd shots, they are fixed once; `--accept` |
@@ -36,7 +36,7 @@ Reference build: `episodes/temple-boy` (20:30, 442 shots, 25 scenes / 115 views,
 | Cut on beats, fixed 3-beat shots | `fit` sizes shots to the real voice; `hold` for looking, `hush` for silence |
 | 7 shot types rotating | Recurring sets drawn once with many `view`s; inserts for every clue |
 | Bright sets, dark turn | Light tells the hour: a grade per time of night, one source per view, shadow share rising with the dread (night ≥ 45 %, suspense ≥ 60 %), the reveal the darkest frame (`depth-light.md`) |
-| Look at every Board frame | Review **per chapter** on contact sheets, then chapter renders (`npm run chapter`) |
+| Look at the Board frames | One-pass review of suspect and changed frames (`npm run review`); a chapter sheet or chapter render only when asked |
 
 ## Engine pieces built for long-form
 
@@ -64,7 +64,8 @@ story.json knobs: `chapter`, `voiceTempo`, `breath`, `switchBreath`, `minBeats`,
 |---|---|
 | `references/longform-rules.md` | outlining, writing story.json, pacing, captions, cast, sound, safe zones — and the gate checklist |
 | `references/brief-template.md` | step 1, starting `episodes/<slug>/brief.md` |
-| `references/review-long.md` | steps 5–8: contact sheets, scoring, chapter renders, final, packaging |
+| `.claude/story/cold-read.md` | end of step 2, before voice: test whether the twist is easy to guess (`npm run coldread`) |
+| `references/review-long.md` | steps 5–8: the one-pass review, a single chapter on request, final, packaging |
 | `thai-twist-short/references/directing.md` | **steps 2 and 4, first**: how to direct a shot (`note` → size/angle → light → build), places as rooms the camera enters (`src/kit/room.tsx`), light pools and `LightVeil`, real close-up sizes, staging around front-facing sprites, what is fixed vs free, the storyboard check |
 | `thai-twist-short/references/cinematography.md` | steps 2 and 4: camera setups per scene, set coverage presets, angle triggers, layering, variety quotas (`npm run shots -- episodes/<slug>` audits per chapter) |
 | `thai-twist-short/references/depth-light.md` | steps 4 and 5: no flat frames — subject on a third, 4 layers, one light + shadow share per mood, perspective, long shadows, the `noir` grade (`npm run look -- episodes/<slug> --chapter <n>` measures each chapter's Board frames) |

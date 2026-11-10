@@ -109,7 +109,7 @@ import {Cone} from '../../kit/light';
 import {Haze, PerspFloor} from '../../kit/depth';
 import {ShopRow} from '../../kit/places';
 import {FLOOR, Sky} from '../../kit/world';
-import {Actors} from './cast';   // wrapper ของ episode (roster + speaking) — แบบ src/episodes/same-child/cast.tsx
+import {Actors} from './cast';   // wrapper ของ episode (roster + speaking) — แบบ src/episodes/fifth-room/cast.tsx
 
 const PoleEdge: React.FC = () => (   // FG ในพิกัดเฟรม: เสาไฟตัดขอบขวา + สายไฟพาดบน (Stage เบลอ/หรี่/parallax ให้)
   <>

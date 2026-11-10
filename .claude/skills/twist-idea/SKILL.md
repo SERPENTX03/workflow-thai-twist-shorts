@@ -24,7 +24,7 @@ Mix the families: at least 3 survival "ถ้า…", 1 haunting twist, 1 ตำ
 | Hook | place + threat in ≤ 12 Thai characters, readable at frame 0 |
 | Relatable | most Thai viewers have stood in that place |
 | Knowledge | ≥ 5 true, checkable facts or rules the story can show as visuals |
-| Twist | fair, physical clue, re-read works |
+| Twist | fair, physical clue, re-read works, **and it is not what a viewer guesses from the hook** (write the first guess next to the twist; if they match, score 0 — `story-rules.md` → *Hiding the twist*) |
 | Visual variety | needs ≥ 4 shot types (set, close-up, diagram, map, card…) |
 | Series potential | the ending opens an obvious next question |
 | Fresh | not already in `episodes/` or a stock creepypasta |
@@ -39,7 +39,7 @@ Write a one-screen outline:
 - Format family, target length, `captionLook`
 - Cast: lead, ≤ 2 named friends, the animal companion, each with one trackable trait
 - Rules (กฎข้อ 1–3) and **facts** — mark each fact `✓ checked` (search when unsure) or drop it
-- Clues: 3–5, each with where it is planted (×3) and where it pays off
+- Clues: 3–5, each with its cover job (the ordinary reason the story gives for it), where it is planted (×3, one in passing) and where it pays off; one decoy and the line that explains it; the viewer's first guess
 - Act-by-act beats (≈ shot count per act, per `story-rules.md`)
 - Ending: twist line (≤ 20 characters) + cliffhanger + ตอนต่อไป title if it is a series
 - Universe: link level · place (canon id, or new + where on the map + keep or not, `bible.md` §3.1) · canon characters who appear · what goes into canon (user ticks); after the yes, update `universe/canon.json`

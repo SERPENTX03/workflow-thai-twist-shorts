@@ -25,6 +25,7 @@
     "fit": "node scripts/fit.mjs",
     "chapter": "node scripts/chapter.mjs",
     "story": "node scripts/story-check.mjs",
+    "coldread": "node scripts/cold-read.mjs",
     "shots": "node scripts/shot-audit.mjs",
     "look": "node scripts/look-audit.mjs",
     "qc": "node scripts/qc.mjs",

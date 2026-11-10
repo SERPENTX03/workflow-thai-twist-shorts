@@ -23,6 +23,7 @@ Read the episode's `story.json` (or the idea the user gave) and `references/ref-
 1. **6 frame-0 captions** (≤ 2 lines, ≤ ~18 characters per line), at least 3 patterns. For each say what is on screen at frame 0 and what moves by 0.5 s. Mark `[gold]`/`{red}` keywords.
 2. **Shot 2 line** for the top 2 — it must raise a question, not explain.
 3. **5 post titles** (≤ 40 characters, no clickbait that the clip doesn't deliver) and **3 cover lines** (≤ 3 words, readable on a phone grid).
-4. Recommend one set. Before writing it into `story.json`, show the change and ask.
+4. **Spoiler check**: a hook, title or cover line may use only what the first two shots (Shorts) or the cold open (long-form) show. Drop any line that states the twist, the midpoint or a clue's meaning, or that names the culprit's trait (`story-rules.md` → *Hiding the twist* rule 6, `longform-rules.md` → *Concealment* rule 8).
+5. Recommend one set. Before writing it into `story.json`, show the change and ask.
 
-If the user approves, edit `story.json` shots 0–1 only, then run `npm run audio -- episodes/<slug>` so voice and timing follow.
+If the user approves, edit `story.json` shots 0–1 only, then run `npm run audio -- episodes/<slug>` so voice and timing follow (the reworded lines are re-voiced and spend ElevenLabs credits: say so when you ask).

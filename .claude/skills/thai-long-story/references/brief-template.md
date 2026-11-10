@@ -32,9 +32,23 @@ Mark each chapter's first shot in story.json with `"chapter": "<name>"` (viewer-
 
 ## Clues (planted → paid off)
 
-| Clue | Planted (shots, ≥ 3, ≥ 2 acts) | Pay-off (shot) |
-|---|---|---|
-| | | |
+| Clue | Cover (the ordinary reason the story gives for it before the slip) | Planted (shots, ≥ 3, ≥ 2 acts; mark the one planted in passing) | Pay-off (shot) |
+|---|---|---|---|
+| | | | |
+
+## Suspects and concealment (`longform-rules.md` → *Concealment*)
+
+| Character | Real secret | Lie the viewer can catch | Tell / trait (drawn every time) | Secret paid off in (shot) |
+|---|---|---|---|---|
+| <culprit> | | | | reveal |
+| <suspect 2> | | | | |
+| <suspect 3> | | | | |
+
+- **Culprit role type / face family:** <helper, authority, family, victim, employer, lead> / <`father-*`…> — previous two films: <slug: type / face>, <slug: type / face>
+- **Guess map** (what the viewer believes; each wrong, reasonable, different): 25 % <…> · 50 % <…> · 75 % <…>
+- **Earliest a careful viewer can know:** <shot, %> → reveal at <%>; question that carries the gap: <…>
+- **Lines where the narrator must stay quiet:** <the culprit's details that are shown but never remarked on before the slip>
+- **Cold read** (after story.json, before voice — `.claude/story/cold-read.md`): <date, table: cut · first guess + confidence · rank of the real answer · the line that gave it away; fair? holes?>
 
 ## Sets and inserts
 

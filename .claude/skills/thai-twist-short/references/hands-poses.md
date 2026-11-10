@@ -38,10 +38,10 @@ Frame 200 × 520. `Sprite` sets the sleeve colour per character itself (`SLEEVE`
 
 Grip props (origin = hand centre): `prop-glass`, `-coin`, `-phone`, `-paper`, `-key`, `-flashlight`, `-bottle`, `-radio`, `-candle`, `-map`, `-rope`, `-sack` (hangs below the hand), `-bowl`, `-bandage`. Accessories that sit on a hand (`acc-watch`, `acc-hand-bandage`) use the same anchors — see `cast-library.md`.
 
-Example (a woman hands a coin):
+Example (a woman hands a coin; a bare `Sprite` — on the stage write only the actor string in the last line):
 
 ```tsx
-<Sprite id="woman" hideArmR layers={['arm-r-offer']} layerTransform="translate(0 4)" />
+<Sprite id="lead-female-A" hideArmR layers={['arm-r-offer']} />
 // + a prop-coin Sprite at the offer anchor (214,222)
 // stage actor string: "porn@700 arm=r-offer prop=coin"
 ```
