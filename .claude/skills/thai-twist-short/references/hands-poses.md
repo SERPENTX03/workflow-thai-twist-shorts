@@ -38,6 +38,8 @@ Frame 200 × 520. `Sprite` sets the sleeve colour per character itself (`SLEEVE`
 
 Grip props (origin = hand centre): `prop-glass`, `-coin`, `-phone`, `-paper`, `-key`, `-flashlight`, `-bottle`, `-radio`, `-candle`, `-map`, `-rope`, `-sack` (hangs below the hand), `-bowl`, `-bandage`. Accessories that sit on a hand (`acc-watch`, `acc-hand-bandage`) use the same anchors — see `cast-library.md`.
 
+Close-up hands in inserts (no figure in frame) use `Hand` from `src/kit/inserts.tsx`: `mode` = `grip`, `open`, `flat`, `fist` (knocking), `point` (pressing, tracing), `pinch` (a key, a coin, the corner of a photo); skin and sleeve in the owner's colours.
+
 Example (a woman hands a coin; a bare `Sprite` — on the stage write only the actor string in the last line):
 
 ```tsx

@@ -91,7 +91,7 @@ Good clue devices:
 - **The animal reacts first** — the dog growls at someone who seems fine; the cat won't go near the door.
 - **Eyes that pass through** — another character's sightline goes past the protagonist.
 
-Name each clue in the outline next to the shots that plant it and the shot that pays it off.
+Name each clue in the outline next to the shots that plant it and the shot that pays it off, then tag them in story.json (`clues` at the top, `clue` / `pay` on the shots — `story-json.md` → *Clues and mirror pairs*): `npm run story` counts the plantings and prints the ledger.
 
 ## Hiding the twist (fair is not enough)
 

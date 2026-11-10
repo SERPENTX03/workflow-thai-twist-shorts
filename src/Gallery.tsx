@@ -15,6 +15,8 @@ import {Actors, FloorShadow, Fore, Grade, GRADES, PAST_FILTER, Stage, Tilt, type
 import type {ShotProps} from './engine/episode';
 import {CastShadow, Haze, PerspFloor, SideWall} from './kit/depth';
 import {LightVeil, makeRoom, RBox, RFace, RoomShell, roomPxPerCm, standAt} from './kit/room';
+import {BFence, BFloor, BGround, BRect, BRoof, BShadow, BWall, blockPxPerCm, blockStand, makeBlock} from './kit/exterior';
+import {FaceEcu} from './kit/ecu';
 import {Cone, Dust, rimFilter} from './kit/light';
 import {Far} from './kit/fx';
 import {Cctv, MirrorFrame, Pov, Split, cctvFrame, type PovKind} from './kit/pov';
@@ -339,9 +341,66 @@ const roomDemo = (f: number, cam: number[], id: string) => {
     </>} />
   );
 };
+// directing.md §5.2: an exterior is a place too. One house built from its corner (src/kit/exterior.tsx): two walls
+// running to two vanishing points, the lit window as the light, a person at the gate turned to it.
+const EXT = makeBlock({x: 1180, y0: 230, y1: 790, hy: 560, left: {x: 330, k: 0.46}, right: {x: 1800, k: 0.62}});
+const extDemo = (f: number) => {
+  const at: [number, number] = [0.14, -0.5];   // outside the fence, nearer the camera than the house
+  const s = blockStand(EXT, at[0], at[1]), h = blockPxPerCm(EXT, at[0], at[1]) * 160;
+  const win = EXT.W('l', 0.13, 0.52);
+  return (
+    <>
+      <Sky tone="night" y={560} />
+      <BGround b={EXT} fill="#1c1a22" far="#34303c" />
+      {/* the lit window's light on the ground in front of it */}
+      <BFloor b={EXT} pts={[[0.03, -0.02], [0.24, -0.02], [0.4, -0.62], [-0.1, -0.62]]} fill="#ffcf8a" o={0.26} blend="screen" blur={18} />
+      <BWall b={EXT} side="r" fill="#3b312c" planks={10} />
+      <BWall b={EXT} side="l" fill="#7b6352" planks={10} posts={5} />
+      <BRect b={EXT} side="l" along={[0.05, 0.21]} h={[0.3, 0.74]} fill="#ffd27a" frame="#241a14" boards={5} glow="#ffcf8a" />
+      {[0.29, 0.5, 0.71].map(t => <BRect key={t} b={EXT} side="l" along={[t, t + 0.15]} h={[0.3, 0.74]} fill="#141820" frame="#241a14" bars={3} />)}
+      <BRect b={EXT} side="r" along={[0.34, 0.6]} h={[0, 0.72]} fill="#15110f" frame="#1c1512" />
+      <BRoof b={EXT} fill="#6a4441" dark="#452c2b" depth={0.9} rise={0.6} />
+      <BFence b={EXT} from={[-0.3, -0.32]} to={[1.25, -0.32]} posts={18} gate={[0.47, 0.56]} color="#3a2f28" />
+      <BFence b={EXT} from={[-0.3, -0.32]} to={[-0.3, 1.1]} posts={12} color="#3a2f28" />
+      <LightVeil id="ext" lights={[[win.x, win.y, 420], [s.x + 60, s.y - h * 0.55, 340]]} o={0.3} />
+      <BShadow b={EXT} at={at} size={170} />
+      <ActorView a={parseActor(`lead-female-A@${s.x.toFixed(0)},${s.y.toFixed(0)} h=${h.toFixed(0)} wary yaw=0.55 look=0.6 armR=chest`)} roster={HEADS} floor={s.y} pxPerCm={3} f={f} style={{filter: rimFilter('r', 'lamp', h / 500)}} />
+      <Grade light="night" focus={[win.x / 1920, win.y / 1080]} />
+    </>
+  );
+};
+// directing.md §5.2: an ECU is the character's own face (src/kit/ecu.tsx), never an eye drawn in another style
+const ecuDemo = (f: number) => (
+  <>
+    <div style={{position: 'absolute', left: 0, top: 0, width: 1276, height: 1080, overflow: 'hidden'}}>
+      <FaceEcu who="lead-female-A shock look=-0.4" roster={HEADS} f={f} part="eyes" W={1276} H={1080} shade="r" fill={0.9} />
+    </div>
+    <div style={{position: 'absolute', left: 1284, top: 0, width: 636, height: 536, overflow: 'hidden'}}>
+      <FaceEcu who="lead-male-A worried" roster={HEADS} f={f} part="eye-l" W={636} H={536} at={[0.5, 0.5]} fill={0.8}
+        glint={r => <>{[-1, 0, 1].map(i => <div key={i} style={{position: 'absolute', left: -r * 0.55, top: i * r * 0.36 - r * 0.07, width: r * 1.1, height: r * 0.14, background: '#ffd27a'}} />)}</>} />
+    </div>
+    <div style={{position: 'absolute', left: 1284, top: 544, width: 636, height: 536, overflow: 'hidden'}}>
+      <FaceEcu who="villain-male-A smirk" roster={HEADS} f={f} part="mouth" W={636} H={536} at={[0.5, 0.5]} shade="l" />
+    </div>
+  </>
+);
+const HAND_MODES = ['grip', 'open', 'fist', 'point', 'pinch'] as const;
+const handDemo = () => (
+  <div style={{position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 45%, #3a2c22, #0c0908 75%)'}}>
+    {HAND_MODES.map((m, i) => (
+      <div key={m} style={{position: 'absolute', left: (i % 3) * 640, top: i < 3 ? 0 : 540, width: 640, height: 540, overflow: 'hidden'}}>
+        <Hand x={270} y={250} s={1.15} skin="#e8b995" sleeve="#2f5f8f" mode={m} pinkyCut={m === 'grip'} />
+        <div style={{position: 'absolute', left: 60, top: 440, color: '#f1e6d2', fontFamily: T.ui, fontWeight: 700, fontSize: 40}}>{m}{m === 'grip' ? ' · pinkyCut' : ''}</div>
+      </div>
+    ))}
+  </div>
+);
 const DEPTH: Record<string, (f: number) => React.ReactNode> = {
   'room-wide': f => roomDemo(f, [1, 1.04, 960, 540], 'rw'),
   'room-close': f => roomDemo(f, [3, 3.15, 1500, 470], 'rc'),
+  'ext-corner': extDemo,
+  'face-ecu': ecuDemo,
+  'hand-modes': handDemo,
   // depth-light.md §7: the subject stands IN the one pool of light on the right third; the dark street on the left is
   // the space a threat could come from; the post (FG) cuts the lit edge; the shadow runs forward-left into that dark
   'anti-flat': f => {

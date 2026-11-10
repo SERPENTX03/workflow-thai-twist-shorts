@@ -1,11 +1,11 @@
-# Long-form rules — landscape story films (10–25 min)
+# Long-form rules — landscape story films (18–30 min)
 
 Evidence: `temple-boy` (the first long film; QC 10/10; now in `archive/temple-boy/`) and the general retention shape of narrated story channels. Numbers marked *temple-boy* are measured from its `timeline.json`; treat them as a working baseline, not a law, and update this file when a later film beats them.
 
 ## Format
 
 - 1920×1080, 30 fps, 75 BPM grid (the grid only rounds shot lengths; `fit` decides them from the voice).
-- Runtime: 10–25 min. Set `target` (seconds, `[min, max]`) in story.json: 10–12 min for a single-location story, 18–22 min for a multi-act mystery; longer only when the user asks for it. Without `target`, `npm run story` checks against 600–720 s. Do not pad to reach a length — cut to the story.
+- Runtime: 18–30 min is the base. Set `target` (seconds, `[min, max]`) in story.json: about 18–22 min for a single-location story, 24–30 min for a multi-act mystery; shorter or longer only when the user asks (set `target` to match). Do not pad to reach a length. Without `target`, `npm run story` checks against 1080–1800 s. Do not pad to reach a length — cut to the story.
 - Families: **haunting / grief mystery** (temple-boy), **ตำนานไทย** (folklore told slowly), **true-crime style fiction**. Survival "ถ้า…" stays a Short.
 
 ## Structure — acts with timestamps
@@ -34,7 +34,7 @@ Evidence: `temple-boy` (the first long film; QC 10/10; now in `archive/temple-bo
 
 ## Clues and continuity
 
-- **6–10 clues**, each on screen 3+ times across at least two acts, each paid off by a shot that shows it (not only a line that says it). Keep the table in `brief.md` with shot numbers — update it as shots move.
+- **6–10 clues**, each on screen 3+ times across at least two acts, each paid off by a shot that shows it (not only a line that says it). Keep the table in `brief.md`, and tag the shots in story.json (`clues`, `clue`, `pay`, `data.mirror` — `thai-twist-short/references/story-json.md` → *Clues and mirror pairs*): `npm run story` then counts the plantings and prints the ledger with the real shot numbers, so the brief is copied from it instead of kept by hand.
 - **Continuity facts** (dates, counts, who knows what when) go in `brief.md` *before* writing; check every line against them. A 20 min film gets comments on a wrong year.
 - Same prop, same hand, same side every time (`thai-twist-short/references/hands-poses.md`). A trait that is a clue (short pinky, left-arm wound) is drawn on every appearance.
 - The culprit is on screen in act 1 and often after, with a job in the story of their own — never introduced late. They are **not the only helpful person and not the only person with an oddity** (*Concealment* below).

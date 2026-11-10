@@ -46,7 +46,7 @@ const dir = episodeDir(process.argv[2]);
 const S = loadStory(dir);
 // loadStory keeps timing fields only; staging (data.cast) is read from the file itself
 const RAW_SHOTS = JSON.parse(fs.readFileSync(path.join(dir, 'story.json'), 'utf8')).shots;
-const TARGET = S.target;   // per format (lib.mjs FORMATS): portrait = brand/channel.md pilot 55–80 s, landscape = long-form 600–720 s
+const TARGET = S.target;   // story.json "target", else the Shorts "family", else the format's range (lib.mjs FORMATS / FAMILIES)
 const HOLD = S.format === 'landscape' ? 12 : 6;   // beats before a shot counts as a long hold
 const errors = [], warns = [];
 const err = (i, m) => errors.push(i === null ? m : `shot ${i}: ${m}`);
@@ -203,6 +203,63 @@ for (let k = 1; k < hitShots.length; k++) if (hitShots[k] - hitShots[k - 1] === 
     }
   }
 }
+// Clue ledger (story-json.md → Clues): the brief's clue table as data, so the plantings are counted by the machine and
+// the shot numbers cannot drift. Top level `clues: {id: {label, cover, decoy?}}`; a shot plants with `"clue": "id"`
+// (or a list) and pays off with `"pay": "id"`. Rules: story-rules.md → Planting clues / Hiding the twist,
+// longform-rules.md → Clues and continuity / Concealment.
+const ledger = [];
+{
+  const RAW_STORY = JSON.parse(fs.readFileSync(path.join(dir, 'story.json'), 'utf8'));
+  const defs = RAW_STORY.clues ?? {};
+  const list = v => (v === undefined ? [] : Array.isArray(v) ? v : [v]).map(String);
+  const chapterOf = i => S.chapters.findIndex(c => i >= c.first && i <= c.last);
+  const isInsert = s => /(^|-)(ins|ecu)(-|$)/.test(s.view ?? '') || /^(hand|hands|insert|inserts|ins|photo|page|note|clock)$/i.test(s.scene);
+  const plants = {}, pays = {};
+  RAW_SHOTS.forEach((r, i) => {
+    for (const id of list(r.clue)) (plants[id] ??= []).push(i);
+    for (const id of list(r.pay)) (pays[id] ??= []).push(i);
+  });
+  const used = new Set([...Object.keys(plants), ...Object.keys(pays)]);
+  for (const id of used) if (!defs[id]) err(null, `clue "${id}" is tagged on shot ${(plants[id] ?? pays[id])[0]} but not declared in the top-level "clues" (a typo, or add {"label", "cover"})`);
+  const landscape = S.format === 'landscape';
+  if (!Object.keys(defs).length && !used.size) {
+    warn(null, 'no clue tags: declare "clues" at the top and tag the shots that plant ("clue") and pay off ("pay") each one, so the 3 plantings are counted here and not by hand (story-json.md → Clues)');
+  } else {
+    for (const [id, c] of Object.entries(defs)) {
+      const pay = (pays[id] ?? [])[0];
+      const before = (plants[id] ?? []).filter(i => pay === undefined || i < pay);
+      const name = c.decoy ? `decoy "${id}"` : `clue "${id}"`;
+      if (!before.length) warn(null, `${name} is declared but no shot plants it`);
+      else {
+        if (!c.decoy && before.length < 3) warn(before[0], `${name} is planted ${before.length}× before its pay-off (shots ${before.join(' ')}): the viewer needs to have seen it 3 times`);
+        if (!c.decoy && landscape && new Set(before.map(chapterOf)).size < 2) warn(before[0], `${name} is planted in one chapter only (shots ${before.join(' ')}): spread it over at least two acts`);
+        if (!c.decoy && before.length >= 2 && before.every(i => isInsert(S.shots[i]))) warn(before[0], `${name}: every planting is its own insert (shots ${before.join(' ')}): plant it once in passing, inside a shot about something else`);
+      }
+      if (pay === undefined) warn(null, c.decoy ? `${name} is never explained ("pay"): a decoy left hanging reads as a plot hole` : `${name} has no pay-off shot ("pay": "${id}")`);
+      if (!c.decoy && !String(c.cover ?? '').trim()) warn(null, `${name} has no "cover": the ordinary reason the story gives for it before the turn (a clue with no cover is a spoiler)`);
+      ledger.push(`  ${c.decoy ? 'decoy' : 'clue '} ${id.padEnd(14)} planted ${before.length ? before.join(' ') : '—'}  →  pay ${pay ?? '—'}${c.label ? `   (${c.label})` : ''}`);
+    }
+    const real = Object.values(defs).filter(c => !c.decoy).length, decoys = Object.values(defs).filter(c => c.decoy).length;
+    const [lo, hi] = landscape ? [6, 10] : [3, 5];
+    if (real < lo || real > hi) warn(null, `${real} clues declared (${landscape ? 'long-form' : 'Shorts'}: ${lo}–${hi})`);
+    if (!landscape && !decoys) warn(null, 'no decoy: one detail with the same camera weight that points at the wrong answer ("decoy": true), explained at the reveal');
+  }
+  // Mirror pairs (data.mirror: "<key>"): the first shot with a key is the planting frame, later ones are its mirror at
+  // the reveal, built from the same component (directing.md §7). With data.cam on both, the camera must be the same.
+  const groups = {};
+  RAW_SHOTS.forEach((r, i) => { const k = r.data?.mirror; if (k) (groups[String(k)] ??= []).push(i); });
+  for (const [k, g] of Object.entries(groups)) {
+    if (g.length < 2) { warn(g[0], `data.mirror "${k}" is on one shot only: tag the planting frame and its mirror with the same key`); continue; }
+    // a key may cover a short sequence (the car close-up, then the house): compare each shot with the first of its own scene
+    for (const i of g.slice(1)) {
+      const first = g.find(j => j < i && RAW_SHOTS[j].scene === RAW_SHOTS[i].scene);
+      const cam0 = first === undefined ? undefined : RAW_SHOTS[first].data?.cam, cam = RAW_SHOTS[i].data?.cam;
+      if (cam0 && cam && Math.hypot(cam0[2] - cam[2], cam0[3] - cam[3]) > 40) warn(i, `mirror "${k}": the camera centre differs from the planting frame, shot ${first} (${cam0.slice(2, 4)} vs ${cam.slice(2, 4)}): a mirror repeats the frame and changes only the light and the missing piece`);
+    }
+    ledger.push(`  mirror ${k.padEnd(13)} ${g[0]}  →  ${g.slice(1).join(' ')}`);
+  }
+}
+
 const scenesFile = path.join(ROOT, 'src', 'episodes', path.basename(dir), 'scenes.tsx');
 const scenesSrc = fs.existsSync(scenesFile) ? fs.readFileSync(scenesFile, 'utf8') : '';
 for (const sc of new Set(S.shots.map(s => s.scene))) {
@@ -235,6 +292,7 @@ if (!fs.existsSync(brief)) warn(null, S.format === 'landscape'
   : 'no brief.md — add one with the speaker table (references/voices.md) and the clue list');
 
 console.log(`${path.basename(dir)}: ${S.shots.length} shots, ${S.total.toFixed(1)}s, ${S.totalBeats} beats @ ${S.bpm} BPM`);
+if (ledger.length) console.log('ledger (clues and mirror pairs):\n' + ledger.join('\n'));
 for (const e of errors) console.log('✖ ' + e);
 for (const w of warns) console.log('⚠ ' + w);
 if (!errors.length && !warns.length) console.log('✓ clean');

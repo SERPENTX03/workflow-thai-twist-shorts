@@ -300,6 +300,8 @@ AI มักจัดทุกช็อตเป็น **มุมข้าง�
 | `<MirrorFrame>` | `src/kit/pov.tsx` | S15, A4 กระจกมองหลัง |
 | `PerspFloor`, `SideWall`, `CastShadow`, `Haze`; `data.lightAt` / `data.focus`, grade `noir` | `src/kit/depth.tsx`, `src/kit/stage.tsx` | §5 ชั้นและความลึก, S11 chiaroscuro — `depth-light.md` |
 | `makeRoom`, `RoomShell`, `RFace`, `RBox`, `RShadow`, `standAt`, `roomPxPerCm`, `LightVeil` | `src/kit/room.tsx` (gallery `room-wide`, `room-close`) | ห้องสามมิติที่กล้องเข้าไปได้ทุกมุม; S6/S7 = `makeRoom` อีกตัวที่ VP ต่ำ/สูง; แอ่งแสง — `directing.md` §3–4 |
+| `makeBlock`, `BWall`, `BRect`, `BRoof`, `BFence`, `BPole`, `BFloor`, `blockStand`, `blockPxPerCm` | `src/kit/exterior.tsx` (gallery `ext-corner`) | ฉากภายนอกจากหัวมุม: ผนังสองด้านเข้าจุดลับตาสองจุด แทนภาพหน้าตรง; S6 มุมต่ำ = `hy` ใกล้พื้น, S7 มุมสูง = `hy` เหนือชายคา |
+| `FaceEcu` | `src/kit/ecu.tsx` (gallery `face-ecu`) | S4 ECU ของตา ปาก หรือทั้งหน้า จากหน้าของตัวละครเอง |
 
 ยังไม่มี — ทำใน episode ก่อน แล้วย้ายเข้า kit เมื่อเรื่องที่สองต้องใช้ (CLAUDE.md ข้อ 6):
 

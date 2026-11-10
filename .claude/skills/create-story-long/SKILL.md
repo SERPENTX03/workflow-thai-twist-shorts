@@ -1,12 +1,12 @@
 ---
 name: create-story-long
-description: Take a raw story prompt for a Thai LONG-FORM landscape (16:9, 10–25 min) episode, audit it against the long-form rules, fill the gaps, lift it to be more fun, and produce an approved brief.md BEFORE any story.json is written. Use when the user types /create-story-long followed by their raw story idea or prompt, or asks to plan/outline/improve a long (landscape, คลิปยาว, เรื่องยาว) story first.
+description: Take a raw story prompt for a Thai LONG-FORM landscape (16:9, 18–30 min) episode, audit it against the long-form rules, fill the gaps, lift it to be more fun, and produce an approved brief.md BEFORE any story.json is written. Use when the user types /create-story-long followed by their raw story idea or prompt, or asks to plan/outline/improve a long (landscape, คลิปยาว, เรื่องยาว) story first.
 argument-hint: "{prompt ดิบของเนื้อเรื่อง — สั้นหรือยาวก็ได้}"
 ---
 
 # /create-story-long — ตรวจ เติม ยกระดับ ก่อนเขียนเรื่องยาว
 
-ฟอร์แมตตายตัว: **แนวนอน 16:9, 10–25 นาที** ไม่ต้องถามฟอร์แมต ถ้า prompt ดูเหมาะกับ Shorts (เรื่องสั้น ~1–2 นาที, survival "ถ้า…") ให้บอกในบรรทัดเดียวว่า `/create-story-short` เหมาะกว่า แล้วทำต่อแบบยาวถ้าผู้ใช้ไม่ค้าน
+ฟอร์แมตตายตัว: **แนวนอน 16:9, 18–30 นาที** ไม่ต้องถามฟอร์แมต ถ้า prompt ดูเหมาะกับ Shorts (เรื่องสั้น ~1–2 นาที, survival "ถ้า…") ให้บอกในบรรทัดเดียวว่า `/create-story-short` เหมาะกว่า แล้วทำต่อแบบยาวถ้าผู้ใช้ไม่ค้าน
 
 Skill นี้ **ไม่มีกฎของตัวเอง** มันอ่านกฎจริงแล้ววัดเรื่องกับกฎนั้น และไม่เขียน `story.json` เด็ดขาด (นั่นคือ step 2 ของ `thai-long-story`)
 

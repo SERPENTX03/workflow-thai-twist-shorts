@@ -36,6 +36,8 @@ Mark each chapter's first shot in story.json with `"chapter": "<name>"` (viewer-
 |---|---|---|---|
 | | | | |
 
+The same table lives in story.json as tags (`clues`, `clue`, `pay`, `data.mirror`); fill the shot numbers here from the ledger `npm run story` prints.
+
 ## Suspects and concealment (`longform-rules.md` → *Concealment*)
 
 | Character | Real secret | Lie the viewer can catch | Tell / trait (drawn every time) | Secret paid off in (shot) |

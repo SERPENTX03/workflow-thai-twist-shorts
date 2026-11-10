@@ -20,7 +20,7 @@ A landscape (`"format": "landscape"`) story is checked against `thai-long-story`
 | 4 | Red boxes | `style: "red"` on 2–4 turn lines only |
 | 5 | Keyword marks | about 1 in 2 lines has one `[gold]` or `{red}`; never more than one mark per line |
 | 6 | Knowledge | survival/ตำนาน: a fact or rule every 3–5 shots; each names the visual that shows it |
-| 7 | Clues | 3–5 clues, each planted in 3+ shots before the turn, none named early |
+| 7 | Clues | 3–5 clues, each planted in 3+ shots before the turn, none named early; tagged in story.json (`clues`, `clue`, `pay`) so the ledger `npm run story` prints has no ⚠ |
 | 8 | Variety | plan a shot type per shot (set / close-up / diagram / map / card / exterior / silhouette); no two in a row the same; ≥ 4 types; ≥ 1 close-up and 1 diagram; every `view` names its camera setup and every `npm run shots` ✗ is fixed or answered in one line (`thai-twist-short/references/cinematography.md`) |
 | 9 | Palette arc | not one palette for the whole film; darkest frame at the reveal |
 | 10 | Twist line | ≤ 20 characters, 4 beats, `bighit`, `voLead` ≈ 0.5 |

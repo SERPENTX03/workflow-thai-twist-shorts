@@ -2,7 +2,7 @@
 
 This repo makes Thai vertical (9:16) and landscape twist-ending short stories with **Remotion** (TSX).
 
-**For any request about an episode — a new story idea, writing, scenes, voice, sound, review or render — invoke the `thai-twist-short` skill first** (`.claude/skills/thai-twist-short/SKILL.md`). For a landscape long-form episode (`"format": "landscape"`, 10–25 min) invoke `thai-long-story` instead (`.claude/skills/thai-long-story/SKILL.md`). Where a skill disagrees with this file, this file wins. Before planning shots or drawing scenes, read `.claude/skills/thai-twist-short/references/directing.md`: you are the director and art director of every frame.
+**For any request about an episode — a new story idea, writing, scenes, voice, sound, review or render — invoke the `thai-twist-short` skill first** (`.claude/skills/thai-twist-short/SKILL.md`). For a landscape long-form episode (`"format": "landscape"`, 18–30 min) invoke `thai-long-story` instead (`.claude/skills/thai-long-story/SKILL.md`). Where a skill disagrees with this file, this file wins. Before planning shots or drawing scenes, read `.claude/skills/thai-twist-short/references/directing.md`: you are the director and art director of every frame.
 
 ## Hard rules
 

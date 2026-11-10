@@ -65,7 +65,9 @@ export function loadStory(dir) {
   });
   const F = FORMATS[story.format === 'landscape' ? 'landscape' : 'portrait'];
   const total = round(b * beat);
-  return { ...story, bpm, beat, shots, totalBeats: b, total, chapters: chaptersOf(shots, total), ...F, target: story.target || F.target };
+  // runtime target: the story's own `target`, else its Shorts `family`, else the format's range
+  const target = story.target || (F.format === 'portrait' && FAMILIES[story.family]) || F.target;
+  return { ...story, bpm, beat, shots, totalBeats: b, total, chapters: chaptersOf(shots, total), ...F, target };
 }
 
 // Chapters: a shot with `"chapter": "name"` starts one; it runs until the next. Shots before the first marker form
@@ -89,9 +91,13 @@ export const clock = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).pa
 // story.json `format`: "portrait" (default, 9:16 Shorts) or "landscape" (16:9 long-form for YouTube).
 // target = runtime range in seconds that story-check and qc compare against; capChars = max Thai characters per caption line.
 export const FORMATS = {
-  portrait: { format: 'portrait', W: 1080, H: 1920, target: [55, 80], capChars: 26 },
-  landscape: { format: 'landscape', W: 1920, H: 1080, target: [600, 720], capChars: 42 },
+  // portrait: every Shorts family fits in 45–130 s (story-rules.md → "Pick a format family first");
+  // landscape: 18–30 min as the base, longer when the story or the user asks (set "target") (longform-rules.md → Format). A story narrows it with "target" (or "family" for a Short).
+  portrait: { format: 'portrait', W: 1080, H: 1920, target: [45, 130], capChars: 26 },
+  landscape: { format: 'landscape', W: 1920, H: 1080, target: [1080, 1800], capChars: 42 },
 };
+/** Shorts families and their lengths in seconds (story-rules.md): `"family": "survival" | "haunting" | "folk"` */
+export const FAMILIES = { survival: [60, 110], haunting: [45, 90], folk: [90, 130] };
 
 export const round = x => Math.round(x * 1000) / 1000;
 

@@ -8,10 +8,14 @@ import {Grain} from './horror';
 // Landscape close-up pieces (from temple-boy): a flat hand, rain and drips over a close-up, notebook pages and
 // handwriting, and a full-frame rule card. Use them inside Plate (src/kit/stage.tsx).
 
-/** Flat close-up hand, origin at the wrist joint. grip = fingers curled round something horizontal; open = reaching;
- *  flat = palm only (layer an `open` on top). `pinkyCut` shortens the little finger (a trait clue); `thread` draws a
- *  wrist thread in `threadColor`; `sleeve` adds a cuff. Keep one hand per arm (hands-poses.md). */
-export const Hand: React.FC<{x: number; y: number; s?: number; rot?: number; skin: string; sleeve?: string; pinkyCut?: boolean; mode?: 'grip' | 'open' | 'flat'; flip?: boolean; wrinkles?: boolean; thread?: boolean; threadColor?: string; o?: number}> = ({
+/** Flat close-up hand, origin at the wrist joint, fingers toward +x. grip = fingers curled round something horizontal;
+ *  open = reaching; flat = palm only (layer an `open` on top); fist = closed, knuckles forward (knocking, gripping a
+ *  rail seen end-on); point = index finger out (pressing a button, tracing a line); pinch = thumb and index meeting
+ *  (a key, a coin, a thread, the corner of a photo). `pinkyCut` shortens the little finger (a trait clue); `thread`
+ *  draws a wrist thread in `threadColor`; `sleeve` adds a cuff. Skin and sleeve are the character's own colours
+ *  (src/cast.json, or the episode's roster): every close-up hand in a film belongs to someone the viewer has seen.
+ *  Keep one hand per arm (hands-poses.md). */
+export const Hand: React.FC<{x: number; y: number; s?: number; rot?: number; skin: string; sleeve?: string; pinkyCut?: boolean; mode?: 'grip' | 'open' | 'flat' | 'fist' | 'point' | 'pinch'; flip?: boolean; wrinkles?: boolean; thread?: boolean; threadColor?: string; o?: number}> = ({
   x, y, s = 1, rot = 0, skin, sleeve, pinkyCut, mode = 'grip', flip, wrinkles, thread, threadColor = '#9b3b36', o = 1,
 }) => {
   const dark = 'rgba(0,0,0,.18)';
@@ -38,6 +42,40 @@ export const Hand: React.FC<{x: number; y: number; s?: number; rot?: number; ski
           })}
           <path d="M-20 -78 Q60 -120 120 -96 Q130 -80 110 -70 Q50 -80 0 -48 Z" fill={skin} />
           <path d="M-20 -78 Q60 -120 120 -96" stroke={dark} strokeWidth={3} fill="none" />
+        </>
+      )}
+      {(mode === 'fist' || mode === 'point' || mode === 'pinch') && (
+        <>
+          <rect x={-40} y={-80} width={140} height={150} rx={50} fill={skin} />
+          {/* curled fingers: short blocks with one crease each; `point` and `pinch` keep the index finger out */}
+          {[0, 1, 2, 3].map(i => {
+            if (i === 0 && mode !== 'fist') return null;
+            const cut = pinkyCut && i === 3;
+            const len = [72, 76, 72, 60][i] * (cut ? 0.6 : 1);
+            return (
+              <g key={i}>
+                <rect x={62} y={-74 + i * 38} width={len} height={36} rx={cut ? 8 : 16} fill={skin} />
+                <path d={`M${62 + len * 0.52} ${-70 + i * 38} v28`} stroke={dark} strokeWidth={3} />
+                {cut && <path d={`M${62 + len - 2} ${-72 + i * 38} v32`} stroke="#b77f62" strokeWidth={6} strokeLinecap="round" />}
+              </g>
+            );
+          })}
+          <path d="M64 -72 v146" stroke={dark} strokeWidth={3} />
+          {mode === 'point' && <><rect x={60} y={-74} width={196} height={36} rx={18} fill={skin} /><path d="M150 -70 v28" stroke={dark} strokeWidth={3} /></>}
+          {mode === 'pinch' && <rect x={60} y={-74} width={156} height={34} rx={17} fill={skin} transform="rotate(-13 70 -57)" />}
+          {/* thumb: folded over the fist, tucked under a pointing finger, or up to meet the index for a pinch */}
+          {mode === 'fist' && <>
+            <path d="M-16 -74 Q52 -112 112 -84 Q142 -62 126 -34 Q112 -22 98 -34 Q92 -62 44 -58 Q12 -56 -4 -40 Z" fill={skin} />
+            <path d="M-16 -74 Q52 -112 112 -84 Q142 -62 126 -34" stroke={dark} strokeWidth={3} fill="none" />
+          </>}
+          {mode === 'point' && <>
+            <path d="M-12 -36 Q48 -62 100 -40 Q122 -24 108 -4 Q94 6 84 -6 Q76 -26 40 -22 Q14 -20 0 -6 Z" fill={skin} />
+            <path d="M-12 -36 Q48 -62 100 -40 Q122 -24 108 -4" stroke={dark} strokeWidth={3} fill="none" />
+          </>}
+          {mode === 'pinch' && <>
+            <path d="M-4 -62 Q70 -156 204 -136 Q222 -124 208 -106 Q120 -112 44 -40 Z" fill={skin} />
+            <path d="M-4 -62 Q70 -156 204 -136" stroke={dark} strokeWidth={3} fill="none" />
+          </>}
         </>
       )}
       {mode === 'open' && (
