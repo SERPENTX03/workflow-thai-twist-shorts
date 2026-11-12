@@ -4,7 +4,7 @@
 // Warnings: runtime vs channel target, caption length, estimated voice overrun, cue density, missing scene files.
 import fs from 'node:fs';
 import path from 'node:path';
-import { episodeDir, loadStory, plain, sfxFile, ROOT } from './lib.mjs';
+import { episodeDir, loadStory, plain, sfxFile, ROOT, deadAir, DEAD_AIR } from './lib.mjs';
 
 const CUES = new Set(['hit', 'bighit', 'stamp', 'scratch', 'creak', 'scrape', 'step', 'shriek', 'whoosh', 'bell', 'flip', 'tick']);
 const CHARS_PER_SEC = 9;   // median Thai narration rate measured on boat-10-days (range 5–12)
@@ -80,7 +80,13 @@ S.shots.forEach(s => {
   const i = s.i;
   const lines = plain(s.text).split('\n');
   if (lines.length > 2) warn(i, `caption has ${lines.length} lines (max 2)`);
-  if (lines.some(l => thaiLen(l) > S.capChars)) warn(i, `caption line over ~${S.capChars} characters may wrap: "${lines.find(l => thaiLen(l) > S.capChars)}"`);
+  if (S.captionMode === 'phrase' && s.style !== 'red') {
+    // phrase captions split at spaces, then at Thai word boundaries (src/engine/phrases.ts); a space where the voice
+    // breathes gives a better cut than the word splitter, so very long runs are flagged
+    const PH = S.phraseChars ?? 22;
+    const run = plain(s.text).split(/\s+/).find(w => thaiLen(w) > PH * 1.6);
+    if (run) warn(i, `phrase captions: "${run}" (${thaiLen(run)} chars) has no space — it will be cut at a word boundary; a space where the voice breathes cuts better`);
+  } else if (lines.some(l => thaiLen(l) > S.capChars)) warn(i, `caption line over ~${S.capChars} characters may wrap: "${lines.find(l => thaiLen(l) > S.capChars)}"`);
   if (s.beats > HOLD) warn(i, `${s.beats} beats (${s.dur}s) — long hold; confirm it is a deliberate inspection beat`);
   if (s.voice && !roles[s.voice] && !/^(eleven|gemini):|^[a-z]{2}-[A-Z]{2}-/.test(s.voice)) err(i, `unknown voice role "${s.voice}" (roles: ${Object.keys(roles).join(', ') || 'none'})`);
   if (s.fx && !['phone', 'muffled'].includes(s.fx)) err(i, `unknown voice fx "${s.fx}" (phone, muffled)`);
@@ -260,6 +266,41 @@ const ledger = [];
   }
 }
 
+// Comprehension load (longform-rules.md → Comprehension load; story-rules.md → Narrative clarity). Evidence:
+// same-child, which viewers called hard to follow: 7 speakers, ~8 world laws, the core law first said at 44 %.
+// Laws are declared like clues: top level `rules: {id: {label, core?}}`, `"rule": "id"` on each shot that SAYS it.
+{
+  const RAW = JSON.parse(fs.readFileSync(path.join(dir, 'story.json'), 'utf8'));
+  const landscape = S.format === 'landscape';
+  const at = i => (S.shots[i]?.start ?? 0) / (S.total || 1);
+  const pct = i => `${Math.round(at(i) * 100)} %`;
+  const list = v => (v === undefined ? [] : Array.isArray(v) ? v : [v]).map(String);
+
+  const firstLine = {};
+  RAW_SHOTS.forEach((r, i) => { const w = String(r.who ?? '').replace(/\d+$/, ''); if (w && r.text && !(w in firstLine)) firstLine[w] = i; });   // thyme15 = thyme at another age
+  const speakers = Object.keys(firstLine), maxSpeakers = landscape ? 6 : 3;
+  if (speakers.length > maxSpeakers) warn(null, `${speakers.length} speakers (${speakers.join(', ')}); the viewer holds ≤ ${maxSpeakers}: let the narrator carry the minor ones, or merge roles`);
+  for (const [who, i] of Object.entries(firstLine)) if (landscape && at(i) > 0.5) warn(i, `"${who}" speaks for the first time at ${pct(i)}: a speaker met after half the film is a new face to learn late; introduce them in act 1, or let the narrator carry the line`);
+
+  const defs = RAW.rules, said = {};
+  RAW_SHOTS.forEach((r, i) => { for (const id of list(r.rule)) (said[id] ??= []).push(i); });
+  for (const id of Object.keys(said)) if (!defs?.[id]) err(null, `rule "${id}" is tagged on shot ${said[id][0]} but not declared in the top-level "rules" (a typo, or add {"label", "core"})`);
+  if (defs === undefined) {
+    if (landscape) warn(null, 'no "rules": declare the world laws the plot runs on (a curse, a door, a condition) and tag the shots that say them ("rule"), or "rules": {} if there are none (story-json.md → Clues → World laws)');
+  } else {
+    const ids = Object.keys(defs), maxRules = landscape ? 3 : 2;
+    if (ids.length > maxRules) warn(null, `${ids.length} world laws (${ids.join(', ')}); the viewer holds ≤ ${maxRules}: cut one, or say it as a consequence of the core law`);
+    const core = ids.find(id => defs[id]?.core) ?? ids[0];
+    for (const id of ids) {
+      const s = said[id] ?? [];
+      if (!s.length) { warn(null, `rule "${id}" is never said in words (no shot has "rule": "${id}"): a law the viewer must infer is a law they do not have`); continue; }
+      if (id === core && at(s[0]) > 0.25) warn(s[0], `core law "${id}" is first said at ${pct(s[0])}: say it plainly by ~25 % (same-child: 44 %, and viewers got lost)`);
+      if (id === core && landscape && s.length < 3) warn(s[0], `core law "${id}" is said ${s.length}× (shots ${s.join(' ')}): say it again in other words at the midpoint and before the climax`);
+      ledger.push(`  rule  ${id.padEnd(14)} said ${s.join(' ')}  (first at ${pct(s[0])})${defs[id]?.label ? `   (${defs[id].label})` : ''}`);
+    }
+  }
+}
+
 const scenesFile = path.join(ROOT, 'src', 'episodes', path.basename(dir), 'scenes.tsx');
 const scenesSrc = fs.existsSync(scenesFile) ? fs.readFileSync(scenesFile, 'utf8') : '';
 for (const sc of new Set(S.shots.map(s => s.scene))) {
@@ -275,6 +316,15 @@ if (hasVoice) {
     if (!s) { warn(null, `assets/vo/index.json lists shot ${v.shot}, which no longer exists — regenerate audio`); continue; }
     if (v.start + v.dur > s.start + s.dur - 0.05) warn(v.shot, `generated voice ends ${(v.start + v.dur - (s.start + s.dur)).toFixed(2)}s past the cut`);
     if (v.tempo > 1.15) warn(v.shot, `voice sped up ×${v.tempo} — rushed read`);
+  }
+  // dead air: stretches with no voice (longform-rules.md -> Pacing & Dead-air control)
+  if (S.format === 'landscape') {
+    const mm = t => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, '0')}`;
+    const d = deadAir(JSON.parse(fs.readFileSync(idxFile, 'utf8')), S);
+    for (const g of d.tooLong.slice(0, 12)) warn(null, `dead air ${g.len.toFixed(1)}s with no voice at ${mm(g.from)}${g.hush ? ' (hush)' : ''} - add a line, a sound cue or an insert, or cut the shot (max ${DEAD_AIR.gapMax}s, ${DEAD_AIR.hushMax}s on a hush)`);
+    if (d.tooLong.length > 12) warn(null, `... ${d.tooLong.length - 12} more dead-air gaps over the limit`);
+    if (d.free > DEAD_AIR.freeMax) warn(null, `${Math.round(d.free * 100)}% of the film has no voice (<= ${DEAD_AIR.freeMax * 100}%): shorten the pauses (breath / switchBreath / hold) or cover them with lines`);
+    if (d.perMin > DEAD_AIR.longPerMin) warn(null, `${d.long.length} gaps over ${DEAD_AIR.longGap}s (${d.perMin.toFixed(1)}/min, <= ${DEAD_AIR.longPerMin}/min): the film breathes too slowly`);
   }
 }
 
@@ -292,7 +342,7 @@ if (!fs.existsSync(brief)) warn(null, S.format === 'landscape'
   : 'no brief.md — add one with the speaker table (references/voices.md) and the clue list');
 
 console.log(`${path.basename(dir)}: ${S.shots.length} shots, ${S.total.toFixed(1)}s, ${S.totalBeats} beats @ ${S.bpm} BPM`);
-if (ledger.length) console.log('ledger (clues and mirror pairs):\n' + ledger.join('\n'));
+if (ledger.length) console.log('ledger (clues, mirror pairs, world laws):\n' + ledger.join('\n'));
 for (const e of errors) console.log('✖ ' + e);
 for (const w of warns) console.log('⚠ ' + w);
 if (!errors.length && !warns.length) console.log('✓ clean');

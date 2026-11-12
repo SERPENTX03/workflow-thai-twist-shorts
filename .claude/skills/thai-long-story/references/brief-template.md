@@ -6,6 +6,25 @@ Landscape 16:9, long-form (~<N> min), <genre>, <setting>. <Fiction note if a rea
 **Twist:** <one sentence>
 **Tracked device:** <the list / count the viewer follows, e.g. "กฎ 10 ข้อ, ทีละข้อ">
 
+## Comprehension (`longform-rules.md` → *Comprehension load*)
+
+**The story to a friend, three sentences, ≤ 3 names:** <who wants what> · <what stands in the way, and how this world works> · <what turns>. If it needs more, cut threads now.
+
+| World law (≤ 3, the first is the core) | One sentence, as spoken | First said (shot / %, ≤ ~25 % for the core) | Said again (shots) |
+|---|---|---|---|
+| core | | | |
+
+| Name the viewer hears (≤ ~8) | Role said with it the first time | Seen or placed before the name is said? (shot) |
+|---|---|---|
+| | | |
+
+Groups heard as one label: <"เด็กหกคนบนรถ", "คนที่หายไปสามคน">. Everyone else is a role.
+
+- **Who we are looking for, on screen early:** <shots in the first 2 min and once per act> (search / rescue stories)
+- **Who is dead or not human, and when the viewer is told:** <character · shot> (or: it is the twist → clue table)
+- **How each place tells apart:** <house / room · colour, landmark, tag on return>
+- **Open questions per chapter (≤ ~3 at once):** <chapter · questions open · which one closes>
+
 ## Speakers (one voice role each)
 
 | Character | Gender / age | Role | `who` | Voice role (ElevenLabs) | Symbol (`src/cast.json`) | Trait |
@@ -16,13 +35,25 @@ Landscape 16:9, long-form (~<N> min), <genre>, <setting>. <Fiction note if a rea
 
 Approve every new voice by listening before the full voice run (`thai-twist-short/references/voices.md`).
 
+## Hook contract (first 15 s)
+
+Write the opening lines as spoken, then time them aloud (`longform-rules.md` → *Hook contract*). Each row is said in words by 0:15; the twist is not.
+
+| Must land | Line (Thai, as spoken) | Time |
+|---|---|---|
+| Who (role) | | |
+| The deal or the threat | | |
+| A number | | |
+| The question (may ask "คุณ" once) | | |
+| Name, age, why they cannot leave (by ~0:25) | | |
+
 ## Chapters
 
-Mark each chapter's first shot in story.json with `"chapter": "<name>"` (viewer-facing: the names become YouTube chapters, so no spoilers). `npm run chapter -- episodes/<slug>` fills the real times and shot ranges.
+Mark each chapter's first shot in story.json with `"chapter": "<name>"` (viewer-facing: the names become YouTube chapters, so no spoilers). `npm run chapter -- episodes/<slug>` fills the real times and shot ranges. Blocks of **2–4 min**: split an act into two or three chapters when it runs longer, and give each block its own last line, an open question that leads into the next card.
 
 | # | Part | Target time | Shots (fill after writing) | Re-hook / mini-reveal | Ends on (open question) |
 |---|---|---|---|---|---|
-| 0 | Cold open | 0:00–0:45 | | | |
+| 0 | Cold open | 0:00–0:30 | | | |
 | 1 | Act 1 — | | | | |
 | 2 | Act 2a — | | | | |
 | 3 | Midpoint — | ~50–60 % | | | |

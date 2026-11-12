@@ -89,7 +89,11 @@ The clue table of the outline / `brief.md` is also written into story.json, so `
 - the count is outside 3–5 (Shorts) / 6–10 (long-form), or a Short has no decoy;
 - a `data.mirror` key is on one shot only, or the mirror's camera centre is not the original's.
 
-A tag used on a shot but not declared in `clues` is an error (a typo). The tags are not shown on screen and cost nothing: add them while writing the shots, and keep `brief.md`'s table as the readable copy.
+A tag used on a shot but not declared in `clues` is an error (a typo).
+
+**World laws** (`longform-rules.md` → *Comprehension load*) use the same pattern: top-level `"rules": {"door": {"label": "ประตูเปิดเมื่อแม่จำลูกตัวจริงได้", "core": true}}` and `"rule": "door"` on every shot that **says** the law in plain words (not shots that only show it working). A law is how the world works (a curse, a door, a condition), not an item of the tracked list. `"rules": {}` declares a story with none. `npm run story` warns when there are more than 3 laws (Shorts: 2), when the core law is first said after 25 % of the runtime, or (long-form) said fewer than 3 times; it also warns on more than 6 speakers (Shorts: 3) and on a speaker whose first line comes after half the film.
+
+The tags are not shown on screen and cost nothing: add them while writing the shots, and keep `brief.md`'s table as the readable copy.
 
 ## Generated files (don't edit)
 
@@ -104,6 +108,7 @@ Workflow and rules: the `thai-long-story` skill. Fields:
 | Field | Where | Meaning |
 |---|---|---|
 | `format` | top | `"landscape"` → 1920×1080, subtitles in the bottom band (`Caption` with `landscape`, max 2 lines, ≤ ~42 chars), runtime target 1080–1800 s (18–30 min). Default `"portrait"` keeps every Shorts rule. `target: [min, max]` overrides the range. |
+| `captionMode`, `phraseChars` | top | `"phrase"`: the caption shows one short line at a time (≤ `phraseChars` visible chars, default 22), cut at spaces, line breaks and then Thai word boundaries, switched at the pauses the voice really makes (`gaps` that `npm run timeline` measures in each line into `timeline.json` → `vo`; `src/engine/phrases.ts`). Red-box shots stay whole. Default `"shot"` = the whole `text` for the whole shot. Set it on every new long film (`thai-long-story/references/channel-playbook.md`). Write a space where the voice breathes; `story` flags very long runs without one. |
 | `voiceTempo` | top (or `tempo` per shot) | Base speed for every voiced line, e.g. `1.1` when a slow TTS read makes the film run long. `voice` applies it, `fit` sizes shots with it. No re-synthesis (and no credits): lines stay cached. |
 | `breath`, `switchBreath`, `minBeats`, `fitStep` | top | `npm run fit -- episodes/<slug>` sizes every voiced shot to its measured line: voLead + line + 0.15 + breath (+ switchBreath when the next line has another `who`), rounded up to `fitStep` beats, plus the shot's `hold`. Run voice first; lines are cached, so re-running costs nothing. |
 | `chapter` | shot | `"ชื่อบท"` starts a chapter on this shot; it runs until the next. Shots before the first marker are chapter 0. Written to `timeline.json` → `chapters`; `npm run chapter` lists them, renders one chapter's Board sheets or preview, and prints YouTube chapter lines. |
