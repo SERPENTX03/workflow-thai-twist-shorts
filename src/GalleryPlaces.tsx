@@ -21,6 +21,7 @@ import {Grain} from './kit/horror';
 import {GoldPile} from './kit/live';
 import {DarkPassage} from './kit/passage';
 import {Canal, Motorcycle, ShopRow, SideRoadSet, StiltHouse} from './kit/places';
+import {PoliceOffice} from './kit/policestation';
 import {RENTED_ROOM, RentedRoom, rentedRoomScreen} from './kit/rentedroom';
 import {Actors, Stage, type RosterEntry} from './kit/stage';
 import {CarOutside, CopyCounter, HouseFront, PoliceTruck, SchoolFront, SchoolRoom, SchoolStore, WoodRoom} from './kit/village';
@@ -148,6 +149,11 @@ const PLACES: Record<string, Place> = {
     cast: ['lead-male-A@740 arm=b-wheel prop=wheel wary'],
     floor: DRIVER.floor, ppc: DRIVER.pxPerCm,
     light: 'night', lightAt: [960, 200], cams: [[1, 960, 540], [1.6, 760, 500], [2.8, 740, 340]],
+  },
+  'police-office': {
+    set: <PoliceOffice />,
+    cast: ['police-A@640,860 h=480 yaw=0.2 worried'],
+    light: 'day', lightAt: [800, 180], cams: [[1, 900, 540], [1.7, 760, 560], [3, 650, 480]],
   },
   'car-seat': {
     set: <CarInterior view="seat" f={F} seat="torn" />,

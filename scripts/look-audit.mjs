@@ -163,6 +163,14 @@ for (const i of cam) {
   (byMood[mood] ??= []).push(metrics.get(i).shadow);
 }
 const avg = a => a.reduce((s, v) => s + v, 0) / a.length;
+// channel-playbook.md: dark is for turns. Film mean ≥ 80/255 on landscape; the first minute no darker than the median.
+if (cam.length) {
+  const filmMean = avg(cam.map(i => metrics.get(i).mean));
+  const first = cam.filter(i => S.shots[i].start < 60).map(i => metrics.get(i).mean);
+  const firstMean = first.length ? avg(first) : filmMean;
+  const okFilm = portrait || filmMean >= 80, okFirst = firstMean >= median;
+  console.log(`  ${okFilm && okFirst ? '✓' : '✗'} brightness: film mean ${Math.round(filmMean)}${portrait ? '' : ' (≥ 80)'} · first minute ${Math.round(firstMean)} vs median ${Math.round(median)} — dark is for turns (thai-long-story/references/channel-playbook.md)`);
+}
 console.log(`  ${cam.length} set shots: ${Object.entries(byMood).map(([k, v]) => `${k} ${v.length} (shadow avg ${pct(avg(v))})`).join(' · ')}`);
 const kinds = [['shadow', /in shadow/], ['flat', /flat light/], ['washed', /washed out/], ['murky', /murky/], ['reveal', /red-box/], ['centre', /dead centre/]];
 console.log(`  ✗ ${kinds.map(([k, re]) => `${k} ${issues.filter(x => x.why.some(w => re.test(w))).length}`).join(' · ')}`);

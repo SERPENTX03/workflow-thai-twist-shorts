@@ -13,7 +13,7 @@ What to check on a frame you have open: `thai-twist-short/references/review.md` 
 
 | Look for | Right means |
 |---|---|
-| Chapter start | each chapter opens on a new image, not a continuation of the last frame; the cold open makes its question clear within 10 s |
+| Chapter start | each chapter opens on a new image, not a continuation of the last frame; the cold open meets the hook contract by 0:15 (who · deal or threat · number · question); each chapter ends on an open-question line before its card |
 | Subtitles | readable at 480 px wide; no face or clue under the subtitle band; faces in wides ≥ ~90 px |
 | Continuity | each clue matches the brief table (side, trait, prop); HUD time only moves forward except in `past`; counts and dates match the continuity list |
 | Concealment | no line or ring before the slip points at the culprit's details (`longform-rules.md` → *Concealment*); decoys get the same camera weight |
@@ -55,6 +55,7 @@ Renders the whole film once, normalises to −14 LUFS and runs `qc` (`renders/<s
 ## 4. Packaging
 
 - **Cover**: export `COVERS` (`[{id, component}]`) from `src/episodes/<slug>/cover.tsx`; `src/Root.tsx` finds it by itself, so archiving an episode leaves Root alone (`father-ledger` has `FatherLedgerCoverA–C`, each a real set and cast with `<CastSprite />` mounted); render 2–3 variants with `npx remotion still src/index.ts <StillId> episodes/<slug>/renders/<slug>-cover-A.jpg` and let the user pick. Big face or the key object, ≤ 4 words of text, readable at 320 px wide. The cover uses only what the cold open shows (`longform-rules.md` → *Concealment* rule 8).
-- **Title**: 3 options in `renders/<slug>-description.md` — the question or the strangest number first, genre tag after `|`.
+- **Keep the cover pattern**: CTR is 7 % (`channel-playbook.md`), so covers are not the problem. Change titles before covers.
+- **Title**: 3 options in `renders/<slug>-description.md`, at least one in the benchmark form `<ชื่อสั้น จำง่าย> | <กติกา/ผลลัพธ์ที่ชัด> (เต็มเรื่อง)`, e.g. "กฎกะดึก ร้าน 24 ชั่วโมง | ทำผิดกฎข้อเดียว = หายตัว"; the others put the question or the strangest number first. Suggest running them through YouTube Studio's *Test & Compare*, and log the winner in `channel-playbook.md`.
 - **Description**: 2–3 lines of hook (no spoiler), a comment prompt, the fiction note, hashtags, and **YouTube chapters** — paste the lines `npm run chapter -- episodes/<slug>` prints (they start at 0:00; YouTube needs ≥ 3 chapters of ≥ 10 s). Chapter names are viewer-facing: no spoilers in them.
 - Publishing or uploading is outward-facing: ask first (CLAUDE.md rule 8).

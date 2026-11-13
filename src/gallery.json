@@ -893,6 +893,20 @@
       "use": "ให้ตัวละครนั่งบนแคร่ ใส่ sit"
     },
     {
+      "id": "bench-table",
+      "nameTh": "โต๊ะม้านั่งติด (โรงอาหาร/ร้านข้าว)",
+      "code": "<BenchTable r u={[u0,u1]} w part=\"far\" />  …คนนั่ง (benchSeat(r,u,w,cm) → x,y,h)…  <BenchTable r u w part=\"front\" />  // roomAt(r,x,y) snap who@x,y เข้าม้านั่ง",
+      "uses": "BenchTable",
+      "use": "คนนั่งฝั่งไกลหันหน้าเข้ากล้อง โต๊ะบังตัก ไม่ต้องใช้เก้าอี้ ขนาดตามท่า sit ของตัวละคร (SIT_CM) · ใช้จริง: bed-two โรงอาหาร"
+    },
+    {
+      "id": "seat-chairs",
+      "nameTh": "เก้าอี้ตามสถานที่",
+      "code": "\"seat\": \"office\" | \"steel\" | \"plastic\" | \"wood\"  →  Actors chairs={{kind}}",
+      "uses": "SeatChair",
+      "use": "office = โต๊ะทำงาน/เคาน์เตอร์/ป้อมยาม · steel = เก้าอี้เฝ้าไข้ รพ./คลินิก · plastic = ร้านข้าว/โรงพัก · wood = เก้าอี้กินข้าวที่บ้านเท่านั้น (ทางเลือกสุดท้าย)"
+    },
+    {
       "id": "helmet-shell",
       "nameTh": "หมวกกันน็อก + กล้องติดหมวก",
       "code": "<HelmetShell shield fog={0.2} />  <HelmetCams side rec f={f} />  // วาดในเฟรม 200×520",

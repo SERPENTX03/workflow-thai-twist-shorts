@@ -31,7 +31,7 @@ const KEEP = [...new Set([
     'field-vest', 'shop-apron', 'school', 'school-kid', 'bow', 'raincoat', 'hood', 'pakama'].map(a => `acc-${a}`),
   ...['question', 'exclaim', 'anger', 'drops', 'zzz', 'dizzy', 'idea', 'shiver', 'gloom'].map(m => `mark-${m}`),
   // frequently used props, icons, set pieces
-  ...['glass', 'bottle', 'coin', 'phone', 'paper', 'key', 'flashlight', 'bowl', 'box', 'lantern', 'mug', 'fan', 'phone-ear', 'spoon', 'book'].map(p => `prop-${p}`),
+  ...['glass', 'bottle', 'coin', 'phone', 'paper', 'key', 'flashlight', 'bowl', 'box', 'lantern', 'mug', 'fan', 'phone-ear', 'spoon', 'book', 'revolver', 'cassette'].map(p => `prop-${p}`),
   ...['clock', 'warn', 'check', 'cross', 'arrow', 'pin', 'fire'].map(i => `icon-${i}`),
   ...['door', 'door-open', 'window', 'table', 'chair', 'bulb'].map(s => `set-${s}`),
 ])];

@@ -106,6 +106,8 @@ S.shots.forEach(s => {
     if (!s.who) warn(i, `"${who}" has talk on a narrated line — only the speaker's mouth moves; drop talk or set "who"`);
     else if (who !== s.who && who.replace(/\d+$/, '') !== s.who) warn(i, `"${who}" has talk but the line is ${s.who}'s — only the speaker's mouth moves; give ${who} a listening face instead`);
   }
+  // the plain wooden chair is the last resort (CLAUDE.md rule 16): name the chair that belongs to the place, or seat them on the set's own seat
+  if (RAW_SHOTS[i]?.data?.seat === true) warn(i, 'data.seat: true draws a wooden chair — name the kind the place has ("office" desk/counter, "steel" hospital/clinic, "plastic" stall/front desk, "wood" only a home dining chair), or seat them on the set\'s own bench/bed/sofa and drop seat');
 
   // A walker or runner must say how it moves: data.move [x0, x1] (kit Actors travels them) or data.motion ("walk"...) when the
   // scene moves them itself. Undeclared, the figure may cycle its legs on the spot (dont-open-curtain shot 14). npm run motion checks the declared ones.
@@ -325,6 +327,38 @@ if (hasVoice) {
     if (d.tooLong.length > 12) warn(null, `... ${d.tooLong.length - 12} more dead-air gaps over the limit`);
     if (d.free > DEAD_AIR.freeMax) warn(null, `${Math.round(d.free * 100)}% of the film has no voice (<= ${DEAD_AIR.freeMax * 100}%): shorten the pauses (breath / switchBreath / hold) or cover them with lines`);
     if (d.perMin > DEAD_AIR.longPerMin) warn(null, `${d.long.length} gaps over ${DEAD_AIR.longGap}s (${d.perMin.toFixed(1)}/min, <= ${DEAD_AIR.longPerMin}/min): the film breathes too slowly`);
+  }
+}
+
+// continuity (CLAUDE.md rule 18): someone who cannot move (lying in a bed, asleep, tied, trapped) does not vanish between two
+// shots of the same place. Once an actor lies in a place, every later shot of that place that shows the room must still
+// have them there, until a shot declares data.gone: ["<id>"] (moved, woke and left, taken away) or data.bed1 "empty"/"gone".
+// Close-ups of another thing (-ecu, -ins, -fif, -sil, -pov, -cctv, hide-*) don't show the room and are skipped. A flashback
+// (view or scene named "past") neither starts nor ends it. Lists the shots to fix, not a score.
+{
+  const base = c => String(c).split(/[@ ]/)[0].replace(/(\d+|T)$/, '');
+  const NO_ROOM = /(-ecu|-fif|-sil|-ins|-pov|-cctv|^hide-|^tape-|^eye-|^blink)/;
+  const placed = new Map();   // place -> Map(actor id -> first shot)
+  const gone = new Map();     // place -> Set(actor id)
+  const missing = new Map();  // `${place}:${id}` -> [shots]
+  RAW_SHOTS.forEach((sh, i) => {
+    const d = sh.data ?? {}, place = sh.scene, v = String(sh.view ?? '');
+    if (!place || place === 'past' || /past/.test(v) || /^(card|title|rules|endcard|ins|phone)$/.test(place)) return;
+    const cast = (d.cast ?? []).filter(c => !/-sil\b/.test(String(c).split('@')[0]));
+    const g = gone.get(place) ?? new Set(); gone.set(place, g);
+    for (const id of d.gone ?? []) g.add(base(id));
+    if (d.bed1 === 'empty' || d.bed1 === 'gone') for (const id of placed.get(place)?.keys() ?? []) g.add(id);
+    const here = placed.get(place) ?? new Map(); placed.set(place, here);
+    for (const c of cast) if (/\blie\b/.test(c) && !g.has(base(c))) { here.set(base(c), here.get(base(c)) ?? i); }
+    if (NO_ROOM.test(v)) return;
+    const present = new Set(cast.map(base));
+    for (const id of here.keys()) if (!present.has(id) && !g.has(id) && (here.get(id) < i)) {
+      const k = `${place}:${id}`; missing.set(k, [...(missing.get(k) ?? []), i]);
+    }
+  });
+  for (const [k, shots] of missing) {
+    const [place, id] = k.split(':');
+    warn(null, `continuity: "${id}" lies in the ${place} (shot ${placed.get(place).get(id)}) but is missing from ${shots.length} later ${place} shot(s): ${shots.slice(0, 10).join(', ')}${shots.length > 10 ? ', …' : ''} — put them back on the bed, or declare data.gone: ["${id}"] on the shot where they leave`);
   }
 }
 

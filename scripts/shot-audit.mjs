@@ -120,7 +120,9 @@ const still = camShots.filter(s => {
   const [z0, z1, cx, cy, cx1 = cx, cy1 = cy] = d.cam;
   return Math.abs(z1 / z0 - 1) < 0.06 && Math.hypot((cx1 - cx) * z0, (cy1 - cy) * z0) < 80;
 });
-ok(still.length <= camShots.length * 0.5, `${still.length}/${camShots.length} camera shots of ≥ 3 s move under 6 % push / 80 px pan (≤ 50 %; hold shots with hush are fine, say so in the note)${still.length ? ` — e.g. ${still.slice(0, 10).map(s => s.i).join(' ')}` : ''}`);
+// channel-playbook.md (2026-11-12): ~60 % of the benchmark's frames move, 13–20 % of ours; long-form allows 30 % still.
+const STILL_MAX = S.format === 'landscape' ? 0.3 : 0.5;
+ok(still.length <= camShots.length * STILL_MAX, `${still.length}/${camShots.length} camera shots of ≥ 3 s move under 6 % push / 80 px pan (≤ ${Math.round(STILL_MAX * 100)} %; hold shots with hush are fine, say so in the note)${still.length ? ` — e.g. ${still.slice(0, 10).map(s => s.i).join(' ')}` : ''}`);
 
 // Staging (CLAUDE.md rule 14, directing.md §5 and §5.1): the cast are front-facing sprites, so a person who stands
 // face-on with both arms down is a paper cutout, and a "close-up" of a face that looks straight out of the frame is

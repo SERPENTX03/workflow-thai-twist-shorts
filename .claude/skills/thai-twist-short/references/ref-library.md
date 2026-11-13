@@ -10,6 +10,8 @@ Measured from reference clips the user picked for their view counts (contact she
 | เมื่อไฟดับทั้งเมือง EP 1 | 108 s | Survival series, named lead (เจย์) + cat (ส้มโอ) | Bangkok condo night, warm lamp; diagrams of the building's water pipe | white, gold/red keyword inside the line | cliffhanger "ตีสอง… แล้วเรียกชื่อเขา…" → EP 2 card "ใครอยู่หน้าประตู" |
 | ตำนานบ้าลึก (ยายแพง) | 130 s | Thai folklore legend, third person | warm lantern-lit stilt house ↔ blue night forest, giant creature | small white line on dark pill | "ตอนหน้า ปากเท่ารูเข็ม" card |
 | ถ้าซอมบี้… (โรงเรียน) | 70 s | Survival "if" scenario, "คุณ" + named classmates + dog (เจ้าด่าง) | bright Thai school day, blurred background, close-ups | white, gold keyword, red box on turn lines | twist: the friend in long sleeves was bitten from the start → "ตอนต่อไป" card + follow line |
+| กฎกะดึก ร้าน 24 ชั่วโมง (Real Lens, 570K/9d) | 11:09, 16:9 | 5 × ~2-min rule episodes compiled, first person "ผม" + "คุณ" hook | bright store interior (mean luma 92) ↔ night exterior; strong background blur, vignette | one line, 2–4 words, new line every ~1.3 s; rule card pinned top-left | each EP ends on a title card "EP.X … ตอนต่อไป EP.Y …" |
+| อย่ากินซาลาเปาไส้พิเศษ! (Real Lens, 450K/7d) | 29:35, 16:9 | detective undercover vs ลุงข้างบ้าน (recurring villain, later ภาค 2) | warm shophouse soi, daylight most of the time (luma 97); dark only around the turns | same one-line, ~1.3 s captions; callout labels on the suspect (หัวโล้น / แผลเป็น / รอยสัก) | full story, series character carries on |
 
 All four deliver at **−14 LUFS integrated** (the project's target is right).
 
@@ -39,3 +41,4 @@ All four deliver at **−14 LUFS integrated** (the project's target is right).
 | Date | Clip | New pattern found |
 |---|---|---|
 | 2026-10-24 | the four clips above | first pass — patterns 1–12 |
+| 2026-11-12 | Real Lens long-form ×2 (vs ours night-shift-rules, father-ledger) | Hook "ถ้า… คุณจะรับไหม" + money + rule inside 12 s; captions one short line every ~1.3 s; ~60 % of frames move (push-ins, hands acting, tags popping) vs ~15 % ours; real silence between phrases; 2-min episode blocks with title cards inside a long video; dossier callouts on characters |

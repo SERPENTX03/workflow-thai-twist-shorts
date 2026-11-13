@@ -13,10 +13,10 @@ Reference builds: `fifth-room` and `father-ledger` (`episodes/<slug>/brief.md`, 
 
 | Step | Do | Command | Gate |
 |---|---|---|---|
-| 0 | New episode, then set `"format": "landscape"` and `target` (seconds, `[min, max]`; without it `npm run story` checks against 1080–1800 s, 18–30 min) in story.json | `npm run new -- <slug> "ชื่อเรื่อง"` | story.json exists |
+| 0 | New episode, then set `"format": "landscape"`, `"captionMode": "phrase"` (one caption line at a time, `channel-playbook.md`) and `target` (seconds, `[min, max]`; without it `npm run story` checks against 1080–1800 s, 18–30 min) in story.json | `npm run new -- <slug> "ชื่อเรื่อง"` | story.json exists |
 | 1 | **Brief + outline** — copy `references/brief-template.md` to `episodes/<slug>/brief.md`: logline, twist, speakers, chapter plan with timestamps, clue table, continuity facts | — | passes the *Long-form checklist* in `references/longform-rules.md`; user says yes to the brief |
 | 2 | Write story.json **one chapter at a time**: the chapter's first shot carries `"chapter": "<name>"`; draft beats roughly, `fit` sizes them later | `npm run story -- episodes/<slug>` after each chapter; `npm run chapter -- episodes/<slug>` lists them | 0 errors; caption + chapter warnings fixed; every clue of the brief tagged (`clues` at the top, `clue` / `pay` on shots, `data.mirror` on mirror pairs — `thai-twist-short/references/story-json.md` → *Clues and mirror pairs*) and the ledger `npm run story` prints matches the brief; then, with the whole script written and **before step 3 spends voice credits**, the cold read (`npm run coldread -- episodes/<slug>`, `.claude/story/cold-read.md`): readers who have not seen the brief guess at 25 / 50 / 75 %; the table goes into `brief.md` and to the user |
-| 3 | Voice draft (cached per line; only new/changed lines cost credits) → fit → audio | `npm run voice`, `npm run fit`, `npm run audio` (each `-- episodes/<slug>`) | no `⚠ OVER`; runtime inside `target`; listen to one line per speaker (`thai-twist-short/references/voices.md`) |
+| 3 | Voice draft (cached per line; only new/changed lines cost credits) → fit → audio | `npm run voice`, `npm run fit`, `npm run audio` (each `-- episodes/<slug>`) | no `⚠ OVER`; runtime inside `target`; **no dead-air warning from `npm run story`** (voice gaps ≤ 3.5 s, voice-free ≤ 15 %; fix before drawing a single scene, `longform-rules.md` → *Pacing & Dead-air*); listen to one line per speaker (`thai-twist-short/references/voices.md`) |
 | 4 | Roster + places + inserts, then the shots — every camera shot first gets a `note` (the picture in one sentence), each recurring place is built once in perspective (`src/kit/room.tsx`) and framed from several positions (a canon place from `universe/canon.json` starts from its `set`, matches its `state`, and moves into `src/kit/` on its second story; after the review, write the `cams` that worked and the new `state` of every `keep` place back to canon — CLAUDE.md rule 17), light from a source in the frame that pools (`thai-twist-short/references/directing.md`, `depth-light.md`); any shot may be its own component | edit `src/episodes/<slug>/`, then `npm run shots` and `npm run check` (each `-- episodes/<slug>`) | tsc 0 errors; placeholders only where not drawn yet; each Board frame matches its `note` and passes `directing.md` §7; `shots` / `look` ✗ lines fixed or answered in one line |
 | 5 | **One-pass review** (CLAUDE.md rule 5; no per-chapter scoring) | `npm run review -- episodes/<slug> --board` → suspect list + `out/<slug>-review.html` (`references/review-long.md`) | audit ✗ fixed or answered; suspect/changed frames looked at full size; the user scrolls the page once, flags odd shots, they are fixed once; `--accept` |
 | 6 | Timing check = the single final render; a chapter preview only if the user asks or a chapter is in doubt | `npm run chapter -- episodes/<slug> <n> --render` (optional) | the user has seen the frames first (CLAUDE.md rule 4) |
@@ -27,7 +27,7 @@ Reference builds: `fifth-room` and `father-ledger` (`episodes/<slug>/brief.md`, 
 
 | Shorts rule | Long-form rule (details: `references/longform-rules.md`) |
 |---|---|
-| Hook at frame 0 | **Cold open** 30–60 s with the strongest image + the central question, then a title card |
+| Hook at frame 0 | **Cold open** 20–40 s with the strongest image; the **hook contract** (who · deal or threat · number · question) lands by 0:15, then a title card |
 | Something new every 2–4 s | Average shot 2.5–4 s (temple-boy 2.8 s); a **pattern change every 30–60 s** (new set, insert, flashback, light change) |
 | One twist | **Act structure**: midpoint reframe, a mini-reveal every 2–3 min, final reveal at ~85–90 % |
 | ≤ 3 named humans | Up to ~6 speakers, each one voice role and one trackable trait |
@@ -64,6 +64,7 @@ story.json knobs: `chapter`, `voiceTempo`, `breath`, `switchBreath`, `minBeats`,
 
 | File | Read it when |
 |---|---|
+| `references/channel-playbook.md` | **before step 1 and step 8**: the channel's analytics, what stays identity (twist, long film, universe, storyteller, directed shots, cover pattern) and the measured delivery fixes (hook, captions, motion, light, pauses, chapter blocks) |
 | `references/longform-rules.md` | outlining, writing story.json, pacing, captions, cast, sound, safe zones — and the gate checklist |
 | `references/brief-template.md` | step 1, starting `episodes/<slug>/brief.md` |
 | `.claude/story/cold-read.md` | end of step 2, before voice: test whether the twist is easy to guess (`npm run coldread`) |

@@ -985,5 +985,1049 @@
   "dur": 6,
   "influence": 0.5,
   "episode": "same-child"
+ },
+ "b13110218dd94cd7": {
+  "name": "engine",
+  "prompt": "small Thai motorcycle (110cc scooter) revving and pulling away on a gravel road at night, dust, mid distance",
+  "dur": 2.5,
+  "influence": 0.6,
+  "episode": "rear-cam"
+ },
+ "6c511e722e1ed3fb": {
+  "name": "night",
+  "prompt": "quiet rural Thai night ambience by an old cemetery, crickets, distant dog, light wind through trees",
+  "dur": 8,
+  "influence": 0.5,
+  "episode": "rear-cam"
+ },
+ "de0130f0380dfb7f": {
+  "name": "neon",
+  "prompt": "old fluorescent neon tube buzzing and flickering off and on once, gas station at night",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "rear-cam"
+ },
+ "a035895bc6870d59": {
+  "name": "can",
+  "prompt": "aluminium energy drink can tossed and caught in a hand, then cracked open with a fizz",
+  "dur": 1.2,
+  "influence": 0.6,
+  "episode": "rear-cam"
+ },
+ "ff6bfa54ec7f0b18": {
+  "name": "glitch",
+  "prompt": "small digital video screen glitch, short static crackle and signal dropout",
+  "dur": 1,
+  "influence": 0.6,
+  "episode": "rear-cam"
+ },
+ "96ccd71a278ba601": {
+  "name": "knock3",
+  "prompt": "three knuckle knocks on a rolled-down steel shop shutter at night, metallic rattle, empty street",
+  "dur": 1.8,
+  "influence": 0.6,
+  "episode": "rear-cam"
+ },
+ "7661681c8f335b8f": {
+  "name": "clink",
+  "prompt": "small heavy metal objects clinking inside a styrofoam food box when it tilts, muffled, close",
+  "dur": 0.8,
+  "influence": 0.6,
+  "episode": "rear-cam"
+ },
+ "0b7befb9c81284cd": {
+  "name": "idle",
+  "prompt": "small motorcycle engine idling steadily at night in fog, close, low putter",
+  "dur": 4,
+  "influence": 0.6,
+  "episode": "rear-cam"
+ },
+ "c574afeef4656639": {
+  "name": "truck",
+  "prompt": "big Thai trailer truck turning into an old gas station at night, air brakes hiss, diesel rumble",
+  "dur": 3,
+  "influence": 0.6,
+  "episode": "rear-cam"
+ },
+ "6091d326372eb079": {
+  "name": "tape",
+  "prompt": "black electrical tape pulled fast off a roll and wrapped around a styrofoam box, sticky rip",
+  "dur": 1,
+  "influence": 0.6,
+  "episode": "rear-cam"
+ },
+ "c8ab7b5c153f7867": {
+  "name": "station",
+  "prompt": "empty Thai roadside gas station at 2am: fluorescent hum, distant highway traffic, crickets",
+  "dur": 8,
+  "influence": 0.5,
+  "episode": "rear-cam"
+ },
+ "ee40d90bf74102c2": {
+  "name": "chime",
+  "prompt": "small convenience store door chime, two-tone electronic ding dong, late night, quiet",
+  "dur": 1,
+  "influence": 0.6,
+  "episode": "rear-cam"
+ },
+ "afff87768fc5e025": {
+  "name": "siren",
+  "prompt": "Thai police patrol pickups switching on high beams and a short siren whoop at once, at night in a quiet cemetery",
+  "dur": 2,
+  "influence": 0.6,
+  "episode": "rear-cam"
+ },
+ "3b27d9b89b2938e3": {
+  "name": "morning",
+  "prompt": "early morning in rural Thailand, birds waking up, distant rooster, light breeze, calm",
+  "dur": 6,
+  "influence": 0.5,
+  "episode": "rear-cam"
+ },
+ "bc9d235e66b8d5d2": {
+  "name": "hum",
+  "prompt": "flickering fluorescent tube buzz and a low refrigeration compressor hum in a narrow back corridor of a convenience store at night",
+  "dur": 8,
+  "influence": 0.6,
+  "episode": "night-shift-rules"
+ },
+ "fdd3ae632c1eee97": {
+  "name": "thump",
+  "prompt": "heavy muffled thud from behind a thick insulated stainless steel walk-in freezer door, something heavy dropped inside, close",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "night-shift-rules"
+ },
+ "6de1710e7f56dcc0": {
+  "name": "chime",
+  "prompt": "small convenience store door chime, two-tone electronic ding dong, late night, quiet",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "night-shift-rules"
+ },
+ "f217258a52057051": {
+  "name": "engine",
+  "prompt": "white panel van engine starting and pulling into an empty parking lot at night, tyres on concrete, mid distance",
+  "dur": 3,
+  "influence": 0.6,
+  "episode": "night-shift-rules"
+ },
+ "5e8d01cec2f22ea1": {
+  "name": "truck",
+  "prompt": "big truck passing fast on an empty highway at night, doppler whoosh, distant",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "night-shift-rules"
+ },
+ "f8d57b0afdddcd2a": {
+  "name": "night",
+  "prompt": "empty Thai roadside at night by a lone convenience store: crickets, distant highway traffic, faint neon hum",
+  "dur": 8,
+  "influence": 0.5,
+  "episode": "night-shift-rules"
+ },
+ "bd47ddba376d6b13": {
+  "name": "scanner",
+  "prompt": "muffled police radio scanner chatter and static coming from inside a closed van, unintelligible voices, eerie, close",
+  "dur": 3,
+  "influence": 0.6,
+  "episode": "night-shift-rules"
+ },
+ "4c20d9733191b441": {
+  "name": "radio",
+  "prompt": "police shoulder radio crackle and squelch, short burst of distorted voice, close",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "night-shift-rules"
+ },
+ "12f63dfb60822e99": {
+  "name": "click",
+  "prompt": "single ballpoint pen click, close and crisp, quiet room",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "night-shift-rules"
+ },
+ "d2b52c0e52dad4af": {
+  "name": "lock",
+  "prompt": "electric magnetic door lock clunking shut on a glass shop door, metallic click and low buzz",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "night-shift-rules"
+ },
+ "8b7e4f612e87b8f3": {
+  "name": "cutter",
+  "prompt": "box cutter blade being pushed out notch by notch, ratcheting clicks, close",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "night-shift-rules"
+ },
+ "9d345063b1cc2df8": {
+  "name": "spray",
+  "prompt": "trigger spray bottle squirted hard three times, close",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "night-shift-rules"
+ },
+ "37621ee9eeeaa08a": {
+  "name": "breaker",
+  "prompt": "heavy main circuit breaker lever thrown down, loud clunk, refrigerators and lights powering down with a falling hum",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "night-shift-rules"
+ },
+ "c3a09c71f54f9b78": {
+  "name": "fizz",
+  "prompt": "shaken soda can bursting open and fizzing hard on a metal floor inside a cold room, echo",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "night-shift-rules"
+ },
+ "3555708e5f5e3282": {
+  "name": "shake",
+  "prompt": "aluminium soda can shaken hard in a hand, liquid sloshing",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "night-shift-rules"
+ },
+ "a77ce06028d50760": {
+  "name": "roll",
+  "prompt": "aluminium can rolling across a tiled floor into a metal room",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "night-shift-rules"
+ },
+ "82a990fe0314d254": {
+  "name": "siren",
+  "prompt": "Thai police pickup sirens arriving fast in an empty parking lot, tyres braking, at night",
+  "dur": 3,
+  "influence": 0.6,
+  "episode": "night-shift-rules"
+ },
+ "1d7ab293d1e02a64": {
+  "name": "alarm",
+  "prompt": "shop emergency alarm bell ringing loudly inside a dark convenience store",
+  "dur": 3,
+  "influence": 0.6,
+  "episode": "night-shift-rules"
+ },
+ "f62dcb47d5d41be2": {
+  "name": "cold",
+  "prompt": "walk-in freezer door seal breaking, cold air hissing out, compressor hum louder",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "night-shift-rules"
+ },
+ "bdb1e3969e35b4ff": {
+  "name": "ring",
+  "prompt": "mobile phone ringtone muffled inside a closed metal locker, vibrating against steel",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "night-shift-rules"
+ },
+ "27cda28458701648": {
+  "name": "ping",
+  "prompt": "single short smartphone message notification ping",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "night-shift-rules"
+ },
+ "bc18683b6ca787f0": {
+  "name": "flash",
+  "prompt": "smartphone camera shutter sound, single click",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "night-shift-rules"
+ },
+ "5435e82319dae4f6": {
+  "name": "unlock",
+  "prompt": "small heavy steel padlock clicking open with a key, close",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "night-shift-rules"
+ },
+ "1e91ee5baa7371c2": {
+  "name": "slam",
+  "prompt": "heavy insulated stainless steel door slammed shut, metal latch thrown",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "night-shift-rules"
+ },
+ "9002ba301adf9bf0": {
+  "name": "tear",
+  "prompt": "notebook page torn out slowly, long paper rip",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "night-shift-rules"
+ },
+ "3cdc5f697633b7ef": {
+  "name": "morning",
+  "prompt": "early morning by a Thai highway, birds waking up, distant rooster, light traffic, calm",
+  "dur": 8,
+  "influence": 0.5,
+  "episode": "night-shift-rules"
+ },
+ "15d4a865aef60666": {
+  "name": "knock",
+  "prompt": "single dull muffled knock of a small metal belt buckle tapping on thick laminated window glass, heard from inside a quiet dark bedroom, close, short, no music",
+  "dur": 0.6,
+  "influence": 0.7,
+  "episode": "dont-open-curtain"
+ },
+ "13a0b72c15777c85": {
+  "name": "knockweak",
+  "prompt": "single very faint weak tap of a metal buckle on thick window glass, barely audible, heard from inside a quiet room at night",
+  "dur": 0.6,
+  "influence": 0.7,
+  "episode": "dont-open-curtain"
+ },
+ "f291769908e048ec": {
+  "name": "expressway",
+  "prompt": "distant elevated expressway at night heard through a closed window, sparse cars passing, low city hum, very quiet",
+  "dur": 8,
+  "influence": 0.5,
+  "episode": "dont-open-curtain"
+ },
+ "73266281f8cd2ef2": {
+  "name": "car",
+  "prompt": "one car engine climbing a steep expressway ramp at night and passing by, distant, heard through a closed window",
+  "dur": 3,
+  "influence": 0.6,
+  "episode": "dont-open-curtain"
+ },
+ "57bb2c08b3529567": {
+  "name": "daycity",
+  "prompt": "bright daytime Bangkok traffic roar heard through a closed apartment window, steady, distant horns",
+  "dur": 6,
+  "influence": 0.5,
+  "episode": "dont-open-curtain"
+ },
+ "33f5e427550703f4": {
+  "name": "tape",
+  "prompt": "black duct tape pulled off a roll in long screeching strips and pressed onto a window frame",
+  "dur": 2,
+  "influence": 0.6,
+  "episode": "dont-open-curtain"
+ },
+ "5dfb8482e63f8880": {
+  "name": "rip",
+  "prompt": "violent rip of a curtain torn down together with duct tape, tape tearing, curtain rings clatter on a metal rail",
+  "dur": 1.5,
+  "influence": 0.7,
+  "episode": "dont-open-curtain"
+ },
+ "34cc1bfe507de303": {
+  "name": "rope",
+  "prompt": "rescue rope whizzing down a building facade, carabiners clinking, wind at height, daytime",
+  "dur": 2,
+  "influence": 0.6,
+  "episode": "dont-open-curtain"
+ },
+ "9662887f4a21e10a": {
+  "name": "doorknock",
+  "prompt": "three slow heavy knocks on a wooden apartment door at night, heard from inside a dark silent room, ominous",
+  "dur": 2.5,
+  "influence": 0.7,
+  "episode": "dont-open-curtain"
+ },
+ "741250c25dd8a2fc": {
+  "name": "glassscrape",
+  "prompt": "slow faint scrape dragging down a glass window pane from outside, like fingernails or a metal buckle, muffled through the glass, quiet room",
+  "dur": 2.5,
+  "influence": 0.6,
+  "episode": "dont-open-curtain"
+ },
+ "75f4e0371043be64": {
+  "name": "fire",
+  "prompt": "deep steady roar of a brick crematorium furnace burning inside a Thai temple, low flames, no voices",
+  "dur": 6,
+  "influence": 0.5,
+  "episode": "father-ledger"
+ },
+ "da220185bf49bcc9": {
+  "name": "temple",
+  "prompt": "quiet Thai temple at dusk, distant small bell, soft wind, faint insects, no voices",
+  "dur": 8,
+  "influence": 0.5,
+  "episode": "father-ledger"
+ },
+ "85ad7cd308dd7bb3": {
+  "name": "market",
+  "prompt": "early morning Thai fresh market ambience, distant vendors murmuring indistinct, plastic bags, motorcycle far away",
+  "dur": 8,
+  "influence": 0.5,
+  "episode": "father-ledger"
+ },
+ "fd58b3c064621314": {
+  "name": "cleaver",
+  "prompt": "one heavy cleaver chop into a thick wooden butcher block, close, dry",
+  "dur": 0.8,
+  "influence": 0.6,
+  "episode": "father-ledger"
+ },
+ "60388d81cfc445b9": {
+  "name": "coldhum",
+  "prompt": "old walk-in freezer compressor humming in a concrete underground room, low steady electrical hum, faint drips",
+  "dur": 8,
+  "influence": 0.5,
+  "episode": "father-ledger"
+ },
+ "39bd4b014eee38f2": {
+  "name": "coffin",
+  "prompt": "heavy wooden coffin set down onto a brick platform, dull thud with a slight wood creak",
+  "dur": 1.2,
+  "influence": 0.6,
+  "episode": "father-ledger"
+ },
+ "7c5886ecc360b32b": {
+  "name": "key",
+  "prompt": "small old brass key turning in a padlock, click and release, close",
+  "dur": 1,
+  "influence": 0.6,
+  "episode": "father-ledger"
+ },
+ "198b18fd86e1ada7": {
+  "name": "latch",
+  "prompt": "heavy stainless steel freezer door latch unlocked, seal breaking with a soft hiss of cold air",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "father-ledger"
+ },
+ "8b5d31699f0c4142": {
+  "name": "taperec",
+  "prompt": "single chunky mechanical button press on an old cassette recorder, close",
+  "dur": 0.5,
+  "influence": 0.6,
+  "episode": "father-ledger"
+ },
+ "c4a7cbfc57492bd0": {
+  "name": "tapehiss",
+  "prompt": "soft continuous cassette tape hiss with slow wobble, old recorder playing silence",
+  "dur": 6,
+  "influence": 0.5,
+  "episode": "father-ledger"
+ },
+ "8c340bb387eeef51": {
+  "name": "radio",
+  "prompt": "small transistor radio tuning, brief static crackle, no words",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "father-ledger"
+ },
+ "c2a23d04bef1a309": {
+  "name": "wheel",
+  "prompt": "old wheelchair rolling slowly over concrete, one squeaky wheel, close",
+  "dur": 2,
+  "influence": 0.6,
+  "episode": "father-ledger"
+ },
+ "0053ab4a71b7a617": {
+  "name": "rip",
+  "prompt": "a paper cheque torn in half slowly, close, crisp",
+  "dur": 1,
+  "influence": 0.6,
+  "episode": "father-ledger"
+ },
+ "d8d6dbf7bb66833b": {
+  "name": "siren",
+  "prompt": "Thai police car siren approaching from a distance, heard from inside a concrete room",
+  "dur": 4,
+  "influence": 0.5,
+  "episode": "father-ledger"
+ },
+ "4e28813666805e1a": {
+  "name": "benz",
+  "prompt": "large luxury car rolling slowly on gravel and stopping, soft engine idle, door opening",
+  "dur": 3,
+  "influence": 0.5,
+  "episode": "father-ledger"
+ },
+ "2d04c3e076f9a426": {
+  "name": "knock",
+  "prompt": "three firm knocks on a corrugated metal shutter door, close",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "father-ledger"
+ },
+ "545fdfadb40eead2": {
+  "name": "coconut",
+  "prompt": "thin stream of coconut water poured slowly, soft trickle onto wood, close",
+  "dur": 2.5,
+  "influence": 0.5,
+  "episode": "father-ledger"
+ },
+ "c33c0d313e9784c4": {
+  "name": "morning",
+  "prompt": "calm early morning in a Thai temple yard, birds, distant rooster, light breeze",
+  "dur": 6,
+  "influence": 0.5,
+  "episode": "father-ledger"
+ },
+ "8a526c424b61011f": {
+  "name": "ring",
+  "prompt": "single short hospital ward phone ringing twice, quiet corridor",
+  "dur": 2,
+  "influence": 0.6,
+  "episode": "father-ledger"
+ },
+ "03508885d053d7ed": {
+  "name": "night",
+  "prompt": "quiet Thai back street at night, crickets, one distant dog, faint electric hum from a street lamp, no voices",
+  "dur": 8,
+  "influence": 0.5,
+  "episode": "fifth-room"
+ },
+ "0c0d8bdf14d40634": {
+  "name": "day",
+  "prompt": "hot quiet Thai side street behind a fresh market in the afternoon, distant vendors murmuring indistinct, a far motorcycle, birds",
+  "dur": 8,
+  "influence": 0.5,
+  "episode": "fifth-room"
+ },
+ "c565d7f7844141a3": {
+  "name": "knock22",
+  "prompt": "muffled knocks on a thick wooden wall from inside, exactly two knocks, a short pause, then two more knocks, slow and careful",
+  "dur": 3,
+  "influence": 0.7,
+  "episode": "fifth-room"
+ },
+ "beca5f1c938ca7c4": {
+  "name": "knock3",
+  "prompt": "exactly three slow firm knocks on a thick plaster wall, evenly spaced, close, dry",
+  "dur": 3,
+  "influence": 0.7,
+  "episode": "fifth-room"
+ },
+ "0b7fd640c010b971": {
+  "name": "knock3far",
+  "prompt": "exactly three slow knocks heard faintly through a thick wall from the next house, evenly spaced, muffled",
+  "dur": 3,
+  "influence": 0.7,
+  "episode": "fifth-room"
+ },
+ "256497ad5f5c7f80": {
+  "name": "latch",
+  "prompt": "old steel sliding bolt drawn back on a wooden panel, heavy metallic scrape and clack, close",
+  "dur": 1.2,
+  "influence": 0.6,
+  "episode": "fifth-room"
+ },
+ "8acd0d582e9d5ff9": {
+  "name": "latchshut",
+  "prompt": "steel sliding bolt slammed shut on a wooden door from the other side, hard clack, close",
+  "dur": 1,
+  "influence": 0.6,
+  "episode": "fifth-room"
+ },
+ "7f380cd6724e631d": {
+  "name": "hatch",
+  "prompt": "small wooden hatch slid open low on a wall, soft wood scrape, a plastic bag set down",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "fifth-room"
+ },
+ "75910f1d3ddea31a": {
+  "name": "fan",
+  "prompt": "small old electric fan running steadily in a tiny closed room, soft motor hum and blade flutter",
+  "dur": 6,
+  "influence": 0.5,
+  "episode": "fifth-room"
+ },
+ "ab258059f6cad4a5": {
+  "name": "fanoff",
+  "prompt": "small electric fan losing power, the motor winding down slowly to silence",
+  "dur": 3,
+  "influence": 0.6,
+  "episode": "fifth-room"
+ },
+ "a479bfc595616f1c": {
+  "name": "meter",
+  "prompt": "old analog electricity meter, very faint mechanical ticking of a slowly turning disc, close",
+  "dur": 3,
+  "influence": 0.6,
+  "episode": "fifth-room"
+ },
+ "d7b15268560a5ec5": {
+  "name": "breaker",
+  "prompt": "single heavy main circuit breaker switch thrown off, sharp plastic clack, close",
+  "dur": 0.6,
+  "influence": 0.7,
+  "episode": "fifth-room"
+ },
+ "87248a92dbb11cac": {
+  "name": "tape",
+  "prompt": "steel measuring tape pulled out and snapping back into its case, close",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "fifth-room"
+ },
+ "9ed29c6c75463631": {
+  "name": "tea",
+  "prompt": "hot tea poured from a vacuum flask into a small glass, close, quiet room",
+  "dur": 2,
+  "influence": 0.6,
+  "episode": "fifth-room"
+ },
+ "00e7f41a2c1935ab": {
+  "name": "keys",
+  "prompt": "a small ring of old house keys handed over, soft metallic jingle, close",
+  "dur": 1,
+  "influence": 0.6,
+  "episode": "fifth-room"
+ },
+ "ac112c7a75319011": {
+  "name": "boat",
+  "prompt": "a small wooden boat pushed off a canal pier at night, water lapping, one pole stroke, moving away",
+  "dur": 4,
+  "influence": 0.5,
+  "episode": "fifth-room"
+ },
+ "093e7d1ac06e40f7": {
+  "name": "canal",
+  "prompt": "still canal behind a house at night, soft water lapping on wooden pier posts, frogs far away",
+  "dur": 8,
+  "influence": 0.5,
+  "episode": "fifth-room"
+ },
+ "fed441f4c9e0eabc": {
+  "name": "splash",
+  "prompt": "a heavy body falling into a canal from a wooden pier, one deep splash, then water settling",
+  "dur": 2.5,
+  "influence": 0.6,
+  "episode": "fifth-room"
+ },
+ "b9fd9e7360004f39": {
+  "name": "cat",
+  "prompt": "one low uneasy house cat growl, quiet, close",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "fifth-room"
+ },
+ "8d0507901a5b38f7": {
+  "name": "radio",
+  "prompt": "small car radio tuning between local Thai stations, brief static crackle, no clear words",
+  "dur": 2,
+  "influence": 0.6,
+  "episode": "fifth-room"
+ },
+ "3623c16c90ab8b99": {
+  "name": "neon",
+  "prompt": "quiet Thai police station office, fluorescent tube buzz, a distant typewriter and a far telephone, no voices",
+  "dur": 8,
+  "influence": 0.5,
+  "episode": "fifth-room"
+ },
+ "b9407a870beb37f4": {
+  "name": "truck",
+  "prompt": "old diesel pickup truck idling at the end of a narrow street at night, heard from a distance",
+  "dur": 6,
+  "influence": 0.5,
+  "episode": "fifth-room"
+ },
+ "bff39b9348ee7687": {
+  "name": "cam",
+  "prompt": "single soft electronic beep of a small security camera app notification",
+  "dur": 0.5,
+  "influence": 0.7,
+  "episode": "fifth-room"
+ },
+ "b08682cd5a2fb4c7": {
+  "name": "siren",
+  "prompt": "Thai police car siren approaching from a distance, heard from inside a closed concrete room",
+  "dur": 4,
+  "influence": 0.5,
+  "episode": "fifth-room"
+ },
+ "78eb566e62271bf2": {
+  "name": "morning",
+  "prompt": "calm early morning in a Thai neighborhood by a canal, birds, distant rooster, a monk's soft footsteps far away, light breeze",
+  "dur": 8,
+  "influence": 0.5,
+  "episode": "fifth-room"
+ },
+ "28d96d6937ef5fd6": {
+  "prompt": "composed: one knock from knock3 placed exactly two, pause, two",
+  "dur": 3,
+  "source": "composed"
+ },
+ "6d261c0ccb050e50": {
+  "prompt": "composed: one knock from knock3 placed exactly three, evenly",
+  "dur": 3,
+  "source": "composed"
+ },
+ "b56470e3942a06f0": {
+  "prompt": "composed: one knock from knock3 placed exactly three, muffled through a wall",
+  "dur": 3,
+  "source": "composed"
+ },
+ "6a22daac6326c596": {
+  "name": "rainlight",
+  "prompt": "light night rain on a corrugated tin roof of an old rural Thai railway platform, fluorescent tube hum, distant crickets, no voices",
+  "dur": 8,
+  "influence": 0.5,
+  "episode": "locker-104"
+ },
+ "c0a91031ee6476ee": {
+  "name": "rainheavy",
+  "prompt": "heavy tropical rainstorm on a tin roof and wooden railway platform at night, gusts, water gushing from gutters",
+  "dur": 8,
+  "influence": 0.5,
+  "episode": "locker-104"
+ },
+ "4297a0a7386b306c": {
+  "name": "storm",
+  "prompt": "violent night thunderstorm over railway tracks, heavy rain, distant thunder roll",
+  "dur": 6,
+  "influence": 0.5,
+  "episode": "locker-104"
+ },
+ "fff9fa9d498e9c6e": {
+  "name": "thunder",
+  "prompt": "single close loud thunder crack then rumble",
+  "dur": 3,
+  "influence": 0.6,
+  "episode": "locker-104"
+ },
+ "6544c9b292d58ac2": {
+  "name": "drip",
+  "prompt": "single water drop falling from a roof onto a brass padlock, metallic tick, close",
+  "dur": 1,
+  "influence": 0.7,
+  "episode": "locker-104"
+ },
+ "b865357616f0ca06": {
+  "name": "cutter",
+  "prompt": "large bolt cutters biting through a steel padlock shackle, strain then sharp snap, metal clink",
+  "dur": 1.5,
+  "influence": 0.7,
+  "episode": "locker-104"
+ },
+ "2f18dc96cdf350ad": {
+  "name": "tapeclick",
+  "prompt": "old portable cassette player play button pressed, mechanical clunk and motor starting",
+  "dur": 1,
+  "influence": 0.7,
+  "episode": "locker-104"
+ },
+ "416969fc84e046b2": {
+  "name": "hiss",
+  "prompt": "old cassette tape hiss and faint wow and flutter, close",
+  "dur": 3,
+  "influence": 0.6,
+  "episode": "locker-104"
+ },
+ "14aaba6a0ebbe9d8": {
+  "name": "fm",
+  "prompt": "small old FM radio, a Thai local station faintly playing, static crackle, indistinct",
+  "dur": 3,
+  "influence": 0.5,
+  "episode": "locker-104"
+ },
+ "f6937ab42ab0d17a": {
+  "name": "phonering",
+  "prompt": "old landline telephone ringing twice in a small wooden office at night",
+  "dur": 3,
+  "influence": 0.6,
+  "episode": "locker-104"
+ },
+ "101ea37d3bcf6a69": {
+  "name": "static",
+  "prompt": "walkie talkie radio static burst, short harsh crackle",
+  "dur": 0.6,
+  "influence": 0.7,
+  "episode": "locker-104"
+ },
+ "618710e437c930ab": {
+  "name": "pop",
+  "prompt": "small electronic pop as a two-way radio powers off, then silence",
+  "dur": 0.6,
+  "influence": 0.7,
+  "episode": "locker-104"
+ },
+ "d0634027a7e99ba2": {
+  "name": "cart",
+  "prompt": "wooden vendor push cart with glass jars rolling over a concrete floor, small wheels squeak",
+  "dur": 2,
+  "influence": 0.6,
+  "episode": "locker-104"
+ },
+ "3998d143421d230c": {
+  "name": "doorbang",
+  "prompt": "old wooden door of a small railway signal box slammed open against a wall",
+  "dur": 1,
+  "influence": 0.7,
+  "episode": "locker-104"
+ },
+ "b7f9ee81998f491f": {
+  "name": "buzz",
+  "prompt": "fluorescent tube light flickering with an electric buzz and click",
+  "dur": 0.6,
+  "influence": 0.7,
+  "episode": "locker-104"
+ },
+ "d3df453c25a75ac0": {
+  "name": "wind",
+  "prompt": "sudden strong gust of storm wind, a wicker basket falling and objects scattering on wet concrete",
+  "dur": 2,
+  "influence": 0.6,
+  "episode": "locker-104"
+ },
+ "a10ff1bc9c3c885d": {
+  "name": "pry",
+  "prompt": "small metal drawer lock pried open with pliers, strain, snap",
+  "dur": 1.2,
+  "influence": 0.7,
+  "episode": "locker-104"
+ },
+ "a358e20b26392841": {
+  "name": "clack",
+  "prompt": "old revolver cylinder swung open, metallic clack",
+  "dur": 0.8,
+  "influence": 0.7,
+  "episode": "locker-104"
+ },
+ "efba90bce4934100": {
+  "name": "horn",
+  "prompt": "diesel train horn, long and shrill, in heavy rain",
+  "dur": 3,
+  "influence": 0.6,
+  "episode": "locker-104"
+ },
+ "af9b90495de1e799": {
+  "name": "crossing",
+  "prompt": "railway level crossing bell ringing steadily in a storm",
+  "dur": 4,
+  "influence": 0.6,
+  "episode": "locker-104"
+ },
+ "7e40949d2de6a313": {
+  "name": "diesel",
+  "prompt": "diesel locomotive approaching slowly, deep engine rumble growing, wheels on rails",
+  "dur": 5,
+  "influence": 0.5,
+  "episode": "locker-104"
+ },
+ "58fc0aae4dea6b65": {
+  "name": "brake",
+  "prompt": "train brakes squealing as a passenger train stops at a platform, hiss of air, rain",
+  "dur": 4,
+  "influence": 0.6,
+  "episode": "locker-104"
+ },
+ "2aa352f0d6e3a16e": {
+  "name": "splash",
+  "prompt": "leather shoe stepping into a puddle on a wooden platform",
+  "dur": 0.8,
+  "influence": 0.7,
+  "episode": "locker-104"
+ },
+ "c1f972fce6d106d5": {
+  "name": "cock",
+  "prompt": "revolver hammer cocked, sharp mechanical click, very close",
+  "dur": 0.6,
+  "influence": 0.7,
+  "episode": "locker-104"
+ },
+ "0996af8631177f3e": {
+  "name": "dryclick",
+  "prompt": "revolver trigger pulled on a dud round, hammer falls with a dry metallic snap, no shot",
+  "dur": 0.5,
+  "influence": 0.7,
+  "episode": "locker-104"
+ },
+ "903756185b176052": {
+  "name": "gunshot",
+  "prompt": "single revolver gunshot inside a small wooden room, ringing echo",
+  "dur": 1.5,
+  "influence": 0.6,
+  "episode": "locker-104"
+ },
+ "47943e644d42120e": {
+  "name": "crash",
+  "prompt": "heavy freight train smashing through a wooden house, splintering wood, metal grinding, collapse",
+  "dur": 3,
+  "influence": 0.6,
+  "episode": "locker-104"
+ },
+ "373738a6d87383ee": {
+  "name": "glass",
+  "prompt": "fist punching through a window pane, glass shattering",
+  "dur": 1,
+  "influence": 0.7,
+  "episode": "locker-104"
+ },
+ "2bf3806d0bb4aa7c": {
+  "name": "thud",
+  "prompt": "heavy revolver dropped on a wet wooden platform, dull thud and splash",
+  "dur": 1,
+  "influence": 0.7,
+  "episode": "locker-104"
+ },
+ "a9ca14a3db66bbb1": {
+  "name": "morning",
+  "prompt": "calm early morning at a rural Thai railway station after rain, birds, dripping eaves, distant rooster",
+  "dur": 8,
+  "influence": 0.5,
+  "episode": "locker-104"
+ },
+ "db700576728e7862": {
+  "name": "wardnight",
+  "prompt": "old empty hospital ward at night, a ventilator pushing air in a slow steady rhythm every five seconds, soft monitor beeps, distant fluorescent hum, no voices",
+  "dur": 10,
+  "influence": 0.5,
+  "episode": "bed-two"
+ },
+ "3af449ce1d6e2996": {
+  "name": "vent",
+  "prompt": "medical ventilator cycle close up, soft mechanical push of air then gentle exhale hiss, one cycle",
+  "dur": 5,
+  "influence": 0.6,
+  "episode": "bed-two"
+ },
+ "ff83b7614c87a007": {
+  "name": "canteen",
+  "prompt": "busy Thai hospital canteen at lunchtime, cutlery on steel trays, murmuring crowd indistinct, a TV news voice far away unintelligible",
+  "dur": 8,
+  "influence": 0.5,
+  "episode": "bed-two"
+ },
+ "be432f04b221ce7e": {
+  "name": "dusk",
+  "prompt": "hospital parking lot at dusk in a small Thai town, distant motorbikes, crickets starting, a far ambulance siren fading",
+  "dur": 8,
+  "influence": 0.5,
+  "episode": "bed-two"
+ },
+ "616a6ededbfbd078": {
+  "name": "night",
+  "prompt": "quiet hospital grounds at night, crickets, a distant dog, faint generator hum, no voices",
+  "dur": 8,
+  "influence": 0.5,
+  "episode": "bed-two"
+ },
+ "7c0d5396655b5b47": {
+  "name": "morning",
+  "prompt": "early morning outside a hospital window, birds, a broom sweeping far away, soft traffic",
+  "dur": 8,
+  "influence": 0.5,
+  "episode": "bed-two"
+ },
+ "2d41027d5bcbfcec": {
+  "name": "day",
+  "prompt": "quiet Thai police station office in the morning, ceiling fan, a far typewriter-like keyboard, distant traffic",
+  "dur": 8,
+  "influence": 0.5,
+  "episode": "bed-two"
+ },
+ "b21f39e5ebedc396": {
+  "name": "knock3",
+  "prompt": "three slow knocks with a knuckle on a frosted glass hospital door, glass rattles slightly in its metal frame, empty corridor echo",
+  "dur": 3,
+  "influence": 0.7,
+  "episode": "bed-two"
+ },
+ "4bd7f32e4f8f86f7": {
+  "name": "knockfast",
+  "prompt": "rapid urgent knocking with a palm and knuckles on a frosted glass door in a metal frame, glass rattling, echoing corridor",
+  "dur": 3,
+  "influence": 0.7,
+  "episode": "bed-two"
+ },
+ "6b2cce2fcd2beac6": {
+  "name": "knockfar",
+  "prompt": "urgent knocking on a glass door heard from across a dark hospital ward, slightly muffled",
+  "dur": 3,
+  "influence": 0.6,
+  "episode": "bed-two"
+ },
+ "a4f805dafb75ae58": {
+  "name": "cough",
+  "prompt": "two dry raspy coughs of an old person behind a cloth curtain, slightly muffled, quiet room",
+  "dur": 2,
+  "influence": 0.7,
+  "episode": "bed-two"
+ },
+ "32f025b72626dfd6": {
+  "name": "curtainrip",
+  "prompt": "hospital privacy curtain yanked open hard, metal hooks scraping fast along a ceiling rail, fabric whoosh",
+  "dur": 1.5,
+  "influence": 0.7,
+  "episode": "bed-two"
+ },
+ "09fa11df7c51fd72": {
+  "name": "breaker",
+  "prompt": "building power cut, a heavy electrical clunk then every hum in the room dies at once into silence",
+  "dur": 2,
+  "influence": 0.7,
+  "episode": "bed-two"
+ },
+ "cc089c8cac05bc5c": {
+  "name": "ventalarm",
+  "prompt": "medical ventilator battery alarm, repeating high electronic beep pattern, urgent",
+  "dur": 3,
+  "influence": 0.7,
+  "episode": "bed-two"
+ },
+ "afd6cfed53c64bc5": {
+  "name": "ambu",
+  "prompt": "manual resuscitator bag squeezed once by hand, rubbery squeeze and air rush through a valve, close",
+  "dur": 1,
+  "influence": 0.7,
+  "episode": "bed-two"
+ },
+ "6c440c95aee1c0e0": {
+  "name": "vials",
+  "prompt": "a dozen small empty glass medicine vials tipped out of a plastic bin onto a cloth, clinking and rolling",
+  "dur": 2,
+  "influence": 0.7,
+  "episode": "bed-two"
+ },
+ "e70267a9a7e44f8f": {
+  "name": "clink",
+  "prompt": "small glass vials clinking together inside a coat pocket with each footstep",
+  "dur": 1,
+  "influence": 0.6,
+  "episode": "bed-two"
+ },
+ "d5236d9e8e4332c9": {
+  "name": "tapepeel",
+  "prompt": "medical tape peeled slowly off skin, soft sticky tearing sound, very close, silence around",
+  "dur": 2,
+  "influence": 0.7,
+  "episode": "bed-two"
+ },
+ "c7e605dc3e885b55": {
+  "name": "bedroll",
+  "prompt": "heavy hospital bed rolling fast on old tile floor, wheels rattling, IV pole clinking",
+  "dur": 4,
+  "influence": 0.6,
+  "episode": "bed-two"
+ },
+ "dfd3b23ea30da96a": {
+  "name": "keys",
+  "prompt": "a huge ring of old keys shaken and tried one by one in a padlock, frantic metallic jingle",
+  "dur": 3,
+  "influence": 0.6,
+  "episode": "bed-two"
+ },
+ "70b6275f2e01a2db": {
+  "name": "chain",
+  "prompt": "padlock snaps open and a heavy chain slides off a steel door and drops on the floor, door swings open",
+  "dur": 2,
+  "influence": 0.7,
+  "episode": "bed-two"
+ },
+ "371e9128cfda2d88": {
+  "name": "polecrash",
+  "prompt": "metal IV pole thrown down onto a concrete ramp, loud clattering crash and rolling",
+  "dur": 2,
+  "influence": 0.7,
+  "episode": "bed-two"
+ },
+ "c59eb478802021ce": {
+  "name": "cuff",
+  "prompt": "handcuffs ratcheting closed on a wrist, crisp metal clicks",
+  "dur": 1,
+  "influence": 0.7,
+  "episode": "bed-two"
  }
 }

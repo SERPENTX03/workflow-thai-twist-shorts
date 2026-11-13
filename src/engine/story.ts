@@ -13,6 +13,8 @@ export type StoryShot = {
 };
 export type Story = {
   title: string; format?: FormatName; bpm?: number; captionLook?: 'bold' | 'folk';
+  /** "phrase": one short line at a time, timed to the voice's pauses (src/engine/phrases.ts); `phraseChars` = max visible chars (22) */
+  captionMode?: 'shot' | 'phrase'; phraseChars?: number;
   series?: {name: string; ep?: number; next?: string}; shots: StoryShot[];
   [k: string]: unknown;
 };

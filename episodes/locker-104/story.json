@@ -1,0 +1,6450 @@
+{
+  "title": "ล็อคเกอร์ 104: ตู้ฝากของที่ไม่เคยมีคนเปิด",
+  "format": "landscape",
+  "target": [
+    1200,
+    1440
+  ],
+  "bpm": 75,
+  "voice": "narrator",
+  "voices": {
+    "narrator": "eleven:weRAVUYgqjjfUEEu5BsB",
+    "lead_male": "eleven:xYmBpJREC3WfqEFpbPvO",
+    "lead_female": "eleven:MYZYcGOqrkYQcwDunXl7",
+    "male": "eleven:xYmBpJREC3WfqEFpbPvO",
+    "female": "eleven:MYZYcGOqrkYQcwDunXl7",
+    "old_male": "eleven:5KvpaGteYkNayiswuX2h",
+    "old_female": "eleven:p2Wol3C7j3rHbfOrbL18",
+    "boy": "eleven:yq05eeRaHPMGuWTVpqeP",
+    "young_female": "eleven:cgSgspJ2msm6clMCkdW9",
+    "father": "eleven:KhBRXgEQjvfdIyXOu7G3",
+    "officer": "eleven:JTfQv1rq84UdcXVunY5m",
+    "casual_male": "eleven:RwilAvCC3o05RLuACpAn",
+    "villain_male": "eleven:Vl27Cllkuw8BhyPqus2n",
+    "villain_female": "eleven:EXAVITQu4vr4xnSDxMaL"
+  },
+  "voiceModel": "eleven_v3",
+  "voiceTone": "calm",
+  "voiceTempo": 1,
+  "breath": 0.2,
+  "switchBreath": 0.25,
+  "minBeats": 2,
+  "fitStep": 0.125,
+  "captionLook": "bold",
+  "clues": {
+    "locks": {
+      "label": "รอยบากหกรอยที่หูช้างตู้ 104 + แม่กุญแจที่ยังใหม่",
+      "cover": "ขโมยเหล็กงัดไม่เข้า (คำลุงเอง)"
+    },
+    "ticket": {
+      "label": "ตั๋วสีเทียน \"พ่อพาฝนไปทะเล 01:15\" คราบเข้ม",
+      "cover": "ฝนถือรอที่ชานชาลาก่อนถูกอุ้มไป"
+    },
+    "liquor": {
+      "label": "กลิ่นเหล้าขาวในป้อมสับราง",
+      "cover": "คนร้ายเมาเหล้า / ลุงชดคอเหล้า"
+    },
+    "scar": {
+      "label": "แผลยาวกลางฝ่ามือขวา",
+      "cover": "ได้มาตอนไล่ตามคนร้าย"
+    },
+    "gun": {
+      "label": "ปืนลูกโม่ห้านัด รังที่หกว่าง",
+      "cover": "ยิงไล่คนร้ายไปนัดหนึ่ง"
+    },
+    "raincoat": {
+      "label": "เสื้อกันฝนสีเขียวขี้ม้า",
+      "cover": "ชุดของคนร้ายที่อุ้มฝน"
+    },
+    "watch": {
+      "label": "นาฬิกาพกกระจกร้าว หยุด 01:15",
+      "cover": "ของที่ระลึก หยุดตอนเกิดเหตุ"
+    },
+    "memo": {
+      "label": "ประกาศปิดวิทยุ 23.15 ตั้งแต่ 2563 + ไทม์เมอร์ไฟดวงที่ 3",
+      "cover": "เอกสารประจำสถานีที่กำลังปิด"
+    },
+    "pills": {
+      "label": "ป้าสายบดยาใส่โอวัลติน",
+      "decoy": true
+    },
+    "keys": {
+      "label": "เข้มโกหกว่ากุญแจป้อมหาย",
+      "decoy": true
+    }
+  },
+  "sfx": {
+    "rainlight": {
+      "prompt": "light night rain on a corrugated tin roof of an old rural Thai railway platform, fluorescent tube hum, distant crickets, no voices",
+      "dur": 8,
+      "influence": 0.5,
+      "gain": 0.3
+    },
+    "rainheavy": {
+      "prompt": "heavy tropical rainstorm on a tin roof and wooden railway platform at night, gusts, water gushing from gutters",
+      "dur": 8,
+      "influence": 0.5,
+      "gain": 0.35
+    },
+    "storm": {
+      "prompt": "violent night thunderstorm over railway tracks, heavy rain, distant thunder roll",
+      "dur": 6,
+      "influence": 0.5,
+      "gain": 0.4
+    },
+    "thunder": {
+      "prompt": "single close loud thunder crack then rumble",
+      "dur": 3,
+      "influence": 0.6,
+      "gain": 0.7
+    },
+    "drip": {
+      "prompt": "single water drop falling from a roof onto a brass padlock, metallic tick, close",
+      "dur": 1,
+      "influence": 0.7,
+      "gain": 0.5
+    },
+    "cutter": {
+      "prompt": "large bolt cutters biting through a steel padlock shackle, strain then sharp snap, metal clink",
+      "dur": 1.5,
+      "influence": 0.7,
+      "gain": 0.8
+    },
+    "tapeclick": {
+      "prompt": "old portable cassette player play button pressed, mechanical clunk and motor starting",
+      "dur": 1,
+      "influence": 0.7,
+      "gain": 0.6
+    },
+    "hiss": {
+      "prompt": "old cassette tape hiss and faint wow and flutter, close",
+      "dur": 3,
+      "influence": 0.6,
+      "gain": 0.3
+    },
+    "fm": {
+      "prompt": "small old FM radio, a Thai local station faintly playing, static crackle, indistinct",
+      "dur": 3,
+      "influence": 0.5,
+      "gain": 0.35
+    },
+    "phonering": {
+      "prompt": "old landline telephone ringing twice in a small wooden office at night",
+      "dur": 3,
+      "influence": 0.6,
+      "gain": 0.6
+    },
+    "static": {
+      "prompt": "walkie talkie radio static burst, short harsh crackle",
+      "dur": 0.6,
+      "influence": 0.7,
+      "gain": 0.6
+    },
+    "pop": {
+      "prompt": "small electronic pop as a two-way radio powers off, then silence",
+      "dur": 0.6,
+      "influence": 0.7,
+      "gain": 0.5
+    },
+    "cart": {
+      "prompt": "wooden vendor push cart with glass jars rolling over a concrete floor, small wheels squeak",
+      "dur": 2,
+      "influence": 0.6,
+      "gain": 0.45
+    },
+    "doorbang": {
+      "prompt": "old wooden door of a small railway signal box slammed open against a wall",
+      "dur": 1,
+      "influence": 0.7,
+      "gain": 0.75
+    },
+    "buzz": {
+      "prompt": "fluorescent tube light flickering with an electric buzz and click",
+      "dur": 0.6,
+      "influence": 0.7,
+      "gain": 0.55
+    },
+    "wind": {
+      "prompt": "sudden strong gust of storm wind, a wicker basket falling and objects scattering on wet concrete",
+      "dur": 2,
+      "influence": 0.6,
+      "gain": 0.6
+    },
+    "pry": {
+      "prompt": "small metal drawer lock pried open with pliers, strain, snap",
+      "dur": 1.2,
+      "influence": 0.7,
+      "gain": 0.65
+    },
+    "clack": {
+      "prompt": "old revolver cylinder swung open, metallic clack",
+      "dur": 0.8,
+      "influence": 0.7,
+      "gain": 0.6
+    },
+    "horn": {
+      "prompt": "diesel train horn, long and shrill, in heavy rain",
+      "dur": 3,
+      "influence": 0.6,
+      "gain": 0.6
+    },
+    "crossing": {
+      "prompt": "railway level crossing bell ringing steadily in a storm",
+      "dur": 4,
+      "influence": 0.6,
+      "gain": 0.55
+    },
+    "diesel": {
+      "prompt": "diesel locomotive approaching slowly, deep engine rumble growing, wheels on rails",
+      "dur": 5,
+      "influence": 0.5,
+      "gain": 0.55
+    },
+    "brake": {
+      "prompt": "train brakes squealing as a passenger train stops at a platform, hiss of air, rain",
+      "dur": 4,
+      "influence": 0.6,
+      "gain": 0.6
+    },
+    "splash": {
+      "prompt": "leather shoe stepping into a puddle on a wooden platform",
+      "dur": 0.8,
+      "influence": 0.7,
+      "gain": 0.5
+    },
+    "cock": {
+      "prompt": "revolver hammer cocked, sharp mechanical click, very close",
+      "dur": 0.6,
+      "influence": 0.7,
+      "gain": 0.7
+    },
+    "dryclick": {
+      "prompt": "revolver trigger pulled on a dud round, hammer falls with a dry metallic snap, no shot",
+      "dur": 0.5,
+      "influence": 0.7,
+      "gain": 0.75
+    },
+    "gunshot": {
+      "prompt": "single revolver gunshot inside a small wooden room, ringing echo",
+      "dur": 1.5,
+      "influence": 0.6,
+      "gain": 0.7
+    },
+    "crash": {
+      "prompt": "heavy freight train smashing through a wooden house, splintering wood, metal grinding, collapse",
+      "dur": 3,
+      "influence": 0.6,
+      "gain": 0.85
+    },
+    "glass": {
+      "prompt": "fist punching through a window pane, glass shattering",
+      "dur": 1,
+      "influence": 0.7,
+      "gain": 0.7
+    },
+    "thud": {
+      "prompt": "heavy revolver dropped on a wet wooden platform, dull thud and splash",
+      "dur": 1,
+      "influence": 0.7,
+      "gain": 0.6
+    },
+    "morning": {
+      "prompt": "calm early morning at a rural Thai railway station after rain, birds, dripping eaves, distant rooster",
+      "dur": 8,
+      "influence": 0.5,
+      "gain": 0.32
+    }
+  },
+  "shots": [
+    {
+      "chapter": "ตู้ฝากของหมายเลข 104",
+      "scene": "platform",
+      "view": "lockers-low",
+      "note": "มุมต่ำจากพื้นชานชาลาไม้เปียก แถวตู้ล็อกเกอร์เหล็กยาวใต้นีออนสามดวงสีขาวอมเขียว ป้ายสถานีสนิมด้านบน หมอกฝนข้างราง ตู้ 104 ปลายแถวคือจุดสว่างสุดในเฟรม",
+      "text": "ที่สถานีรถไฟชุมทางคลองหมอก\nมีตู้ฝากของเหล็กอยู่ใบหนึ่ง",
+      "cues": [
+        [
+          0,
+          "rainlight"
+        ],
+        [
+          0.5,
+          "tick"
+        ]
+      ],
+      "mood": 0.55,
+      "data": {
+        "hud": "14 พ.ย. · 22:55",
+        "light": "lamp",
+        "lightAt": [
+          791,
+          446
+        ],
+        "cast": [],
+        "cam": [
+          1,
+          1.04,
+          980,
+          560
+        ]
+      },
+      "beats": 6.625
+    },
+    {
+      "scene": "platform",
+      "view": "lockers-med",
+      "note": "medium แถวตู้เหล็กสีเขียวซีดเรียงเลข 101 ถึง 104 ไฟนีออนดวงที่สามอยู่เหนือตู้ปลายแถว หยดน้ำจากหลังคาสังกะสีเป็นเส้นบาง",
+      "text": "ตู้ที่ลุงสมหมายเชื่อมาตลอดว่า\nไม่มีใครเคยเปิดมันมา[ยี่สิบห้าปี]",
+      "mood": 0.55,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          791,
+          277
+        ],
+        "cast": [],
+        "cam": [
+          1.9,
+          1.96,
+          1017,
+          497
+        ]
+      },
+      "beats": 7.625
+    },
+    {
+      "scene": "ins",
+      "view": "locker104-ins",
+      "note": "macro หน้าบานตู้ 104 เลขสีแดงลอก โซ่กับแม่กุญแจทองเหลือง หยดน้ำจากหลังคาหยดกระทบแม่กุญแจ รอยบากที่หูช้างอยู่ในเงา",
+      "text": "ตู้หมายเลข [หนึ่งศูนย์สี่]\nเขาจำได้ว่ามันถูกล็อกตั้งแต่คืนวันที่สิบสี่ พฤศจิกายน",
+      "clue": "locks",
+      "cues": [
+        [
+          0.4,
+          "drip"
+        ]
+      ],
+      "mood": 0.55,
+      "data": {},
+      "beats": 7.875
+    },
+    {
+      "scene": "track",
+      "view": "rails-ew",
+      "note": "ภาพกว้างมากจากปลายชานชาลา รางคู่ทอดหายเข้าหมอก ป้อมสับรางไม้เล็กไกล ๆ มีฐานปูนว่างสี่เหลี่ยมข้างรางหลีก ไฟสัญญาณแดงดวงเดียว",
+      "text": "ปีสองพันห้าร้อยสี่สิบสอง\nคืนที่ลูกสาววัยสิบขวบของนายสถานี",
+      "mood": 0.55,
+      "data": {
+        "light": "night",
+        "cam": [
+          1,
+          1.03,
+          960,
+          540
+        ]
+      },
+      "beats": 7.25
+    },
+    {
+      "scene": "past",
+      "view": "bow-puddle-ins",
+      "note": "อดีต insert โบว์แดงจมในแอ่งน้ำข้างหมอนรางไม้ ม่านฝนหนัก ลำไฟฉายหลายดวงสาดผ่าน",
+      "text": "จบชีวิตลงข้างรางรถไฟแห่งนี้",
+      "mood": 0.65,
+      "data": {
+        "past": true
+      },
+      "beats": 3.5
+    },
+    {
+      "scene": "ins",
+      "view": "cutter-ots",
+      "note": "insert มือขวามีแผลของสมหมายบีบด้ามคีมตัดเหล็กสีแดง ปากคีมงับห่วงแม่กุญแจที่หูช้างตู้ 104 รอยบากหกรอยข้างปากคีม ไฟฉายส่อง",
+      "text": "คืนนี้ คืนสุดท้ายก่อนสถานีจะถูกยุบ\nลุงสมหมายตัดแม่กุญแจนั้นด้วยมือของเขาเอง",
+      "clue": "scar",
+      "cues": [
+        [
+          1.5,
+          "cutter"
+        ]
+      ],
+      "mood": 0.55,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          791,
+          277
+        ],
+        "cast": [],
+        "cam": [
+          2.6,
+          2.7,
+          1038,
+          480
+        ],
+        "foreColor": "#c8b594",
+        "foreHair": "#e2dfd7"
+      },
+      "beats": 9.5
+    },
+    {
+      "scene": "ins",
+      "view": "box-ins",
+      "note": "macro บานตู้แง้ม ฝุ่นฟุ้งในลำไฟฉาย กล่องเหล็กเปิดฝา เครื่องเล่นเทปพกพาสีดำ ตั๋วกระดาษวาดสีเทียนมีคราบเข้ม สมุดปกหนังดำ",
+      "text": "ข้างในไม่มีกระเป๋าของใคร มีเพียงเทปม้วนหนึ่ง\nกับตั๋วรถไฟที่ลูกสาววาดให้เขา",
+      "clue": "ticket",
+      "cues": [
+        [
+          0,
+          "creak"
+        ]
+      ],
+      "mood": 0.55,
+      "data": {},
+      "beats": 9.625
+    },
+    {
+      "scene": "ins",
+      "view": "reels-ecu",
+      "note": "ECU แกนเทปสองแกนเริ่มหมุนช้า เคาน์เตอร์ 000 ไฟเขียวปุ่ม PLAY สะท้อนบนพลาสติกใส",
+      "text": "และเสียงในเทป... เป็นเสียงของ{ตัวเขาเอง}",
+      "cues": [
+        [
+          0,
+          "tapeclick"
+        ],
+        [
+          0.3,
+          "hiss"
+        ]
+      ],
+      "mood": 0.7,
+      "data": {},
+      "beats": 5.375
+    },
+    {
+      "scene": "platform",
+      "view": "sommai-close",
+      "note": "close สมหมายก้มหน้าเข้าหาเครื่องเล่นเทปที่ถือระดับอก นีออนดวงที่สามจับหน้าผาก ตาค้าง หน้าอยู่เส้นสามส่วนขวา แถวตู้เบลอข้างหลัง",
+      "text": "\"สมหมาย... ถ้าแกกำลังฟังเทปนี้อยู่\"",
+      "who": "tape",
+      "voice": "old_male",
+      "fx": "phone",
+      "tone": "hoarse, trembling",
+      "mood": 0.75,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          791,
+          277
+        ],
+        "cast": [
+          "sommai@950,664 h=213 arm=r-phone prop=cassette shock yaw=-0.2 look=-0.3"
+        ],
+        "cam": [
+          8.18,
+          8.67,
+          989,
+          504
+        ],
+        "lockerOpen": true
+      },
+      "beats": 4.75
+    },
+    {
+      "scene": "platform",
+      "view": "clock-low",
+      "note": "มุมต่ำ นาฬิกาสถานีกลมใต้ชายคา เข็มที่ 22:57 รางว่างหายเข้าหมอกด้านหลัง นีออนกะพริบเบา ๆ",
+      "text": "\"คืนนี้ รถไฟเที่ยว[ตีหนึ่งสิบห้า]\nจะพาคนที่พรากลูกแกไป กลับมาที่นี่\"",
+      "style": "red",
+      "who": "tape",
+      "voice": "old_male",
+      "fx": "phone",
+      "tone": "hoarse, trembling",
+      "cues": [
+        [
+          0,
+          "hit"
+        ]
+      ],
+      "mood": 0.85,
+      "data": {},
+      "beats": 9.5
+    },
+    {
+      "scene": "title",
+      "text": "",
+      "vo": "",
+      "music": true,
+      "mood": 0.6,
+      "data": {
+        "title": "ล็อคเกอร์ 104",
+        "sub": "ตู้ฝากของที่ไม่เคยมีคนเปิด",
+        "note": "เหตุการณ์ สถานที่ และตัวละครในเรื่องนี้เป็นเรื่องสมมติ"
+      },
+      "beats": 3
+    },
+    {
+      "chapter": "คืนสุดท้ายของสถานี",
+      "scene": "front",
+      "view": "banner-wide",
+      "note": "ภาพกว้างเฉียงหน้าห้องขายตั๋ว ป้ายไวนิลประกาศยุบสถานีตั้งแต่ 15 พ.ย. ขึงคร่อมช่องขายตั๋ว ลังกระดาษซ้อนกัน หลอดไฟเหลืองดวงเดียวในช่องตั๋ว ฝนพรำนอกชายคา",
+      "text": "ยี่สิบห้านาทีก่อนหน้านั้น",
+      "cues": [
+        [
+          0,
+          "bell"
+        ]
+      ],
+      "mood": 0.4,
+      "data": {
+        "hud": "14 พ.ย. · 22:30",
+        "light": "lamp",
+        "lightAt": [
+          710.4000000000001,
+          460
+        ],
+        "cast": [
+          "sommai@835,853 h=337 armR=hold prop=box worried yaw=0.3"
+        ],
+        "cam": [
+          0.95,
+          0.98,
+          960,
+          520
+        ]
+      },
+      "beats": 3.25
+    },
+    {
+      "scene": "office",
+      "view": "stamps-med",
+      "note": "medium สมหมายยืนข้างโต๊ะไม้ เก็บตรายางลงลังกระดาษ โคมไฟตั้งโต๊ะเป็นแสงเดียว วิทยุ FM เครื่องเล็กไฟหน้าปัดแดงบนชั้น",
+      "text": "สถานีชุมทางคลองหมอก คือสถานีเล็กท้ายอำเภอ\nที่เหลือรถไฟผ่านคืนละขบวนเดียว",
+      "mood": 0.4,
+      "data": {
+        "tag": {
+          "who": "sommai",
+          "name": "ลุงสมหมาย",
+          "line": "นายสถานี · เฝ้าที่นี่มายี่สิบห้าปี"
+        },
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sommai@1363,990 h=620 yaw=-0.45 look=-0.4 armR=hold prop=box worried"
+        ],
+        "cam": [
+          1.51,
+          1.61,
+          1152,
+          719
+        ]
+      },
+      "beats": 8.75
+    },
+    {
+      "scene": "platform",
+      "view": "lockers-crew-med",
+      "note": "medium แถวตู้เหล็กมีกระดาษเทปกาวแดงแปะทุกบาน เขียนว่า \"รื้อถอน 15 พ.ย.\" สมหมายเดินผ่านแตะบานตู้ทีละบาน",
+      "text": "พรุ่งนี้เช้า ช่างรื้อถอนจะมายกตู้ฝากของ\nทั้งแถวไปทิ้ง",
+      "mood": 0.4,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          791,
+          277
+        ],
+        "cast": [
+          "sommai@1045,735 h=294 walk flip worried"
+        ],
+        "cam": [
+          1.4,
+          1.45,
+          1300,
+          520
+        ],
+        "tape": true,
+        "hud": "14 พ.ย. · 22:31",
+        "motion": "walk"
+      },
+      "beats": 6.75
+    },
+    {
+      "scene": "ins",
+      "view": "fm-ins",
+      "note": "insert วิทยุ FM เครื่องเก่าบนชั้นไม้ ไฟหน้าปัดสีแดง เข็มจูนสั่นนิด ๆ ฝุ่นบนลำโพง",
+      "text": "วิทยุชุมชนคลองหมอกเตือนว่า\nหลังเที่ยงคืน พายุฝนจะเข้า",
+      "cues": [
+        [
+          0,
+          "fm"
+        ]
+      ],
+      "mood": 0.4,
+      "data": {},
+      "beats": 6.375
+    },
+    {
+      "scene": "ins",
+      "view": "watch-ins",
+      "note": "macro นาฬิกาพกทองเหลืองเปิดฝาวางบนโต๊ะไม้ใต้โคมไฟ กระจกร้าวเป็นแฉก เข็มหยุดที่ 01:15 แสงโคมจับขอบทอง",
+      "text": "นาฬิกาพกเรือนนี้ หยุดเดินตั้งแต่คืนนั้น\nที่เวลา[ตีหนึ่งสิบห้า]",
+      "clue": "watch",
+      "cues": [
+        [
+          0.2,
+          "tick"
+        ]
+      ],
+      "mood": 0.45,
+      "data": {},
+      "beats": 8
+    },
+    {
+      "scene": "office",
+      "view": "sommai-window-close",
+      "note": "close สมหมายหันข้างมองออกหน้าต่างไปทางรางมืด หยดฝนบนกระจก มือขวาแนบกระจก แผลกลางฝ่ามือหันมาทางกล้อง นาฬิกาพกห้อยจากมือซ้าย",
+      "text": "เพื่อนรุ่นเดียวกันเกษียณและย้ายไปหมดแล้ว\nเหลือเขาคนเดียวที่ขอเฝ้าสถานีต่อ",
+      "clue": [
+        "scar",
+        "watch"
+      ],
+      "mood": 0.45,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sommai@1128,822 h=420 yaw=0.5 look=0.6 armR=reach sad"
+        ],
+        "cam": [
+          4.15,
+          4.4,
+          1205,
+          507
+        ],
+        "shade": "r"
+      },
+      "beats": 7.375
+    },
+    {
+      "scene": "office",
+      "view": "office-window-fif",
+      "note": "ผ่านกระจกหน้าต่างจากชานชาลาที่มืด สมหมายตัวเล็กในห้องสีเหลือง โคมไฟดวงเดียว ฝนพรำตัดหน้ากระจก",
+      "text": "ด้วยเหตุผลเดียว\nเขายังรอเบาะแสของคืนนั้น",
+      "mood": 0.45,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sommai@1511,919 h=535 sit yaw=-0.45 look=-0.5 worried"
+        ],
+        "cam": [
+          1.05,
+          1.08,
+          980,
+          520
+        ],
+        "fore": "window",
+        "seat": true
+      },
+      "beats": 5
+    },
+    {
+      "scene": "past",
+      "view": "fon-draw-med",
+      "note": "อดีต ห้องพักไม้ในบ้านพักนายสถานี โคมไฟสีส้ม ฝนวัยสิบขวบชุดกะลาสีโบว์แดงนั่งพื้นระบายสีเทียนบนกระดาษแข็งเป็นรูปตั๋วรถไฟกับคลื่นทะเล",
+      "text": "ยี่สิบห้าปีก่อน ลูกสาวคนเดียวของเขา\nวาดตั๋วรถไฟใบนี้ให้พ่อ",
+      "clue": "ticket",
+      "mood": 0.35,
+      "data": {
+        "past": true,
+        "mirror": "fon-memory",
+        "tag": {
+          "who": "fon",
+          "name": "น้องฝน",
+          "line": "ลูกสาว · สิบขวบ"
+        },
+        "light": "lamp",
+        "lightAt": [
+          1206.8326180257513,
+          562.4291845493563
+        ],
+        "cast": [
+          "fon@971,1097 h=517 crouch armR=hold prop=paper happy yaw=0.4 look=0.3"
+        ],
+        "cam": [
+          1.45,
+          1.5,
+          826,
+          823
+        ]
+      },
+      "beats": 8.125
+    },
+    {
+      "scene": "past",
+      "view": "fon-close",
+      "note": "อดีต close ฝนยกตั๋วสีเทียนขึ้นข้างแก้ม ยิ้มกว้าง โบว์แดงสองข้าง แสงโคมจากซ้าย",
+      "text": "\"พ่อขา ตั๋วไปทะเลของหนูเสร็จแล้วนะ\"",
+      "who": "fon",
+      "voice": "young_female",
+      "tone": "childlike, happy",
+      "mood": 0.3,
+      "data": {
+        "past": true,
+        "light": "lamp",
+        "lightAt": [
+          1206.8326180257513,
+          562.4291845493563
+        ],
+        "cast": [
+          "fon@680,948 h=394 crouch armR=raise prop=paper happy talk yaw=0.35"
+        ],
+        "cam": [
+          4.42,
+          4.69,
+          753,
+          773
+        ]
+      },
+      "beats": 4.125
+    },
+    {
+      "scene": "past",
+      "view": "ticket-ins",
+      "note": "อดีต insert มือเล็กสองข้างถือตั๋วกระดาษแข็ง สีเทียนเขียนว่า \"พ่อพาฝนไปทะเล 01:15\" รูปรถไฟกับคลื่นสีฟ้า",
+      "text": "\"ถ้าพ่อออกเวรตีหนึ่งสิบห้าเมื่อไหร่\nพ่อสัญญาแล้วนะ ว่าจะพาหนูไปดูทะเล\"",
+      "who": "fon",
+      "voice": "young_female",
+      "tone": "childlike",
+      "clue": "ticket",
+      "mood": 0.3,
+      "data": {
+        "past": true
+      },
+      "beats": 7.25
+    },
+    {
+      "scene": "past",
+      "view": "sommai35-close",
+      "note": "อดีต close สมหมายวัยสามสิบห้าผมดำ ชุดกากีนายสถานี ก้มยิ้มให้ลูก มือรับตั๋ว แสงโคมจับครึ่งหน้า",
+      "text": "\"สัญญาสิลูก พ่อสับรางให้ขบวนสุดท้ายผ่านไปก่อน\nแล้วเราไปทะเลกัน\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "warm",
+      "mood": 0.3,
+      "data": {
+        "past": true,
+        "light": "lamp",
+        "lightAt": [
+          1206.8326180257513,
+          562.4291845493563
+        ],
+        "cast": [
+          "sommai35@1186,981 h=578 armR=offer happy talk yaw=-0.4"
+        ],
+        "cam": [
+          3.01,
+          3.19,
+          1080,
+          547
+        ]
+      },
+      "beats": 8.375
+    },
+    {
+      "scene": "past",
+      "view": "bow-storm-wide",
+      "note": "อดีต ภาพกว้างชานชาลามืดกลางพายุ ไฟฉายหลายดวงส่ายในม่านฝน โบว์แดงในแอ่งน้ำข้างราง (กรอบเดียวกับ cold open ถอยกว้าง)",
+      "text": "แต่คืนนั้น น้องฝนไม่เคยได้ขึ้นรถไฟขบวนไหนเลย",
+      "cues": [
+        [
+          0,
+          "storm"
+        ]
+      ],
+      "mood": 0.6,
+      "data": {
+        "past": true,
+        "light": "lamp",
+        "lightAt": [
+          600,
+          410
+        ],
+        "bow": true,
+        "cast": [],
+        "cam": [
+          1,
+          1.03,
+          960,
+          560
+        ]
+      },
+      "beats": 5.625
+    },
+    {
+      "scene": "past",
+      "view": "raincoat-sil",
+      "note": "ความทรงจำ ภาพสั่นเบลอในฝน เงาชายเสื้อกันฝนสีเขียวขี้ม้าคลุมฮู้ด อุ้มร่างเล็กเดินผ่านแสงไฟหัวรถจักรด้านหลัง",
+      "text": "ในความทรงจำของเขา ชายเสื้อกันฝนสีเขียวขี้ม้า\nอุ้มร่างลูกสาวเดินหายไปทางราง",
+      "clue": "raincoat",
+      "mood": 0.7,
+      "data": {
+        "past": true,
+        "mirror": "raincoat",
+        "light": "lamp",
+        "lightAt": [
+          600,
+          410
+        ],
+        "cast": [
+          "theera-hood-sil@1000,900 h=420 arm=r-carry hair=receding"
+        ],
+        "cam": [
+          1.1,
+          1.14,
+          980,
+          640
+        ],
+        "torches": true
+      },
+      "beats": 8.625
+    },
+    {
+      "scene": "past",
+      "view": "track-high",
+      "note": "อดีต มุมสูง สมหมายหนุ่มคลานบนหินโรยรางกลางฝน ควันลอยจากด้านขวานอกเฟรม แสงไฟหัวรถจักรส่องเฉียง",
+      "text": "เขาฟื้นขึ้นมาท่ามกลางเสียงหวูดและกลิ่นควัน\nแล้วพบร่างของน้องฝน ห่างออกไปห้าสิบเมตร",
+      "cues": [
+        [
+          0,
+          "horn"
+        ]
+      ],
+      "mood": 0.7,
+      "data": {
+        "past": true,
+        "light": "lamp",
+        "lightAt": [
+          600,
+          410
+        ],
+        "cast": [
+          "sommai35@900,900 h=420 crouch shock yaw=0.3"
+        ],
+        "cam": [
+          1.25,
+          1.3,
+          1000,
+          700
+        ],
+        "torches": true
+      },
+      "beats": 8.875
+    },
+    {
+      "scene": "past",
+      "view": "taillights-ew",
+      "note": "อดีต ภาพกว้างมาก ไฟท้ายแดงสองดวงของรถไฟค่อย ๆ หายเข้าม่านฝน รางเปียกสะท้อนแสงแดง",
+      "text": "ส่วนชายคนนั้น\nหายไปกับขบวน[ตีหนึ่งสิบห้า]",
+      "mood": 0.65,
+      "data": {
+        "past": true,
+        "light": "lamp",
+        "lightAt": [
+          600,
+          410
+        ],
+        "tail": true,
+        "torches": false,
+        "cast": [],
+        "cam": [
+          1.1,
+          1.13,
+          960,
+          500
+        ]
+      },
+      "beats": 6.125
+    },
+    {
+      "scene": "ins",
+      "view": "photo-ins",
+      "note": "insert รูปหมู่สีซีดในกรอบไม้บนโต๊ะ ปี 2541 หน้าป้ายสถานี: สมหมายหนุ่ม ธีระในเครื่องแบบตำรวจ ลุงชดถือขวดเหล้าขาวหัวเราะ แม่ค้าสาวกับรถเข็น เด็กหญิงโบว์แดงยืนหน้าสุด",
+      "text": "บนโต๊ะ ยังมีรูปของคนที่เคยอยู่ที่นี่ด้วยกัน",
+      "clue": "liquor",
+      "mood": 0.4,
+      "data": {
+        "tag": {
+          "who": "theera",
+          "name": "ธีระ",
+          "line": "เพื่อนรัก · อดีตร้อยเวร สภ.คลองหมอก"
+        }
+      },
+      "beats": 4.875
+    },
+    {
+      "scene": "ins",
+      "view": "photo-ecu",
+      "note": "ECU ในรูปหมู่ เลื่อนจากธีระที่โอบไหล่สมหมาย ไปลุงชดที่ยกขวดเหล้า แม่ค้าสาย และฝน กระจกกรอบสะท้อนโคมไฟ",
+      "text": "เพื่อนตำรวจที่สนิทที่สุด [ธีระ]\nลุง[ชด]คนสับราง แม่ค้า[สาย] และ[น้องฝน]",
+      "mood": 0.4,
+      "data": {
+        "motion": "pan"
+      },
+      "beats": 8.5
+    },
+    {
+      "scene": "office",
+      "view": "phone-med",
+      "note": "medium โทรศัพท์บ้านสีครีมบนโต๊ะสั่นดัง สมหมายหันไปมอง มือซ้ายยังกำนาฬิกาพก โคมไฟจากซ้าย",
+      "text": "เสียงโทรศัพท์บ้านดังขึ้น ตอนสี่ทุ่มสามสิบห้า",
+      "cues": [
+        [
+          0,
+          "phonering"
+        ]
+      ],
+      "mood": 0.45,
+      "data": {
+        "hud": "14 พ.ย. · 22:35",
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sommai@1511,919 h=535 sit yaw=-0.45 look=-0.5 worried"
+        ],
+        "cam": [
+          1.76,
+          1.86,
+          1328,
+          798
+        ],
+        "seat": true
+      },
+      "beats": 6.875
+    },
+    {
+      "scene": "office",
+      "view": "sommai-phone-close",
+      "note": "close สมหมายแนบหูโทรศัพท์ ฟังนิ่ง หน้าอยู่สามส่วนซ้าย หน้าต่างมืดมีฝนอยู่ข้างหลังเบลอ",
+      "text": "\"สมหมาย กูเอง ธีระ\nคืนนี้ฝนหนักนะ อย่าออกไปไหน\"",
+      "who": "theera",
+      "voice": "father",
+      "tone": "warm, worried",
+      "fx": "phone",
+      "mood": 0.45,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sommai@1511,919 h=535 sit arm=r-phone prop=phone-ear worried look=-0.3"
+        ],
+        "cam": [
+          3.26,
+          3.45,
+          1412,
+          630
+        ],
+        "seat": true
+      },
+      "beats": 5.25
+    },
+    {
+      "scene": "office",
+      "view": "phone-ots",
+      "note": "ข้ามไหล่สมหมาย สายโทรศัพท์ขดยาวพาดโต๊ะ ปลายสายคือโคมไฟกับรูปหมู่บนโต๊ะ",
+      "text": "\"พรุ่งนี้เช้า กูจะไปรับมึงเอง\"",
+      "who": "theera",
+      "voice": "father",
+      "tone": "warm",
+      "fx": "phone",
+      "mood": 0.45,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sommai@1511,919 h=535 sit arm=r-phone prop=phone-ear worried look=-0.3"
+        ],
+        "cam": [
+          1.6,
+          1.66,
+          980,
+          620
+        ],
+        "foreColor": "#c8b594",
+        "foreHair": "#e2dfd7",
+        "seat": true
+      },
+      "beats": 3.75
+    },
+    {
+      "scene": "office",
+      "view": "sommai-phone-close2",
+      "note": "close สมหมายพูดใส่หูโทรศัพท์ ยิ้มบาง ๆ มองลงที่กล่องคีมตัดเหล็กข้างโต๊ะ",
+      "text": "\"ไม่ต้องห่วงหรอก คืนสุดท้ายแล้ว\nกูมีงานต้องเคลียร์\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "mood": 0.45,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sommai@1511,919 h=535 sit arm=r-phone prop=phone-ear talk happy yaw=-0.3"
+        ],
+        "cam": [
+          3.26,
+          3.45,
+          1609,
+          630
+        ],
+        "seat": true
+      },
+      "beats": 6.5
+    },
+    {
+      "scene": "office",
+      "view": "hangup-med",
+      "note": "medium สมหมายวางหูโทรศัพท์ หยิบคีมตัดเหล็กกับไฟฉายจากลัง รูปหมู่อยู่ตรงหน้า",
+      "text": "ธีระคือร้อยเวรเจ้าของคดีเมื่อยี่สิบห้าปีก่อน\nตอนนี้เกษียณ และย้ายไปอยู่ในเมือง",
+      "mood": 0.45,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sommai@1412,941 h=561 yaw=-0.4 armR=hold prop=flashlight wary"
+        ],
+        "cam": [
+          1.67,
+          1.77,
+          1221,
+          695
+        ]
+      },
+      "beats": 7.875
+    },
+    {
+      "scene": "platform",
+      "view": "walk-wide",
+      "note": "ภาพกว้างตามแนวแถวตู้ สมหมายเดินถือไฟฉายกับคีมไปทางปลายแถว นีออนสามดวงเหนือหัว ตู้ 104 อยู่มุมมืดสุดของเฟรม",
+      "text": "เขาเดินไปยังมุมสุดของชานชาลา\nที่ซึ่งตู้หมายเลข[หนึ่งศูนย์สี่]ตั้งอยู่",
+      "cues": [
+        [
+          0,
+          "step"
+        ],
+        [
+          1,
+          "step"
+        ],
+        [
+          2,
+          "step"
+        ]
+      ],
+      "mood": 0.5,
+      "data": {
+        "hud": "14 พ.ย. · 22:54",
+        "motion": "walk",
+        "light": "lamp",
+        "lightAt": [
+          791,
+          277
+        ],
+        "cast": [
+          "sommai@884,651 h=197 walk prop=flashlight wary"
+        ],
+        "cam": [
+          1,
+          1.04,
+          1204,
+          520
+        ],
+        "move": [
+          885,
+          884
+        ]
+      },
+      "beats": 7.5
+    },
+    {
+      "scene": "ins",
+      "view": "hasp-ins",
+      "note": "macro ไฟฉายส่องหูช้างเหล็กของตู้ 104 รอยคีมบากหกรอยเรียงกัน แม่กุญแจทองเหลืองยังเงาวาว",
+      "text": "\"พวกขโมยเหล็กมันงัดไม่เข้าสินะ\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "muttering",
+      "clue": "locks",
+      "mood": 0.55,
+      "data": {
+        "mirror": "locks"
+      },
+      "beats": 3.5
+    },
+    {
+      "scene": "platform",
+      "view": "cut-low",
+      "note": "มุมต่ำจากพื้นข้างขาตู้ สมหมายง้างคีมสุดแรง ห่วงแม่กุญแจดีดขาด นีออนดวงที่สามอยู่เหนือหัวเขา หูช้างมีรอยบากเห็นชัด",
+      "text": "ห่วงเหล็กขาดสะบั้นในครั้งเดียว",
+      "clue": "locks",
+      "cues": [
+        [
+          0.4,
+          "cutter"
+        ]
+      ],
+      "mood": 0.6,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          791,
+          446
+        ],
+        "cast": [
+          "sommai@979,818 h=197 armL=reach armR=reach angry yaw=0.55"
+        ],
+        "cam": [
+          1.35,
+          1.4,
+          859,
+          520
+        ]
+      },
+      "beats": 3
+    },
+    {
+      "scene": "office",
+      "view": "desk-top",
+      "note": "มุมตรงลงจากบน กล่องเหล็กบนโต๊ะใต้โคมไฟ เครื่องเล่นเทป ตั๋วสีเทียน สมุดปกหนังที่หน้ากลางถูกเย็บลวด",
+      "text": "เขาวางของสามชิ้นลงใต้โคมไฟ\nเครื่องเล่นเทป ตั๋วรถไฟ และสมุดปกหนัง",
+      "clue": "ticket",
+      "mood": 0.55,
+      "data": {
+        "hud": "14 พ.ย. · 23:02"
+      },
+      "beats": 8.5
+    },
+    {
+      "scene": "office",
+      "view": "sommai-ticket-close",
+      "note": "close สมหมายถือตั๋วสีเทียนด้วยสองมือใต้โคมไฟ ตาแดง หน้าสามส่วนซ้าย กล่องเหล็กเบลอข้างหน้า",
+      "text": "\"ตั๋วที่ฝนวาดให้พ่อคืนนั้น\nมาอยู่ในตู้ที่ล็อกไว้ยี่สิบห้าปีได้ยังไง\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "trembling",
+      "mood": 0.6,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sommai@1511,919 h=535 sit armR=chest prop=paper sad talk yaw=-0.3 look=-0.3"
+        ],
+        "cam": [
+          3.26,
+          3.45,
+          1412,
+          630
+        ],
+        "hud": "14 พ.ย. · 23:02",
+        "seat": true
+      },
+      "beats": 6.75
+    },
+    {
+      "chapter": "เสียงในเทป",
+      "scene": "ins",
+      "view": "cassette-ins",
+      "note": "macro ตลับเทปติดกระดาษกาวลายมือหวัด \"14 พ.ย. — ห้ามหยุดฟัง\" นิ้วโป้งกด PLAY",
+      "text": "บนตลับเทป มีลายมือเขียนว่า\n[สิบสี่ พฤศจิกา] ห้ามหยุดฟัง",
+      "cues": [
+        [
+          0.3,
+          "tapeclick"
+        ],
+        [
+          0.5,
+          "hiss"
+        ]
+      ],
+      "mood": 0.6,
+      "data": {
+        "hud": "23:05 · คำทำนายจากเทป 0/5"
+      },
+      "beats": 7.375
+    },
+    {
+      "scene": "office",
+      "view": "listen-med",
+      "note": "medium สมหมายนั่งเก้าอี้ไม้หน้าโต๊ะ เครื่องเล่นเทปตรงหน้า โคมไฟจับหน้า เงาเขาทอดยาวบนผนังไม้ข้างหลัง",
+      "text": "\"แกคงคิดว่า มีใครแอบเอาของพวกนี้มาใส่\"",
+      "who": "tape",
+      "voice": "old_male",
+      "fx": "phone",
+      "tone": "hoarse, trembling",
+      "mood": 0.6,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sommai@1511,919 h=535 sit worried yaw=-0.45 look=-0.5"
+        ],
+        "cam": [
+          1.76,
+          1.86,
+          1328,
+          798
+        ],
+        "mug": true,
+        "seat": true
+      },
+      "beats": 5.375
+    },
+    {
+      "scene": "ins",
+      "view": "counter-ecu",
+      "note": "ECU เคาน์เตอร์เทป 018 ตัวเลขกำลังหมุน แกนเทปหมุนอยู่หลังพลาสติก",
+      "text": "\"แต่นี่คือเสียงของแกเอง สมหมาย\"",
+      "who": "tape",
+      "voice": "old_male",
+      "fx": "phone",
+      "tone": "hoarse, trembling",
+      "mood": 0.65,
+      "data": {},
+      "beats": 4.875
+    },
+    {
+      "scene": "office",
+      "view": "throat-close",
+      "note": "close สมหมายยกมือขวาแตะลำคอตัวเอง ตาจ้องเครื่องเล่นเทป หน้าสามส่วนขวา",
+      "text": "\"เป็นไปไม่ได้... ตู้นี้ปิดตาย\nตั้งแต่ฉันอายุแค่สามสิบห้า\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "shaken",
+      "mood": 0.65,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sommai@1511,919 h=535 sit armR=chin shock talk yaw=-0.4"
+        ],
+        "cam": [
+          3.26,
+          3.45,
+          1412,
+          630
+        ],
+        "seat": true
+      },
+      "beats": 6
+    },
+    {
+      "scene": "office",
+      "view": "desk-low",
+      "note": "มุมต่ำจากพื้นโต๊ะ เครื่องเล่นเทปใหญ่ในโฟร์กราวด์ สมหมายโน้มตัวเข้ามา โคมไฟเป็นดวงสว่างเหนือหัว",
+      "text": "\"แต่เสียงในเทปนี่ มันเสียงคนแก่\nอย่างฉันตอนนี้ชัด ๆ\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "shaken",
+      "mood": 0.65,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          700
+        ],
+        "cast": [
+          "sommai@1511,1033 h=505 sit shock talk yaw=-0.35"
+        ],
+        "cam": [
+          1.25,
+          1.3,
+          1200,
+          560
+        ],
+        "seat": true
+      },
+      "beats": 6
+    },
+    {
+      "scene": "ins",
+      "view": "reels-ecu2",
+      "note": "ECU แกนเทปหมุน ไฟโคมสะท้อนบนพลาสติก เงานิ้วสมหมายค้างเหนือปุ่ม STOP แต่ไม่กด",
+      "text": "\"ฟังให้ดี แกจำไม่ได้หรอก\nว่าเคยนั่งฟังเทปนี้มาก่อน\"",
+      "who": "tape",
+      "voice": "old_male",
+      "fx": "phone",
+      "tone": "hoarse, trembling",
+      "mood": 0.7,
+      "data": {},
+      "beats": 6.75
+    },
+    {
+      "scene": "office",
+      "view": "wall-shadow",
+      "note": "เงาสมหมายบนผนังไม้ขยายใหญ่จากโคมไฟตั้งโต๊ะ ตัวจริงนั่งนิ่งเล็กมุมล่างซ้าย",
+      "text": "\"ทุกปี พอผ่านคืนนี้ไป\nจะมีคนแอบใส่ยาในของที่ยื่นให้แกกิน\"",
+      "who": "tape",
+      "voice": "old_male",
+      "fx": "phone",
+      "tone": "hoarse, trembling",
+      "mood": 0.7,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sommai@1511,919 h=535 sit worried yaw=-0.3"
+        ],
+        "cam": [
+          1,
+          1.04,
+          960,
+          520
+        ],
+        "wallShadow": [
+          1240,
+          300,
+          300
+        ],
+        "seat": true
+      },
+      "beats": 7.875
+    },
+    {
+      "scene": "office",
+      "view": "sommai-close",
+      "note": "close สมหมายกลืนน้ำลาย ตาเหลือบไปทางประตูที่เปิดสู่ชานชาลา โคมไฟจากซ้าย",
+      "text": "\"แล้วแกก็จะลืมทุกอย่างที่เห็น\nคืนนี้ ห้ามกินอะไรที่ใครยื่นให้เด็ดขาด\"",
+      "who": "tape",
+      "voice": "old_male",
+      "fx": "phone",
+      "tone": "hoarse, trembling",
+      "mood": 0.7,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sommai@1511,919 h=535 sit scared look=0.6 yaw=0.3"
+        ],
+        "cam": [
+          3.26,
+          3.45,
+          1412,
+          630
+        ],
+        "seat": true
+      },
+      "beats": 8.375
+    },
+    {
+      "scene": "ins",
+      "view": "ticket-lamp-ins",
+      "note": "insert ตั๋วสีเทียนใต้โคมไฟ คราบสีน้ำตาลเข้มที่มุม ข้อความ 01:15 ชัด",
+      "text": "\"คดีของลูกแก หมดอายุความไปนานแล้ว\nแต่คนร้ายไม่เคยไปไหนไกล\"",
+      "who": "tape",
+      "voice": "old_male",
+      "fx": "phone",
+      "tone": "hoarse, trembling",
+      "clue": "ticket",
+      "mood": 0.7,
+      "data": {},
+      "beats": 7.75
+    },
+    {
+      "scene": "track",
+      "view": "rails-rain-ew",
+      "note": "ภาพกว้างมาก รางว่างใต้ฝนพรำ ไฟสัญญาณแดงดวงเดียว ป้อมสับรางเล็กไกลในหมอก",
+      "text": "\"ปีนี้สถานีจะถูกยุบ\nมันจะกลับมาเป็น[ครั้งสุดท้าย]\"",
+      "who": "tape",
+      "voice": "old_male",
+      "fx": "phone",
+      "tone": "hoarse, trembling",
+      "mood": 0.7,
+      "data": {
+        "light": "night",
+        "cam": [
+          1,
+          1.03,
+          960,
+          520
+        ]
+      },
+      "beats": 6.125
+    },
+    {
+      "scene": "office",
+      "view": "sommai-high",
+      "note": "มุมสูงจากมุมเพดาน สมหมายนั่งตัวเล็กที่โต๊ะ วงแสงโคมไฟรอบเครื่องเล่นเทป ห้องรอบนอกมืด",
+      "text": "ถ้าเขาจำไม่ได้ว่าเคยฟัง\nเทปม้วนนี้ถูกอัดไว้ตั้งแต่เมื่อไหร่",
+      "mood": 0.65,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          382.52918287937746
+        ],
+        "cast": [
+          "sommai@1511,712 h=485 sit worried"
+        ],
+        "cam": [
+          1,
+          1.03,
+          960,
+          520
+        ],
+        "seat": true
+      },
+      "beats": 7.875
+    },
+    {
+      "scene": "ins",
+      "view": "radio-ins",
+      "note": "insert วิทยุสื่อสารสีดำบนแท่นชาร์จ ไฟเขียวกะพริบ ข้างแท่นมีบอร์ดไม้ปักกระดาษประกาศหลายแผ่น แผ่นบนสุดหัวแดง",
+      "text": "\"ถ้าแกไม่เชื่อว่าฉันรู้คืนนี้ทุกนาที\nมองวิทยุบนโต๊ะแกเดี๋ยวนี้\"",
+      "who": "tape",
+      "voice": "old_male",
+      "fx": "phone",
+      "tone": "hoarse, trembling",
+      "clue": "memo",
+      "mood": 0.7,
+      "data": {
+        "mirror": "memo"
+      },
+      "beats": 7.625
+    },
+    {
+      "scene": "office",
+      "view": "sommai-turn-close",
+      "note": "close สมหมายหันขวับไปทางวิทยุ yaw หาเฟรมซ้าย ไฟเขียวของวิทยุสะท้อนในตา",
+      "text": "\"ห้าทุ่มสิบห้าตรง มันจะซ่าสามครั้ง\nแล้วดับสนิททั้งคืน\"",
+      "who": "tape",
+      "voice": "old_male",
+      "fx": "phone",
+      "tone": "hoarse, trembling",
+      "mood": 0.75,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sommai@1511,919 h=535 sit shock yaw=-0.55 look=-0.7"
+        ],
+        "cam": [
+          3.26,
+          3.45,
+          1412,
+          630
+        ],
+        "seat": true
+      },
+      "beats": 8.625
+    },
+    {
+      "scene": "ins",
+      "view": "clock-ecu",
+      "note": "ECU นาฬิกาดิจิทัลบนผนัง 23:14:58 ตัวเลขแดง",
+      "text": "",
+      "vo": "",
+      "cues": [
+        [
+          0,
+          "tick"
+        ],
+        [
+          1.25,
+          "tick"
+        ]
+      ],
+      "mood": 0.8,
+      "data": {},
+      "beats": 2.5
+    },
+    {
+      "scene": "ins",
+      "view": "radio-dies-ins",
+      "note": "insert วิทยุสื่อสาร ไฟเขียวดับวูบ เหลือหน้าจอดำ แท่นชาร์จมืด",
+      "text": "ห้าทุ่มสิบห้าตรง วิทยุซ่าสามครั้ง\nแล้วดับสนิท",
+      "cues": [
+        [
+          0,
+          "static"
+        ],
+        [
+          0.6,
+          "static"
+        ],
+        [
+          1.2,
+          "static"
+        ],
+        [
+          1.7,
+          "pop"
+        ]
+      ],
+      "mood": 0.8,
+      "data": {
+        "hud": "23:15 · คำทำนายจากเทป 1/5"
+      },
+      "beats": 5.875
+    },
+    {
+      "scene": "office",
+      "view": "radio-grab-med",
+      "note": "medium สมหมายลุกพรวดจนเก้าอี้ไถลถอย คว้าวิทยุมาแนบปาก กดปุ่มซ้ำ ๆ",
+      "text": "\"ศูนย์คลองหมอกเรียกศูนย์เดินรถ\nได้ยินไหม ศูนย์!\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "urgent",
+      "mood": 0.8,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sommai@1508,964 h=589 arm=r-phone prop=phone talk angry yaw=-0.3"
+        ],
+        "cam": [
+          1.59,
+          1.69,
+          1307,
+          706
+        ],
+        "radioLed": "off",
+        "clock": "23:15"
+      },
+      "beats": 5
+    },
+    {
+      "scene": "office",
+      "view": "radio-dead-close",
+      "note": "close สมหมายถือวิทยุจอดำ ค้างไว้ข้างปาก ตาเบิก เงยมองเครื่องเล่นเทป",
+      "text": "ไม่มีเสียงตอบ\nมีแต่เสียงฝนที่เริ่มตั้งเค้า",
+      "mood": 0.75,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sommai@1508,964 h=589 arm=r-phone prop=phone shock look=-0.6"
+        ],
+        "cam": [
+          2.96,
+          3.13,
+          1400,
+          522
+        ],
+        "radioLed": "off",
+        "clock": "23:15"
+      },
+      "beats": 4.75
+    },
+    {
+      "scene": "office",
+      "view": "room-wide",
+      "note": "ภาพกว้างห้องนายสถานีจากมุมประตู สมหมายยืนนิ่งกลางแอ่งแสงโคม บอร์ดประกาศ ตู้เหล็ก ลิ้นชักล่างมีกุญแจ นาฬิกาผนัง รูปหมู่ รอบห้องมืด",
+      "text": "ถ้าเทปรู้ล่วงหน้าแม้แต่วินาทีที่วิทยุจะดับ\nใครกันที่อยู่เบื้องหลังเสียงนี้",
+      "mood": 0.7,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sommai@1150,890 h=501 yaw=-0.3 worried armR=hold prop=phone"
+        ],
+        "cam": [
+          0.9,
+          0.93,
+          960,
+          500
+        ],
+        "radioLed": "off",
+        "clock": "23:16"
+      },
+      "beats": 7.875
+    },
+    {
+      "scene": "front",
+      "view": "sai-cart-wide",
+      "note": "ภาพกว้างหน้าห้องขายตั๋ว ป้าสายเข็นรถเข็นน้ำชงที่มีหลอดไฟห้อยเข้ามาทางประตูห้องนายสถานี มือถือแก้วโอวัลตินควันกรุ่น ตะกร้าหวายคล้องแขนซ้าย",
+      "text": "ไม่กี่นาทีต่อมา [ป้าสาย] แม่ค้าน้ำชงหน้าสถานี\nยกแก้วโอวัลตินร้อนมาให้",
+      "cues": [
+        [
+          0,
+          "cart"
+        ]
+      ],
+      "mood": 0.55,
+      "data": {
+        "hud": "23:20 · คำทำนายจากเทป 1/5",
+        "tag": {
+          "who": "sai",
+          "name": "ป้าสาย",
+          "line": "แม่ค้าน้ำชง · ขายหน้าสถานีมาสามสิบปี"
+        },
+        "light": "lamp",
+        "lightAt": [
+          710.4000000000001,
+          460
+        ],
+        "cast": [
+          "sai@1177,880 h=321 walk prop=mug worried"
+        ],
+        "cartAt": [
+          0.48,
+          0.5
+        ],
+        "cam": [
+          1.05,
+          1.08,
+          1000,
+          520
+        ],
+        "move": [
+          1057,
+          1257
+        ]
+      },
+      "beats": 8.625
+    },
+    {
+      "scene": "office",
+      "view": "sai-close",
+      "note": "close ป้าสายยื่นแก้วสองมือ ยิ้มฝืน ตาไม่สบตา หลังเธอคือประตูเปิดสู่ชานชาลามืด",
+      "text": "\"ดึกแล้วนะลุง ดื่มอุ่น ๆ แล้วเข้าไปนอนเถอะจ้ะ\"",
+      "who": "sai",
+      "voice": "old_female",
+      "tone": "warm, nervous",
+      "mood": 0.55,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sai@1340,1005 h=562 armR=offer prop=mug talk worried yaw=0.4"
+        ],
+        "cam": [
+          3.1,
+          3.29,
+          1443,
+          583
+        ],
+        "radioLed": "off"
+      },
+      "beats": 4.5
+    },
+    {
+      "scene": "ins",
+      "view": "mug-ins",
+      "note": "insert แก้วโอวัลตินร้อนควันขึ้น วางข้างเครื่องเล่นเทปใต้โคมไฟ",
+      "text": "\"คืนนี้หลับยาว ๆ สักคืนนะ\"",
+      "who": "sai",
+      "voice": "old_female",
+      "tone": "soft",
+      "mood": 0.6,
+      "data": {},
+      "beats": 4
+    },
+    {
+      "scene": "ins",
+      "view": "basket-ecu",
+      "note": "ECU ตะกร้าหวายบนแขนซ้ายป้าสาย ผ้าขาวม้าเลื่อนเผยแผงยาเม็ดขาวกับกล่องแม่กุญแจทองเหลืองใหม่",
+      "text": "ใต้ผ้าขาวม้าในตะกร้า\nมีแผงยาเม็ดสีขาว กับกล่องแม่กุญแจใหม่",
+      "clue": "pills",
+      "mood": 0.65,
+      "data": {},
+      "beats": 7.875
+    },
+    {
+      "scene": "office",
+      "view": "sai-ots",
+      "note": "ข้ามไหล่ป้าสายที่เบลอ สมหมายนั่งที่โต๊ะ มือแตะเครื่องเล่นเทป มองป้าตรง ๆ",
+      "text": "\"ขอบใจป้า แต่คืนนี้ผมต้องเคลียร์ตู้ฝากของ\nที่ค้างอยู่ให้หมด\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "mood": 0.6,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sommai@1511,919 h=535 sit talk yaw=-0.2 look=-0.2"
+        ],
+        "cam": [
+          1.76,
+          1.86,
+          1328,
+          798
+        ],
+        "foreShoulder": "l",
+        "foreColor": "#d9c9a8",
+        "foreHair": "#8c8881",
+        "radioLed": "off",
+        "mug": true,
+        "seat": true
+      },
+      "beats": 6.5
+    },
+    {
+      "scene": "office",
+      "view": "sai-flinch-close",
+      "note": "close ป้าสายสะดุ้ง มือขวาดึงผ้าขาวม้าปิดตะกร้า ตาหลบ",
+      "text": "\"ตู้พวกนั้นป้าไม่รู้เรื่องหรอกลุง\nอย่าไปยุ่งกับมันเลย\"",
+      "who": "sai",
+      "voice": "old_female",
+      "tone": "nervous",
+      "clue": "pills",
+      "mood": 0.65,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sai@1340,1005 h=562 armR=chest scared talk yaw=0.5 look=0.5"
+        ],
+        "cam": [
+          3.1,
+          3.29,
+          1443,
+          583
+        ],
+        "radioLed": "off"
+      },
+      "beats": 5.625
+    },
+    {
+      "scene": "front",
+      "view": "sai-leave-wide",
+      "note": "ภาพกว้างชานชาลา ป้าสายเข็นรถออกไปทางหน้าสถานีรีบ ๆ หลอดไฟรถเข็นแกว่ง สมหมายยืนเงาดำที่ประตูห้อง",
+      "text": "ป้าสายรีบเข็นรถกลับออกไป\nโดยไม่หันกลับมามองอีกเลย",
+      "mood": 0.6,
+      "data": {
+        "motion": "walk",
+        "light": "lamp",
+        "lightAt": [
+          710.4000000000001,
+          460
+        ],
+        "cast": [
+          "sai@722,873 h=315 walk flip",
+          "sommai-sil@1538,777 h=260"
+        ],
+        "cartAt": [
+          0.28,
+          0.5
+        ],
+        "cam": [
+          0.95,
+          0.98,
+          960,
+          520
+        ]
+      },
+      "beats": 6.125
+    },
+    {
+      "scene": "ins",
+      "view": "mug-cold-ins",
+      "note": "insert แก้วโอวัลตินเดิม ควันจางแล้ว ถูกผลักไปชิดขอบโต๊ะ",
+      "text": "ลุงสมหมายวางแก้วไว้ตรงนั้น\nไม่แตะแม้แต่อึกเดียว",
+      "mood": 0.6,
+      "data": {},
+      "beats": 5.5
+    },
+    {
+      "scene": "ins",
+      "view": "diary-ins",
+      "note": "macro สมุดปกหนังเปิดใต้โคมไฟ ลายมือสมหมาย หัวหน้า \"14 พ.ย.\" ขีดเส้นใต้ประโยค \"กลิ่นเหล้าขาวฉุนในป้อมสับราง\"",
+      "text": "ในสมุดปกหนัง เป็นลายมือของเขาเอง\nบันทึกเรื่องคืนวันที่สิบสี่ พฤศจิกายน",
+      "clue": "liquor",
+      "cues": [
+        [
+          0.2,
+          "flip"
+        ]
+      ],
+      "mood": 0.6,
+      "data": {},
+      "beats": 10
+    },
+    {
+      "scene": "ins",
+      "view": "diary-ecu",
+      "note": "ECU ลายมือขีดเส้นใต้สองเส้น \"คนร้ายเมาเหล้า\" ไฟโคมจับหมึก",
+      "text": "ประโยคที่ขีดเส้นใต้หนักที่สุดคือ\nคนร้ายเมาเหล้า กลิ่นเหล้าขาวฉุนไปทั้งป้อม",
+      "mood": 0.6,
+      "data": {},
+      "beats": 9.875
+    },
+    {
+      "scene": "ins",
+      "view": "counter-085",
+      "note": "ECU เคาน์เตอร์เทปหมุนถึง 085",
+      "text": "\"คนที่ปิดความลับคืนนั้น\nกำลังเดินไปที่ป้อมสับรางท้ายชานชาลา\"",
+      "who": "tape",
+      "voice": "old_male",
+      "fx": "phone",
+      "tone": "hoarse, trembling",
+      "mood": 0.65,
+      "data": {},
+      "beats": 7
+    },
+    {
+      "scene": "track",
+      "view": "box-far-ew",
+      "note": "ภาพกว้างมากจากชานชาลา ป้อมสับรางไกลในหมอก มีแสงไฟฉายดวงเล็กขยับอยู่หลังหน้าต่าง",
+      "text": "\"ห้าทุ่มสี่สิบห้า ผู้ชายเสื้อช็อปช่าง\nจะแอบเข้าไปขโมยสมุดเดินรถเก่า\"",
+      "who": "tape",
+      "voice": "old_male",
+      "fx": "phone",
+      "tone": "hoarse, trembling",
+      "mood": 0.7,
+      "data": {
+        "light": "night",
+        "cam": [
+          1.1,
+          1.14,
+          1100,
+          500
+        ]
+      },
+      "beats": 7.375
+    },
+    {
+      "scene": "office",
+      "view": "sommai-resolve-close",
+      "note": "close สมหมายลุกขึ้นหยิบไฟฉาย คล้องเครื่องเล่นเทปไว้ที่คอ หันไปทางประตู",
+      "text": "\"และเมื่อแกถาม เขาจะโกหกแก\nว่าทำกุญแจป้อม[หาย]\"",
+      "who": "tape",
+      "voice": "old_male",
+      "fx": "phone",
+      "tone": "hoarse, trembling",
+      "mood": 0.7,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sommai@1610,964 h=589 armR=hold prop=flashlight yaw=0.5 look=0.6 angry"
+        ],
+        "cam": [
+          2.96,
+          3.13,
+          1718,
+          522
+        ],
+        "radioLed": "off",
+        "mug": true
+      },
+      "beats": 7.375
+    },
+    {
+      "chapter": "คนในป้อมสับราง",
+      "scene": "platform",
+      "view": "tape-walk-med",
+      "note": "medium สมหมายเดินออกจากห้องลงชานชาลา เครื่องเล่นเทปห้อยคอ ไฟฉายในมือ วิทยุจอดำเหน็บกระเป๋าเสื้อ นีออนสามดวงเรียงไปทางปลายชานชาลา",
+      "text": "เทปพูดถูกมาแล้วหนึ่งข้อ\nและมันบอกว่าคนร้ายยังวนเวียนอยู่ที่นี่",
+      "mood": 0.6,
+      "data": {
+        "hud": "23:38 · คำทำนายจากเทป 1/5",
+        "motion": "walk",
+        "light": "lamp",
+        "lightAt": [
+          791,
+          277
+        ],
+        "cast": [
+          "sommai@895,749 h=311 walk arm=r-phone prop=cassette worried"
+        ],
+        "cam": [
+          3.02,
+          3.2,
+          1001,
+          613
+        ],
+        "move": [
+          975,
+          735
+        ]
+      },
+      "beats": 9
+    },
+    {
+      "scene": "boxext",
+      "view": "walk-wide",
+      "note": "ภาพกว้างเฉียงริมราง สมหมายเดินถือไฟฉายไปตามทางเดินข้างราง ป้อมไม้ยกพื้นเตี้ยมีหน้าต่างเรือง ฐานปูนบ้านพักเก่าเป็นสี่เหลี่ยมว่างข้างรางหลีก",
+      "text": "ลุงสมหมายเดินฝ่าความมืด\nไปที่ป้อมสับรางท้ายสถานี",
+      "cues": [
+        [
+          0,
+          "step"
+        ],
+        [
+          1,
+          "step"
+        ]
+      ],
+      "mood": 0.6,
+      "data": {
+        "hud": "23:42 · คำทำนายจากเทป 1/5",
+        "motion": "walk",
+        "light": "night",
+        "cast": [
+          "sommai@1180,860 h=300 walk flip prop=flashlight wary"
+        ],
+        "torch": [
+          1000,
+          760,
+          260
+        ],
+        "lit": true,
+        "cam": [
+          1,
+          1.03,
+          960,
+          540
+        ],
+        "move": [
+          1300,
+          1100
+        ]
+      },
+      "beats": 6
+    },
+    {
+      "scene": "boxext",
+      "view": "foundation-high",
+      "note": "มุมสูง ฐานปูนบ้านพักที่ถูกทุบ เหลือพื้นแตกมีหญ้าขึ้น ปลายรางหลีกกับกันชนรางเหล็กบิดงอชี้เข้าฐาน ไฟฉายลากผ่าน",
+      "text": "ข้างป้อม คือฐานปูนของบ้านพักนายสถานีหลังเก่า\nที่ถูกทุบทิ้งหลังคืนนั้น",
+      "mood": 0.6,
+      "data": {
+        "light": "night",
+        "cast": [],
+        "torch": [
+          2050,
+          680,
+          260
+        ],
+        "cam": [
+          1.7,
+          1.75,
+          2000,
+          700
+        ]
+      },
+      "beats": 8
+    },
+    {
+      "scene": "box",
+      "view": "window-fif",
+      "note": "ผ่านกระจกร้าวหน้าต่างป้อมจากข้างนอก ข้างในไฟฉายดวงเล็ก ชายเสื้อช็อปกรมท่าแถบสะท้อนแสงก้มงัดลิ้นชักตู้เอกสารไม้ด้วยไขควง",
+      "text": "ผ่านกระจกที่แตกร้าว\nเขาเห็นแสงไฟฉายอยู่ข้างในจริง ๆ",
+      "mood": 0.7,
+      "data": {
+        "hud": "23:44 · คำทำนายจากเทป 1/5",
+        "light": "lamp",
+        "cast": [
+          "khem@502,897 h=520 crouch armR=hold prop=flashlight worried yaw=-0.5"
+        ],
+        "torch": [
+          422,
+          611,
+          420
+        ],
+        "lightAt": [
+          422.4631578947369,
+          697.3684210526316
+        ],
+        "cam": [
+          1.05,
+          1.08,
+          960,
+          540
+        ],
+        "fore": "window"
+      },
+      "beats": 6
+    },
+    {
+      "scene": "box",
+      "view": "khem-pry-close",
+      "note": "close เข้มก้มหน้างัดลิ้นชัก เหงื่อเม็ดโต ไฟฉายคาบปาก แสงจากล่างขึ้นหน้า พวงกุญแจเหลืองแกว่งที่เอวซ้าย",
+      "text": "[เข้ม] ช่างซ่อมบำรุงราง ลูกชายของลุงชด\nคนสับรางที่เคยเข้าเวรคู่กับเขา",
+      "clue": "keys",
+      "mood": 0.65,
+      "data": {
+        "tag": {
+          "who": "khem",
+          "name": "เข้ม",
+          "line": "ช่างซ่อมบำรุงราง · ลูกลุงชด"
+        },
+        "light": "lamp",
+        "cast": [
+          "khem@502,897 h=520 crouch armR=hold prop=flashlight worried yaw=-0.5"
+        ],
+        "torch": [
+          422,
+          611,
+          420
+        ],
+        "lightAt": [
+          422.4631578947369,
+          697.3684210526316
+        ],
+        "cam": [
+          3.35,
+          3.55,
+          407,
+          667
+        ],
+        "shade": "r"
+      },
+      "beats": 8.875
+    },
+    {
+      "scene": "box",
+      "view": "door-low",
+      "note": "มุมต่ำจากพื้นป้อม ประตูไม้กระแทกเปิด สมหมายยืนในกรอบประตูย้อนนีออนไกล ลำไฟฉายพุ่งเข้ามาในห้อง",
+      "text": "ห้าทุ่มสี่สิบห้า ตรงตามเทป",
+      "cues": [
+        [
+          0,
+          "doorbang"
+        ]
+      ],
+      "mood": 0.8,
+      "data": {
+        "hud": "23:45 · คำทำนายจากเทป 2/5",
+        "light": "lamp",
+        "cast": [
+          "sommai-sil@1613,923 h=552"
+        ],
+        "door": true,
+        "torch": [
+          1313,
+          623,
+          520
+        ],
+        "lightAt": [
+          1613.125,
+          623.125
+        ],
+        "cam": [
+          1.05,
+          1.08,
+          1100,
+          560
+        ]
+      },
+      "beats": 4
+    },
+    {
+      "scene": "box",
+      "view": "khem-hide-med",
+      "note": "medium เข้มสะดุ้งหันมา รีบยัดสมุดปกแข็งสีซีดเข้าใต้เสื้อช็อป มือซ้ายกดอก คันโยกเหล็กเรียงแถวด้านหลัง",
+      "text": "\"เข้ม! ดึกป่านนี้แกเข้ามาทำอะไร\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "angry",
+      "mood": 0.75,
+      "data": {
+        "light": "lamp",
+        "cast": [
+          "khem@762,897 h=520 armR=chest prop=book shock yaw=0.4"
+        ],
+        "door": true,
+        "torch": [
+          762,
+          585,
+          460
+        ],
+        "lightAt": [
+          1700,
+          500
+        ],
+        "cam": [
+          1.81,
+          1.91,
+          939,
+          670
+        ]
+      },
+      "beats": 5.125
+    },
+    {
+      "scene": "box",
+      "view": "sommai-ots",
+      "note": "ข้ามไหล่เข้มที่เบลอ สมหมายยืนกรอบประตู ไฟฉายในมือส่องตรงมา",
+      "text": "\"แล้วแกเอากุญแจป้อมมาจากไหน\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "angry",
+      "mood": 0.75,
+      "data": {
+        "light": "lamp",
+        "cast": [
+          "sommai@1509,942 h=575 armR=hold prop=flashlight angry talk yaw=-0.45"
+        ],
+        "door": true,
+        "torch": [
+          1249,
+          597,
+          360
+        ],
+        "lightAt": [
+          1309.4418604651162,
+          642.0930232558139
+        ],
+        "cam": [
+          1.63,
+          1.73,
+          1314,
+          690
+        ],
+        "foreShoulder": "l",
+        "foreColor": "#2f4659",
+        "foreHair": "#1c202a"
+      },
+      "beats": 3.5
+    },
+    {
+      "scene": "box",
+      "view": "khem-close",
+      "note": "close เข้มหรี่ตาหลบแสงไฟฉาย ส่ายหน้า มือขวาเลื่อนลงไปบังเอว",
+      "text": "\"ประตูมันไม่ได้ล็อกครับลุง\nกุญแจผมทำหล่นหายไปตั้งแต่อาทิตย์ก่อน\"",
+      "who": "khem",
+      "voice": "casual_male",
+      "tone": "nervous",
+      "mood": 0.7,
+      "data": {
+        "light": "lamp",
+        "cast": [
+          "khem@762,897 h=520 armR=hip worried talk yaw=0.35 look=0.3"
+        ],
+        "torch": [
+          762,
+          585,
+          460
+        ],
+        "lightAt": [
+          1700,
+          500
+        ],
+        "cam": [
+          3.35,
+          3.55,
+          857,
+          507
+        ]
+      },
+      "beats": 6
+    },
+    {
+      "scene": "ins",
+      "view": "keys-ecu",
+      "note": "ECU พวงกุญแจป้ายพลาสติกเหลือง \"ป้อมสับรางคลองหมอก\" ห้อยเอวซ้ายเข้ม นิ้วมือขวาเลื่อนมาบังครึ่งป้าย",
+      "text": "แต่ลูกกุญแจป้อมสับราง\nยังห้อยอยู่ที่เอวของเขา",
+      "clue": "keys",
+      "mood": 0.7,
+      "data": {},
+      "beats": 6
+    },
+    {
+      "scene": "box",
+      "view": "lever-low",
+      "note": "มุมต่ำจากแถวคันโยก เข้มยืนชิดคันโยก หลังพิงตู้เอกสาร พยายามยิ้ม ไฟฉายของสมหมายจับครึ่งหน้า",
+      "text": "\"ผมแค่มาเช็กคันโยก ก่อนส่งมอบพื้นที่พรุ่งนี้\"",
+      "who": "khem",
+      "voice": "casual_male",
+      "tone": "nervous",
+      "mood": 0.7,
+      "data": {
+        "light": "lamp",
+        "cast": [
+          "khem@724,878 h=497 armR=hip worried talk yaw=0.4"
+        ],
+        "torch": [
+          724,
+          580,
+          460
+        ],
+        "lightAt": [
+          1700,
+          500
+        ],
+        "cam": [
+          1.45,
+          1.5,
+          844,
+          654
+        ]
+      },
+      "beats": 4.625
+    },
+    {
+      "scene": "box",
+      "view": "sommai-close",
+      "note": "close สมหมายในกรอบประตู ฝนเป็นเส้นข้างหลัง ตาจ้องเข้มไม่กะพริบ",
+      "text": "คำพูดของเข้ม ตรงกับเสียงในเทปทุกคำ",
+      "mood": 0.75,
+      "data": {
+        "light": "lamp",
+        "cast": [
+          "sommai@1509,942 h=575 armR=hold prop=flashlight angry yaw=-0.45"
+        ],
+        "door": true,
+        "lightAt": [
+          1900,
+          400
+        ],
+        "cam": [
+          3.03,
+          3.21,
+          1404,
+          510
+        ]
+      },
+      "beats": 4.875
+    },
+    {
+      "scene": "ins",
+      "view": "logbook-shirt-ins",
+      "note": "insert ขอบสมุดปกแข็งสีซีดโผล่จากใต้เสื้อช็อป สันปั๊มตัวเลข 2542",
+      "text": "และสิ่งที่เขาซ่อนไว้ใต้เสื้อ\nคือสมุดบันทึกการเดินรถ ปี[สี่สอง]",
+      "mood": 0.75,
+      "data": {},
+      "beats": 8
+    },
+    {
+      "scene": "box",
+      "view": "sommai-low",
+      "note": "มุมต่ำ สมหมายก้าวเข้ามาในป้อม ไฟฉายส่องลงที่เข้ม หลอดไฟเพดานที่ดับอยู่เหนือหัว",
+      "text": "\"คืนที่ลูกฉันตาย พ่อแกเข้าเวรอยู่ที่ป้อมนี้\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "hard",
+      "mood": 0.75,
+      "data": {
+        "light": "lamp",
+        "cast": [
+          "sommai@1329,974 h=613 armR=hold prop=flashlight angry talk yaw=-0.45"
+        ],
+        "door": true,
+        "torch": [
+          1029,
+          774,
+          380
+        ],
+        "lightAt": [
+          1900,
+          400
+        ],
+        "cam": [
+          1.4,
+          1.45,
+          1269,
+          594
+        ]
+      },
+      "beats": 4.875
+    },
+    {
+      "scene": "box",
+      "view": "khem-ots",
+      "note": "ข้ามไหล่สมหมายที่มืดเบลอ เข้มถอยชิดตู้ มือกดสมุดใต้เสื้อ",
+      "text": "\"พ่อแกกินเหล้าคาเวรใช่ไหม\nพ่อแกเห็นอะไรกันแน่\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "hard",
+      "mood": 0.75,
+      "data": {
+        "light": "lamp",
+        "cast": [
+          "khem@762,897 h=520 armR=chest prop=book scared yaw=0.4"
+        ],
+        "torch": [
+          762,
+          585,
+          460
+        ],
+        "lightAt": [
+          1700,
+          500
+        ],
+        "cam": [
+          1.81,
+          1.91,
+          939,
+          670
+        ],
+        "foreColor": "#c8b594",
+        "foreHair": "#e2dfd7"
+      },
+      "beats": 5.875
+    },
+    {
+      "scene": "box",
+      "view": "khem-close2",
+      "note": "close เข้มหลบตา เสียงสั่น ปากเม้ม หันหน้าไปทางหน้าต่างร้าว",
+      "text": "\"พ่อผมเลิกเหล้าตั้งแต่คืนนั้นแหละครับลุง\"",
+      "who": "khem",
+      "voice": "casual_male",
+      "tone": "shaky",
+      "clue": "liquor",
+      "mood": 0.7,
+      "data": {
+        "light": "lamp",
+        "cast": [
+          "khem@762,897 h=520 scared talk yaw=-0.45 look=-0.5"
+        ],
+        "torch": [
+          762,
+          585,
+          460
+        ],
+        "lightAt": [
+          1700,
+          500
+        ],
+        "cam": [
+          3.35,
+          3.55,
+          666,
+          507
+        ]
+      },
+      "beats": 3.625
+    },
+    {
+      "scene": "box",
+      "view": "two-med",
+      "note": "medium สองคนในป้อม สมหมายซ้ายในแสงไฟฉาย เข้มขวาชิดตู้ คันโยกเรียงระหว่างกลาง",
+      "text": "\"พ่อเสียไปตั้งนานแล้ว\nลุงอย่ารื้อฟื้นมันอีกเลย\"",
+      "who": "khem",
+      "voice": "casual_male",
+      "tone": "shaky",
+      "mood": 0.7,
+      "data": {
+        "light": "lamp",
+        "cast": [
+          "khem@736,897 h=520 armL=chest scared talk yaw=0.4",
+          "sommai@1345,952 h=587 armR=hold prop=flashlight angry yaw=-0.45"
+        ],
+        "door": true,
+        "torch": [
+          762,
+          585,
+          460
+        ],
+        "lightAt": [
+          1700,
+          500
+        ],
+        "cam": [
+          1.15,
+          1.18,
+          960,
+          560
+        ]
+      },
+      "beats": 4.75
+    },
+    {
+      "scene": "box",
+      "view": "khem-door-med",
+      "note": "medium เข้มเบี่ยงตัวไปทางประตู มือซ้ายกดอก มือขวาเอื้อมขอบประตู พวงกุญแจแกว่ง",
+      "text": "\"คืนนี้ลุงกลับไปพักเถอะครับ\nเดี๋ยวผมล็อกป้อมให้เอง\"",
+      "who": "khem",
+      "voice": "casual_male",
+      "clue": "keys",
+      "mood": 0.7,
+      "data": {
+        "light": "lamp",
+        "cast": [
+          "khem@1452,942 h=575 armR=reach worried talk yaw=0.5"
+        ],
+        "door": true,
+        "torch": [
+          1452,
+          597,
+          460
+        ],
+        "lightAt": [
+          1700,
+          500
+        ],
+        "cam": [
+          1.63,
+          1.73,
+          1256,
+          690
+        ]
+      },
+      "beats": 4.875
+    },
+    {
+      "scene": "boxext",
+      "view": "khem-run-wide",
+      "note": "ภาพกว้างนอกป้อม เข้มวิ่งลงบันไดป้อมหายเข้าความมืดทางหน้าสถานี สมหมายยืนเงาดำในกรอบประตูที่เรือง",
+      "text": "เข้มผลักไหล่เขาเบา ๆ\nแล้ววิ่งหนีหายไปในความมืด",
+      "cues": [
+        [
+          0,
+          "step"
+        ],
+        [
+          0.5,
+          "step"
+        ],
+        [
+          1,
+          "step"
+        ]
+      ],
+      "mood": 0.7,
+      "data": {
+        "motion": "walk",
+        "light": "night",
+        "cast": [
+          "khem@820,820 h=300 run flip",
+          "sommai-sil@655,540 h=200"
+        ],
+        "doorOpen": true,
+        "lit": true,
+        "cam": [
+          1.45,
+          1.5,
+          760,
+          600
+        ],
+        "move": [
+          900,
+          500
+        ]
+      },
+      "beats": 4.5
+    },
+    {
+      "scene": "box",
+      "view": "levers-close",
+      "note": "close สมหมายยืนข้างคันโยกเหล็กแถวยาว มือขวาจับหัวคันโยกอันหนึ่งไว้โดยไม่รู้ตัว ไฟฉายตกส่องพื้น",
+      "text": "ทิ้งให้ลุงสมหมายยืนอยู่ข้างคันโยกสับราง\nแถวยาวในความมืด",
+      "mood": 0.7,
+      "data": {
+        "light": "lamp",
+        "cast": [
+          "sommai@997,847 h=459 armR=reach worried yaw=-0.2 look=-0.4"
+        ],
+        "torch": [
+          877,
+          827,
+          300
+        ],
+        "lightAt": [
+          876.9888475836432,
+          827.3234200743494
+        ],
+        "cam": [
+          3.8,
+          4.02,
+          1081,
+          503
+        ]
+      },
+      "beats": 8
+    },
+    {
+      "scene": "box",
+      "view": "box-high",
+      "note": "มุมสูงจากเพดานป้อม สมหมายตัวเล็กกลางพื้นไม้ ลิ้นชักที่ถูกงัดเปิดค้าง แสงไฟฉายเป็นวงเดียว",
+      "text": "ทำไมลูกชายเพื่อนร่วมงาน ต้องมาขโมยสมุดเดินรถ\nของคืนเกิดเหตุ ในคืนสุดท้ายของสถานี",
+      "mood": 0.7,
+      "data": {
+        "light": "lamp",
+        "cast": [
+          "sommai@658,897 h=520 crouch armR=hold prop=flashlight worried yaw=-0.5"
+        ],
+        "pried": true,
+        "torch": [
+          700,
+          820,
+          340
+        ],
+        "lightAt": [
+          700,
+          820
+        ],
+        "cam": [
+          1,
+          1.03,
+          900,
+          520
+        ]
+      },
+      "beats": 8.5
+    },
+    {
+      "scene": "ins",
+      "view": "window-crack-ins",
+      "note": "insert กระจกหน้าต่างป้อมแตกร้าวเป็นแฉกเก่า ขอบติดเทปกาวเหลืองกรอบ ไฟฉายสะท้อนในรอยร้าว",
+      "text": "และเสียงของเขาในเทป\nรู้ได้ยังไง ว่าเข้มจะโกหกประโยคไหน",
+      "mood": 0.7,
+      "data": {
+        "mirror": "window"
+      },
+      "beats": 8
+    },
+    {
+      "chapter": "ไฟดวงที่สาม",
+      "scene": "platform",
+      "view": "eaves-med",
+      "note": "medium ใต้ชายคาชานชาลา สมหมายยืนกดปุ่ม PLAY ใต้นีออนดวงที่สาม ฝนเม็ดแรกกระทบรางหน้าเขา แถวตู้ข้างหลัง",
+      "text": "\"เข้มเป็นแค่คนเก็บกวาดหลักฐาน\nไม่ใช่คนที่ลงมือ\"",
+      "who": "tape",
+      "voice": "old_male",
+      "fx": "phone",
+      "tone": "hoarse, trembling",
+      "cues": [
+        [
+          0,
+          "tapeclick"
+        ]
+      ],
+      "mood": 0.65,
+      "data": {
+        "hud": "23:55 · คำทำนายจากเทป 2/5",
+        "light": "lamp",
+        "lightAt": [
+          791,
+          277
+        ],
+        "cast": [
+          "sommai@841,657 h=204 arm=r-phone prop=cassette worried yaw=-0.2 look=0.4"
+        ],
+        "cam": [
+          4.6,
+          4.88,
+          910,
+          568
+        ]
+      },
+      "beats": 5.5
+    },
+    {
+      "scene": "ins",
+      "view": "counter-164",
+      "note": "ECU เคาน์เตอร์เทป 164 หยดฝนเกาะพลาสติก",
+      "text": "\"เที่ยงคืนตรง ไฟชานชาลาดวงที่สาม\nเหนือตู้หนึ่งศูนย์สี่ จะกะพริบสามครั้งแล้วดับ\"",
+      "who": "tape",
+      "voice": "old_male",
+      "fx": "phone",
+      "tone": "hoarse, trembling",
+      "mood": 0.7,
+      "data": {},
+      "beats": 9.875
+    },
+    {
+      "scene": "office",
+      "view": "drawer-dark-low",
+      "note": "มุมต่ำห้องนายสถานีที่ว่าง ลิ้นชักเหล็กชั้นล่างกับแม่กุญแจเล็กในแสงโคมที่เปิดค้างไว้ บอร์ดประกาศเบลอข้างบน",
+      "text": "\"แล้วเที่ยงคืนครึ่ง เปิดลิ้นชักเหล็กชั้นล่าง\nในห้องของแก\"",
+      "who": "tape",
+      "voice": "old_male",
+      "fx": "phone",
+      "tone": "hoarse, trembling",
+      "mood": 0.7,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          700
+        ],
+        "cast": [],
+        "cam": [
+          1.6,
+          1.66,
+          439,
+          839
+        ],
+        "radioLed": "off"
+      },
+      "beats": 7.375
+    },
+    {
+      "scene": "platform",
+      "view": "sommai-fear-close",
+      "note": "close สมหมายใต้นีออน แสงเขียวขาวจากบน ใต้ตาลึก เครื่องเล่นเทปแนบอก",
+      "text": "\"แกจะเจอปืนลูกโม่\nที่มีกระสุนเหลือแค่[ห้านัด]\"",
+      "who": "tape",
+      "voice": "old_male",
+      "fx": "phone",
+      "tone": "hoarse, trembling",
+      "mood": 0.75,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          791,
+          277
+        ],
+        "cast": [
+          "sommai@841,657 h=204 arm=r-phone prop=cassette scared yaw=-0.2 look=0.4"
+        ],
+        "cam": [
+          8.54,
+          9.05,
+          878,
+          504
+        ]
+      },
+      "beats": 7.375
+    },
+    {
+      "scene": "ins",
+      "view": "timer-ins",
+      "note": "insert กล่องไทม์เมอร์สีเทาที่โคนเสาไฟดวงที่สาม สติกเกอร์ซีด \"ตั้งเวลา 00.00 น. · 2564\" หยดฝนเกาะ",
+      "text": "สามนาทีก่อนเที่ยงคืน\nเขายืนรออยู่ใต้ไฟดวงนั้น",
+      "clue": "memo",
+      "mood": 0.7,
+      "data": {
+        "hud": "23:57 · คำทำนายจากเทป 2/5"
+      },
+      "beats": 6
+    },
+    {
+      "scene": "ins",
+      "view": "platform-clock-ecu",
+      "note": "ECU นาฬิกาสถานีใต้ชายคา เข็มวินาทีวิ่งเข้าเลขสิบสอง",
+      "text": "",
+      "vo": "",
+      "cues": [
+        [
+          0,
+          "tick"
+        ],
+        [
+          1.25,
+          "tick"
+        ]
+      ],
+      "mood": 0.85,
+      "data": {},
+      "beats": 2.5
+    },
+    {
+      "scene": "platform",
+      "view": "lamps-low",
+      "note": "มุมต่ำจากพื้นชานชาลา นีออนดวงที่สามกะพริบแล้วดับ แถวตู้ฝั่งนั้นจมเงา ฝนเทลงเป็นม่านหลังชายคา",
+      "text": "เที่ยงคืนตรง ไฟดวงที่สามกะพริบสามครั้ง\nแล้วดับ",
+      "cues": [
+        [
+          0,
+          "buzz"
+        ],
+        [
+          0.4,
+          "buzz"
+        ],
+        [
+          0.8,
+          "buzz"
+        ],
+        [
+          1.2,
+          "thunder"
+        ],
+        [
+          1.4,
+          "rainheavy"
+        ]
+      ],
+      "mood": 0.85,
+      "data": {
+        "hud": "00:00 · คำทำนายจากเทป 3/5",
+        "motion": "fx",
+        "light": "lamp",
+        "lightAt": [
+          826,
+          350
+        ],
+        "lamp3": "flicker",
+        "rain": "heavy",
+        "cast": [
+          "sommai@831,814 h=190 scared look=0.5 arm=r-phone prop=cassette"
+        ],
+        "cam": [
+          1.05,
+          1.08,
+          900,
+          560
+        ]
+      },
+      "beats": 6.875
+    },
+    {
+      "scene": "platform",
+      "view": "rain-ew",
+      "note": "ภาพกว้างมาก ชานชาลาครึ่งซ้ายมืด อีกครึ่งเหลือแสงจากห้องขายตั๋ว สมหมายตัวเล็กกลางเฟรมใต้ชายคา ม่านฝนหนา",
+      "text": "แล้วพายุฝนก็เทลงมา\nอย่างที่วิทยุเตือนไว้",
+      "mood": 0.75,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lamp3": "off",
+        "rain": "heavy",
+        "cast": [
+          "sommai@783,631 h=175 worried arm=r-phone prop=cassette"
+        ],
+        "cam": [
+          0.9,
+          0.92,
+          920,
+          500
+        ]
+      },
+      "beats": 4.75
+    },
+    {
+      "scene": "platform",
+      "view": "sommai-wet-close",
+      "note": "close สมหมายเปียกฝนครึ่งตัว ด้านซ้ายมืดเพราะไฟดวงที่สามดับ ด้านขวาจับแสงห้องขายตั๋ว",
+      "text": "สามข้อแล้ว ที่เทปไม่เคยพลาด",
+      "mood": 0.75,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lamp3": "off",
+        "rain": "heavy",
+        "cast": [
+          "sommai@841,657 h=204 arm=r-phone prop=cassette scared yaw=-0.2 look=0.4"
+        ],
+        "cam": [
+          8.54,
+          9.05,
+          803,
+          504
+        ],
+        "shade": "l"
+      },
+      "beats": 4.5
+    },
+    {
+      "scene": "front",
+      "view": "sai-wind-wide",
+      "note": "ภาพกว้างหน้าห้องขายตั๋ว ลมฝนกรรโชก รถเข็นป้าสายโคลง ตะกร้าหวายร่วงจากรถเข็น ของกระจายบนพื้นปูนเปียก ป้าสายวิ่งเข้าไปเก็บ",
+      "text": "ขณะเขาเดินกลับ ลมพัดตะกร้าของป้าสาย\nตกลงมาเทกระจาด",
+      "cues": [
+        [
+          0,
+          "wind"
+        ]
+      ],
+      "mood": 0.7,
+      "data": {
+        "hud": "00:12 · คำทำนายจากเทป 3/5",
+        "light": "lamp",
+        "lightAt": [
+          710.4000000000001,
+          460
+        ],
+        "rain": "heavy",
+        "cart": "fallen",
+        "cartAt": [
+          0.72,
+          0.58
+        ],
+        "cast": [
+          "sai@1173,949 h=383 crouch scared"
+        ],
+        "cam": [
+          0.95,
+          0.98,
+          960,
+          540
+        ]
+      },
+      "beats": 5.875
+    },
+    {
+      "scene": "ins",
+      "view": "spill-top",
+      "note": "มุมตรงลงจากบน พื้นปูนเปียก แผงยาที่ถูกแกะบดไปครึ่งแผง แม่กุญแจทองเหลืองลูกใหม่ ใบเสร็จร้านวัสดุเปียกฝน มือป้าสายเอื้อมเข้ามาจากขอบบน",
+      "text": "แผงยาที่ถูกแกะบดไปครึ่งแผง\nแม่กุญแจลูกใหม่ และใบเสร็จหนึ่งใบ",
+      "clue": [
+        "pills",
+        "locks"
+      ],
+      "mood": 0.7,
+      "data": {},
+      "beats": 7.75
+    },
+    {
+      "scene": "ins",
+      "view": "receipt-ecu",
+      "note": "ECU ใบเสร็จร้านวัสดุคลองหมอก หมึกซึมฝน \"แม่กุญแจทองเหลือง 50 มม. 1 ตัว\"",
+      "text": "แม่กุญแจทองเหลือง [ห้าสิบมิล] หนึ่งตัว",
+      "mood": 0.7,
+      "data": {},
+      "beats": 4.5
+    },
+    {
+      "scene": "front",
+      "view": "sommai-confront-low",
+      "note": "มุมต่ำจากพื้นเปียก สมหมายยืนค้ำตัวป้าสาย ถือแม่กุญแจใหม่ขึ้นให้ดู ไฟรถเข็นอยู่เหนือหัว",
+      "text": "\"ป้าบอกไม่รู้เรื่องตู้\nแต่นี่มันแม่กุญแจรุ่นเดียวกับตู้หนึ่งศูนย์สี่\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "angry",
+      "clue": "locks",
+      "mood": 0.75,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          710.4000000000001,
+          460
+        ],
+        "rain": "heavy",
+        "cart": "fallen",
+        "cartAt": [
+          0.72,
+          0.58
+        ],
+        "cast": [
+          "sai@1215,949 h=383 crouch scared",
+          "sommai@857,1034 h=520 armR=offer prop=key angry talk yaw=0.4"
+        ],
+        "cam": [
+          1.15,
+          1.2,
+          1000,
+          712
+        ]
+      },
+      "beats": 6.5
+    },
+    {
+      "scene": "front",
+      "view": "sai-ots",
+      "note": "ข้ามไหล่ป้าสายที่คุกเข่าเบลอ สมหมายชูแผงยาในมือ หน้าเปียกฝน",
+      "text": "\"แล้วยานี่ ป้าบดใส่โอวัลตินให้ผมใช่ไหม\nเทปมันพูดจริง\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "angry",
+      "mood": 0.75,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          710.4000000000001,
+          460
+        ],
+        "rain": "heavy",
+        "cart": "fallen",
+        "cartAt": [
+          0.72,
+          0.58
+        ],
+        "cast": [
+          "sommai@878,949 h=434 armR=offer prop=box angry talk yaw=0.4"
+        ],
+        "cam": [
+          2.16,
+          2.29,
+          1026,
+          758
+        ],
+        "foreShoulder": "r",
+        "foreColor": "#d9c9a8",
+        "foreHair": "#8c8881"
+      },
+      "beats": 10.375
+    },
+    {
+      "scene": "front",
+      "view": "sai-kneel-high",
+      "note": "มุมสูง ป้าสายคุกเข่าบนพื้นเปียก โกยของใส่กระเป๋าเสื้อ มือสั่น น้ำฝนสะท้อนไฟรถเข็น",
+      "text": "\"ป้าไม่ได้คิดร้ายกับลุงเลยนะ\"",
+      "who": "sai",
+      "voice": "old_female",
+      "tone": "crying",
+      "mood": 0.7,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          710.4000000000001,
+          460
+        ],
+        "rain": "heavy",
+        "cart": "fallen",
+        "cartAt": [
+          0.72,
+          0.58
+        ],
+        "cast": [
+          "sai@1173,949 h=383 crouch cry talk yaw=-0.3"
+        ],
+        "cam": [
+          1.4,
+          1.44,
+          1173,
+          829
+        ]
+      },
+      "beats": 3.125
+    },
+    {
+      "scene": "front",
+      "view": "sai-close",
+      "note": "close ป้าสายเงยหน้า น้ำตาคลอปนฝน มือกำผ้าขาวม้าแนบอก",
+      "text": "\"เชื่อป้าเถอะ เข้าไปนอนนะ\nอย่าอยู่รอรถไฟเที่ยวตีหนึ่งสิบห้าเลย\"",
+      "who": "sai",
+      "voice": "old_female",
+      "tone": "pleading",
+      "mood": 0.7,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          710.4000000000001,
+          460
+        ],
+        "rain": "heavy",
+        "cart": "fallen",
+        "cast": [
+          "sai@1173,949 h=383 crouch armL=chest cry talk yaw=-0.4 look=-0.4"
+        ],
+        "cam": [
+          4.55,
+          4.82,
+          1102,
+          779
+        ]
+      },
+      "beats": 7.625
+    },
+    {
+      "scene": "front",
+      "view": "sommai-close",
+      "note": "close สมหมายชะงัก ตาหรี่ ไฟรถเข็นแกว่งทำให้แสงบนหน้าส่าย",
+      "text": "\"ป้ารู้เรื่องรถไฟตีหนึ่งสิบห้าได้ยังไง\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "suspicious",
+      "mood": 0.75,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          710.4000000000001,
+          460
+        ],
+        "rain": "heavy",
+        "cart": "fallen",
+        "cast": [
+          "sommai@878,949 h=434 wary talk yaw=0.4 look=0.5"
+        ],
+        "cam": [
+          4.01,
+          4.25,
+          958,
+          623
+        ]
+      },
+      "beats": 3.875
+    },
+    {
+      "scene": "front",
+      "view": "two-wide",
+      "note": "ภาพกว้างระดับสายตา สมหมายยืนซ้าย ป้าสายคุกเข่าขวา รถเข็นล้มระหว่างกลาง ฝนเป็นม่านหลังชายคา",
+      "text": "\"ป้ากับไอ้เข้ม ร่วมมือกันปิดบังอะไรผมอยู่\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "angry",
+      "mood": 0.75,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          710.4000000000001,
+          460
+        ],
+        "rain": "heavy",
+        "cart": "fallen",
+        "cartAt": [
+          0.56,
+          0.58
+        ],
+        "cast": [
+          "sommai@722,929 h=414 angry talk yaw=0.4",
+          "sai@1365,929 h=365 crouch scared yaw=-0.3"
+        ],
+        "cam": [
+          1.05,
+          1.08,
+          960,
+          520
+        ]
+      },
+      "beats": 5
+    },
+    {
+      "scene": "front",
+      "view": "sai-wai-close",
+      "note": "close ป้าสายยกมือไหว้สมหมายทั้งน้ำตา หัวก้ม ไม่ตอบ",
+      "text": "ป้าสายไม่ตอบ\nเธอยกมือไหว้เขาทั้งน้ำตา",
+      "mood": 0.7,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          710.4000000000001,
+          460
+        ],
+        "rain": "heavy",
+        "cart": "fallen",
+        "cast": [
+          "sai@1173,949 h=383 crouch armL=chest armR=chest cry"
+        ],
+        "cam": [
+          4.55,
+          4.82,
+          1243,
+          779
+        ]
+      },
+      "beats": 4.5
+    },
+    {
+      "scene": "front",
+      "view": "sai-push-ew",
+      "note": "ภาพกว้างมาก ป้าสายเข็นรถเข็นฝ่าฝนออกไปทางถนนหน้าสถานี หลอดไฟรถเข็นเป็นจุดเดียวที่เล็กลงเรื่อย ๆ",
+      "text": "แล้วเข็นรถฝ่าฝนออกไปจากสถานี",
+      "mood": 0.7,
+      "data": {
+        "motion": "walk",
+        "light": "lamp",
+        "rain": "heavy",
+        "cast": [
+          "sai@1000,720 h=200 back"
+        ],
+        "cam": [
+          1.35,
+          1.38,
+          1000,
+          600
+        ]
+      },
+      "beats": 4.625
+    },
+    {
+      "scene": "platform",
+      "view": "sommai-alone-high",
+      "note": "มุมสูง สมหมายยืนคนเดียวกลางชานชาลาเปียก ครึ่งหนึ่งในเงาไฟดวงที่สามที่ดับ เครื่องเล่นเทปห้อยคอ",
+      "text": "ทั้งเข้มและป้าสาย ทำเหมือนรู้\nว่าคืนนี้กำลังจะเกิดอะไรขึ้น",
+      "mood": 0.7,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          23
+        ],
+        "lamp3": "off",
+        "rain": "heavy",
+        "cast": [
+          "sommai@764,442 h=187 worried arm=r-phone prop=cassette"
+        ],
+        "cam": [
+          1,
+          1.02,
+          900,
+          470
+        ]
+      },
+      "beats": 7.25
+    },
+    {
+      "scene": "office",
+      "view": "drawer-ins",
+      "note": "insert ลิ้นชักเหล็กชั้นล่างในแสงโคม แม่กุญแจเล็กสนิมเกาะ หยดน้ำจากเสื้อเขาตกลงบนพื้นข้างลิ้นชัก",
+      "text": "และยังเหลืออีกคำทำนายหนึ่ง\nที่รอเขาอยู่ในห้องของตัวเอง",
+      "mood": 0.75,
+      "data": {},
+      "beats": 6.5
+    },
+    {
+      "chapter": "ลิ้นชักชั้นล่าง",
+      "scene": "office",
+      "view": "return-wide",
+      "note": "ภาพกว้างห้องนายสถานีจากมุมประตู สมหมายเปียกโชกเดินกลับเข้ามา น้ำหยดเป็นทาง แก้วโอวัลตินเย็นชืดยังอยู่บนโต๊ะใต้โคมไฟ",
+      "text": "สามคำทำนายเป็นจริง เข้มโกหก ป้าสายวางยา\nและทุกคนรู้เรื่องรถไฟเที่ยวตีหนึ่งสิบห้า",
+      "mood": 0.7,
+      "data": {
+        "hud": "00:28 · คำทำนายจากเทป 3/5",
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sommai@1639,941 h=561 walk flip worried prop=flashlight"
+        ],
+        "cam": [
+          0.92,
+          0.95,
+          960,
+          520
+        ],
+        "radioLed": "off",
+        "mug": true,
+        "motion": "walk"
+      },
+      "beats": 10.25
+    },
+    {
+      "scene": "office",
+      "view": "drawer-low",
+      "note": "มุมต่ำระดับลิ้นชัก สมหมายคุกเข่างัดลิ้นชักเหล็กชั้นล่างด้วยคีม โคมไฟจากบนโต๊ะส่องลงมาครึ่งหน้า",
+      "text": "เที่ยงคืนครึ่ง เขางัดลิ้นชักเหล็กชั้นล่างสุด",
+      "cues": [
+        [
+          0.3,
+          "pry"
+        ]
+      ],
+      "mood": 0.75,
+      "data": {
+        "hud": "00:30 · คำทำนายจากเทป 3/5",
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          700
+        ],
+        "cast": [
+          "sommai@521,961 h=396 crouch yaw=-0.5 armR=reach worried"
+        ],
+        "cam": [
+          2.37,
+          2.51,
+          386,
+          909
+        ],
+        "radioLed": "off"
+      },
+      "beats": 5.375
+    },
+    {
+      "scene": "ins",
+      "view": "revolver-ins",
+      "note": "macro ห่อผ้าขาวคลี่ออก ปืนลูกโม่เก่า ลูกโม่เปิดออก กระสุนห้านัด รังเพลิงที่หกว่าง",
+      "text": "ปืนลูกโม่ของเขาสมัยหนุ่ม\nมีกระสุนอยู่[ห้านัด] รังที่หกว่างเปล่า",
+      "clue": "gun",
+      "cues": [
+        [
+          0.2,
+          "clack"
+        ]
+      ],
+      "mood": 0.8,
+      "data": {
+        "hud": "00:31 · คำทำนายจากเทป 4/5"
+      },
+      "beats": 8
+    },
+    {
+      "scene": "office",
+      "view": "gun-close",
+      "note": "close สมหมายกำด้ามปืนด้วยมือขวาที่มีแผล ตาไม่ละจากลูกโม่ ข้างหลังเบลอเป็นบอร์ดประกาศกับวิทยุจอดำ",
+      "text": "\"นัดที่หก... กูยิงไล่ไอ้คนร้ายไปตั้งแต่คืนนั้น\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "low",
+      "clue": [
+        "scar",
+        "memo"
+      ],
+      "mood": 0.8,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sommai@549,881 h=490 armR=raise prop=revolver angry talk yaw=0.3 look=0.2"
+        ],
+        "cam": [
+          3.55,
+          3.77,
+          639,
+          513
+        ],
+        "radioLed": "off"
+      },
+      "beats": 6.25
+    },
+    {
+      "scene": "ins",
+      "view": "staple-ecu",
+      "note": "ECU ลวดเย็บกระดาษขึ้นสนิมปิดหน้ากลางสมุดปกหนัง ปลายมีดพกงัดลวดขึ้นทีละตัว",
+      "text": "แล้วเขาก็งัดลวดเย็บที่ปิดหน้ากลางของสมุดออก",
+      "cues": [
+        [
+          0.3,
+          "scrape"
+        ]
+      ],
+      "mood": 0.75,
+      "data": {},
+      "beats": 4.75
+    },
+    {
+      "scene": "ins",
+      "view": "record-ins",
+      "note": "insert สำเนาบันทึกประจำวัน สภ.คลองหมอก พิมพ์ดีด ลงวันที่ 15 พ.ย. 2542 ตราประทับสีม่วง ลายเซ็นท้ายกระดาษ",
+      "text": "ข้างในคือสำเนาบันทึกของตำรวจคลองหมอก\nลงวันที่สิบห้า พฤศจิกายน ปีสี่สอง",
+      "mood": 0.75,
+      "data": {
+        "mirror": "record-sign"
+      },
+      "beats": 8
+    },
+    {
+      "scene": "ins",
+      "view": "record-ecu",
+      "note": "ECU แถวพิมพ์ดีด \"ไม่พบร่องรอยบุคคลภายนอก ให้ปิดสำนวนเป็นอุบัติเหตุ\" ไฟโคมจับตัวอักษร",
+      "text": "ไม่พบร่องรอยบุคคลภายนอก\nให้ปิดสำนวนเป็นอุบัติเหตุ",
+      "mood": 0.75,
+      "data": {},
+      "beats": 6.125
+    },
+    {
+      "scene": "ins",
+      "view": "signature-ecu",
+      "note": "ECU ลายเซ็นปากกาน้ำเงิน ร.ต.อ.ธีระ พงศ์ไพรัช ใต้แถวพิมพ์ดีด",
+      "text": "ลงชื่อ ร้อยตำรวจเอก[ธีระ]",
+      "mood": 0.8,
+      "data": {},
+      "beats": 4
+    },
+    {
+      "scene": "office",
+      "view": "sommai-shock-close",
+      "note": "close สมหมายถอยหลังพิงเก้าอี้ กระดาษสั่นในมือ หน้าครึ่งหนึ่งในเงา",
+      "text": "ร้อยเวรที่สั่งปิดคดีของลูกสาวเขา\nคือเพื่อนที่สนิทที่สุดของเขาเอง",
+      "mood": 0.8,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sommai@1511,919 h=535 sit armR=hold prop=paper shock look=-0.2"
+        ],
+        "cam": [
+          3.26,
+          3.45,
+          1412,
+          630
+        ],
+        "radioLed": "off",
+        "seat": true
+      },
+      "beats": 7.25
+    },
+    {
+      "scene": "ins",
+      "view": "photo-theera-ecu",
+      "note": "ECU ใบหน้าธีระหนุ่มในรูปหมู่ ยิ้ม แขนโอบไหล่สมหมาย กระจกกรอบสะท้อนโคมไฟ",
+      "text": "ธีระ... คนที่เพิ่งโทรมาบอกให้เขาอยู่เฉย ๆ คืนนี้",
+      "mood": 0.8,
+      "data": {},
+      "beats": 5.75
+    },
+    {
+      "scene": "office",
+      "view": "sommai-rise-med",
+      "note": "medium สมหมายลุกขึ้น เหน็บปืนเข้าเข็มขัด คว้าไฟฉาย หันไปทางประตูที่ฝนสาด",
+      "text": "แต่ในสมุดเดินรถที่เข้มเอาไป\nอาจมีชื่อที่ธีระไม่อยากให้ใครเห็น",
+      "mood": 0.75,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sommai@1474,964 h=589 yaw=0.5 armR=hold prop=flashlight angry"
+        ],
+        "cam": [
+          1.59,
+          1.69,
+          1273,
+          706
+        ],
+        "radioLed": "off"
+      },
+      "beats": 6.875
+    },
+    {
+      "scene": "shed",
+      "view": "ext-wide",
+      "note": "ภาพกว้างกลางฝน หน้าห้องพักช่างท้ายชานชาลา ไฟฟลูออเรสเซนต์ในห้อง เข้มกำลังผูกกระเป๋าสะพายกับมอเตอร์ไซค์ที่จอดใต้ชายคา",
+      "text": "ลุงสมหมายเดินฝ่าฝนไปที่ห้องพักช่าง\nก่อนที่เข้มจะขี่รถหนีไป",
+      "cues": [
+        [
+          0,
+          "rainheavy"
+        ]
+      ],
+      "mood": 0.75,
+      "data": {
+        "hud": "00:42 · คำทำนายจากเทป 4/5",
+        "light": "lamp",
+        "lightAt": [
+          1044,
+          561.6
+        ],
+        "cast": [
+          "khem@831,962 h=506 armR=reach worried yaw=-0.3",
+          "sommai@-208,1115 h=674 walk prop=flashlight angry"
+        ],
+        "cam": [
+          0.95,
+          0.98,
+          940,
+          520
+        ],
+        "motion": "walk"
+      },
+      "beats": 7.375
+    },
+    {
+      "scene": "shed",
+      "view": "block-ots",
+      "note": "ข้ามไหล่สมหมาย เขายืนขวางหน้ารถ มือขวาที่มีแผลถือปืนลดต่ำชี้พื้น เข้มเงยหน้า มือค้างที่สายกระเป๋า",
+      "text": "\"เอาสมุดเดินรถคืนนั้นมาให้ฉัน เดี๋ยวนี้\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "cold",
+      "clue": "gun",
+      "mood": 0.8,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          1044,
+          561.6
+        ],
+        "cast": [
+          "khem@900,932 h=472 armR=hold shock yaw=-0.3"
+        ],
+        "cam": [
+          1.99,
+          2.11,
+          739,
+          725
+        ],
+        "foreColor": "#c8b594",
+        "foreHair": "#e2dfd7"
+      },
+      "beats": 3.875
+    },
+    {
+      "scene": "shed",
+      "view": "khem-close",
+      "note": "close เข้มมองปืน ตาเบิก ฝนสาดจากชายคาเป็นเส้นข้างหน้า",
+      "text": "\"ลุง! ลุงเอาปืนมาทำไม\"",
+      "who": "khem",
+      "voice": "casual_male",
+      "tone": "scared",
+      "mood": 0.8,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          1044,
+          561.6
+        ],
+        "cast": [
+          "khem@900,962 h=506 scared talk yaw=-0.35 look=-0.4"
+        ],
+        "cam": [
+          3.44,
+          3.65,
+          807,
+          582
+        ]
+      },
+      "beats": 3.125
+    },
+    {
+      "scene": "shed",
+      "view": "khem-plead-med",
+      "note": "medium เข้มยกมือข้างหนึ่งห้าม อีกมือกดกระเป๋า มอเตอร์ไซค์เปียกข้างตัว",
+      "text": "\"สารวัตรธีระสั่งไว้ครับ\nว่าห้ามให้ลุงเห็นสมุดเล่มนี้เด็ดขาด\"",
+      "who": "khem",
+      "voice": "casual_male",
+      "tone": "scared",
+      "mood": 0.8,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          1044,
+          561.6
+        ],
+        "cast": [
+          "khem@900,962 h=506 armL=raise armR=chest prop=book scared talk yaw=-0.3"
+        ],
+        "cam": [
+          1.86,
+          1.97,
+          728,
+          741
+        ]
+      },
+      "beats": 5.875
+    },
+    {
+      "scene": "shed",
+      "view": "handover-ins",
+      "note": "insert มือเข้มสั่นยื่นสมุดปกแข็งสีซีดให้มือขวามีแผลของสมหมาย ฝนสาดจากชายคา",
+      "text": "สุดท้ายเข้มก็ยอมส่งสมุดให้ ทั้งที่มือยังสั่น",
+      "mood": 0.8,
+      "data": {},
+      "beats": 5
+    },
+    {
+      "scene": "ins",
+      "view": "logbook-ins",
+      "note": "macro หน้าสมุดเดินรถ 14 พ.ย. 2542 ไฟฉายส่อง แถว 01:15 ขบวนสินค้า 704 ช่องผู้ควบคุมประแจถูกขีดฆ่าดำทึบ",
+      "text": "ช่องเวลาตีหนึ่งสิบห้า ขบวนรถสินค้าเจ็ดศูนย์สี่\nชื่อผู้ควบคุมประแจถูกขีดฆ่าจนดำ",
+      "cues": [
+        [
+          0.2,
+          "flip"
+        ]
+      ],
+      "mood": 0.8,
+      "data": {},
+      "beats": 10.5
+    },
+    {
+      "scene": "ins",
+      "view": "logbook-ecu",
+      "note": "ECU ลายมือสั่นเขียนทับข้างช่องดำ \"ประแจรางหลีกขัดข้องเอง — นายชด ผู้รับผิดชอบ\"",
+      "text": "แล้วมีคนเขียนทับว่า ประแจรางหลีกขัดข้องเอง\nนายชด ผู้รับผิดชอบ",
+      "mood": 0.8,
+      "data": {},
+      "beats": 7.5
+    },
+    {
+      "scene": "shed",
+      "view": "sommai-close",
+      "note": "close สมหมายเงยจากสมุด ฝนหยดจากขอบหมวก ไฟฟลูออเรสเซนต์ซีดจับหน้า",
+      "text": "\"ประแจขัดข้อง?\nคืนนั้นลูกฉันถูกลักพาตัวไปไม่ใช่เหรอ\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "confused",
+      "mood": 0.8,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          1044,
+          561.6
+        ],
+        "cast": [
+          "sommai@396,1017 h=566 armR=chest prop=book worried talk yaw=0.35"
+        ],
+        "cam": [
+          3.08,
+          3.26,
+          499,
+          592
+        ]
+      },
+      "beats": 6.375
+    },
+    {
+      "scene": "shed",
+      "view": "khem-close2",
+      "note": "close เข้มน้ำตาคลอ มองสมหมายด้วยแววตาเวทนาปนกลัว",
+      "text": "\"ลุง... คืนนั้นไม่มีใครลักพาตัวฝนเลยครับ\"",
+      "who": "khem",
+      "voice": "casual_male",
+      "tone": "pained",
+      "mood": 0.8,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          1044,
+          561.6
+        ],
+        "cast": [
+          "khem@900,962 h=506 sad talk yaw=-0.35"
+        ],
+        "cam": [
+          3.44,
+          3.65,
+          807,
+          582
+        ]
+      },
+      "beats": 5.125
+    },
+    {
+      "scene": "ins",
+      "view": "knife-ecu",
+      "note": "ECU ปลายมีดพกขูดหมึกดำบนช่องที่ถูกขีด ลายมือเก่าจาง ๆ เริ่มโผล่ใต้หมึก",
+      "text": "เขาเอาปลายมีด ค่อย ๆ ขูดหมึกที่ทับไว้ออก",
+      "cues": [
+        [
+          0.2,
+          "scrape"
+        ],
+        [
+          1,
+          "scrape"
+        ]
+      ],
+      "hush": true,
+      "mood": 0.85,
+      "data": {},
+      "beats": 5.25
+    },
+    {
+      "scene": "ins",
+      "view": "name-ecu",
+      "note": "ECU ใต้หมึกที่ขูดออก ลายมือเก่าที่เขาจำได้ \"รับเวรแทน: สมหมาย\"",
+      "text": "ชื่อที่ถูกขีดฆ่าในคืนนั้น\nคือชื่อของ{เขาเอง}",
+      "style": "red",
+      "cues": [
+        [
+          0,
+          "hit"
+        ]
+      ],
+      "mood": 0.92,
+      "data": {},
+      "beats": 6
+    },
+    {
+      "scene": "shed",
+      "view": "sommai-shock-close",
+      "note": "ECU ตาสมหมายจากหน้าของ sprite เอง แสงฟลูออเรสเซนต์สะท้อนในตา ฝนเป็นเส้นเบลอข้างหลัง",
+      "text": "คืนนั้น คนที่อยู่ที่ประแจรางหลีก\nไม่ใช่ลุงชด แต่เป็นตัวเขาเอง",
+      "mood": 0.85,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          1044,
+          561.6
+        ],
+        "cast": [
+          "sommai@396,1017 h=566 armR=chest prop=book shock look=-0.3 yaw=0.3"
+        ],
+        "cam": [
+          4.24,
+          4.49,
+          471,
+          573
+        ]
+      },
+      "beats": 8.125
+    },
+    {
+      "scene": "shed",
+      "view": "khem-confess-close",
+      "note": "close เข้มกำมือแน่น ก้มหน้า ฝนสาดเปียกไหล่",
+      "text": "\"คืนนั้นเป็นเวรของพ่อ แต่ลุงให้พ่อกลับบ้านก่อน\nพ่อเลยเซ็นรับผิดแทนลุง\"",
+      "who": "khem",
+      "voice": "casual_male",
+      "tone": "crying",
+      "mood": 0.8,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          1044,
+          561.6
+        ],
+        "cast": [
+          "khem@900,962 h=506 cry talk head=8"
+        ],
+        "cam": [
+          3.44,
+          3.65,
+          993,
+          582
+        ]
+      },
+      "beats": 8.125
+    },
+    {
+      "scene": "shed",
+      "view": "sommai-high",
+      "note": "มุมสูง สมหมายยืนกลางฝนหน้าห้องพักช่าง สมุดเดินรถเปิดในมือ ปืนเหน็บเอว แสงห้องเป็นแอ่งเดียว",
+      "text": "ยี่สิบห้าปีที่เขาตามล่าคนร้าย\nชื่อของเขาเองกลับอยู่ในสมุดเล่มนี้มาตลอด",
+      "mood": 0.8,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          1044,
+          561.6
+        ],
+        "cast": [
+          "sommai@520,1007 h=555 armR=chest prop=book worried"
+        ],
+        "cam": [
+          0.95,
+          0.98,
+          900,
+          480
+        ]
+      },
+      "beats": 8.875
+    },
+    {
+      "scene": "shed",
+      "view": "sommai-dutch",
+      "note": "close เอียงกล้อง สมหมายส่ายหน้าช้า ๆ มือกำสมุดจนยับ ไฟฟลูออเรสเซนต์กะพริบ",
+      "text": "\"ไม่... กูจำได้\nกูเห็นมันอุ้มลูกกูไปกับตา\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "desperate",
+      "mood": 0.85,
+      "data": {
+        "tilt": -6,
+        "light": "lamp",
+        "lightAt": [
+          1044,
+          561.6
+        ],
+        "cast": [
+          "sommai@396,1017 h=566 armR=chest prop=book scared talk yaw=0.3"
+        ],
+        "cam": [
+          3.08,
+          3.26,
+          499,
+          592
+        ],
+        "flick": true
+      },
+      "beats": 6.25
+    },
+    {
+      "chapter": "เทปด้าน B",
+      "scene": "ins",
+      "view": "sideb-ins",
+      "note": "insert มือสั่นดีดตลับเทปออก พลิกเป็นด้าน B กดลงเครื่อง เคาน์เตอร์ 250",
+      "text": "มือของเขาสั่นจนแทบพลิกตลับเทปไม่ได้\nแต่เขากดเล่นด้านบี",
+      "cues": [
+        [
+          0.3,
+          "tapeclick"
+        ],
+        [
+          0.6,
+          "hiss"
+        ]
+      ],
+      "mood": 0.8,
+      "data": {
+        "hud": "00:50 · คำทำนายจากเทป 4/5"
+      },
+      "beats": 5.875
+    },
+    {
+      "scene": "shed",
+      "view": "sommai-listen-close",
+      "note": "close สมหมายแนบเครื่องเล่นเทปกับหู ฝนสาดชายคาเบลอข้างหลัง ไฟฟลูออเรสเซนต์จากบน",
+      "text": "\"ตอนนี้แกคงเห็นสมุดเดินรถเล่มนั้นแล้ว\"",
+      "who": "tape",
+      "voice": "old_male",
+      "fx": "phone",
+      "tone": "angry, pained",
+      "mood": 0.8,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          1044,
+          561.6
+        ],
+        "cast": [
+          "sommai@396,1017 h=566 arm=r-phone prop=cassette worried yaw=0.3"
+        ],
+        "cam": [
+          3.08,
+          3.26,
+          499,
+          592
+        ]
+      },
+      "beats": 3.875
+    },
+    {
+      "scene": "shed",
+      "view": "khem-hears-close",
+      "note": "close เข้มได้ยินเสียงจากเทป หน้าซีด ถอยครึ่งก้าว",
+      "text": "\"พวกมันจะบอกแกว่า แกเป็นคนทำ\"",
+      "who": "tape",
+      "voice": "old_male",
+      "fx": "phone",
+      "tone": "angry, pained",
+      "mood": 0.85,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          1044,
+          561.6
+        ],
+        "cast": [
+          "khem@900,962 h=506 shock yaw=-0.35 look=-0.4"
+        ],
+        "cam": [
+          3.44,
+          3.65,
+          807,
+          582
+        ]
+      },
+      "beats": 3.75
+    },
+    {
+      "scene": "ins",
+      "view": "record-sign-ins",
+      "note": "insert ลายเซ็นธีระบนสำเนาบันทึกตำรวจ ไฟฉายสั่นส่อง (กรอบเดียวกับ insert บันทึกใน Ch5)",
+      "text": "\"ชื่อแกในสมุดเป็นของปลอม\nคนที่ปลอมมัน คือคนที่เซ็นปิดคดี\"",
+      "who": "tape",
+      "voice": "old_male",
+      "fx": "phone",
+      "tone": "angry",
+      "mood": 0.85,
+      "data": {
+        "mirror": "record-sign"
+      },
+      "beats": 7.875
+    },
+    {
+      "scene": "past",
+      "view": "raincoat-sil2",
+      "note": "ความทรงจำกระตุก ภาพเดียวกับบท 1 เงาเสื้อกันฝนเขียวอุ้มร่างเล็กผ่านแสงไฟหัวรถจักร ภาพสั่นแรงกว่าเดิม",
+      "text": "\"มันรู้ทุกอย่าง มันคือคนที่ใส่เสื้อกันฝน\nสีเขียวในคืนนั้น\"",
+      "who": "tape",
+      "voice": "old_male",
+      "fx": "phone",
+      "tone": "angry",
+      "clue": "raincoat",
+      "mood": 0.85,
+      "data": {
+        "past": true,
+        "light": "lamp",
+        "lightAt": [
+          600,
+          410
+        ],
+        "cast": [
+          "theera-hood-sil@1000,900 h=420 arm=r-carry hair=receding"
+        ],
+        "cam": [
+          1.15,
+          1.2,
+          980,
+          640
+        ],
+        "tilt": -5
+      },
+      "beats": 5.75
+    },
+    {
+      "scene": "track",
+      "view": "rails-storm-ew",
+      "note": "ภาพกว้างมาก รางกลางพายุ ฝนเฉียง ไฟสัญญาณแดงสะท้อนบนรางเปียก ปลายรางมืดสนิท",
+      "text": "\"ตีหนึ่งสิบห้า มันจะลงจากโบกี้ท้ายสุด\"",
+      "who": "tape",
+      "voice": "old_male",
+      "fx": "phone",
+      "tone": "hoarse, trembling",
+      "mood": 0.85,
+      "data": {
+        "light": "night",
+        "rain": "heavy",
+        "cam": [
+          1,
+          1.04,
+          960,
+          520
+        ]
+      },
+      "beats": 4.875
+    },
+    {
+      "scene": "ins",
+      "view": "gun-hand-ins",
+      "note": "insert มือขวามีแผลดึงปืนลูกโม่ออกจากเข็มขัด ฝนหยดบนลำกล้อง",
+      "text": "\"เตรียมปืนให้พร้อมนะ สมหมาย\"",
+      "who": "tape",
+      "voice": "old_male",
+      "fx": "phone",
+      "tone": "whispers",
+      "clue": "gun",
+      "mood": 0.9,
+      "data": {},
+      "beats": 3.125
+    },
+    {
+      "scene": "shed",
+      "view": "sommai-reason-close",
+      "note": "close สมหมายลดเครื่องเล่นเทปลง ตาไปมาระหว่างสมุดในมือซ้ายกับเครื่องเล่นในมือขวา",
+      "text": "เทปทำนายถูกมาแล้วสี่ข้อ\nและมันบอกไว้ก่อนแล้ว ว่าสมุดจะถูกปลอม",
+      "mood": 0.85,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          1044,
+          561.6
+        ],
+        "cast": [
+          "sommai@396,1017 h=566 arm=r-phone prop=cassette worried look=0.4 yaw=0.3"
+        ],
+        "cam": [
+          3.08,
+          3.26,
+          292,
+          592
+        ]
+      },
+      "beats": 8.125
+    },
+    {
+      "scene": "shed",
+      "view": "sommai-back-med",
+      "note": "medium สมหมายหันหลังให้เข้ม เดินออกจากชายคาเข้าฝน สมุดเดินรถหล่นบนพื้นเปียกข้างหลัง",
+      "text": "ระหว่างลายมือในสมุด กับเสียงของตัวเอง\nเขาเลือกเชื่อเสียงของตัวเอง",
+      "mood": 0.85,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          1044,
+          561.6
+        ],
+        "cast": [
+          "sommai@191,1130 h=690 back",
+          "khem@900,962 h=506 worried"
+        ],
+        "cam": [
+          1,
+          1.03,
+          880,
+          520
+        ]
+      },
+      "beats": 8.875
+    },
+    {
+      "scene": "shed",
+      "view": "sommai-gun-low",
+      "note": "มุมต่ำ สมหมายหันกลับมาในฝน ปืนในมือขวาแนบขา ไฟห้องพักช่างเป็นแสงย้อนหลังเขา",
+      "text": "\"ไอ้ธีระมันปลอมขึ้นมา\nมันกับพวกแกช่วยกันหลอกกูมาตลอด\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "furious",
+      "mood": 0.9,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          1044,
+          561.6
+        ],
+        "cast": [
+          "sommai@310,1062 h=615 armR=hold prop=revolver angry talk yaw=0.3"
+        ],
+        "cam": [
+          1.45,
+          1.5,
+          410,
+          785
+        ]
+      },
+      "beats": 5.875
+    },
+    {
+      "scene": "shed",
+      "view": "khem-beg-close",
+      "note": "close เข้มก้าวตามมาหนึ่งก้าว มือยื่นออกไปค้างกลางฝน",
+      "text": "\"ไม่ใช่นะลุง! ลุงฟังผมก่อน คืนนั้นฝน...\"",
+      "who": "khem",
+      "voice": "casual_male",
+      "tone": "desperate",
+      "mood": 0.9,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          1044,
+          561.6
+        ],
+        "cast": [
+          "khem@900,962 h=506 armR=reach scared talk yaw=-0.4"
+        ],
+        "cam": [
+          3.44,
+          3.65,
+          807,
+          582
+        ]
+      },
+      "beats": 5.5
+    },
+    {
+      "scene": "past",
+      "view": "flash-cut",
+      "note": "ภาพกระตุกซ้อนสองชั้น ชานชาลาที่เงาเสื้อเขียวอุ้มเด็ก สลับเศษไม้หักกับเปลวไฟ แสงหัวรถจักรแฉลบ",
+      "text": "ภาพในหัวของเขากระตุกซ้อนกัน\nเศษไม้ เปลวไฟ และเสียงหวูดที่แหลมจนเจ็บหู",
+      "cues": [
+        [
+          0,
+          "horn"
+        ],
+        [
+          0.5,
+          "shriek"
+        ]
+      ],
+      "mood": 0.95,
+      "data": {
+        "past": true,
+        "motion": "fx",
+        "light": "lamp",
+        "lightAt": [
+          600,
+          410
+        ],
+        "crashed": true,
+        "cast": [
+          "theera-hood-sil@1000,900 h=420 arm=r-carry hair=receding"
+        ],
+        "cam": [
+          1.2,
+          1.3,
+          980,
+          620
+        ],
+        "tilt": [
+          0,
+          -7
+        ]
+      },
+      "beats": 9.875
+    },
+    {
+      "scene": "shed",
+      "view": "hands-head-close",
+      "note": "close สมหมายยกสองมือกุมขมับ ปืนยังอยู่ในมือขวา หลับตาแน่น",
+      "text": "\"หยุด! ไม่ต้องพูด!\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "shouting",
+      "mood": 0.95,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          1044,
+          561.6
+        ],
+        "cast": [
+          "sommai@396,1017 h=566 armL=head armR=head angry talk"
+        ],
+        "cam": [
+          3.08,
+          3.26,
+          499,
+          592
+        ],
+        "tilt": -6
+      },
+      "beats": 2.375
+    },
+    {
+      "scene": "shed",
+      "view": "khem-back-wide",
+      "note": "ภาพกว้าง เข้มถอยไปชิดมอเตอร์ไซค์ใต้ชายคา สมหมายยืนกลางฝนห่างออกไป ไฟห้องเป็นแอ่งแสงระหว่างสองคน",
+      "text": "เข้มถอยไปชิดรถ ไม่กล้าพูดต่อ",
+      "mood": 0.85,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          1044,
+          561.6
+        ],
+        "cast": [
+          "khem@836,924 h=465 scared yaw=-0.3",
+          "sommai@-247,1180 h=744 back"
+        ],
+        "cam": [
+          0.95,
+          0.98,
+          940,
+          520
+        ]
+      },
+      "beats": 5
+    },
+    {
+      "scene": "shed",
+      "view": "khem-phone-close",
+      "note": "close เข้มแนบมือถือกับหู จอสว่างส่องหน้า ตามองตามสมหมายที่เดินออกไป",
+      "text": "\"ฮัลโหล สารวัตร... สารวัตรครับ\"",
+      "who": "khem",
+      "voice": "casual_male",
+      "tone": "urgent",
+      "mood": 0.85,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          1044,
+          561.6
+        ],
+        "cast": [
+          "khem@900,962 h=506 arm=r-phone prop=phone worried talk yaw=-0.3"
+        ],
+        "cam": [
+          3.44,
+          3.65,
+          993,
+          582
+        ]
+      },
+      "beats": 3.5
+    },
+    {
+      "scene": "ins",
+      "view": "phone-screen-ins",
+      "note": "insert จอมือถือเข้ม \"ไม่มีผู้รับสาย\" ชื่อ \"สารวัตรธีระ\" หยดฝนบนจอ",
+      "text": "ไม่มีใครรับสาย\nส่วนวิทยุของสถานี ดับไปตั้งแต่ห้าทุ่มสิบห้า",
+      "mood": 0.85,
+      "data": {},
+      "beats": 7.375
+    },
+    {
+      "scene": "platform",
+      "view": "sai-run-wide",
+      "note": "ภาพกว้างชานชาลาเปียก ป้าสายวิ่งฝ่าฝนกลับเข้ามา ร่มปลิว เห็นสมหมายเดินถือปืนผ่านแสงห้องขายตั๋ว",
+      "text": "ป้าสายวิ่งกลับมา\nเมื่อเห็นปืนในมือของเขา",
+      "mood": 0.85,
+      "data": {
+        "hud": "01:05 · คำทำนายจากเทป 4/5",
+        "motion": "walk",
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lamp3": "off",
+        "rain": "heavy",
+        "cast": [
+          "sai@729,784 h=310 run worried",
+          "sommai@777,620 h=162 walk prop=revolver angry"
+        ],
+        "cam": [
+          0.95,
+          0.98,
+          900,
+          520
+        ],
+        "move": [
+          529,
+          789
+        ]
+      },
+      "beats": 4.75
+    },
+    {
+      "scene": "platform",
+      "view": "sai-close",
+      "note": "close ป้าสายเปียกโชก ร่มหักในมือ ตะโกน",
+      "text": "\"ลุง! วางปืนลงเถอะลุง\"",
+      "who": "sai",
+      "voice": "old_female",
+      "tone": "shouting, crying",
+      "mood": 0.85,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lamp3": "off",
+        "rain": "heavy",
+        "cast": [
+          "sai@814,784 h=310 armR=reach talk scared yaw=-0.3"
+        ],
+        "cam": [
+          5.62,
+          5.96,
+          871,
+          552
+        ]
+      },
+      "beats": 5
+    },
+    {
+      "scene": "platform",
+      "view": "sommai-walk-ots",
+      "note": "ข้ามไหล่ป้าสาย สมหมายเดินผ่านไปไม่หันมอง มุ่งไปทางปลายชานชาลา",
+      "text": "\"ถอยไปป้าสาย คืนนี้ต้องจบ\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "cold",
+      "mood": 0.85,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lamp3": "off",
+        "rain": "heavy",
+        "cast": [
+          "sommai@764,651 h=197 back"
+        ],
+        "cam": [
+          1.2,
+          1.25,
+          820,
+          500
+        ],
+        "foreShoulder": "r",
+        "foreColor": "#d9c9a8",
+        "foreHair": "#8c8881"
+      },
+      "beats": 3.875
+    },
+    {
+      "scene": "platform",
+      "view": "lamp-low",
+      "note": "มุมต่ำ สมหมายยืนใต้นีออนดวงเดียวที่ยังติด ปืนในมือขวาแนบขา ฝนหนักหลังเขา ปลายชานชาลามืด",
+      "text": "เขาเลือกยืนใต้ไฟดวงเดียวที่ยังสว่าง\nตรงที่โบกี้สุดท้ายจะจอด",
+      "mood": 0.85,
+      "data": {
+        "hud": "01:10 · คำทำนายจากเทป 4/5",
+        "light": "lamp",
+        "lightAt": [
+          826,
+          350
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "cast": [
+          "sommai@706,862 h=265 armR=hold prop=revolver angry yaw=-0.4"
+        ],
+        "cam": [
+          1.2,
+          1.25,
+          826,
+          560
+        ]
+      },
+      "beats": 6.375
+    },
+    {
+      "scene": "ins",
+      "view": "two-clocks-ins",
+      "note": "insert มือซ้ายกำนาฬิกาพกที่หยุด 01:15 ในโฟร์กราวด์ นาฬิกาสถานีเบลอข้างหลังบอก 01:13",
+      "text": "นาฬิกาสองเรือน เรือนหนึ่งหยุดอยู่ที่ตีหนึ่งสิบห้า\nอีกเรือนกำลังเดินไปหามัน",
+      "clue": "watch",
+      "mood": 0.85,
+      "data": {},
+      "beats": 8.625
+    },
+    {
+      "scene": "track",
+      "view": "rails-wait-ew",
+      "note": "ภาพกว้างมากจากปลายราง ชานชาลาไกล มีจุดแสงนีออนดวงเดียวกับเงาคนยืนใต้มัน ฝนเฉียง",
+      "text": "สี่คำทำนายเป็นจริงหมดแล้ว\nเหลือข้อสุดท้าย ข้อเดียว",
+      "mood": 0.85,
+      "data": {
+        "light": "night",
+        "cam": [
+          1,
+          1.03,
+          960,
+          520
+        ]
+      },
+      "beats": 6.125
+    },
+    {
+      "scene": "track",
+      "view": "headlight-ew",
+      "note": "ภาพกว้างมากปลายรางในม่านฝน ไฟหน้าหัวรถจักรสีเหลืองจ้าทะลุหมอก แสงสะท้อนบนรางเปียกเป็นสองเส้น",
+      "text": "แล้วเสียงระฆังกั้นทางก็ดังขึ้นกลางพายุ",
+      "cues": [
+        [
+          0,
+          "crossing"
+        ],
+        [
+          0.8,
+          "diesel"
+        ]
+      ],
+      "mood": 0.9,
+      "data": {
+        "hud": "01:14 · คำทำนายจากเทป 4/5",
+        "light": "night",
+        "cam": [
+          1,
+          1.08,
+          960,
+          520
+        ]
+      },
+      "beats": 4.5
+    },
+    {
+      "scene": "platform",
+      "view": "headlight-close",
+      "note": "close สมหมายหันไปทางราง ไฟหัวรถจักรสาดจากขวาทำให้หน้าครึ่งหนึ่งขาวจ้า อีกครึ่งดำ",
+      "text": "ไฟหน้าของรถไฟขบวนสุดท้าย\nส่องทะลุม่านฝนเข้ามา",
+      "mood": 0.9,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          200,
+          600
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "headlight": true,
+        "cast": [
+          "sommai@723,721 h=278 shock yaw=-0.55 look=-0.7"
+        ],
+        "cam": [
+          6.27,
+          6.64,
+          672,
+          513
+        ],
+        "shade": "r",
+        "key": "255,236,170"
+      },
+      "beats": 6.25
+    },
+    {
+      "chapter": "ขบวนเที่ยว 01:15",
+      "scene": "train",
+      "view": "wheels-low",
+      "note": "มุมต่ำระดับราง ล้อเหล็กหัวรถจักรเบรกบดราง ประกายไฟ ไอน้ำกับละอองฝนฟุ้ง โบกี้ไหลผ่าน",
+      "text": "ตีหนึ่งสิบห้าตรง\nรถไฟเที่ยวสุดท้ายจอดเทียบชานชาลา",
+      "cues": [
+        [
+          0,
+          "brake"
+        ]
+      ],
+      "mood": 0.9,
+      "data": {
+        "hud": "01:15 · คำทำนายจากเทป 5/5",
+        "motion": "pan"
+      },
+      "beats": 5.875
+    },
+    {
+      "scene": "train",
+      "view": "cars-wide",
+      "note": "ภาพกว้างตามแนวขบวน โบกี้โดยสารมืดว่างทุกตู้ มีเพียงประตูโบกี้สุดท้ายที่ไฟในตู้ติด",
+      "text": "โบกี้ทุกตู้มืดและว่างเปล่า\nยกเว้นประตูของ[โบกี้สุดท้าย]",
+      "mood": 0.88,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [],
+        "cam": [
+          0.95,
+          0.98,
+          760,
+          520
+        ]
+      },
+      "beats": 7
+    },
+    {
+      "scene": "train",
+      "view": "door-sil",
+      "note": "ซิลูเอตต์ ประตูโบกี้ท้ายสว่างจากไฟในตู้ ชายร่างสูงเสื้อกันฝนคลุมฮู้ดก้าวลงบันได ถือกระเป๋าหนังมือขวา ฝนเป็นเส้นขาวตัดหน้า",
+      "text": "ชายร่างสูงในเสื้อกันฝนสีเขียวขี้ม้า\nก้าวลงมาจากบันไดช้า ๆ",
+      "clue": "raincoat",
+      "cues": [
+        [
+          0.5,
+          "splash"
+        ],
+        [
+          1.5,
+          "splash"
+        ]
+      ],
+      "mood": 0.92,
+      "data": {
+        "light": "lamp",
+        "cast": [
+          "theera-hood@960,1060 h=980 armR=hold prop=box hair=receding"
+        ],
+        "cam": [
+          1,
+          1.03,
+          960,
+          540
+        ],
+        "dark": true
+      },
+      "beats": 6.75
+    },
+    {
+      "scene": "train",
+      "view": "guard-fif",
+      "note": "ผ่านกระจกหน้าต่างโบกี้ท้ายที่มีฝนเกาะ พนักงานรถไฟชุดกากีมองลงมาที่ชานชาลา แล้วดึงม่านปิดช้า ๆ",
+      "text": "พนักงานท้ายขบวนมองลงมาครู่หนึ่ง\nแล้วดึงม่านปิด เหมือนไม่อยากเห็นสิ่งที่จะเกิดขึ้น",
+      "mood": 0.9,
+      "data": {
+        "light": "lamp",
+        "cast": [
+          "guard@1010,1060 h=760 yaw=0.45 look=0.5 worried armR=reach"
+        ],
+        "cam": [
+          1,
+          1.02,
+          960,
+          540
+        ]
+      },
+      "beats": 8.125
+    },
+    {
+      "scene": "ins",
+      "view": "boots-ins",
+      "note": "insert รองเท้าหนังดำเหยียบแอ่งน้ำบนชานชาลาไม้ ชายเสื้อกันฝนสีเขียวหยดน้ำ",
+      "text": "ภาพเดียวกับฝันร้าย\nที่หลอกหลอนเขามายี่สิบห้าปี",
+      "mood": 0.9,
+      "data": {},
+      "beats": 5.875
+    },
+    {
+      "scene": "platform",
+      "view": "aim-ots",
+      "note": "ข้ามไหล่ขวาสมหมาย มือขวามีแผลยกปืนเล็งตรง ชายเสื้อเขียวเล็กกลางชานชาลาใต้ไฟห้องขายตั๋ว ขบวนรถมืดด้านหลัง",
+      "text": "\"หยุดอยู่ตรงนั้น! อย่าขยับ!\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "shouting",
+      "clue": [
+        "gun",
+        "scar"
+      ],
+      "mood": 0.92,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "theera-hood@728,620 h=166 armL=raise armR=raise hair=receding"
+        ],
+        "cam": [
+          2.2,
+          2.26,
+          788,
+          529
+        ],
+        "foreColor": "#c8b594",
+        "foreHair": "#e2dfd7",
+        "dark": true
+      },
+      "beats": 2.875
+    },
+    {
+      "scene": "platform",
+      "view": "raincoat-med",
+      "note": "medium ชายเสื้อกันฝนหยุดนิ่ง ฮู้ดบังหน้ามืด ค่อย ๆ วางกระเป๋าหนังลงพื้นเปียก แล้วยกสองมือขึ้น",
+      "text": "ชายคนนั้นไม่วิ่งหนี\nเขาวางกระเป๋าลง แล้วยกมือขึ้นช้า ๆ",
+      "mood": 0.9,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "theera-hood@738,672 h=228 armL=raise armR=raise hair=receding"
+        ],
+        "cam": [
+          4.12,
+          4.32,
+          738,
+          572
+        ],
+        "dark": true
+      },
+      "beats": 6.875
+    },
+    {
+      "scene": "platform",
+      "view": "sommai-aim-close",
+      "note": "close สมหมายเล็งปืน ตาข้างหนึ่งหรี่ ฝนไหลบนหน้า มือสั่น",
+      "text": "\"ยี่สิบห้าปี... ในที่สุดแกก็กลับมาจริง ๆ\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "shaking",
+      "mood": 0.92,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "sommai@706,735 h=294 armR=offer prop=revolver@r angry talk yaw=-0.45 flip"
+        ],
+        "cam": [
+          5.92,
+          6.28,
+          652,
+          514
+        ]
+      },
+      "beats": 5.25
+    },
+    {
+      "scene": "platform",
+      "view": "sommai-low",
+      "note": "มุมต่ำ สมหมายยืนค้ำเฟรมใต้นีออน ปืนยื่นตรง ฝนเป็นม่านหลังเขา",
+      "text": "\"ลูกฉันตายโดยไม่มีใครรับโทษ\nคืนนี้ พ่อมันจะชำระเอง\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "shouting",
+      "mood": 0.93,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          350
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "sommai@724,881 h=294 armR=offer prop=revolver angry talk yaw=-0.45 flip"
+        ],
+        "cam": [
+          1.2,
+          1.25,
+          724,
+          560
+        ]
+      },
+      "beats": 7.125
+    },
+    {
+      "scene": "ins",
+      "view": "watch-swing-ins",
+      "note": "insert นาฬิกาพกหลุดจากมือซ้ายห้อยสาย แกว่งข้างตัว เข็มหยุด 01:15 สะท้อนไฟหัวรถจักร",
+      "text": "นาฬิกาพกหลุดจากมือซ้ายของเขา\nห้อยแกว่งอยู่ข้างตัว",
+      "clue": "watch",
+      "mood": 0.9,
+      "data": {},
+      "beats": 6.75
+    },
+    {
+      "scene": "ins",
+      "view": "hammer-ecu",
+      "note": "ECU นิ้วโป้งง้างนกปืนลูกโม่ ลูกโม่หมุนหนึ่งช่อง",
+      "text": "",
+      "vo": "",
+      "cues": [
+        [
+          0,
+          "cock"
+        ]
+      ],
+      "mood": 0.95,
+      "data": {},
+      "beats": 2
+    },
+    {
+      "scene": "platform",
+      "view": "run-wide",
+      "note": "ภาพกว้างจากหลังชายเสื้อเขียว เข้มกับป้าสายวิ่งออกจากห้องขายตั๋วมาทางสมหมาย แสงห้องขายตั๋วย้อนหลังสองคน",
+      "text": "\"ลุง! อย่ายิงครับ!\"",
+      "who": "khem",
+      "voice": "casual_male",
+      "tone": "shouting",
+      "mood": 0.95,
+      "data": {
+        "motion": "walk",
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "theera-hood@782,892 h=489 back hair=receding",
+          "khem@815,624 h=166 run flip scared talk",
+          "sai@851,612 h=134 run flip scared"
+        ],
+        "cam": [
+          0.95,
+          0.98,
+          960,
+          520
+        ],
+        "move": [
+          915,
+          755
+        ]
+      },
+      "beats": 3.25
+    },
+    {
+      "scene": "platform",
+      "view": "khem-shout-close",
+      "note": "close เข้มวิ่งมาพลางตะโกน ฝนสาดหน้า มือชี้ไปที่ชายเสื้อเขียว",
+      "text": "\"นั่นไม่ใช่คนร้าย!\"",
+      "who": "khem",
+      "voice": "casual_male",
+      "tone": "shouting",
+      "mood": 0.95,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "khem@851,689 h=241 armR=point talk scared yaw=-0.4"
+        ],
+        "cam": [
+          7.23,
+          7.66,
+          896,
+          508
+        ]
+      },
+      "beats": 2.625
+    },
+    {
+      "scene": "platform",
+      "view": "sommai-eye-close",
+      "note": "ECU ตาสมหมายเล็งผ่านศูนย์ปืน หยดฝนบนขนตา",
+      "text": "แต่นิ้วของเขา อยู่บนไกแล้ว",
+      "hush": true,
+      "mood": 0.97,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "face": "sommai angry look=-0.4",
+        "cast": [
+          "sommai@706,735 h=294 armR=offer prop=revolver@r angry look=-0.5 yaw=-0.45 flip"
+        ],
+        "cam": [
+          8.16,
+          8.65,
+          667,
+          504
+        ]
+      },
+      "beats": 4.125
+    },
+    {
+      "chapter": "ตีหนึ่งสิบห้า",
+      "scene": "ins",
+      "view": "trigger-ecu",
+      "note": "ECU นิ้วชี้บีบไก ลูกโม่หมุน นกสับลง",
+      "text": "เขาเหนี่ยวไกสามครั้ง",
+      "cues": [
+        [
+          0.2,
+          "dryclick"
+        ],
+        [
+          0.9,
+          "dryclick"
+        ],
+        [
+          1.6,
+          "dryclick"
+        ]
+      ],
+      "mood": 0.97,
+      "data": {},
+      "beats": 3.125
+    },
+    {
+      "scene": "platform",
+      "view": "raincoat-stand-med",
+      "note": "medium ชายเสื้อเขียวยังยืนนิ่ง มือยกค้าง ฝนกระทบฮู้ด ไม่มีอะไรเกิดขึ้น",
+      "text": "มีแต่เสียงเหล็กกระทบกัน\nไม่มีกระสุนออกจากลำกล้องแม้แต่นัดเดียว",
+      "mood": 0.9,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "theera-hood@738,672 h=228 armL=raise armR=raise hair=receding"
+        ],
+        "cam": [
+          4.12,
+          4.32,
+          816,
+          572
+        ],
+        "dark": true
+      },
+      "beats": 6.375
+    },
+    {
+      "scene": "platform",
+      "view": "hood-off-med",
+      "note": "medium ชายเสื้อเขียวคุกเข่าลงบนพื้นชานชาลาเปียก ค่อย ๆ ดึงฮู้ดลง ไฟห้องขายตั๋วจับหน้าเปียก ผมหงอก",
+      "text": "ชายคนนั้นคุกเข่าลงกลางสายฝน\nแล้วดึงฮู้ดออก",
+      "mood": 0.9,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "theera-hoodup@738,672 h=228 armR=head sad hair=receding"
+        ],
+        "cam": [
+          4.12,
+          4.32,
+          738,
+          572
+        ]
+      },
+      "beats": 5.875
+    },
+    {
+      "scene": "platform",
+      "view": "theera-close",
+      "note": "close ธีระวัยหกสิบสอง ผมหงอกเปียกแนบหน้า น้ำตาปนฝน ยกมือไหว้",
+      "text": "\"วางปืนเถอะนะสมหมาย... กูเอง\"",
+      "who": "theera",
+      "voice": "father",
+      "tone": "trembling",
+      "mood": 0.85,
+      "data": {
+        "tag": {
+          "who": "theera",
+          "name": "ธีระ",
+          "line": "อดีตสารวัตร · เพื่อนรัก"
+        },
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "theera@740,680 h=237 acc=raincoat hair=receding armL=chest armR=chest cry talk yaw=0.35 look=0.4"
+        ],
+        "cam": [
+          7.35,
+          7.79,
+          784,
+          502
+        ]
+      },
+      "beats": 4.125
+    },
+    {
+      "scene": "platform",
+      "view": "sommai-stunned-close",
+      "note": "close สมหมายปืนยังยกค้าง ปากสั่น ตาไปมาระหว่างหน้าธีระกับปืน",
+      "text": "\"ธีระ... เพื่อนมึงเอง\"",
+      "who": "theera",
+      "voice": "father",
+      "tone": "trembling",
+      "mood": 0.85,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "sommai@706,735 h=294 armR=offer prop=revolver shock yaw=-0.4 flip"
+        ],
+        "cam": [
+          5.92,
+          6.28,
+          652,
+          514
+        ]
+      },
+      "beats": 4.375
+    },
+    {
+      "scene": "platform",
+      "view": "sommai-close",
+      "note": "close สมหมายลดปืนลงครึ่งหนึ่ง หน้าบิดเบี้ยว",
+      "text": "\"ธีระ... ทำไมเป็นมึง\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "broken",
+      "mood": 0.85,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "sommai@706,735 h=294 armR=hold prop=revolver sad talk yaw=-0.4 flip"
+        ],
+        "cam": [
+          5.92,
+          6.28,
+          652,
+          514
+        ]
+      },
+      "beats": 4
+    },
+    {
+      "scene": "platform",
+      "view": "sommai-shake-low",
+      "note": "มุมต่ำ สมหมายยกปืนขึ้นใหม่ มือสั่นจนลำกล้องแกว่ง ฝนหลังเขา",
+      "text": "\"มึงเป็นคนปลอมสมุด มึงฆ่าลูกกูใช่ไหม!\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "shouting",
+      "mood": 0.9,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          350
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "sommai@724,881 h=294 armR=offer prop=revolver angry talk yaw=-0.45 flip"
+        ],
+        "cam": [
+          1.25,
+          1.3,
+          724,
+          540
+        ],
+        "tilt": -5
+      },
+      "beats": 4.625
+    },
+    {
+      "scene": "ins",
+      "view": "bag-top",
+      "note": "มุมตรงลงจากบน กระเป๋าหนังเปิดบนพื้นเปียก แฟ้มคนไข้ปกฟ้า \"ภาวะสมองเสื่อม นายสมหมาย\" กล่องยา แม่กุญแจทองเหลืองที่ถูกตัดห่วงหกตัว",
+      "text": "ในกระเป๋าของธีระไม่มีอาวุธ\nมีแฟ้มประวัติคนไข้ กับกล่องยา",
+      "mood": 0.85,
+      "data": {},
+      "beats": 7.25
+    },
+    {
+      "scene": "ins",
+      "view": "padlocks-ins",
+      "note": "macro แม่กุญแจทองเหลืองที่ถูกตัดห่วงหกตัว สนิมต่างปีกัน เรียงในมือธีระ (กรอบเดียวกับ insert หูช้างใน Ch1)",
+      "text": "และแม่กุญแจที่ถูกตัดห่วงแล้ว[หกตัว]\nสนิมไม่เท่ากันสักตัว",
+      "pay": "locks",
+      "mood": 0.85,
+      "data": {
+        "mirror": "locks"
+      },
+      "beats": 7.75
+    },
+    {
+      "scene": "platform",
+      "view": "theera-kneel-close",
+      "note": "close ธีระคุกเข่า มือหนึ่งแตะกระเป๋า มองขึ้นมาที่สมหมาย",
+      "text": "\"กระสุนห้านัดนั้น มันยิงไม่ออกหรอก\"",
+      "who": "theera",
+      "voice": "father",
+      "tone": "gentle",
+      "mood": 0.85,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "theera@740,680 h=237 acc=raincoat hair=receding sad talk yaw=0.45 look=0.5 head=-6"
+        ],
+        "cam": [
+          7.35,
+          7.79,
+          696,
+          502
+        ]
+      },
+      "beats": 4.25
+    },
+    {
+      "scene": "platform",
+      "view": "theera-up-low",
+      "note": "มุมต่ำจากพื้นข้างธีระ ปืนในมือสมหมายเบลอบนขอบเฟรม ธีระพูดขึ้นไปหาเพื่อน",
+      "text": "\"กูเปลี่ยนเป็นลูกหลอก ตั้งแต่คืนที่มึง\nเอาปืนจ่อหัวตัวเองเมื่อเจ็ดปีก่อน\"",
+      "style": "red",
+      "who": "theera",
+      "voice": "father",
+      "tone": "crying",
+      "pay": "gun",
+      "cues": [
+        [
+          0,
+          "hit"
+        ]
+      ],
+      "mood": 0.93,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          350
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "theera@742,847 h=248 acc=raincoat hair=receding cry talk yaw=0.4 look=0.4"
+        ],
+        "cam": [
+          7.02,
+          7.45,
+          788,
+          661
+        ]
+      },
+      "beats": 7.5
+    },
+    {
+      "scene": "past",
+      "view": "office-2560",
+      "note": "อดีตเจ็ดปีก่อน ห้องนายสถานีเดิม โคมไฟเดิม สมหมายผมแซมขาวเอาปืนจ่อขมับ ธีระพุ่งเข้าจับข้อมือ ปืนชี้เพดาน",
+      "text": "เจ็ดปีก่อน ธีระแย่งปืนกระบอกนี้จากมือเขา\nนัดที่หกลั่นขึ้นเพดาน",
+      "cues": [
+        [
+          0.8,
+          "gunshot"
+        ]
+      ],
+      "mood": 0.85,
+      "data": {
+        "past": true,
+        "light": "lamp",
+        "lightAt": [
+          774.0856031128404,
+          560.272373540856
+        ],
+        "cast": [
+          "sommai53@1055,904 h=517 armR=head prop=revolver cry yaw=-0.2",
+          "theera53@1336,930 h=564 armL=reach armR=reach shock yaw=-0.5 hair=receding"
+        ],
+        "cam": [
+          1.15,
+          1.2,
+          1000,
+          560
+        ],
+        "radioLed": "off",
+        "clock": "01:16"
+      },
+      "beats": 7.875
+    },
+    {
+      "scene": "platform",
+      "view": "sommai-lower-close",
+      "note": "close สมหมายมองปืนในมือตัวเองเหมือนเพิ่งเห็นครั้งแรก",
+      "text": "ไม่ใช่นัดที่เขายิงไล่คนร้าย\nอย่างที่เขาเชื่อมาตลอด",
+      "mood": 0.85,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "sommai@706,735 h=294 armR=hold prop=revolver shock head=10 look=0.2 flip"
+        ],
+        "cam": [
+          5.92,
+          6.28,
+          652,
+          514
+        ]
+      },
+      "beats": 6
+    },
+    {
+      "scene": "platform",
+      "view": "theera-gun-close",
+      "note": "close ธีระมองปืนในมือเพื่อน พยักหน้าช้า ๆ ฝนหยดจากคาง",
+      "text": "\"กูเคยเอาปืนไปจากมึงแล้ว\nปีนั้นมึงไปยืมปืนลูกซองบ้านผู้ใหญ่มาแทน\"",
+      "who": "theera",
+      "voice": "father",
+      "tone": "tired",
+      "mood": 0.85,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "theera@740,680 h=237 acc=raincoat hair=receding tired talk yaw=0.3 armR=chest"
+        ],
+        "cam": [
+          3.96,
+          4.2,
+          821,
+          576
+        ]
+      },
+      "beats": 6.125
+    },
+    {
+      "scene": "platform",
+      "view": "theera-ots",
+      "note": "ข้ามไหล่สมหมายที่เบลอ ธีระคุกเข่ากลางชานชาลา ไฟห้องขายตั๋วเป็นแอ่งแสงรอบตัว",
+      "text": "\"มึงจำคืนนั้นไม่ได้หรอก\nเพราะมึงจำอะไรใหม่ ๆ ไม่ได้มาหลายปีแล้ว\"",
+      "who": "theera",
+      "voice": "father",
+      "tone": "gentle",
+      "mood": 0.85,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "theera@740,680 h=237 acc=raincoat hair=receding sad talk yaw=0.45 look=0.4"
+        ],
+        "cam": [
+          3.96,
+          4.2,
+          821,
+          576
+        ],
+        "foreShoulder": "r",
+        "foreColor": "#c8b594",
+        "foreHair": "#e2dfd7"
+      },
+      "beats": 5.125
+    },
+    {
+      "scene": "platform",
+      "view": "theera-close2",
+      "note": "close ธีระ น้ำตาไหล เสียงแตก มองตรงไปที่เพื่อน",
+      "text": "\"แต่คืนสิบสี่พฤศจิกา ปีสี่สอง\nมึงต้องจำมันให้ได้สักครั้ง\"",
+      "who": "theera",
+      "voice": "father",
+      "tone": "crying",
+      "mood": 0.88,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "theera@740,680 h=237 acc=raincoat hair=receding cry talk yaw=0.5 look=0.5"
+        ],
+        "cam": [
+          7.35,
+          7.79,
+          696,
+          502
+        ]
+      },
+      "beats": 5.75
+    },
+    {
+      "scene": "past",
+      "view": "box-1999-wide",
+      "note": "อดีต 2542 ภายในป้อมสับรางเดิม หลอดไฟเหลือง ฝนกระหน่ำนอกหน้าต่างที่ยังไม่แตก สมหมายวัยสามสิบห้ายื่นเสื้อกันฝนให้ลุงชด โบกมือไล่กลับบ้าน",
+      "text": "คืนนั้น เป็นเวรของลุงชด\nแต่สมหมายไล่เพื่อนกลับบ้านไปก่อน",
+      "mood": 0.85,
+      "data": {
+        "past": true,
+        "light": "lamp",
+        "lightAt": [
+          995.2631578947369,
+          197.07368421052632
+        ],
+        "cast": [
+          "sommai35@930,897 h=520 armR=wave happy yaw=0.4",
+          "chod@1471,932 h=580 walk worried"
+        ],
+        "cam": [
+          1.05,
+          1.08,
+          980,
+          540
+        ],
+        "motion": "walk"
+      },
+      "beats": 6.125
+    },
+    {
+      "scene": "past",
+      "view": "sommai35-bottle-close",
+      "note": "อดีต close สมหมายวัยหนุ่มยิ้มรินเหล้าขาวจากขวดลงแก้ว หน้าต่างป้อมมองเห็นบ้านพักไฟสลัวข้างรางหลีก",
+      "text": "เขาซื้อเหล้าขาวจากรถเข็นของสาย\nดื่มฉลองวันเกิดลูกสาวอยู่ในป้อมคนเดียว",
+      "mood": 0.85,
+      "data": {
+        "past": true,
+        "light": "lamp",
+        "lightAt": [
+          995.2631578947369,
+          197.07368421052632
+        ],
+        "seat": true,
+        "cast": [
+          "sommai35@1406,867 h=484 sit armR=hold prop=glass happy yaw=-0.3"
+        ],
+        "cam": [
+          3.6,
+          3.81,
+          1317,
+          606
+        ]
+      },
+      "beats": 8.5
+    },
+    {
+      "scene": "past",
+      "view": "lever-ins",
+      "note": "อดีต insert คันโยกประแจรางหลีกค้างอยู่ผิดทาง ป้ายแดงบนหัวคันโยก แสงหลอดไฟ",
+      "text": "เขาให้ทางสะดวกขบวนเจ็ดศูนย์สี่ไปแล้ว\nแต่ยังไม่ได้สับประแจรางหลีกกลับ",
+      "mood": 0.88,
+      "data": {
+        "past": true
+      },
+      "beats": 7.25
+    },
+    {
+      "scene": "past",
+      "view": "sleep-high",
+      "note": "อดีต มุมสูงจากเพดานป้อม สมหมายฟุบหลับคาโต๊ะควบคุม ขวดเหล้าล้มหกเปียกสมุดเดินรถ",
+      "text": "แล้วเขาก็ฟุบหลับไปคาโต๊ะ\nกลิ่นเหล้าขาวฉุนไปทั้งป้อม",
+      "pay": "liquor",
+      "mood": 0.9,
+      "data": {
+        "past": true,
+        "light": "lamp",
+        "lightAt": [
+          995.2631578947369,
+          197.07368421052632
+        ],
+        "seat": true,
+        "cast": [
+          "sommai35@1406,867 h=484 sit sleep head=22"
+        ],
+        "cam": [
+          1.2,
+          1.24,
+          1300,
+          520
+        ]
+      },
+      "beats": 6.25
+    },
+    {
+      "scene": "past",
+      "view": "fon-house-med",
+      "note": "อดีต บ้านพักไม้ข้างรางหลีก กรอบเดียวกับภาพจำในบท 1 ฝนนอนบนฟูกกำตั๋วสีเทียนแนบอก ตาปิด รอพ่อ",
+      "text": "ส่วนน้องฝน นอนกอดตั๋วรถไฟใบนั้น\nรอพ่ออยู่ในบ้านพักข้างรางหลีก",
+      "pay": "ticket",
+      "mood": 0.9,
+      "data": {
+        "past": true,
+        "mirror": "fon-memory",
+        "light": "lamp",
+        "lightAt": [
+          1206.8326180257513,
+          562.4291845493563
+        ],
+        "cast": [
+          "fon@680,948 h=394 lie sleep"
+        ],
+        "cam": [
+          1.45,
+          1.5,
+          826,
+          823
+        ]
+      },
+      "beats": 8.5
+    },
+    {
+      "scene": "past",
+      "view": "freight-ew",
+      "note": "อดีต ภาพกว้างมาก ขบวนสินค้าไฟหน้าจ้าวิ่งเข้ารางหลีก ปลายรางคือกันชนเหล็กกับบ้านพักไม้ไฟสลัว",
+      "text": "ตีหนึ่งสิบห้า ขบวนรถสินค้าวิ่งเข้ารางหลีก\nที่ไม่มีใครสับกลับ",
+      "cues": [
+        [
+          0,
+          "horn"
+        ]
+      ],
+      "mood": 0.93,
+      "data": {
+        "past": true
+      },
+      "beats": 6.375
+    },
+    {
+      "scene": "past",
+      "view": "crash",
+      "note": "อดีต แสงขาววาบ บ้านพักแตกเป็นเศษไม้กลางฝน เงาตู้สินค้าพุ่งทะลุ",
+      "text": "รถสินค้าหลายร้อยตันพุ่งทะลุสุดราง\nเข้าชนบ้านพักหลังนั้น",
+      "cues": [
+        [
+          0.2,
+          "crash"
+        ]
+      ],
+      "mood": 0.97,
+      "data": {
+        "past": true
+      },
+      "beats": 6.5
+    },
+    {
+      "scene": "past",
+      "view": "punch-ins",
+      "note": "อดีต insert หมัดขวาทะลุกระจกหน้าต่างป้อม กระจกแตกเป็นแฉก นาฬิกาพกในมือกระแทกขอบไม้ หน้าปัดร้าว (กรอบเดียวกับ insert กระจกร้าวใน Ch3)",
+      "text": "เขาตื่นขึ้นมาแล้วชกกระจกป้อม จนมือขวาเลือดอาบ\nนาฬิกาพกในมือแตก ที่เวลานั้น",
+      "pay": "watch",
+      "cues": [
+        [
+          0.2,
+          "glass"
+        ]
+      ],
+      "mood": 0.95,
+      "data": {
+        "past": true,
+        "mirror": "window"
+      },
+      "beats": 9.25
+    },
+    {
+      "scene": "platform",
+      "view": "truth-ecu",
+      "note": "ECU หน้าสมหมายปัจจุบัน มืดที่สุดของเรื่อง แสงเดียวคือไฟห้องขายตั๋วเส้นบางที่ขอบแก้ม",
+      "text": "ไม่มีฆาตกรคนไหนเข้ามาในสถานีคืนนั้น\nคนที่หลับอยู่ที่ประแจ คือ{ตัวเขาเอง}",
+      "cues": [
+        [
+          0,
+          "bighit"
+        ]
+      ],
+      "mood": 1,
+      "data": {
+        "light": "lamp",
+        "face": "sommai cry look=-0.2"
+      },
+      "beats": 9
+    },
+    {
+      "scene": "past",
+      "view": "raincoat-cover",
+      "note": "อดีต กรอบเดียวกับภาพจำในบท 1 ม่านฝน ธีระวัยหนุ่มถอดเสื้อกันฝนสีเขียวคลุมร่างเล็ก คุกเข่าข้างเศษไม้ ไฟฉายตกพื้น",
+      "text": "ชายในเสื้อกันฝนสีเขียว\nไม่ได้อุ้มน้องฝนหนีไปไหน",
+      "pay": "raincoat",
+      "mood": 0.9,
+      "data": {
+        "past": true,
+        "mirror": "raincoat",
+        "light": "lamp",
+        "lightAt": [
+          600,
+          410
+        ],
+        "coatPile": [
+          960,
+          900
+        ],
+        "cast": [
+          "theera37@1180,920 h=430 crouch acc=raincoat armR=reach sad hair=part"
+        ],
+        "cam": [
+          1.1,
+          1.14,
+          980,
+          640
+        ]
+      },
+      "beats": 5.75
+    },
+    {
+      "scene": "past",
+      "view": "raincoat-close",
+      "note": "อดีต close มือธีระหนุ่มดึงฮู้ดเสื้อกันฝนคลุมหน้าเด็กไว้ไม่ให้โดนฝน ไหล่เขาเปียกโชก",
+      "text": "\"กูถอดเสื้อตัวนี้คลุมยัยฝนไว้\nไม่ให้เปียกฝน\"",
+      "who": "theera",
+      "voice": "father",
+      "tone": "crying",
+      "mood": 0.9,
+      "data": {
+        "past": true,
+        "light": "lamp",
+        "lightAt": [
+          600,
+          410
+        ],
+        "coatPile": [
+          960,
+          900
+        ],
+        "cast": [
+          "theera37@1180,920 h=430 crouch armR=reach cry yaw=-0.4 hair=part"
+        ],
+        "cam": [
+          2,
+          2.06,
+          1080,
+          760
+        ]
+      },
+      "beats": 5.5
+    },
+    {
+      "scene": "platform",
+      "view": "theera-close3",
+      "note": "close ธีระปัจจุบัน ลูบเสื้อกันฝนตัวเดิมบนตัวเอง",
+      "text": "\"ลุงชดรู้สึกผิดที่กลับบ้านก่อน\nเลยเซ็นรับผิดแทนมึงในสมุด\"",
+      "who": "theera",
+      "voice": "father",
+      "tone": "crying",
+      "mood": 0.88,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "theera@740,680 h=237 acc=raincoat hair=receding armR=chest cry talk yaw=0.35"
+        ],
+        "cam": [
+          7.35,
+          7.79,
+          784,
+          502
+        ]
+      },
+      "beats": 5.125
+    },
+    {
+      "scene": "platform",
+      "view": "theera-ots2",
+      "note": "ข้ามไหล่สมหมาย ธีระเงยหน้าพูด เข้มกับป้าสายยืนเบลอไกลหลังเขา",
+      "text": "\"แล้วกูก็เซ็นปิดเป็นอุบัติเหตุ\nเพราะกูทนเห็นมึงติดคุกไม่ได้\"",
+      "who": "theera",
+      "voice": "father",
+      "tone": "crying",
+      "mood": 0.88,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "theera@740,680 h=237 acc=raincoat hair=receding sad talk yaw=0.45 look=0.4",
+          "khem@839,602 h=140 sad",
+          "sai@869,599 h=121 cry"
+        ],
+        "cam": [
+          3.96,
+          4.2,
+          821,
+          576
+        ],
+        "foreShoulder": "r",
+        "foreColor": "#c8b594",
+        "foreHair": "#e2dfd7"
+      },
+      "beats": 6.625
+    },
+    {
+      "scene": "platform",
+      "view": "sommai-listen-close",
+      "note": "close สมหมายลดปืนลงข้างตัว ตาแดง ฟังนิ่ง",
+      "text": "ลายเซ็นที่เขาคิดว่าปกปิดคนร้าย\nคือสิ่งที่เพื่อนทำ เพื่อไม่ให้เขาติดคุก",
+      "mood": 0.85,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "sommai@706,735 h=294 armR=hold prop=revolver sad flip"
+        ],
+        "cam": [
+          5.92,
+          6.28,
+          652,
+          514
+        ]
+      },
+      "beats": 7.625
+    },
+    {
+      "scene": "platform",
+      "view": "theera-close4",
+      "note": "close ธีระ ใกล้ขึ้น เสียงเบาลง",
+      "text": "\"เจ็ดปีก่อน มึงเริ่มป่วย\nสมองมึงลบคืนนั้นทิ้ง\"",
+      "who": "theera",
+      "voice": "father",
+      "tone": "gentle",
+      "mood": 0.85,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "theera@740,680 h=237 acc=raincoat hair=receding sad talk yaw=0.5 look=0.4 head=8"
+        ],
+        "cam": [
+          10.13,
+          10.73,
+          708,
+          494
+        ]
+      },
+      "beats": 4.875
+    },
+    {
+      "scene": "past",
+      "view": "raincoat-sil3",
+      "note": "ภาพจำลวงจากบท 1 เงาเสื้อเขียวอุ้มเด็ก แต่ภาพค่อย ๆ จางซีดเหมือนกระดาษเปียก",
+      "text": "\"แล้วแต่งคนร้ายเสื้อเขียวขึ้นมาแทน\"",
+      "who": "theera",
+      "voice": "father",
+      "tone": "gentle",
+      "mood": 0.85,
+      "data": {
+        "past": true,
+        "light": "lamp",
+        "lightAt": [
+          600,
+          410
+        ],
+        "cast": [
+          "theera-hood-sil@1000,900 h=420 arm=r-carry o=0.5 hair=receding"
+        ],
+        "cam": [
+          1.1,
+          1.14,
+          980,
+          640
+        ]
+      },
+      "beats": 3.25
+    },
+    {
+      "scene": "ins",
+      "view": "memo-ins",
+      "note": "insert บอร์ดไม้ข้างวิทยุ กรอบเดียวกับ insert วิทยุใน Ch2 ไฟฉายส่องประกาศ \"ปิดวิทยุทวนสัญญาณ 23.15 น. ตั้งแต่ 1 ต.ค. 2563 — รับทราบ: สมหมาย\" ลายเซ็นเขาเอง",
+      "text": "\"วิทยุดับทุกคืนตั้งแต่ปีหกสาม\nไฟดวงที่สามก็ตั้งเวลาไว้ทุกเที่ยงคืน\"",
+      "who": "theera",
+      "voice": "father",
+      "pay": "memo",
+      "mood": 0.85,
+      "data": {
+        "mirror": "memo"
+      },
+      "beats": 7.5
+    },
+    {
+      "scene": "platform",
+      "view": "theera-close5",
+      "note": "close ธีระหลับตาครู่หนึ่ง แล้วลืมตามองเพื่อน",
+      "text": "\"มึงเห็นมันทุกคืน แล้วก็ลืมมันทุกคืน\"",
+      "who": "theera",
+      "voice": "father",
+      "tone": "sad",
+      "mood": 0.88,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "theera@740,680 h=237 acc=raincoat hair=receding sad talk yaw=0.25 armL=chest"
+        ],
+        "cam": [
+          3.96,
+          4.2,
+          659,
+          576
+        ]
+      },
+      "beats": 4.375
+    },
+    {
+      "scene": "ins",
+      "view": "sleeve-ins",
+      "note": "insert แขนเสื้อกันฝนสีเขียวขี้ม้า เก่าซีดขาดตรงข้อมือ ตะเข็บซ่อมหลายรอบ",
+      "text": "\"ทุกปีกูนั่งรถไฟขบวนนี้มา ในเสื้อตัวนี้\"",
+      "who": "theera",
+      "voice": "father",
+      "mood": 0.85,
+      "data": {},
+      "beats": 4.5
+    },
+    {
+      "scene": "platform",
+      "view": "sommai-tear-close",
+      "note": "close สมหมายน้ำตาไหล ไม่กะพริบ มองหน้าธีระ",
+      "text": "\"แต่พอเช้า สมองมึงเก็บไว้แค่เสื้อกันฝน\nแล้วลบหน้ากูทิ้งทุกปี\"",
+      "who": "theera",
+      "voice": "father",
+      "tone": "crying",
+      "mood": 0.88,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "sommai@706,735 h=294 cry flip"
+        ],
+        "cam": [
+          5.92,
+          6.28,
+          652,
+          514
+        ]
+      },
+      "beats": 6
+    },
+    {
+      "scene": "platform",
+      "view": "theera-explain-close",
+      "note": "close ธีระพูดช้า ๆ ทีละคำ มือหนึ่งแตะอกตัวเอง ไฟห้องขายตั๋วจับครึ่งหน้า",
+      "text": "\"เช้าวันรุ่งขึ้น มึงยังจำเมื่อคืนได้ทุกนาที\nแต่จำได้แค่ว่าคนร้ายมา แล้วมึงพลาดมันไป\"",
+      "who": "theera",
+      "voice": "father",
+      "tone": "gentle",
+      "mood": 0.85,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "theera@740,680 h=237 acc=raincoat hair=receding armR=chest talk sad yaw=0.4"
+        ],
+        "cam": [
+          7.35,
+          7.79,
+          784,
+          502
+        ]
+      },
+      "beats": 8.125
+    },
+    {
+      "scene": "past",
+      "view": "record-dawn",
+      "note": "อดีตเช้ามืดปีที่แล้ว ห้องนายสถานีเดิม สมหมายนั่งพูดใส่ไมค์เครื่องอัดเทป ตาแดง หน้าต่างฟ้าเริ่มสาง",
+      "text": "\"แล้วมึงก็นั่งอัดเทป เตือนตัวเองสำหรับปีหน้า\nตู้นั่นไม่ได้ล็อกมาตั้งแต่ปีสี่สองหรอก\"",
+      "who": "theera",
+      "voice": "father",
+      "mood": 0.85,
+      "data": {
+        "past": true,
+        "mirror": "record",
+        "time": "dawn",
+        "light": "dawn",
+        "lightAt": [
+          1180,
+          400
+        ],
+        "cast": [
+          "sommai@1511,919 h=535 sit arm=r-phone prop=cassette cry yaw=-0.3"
+        ],
+        "cam": [
+          1.15,
+          1.18,
+          1060,
+          520
+        ],
+        "radioLed": "off",
+        "clock": "05:42",
+        "seat": true
+      },
+      "beats": 7.25
+    },
+    {
+      "scene": "past",
+      "view": "locker-lock",
+      "note": "อดีตรุ่งเช้า ป้าสายคล้องแม่กุญแจลูกใหม่ที่ตู้ 104 มองซ้ายขวา เข้มเดินถือสมุดเดินรถผ่านไปทางป้อม",
+      "text": "\"ป้าสายซื้อกุญแจใหม่มาคล้องให้ทุกปี\nเข้มเอาสมุดเดินรถไปซ่อนทุกปี\"",
+      "who": "theera",
+      "voice": "father",
+      "pay": "keys",
+      "mood": 0.82,
+      "data": {
+        "past": true,
+        "light": "dawn",
+        "time": "dawn",
+        "lightAt": [
+          700,
+          460
+        ],
+        "cast": [
+          "sai@992,645 h=168 armR=reach worried yaw=0.5",
+          "khem@746,602 h=140 walk flip prop=book"
+        ],
+        "cam": [
+          1.3,
+          1.33,
+          1180,
+          520
+        ],
+        "motion": "walk"
+      },
+      "beats": 6.25
+    },
+    {
+      "scene": "platform",
+      "view": "theera-why-close",
+      "note": "close ธีระเงยหน้ามองเพื่อน เสียงสั่น",
+      "text": "\"เพราะปีแรกที่มึงอ่านสมุดเล่มนั้นคนเดียว\nมึงเอาปืนจ่อหัวตัวเอง\"",
+      "who": "theera",
+      "voice": "father",
+      "tone": "crying",
+      "mood": 0.88,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "theera@740,680 h=237 acc=raincoat hair=receding cry talk yaw=0.5 look=0.5"
+        ],
+        "cam": [
+          7.35,
+          7.79,
+          696,
+          502
+        ]
+      },
+      "beats": 5.75
+    },
+    {
+      "scene": "past",
+      "view": "ticket-box-ins",
+      "note": "อดีตเช้ามืดปีที่แล้ว insert มือสมหมายวางตั๋วสีเทียนลงกล่องเหล็กข้างเครื่องเล่นเทป ปิดฝา แสงฟ้าสาง",
+      "text": "ทุกปี เขาใส่ตั๋วของน้องฝนลงกล่องไปพร้อมเทป\nเพื่อให้ตัวเองในปีหน้าเชื่อว่าเสียงนั้นพูดจริง",
+      "mood": 0.82,
+      "data": {
+        "past": true
+      },
+      "beats": 9.5
+    },
+    {
+      "scene": "platform",
+      "view": "theera-close6",
+      "note": "close ธีระ เสียงแตก มือกำชายเสื้อกันฝน",
+      "text": "\"ปีที่กูเอาเทปไปทิ้ง มึงถือปืน\nเดินตามหาคนร้ายบนถนนสายสิบเอ็ดทั้งคืน\"",
+      "who": "theera",
+      "voice": "father",
+      "tone": "crying",
+      "mood": 0.88,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "theera@740,680 h=237 acc=raincoat hair=receding cry talk armR=offer yaw=0.4"
+        ],
+        "cam": [
+          3.96,
+          4.2,
+          821,
+          576
+        ]
+      },
+      "beats": 7.25
+    },
+    {
+      "scene": "platform",
+      "view": "theera-ecu",
+      "note": "close ธีระที่ใกล้ที่สุด หน้าครึ่งในเงา ไฟห้องขายตั๋วจับตาข้างเดียว",
+      "text": "\"กูเลยเลือกเป็นคนร้ายให้มึงเหนี่ยวไกใส่\nดีกว่าให้มึงหันปืนกลับไปหาตัวเอง\"",
+      "style": "red",
+      "who": "theera",
+      "voice": "father",
+      "tone": "crying",
+      "cues": [
+        [
+          0,
+          "hit"
+        ]
+      ],
+      "mood": 0.95,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "theera@740,680 h=237 acc=raincoat hair=receding cry talk yaw=0.3 look=0.3"
+        ],
+        "cam": [
+          10.13,
+          10.73,
+          740,
+          494
+        ],
+        "shadeA": 0.75
+      },
+      "beats": 6.625
+    },
+    {
+      "scene": "platform",
+      "view": "two-high",
+      "note": "มุมสูง กลางชานชาลาเปียก ธีระคุกเข่า สมหมายยืนถือปืนลดลง ขบวนรถไฟมืดจอดนิ่งด้านหลัง",
+      "text": "เจ็ดปีแล้ว ที่ชายคนนี้นั่งรถไฟเที่ยวสุดท้าย\nมาคุกเข่าให้เพื่อนรักเล็งปืนใส่",
+      "mood": 0.85,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          23
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "heavy",
+        "train": true,
+        "cast": [
+          "theera@738,466 h=216 crouch acc=raincoat sad hair=receding",
+          "sommai@706,536 h=278 armR=hold prop=revolver sad flip"
+        ],
+        "cam": [
+          1.05,
+          1.08,
+          820,
+          480
+        ]
+      },
+      "beats": 9.125
+    },
+    {
+      "chapter": "ตั๋วรถไฟไปทะเล",
+      "scene": "ins",
+      "view": "gun-drop-ins",
+      "note": "insert ปืนลูกโม่หลุดจากมือขวากระแทกพื้นไม้เปียก น้ำกระเซ็น",
+      "text": "ปืนลูกโม่หลุดจากมือของเขา",
+      "cues": [
+        [
+          0.2,
+          "thud"
+        ]
+      ],
+      "mood": 0.8,
+      "data": {},
+      "beats": 3.75
+    },
+    {
+      "scene": "ins",
+      "view": "scar-ecu",
+      "note": "ECU ฝ่ามือขวาสั่น แผลยาวกลางฝ่ามือ น้ำฝนไหลผ่าน",
+      "text": "\"มือคู่นี้... คืนนั้นกูไม่ได้ไล่ตามใครเลย\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "whispers, broken",
+      "pay": "scar",
+      "mood": 0.8,
+      "data": {},
+      "beats": 5.625
+    },
+    {
+      "scene": "platform",
+      "view": "sommai-break-close",
+      "note": "close สมหมายหน้าแตกสลาย ปากสั่น ไฟห้องขายตั๋วอุ่นขึ้นเล็กน้อย",
+      "text": "\"กูไม่ยอมตื่นมาสับรางให้ลูก\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "broken",
+      "mood": 0.8,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "light",
+        "train": true,
+        "cast": [
+          "sommai@706,735 h=294 cry talk flip"
+        ],
+        "cam": [
+          5.92,
+          6.28,
+          652,
+          514
+        ]
+      },
+      "beats": 4
+    },
+    {
+      "scene": "platform",
+      "view": "kneel-high",
+      "note": "มุมสูง กลางชานชาลาเปียก สมหมายทรุดเข่ากอดตั๋วสีเทียนแนบอก ธีระคุกเข่าโอบไหล่ ไฟห้องขายตั๋วเป็นแอ่งแสงเดียวรอบสองคน",
+      "text": "เขาทรุดลงกอดตั๋วรถไฟใบนั้นไว้แนบอก",
+      "mood": 0.75,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          23
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "light",
+        "train": true,
+        "cast": [
+          "sommai@721,496 h=239 crouch armR=chest prop=paper cry",
+          "theera@778,485 h=235 crouch acc=raincoat armL=reach sad yaw=-0.4 hair=receding"
+        ],
+        "cam": [
+          1.15,
+          1.18,
+          820,
+          470
+        ]
+      },
+      "beats": 4.625
+    },
+    {
+      "scene": "platform",
+      "view": "sommai-cry-close",
+      "note": "close สมหมายร้องไห้ ตั๋วสีเทียนแนบแก้ม",
+      "text": "\"ฝนเอ๊ย... พ่อขอโทษ\nพ่อไม่ได้พาหนูไปดูทะเล\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "sobbing",
+      "mood": 0.75,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "light",
+        "train": true,
+        "cast": [
+          "sommai@723,721 h=278 crouch armR=chest prop=paper cry talk"
+        ],
+        "cam": [
+          6.27,
+          6.64,
+          672,
+          598
+        ]
+      },
+      "beats": 6.875
+    },
+    {
+      "scene": "platform",
+      "view": "theera-hold-close",
+      "note": "close ธีระกอดไหล่เพื่อน คางแนบหัวสมหมาย หลับตา",
+      "text": "\"ยี่สิบห้าปีแล้วเพื่อน ร้องออกมาให้หมด\"",
+      "who": "theera",
+      "voice": "father",
+      "tone": "gentle, crying",
+      "mood": 0.7,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "light",
+        "train": true,
+        "cast": [
+          "theera@740,680 h=237 acc=raincoat hair=receding armL=reach sad talk yaw=-0.4 look=-0.4"
+        ],
+        "cam": [
+          7.35,
+          7.79,
+          784,
+          502
+        ]
+      },
+      "beats": 4
+    },
+    {
+      "scene": "platform",
+      "view": "hold-two-med",
+      "note": "medium สองคนคุกเข่ากอดกันกลางชานชาลา ธีระหันหน้าเข้าหาสมหมาย ขบวนรถไฟเริ่มเคลื่อนออกเบลอข้างหลัง",
+      "text": "\"พรุ่งนี้กูพามึงไปอยู่บ้านกูนะ\nมึงไม่ต้องเฝ้าสถานีนี้คนเดียวอีกแล้ว\"",
+      "who": "theera",
+      "voice": "father",
+      "tone": "gentle",
+      "mood": 0.65,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "light",
+        "train": true,
+        "cast": [
+          "sommai@723,721 h=278 crouch armR=chest prop=paper cry",
+          "theera@786,710 h=273 crouch acc=raincoat armL=reach sad talk yaw=-0.4 hair=receding"
+        ],
+        "cam": [
+          1.6,
+          1.64,
+          754,
+          675
+        ]
+      },
+      "beats": 6
+    },
+    {
+      "scene": "platform",
+      "view": "sai-close",
+      "note": "close ป้าสายยืนใต้ชายคา ร่มหักในมือ น้ำตาไหล",
+      "text": "\"เหล้าขวดคืนนั้น ป้าเป็นคนขายให้ลุงเอง\"",
+      "who": "sai",
+      "voice": "old_female",
+      "tone": "crying",
+      "mood": 0.7,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "light",
+        "train": true,
+        "cast": [
+          "sai@1027,680 h=204 armL=chest cry talk yaw=-0.4"
+        ],
+        "cam": [
+          8.54,
+          9.05,
+          1064,
+          527
+        ]
+      },
+      "beats": 4.875
+    },
+    {
+      "scene": "platform",
+      "view": "sai-close2",
+      "note": "close ป้าสายเอาแผงยาออกจากกระเป๋าเสื้อ ยื่นให้ดู",
+      "text": "\"ยาที่ป้าใส่ในโอวัลติน คือยาที่หมอสั่งให้ลุงกิน\nป้าขอโทษนะลุง\"",
+      "who": "sai",
+      "voice": "old_female",
+      "tone": "crying",
+      "pay": "pills",
+      "mood": 0.7,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "light",
+        "train": true,
+        "cast": [
+          "sai@1027,680 h=204 armR=offer prop=box cry talk yaw=-0.4"
+        ],
+        "cam": [
+          8.54,
+          9.05,
+          1064,
+          527
+        ]
+      },
+      "beats": 8
+    },
+    {
+      "scene": "platform",
+      "view": "khem-close",
+      "note": "close เข้มยืนกำสมุดเดินรถเปียก ๆ ไว้แนบอก ตาแดง",
+      "text": "ส่วนเข้ม ยืนกำสมุดเดินรถไว้ ไม่กล้าพูดอะไร",
+      "mood": 0.7,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "rain": "light",
+        "train": true,
+        "cast": [
+          "khem@915,680 h=231 armR=chest prop=book sad yaw=-0.3"
+        ],
+        "cam": [
+          7.54,
+          7.99,
+          873,
+          507
+        ],
+        "key": "255,226,170",
+        "shade": "l"
+      },
+      "beats": 5.25
+    },
+    {
+      "scene": "ins",
+      "view": "logbook-write-ins",
+      "note": "insert มือขวามีแผลขีดชื่อ \"นายชด\" ออก แล้วเขียน \"นายสมหมาย ผู้รับผิดชอบ\" ด้วยลายมือสั่น ใต้แสงห้องขายตั๋ว",
+      "text": "เขาขีดชื่อลุงชดออก\nแล้วเขียนชื่อตัวเองลงไปแทน",
+      "cues": [
+        [
+          0.3,
+          "scratch"
+        ]
+      ],
+      "mood": 0.65,
+      "data": {},
+      "beats": 5.75
+    },
+    {
+      "scene": "platform",
+      "view": "give-two-med",
+      "note": "medium สมหมายนั่งบนม้านั่งไม้ ยื่นสมุดเดินรถให้เข้มที่ยืนก้มรับ ธีระยืนข้างหลังมือแตะไหล่สมหมาย",
+      "text": "\"เอาไปส่งการรถไฟ\nชื่อพ่อแกต้องสะอาด\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "quiet",
+      "mood": 0.6,
+      "data": {
+        "light": "dawn",
+        "lightAt": [
+          700,
+          300
+        ],
+        "time": "night",
+        "lit": [
+          1
+        ],
+        "rain": false,
+        "cast": [
+          "theera@926,596 h=137 acc=raincoat sad hair=receding",
+          "sommai@922,605 h=144 sit armR=offer prop=book talk tired",
+          "khem@860,612 h=152 armR=offer sad yaw=0.4"
+        ],
+        "cam": [
+          1.3,
+          1.34,
+          891,
+          519
+        ]
+      },
+      "beats": 4.875
+    },
+    {
+      "scene": "platform",
+      "view": "khem-tears-close",
+      "note": "close เข้มรับสมุดสองมือ ก้มหน้า น้ำตาหยดลงปก",
+      "text": "ตราบาปที่ลุงชดแบกไว้แทนเพื่อนจนวันตาย\nถูกลบด้วยลายมือของเพื่อนคนนั้นเอง",
+      "mood": 0.6,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          826,
+          197
+        ],
+        "lit": [
+          1
+        ],
+        "cast": [
+          "khem@870,620 h=162 armR=chest prop=book cry head=8"
+        ],
+        "cam": [
+          10.75,
+          11.4,
+          900,
+          498
+        ]
+      },
+      "beats": 7.75
+    },
+    {
+      "scene": "platform",
+      "view": "khem-wai-close",
+      "note": "close เข้มยกมือไหว้สมหมายทั้งที่ถือสมุดแนบอก ฝนซาลง แสงฟ้าเริ่มเทา",
+      "text": "\"ขอบคุณครับลุง พ่อคงได้นอนหลับแล้ว\"",
+      "who": "khem",
+      "voice": "casual_male",
+      "tone": "crying, soft",
+      "mood": 0.55,
+      "data": {
+        "light": "dawn",
+        "lightAt": [
+          700,
+          300
+        ],
+        "lit": [
+          1
+        ],
+        "cast": [
+          "khem@870,620 h=162 armR=chest prop=book cry talk"
+        ],
+        "cam": [
+          10.75,
+          11.4,
+          840,
+          498
+        ],
+        "key": "255,226,170",
+        "shade": "l"
+      },
+      "beats": 5.25
+    },
+    {
+      "scene": "platform",
+      "view": "dawn-wide",
+      "note": "รุ่งสาง แสงทองอ่อนส่องชานชาลาเปียกจากปลายราง ตู้ 104 เปิดอ้าว่างเปล่า แม่กุญแจเจ็ดตัวเรียงบนม้านั่งไม้",
+      "text": "รุ่งเช้าวันที่สิบห้า พฤศจิกายน\nสถานีชุมทางคลองหมอกปิดทำการ",
+      "cues": [
+        [
+          0,
+          "morning"
+        ]
+      ],
+      "mood": 0.35,
+      "data": {
+        "hud": "15 พ.ย. · 06:10",
+        "light": "morning",
+        "time": "dawn",
+        "lightAt": [
+          700,
+          460
+        ],
+        "lockerOpen": true,
+        "sevenLocks": true,
+        "cast": [],
+        "cam": [
+          1,
+          1.03,
+          900,
+          520
+        ]
+      },
+      "beats": 7.375
+    },
+    {
+      "scene": "ins",
+      "view": "seven-locks-ins",
+      "note": "insert แม่กุญแจทองเหลืองที่ถูกตัดเจ็ดตัวเรียงบนม้านั่ง แดดเช้าเฉียง",
+      "text": "แม่กุญแจเจ็ดตัวเรียงอยู่บนม้านั่ง\nจะไม่มีตัวที่แปดอีกแล้ว",
+      "mood": 0.35,
+      "data": {},
+      "beats": 6.875
+    },
+    {
+      "scene": "office",
+      "view": "record-new-fif",
+      "note": "ผ่านกรอบหน้าต่างห้องนายสถานีจากชานชาลาแสงเช้า สมหมายนั่งพูดใส่เครื่องอัดเทป ธีระยืนพิงประตู แดดเข้าทางหน้าต่าง (กรอบเดียวกับภาพอัดเทปเมื่อปีที่แล้ว)",
+      "text": "\"สมหมาย... ถ้าแกได้ยินเทปนี้\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "calm, tired",
+      "mood": 0.35,
+      "data": {
+        "mirror": "record",
+        "time": "morning",
+        "light": "morning",
+        "lightAt": [
+          1180,
+          420
+        ],
+        "cast": [
+          "sommai@1511,919 h=535 sit arm=r-phone prop=cassette talk tired yaw=-0.3",
+          "theera@1554,842 h=457 yaw=-0.5 look=-0.5 sad armL=chest hair=receding"
+        ],
+        "cam": [
+          1.15,
+          1.18,
+          1060,
+          520
+        ],
+        "radio": "off",
+        "radioLed": "off",
+        "box": false,
+        "seat": true,
+        "fore": "window"
+      },
+      "beats": 4.75
+    },
+    {
+      "scene": "ins",
+      "view": "mic-ins",
+      "note": "insert ไมค์เล็กของเครื่องอัดเทป ไฟแดง REC แสงเช้าบนโต๊ะ ตั๋วสีเทียนวางข้าง ๆ",
+      "text": "\"ไม่มีคนร้ายหรอก\nมีแต่พ่อคนหนึ่งที่หลับไป\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "calm",
+      "mood": 0.35,
+      "data": {},
+      "beats": 5.25
+    },
+    {
+      "scene": "office",
+      "view": "theera-door-close",
+      "note": "close ธีระพิงวงกบประตู ฟังเงียบ ๆ ยิ้มทั้งน้ำตา แดดเช้าข้างแก้ม",
+      "text": "\"กับเพื่อนคนหนึ่ง ที่ไม่เคยหลับเลย\"",
+      "who": "sommai",
+      "voice": "old_male",
+      "tone": "calm",
+      "mood": 0.35,
+      "data": {
+        "time": "morning",
+        "light": "morning",
+        "lightAt": [
+          1180,
+          420
+        ],
+        "cast": [
+          "theera@1554,842 h=457 yaw=-0.5 look=-0.5 cry armL=chest hair=receding"
+        ],
+        "cam": [
+          3.81,
+          4.04,
+          1470,
+          499
+        ],
+        "radio": "off",
+        "radioLed": "off"
+      },
+      "beats": 4.625
+    },
+    {
+      "scene": "ins",
+      "view": "tape-hand-ins",
+      "note": "insert มือขวามีแผลยื่นตลับเทปให้มือธีระ แดดเช้า",
+      "text": "เทปม้วนนี้ไม่ได้ถูกล็อกไว้ในตู้ใบไหน\nเขายื่นมันให้ธีระเก็บไว้",
+      "mood": 0.35,
+      "data": {},
+      "beats": 6.5
+    },
+    {
+      "scene": "front",
+      "view": "exit-ew",
+      "note": "ภาพกว้างมากหน้าสถานีแสงเช้า ธีระประคองสมหมายเดินออกไปตามถนน มือสมหมายกำตั๋วสีเทียน เข้มกับป้าสายยืนส่งที่ประตูสถานี ป้ายไวนิลยุบสถานีเปียกฝน",
+      "text": "ตลับเทปในตู้หนึ่งศูนย์สี่ ไม่เคยมาจากอนาคต\nมันคือเสียงของพ่อคนหนึ่ง ที่ลืมได้ทุกอย่าง ยกเว้นลูก",
+      "music": true,
+      "mood": 0.3,
+      "data": {
+        "motion": "walk",
+        "light": "morning",
+        "time": "dawn",
+        "lightAt": [
+          960,
+          460
+        ],
+        "cast": [
+          "theera@1040,700 h=170 back acc=raincoat hair=receding",
+          "sommai@990,700 h=165 back",
+          "khem@240,900 h=360 sad",
+          "sai@120,900 h=320 cry"
+        ],
+        "cam": [
+          1,
+          1.02,
+          960,
+          540
+        ]
+      },
+      "beats": 9.375
+    },
+    {
+      "scene": "ins",
+      "view": "watch-end-ins",
+      "note": "insert ตั๋วสีเทียนวางคู่นาฬิกาพกบนม้านั่ง เข็มวินาทีเริ่มเดินอีกครั้ง แดดเช้า",
+      "text": "บางครั้งห้องขังที่น่ากลัวที่สุด\nคืออดีตที่เราไม่เคยให้อภัยตัวเอง",
+      "cues": [
+        [
+          0.5,
+          "tick"
+        ]
+      ],
+      "music": true,
+      "mood": 0.3,
+      "data": {},
+      "beats": 6.625
+    },
+    {
+      "scene": "endcard",
+      "text": "",
+      "vo": "เรื่องนี้เป็นเรื่องแต่ง แล้วคุณล่ะครับ คิดว่าการที่ทุกคนปิดความจริงไว้ คือความเมตตา หรือการปล่อยให้เพื่อนชดใช้ซ้ำทุกปี บอกกันในคอมเมนต์นะครับ",
+      "music": true,
+      "voLead": 0.4,
+      "mood": 0.25,
+      "data": {
+        "title": "ล็อคเกอร์ 104",
+        "sub": "เรื่องแต่ง ตัวละคร สถานี การรถไฟ และตำรวจเป็นเรื่องสมมติ",
+        "cta": "คอมเมนต์คุยกัน แล้วเจอกันเรื่องหน้า",
+        "step": "done",
+        "note": "เรื่องแต่ง ตัวละคร สถานี การรถไฟ และตำรวจเป็นเรื่องสมมติ"
+      },
+      "beats": 14.75
+    }
+  ]
+}

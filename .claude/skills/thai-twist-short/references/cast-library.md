@@ -90,7 +90,7 @@ All active adult characters use `viewBox="0 0 200 520"` (height ≈ cm × 2.6 px
 
 | Token | What it draws |
 |---|---|
-| `sit` | facing us: knees apart, hands on the thighs. Must have something under it (CLAUDE.md rule 16): `Actors chairs` or a seat in the set |
+| `sit` | facing us: knees apart, hands on the thighs. Must have something under it (CLAUDE.md rule 16): the set's own seat first (`BenchTable`, bed, sofa, behind a counter), else `Actors chairs={{kind}}` with the kind the place has (`office` · `steel` · `plastic`; `wood` only a home dining chair) |
 | `sit yaw=0.5` | three-quarter: thighs out to the side, shins hanging. The seat reads in silhouette, prefer it |
 | `crouch` | knees up, arms around the shins: against a wall, under a table |
 | `lie` | on the back, head at frame left (`flip` for right), one knee up, hand on the stomach. Frame 520×200, the floor is its bottom edge. Faces `sleep` and `mark=zzz` go with it |

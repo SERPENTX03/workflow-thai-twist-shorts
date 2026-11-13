@@ -1,0 +1,5615 @@
+{
+  "title": "ห้องที่ห้า",
+  "format": "landscape",
+  "target": [
+    1140,
+    1260
+  ],
+  "bpm": 75,
+  "voice": "narrator",
+  "voices": {
+    "narrator": "eleven:weRAVUYgqjjfUEEu5BsB",
+    "lead_male": "eleven:xYmBpJREC3WfqEFpbPvO",
+    "lead_female": "eleven:MYZYcGOqrkYQcwDunXl7",
+    "male": "eleven:xYmBpJREC3WfqEFpbPvO",
+    "female": "eleven:MYZYcGOqrkYQcwDunXl7",
+    "old_male": "eleven:5KvpaGteYkNayiswuX2h",
+    "old_female": "eleven:p2Wol3C7j3rHbfOrbL18",
+    "boy": "eleven:yq05eeRaHPMGuWTVpqeP",
+    "young_female": "eleven:cgSgspJ2msm6clMCkdW9",
+    "father": "eleven:KhBRXgEQjvfdIyXOu7G3",
+    "officer": "eleven:JTfQv1rq84UdcXVunY5m",
+    "casual_male": "eleven:RwilAvCC3o05RLuACpAn",
+    "villain_male": "eleven:Vl27Cllkuw8BhyPqus2n",
+    "villain_female": "eleven:EXAVITQu4vr4xnSDxMaL"
+  },
+  "voiceModel": "eleven_v3",
+  "voiceTone": "calm",
+  "voiceTempo": 1.1,
+  "breath": 0.2,
+  "switchBreath": 0.25,
+  "minBeats": 2,
+  "fitStep": 0.125,
+  "captionLook": "bold",
+  "sfx": {
+    "night": {
+      "prompt": "quiet Thai back street at night, crickets, one distant dog, faint electric hum from a street lamp, no voices",
+      "dur": 8,
+      "influence": 0.5,
+      "gain": 0.3
+    },
+    "day": {
+      "prompt": "hot quiet Thai side street behind a fresh market in the afternoon, distant vendors murmuring indistinct, a far motorcycle, birds",
+      "dur": 8,
+      "influence": 0.5,
+      "gain": 0.28
+    },
+    "knock22": {
+      "prompt": "composed: one knock from knock3 placed exactly two, pause, two",
+      "dur": 3,
+      "influence": 0.7,
+      "gain": 0.75
+    },
+    "knock3": {
+      "prompt": "composed: one knock from knock3 placed exactly three, evenly",
+      "dur": 3,
+      "influence": 0.7,
+      "gain": 0.8
+    },
+    "knock3far": {
+      "prompt": "composed: one knock from knock3 placed exactly three, muffled through a wall",
+      "dur": 3,
+      "influence": 0.7,
+      "gain": 0.7
+    },
+    "latch": {
+      "prompt": "old steel sliding bolt drawn back on a wooden panel, heavy metallic scrape and clack, close",
+      "dur": 1.2,
+      "influence": 0.6,
+      "gain": 0.75
+    },
+    "latchshut": {
+      "prompt": "steel sliding bolt slammed shut on a wooden door from the other side, hard clack, close",
+      "dur": 1,
+      "influence": 0.6,
+      "gain": 0.85
+    },
+    "hatch": {
+      "prompt": "small wooden hatch slid open low on a wall, soft wood scrape, a plastic bag set down",
+      "dur": 1.5,
+      "influence": 0.6,
+      "gain": 0.6
+    },
+    "fan": {
+      "prompt": "small old electric fan running steadily in a tiny closed room, soft motor hum and blade flutter",
+      "dur": 6,
+      "influence": 0.5,
+      "gain": 0.3
+    },
+    "fanoff": {
+      "prompt": "small electric fan losing power, the motor winding down slowly to silence",
+      "dur": 3,
+      "influence": 0.6,
+      "gain": 0.6
+    },
+    "meter": {
+      "prompt": "old analog electricity meter, very faint mechanical ticking of a slowly turning disc, close",
+      "dur": 3,
+      "influence": 0.6,
+      "gain": 0.45
+    },
+    "breaker": {
+      "prompt": "single heavy main circuit breaker switch thrown off, sharp plastic clack, close",
+      "dur": 0.6,
+      "influence": 0.7,
+      "gain": 0.8
+    },
+    "tape": {
+      "prompt": "steel measuring tape pulled out and snapping back into its case, close",
+      "dur": 1.5,
+      "influence": 0.6,
+      "gain": 0.6
+    },
+    "tea": {
+      "prompt": "hot tea poured from a vacuum flask into a small glass, close, quiet room",
+      "dur": 2,
+      "influence": 0.6,
+      "gain": 0.55
+    },
+    "keys": {
+      "prompt": "a small ring of old house keys handed over, soft metallic jingle, close",
+      "dur": 1,
+      "influence": 0.6,
+      "gain": 0.55
+    },
+    "boat": {
+      "prompt": "a small wooden boat pushed off a canal pier at night, water lapping, one pole stroke, moving away",
+      "dur": 4,
+      "influence": 0.5,
+      "gain": 0.45
+    },
+    "canal": {
+      "prompt": "still canal behind a house at night, soft water lapping on wooden pier posts, frogs far away",
+      "dur": 8,
+      "influence": 0.5,
+      "gain": 0.3
+    },
+    "splash": {
+      "prompt": "a heavy body falling into a canal from a wooden pier, one deep splash, then water settling",
+      "dur": 2.5,
+      "influence": 0.6,
+      "gain": 0.75
+    },
+    "cat": {
+      "prompt": "one low uneasy house cat growl, quiet, close",
+      "dur": 1.5,
+      "influence": 0.6,
+      "gain": 0.5
+    },
+    "radio": {
+      "prompt": "small car radio tuning between local Thai stations, brief static crackle, no clear words",
+      "dur": 2,
+      "influence": 0.6,
+      "gain": 0.4
+    },
+    "neon": {
+      "prompt": "quiet Thai police station office, fluorescent tube buzz, a distant typewriter and a far telephone, no voices",
+      "dur": 8,
+      "influence": 0.5,
+      "gain": 0.28
+    },
+    "truck": {
+      "prompt": "old diesel pickup truck idling at the end of a narrow street at night, heard from a distance",
+      "dur": 6,
+      "influence": 0.5,
+      "gain": 0.35
+    },
+    "cam": {
+      "prompt": "single soft electronic beep of a small security camera app notification",
+      "dur": 0.5,
+      "influence": 0.7,
+      "gain": 0.5
+    },
+    "siren": {
+      "prompt": "Thai police car siren approaching from a distance, heard from inside a closed concrete room",
+      "dur": 4,
+      "influence": 0.5,
+      "gain": 0.5
+    },
+    "morning": {
+      "prompt": "calm early morning in a Thai neighborhood by a canal, birds, distant rooster, a monk's soft footsteps far away, light breeze",
+      "dur": 8,
+      "influence": 0.5,
+      "gain": 0.32
+    }
+  },
+  "shots": [
+    {
+      "chapter": "บ้านเลขที่ห้า",
+      "scene": "ext",
+      "view": "windows-fif",
+      "note": "ผ่านกระจกหน้ารถจากปากซอยตอนกลางคืน บ้านแฝดชั้นเดียวมืดสนิท หน้าต่างห้าบานเรียงกัน บานขวาสุดตีไม้ทับ แสงเหลืองเส้นบางลอดร่องไม้เป็นจุดสว่างเดียวในเฟรม",
+      "text": "หนึ่ง สอง สาม สี่ ห้า",
+      "cues": [
+        [
+          0,
+          "night"
+        ]
+      ],
+      "mood": 0.6,
+      "data": {
+        "hud": "พุธ · 22:20",
+        "tone": "night",
+        "light": "night",
+        "lightAt": [
+          -120,
+          520
+        ],
+        "five": "lit",
+        "cam": [
+          1,
+          1.04,
+          930,
+          560
+        ],
+        "cast": []
+      },
+      "beats": 4.125
+    },
+    {
+      "scene": "car",
+      "view": "rin-close",
+      "note": "close รินหลังพวงมาลัย ไฟถนนสีส้มจับครึ่งหน้า ตาเหลือบออกไปนอกรถ นับหน้าต่าง",
+      "text": "ริน นับหน้าต่างบ้านเลขที่ห้าจากในรถ\nเป็น[คืนที่สาม]",
+      "mood": 0.6,
+      "data": {
+        "tone": "night",
+        "light": "lamp",
+        "lightAt": [
+          420,
+          300
+        ],
+        "key": "255,176,96",
+        "shade": "r",
+        "cam": [
+          2,
+          2.12,
+          830,
+          430
+        ],
+        "cast": [
+          "rin@740 wary look=-0.45 yaw=-0.25"
+        ]
+      },
+      "beats": 4.875
+    },
+    {
+      "scene": "ins",
+      "view": "plan-lap-ins",
+      "note": "macro แปลนธนาคารบนตัก ไฟเพดานรถดวงเล็กส่องเฉพาะกระดาษ ปลายปากกาแตะสี่ห้องทีละห้อง",
+      "text": "ในแปลนของธนาคาร\nบ้านหลังนี้มีแค่[สี่ห้อง]",
+      "cues": [
+        [
+          0.2,
+          "flip"
+        ]
+      ],
+      "mood": 0.6,
+      "data": {},
+      "beats": 4.375
+    },
+    {
+      "scene": "ext",
+      "view": "gate-low",
+      "note": "มุมต่ำจากพื้นซอย ประตูรั้วเหล็กโซ่คล้อง ป้ายทรัพย์รอการขายเอียงอยู่ บ้านมืดสูงเหนือรั้ว ไฟถนนดวงเดียวข้างหลังกล้อง",
+      "text": "ไม่มีคนอยู่มาเจ็ดเดือน\nไฟหลักปิด น้ำถูกตัด",
+      "mood": 0.6,
+      "data": {},
+      "beats": 5.5
+    },
+    {
+      "scene": "ins",
+      "view": "meter-ins",
+      "note": "มิเตอร์ไฟเก่าหน้ารั้ว กระจกกลมเปื้อนฝุ่น ไฟฉายจากซ้ายส่องเห็นจานโลหะข้างในกำลังหมุนช้า ๆ",
+      "text": "บ้านว่าง ไฟต้องเป็น[ศูนย์หน่วย]",
+      "cues": [
+        [
+          0.2,
+          "meter"
+        ]
+      ],
+      "mood": 0.6,
+      "data": {
+        "meter": 18406
+      },
+      "beats": 3.25
+    },
+    {
+      "scene": "ins",
+      "view": "meter-ecu",
+      "note": "ECU ตัวเลขมิเตอร์ 18,406 หลักสุดท้ายกำลังเลื่อนขึ้นครึ่งช่อง เงาแหวนกระจกทับขอบ",
+      "text": "แต่มิเตอร์ของที่นี่ ขึ้นวันละสองหน่วย\nไม่เคยขาด",
+      "mood": 0.7,
+      "data": {
+        "meter": 18406
+      },
+      "beats": 5.25
+    },
+    {
+      "scene": "ext",
+      "view": "window5-ecu",
+      "note": "ECU บานที่ห้า แผ่นไม้ตีซ้อนกัน แสงเหลืองเป็นเส้นสามเส้นระหว่างแผ่น มีฝุ่นลอยในแสง เงาบางอย่างพาดผ่านเส้นแสงแล้วหายไป",
+      "text": "และหน้าต่างบานที่ห้า ของห้องที่ไม่มีอยู่จริง\n{กำลังมีแสง}",
+      "cues": [
+        [
+          1.2,
+          "shriek"
+        ]
+      ],
+      "mood": 0.8,
+      "data": {},
+      "beats": 5.875
+    },
+    {
+      "scene": "car",
+      "view": "rin-ecu",
+      "note": "ECU ตารินเบิก แสงส้มจากไฟถนนในรูม่านตา มีเส้นแสงเหลืองเล็ก ๆ สะท้อนอยู่",
+      "text": "ผู้ประเมินสองคนก่อนหน้าเธอ\nถอนตัวจากบ้านหลังนี้โดยไม่บอกเหตุผล",
+      "mood": 0.6,
+      "data": {
+        "tone": "night",
+        "light": "dim",
+        "lightAt": [
+          420,
+          300
+        ],
+        "cam": [
+          3.2,
+          3.32,
+          760,
+          345
+        ],
+        "cast": [
+          "rin@740 shock yaw=-0.3 look=-0.5"
+        ],
+        "shade": "r",
+        "key": "255,176,96"
+      },
+      "beats": 7.5
+    },
+    {
+      "scene": "ext",
+      "view": "house-ew",
+      "note": "ภาพกว้างมากจากปลายซอย บ้านเล็กกลางความมืด รถรินเป็นก้อนดำเล็กหน้ารั้ว เส้นแสงจากบานที่ห้าเป็นจุดเดียวที่ยังเห็น",
+      "text": "เช้าวันศุกร์นี้ บ้านจะถูกประมูล\nเหลือเวลาอีกสองคืน",
+      "mood": 0.6,
+      "data": {
+        "tone": "night",
+        "light": "night",
+        "lightAt": [
+          -120,
+          520
+        ],
+        "five": "lit",
+        "cam": [
+          0.74,
+          0.72,
+          960,
+          560
+        ],
+        "cast": [],
+        "car": [
+          620,
+          960
+        ]
+      },
+      "beats": 5.625
+    },
+    {
+      "scene": "ext",
+      "view": "window5-close",
+      "note": "close บานที่ห้าจากระดับสายตา เส้นแสงนิ่ง กล้องดันเข้าช้า ความมืดรอบกรอบกินเกือบทั้งเฟรม",
+      "text": "ใครอยู่ในห้องที่ไม่มี",
+      "style": "red",
+      "cues": [
+        [
+          0,
+          "hit"
+        ],
+        [
+          0.8,
+          "knock22"
+        ]
+      ],
+      "hold": 2,
+      "mood": 0.9,
+      "data": {},
+      "beats": 4.625
+    },
+    {
+      "scene": "title",
+      "view": "title",
+      "note": "การ์ดชื่อเรื่องบนพื้นดำ ตัวอักษรมีเส้นแสงเหลืองลอดเหมือนร่องไม้",
+      "text": "",
+      "vo": "",
+      "mood": 0.5,
+      "data": {
+        "title": "ห้องที่ห้า",
+        "sub": "เรื่องแต่ง ตัวละคร ธนาคาร และตำรวจในเรื่องนี้เป็นเรื่องสมมติ"
+      },
+      "beats": 3
+    },
+    {
+      "chapter": "งานง่ายที่สุดของเดือน",
+      "scene": "ext",
+      "view": "soi-wide",
+      "note": "ซอยหลังตลาดตอนบ่าย สายไฟพันกันเหนือหัว แดดแรงจากขวา รถเก๋งเก่าสีเทาคลานเข้าซอยตัน บ้านแฝดอยู่ท้ายภาพ ป้ายทรัพย์รอการขายเล็ก ๆ",
+      "text": "สามวันก่อนหน้านั้น บ่ายวันจันทร์\nซอยตันหลังตลาดคลองหมอก",
+      "cues": [
+        [
+          0,
+          "day"
+        ]
+      ],
+      "mood": 0.25,
+      "data": {
+        "hud": "จันทร์ · 13:40",
+        "motion": "pan",
+        "tone": "day",
+        "five": "off",
+        "light": "day",
+        "lightAt": [
+          1900,
+          200
+        ],
+        "cam": [
+          0.72,
+          0.76,
+          500,
+          540,
+          900,
+          540
+        ],
+        "cast": [],
+        "car": [
+          240,
+          930
+        ]
+      },
+      "beats": 6.625
+    },
+    {
+      "scene": "car",
+      "view": "rin-med",
+      "note": "medium รินในรถจอดแล้ว แดดลอดกระจกหน้าเป็นแถบ เธอหยิบสมุดวัดจากเบาะข้าง วิทยุเล็กมีไฟหน้าปัดติด",
+      "text": "[ริน] เป็นผู้ประเมินราคาให้ธนาคารมาสิบสองปี",
+      "mood": 0.25,
+      "data": {
+        "tag": {
+          "who": "rin",
+          "name": "ริน",
+          "line": "ผู้ประเมินราคา · นับทุกอย่างด้วยตัวเอง"
+        },
+        "tone": "day",
+        "light": "day",
+        "lightAt": [
+          1500,
+          120
+        ],
+        "cam": [
+          1.15,
+          1.2,
+          860,
+          560
+        ],
+        "cast": [
+          "rin@740 yaw=-0.2 look=0.3 armR=hold prop=book"
+        ]
+      },
+      "beats": 5.25
+    },
+    {
+      "scene": "ins",
+      "view": "tape-ins",
+      "note": "macro สายวัดเหล็กเหลืองคล้องเข็มขัด มือซ้ายดึงออกครึ่งนิ้วแล้วปล่อย แดดวาบบนเลข สมุดปกอ่อนเสียบกระเป๋าข้าง",
+      "text": "เครื่องมือของเธอมีแค่สายวัดเหล็กกับสมุดเล่มเดียว",
+      "cues": [
+        [
+          0.2,
+          "tape"
+        ]
+      ],
+      "mood": 0.25,
+      "data": {},
+      "beats": 4.25
+    },
+    {
+      "scene": "past",
+      "view": "signed-ins",
+      "note": "ภาพอดีตซีดอุ่น แบบฟอร์มบนฝากระโปรงรถ มือเซ็นชื่อในช่อง ว่าง บ้านเล็กเบลออยู่ไกลข้างหลังไม่ได้เข้าไปดู",
+      "text": "สี่ปีก่อน เธอเซ็นคำว่า [ว่าง] ให้บ้านหลังหนึ่ง\nโดยดูจากถนน",
+      "cues": [
+        [
+          0,
+          "flip"
+        ]
+      ],
+      "mood": 0.25,
+      "data": {
+        "hud": "สี่ปีก่อน",
+        "past": true
+      },
+      "beats": 5.75
+    },
+    {
+      "scene": "past",
+      "view": "eviction-high",
+      "note": "อดีตแดดบ่ายต่ำจากซ้าย บ้านเก่าประตูเหล็กล่ามโซ่ติดป้ายธนาคาร ยายกับหลานนั่งกลางกองของริมถนน รินหันหลังบังขวาเฟรม ถือแฟ้มไม่เดินเข้าไป (องค์ประกอบจาก ref ใน Google Flow)",
+      "text": "ข้างในมียายกับหลานอยู่\nตั้งแต่นั้น ไม่มีบ้านไหนว่าง จนกว่าเธอจะเข้าไปนับเอง",
+      "mood": 0.4,
+      "data": {
+        "past": true,
+        "light": "warm",
+        "lightAt": [
+          -200,
+          300
+        ],
+        "cam": [
+          1,
+          1.04,
+          900,
+          540
+        ],
+        "cast": [
+          "yai@820,750 h=360 crouch sad",
+          "lan@925,755 h=280 crouch sad",
+          "rinpast@1680,1320 h=1020 back"
+        ]
+      },
+      "beats": 8
+    },
+    {
+      "scene": "ins",
+      "view": "file-ins",
+      "note": "แฟ้มธนาคารเปิดบนพวงมาลัย ตรายางแดงทรัพย์รอการขาย แสงบ่ายเฉียง ปลายนิ้วรินไล่ใต้บรรทัด",
+      "text": "งานนี้ธนาคารต้องการแค่ลายเซ็นเดียว\n[ไม่มีผู้อยู่อาศัย] ก่อนประมูลเช้าวันศุกร์",
+      "cues": [
+        [
+          0.2,
+          "flip"
+        ]
+      ],
+      "mood": 0.25,
+      "data": {},
+      "beats": 8.25
+    },
+    {
+      "scene": "car",
+      "view": "radio-ins",
+      "note": "หน้าปัดวิทยุรถเรืองส้มเล็ก ๆ ข้างหลังเบลอเห็นบ้านผ่านกระจก คลื่นซ่าสั้น ๆ",
+      "text": "วิทยุชุมชนเรียกที่นี่ว่าบ้านผีหลังตลาด\nรินปิดวิทยุ",
+      "cues": [
+        [
+          0,
+          "radio"
+        ]
+      ],
+      "mood": 0.25,
+      "data": {},
+      "beats": 6.625
+    },
+    {
+      "scene": "ext",
+      "view": "windows-wide",
+      "note": "กลางวัน หน้าบ้านเต็มเฟรมจากฝั่งตรงข้ามซอย ผนังปูนซีดคราบฝน หน้าต่างห้าบาน บานขวาสุดตีไม้ รินยืนเล็กทางซ้ายยกปากกา ผนังอีกซีกเป็นบ้านป้านิ่มมีต้นโกสน",
+      "text": "เธอนับหน้าต่างจากถนนตามนิสัย\nหนึ่ง สอง สาม สี่ ห้า",
+      "mood": 0.25,
+      "data": {
+        "tone": "day",
+        "five": "off",
+        "light": "day",
+        "lightAt": [
+          1900,
+          200
+        ],
+        "cam": [
+          0.92,
+          0.96,
+          900,
+          520
+        ],
+        "cast": [
+          "rin@300,960 h=375 yaw=0.3 armR=raise prop=book wary"
+        ]
+      },
+      "beats": 8.625
+    },
+    {
+      "scene": "ins",
+      "view": "note5-ins",
+      "note": "สมุดวัด มือเขียนเลข 5 แล้ววงกลม ลายมือเล็กเรียบร้อย เงารินทับครึ่งหน้ากระดาษ",
+      "text": "แล้วจดลงสมุด",
+      "cues": [
+        [
+          0.1,
+          "scratch"
+        ]
+      ],
+      "mood": 0.25,
+      "data": {},
+      "beats": 2.125
+    },
+    {
+      "scene": "ext",
+      "view": "gate-back-med",
+      "note": "medium จากหลังรินมองเข้ารั้ว ชายวัยสี่สิบกว่าเดินออกมาจากด้านข้างบ้าน ไม่ได้มาทางซอย บู๊ตยางเขียวเปื้อนโคลนแห้ง ถือพวงกุญแจ",
+      "text": "มีคนรออยู่แล้ว ผู้ชายคนนั้นเดินมาจากหลังบ้าน\nไม่ได้มาจากทางซอย",
+      "mood": 0.25,
+      "data": {
+        "tone": "day",
+        "five": "off",
+        "light": "day",
+        "lightAt": [
+          1900,
+          200
+        ],
+        "cam": [
+          1.2,
+          1.25,
+          500,
+          620
+        ],
+        "cast": [
+          "chaloem@380,880 h=304 yaw=0.2 armR=hold",
+          "rin@620,1050 h=475 back"
+        ]
+      },
+      "beats": 7.75
+    },
+    {
+      "scene": "ext",
+      "view": "chaloem-close",
+      "note": "close เฉลิมยิ้มเกรงใจ แว่นเหลี่ยมมีแดดวาบ แดดตกแก้มซ้าย รั้วเหล็กเบลอข้างหลัง",
+      "text": "\"คุณรินใช่ไหมครับ ผมเฉลิม คนดูแลบ้าน\nนายหน้าเขาจ้างรายวัน เพิ่งรับงานเดือนนี้เอง\"",
+      "who": "chaloem",
+      "voice": "father",
+      "tone": "warm, polite",
+      "mood": 0.25,
+      "data": {
+        "tag": {
+          "who": "chaloem",
+          "name": "ลุงเฉลิม",
+          "line": "คนดูแลบ้าน · ใจดี ช่วยทุกอย่าง"
+        },
+        "tone": "day",
+        "five": "off",
+        "light": "day",
+        "lightAt": [
+          1900,
+          200
+        ],
+        "cam": [
+          3.35,
+          3.51,
+          428,
+          647
+        ],
+        "cast": [
+          "chaloem@500,1040 h=493 talk happy yaw=-0.3 armR=hold"
+        ],
+        "shade": "l"
+      },
+      "beats": 7
+    },
+    {
+      "scene": "ins",
+      "view": "key-ots",
+      "note": "ต้นฉบับ mirror: ข้ามไหล่ริน มือขวาเฉลิมยื่นพวงกุญแจเข้ากลางเฟรมจากขวา นิ้วก้อยสั้นไปหนึ่งข้อ แดดจากซ้าย บู๊ตเขียวเบลอล่างเฟรม",
+      "text": "คนนับของเห็นทันที\nนิ้วก้อยขวาของเขาสั้นไปหนึ่งข้อ",
+      "cues": [
+        [
+          0.2,
+          "keys"
+        ]
+      ],
+      "hold": 1,
+      "mood": 0.25,
+      "data": {
+        "mirror": "key"
+      },
+      "beats": 8
+    },
+    {
+      "scene": "ext",
+      "view": "chaloem-laugh-med",
+      "note": "medium เฉลิมยกมือขวาขึ้นดูเองแล้วหัวเราะ รินหันมาเล็กน้อยเบลอฝั่งซ้าย",
+      "text": "\"เครื่องกลึงกินไปครับ สมัยหนุ่ม ๆ\"",
+      "who": "chaloem",
+      "voice": "father",
+      "tone": "warm, chuckling",
+      "mood": 0.25,
+      "data": {
+        "tone": "day",
+        "five": "off",
+        "light": "day",
+        "lightAt": [
+          1900,
+          200
+        ],
+        "cam": [
+          1.78,
+          1.87,
+          343,
+          724
+        ],
+        "cast": [
+          "chaloem@500,1040 h=493 laugh talk yaw=-0.3 armR=raise"
+        ],
+        "foreShoulder": "l",
+        "foreColor": "#c29a2c",
+        "foreHair": "#20191a"
+      },
+      "beats": 4.5
+    },
+    {
+      "scene": "ins",
+      "view": "boots-low",
+      "note": "มุมพื้น บู๊ตยางเขียวเดินผ่านกล้องบนลานปูนแห้งแตก ทิ้งรอยโคลนชื้นสองรอย แดดจัด",
+      "text": "บู๊ตของเขาเปื้อนโคลนสด\nทั้งที่ฝนไม่ตกมาเป็นอาทิตย์",
+      "mood": 0.32,
+      "data": {},
+      "beats": 5
+    },
+    {
+      "scene": "living",
+      "view": "wide",
+      "note": "เปิดฉากห้องนั่งเล่น ภาพกว้างมุมห้อง แดดเข้าหน้าต่างซ้ายเป็นแผ่นบนพื้นฝุ่น ชุดรับแขกคลุมผ้า ฝุ่นลอย รินเดินนำเฉลิมเข้ามาทางขวา มีตู้โชว์ พัดลมเพดาน ปฏิทินเก่า",
+      "text": "ห้องนั่งเล่น ครัว ห้องนอนใหญ่ ห้องนอนเล็ก",
+      "mood": 0.25,
+      "data": {
+        "hud": "จันทร์ · 14:05",
+        "motion": "push",
+        "time": "sun",
+        "light": "day",
+        "lightAt": [
+          210,
+          440
+        ],
+        "cam": [
+          1,
+          1.12,
+          960,
+          560
+        ],
+        "cast": [
+          "rin@1321,875 h=447 yaw=-0.3 armR=hold prop=book wary",
+          "chaloem@1692,928 h=532 yaw=-0.4 armR=hold happy"
+        ]
+      },
+      "beats": 4.875
+    },
+    {
+      "scene": "bedroom",
+      "view": "small-med",
+      "note": "ห้องนอนเล็ก แสงบ่ายจากบานเล็ก ตู้เสื้อผ้าไม้บิวท์อินกินผนังขวาทั้งแถบ รินยืนกางสายวัดหันข้าง สติกเกอร์การ์ตูนบนบานตู้",
+      "text": "สี่ห้อง ตรงกับที่ธนาคารส่งมา",
+      "cues": [
+        [
+          0.2,
+          "tape"
+        ]
+      ],
+      "mood": 0.25,
+      "data": {
+        "time": "sun",
+        "light": "day",
+        "lightAt": [
+          690,
+          370
+        ],
+        "cam": [
+          1,
+          1.05,
+          1090,
+          560
+        ],
+        "cast": [
+          "rin@801,909 h=465 yaw=0.45 armR=hold prop=book wary"
+        ]
+      },
+      "beats": 4.75
+    },
+    {
+      "scene": "living",
+      "view": "rin-ots",
+      "note": "ข้ามไหล่เฉลิมที่มืดเบลอ รินคม ชี้ปลายปากกาไปทางผนังขวา หน้าเฉยแบบคนจดงาน",
+      "text": "\"แล้วหน้าต่างบานที่ห้าล่ะคะ มันเข้าห้องไหน\"",
+      "who": "rin",
+      "voice": "lead_female",
+      "tone": "flat, curious",
+      "mood": 0.25,
+      "data": {
+        "time": "sun",
+        "light": "day",
+        "lightAt": [
+          210,
+          440
+        ],
+        "cam": [
+          1.86,
+          1.95,
+          1472,
+          597
+        ],
+        "cast": [
+          "rin@1321,900 h=473 talk wary yaw=0.35 armR=point"
+        ],
+        "foreShoulder": "l",
+        "foreColor": "#36494e",
+        "foreHair": "#25212b"
+      },
+      "beats": 4.5
+    },
+    {
+      "scene": "living",
+      "view": "chaloem-close",
+      "note": "close เฉลิมหันไปมองผนัง ยิ้มค้าง แสงหน้าต่างจับแก้มเดียว",
+      "text": "\"บานหลอกครับ เจ้าของเก่าตีไม้ปิดไว้กันแดดบ่าย\nข้างหลังเป็นผนังเฉย ๆ\"",
+      "who": "chaloem",
+      "voice": "father",
+      "tone": "warm, easy",
+      "mood": 0.25,
+      "data": {
+        "time": "sun",
+        "light": "day",
+        "lightAt": [
+          210,
+          440
+        ],
+        "cam": [
+          3.1,
+          3.26,
+          960,
+          504
+        ],
+        "cast": [
+          "chaloem@883,928 h=532 talk happy yaw=0.3 look=0.5"
+        ],
+        "shade": "r",
+        "key": "255,240,200"
+      },
+      "beats": 6.25
+    },
+    {
+      "scene": "ins",
+      "view": "tell-keys-ecu",
+      "note": "ECU tell ประจำตัว: นิ้วโป้งขวาเฉลิมถูพวงกุญแจไปมา นิ้วก้อยสั้นกำไม่เต็ม ฉากหลังมืดเบลอ",
+      "text": "",
+      "cues": [
+        [
+          0,
+          "keys"
+        ]
+      ],
+      "vo": "",
+      "mood": 0.35,
+      "data": {},
+      "beats": 2
+    },
+    {
+      "scene": "plan",
+      "view": "floor-top",
+      "note": "แปลนบ้านจากบนลงล่าง สี่ห้องเส้นคม ด้านหน้ามีสัญลักษณ์หน้าต่างแค่สี่จุด ปลายปากกาหยุดตรงผนังที่ไม่มีอะไร",
+      "text": "แปลนในแฟ้มก็มีสี่ห้อง และมีหน้าต่างแค่[สี่บาน]",
+      "cues": [
+        [
+          0.2,
+          "flip"
+        ]
+      ],
+      "hold": 0.5,
+      "mood": 0.25,
+      "data": {},
+      "beats": 4.875
+    },
+    {
+      "scene": "living",
+      "view": "rin-close",
+      "note": "close รินยืนมองผนังขวา ปากกาแตะคาง ด้านหลังเบลอเป็นแสงหน้าต่าง คิ้วขมวดนิดเดียว",
+      "text": "เธอคิดในใจว่า ไม่มีใครเสียเงิน\nสร้างหน้าต่างให้ผนัง",
+      "mood": 0.38,
+      "data": {
+        "time": "sun",
+        "light": "day",
+        "lightAt": [
+          210,
+          440
+        ],
+        "cam": [
+          3.49,
+          3.66,
+          1231,
+          523
+        ],
+        "cast": [
+          "rin@1162,900 h=473 wary yaw=0.4 look=0.6"
+        ]
+      },
+      "beats": 5.875
+    },
+    {
+      "scene": "ins",
+      "view": "photo-ins",
+      "note": "รูปครอบครัวในกรอบบนผนังที่เหลือ พ่อ แม่ ลูกสาว ลูกชาย ขอบขวาถูกตัดด้วยกรรไกร แดดเฉียงวาบบนกระจก",
+      "text": "บนผนังเหลือรูปเดียว ครอบครัวมานพ เจ้าของเดิม",
+      "cues": [
+        [
+          0,
+          "whoosh"
+        ]
+      ],
+      "mood": 0.25,
+      "data": {},
+      "beats": 5.75
+    },
+    {
+      "scene": "ins",
+      "view": "photo-ecu",
+      "note": "ECU ไหล่มานพในรูป มือข้างหนึ่งวางอยู่บนไหล่ ตัวเจ้าของมือหายไปกับรอยตัดขอบกรอบ",
+      "text": "มีมือของใครคนหนึ่งวางบนไหล่พ่อ\nเจ้าของมือถูกตัดออกไปกับขอบรูป",
+      "hold": 1,
+      "mood": 0.4,
+      "data": {},
+      "beats": 8.625
+    },
+    {
+      "scene": "living",
+      "view": "photo-med",
+      "note": "medium รินเอียงคอมองรูปบนผนัง เฉลิมอยู่ข้างหลังเล็กน้อยไม่มองรูป มองพื้น",
+      "text": "\"ใครตัดรูปนี้คะ\"",
+      "who": "rin",
+      "voice": "lead_female",
+      "tone": "curious",
+      "mood": 0.25,
+      "data": {
+        "time": "sun",
+        "light": "day",
+        "lightAt": [
+          210,
+          440
+        ],
+        "cam": [
+          1.35,
+          1.4,
+          900,
+          540
+        ],
+        "cast": [
+          "rin@1150,853 h=425 back",
+          "chaloem@852,941 h=545 guilty yaw=0.3"
+        ]
+      },
+      "beats": 2.5
+    },
+    {
+      "scene": "living",
+      "view": "chaloem-low",
+      "note": "medium เฉลิมไม่เงยหน้า ก้มมองพื้นฝุ่น มือห้อย แสงหน้าต่างจากซ้าย ตอบสั้นแบบไม่อยากคุย",
+      "text": "\"เจอมาแบบนั้นครับ\"",
+      "who": "chaloem",
+      "voice": "father",
+      "tone": "flat, quick",
+      "mood": 0.25,
+      "data": {
+        "time": "sun",
+        "light": "day",
+        "lightAt": [
+          210,
+          440
+        ],
+        "cam": [
+          1.9,
+          1.96,
+          1231,
+          577
+        ],
+        "cast": [
+          "chaloem@1061,1012 h=622 talk guilty look=-0.5 head=6"
+        ]
+      },
+      "beats": 2
+    },
+    {
+      "scene": "yard",
+      "view": "pier-wide",
+      "note": "หลังบ้านกลางวัน ลานปูนแตก ท่าน้ำไม้ผุยื่นลงคลองสีเขียว เงาร่มไม้ รินยืนไกลที่ประตูหลังมองคลอง",
+      "text": "เจ้าของบ้านตกน้ำตายที่ท่าน้ำหลังนี้ เมื่อเจ็ดเดือนก่อน",
+      "cues": [
+        [
+          0,
+          "canal"
+        ]
+      ],
+      "mood": 0.25,
+      "data": {
+        "motion": "fx",
+        "tone": "sun",
+        "light": "day",
+        "lightAt": [
+          1500,
+          100
+        ],
+        "cam": [
+          1,
+          1.05,
+          960,
+          540
+        ],
+        "cast": [
+          "rin@300,890 h=474 back"
+        ]
+      },
+      "beats": 5
+    },
+    {
+      "scene": "yard",
+      "view": "pier-post-ins",
+      "note": "เสาท่าน้ำไม้ผุกับระดับน้ำใกล้ ๆ ผ้ายันต์ซีดผูกเสา น้ำกระเพื่อมเงาแสง",
+      "text": "เมียกับลูกสองคนหายไปตั้งแต่คืนนั้น\nตำรวจบันทึกว่า [หนีหนี้] แล้วปิดเรื่อง",
+      "mood": 0.25,
+      "data": {},
+      "beats": 7.625
+    },
+    {
+      "scene": "kitchen",
+      "view": "tap-ins",
+      "note": "ก๊อกครัว มือรินบิดสุด ไม่มีน้ำแม้แต่หยด ซิงก์แห้งมีคราบ แสงหน้าต่างเล็กจากบน",
+      "text": "เธอเปิดก๊อก น้ำถูกตัดจริง",
+      "mood": 0.28,
+      "data": {},
+      "beats": 3.875
+    },
+    {
+      "scene": "yard",
+      "view": "watermeter-ins",
+      "note": "มิเตอร์น้ำที่พื้นหลังบ้าน ฝาเหล็กเปิด เข็มนิ่งสนิท ใยแมงมุมพาดกระจก เลขจดไว้ข้างสมุด",
+      "text": "มิเตอร์น้ำนิ่ง ใยแมงมุมพาดข้ามกระจก",
+      "mood": 0.25,
+      "data": {},
+      "beats": 4.375
+    },
+    {
+      "scene": "ext",
+      "view": "meter-wall-med",
+      "note": "medium รินยืนหน้าตู้มิเตอร์ที่เสารั้ว ยกไฟฉายทั้งที่กลางวัน หันข้าง เฉลิมยืนรอเบลอในเงาบ้าน",
+      "text": "แล้วเธอเดินกลับมาอ่านมิเตอร์ไฟ",
+      "mood": 0.25,
+      "data": {
+        "hud": "จันทร์ · 14:40",
+        "tone": "day",
+        "five": "off",
+        "light": "day",
+        "lightAt": [
+          1900,
+          200
+        ],
+        "cam": [
+          1.6,
+          1.66,
+          100,
+          560
+        ],
+        "cast": [
+          "rin@180,950 h=364 yaw=-0.5 arm=r-hold prop=flashlight wary",
+          "chaloem@560,870 h=292 yaw=-0.3"
+        ]
+      },
+      "beats": 2.75
+    },
+    {
+      "scene": "ins",
+      "view": "meter-ins-day",
+      "note": "กรอบเดียวกับ meter-ins แต่กลางวัน จานโลหะข้างในหมุนช้า ๆ เลข 18,402 ขึ้น HUD มุมบน",
+      "text": "บ้านว่างเจ็ดเดือน มิเตอร์ไม่ควรขยับ\nแต่จานข้างในหมุนอยู่ อ่านได้ [18,402] หน่วย",
+      "cues": [
+        [
+          0.2,
+          "meter"
+        ]
+      ],
+      "hold": 0.5,
+      "mood": 0.42,
+      "data": {
+        "meter": 18402
+      },
+      "beats": 9.875
+    },
+    {
+      "scene": "ext",
+      "view": "fridge-close",
+      "note": "close เฉลิมเดินเข้ามาใกล้ ยิ้มเหมือนขอโทษ นิ้วโป้งถูพวงกุญแจ แดดจับครึ่งหน้า",
+      "text": "\"ผมเสียบตู้เย็นเก่าไว้แช่น้ำกินครับ เดี๋ยวผมถอดให้\"",
+      "who": "chaloem",
+      "voice": "father",
+      "tone": "warm, apologetic",
+      "mood": 0.25,
+      "data": {
+        "tone": "day",
+        "five": "off",
+        "light": "day",
+        "lightAt": [
+          1900,
+          200
+        ],
+        "cam": [
+          3.35,
+          3.51,
+          372,
+          647
+        ],
+        "cast": [
+          "chaloem@300,1040 h=493 talk worried yaw=0.25 armL=hold"
+        ]
+      },
+      "beats": 4.25
+    },
+    {
+      "scene": "ins",
+      "view": "bills-top",
+      "note": "จากบนลงล่าง สำเนาบิลไฟเจ็ดใบเรียงบนฝากระโปรงรถ ทุกใบตราประทับชำระแล้ว แสงแดดแรง นิ้วรินแตะใบล่าสุด",
+      "text": "แต่แฟ้มมีอีกอย่างที่ตู้เย็นตอบไม่ได้\nบิลค่าไฟเจ็ดเดือนหลังเจ้าของตาย จ่ายครบทุกใบ",
+      "cues": [
+        [
+          0,
+          "flip"
+        ]
+      ],
+      "mood": 0.5,
+      "data": {},
+      "beats": 7.5
+    },
+    {
+      "scene": "car",
+      "view": "rin-ecu-day",
+      "note": "ECU ตารินหลังเลนส์แสงบ่าย เงาเลขบนบิลสะท้อนแว่นตากันแดดที่ถือขึ้นมาครึ่งหนึ่ง",
+      "text": "ธนาคารไม่ได้จ่าย คนตายก็จ่ายไม่ได้",
+      "mood": 0.5,
+      "data": {},
+      "beats": 4.25
+    },
+    {
+      "scene": "kitchen",
+      "view": "tea-wide",
+      "note": "ครัวตอนบ่ายแก่ แสงส้มจากหน้าต่างเดียว โต๊ะไม้เล็ก เฉลิมเทชาจากกระติกลงแก้ว รินนั่งเก้าอี้พลาสติกจดสมุด หม้อเก่า ตู้กับข้าว ปฏิทินวัด",
+      "text": "เฉลิมชงชาจากกระติกที่เขาหิ้วมาเอง",
+      "cues": [
+        [
+          0.2,
+          "tea"
+        ]
+      ],
+      "mood": 0.3,
+      "data": {
+        "hud": "จันทร์ · 16:30",
+        "time": "dusk",
+        "light": "warm",
+        "lightAt": [
+          860,
+          350
+        ],
+        "seat": true,
+        "tea": [
+          0.46,
+          0.56
+        ],
+        "cam": [
+          1,
+          1.05,
+          960,
+          560
+        ],
+        "cast": [
+          "chaloem@629,871 h=463 yaw=0.4 armR=hold prop=bottle happy",
+          "rin@1223,914 h=477 sit yaw=-0.4 armR=hold prop=book wary"
+        ]
+      },
+      "beats": 4.375
+    },
+    {
+      "scene": "ins",
+      "view": "tea-ins",
+      "note": "ต้นฉบับ mirror ฉากชา: แก้วชาบนโต๊ะไม้ มือขวาเฉลิมวางแก้วเข้าเฟรม ไอลอยในแสงส้ม",
+      "text": "เขาคอยดูแลงานเธอทุกอย่าง\nบันได ไฟฉาย กุญแจห้องไหนเขาหาให้ก่อนเธอขอ",
+      "mood": 0.25,
+      "data": {
+        "mirror": "tea"
+      },
+      "beats": 8.875
+    },
+    {
+      "scene": "kitchen",
+      "view": "rin-med",
+      "note": "medium รินเงยจากสมุดมาทางขวา ถือแก้วชาไว้ไม่ดื่ม แสงส้มข้างแก้ม",
+      "text": "\"อยู่คนเดียวไม่กลัวเหรอคะ คนเขาว่าบ้านนี้ผีดุ\"",
+      "who": "rin",
+      "voice": "lead_female",
+      "tone": "light, testing",
+      "mood": 0.25,
+      "data": {
+        "time": "dusk",
+        "light": "warm",
+        "lightAt": [
+          860,
+          350
+        ],
+        "seat": true,
+        "cam": [
+          1.7,
+          1.78,
+          1040,
+          657
+        ],
+        "cast": [
+          "rin@1160,925 h=488 talk sit yaw=-0.4 armR=hold prop=glass happy"
+        ]
+      },
+      "beats": 5.75
+    },
+    {
+      "scene": "kitchen",
+      "view": "chaloem-close",
+      "note": "close เฉลิมยิ้มหลังแก้ว หน้าครึ่งหนึ่งในแสงส้มอีกครึ่งจมเงา ตู้กับข้าวเบลอข้างหลัง",
+      "text": "\"บ้านนี้ผีเรือนใจดีครับ ผมอยู่เป็นเพื่อนเอง\"",
+      "who": "chaloem",
+      "voice": "father",
+      "hold": 0.5,
+      "tone": "warm, gentle",
+      "mood": 0.4,
+      "data": {
+        "time": "dusk",
+        "light": "warm",
+        "lightAt": [
+          860,
+          350
+        ],
+        "cam": [
+          3.26,
+          3.42,
+          785,
+          511
+        ],
+        "cast": [
+          "chaloem@711,914 h=506 talk happy armL=hold prop=glass yaw=0.25"
+        ],
+        "shade": "l",
+        "key": "255,170,100"
+      },
+      "beats": 4.875
+    },
+    {
+      "scene": "nim",
+      "view": "shrine-wide",
+      "note": "ตอนเย็นฟ้าม่วง หญิงชรามวยเทาเดินจากบ้านข้าง ๆ มาหน้าศาลพระภูมิเก่าที่รั้วบ้านเลขที่ห้า ถือถุงข้าวใบเล็ก แสงส้มจากบ้านเธออยู่ไกล ขอบรั้วมีแมวดำนั่ง",
+      "text": "ตอนเย็น รินเห็นหญิงชราจากบ้านติดกัน\nเดินมาที่ศาลพระภูมิหน้ารั้ว",
+      "cues": [
+        [
+          0,
+          "night"
+        ]
+      ],
+      "mood": 0.35,
+      "data": {
+        "hud": "จันทร์ · 18:10",
+        "street": true,
+        "tone": "dusk",
+        "light": "dusk",
+        "lightAt": [
+          -120,
+          520
+        ],
+        "cam": [
+          1.1,
+          1.14,
+          1330,
+          640
+        ],
+        "cast": [
+          "nim@1470,930 h=320 yaw=-0.25 armR=offer"
+        ],
+        "ricebag": [
+          1570,
+          720
+        ]
+      },
+      "beats": 6.25
+    },
+    {
+      "scene": "nim",
+      "view": "shrine-nim-close",
+      "note": "close ป้านิ่มหน้าศาลพระภูมิตอนเย็น ไม่หันมอง ก้มหน้าเล่าเบา ๆ ฟ้าม่วง รั้วเบลอข้างหลัง",
+      "text": "\"ป้าเอามาให้เจ้าที่เขาทุกเย็นแหละหนู\nเขาอดมาเจ็ดเดือนแล้วน่าสงสาร\"",
+      "who": "nim",
+      "voice": "old_female",
+      "tone": "slowly, warm",
+      "mood": 0.25,
+      "data": {
+        "tag": {
+          "who": "nim",
+          "name": "ป้านิ่ม",
+          "line": "บ้านติดกัน · ไม่กล้าบอกใคร"
+        },
+        "street": true,
+        "tone": "dusk",
+        "light": "dusk",
+        "lightAt": [
+          -120,
+          520
+        ],
+        "cam": [
+          3.79,
+          3.98,
+          1257,
+          694
+        ],
+        "cast": [
+          "nim@1320,1040 h=435 talk tired armR=chest yaw=-0.2"
+        ],
+        "key": "255,170,110"
+      },
+      "beats": 7
+    },
+    {
+      "scene": "ins",
+      "view": "rice-ins",
+      "note": "ต้นฉบับ clue: ถุงข้าวสวยผูกหนังยางแดงวางบนหิ้งศาล ธูปข้าง ๆ แสงธูปกับแสงเย็นเท่านั้น",
+      "text": "ข้าวสวยถุงเล็ก ผูกหนังยาง[แดง]",
+      "hold": 0.5,
+      "mood": 0.25,
+      "data": {},
+      "beats": 4
+    },
+    {
+      "scene": "ext",
+      "view": "mirror-thawat",
+      "note": "กระจกข้างรถริน: ไกลลิบที่ปากซอย ผู้ชายยืนข้างรถกระบะเก่ายกมือถือถ่ายรูปมาทางบ้าน ตัวเล็ก หน้าไม่ชัด ไฟท้ายแดง",
+      "text": "ตอนขึ้นรถ เธอเหลือบกระจกข้าง\nมีผู้ชายยืนยกมือถือ ถ่ายรูปรั้วบ้านจากปากซอย",
+      "cues": [
+        [
+          0.2,
+          "truck"
+        ]
+      ],
+      "mood": 0.5,
+      "data": {
+        "tone": "dusk",
+        "five": "off",
+        "light": "dusk",
+        "lightAt": [
+          -120,
+          520
+        ],
+        "inMirror": true,
+        "cam": [
+          1,
+          1.04,
+          960,
+          540
+        ],
+        "cast": []
+      },
+      "beats": 8
+    },
+    {
+      "scene": "nim",
+      "view": "shrine-empty-ins",
+      "note": "กรอบเดิมกับ rice-ins แต่หิ้งว่าง ธูปดับครึ่งก้าน ไม่มีเศษข้าว ไม่มีรอยมด ไฟฉายรินส่องจากซ้าย",
+      "text": "หนึ่งชั่วโมงต่อมา เธอเดินกลับมาดูศาล\nถุงข้าวหายไปแล้ว ไม่มีมด ไม่มีเศษข้าว",
+      "cues": [
+        [
+          0,
+          "hit"
+        ]
+      ],
+      "mood": 0.5,
+      "data": {
+        "hud": "จันทร์ · 19:20"
+      },
+      "beats": 8.375
+    },
+    {
+      "scene": "car",
+      "view": "dash-file-close",
+      "note": "คืนแรก รินในรถใต้ไฟเพดาน แฟ้มเปิดหน้าสุดท้าย แสงเหลืองจากบนหัว ข้างนอกมืด ลำดับชื่อสองคนขีดฆ่า",
+      "text": "คืนนั้นเธอเปิดแฟ้มถึงหน้าสุดท้าย",
+      "mood": 0.5,
+      "data": {
+        "hud": "จันทร์ · 20:00",
+        "tone": "night",
+        "roof": true,
+        "light": "lamp",
+        "lightAt": [
+          740,
+          120
+        ],
+        "cam": [
+          1.6,
+          1.68,
+          800,
+          520
+        ],
+        "cast": [
+          "rin@740 worried head=8 armR=hold prop=paper"
+        ]
+      },
+      "beats": 3.75
+    },
+    {
+      "scene": "ins",
+      "view": "withdraw-ecu",
+      "note": "ECU ตารางบันทึกงาน ชื่อผู้ประเมินสองคน ช่องผลขีดเส้น ถอนตัว ตัวแดงสองบรรทัด ไม่มีช่องเหตุผล",
+      "text": "ก่อนหน้าเธอมีผู้ประเมินสองราย ทั้งคู่{ถอนตัว}\nคนละเดือน ภายในสองคืน ไม่มีเหตุผลในแฟ้ม",
+      "hold": 0.5,
+      "mood": 0.6,
+      "data": {},
+      "beats": 8.125
+    },
+    {
+      "scene": "ext",
+      "view": "house-dusk-ew",
+      "note": "ภาพกว้างมืดลงจากในรถ บ้านดับหมด หน้าต่างห้าบานเป็นสี่เหลี่ยมดำ ไฟเลี้ยวรถรินกระพริบสะท้อนรั้ว",
+      "text": "รินไม่รู้ว่าสองคนนั้นเจออะไร\nเธอตั้งใจกลับมาอ่านมิเตอร์อีกทีพรุ่งนี้เช้า",
+      "mood": 0.55,
+      "data": {
+        "tone": "dusk",
+        "five": "off",
+        "light": "dusk",
+        "lightAt": [
+          -120,
+          520
+        ],
+        "cam": [
+          0.74,
+          0.76,
+          960,
+          560
+        ],
+        "cast": [],
+        "car": [
+          620,
+          960
+        ]
+      },
+      "beats": 6.25
+    },
+    {
+      "chapter": "เสียงในผนัง",
+      "scene": "ins",
+      "view": "meter-ins-am",
+      "note": "กรอบเดิมของ meter-ins แสงเช้าเย็นจากซ้าย เลข 18,404 จานยังหมุน นิ้วรินแตะกระจก",
+      "text": "เช้าวันอังคาร มิเตอร์อ่านได้ [18,404]\nขึ้นมาสองหน่วยพอดี",
+      "cues": [
+        [
+          0,
+          "morning"
+        ],
+        [
+          0.3,
+          "meter"
+        ]
+      ],
+      "mood": 0.4,
+      "data": {
+        "hud": "อังคาร · 08:10",
+        "meter": 18404
+      },
+      "beats": 6.75
+    },
+    {
+      "scene": "kitchen",
+      "view": "fridge-med",
+      "note": "ครัวแสงเช้า ตู้เย็นเก่าเปิดอ้า สายปลั๊กห้อยลงพื้น ขวดน้ำเปล่าสองขวด รินถือสมุดยืนมองข้างตู้",
+      "text": "ทั้งที่ตู้เย็นเก่าถูกถอดปลั๊กแล้ว ขวดน้ำข้างในอุ่นเท่าห้อง",
+      "mood": 0.4,
+      "data": {
+        "time": "morning",
+        "light": "morning",
+        "lightAt": [
+          860,
+          350
+        ],
+        "fridge": true,
+        "cam": [
+          1.4,
+          1.46,
+          1480,
+          590
+        ],
+        "cast": [
+          "rin@1267,785 h=353 wary yaw=-0.3 armR=hold prop=book"
+        ]
+      },
+      "beats": 6
+    },
+    {
+      "scene": "kitchen",
+      "view": "rin-close",
+      "note": "close รินหันมาทางประตูครัว แสงเช้าจับหน้า เสียงเรียบ ตาไม่ยิ้ม",
+      "text": "\"ลุงเฉลิมคะ ช่วยปิดเมนทั้งบ้านเลยได้ไหม\nฉันอยากรู้ว่าพรุ่งนี้มันจะขึ้นอีกไหม\"",
+      "who": "rin",
+      "voice": "lead_female",
+      "tone": "polite, firm",
+      "mood": 0.4,
+      "data": {
+        "time": "morning",
+        "light": "morning",
+        "lightAt": [
+          860,
+          350
+        ],
+        "cam": [
+          3.78,
+          3.97,
+          1034,
+          524
+        ],
+        "cast": [
+          "rin@1097,871 h=436 talk wary yaw=0.35"
+        ]
+      },
+      "beats": 8
+    },
+    {
+      "scene": "kitchen",
+      "view": "breaker-ins",
+      "note": "ตู้เมนไฟบนผนังครัว ฝาพลาสติกเก่า มือขวาเฉลิมสับคันโยกลง นิ้วก้อยสั้นเห็นชัด แสงเช้าเฉียง",
+      "text": "",
+      "cues": [
+        [
+          0.2,
+          "breaker"
+        ]
+      ],
+      "vo": "",
+      "mood": 0.4,
+      "data": {},
+      "beats": 2
+    },
+    {
+      "scene": "kitchen",
+      "view": "chaloem-med",
+      "note": "medium เฉลิมปิดฝาตู้เมน หันมายิ้ม นิ้วโป้งถูพวงกุญแจอีกครั้ง หลังเขาคือประตูหลังเปิดเห็นคลองสว่าง",
+      "text": "\"ได้ครับ มิเตอร์รุ่นนี้เก่า มันชอบคลาดเคลื่อน\nคุณรินจดไว้ได้เลย\"",
+      "who": "chaloem",
+      "voice": "father",
+      "tone": "warm, helpful",
+      "mood": 0.35,
+      "data": {
+        "time": "morning",
+        "light": "morning",
+        "lightAt": [
+          860,
+          350
+        ],
+        "cam": [
+          2.02,
+          2.12,
+          714,
+          566
+        ],
+        "cast": [
+          "chaloem@576,844 h=435 talk happy armR=hold yaw=0.3"
+        ]
+      },
+      "beats": 5.875
+    },
+    {
+      "scene": "living",
+      "view": "tape-wide",
+      "note": "บ่ายแก่ รินคุกเข่าดึงสายวัดเหลืองพาดห้องจากผนังถึงผนัง แสงจากหน้าต่างซ้าย ฝุ่นในลำแสง เฉลิมเป็นเงาถือปลายสายให้",
+      "text": "ทั้งวันนั้น เธอวัดทุกห้องทีละเซนติเมตร\nเฉลิมคอยถือปลายสายให้",
+      "cues": [
+        [
+          0.2,
+          "tape"
+        ]
+      ],
+      "mood": 0.3,
+      "data": {
+        "hud": "อังคาร · 16:20",
+        "time": "dusk",
+        "light": "dusk",
+        "lightAt": [
+          280,
+          620
+        ],
+        "tape": [
+          725,
+          830,
+          1539,
+          682
+        ],
+        "cam": [
+          1,
+          1.04,
+          960,
+          560
+        ],
+        "cast": [
+          "rin@685,900 h=473 crouch wary",
+          "chaloem@1579,832 h=429 yaw=-0.4 armR=hold"
+        ]
+      },
+      "beats": 7
+    },
+    {
+      "scene": "ins",
+      "view": "photo-torch-ecu",
+      "note": "ค่ำแล้ว ไฟฉายส่องขอบรูปบนผนัง รอยตัดขาวสะอาดตัดกับกระดาษเหลือง เงาไม้กรอบยาว",
+      "text": "ค่ำลง ไฟฉายของเธอหยุดที่รูปครอบครัว\nรอยตัดยังขาวอยู่เลย กระดาษที่เหลือเหลืองหมดแล้ว",
+      "mood": 0.45,
+      "data": {
+        "hud": "อังคาร · 19:40"
+      },
+      "beats": 9.625
+    },
+    {
+      "scene": "ins",
+      "view": "withdraw-note-ins",
+      "note": "โต๊ะเล็ก ไฟฉายตั้งบนสมุด แฟ้มเปิดหน้าตาราง ปากการินขีดใต้ชื่อคนแรก เลขสองคืน",
+      "text": "ผู้ประเมินคนแรกอยู่บ้านนี้ได้สองคืน\nคืนนี้ เป็นคืนที่สองของเธอ",
+      "mood": 0.5,
+      "data": {},
+      "beats": 6.25
+    },
+    {
+      "scene": "living",
+      "view": "door-sil",
+      "note": "เงาดำเฉลิมยืนที่ประตูครัวมีแสงตะเกียงเล็กข้างหลัง ถือถุงพลาสติกเล็กต่ำข้างตัว หน้าไม่เห็น",
+      "text": "\"ผมไปเดินดูหลังบ้านรอบหนึ่งนะครับ\nเดี๋ยวกลับมาไม่นาน\"",
+      "who": "chaloem",
+      "voice": "father",
+      "tone": "warm, casual",
+      "mood": 0.5,
+      "data": {
+        "hud": "อังคาร · 21:55",
+        "time": "night",
+        "light": "dim",
+        "lamp": [
+          1400,
+          500
+        ],
+        "lightAt": [
+          1400,
+          500
+        ],
+        "cam": [
+          1.3,
+          1.34,
+          1100,
+          560
+        ],
+        "cast": [],
+        "sil": [
+          "chaloem-sil@1400,797 h=392 talk armR=hold"
+        ]
+      },
+      "beats": 4
+    },
+    {
+      "scene": "ins",
+      "view": "watch-ecu",
+      "note": "ECU นาฬิกาข้อมือริน เข็มสั้นชี้สี่ทุ่มพอดี แสงไฟฉายสะท้อนกระจก ฉากหลังดำ",
+      "text": "สี่ทุ่มตรง ในบ้านที่ปิดเมนและไม่มีน้ำ เงียบจนได้ยินนาฬิกา",
+      "cues": [
+        [
+          0.2,
+          "tick"
+        ]
+      ],
+      "mood": 0.6,
+      "data": {},
+      "beats": 6.625
+    },
+    {
+      "scene": "living",
+      "view": "wall-ew",
+      "note": "ภาพกว้างห้องนั่งเล่นมืด รินเล็กกลางห้องในวงไฟฉาย ผนังขวาที่หน้าต่างหลอกอยู่กินครึ่งเฟรมดำสนิท",
+      "text": "",
+      "hush": true,
+      "vo": "",
+      "mood": 0.75,
+      "data": {
+        "time": "night",
+        "light": "lamp",
+        "torch": [
+          699,
+          675,
+          340
+        ],
+        "lightAt": [
+          699,
+          675
+        ],
+        "cam": [
+          0.96,
+          0.96,
+          960,
+          560
+        ],
+        "cast": [
+          "rin@659,875 h=447 worried arm=r-hold prop=flashlight yaw=0.4"
+        ]
+      },
+      "beats": 3
+    },
+    {
+      "scene": "living",
+      "view": "rin-head-ecu",
+      "note": "ECU ข้างหน้าริน หูกับตา เอียงหัวฟังผนังที่อยู่ขวาเฟรม เสียงยังไม่มีภาพ ไฟฉายลดต่ำ",
+      "text": "เสียงเคาะ\nสองที เว้น แล้วอีก[สองที]",
+      "cues": [
+        [
+          0,
+          "knock22"
+        ]
+      ],
+      "hold": 1.5,
+      "mood": 0.8,
+      "data": {
+        "time": "night",
+        "light": "noir",
+        "torch": [
+          963,
+          700,
+          420
+        ],
+        "lightAt": [
+          943,
+          750
+        ],
+        "cam": [
+          4.36,
+          4.58,
+          1058,
+          516
+        ],
+        "cast": [
+          "rin@1003,900 h=473 scared head=10 look=0.7 yaw=0.3 arm=r-hold prop=flashlight"
+        ]
+      },
+      "beats": 5.625
+    },
+    {
+      "scene": "bedroom",
+      "view": "wall-pan",
+      "note": "ไฟฉายกวาดผนังบ้านเป็นแถบ ผ่านตู้เสื้อผ้าไม้ สติกเกอร์การ์ตูน แล้วกลับมาที่ผนังเปล่า ทุกอย่างนิ่ง",
+      "text": "รินถือไฟฉายเดินตามเสียงทีละห้อง\nพอถึงห้องนอนเล็ก เสียงก็หยุด",
+      "mood": 0.7,
+      "data": {
+        "motion": "pan",
+        "time": "night",
+        "light": "lamp",
+        "torch": [
+          1020,
+          460,
+          320
+        ],
+        "lightAt": [
+          1020,
+          460
+        ],
+        "cam": [
+          1,
+          1,
+          760,
+          540,
+          1040,
+          540
+        ],
+        "cast": [
+          "rin@875,865 h=421 wary yaw=0.45 arm=r-hold prop=flashlight"
+        ]
+      },
+      "beats": 5.5
+    },
+    {
+      "scene": "ins",
+      "view": "note-22-ins",
+      "note": "สมุดวัดใต้ไฟฉาย ลายมือสั่นเล็กน้อยเขียน 22:00 / 2+2 แล้วขีดเส้นใต้สองครั้ง",
+      "text": "เธอจดลงสมุดว่า [22:00] เคาะสองทีสองที",
+      "cues": [
+        [
+          0.1,
+          "scratch"
+        ]
+      ],
+      "mood": 0.6,
+      "data": {},
+      "beats": 6.75
+    },
+    {
+      "scene": "kitchen",
+      "view": "door-ots",
+      "note": "ข้ามไหล่รินที่มืด เฉลิมเดินกลับเข้ามาทางประตูหลัง บู๊ตเขียวเปียกวาว ถือไฟฉายเล็กยังไม่เปิด แสงคืนจากคลองข้างหลัง",
+      "text": "\"เมื่อกี้ลุงได้ยินเสียงเคาะไหมคะ\"",
+      "who": "rin",
+      "voice": "lead_female",
+      "tone": "careful, even",
+      "mood": 0.4,
+      "data": {
+        "hud": "อังคาร · 22:04",
+        "time": "night",
+        "light": "lamp",
+        "lamp": [
+          1200,
+          560
+        ],
+        "lightAt": [
+          1200,
+          560
+        ],
+        "cam": [
+          1.94,
+          2.04,
+          1440,
+          572
+        ],
+        "cast": [
+          "chaloem@1584,862 h=453 yaw=-0.4 armR=hold prop=flashlight wary"
+        ],
+        "foreShoulder": "l",
+        "foreColor": "#6b5a1c",
+        "foreHair": "#100c0d"
+      },
+      "beats": 3.25
+    },
+    {
+      "scene": "kitchen",
+      "view": "chaloem-up-close",
+      "note": "close เฉลิมไฟฉายจากล่างขึ้นหน้า ยิ้มเดิม ตาแว่นสะท้อนจนมองไม่เห็นดวงตา",
+      "text": "\"ท่อเก่าครับ บ้านนี้มันเคาะของมันมาตลอด\nอย่าไปถือสาเลย\"",
+      "who": "chaloem",
+      "voice": "father",
+      "tone": "warm, unbothered",
+      "mood": 0.55,
+      "data": {
+        "time": "night",
+        "light": "noir",
+        "lightAt": [
+          1095,
+          834
+        ],
+        "lamp": [
+          1095,
+          610
+        ],
+        "cam": [
+          3.26,
+          3.42,
+          1169,
+          511
+        ],
+        "cast": [
+          "chaloem@1095,914 h=506 talk happy armR=hold prop=flashlight"
+        ],
+        "shade": false
+      },
+      "beats": 5.125
+    },
+    {
+      "scene": "kitchen",
+      "view": "rin-listen-close",
+      "note": "close รินไม่ตอบ นิ้วปิดสมุดที่กอดไว้ หน้าครึ่งในเงา เสียงน้ำจากคลองเบา ๆ",
+      "text": "เธอพูดแค่ว่าได้ยินเสียงเคาะ ไม่ได้บอกเขาว่ากี่ที\nนิสัยคนจด ไม่อ่านเลขให้ใครฟัง",
+      "hold": 0.5,
+      "mood": 0.5,
+      "data": {
+        "time": "night",
+        "light": "lamp",
+        "lamp": [
+          1157,
+          552
+        ],
+        "lightAt": [
+          1157,
+          552
+        ],
+        "cam": [
+          3.54,
+          3.72,
+          945,
+          531
+        ],
+        "cast": [
+          "rin@877,902 h=466 wary armR=chest prop=book"
+        ],
+        "key": "255,226,170"
+      },
+      "beats": 9.75
+    },
+    {
+      "scene": "yard",
+      "view": "boat-high",
+      "note": "มุมสูงจากหลังคาครัว คลองดำ เฉลิมตัวเล็กยืนถ่อเรือไม้ออกจากท่าน้ำ เงาบนน้ำเป็นริ้ว รินยืนที่ประตูหลังในแสงเล็ก ๆ",
+      "text": "เฉลิมลงเรือที่ท่าน้ำ บ้านเขาอยู่อีกฝั่งคลอง\nเขาไม่เคยใช้ทางซอยเลย",
+      "cues": [
+        [
+          0,
+          "boat"
+        ]
+      ],
+      "mood": 0.45,
+      "data": {
+        "motion": "fx",
+        "tone": "moon",
+        "light": "night",
+        "lightAt": [
+          1490,
+          100
+        ],
+        "doorLit": true,
+        "cam": [
+          0.9,
+          0.92,
+          960,
+          520
+        ],
+        "cast": [
+          "rin@120,720 h=365 back",
+          "chaloem@1500,650 h=290 back"
+        ],
+        "boat": [
+          1500,
+          660
+        ]
+      },
+      "beats": 8.375
+    },
+    {
+      "scene": "ext",
+      "view": "soi-night-wide",
+      "note": "ซอยกลางคืน รินเดินออกจากรั้วไปที่รถ ไฟถนนดวงเดียว รถกระบะเก่าจอดปากซอย คนยืนพิงเงาดำตรงหน้ารถเธอ",
+      "text": "แต่ที่รถของเธอ มีคนยืนรออยู่",
+      "cues": [
+        [
+          0,
+          "truck"
+        ]
+      ],
+      "mood": 0.65,
+      "data": {
+        "hud": "อังคาร · 22:06",
+        "tone": "night",
+        "light": "night",
+        "lightAt": [
+          -120,
+          520
+        ],
+        "five": "off",
+        "cam": [
+          0.82,
+          0.88,
+          500,
+          560
+        ],
+        "cast": [
+          "rin@620,900 h=308 back",
+          "thawat@220,980 h=427 yaw=0.4"
+        ],
+        "car": [
+          160,
+          1010
+        ]
+      },
+      "beats": 4.5
+    },
+    {
+      "scene": "ext",
+      "view": "thawat-low",
+      "note": "มุมต่ำ ธวัชพิงรถเธอ รองเท้าหนังดำเงาใกล้กล้อง ไฟถนนหลังหัวเป็นขอบแสง ควันบุหรี่ แขนสักโผล่พ้นแขนเสื้อ มือถือในมือ",
+      "text": "ผู้ชายจากปากซอย รองเท้าหนังดำเงาเกินกว่าจะอยู่แถวนี้",
+      "cues": [
+        [
+          0,
+          "hit"
+        ]
+      ],
+      "mood": 0.4,
+      "data": {
+        "tag": {
+          "who": "thawat",
+          "name": "ธวัช",
+          "line": "เจ้าหนี้นอกระบบ · มาทุกคืน"
+        },
+        "tone": "night",
+        "light": "night",
+        "lightAt": [
+          -120,
+          520
+        ],
+        "five": "off",
+        "cam": [
+          1.25,
+          1.34,
+          800,
+          760
+        ],
+        "cast": [
+          "thawat@700,1060 h=523 wary armR=hold prop=phone"
+        ],
+        "rim": "l"
+      },
+      "beats": 6.25
+    },
+    {
+      "scene": "ext",
+      "view": "thawat-close",
+      "note": "close ธวัชไม่ยิ้ม หน้าครึ่งมืดจากไฟถนนเยื้องหลัง ไฝแก้มขวา ควันลอยขวาง",
+      "text": "\"คุณคนธนาคารใช่ไหม บ้านหลังนี้เป็นหนี้ผมอยู่\nเห็นใครเข้าออกตอนดึก บอกผมด้วยนะ\"",
+      "who": "thawat",
+      "voice": "villain_male",
+      "tone": "deep, menacing, quiet",
+      "mood": 0.4,
+      "data": {
+        "tone": "night",
+        "light": "dim",
+        "lightAt": [
+          -120,
+          520
+        ],
+        "five": "off",
+        "cam": [
+          3.31,
+          3.47,
+          673,
+          643
+        ],
+        "cast": [
+          "thawat@600,1040 h=499 talk wary yaw=0.2"
+        ],
+        "key": "255,176,96"
+      },
+      "beats": 8.625
+    },
+    {
+      "scene": "ins",
+      "view": "thawat-phone-ins",
+      "note": "จอมือถือธวัชที่เขายื่นมาใกล้ รูปถ่ายไกลตอนกลางคืน ประตูรั้วบ้านเลขที่ห้ากับผู้ชายหันหลังเบลอ แสงจอฟ้าขาวจับนิ้วที่มีรอยสัก",
+      "text": "เขาเลื่อนรูปในมือถือให้ดู\nรั้วบ้านหลังนี้ หลายสิบรูป หลายสิบคืน",
+      "hold": 0.5,
+      "mood": 0.65,
+      "data": {},
+      "beats": 9.125
+    },
+    {
+      "scene": "ext",
+      "view": "rin-ots-thawat",
+      "note": "ข้ามไหล่ธวัชใหญ่มืดเบลอ รินกอดแฟ้มแน่น ไฟถนนจับหน้าเธอซีด แต่ไม่ถอย ตามองตรง",
+      "text": "\"คุณตามหาใครคะ ที่นี่ไม่มีคนอยู่มาเจ็ดเดือนแล้ว\"",
+      "who": "rin",
+      "voice": "lead_female",
+      "tone": "steady, afraid underneath",
+      "mood": 0.4,
+      "data": {
+        "tone": "night",
+        "light": "night",
+        "lightAt": [
+          -120,
+          520
+        ],
+        "five": "off",
+        "cam": [
+          1.9,
+          1.99,
+          852,
+          743
+        ],
+        "cast": [
+          "rin@1000,1040 h=464 worried yaw=-0.35 armR=chest prop=book talk"
+        ],
+        "foreShoulder": "l",
+        "foreColor": "#262833",
+        "foreHair": "#181a22"
+      },
+      "beats": 5.625
+    },
+    {
+      "scene": "ext",
+      "view": "thawat-back-wide",
+      "note": "ภาพกว้างธวัชหันหลังเดินกลับไปที่รถกระบะ ไฟท้ายแดงเล็ก รินยืนนิ่งข้างรถตัวเอง ระยะห่างยาวตามซอย",
+      "text": "\"งั้นก็ขอให้จริงอย่างที่คุณเซ็นนะ\"",
+      "who": "thawat",
+      "voice": "villain_male",
+      "tone": "low, dry",
+      "mood": 0.4,
+      "data": {
+        "tone": "night",
+        "light": "night",
+        "lightAt": [
+          -120,
+          520
+        ],
+        "five": "off",
+        "cam": [
+          0.84,
+          0.84,
+          700,
+          560
+        ],
+        "cast": [
+          "thawat@240,880 h=308 back talk",
+          "rin@980,980 h=397 scared"
+        ]
+      },
+      "beats": 3.625
+    },
+    {
+      "scene": "car",
+      "view": "rin-breath-close",
+      "note": "close รินในรถล็อกประตู หน้าซีดเหงื่อออก ไฟถนนจากซ้าย ไฟท้ายแดงอยู่นอกเฟรม",
+      "text": "มือของเธอสั่นจนต้องกำพวงมาลัยไว้ทั้งสองข้าง",
+      "mood": 0.6,
+      "data": {
+        "tone": "night",
+        "light": "lamp",
+        "lightAt": [
+          420,
+          300
+        ],
+        "key": "255,176,96",
+        "shade": "l",
+        "cam": [
+          2,
+          2.1,
+          680,
+          430
+        ],
+        "cast": [
+          "rin@740 scared yaw=0.15 look=0.4"
+        ]
+      },
+      "beats": 4.125
+    },
+    {
+      "scene": "nim",
+      "view": "cat-fif",
+      "note": "ผ่านหน้าต่างบ้านป้านิ่มสีส้มจากรถที่เคลื่อน แมวดำนั่งหลังตรงหันหน้าเข้าหาผนังด้านบ้านเลขที่ห้า ไม่ขยับ ป้าเบลอข้างหลังกำลังเก็บจาน",
+      "text": "ขับออกจากซอย เธอเห็นผ่านหน้าต่างบ้านข้าง ๆ\nแมวดำนั่งหลังตรง หันหน้าเข้าหา{ผนัง}",
+      "cues": [
+        [
+          0.2,
+          "cat"
+        ]
+      ],
+      "mood": 0.65,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          840,
+          300
+        ],
+        "foreWin": true,
+        "cat": [
+          1160,
+          720,
+          0.62
+        ],
+        "cam": [
+          1,
+          1.06,
+          960,
+          500
+        ],
+        "cast": [
+          "nim@526,828 h=360 back"
+        ]
+      },
+      "beats": 7.125
+    },
+    {
+      "scene": "ins",
+      "view": "meter-ins-wed",
+      "note": "กรอบเดิม แสงเช้าฟ้าซีด เลข 18,406 จานยังหมุน มือรินหยุดกลางอากาศ",
+      "text": "เช้าวันพุธ เมนปิดมาทั้งคืน\nมิเตอร์อ่านได้ [18,406]",
+      "cues": [
+        [
+          0,
+          "morning"
+        ],
+        [
+          0.3,
+          "meter"
+        ]
+      ],
+      "mood": 0.6,
+      "data": {
+        "hud": "พุธ · 08:05",
+        "meter": 18406
+      },
+      "beats": 7.375
+    },
+    {
+      "scene": "ext",
+      "view": "cam-pole-ins",
+      "note": "มือรินติดกล้องเล็กกลมสีเทาบนเสารั้ว มองจากข้างเสาเห็นรั้วเหล็กกับซอยเบลอ จอมือถือในมืออีกข้างขึ้นภาพซอย",
+      "text": "วันนั้นเธอซื้อกล้องตัวเล็กจากตลาด\nติดไว้บนเสารั้ว ภาพเข้ามือถือ",
+      "cues": [
+        [
+          0.6,
+          "cam"
+        ]
+      ],
+      "mood": 0.45,
+      "data": {},
+      "beats": 6.25
+    },
+    {
+      "scene": "nim",
+      "view": "shrine-empty2-ins",
+      "note": "กรอบเดียวกับ shrine-empty-ins แสงเช้า หิ้งว่างอีกครั้ง ธูปหมดก้าน หนังยางแดงเส้นเดียวตกอยู่ที่พื้นใต้ศาล",
+      "text": "ถุงข้าวจากเมื่อวานหายอีก\nเหลือแค่หนังยางแดงเส้นเดียว ตกอยู่ใต้ศาล",
+      "hold": 0.5,
+      "mood": 0.5,
+      "data": {},
+      "beats": 7.75
+    },
+    {
+      "chapter": "คนที่ไม่กล้าบอกใคร",
+      "scene": "nim",
+      "view": "house-wide",
+      "note": "เปิดฉากบ้านป้านิ่ม ห้องเตี้ยไฟหลอดส้มดวงเดียว โต๊ะหมู่เล็ก พัดลมตั้งพื้น รินนั่งเก้าอี้ไม้ ป้านิ่มนั่งแคร่ไม้ไผ่พับผ้า แมวดำที่ผนังไกลสุด ไฟส้มตกเป็นแอ่งกลางห้อง",
+      "text": "คืนนั้นเธอไม่ได้เข้าบ้านเลขที่ห้า\nเธอเคาะประตูบ้านติดกัน",
+      "cues": [
+        [
+          0,
+          "night"
+        ]
+      ],
+      "mood": 0.5,
+      "data": {
+        "hud": "พุธ · 21:30",
+        "light": "lamp",
+        "lightAt": [
+          840,
+          300
+        ],
+        "seat": true,
+        "cat": [
+          1160,
+          720,
+          0.34
+        ],
+        "cam": [
+          1,
+          1.04,
+          960,
+          540
+        ],
+        "cast": [
+          "nim@455,942 h=463 sit tired yaw=0.3",
+          "rin@1322,869 h=423 sit worried yaw=-0.35"
+        ]
+      },
+      "beats": 5.5
+    },
+    {
+      "scene": "nim",
+      "view": "nim-med",
+      "note": "medium ป้านิ่มพับผ้าไม่เงยหน้า ไฟส้มจากบน มือหยุดเมื่อพูดถึงเจ้าของเก่า",
+      "text": "\"ป้าเพิ่งย้ายมาอยู่บ้านน้องสาวปีเดียวเองหนู\nบ้านนั้นเขาเก็บตัว ยังไม่ทันได้รู้จักกันเลย\"",
+      "who": "nim",
+      "voice": "old_female",
+      "tone": "slowly, warm",
+      "mood": 0.5,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          840,
+          300
+        ],
+        "cam": [
+          1.9,
+          1.96,
+          533,
+          645
+        ],
+        "cast": [
+          "nim@413,919 h=442 sit talk tired yaw=0.3 look=-0.4"
+        ]
+      },
+      "beats": 8.5
+    },
+    {
+      "scene": "nim",
+      "view": "rin-close",
+      "note": "close รินเอนมาข้างหน้า ไฟส้มจับแก้ม ปากกาคาในสมุดที่ปิด ไม่จด",
+      "text": "\"แล้วลุงคนดูแลบ้านล่ะคะ ป้าเห็นเขาตั้งแต่เมื่อไหร่\"",
+      "who": "rin",
+      "voice": "lead_female",
+      "tone": "gentle",
+      "mood": 0.5,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          840,
+          300
+        ],
+        "cam": [
+          3.5,
+          3.67,
+          1086,
+          543
+        ],
+        "cast": [
+          "rin@1155,919 h=472 talk worried yaw=-0.3"
+        ],
+        "key": "255,170,90"
+      },
+      "beats": 4.875
+    },
+    {
+      "scene": "nim",
+      "view": "nim-close",
+      "note": "close ป้านิ่มเงยขึ้นนึก ปิ่นทองที่มวยจับแสง สายตาหลบไปทางผนัง",
+      "text": "\"ก็ตั้งแต่ปลายฝนโน่น มาทางเรือทุกวัน\nตอนนั้นบ้านยังไม่ทันติดป้ายด้วยซ้ำ\"",
+      "who": "nim",
+      "voice": "old_female",
+      "tone": "slowly, unsure",
+      "mood": 0.5,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          840,
+          300
+        ],
+        "cam": [
+          3.64,
+          3.82,
+          707,
+          569
+        ],
+        "cast": [
+          "nim@641,930 h=453 talk tired look=0.5"
+        ],
+        "key": "255,170,90"
+      },
+      "beats": 8.875
+    },
+    {
+      "scene": "ins",
+      "view": "note-month-ins",
+      "note": "สมุดวัดบนตัก ปากกาเขียนคำว่า \"เพิ่งรับงานเดือนนี้\" แล้วขีดเครื่องหมายคำถาม ไฟส้มอ่อน",
+      "text": "เฉลิมบอกเธอว่าเพิ่งรับงานเดือนนี้\nรินจดไว้ แต่ยังไม่ถาม",
+      "cues": [
+        [
+          0.1,
+          "scratch"
+        ]
+      ],
+      "mood": 0.5,
+      "data": {},
+      "beats": 6.25
+    },
+    {
+      "scene": "nim",
+      "view": "two-ots",
+      "note": "ข้ามไหล่ริน เห็นป้านิ่มกับผนังด้านหลังที่แมวนั่งอยู่ ไฟส้มไม่ถึงผนังนั้น",
+      "text": "\"ป้าเซ่นข้าวให้เจ้าที่ทุกวัน ป้ากลัวอะไรคะ\"",
+      "who": "rin",
+      "voice": "lead_female",
+      "tone": "gentle, direct",
+      "mood": 0.55,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          840,
+          300
+        ],
+        "cat": [
+          1160,
+          720,
+          0.34
+        ],
+        "cam": [
+          1.1,
+          1.14,
+          760,
+          520
+        ],
+        "cast": [
+          "nim@606,892 h=418 sit tired yaw=0.3"
+        ],
+        "foreShoulder": "r",
+        "foreColor": "#b48f28",
+        "foreHair": "#20191a",
+        "seat": true
+      },
+      "beats": 4.375
+    },
+    {
+      "scene": "nim",
+      "view": "cat-low",
+      "note": "มุมพื้นระดับแมว แมวดำนั่งหันหลังให้กล้อง หันหน้าเข้าผนังปูนเก่าสีเขียว หางนิ่ง ไฟส้มเป็นขอบบนตัวแมว",
+      "text": "ป้านิ่มเงียบไปนาน แมวดำไม่ขยับจากผนัง",
+      "mood": 0.6,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          840,
+          300
+        ],
+        "cat": [
+          1160,
+          760,
+          1.5
+        ],
+        "cam": [
+          1.2,
+          1.25,
+          1160,
+          560
+        ],
+        "cast": []
+      },
+      "beats": 4.5
+    },
+    {
+      "scene": "nim",
+      "view": "nim-ecu",
+      "note": "ECU ปากกับคางป้านิ่มสั่น มือเหี่ยวกำผ้าที่พับค้าง แสงส้มแรงจากบน",
+      "text": "\"เดือนแรกที่เจ้าของบ้านตาย ป้าได้ยินเสียง{ร้องไห้}\nผู้หญิงกับเด็ก ดังออกมาจากผนังนี้แหละ\"",
+      "who": "nim",
+      "voice": "old_female",
+      "cues": [
+        [
+          0,
+          "hit"
+        ]
+      ],
+      "tone": "whispers, scared",
+      "mood": 0.72,
+      "data": {
+        "light": "noir",
+        "lightAt": [
+          840,
+          300
+        ],
+        "cam": [
+          5.1,
+          5.35,
+          688,
+          559
+        ],
+        "cast": [
+          "nim@641,930 h=453 talk scared"
+        ],
+        "key": "255,170,90"
+      },
+      "beats": 9.25
+    },
+    {
+      "scene": "past",
+      "view": "nim-wall-close",
+      "note": "ภาพอดีต ป้านิ่มในชุดนอนนั่งบนเสื่อกลางดึก เอามืออุดหู เทียนหนึ่งเล่ม ผนังเขียวเบลออยู่ใกล้มาก",
+      "text": "ป้านั่งสวดมนต์ทั้งคืน คิดว่าผีเมียเจ้าของบ้าน\nตามผัวกลับมาพร้อมลูก",
+      "mood": 0.6,
+      "data": {
+        "hud": "เจ็ดเดือนก่อน",
+        "past": true,
+        "light": "lantern",
+        "lightAt": [
+          1197,
+          480
+        ],
+        "cam": [
+          1.7,
+          1.75,
+          980,
+          660
+        ],
+        "cast": [
+          "nim@860,1000 h=560 crouch scared"
+        ]
+      },
+      "beats": 6.375
+    },
+    {
+      "scene": "nim",
+      "view": "nim-tear-close",
+      "note": "close ป้านิ่มน้ำตาคลอ ไม่มองริน พยักหน้าเล็กน้อยเหมือนสารภาพ ไฟส้มด้านเดียว",
+      "text": "\"พอเข้าเดือนที่สองก็เงียบ เหลือแต่เสียงเคาะ\nป้าไม่กล้าบอกใคร บอกไปเขาก็หาว่าป้าบ้า\"",
+      "who": "nim",
+      "voice": "old_female",
+      "tone": "trembling",
+      "mood": 0.65,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          840,
+          300
+        ],
+        "cam": [
+          3.64,
+          3.82,
+          707,
+          569
+        ],
+        "cast": [
+          "nim@641,930 h=453 talk cry head=4"
+        ],
+        "key": "255,170,90"
+      },
+      "beats": 11.25
+    },
+    {
+      "scene": "nim",
+      "view": "nim-hand-ins",
+      "note": "ภาพใกล้มือเหี่ยวของป้านิ่มกำเป็นกำปั้นหลวม ๆ แตะผนังเขียว ภาพเล่าเรื่องที่พูด แสงส้มเฉียงเห็นรอยปูน",
+      "text": "\"ป้าเคยเคาะตอบไปครั้งหนึ่ง สามที\nแล้วมันก็เงียบไปสามวัน ป้าไม่กล้าอีกเลย\"",
+      "who": "nim",
+      "voice": "old_female",
+      "tone": "whispers",
+      "mood": 0.72,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          840,
+          300
+        ],
+        "cast": []
+      },
+      "beats": 8.375
+    },
+    {
+      "scene": "ins",
+      "view": "watch-ecu2",
+      "note": "กรอบเดียวกับ watch-ecu แสงส้มแทนแสงไฟฉาย เข็มเข้าสี่ทุ่ม",
+      "text": "นาฬิกาของรินเข้าสี่ทุ่มพอดี",
+      "cues": [
+        [
+          0.2,
+          "tick"
+        ]
+      ],
+      "mood": 0.78,
+      "data": {
+        "hud": "พุธ · 22:00"
+      },
+      "beats": 3.25
+    },
+    {
+      "scene": "nim",
+      "view": "wall-palm-close",
+      "note": "หลอดส้มดวงเดียวไกลซ้ายในห้องมืด ผนังเขียวชื้นเต็มฝั่งขวา รินหัน 3/4 เข้าผนัง หลับตา ยื่นมือตัวเองแนบผนัง ฟังเสียงผ่านมือ (องค์ประกอบจาก ref ใน Google Flow)",
+      "text": "เสียงเคาะมาอีกครั้ง สองที เว้น สองที\nคราวนี้เธอรู้สึกมันผ่านฝ่ามือ",
+      "cues": [
+        [
+          0,
+          "knock22"
+        ]
+      ],
+      "hold": 1.5,
+      "mood": 0.85,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          320,
+          170
+        ],
+        "rim": 0,
+        "cam": [
+          1,
+          1.03,
+          960,
+          540
+        ],
+        "cast": [
+          "rin@830,1500 h=1240 sleep yaw=0.6 head=8 armR=reach"
+        ]
+      },
+      "beats": 10.5
+    },
+    {
+      "scene": "nim",
+      "view": "cat-ecu",
+      "note": "ECU ตาแมวดำเรืองเหลืองใกล้เฟรม ส่องขึ้นผนัง รูม่านตาเป็นเส้นตรง ขู่เบา ๆ",
+      "text": "ท่อน้ำไม่มีทางอยู่ตรงนี้ ผนังนี้คือผนังที่ติดกับบ้านเลขที่ห้า",
+      "cues": [
+        [
+          0.2,
+          "cat"
+        ]
+      ],
+      "mood": 0.78,
+      "data": {},
+      "beats": 6.5
+    },
+    {
+      "scene": "ext",
+      "view": "fence-tape-wide",
+      "note": "ข้างบ้านกลางคืน รินเดินเลียบแนวรั้วหน้าบ้านถือไฟฉายกับสายวัดเหลือง ปลายสายเกี่ยวเสารั้วมุมซ้าย แสงเป็นวงเดียวบนผนังปูน หน้าต่างดำเรียงกันด้านหลัง",
+      "text": "เธอออกจากบ้านป้าด้วยคำถามเดียว\nแล้วเดินเอาสายวัดลากไปตามหน้าบ้าน",
+      "cues": [
+        [
+          0.3,
+          "tape"
+        ]
+      ],
+      "mood": 0.65,
+      "data": {
+        "hud": "พุธ · 22:15",
+        "motion": "pan",
+        "tone": "night",
+        "light": "night",
+        "lightAt": [
+          -120,
+          520
+        ],
+        "five": "off",
+        "cam": [
+          0.88,
+          0.9,
+          440,
+          560,
+          1040,
+          560
+        ],
+        "cast": [
+          "rin@600,950 h=364 back arm=r-hold prop=flashlight"
+        ],
+        "move": [
+          320,
+          1080
+        ]
+      },
+      "beats": 5.75
+    },
+    {
+      "scene": "yard",
+      "view": "boat-far-ins",
+      "note": "ลอดช่องรั้วข้างบ้านเห็นคลองดำ แสงไฟฉายเล็กของเรือเล็กลอยไกลออกไป เสียงน้ำ",
+      "text": "เสียงเรือของเฉลิมจากไปทางคลอง บ้านเหลือเธอคนเดียว",
+      "cues": [
+        [
+          0,
+          "boat"
+        ]
+      ],
+      "mood": 0.6,
+      "data": {
+        "tone": "moon",
+        "light": "night",
+        "cam": [
+          1,
+          1.04,
+          1100,
+          500
+        ],
+        "cast": []
+      },
+      "beats": 5.5
+    },
+    {
+      "scene": "ins",
+      "view": "tape-1140-ecu",
+      "note": "ECU สายวัดเหล็กเหลืองที่ขอบผนังมุมขวา ไฟฉายจับเลข 11.40 พอดี ขอบปูนแตก ขนแมวติดอยู่",
+      "text": "จากมุมถึงมุม ด้านหน้าบ้านกว้าง [11.40] เมตร",
+      "hold": 0.5,
+      "mood": 0.65,
+      "data": {},
+      "beats": 6.25
+    },
+    {
+      "scene": "plan",
+      "view": "rooms-sum-top",
+      "note": "แปลนจากบน ตัวเลขความกว้างแต่ละห้องเขียนด้วยลายมือบนกระดาษ แล้วรวมเป็น 9.00 ด้านล่าง ไฟเพดานรถ",
+      "text": "แต่ห้องข้างในทั้งหมดที่เธอวัดเมื่อวาน\nรวมกันได้แค่ [9.00] เมตร",
+      "cues": [
+        [
+          0.2,
+          "flip"
+        ]
+      ],
+      "mood": 0.7,
+      "data": {},
+      "beats": 5.375
+    },
+    {
+      "scene": "plan",
+      "view": "missing-top",
+      "note": "แปลนเดิม เส้นผนังขวาดับลง เหลือแถบว่างแรเงาแดงกว้างข้างห้องนอนเล็ก ติดบ้านป้านิ่ม พิมพ์ 11.40 − 9.00 = 2.40 ม.",
+      "text": "สิบเอ็ดจุดสี่ ลบเก้า เหลือสองจุดสี่\n{สองเมตรสี่สิบ} ที่ไม่มีห้องไหนนับ",
+      "cues": [
+        [
+          0,
+          "hit"
+        ]
+      ],
+      "hold": 1,
+      "mood": 0.82,
+      "data": {},
+      "beats": 7.125
+    },
+    {
+      "scene": "car",
+      "view": "rin-close-mirror",
+      "note": "mirror ต้นฉบับ rin-close จาก cold open เดิมทุกอย่าง รินหลังพวงมาลัย ไฟส้มครึ่งหน้า (ช็อตนี้คือเวลาเดียวกับเปิดเรื่อง)",
+      "text": "เธอขึ้นรถ กดล็อก แล้วยกปากกานับอีกครั้ง\nหนึ่ง สอง สาม สี่",
+      "mood": 0.75,
+      "data": {
+        "hud": "พุธ · 22:20",
+        "mirror": "coldopen",
+        "tone": "night",
+        "light": "lamp",
+        "lightAt": [
+          420,
+          300
+        ],
+        "key": "255,176,96",
+        "shade": "r",
+        "cam": [
+          2,
+          2.12,
+          830,
+          430
+        ],
+        "cast": [
+          "rin@740 wary look=-0.45 yaw=-0.25"
+        ]
+      },
+      "beats": 8.375
+    },
+    {
+      "scene": "ext",
+      "view": "windows-fif-mirror",
+      "note": "กรอบเดียวกับ windows-fif ตอนเปิดเรื่องผ่านกระจกหน้ารถ บ้านดำ บานขวาสุดตีไม้ แสงเหลืองเป็นเส้น",
+      "text": "ห้า",
+      "hold": 1,
+      "mood": 0.85,
+      "data": {
+        "mirror": "coldopen",
+        "tone": "night",
+        "light": "night",
+        "lightAt": [
+          -120,
+          520
+        ],
+        "five": "lit",
+        "cam": [
+          1,
+          1.04,
+          930,
+          560
+        ],
+        "cast": []
+      },
+      "beats": 2.875
+    },
+    {
+      "scene": "ext",
+      "view": "window5-close2",
+      "note": "close บานที่ห้าจากระดับสายตา มองผ่านรั้ว แสงเหลืองเป็นเส้นสามเส้น มีเงาตัดผ่านแล้วหาย",
+      "text": "บานหลอกที่เฉลิมบอกว่าข้างหลังเป็นผนัง\nมีแสงลอดออกมา ในบ้านที่ปิดเมนมาสองคืนแล้ว",
+      "mood": 0.8,
+      "data": {},
+      "beats": 8
+    },
+    {
+      "scene": "car",
+      "view": "rin-phone-ins",
+      "note": "จอมือถือในรถ แชตส่งพิกัดกับข้อความ บ้านเลขที่ 5 เข้าไปดูคนเดียว ถ้าเช้าไม่ตอบให้แจ้งตำรวจ แสงจอฟ้าจับนิ้ว",
+      "text": "เธอไม่ใช่คนเดินเข้าบ้านมืดโดยไม่บอกใคร\nเธอส่งพิกัดให้หัวหน้า พร้อมเวลาที่ต้องโทรแจ้งตำรวจ",
+      "cues": [
+        [
+          0.5,
+          "cam"
+        ]
+      ],
+      "mood": 0.65,
+      "data": {},
+      "beats": 8.125
+    },
+    {
+      "scene": "kitchen",
+      "view": "breaker-torch-close",
+      "note": "ครัวมืด ไฟฉายจากซ้ายเปิดฝาตู้เมน คันโยกอยู่ล่างสุดจริง ฝุ่นในลำแสง เงามือรินทาบผนัง",
+      "text": "ในครัว เธอเปิดฝาตู้ไฟ คันโยกอยู่ล่างสุด เมนปิดอยู่จริง",
+      "cues": [
+        [
+          0.2,
+          "creak"
+        ]
+      ],
+      "mood": 0.7,
+      "data": {
+        "hud": "พุธ · 22:40"
+      },
+      "beats": 7.375
+    },
+    {
+      "scene": "ext",
+      "view": "meter-disc-ecu",
+      "note": "ECU จานโลหะในมิเตอร์หมุนช้า ๆ แสงไฟฉายวิ่งเป็นจุดบนขอบจาน เลขหลักสุดท้ายขยับ",
+      "text": "แต่ออกมาหน้ารั้ว จานในมิเตอร์ยังหมุน",
+      "cues": [
+        [
+          0.1,
+          "meter"
+        ]
+      ],
+      "mood": 0.75,
+      "data": {
+        "meter": 18406,
+        "motion": "fx"
+      },
+      "beats": 4.625
+    },
+    {
+      "scene": "ext",
+      "view": "wire-pan-low",
+      "note": "มุมต่ำ ไฟฉายไล่ตามสายไฟสีดำเส้นเดียวที่แตกออกจากกล่องมิเตอร์ก่อนถึงตู้เมน วิ่งเลาะใต้ชายคาหายไปในผนังด้านขวา",
+      "text": "เธอไล่ไฟฉายตามสาย มีเส้นหนึ่ง[แยกออกก่อนถึงเมน]\nวิ่งใต้ชายคา ไปทางบานที่ห้า",
+      "hold": 0.5,
+      "mood": 0.8,
+      "data": {
+        "motion": "pan"
+      },
+      "beats": 8.375
+    },
+    {
+      "scene": "bedroom",
+      "view": "wardrobe-low",
+      "note": "ห้องนอนเล็กมุมต่ำ ไฟฉายขึ้นตามผนัง สายดำเส้นนั้นลอดฝ้าหายเข้าเหนือตู้เสื้อผ้าบิวท์อินพอดี ตู้ใหญ่ทะมึนเหนือกล้อง",
+      "text": "สายเส้นนั้นลงมาจบตรงเหนือตู้เสื้อผ้าในห้องนอนเล็ก\nแล้วหายเข้าไปในผนัง",
+      "mood": 0.85,
+      "data": {
+        "time": "night",
+        "wire": true,
+        "light": "lamp",
+        "torch": [
+          1150,
+          320,
+          380
+        ],
+        "lightAt": [
+          1150,
+          320
+        ],
+        "cam": [
+          0.95,
+          1,
+          960,
+          440
+        ],
+        "cast": [
+          "rin@836,1088 h=642 back arm=r-raise prop=flashlight"
+        ]
+      },
+      "beats": 6.875
+    },
+    {
+      "chapter": "ห้องที่ห้า",
+      "scene": "bedroom",
+      "view": "wardrobe-open-med",
+      "note": "ไฟฉายจากไหล่ริน บานตู้เสื้อผ้าเปิดอ้า ไม้แขวนเปล่าแกว่งเบา ๆ แผ่นไม้ด้านหลังตู้สีเข้มกว่าข้างตู้ ฝุ่นเป็นเส้นตรงตามขอบแผ่น",
+      "text": "เธอเปิดตู้ ไม้แขวนว่างเปล่าแกว่งไปมา\nแผ่นไม้หลังตู้สีเข้มกว่าข้างตู้",
+      "cues": [
+        [
+          0.2,
+          "creak"
+        ]
+      ],
+      "mood": 0.8,
+      "data": {
+        "hud": "พุธ · 23:05",
+        "inside": true,
+        "light": "lamp",
+        "torch": [
+          960,
+          480,
+          720
+        ],
+        "lightAt": [
+          960,
+          480
+        ],
+        "slit": true,
+        "cam": [
+          1,
+          1.05,
+          960,
+          520
+        ],
+        "cast": []
+      },
+      "beats": 7.75
+    },
+    {
+      "scene": "bedroom",
+      "view": "knock-ots",
+      "note": "ข้ามไหล่ริน มือขวากำหลวมยกขึ้นแนบแผ่นไม้ ไฟฉายคาบในมือซ้ายส่องเฉียง ไม้แขวนบังขอบเฟรม",
+      "text": "ช่างทุกคนรู้วิธีฟังผนัง เธอกำมือหลวม ๆ\nแล้วเคาะทดสอบ",
+      "mood": 0.82,
+      "data": {
+        "inside": true,
+        "light": "lamp",
+        "torch": [
+          960,
+          480,
+          700
+        ],
+        "slit": true,
+        "cam": [
+          1,
+          1.05,
+          960,
+          540
+        ],
+        "cast": [
+          "rin@640,1500 h=1160 back"
+        ]
+      },
+      "beats": 6.375
+    },
+    {
+      "scene": "ins",
+      "view": "knuckle-ecu",
+      "note": "ECU ข้อนิ้วรินกระทบไม้สามครั้งในแสงไฟฉาย ฝุ่นร่วงเป็นเส้นทุกครั้ง",
+      "text": "หนึ่ง สอง สาม",
+      "cues": [
+        [
+          0,
+          "knock3"
+        ]
+      ],
+      "hold": 1,
+      "mood": 0.85,
+      "data": {},
+      "beats": 4.25
+    },
+    {
+      "scene": "bedroom",
+      "view": "wardrobe-ew",
+      "note": "ภาพกว้างห้องนอนเล็กมืดสนิท รินตัวเล็กหันหลังยืนหน้าตู้ในวงไฟฉายเดียว ที่เหลือดำ",
+      "text": "",
+      "hush": true,
+      "vo": "",
+      "mood": 0.9,
+      "data": {
+        "time": "night",
+        "light": "lamp",
+        "torch": [
+          1051,
+          669,
+          340
+        ],
+        "lightAt": [
+          1051,
+          669
+        ],
+        "cam": [
+          0.92,
+          0.92,
+          1080,
+          540
+        ],
+        "cast": [
+          "rin@951,909 h=465 back arm=r-hold prop=flashlight"
+        ]
+      },
+      "beats": 2.75
+    },
+    {
+      "scene": "bedroom",
+      "view": "rin-frozen-close",
+      "note": "close รินแข็งค้าง ปากปิด ตาเบิก ไฟฉายสั่นใต้คาง ไม้แขวนเบลอ (เสียงจากหลังผนัง รินไม่ขยับปาก)",
+      "text": "\"มานพ?\"",
+      "who": "napa",
+      "voice": "villain_female",
+      "style": "red",
+      "cues": [
+        [
+          0,
+          "hit"
+        ]
+      ],
+      "hold": 1.5,
+      "fx": "muffled",
+      "tone": "whispers, hoarse, hopeful",
+      "voLead": 0.5,
+      "mood": 0.95,
+      "data": {
+        "time": "night",
+        "light": "noir",
+        "torch": [
+          991,
+          671,
+          380
+        ],
+        "lightAt": [
+          991,
+          727
+        ],
+        "cam": [
+          2.94,
+          3.08,
+          1073,
+          561
+        ],
+        "cast": [
+          "rin@991,1008 h=562 shock arm=r-hold prop=flashlight yaw=0.3"
+        ]
+      },
+      "beats": 3.875
+    },
+    {
+      "scene": "ins",
+      "view": "panel-ecu",
+      "note": "ECU ร่องไม้หลังตู้ มีเส้นแสงเหลืองบางมากตามขอบล่าง เงาบางอย่างขยับตัดเส้นแสงแล้วนิ่ง (ไม่มีใครในเฟรมพูด)",
+      "text": "\"พี่มานพใช่ไหม พี่บอกว่าจะเคาะสามที\"",
+      "who": "napa",
+      "voice": "villain_female",
+      "fx": "muffled",
+      "tone": "whispers, trembling",
+      "mood": 0.92,
+      "data": {},
+      "beats": 4.5
+    },
+    {
+      "scene": "bedroom",
+      "view": "rin-hand-close",
+      "note": "close รินปิดปากตัวเองด้วยมือซ้าย ตาชื้น ไฟฉายตกลงส่องพื้นตู้ ด้านหลังดำ",
+      "text": "มานพ เจ้าของบ้าน ตายที่ท่าน้ำมาเจ็ดเดือนแล้ว",
+      "mood": 0.85,
+      "data": {
+        "time": "night",
+        "light": "noir",
+        "torch": [
+          1051,
+          755,
+          380
+        ],
+        "lightAt": [
+          1051,
+          755
+        ],
+        "cam": [
+          2.94,
+          3.08,
+          909,
+          561
+        ],
+        "cast": [
+          "rin@991,1008 h=562 cry armL=mouth yaw=0.2"
+        ]
+      },
+      "beats": 4.5
+    },
+    {
+      "scene": "ins",
+      "view": "bolt-ins",
+      "note": "macro มุมล่างในตู้ ไฟฉายเจอสลักเหล็กหนาติดบนแผ่นไม้ฝั่งเธอ ใต้มันมีบานช่องเล็กอีกบานมีสลักของมันเอง สีเหล็กเงาจากการใช้งานทุกวัน",
+      "text": "ไฟฉายเจอมันที่มุมล่างของตู้ สลักเหล็กหนึ่งอัน\nเงาจากการถูกเลื่อนทุกวัน และอยู่{ฝั่งนี้}",
+      "hold": 0.5,
+      "mood": 0.85,
+      "data": {},
+      "beats": 8.25
+    },
+    {
+      "scene": "ins",
+      "view": "wedge-ins",
+      "note": "มือรินกระแทกลิ่มไม้ใต้บานแผ่นไม้ที่ยังไม่เปิดเต็ม ไฟฉายบนพื้น เงาลิ่มยาว สายวัดห้อยจากเอว",
+      "text": "ก่อนเปิด เธอเอาลิ่มไม้ขัดไว้ใต้บาน\nประตูที่ล็อกจากข้างนอก ต้องไม่มีวันปิดใส่เธอ",
+      "cues": [
+        [
+          0.2,
+          "latch"
+        ]
+      ],
+      "mood": 0.8,
+      "data": {},
+      "beats": 8.25
+    },
+    {
+      "scene": "room5",
+      "view": "reveal-fif",
+      "note": "จากในตู้ผ่านกรอบแผ่นไม้ที่เพิ่งแง้ม ห้องแคบ หลอดไฟดวงเดียวห้อย พัดลมตั้งพื้นหมุน ถังน้ำเรียงผนัง ฟูกบาง รอยขีดนับวันเต็มผนัง หญิงผอมผมรวบยืนกางแขนบังเด็กสองคน",
+      "text": "แล้วแผ่นไม้ก็แง้มออก พร้อมลมร้อนจากพัดลมตัวเล็ก",
+      "cues": [
+        [
+          0,
+          "fan"
+        ]
+      ],
+      "hold": 1,
+      "mood": 0.85,
+      "data": {
+        "tag": {
+          "who": "napa",
+          "name": "นภา",
+          "line": "เมียมานพ · หายไปเจ็ดเดือน"
+        },
+        "mode": "bulb",
+        "light": "lamp",
+        "lightAt": [
+          900,
+          300
+        ],
+        "cam": [
+          1,
+          1.05,
+          960,
+          520
+        ],
+        "cast": [
+          "prae@790,770 h=362 scared yaw=0.15",
+          "napa@917,814 h=411 shock armR=out armL=out"
+        ]
+      },
+      "beats": 5.75
+    },
+    {
+      "scene": "room5",
+      "view": "tally-pan",
+      "note": "แพนช้าตามผนังปูน รอยขีดดินสอเป็นกลุ่มห้า ๆ นับไม่ถ้วน จนถึงภาพวาดเด็กกับรูปถ่ายใบหนึ่งเบลอเล็ก ๆ ที่หัวฟูก แสงหลอดเหลืองลดลงตามระยะ",
+      "text": "กว้างสองเมตรสี่สิบ ยาวสามเมตร\nรอยขีดนับวันเต็มผนัง สองร้อยกว่าขีด",
+      "mood": 0.8,
+      "data": {
+        "motion": "pan",
+        "mode": "bulb",
+        "light": "lamp",
+        "lightAt": [
+          900,
+          300
+        ],
+        "cam": [
+          1.3,
+          1.3,
+          700,
+          400,
+          1000,
+          480
+        ],
+        "cast": []
+      },
+      "beats": 8.375
+    },
+    {
+      "scene": "room5",
+      "view": "prae-close",
+      "note": "close เด็กสาวผิวซีดในชุดซีด จ้องจากในห้อง แสงหลอดเหลืองด้านเดียว",
+      "text": "[แพร] ลูกสาวอายุสิบห้า\nมองไฟฉายเหมือนไม่เคยเห็นไฟดวงอื่น",
+      "mood": 0.75,
+      "data": {
+        "tag": {
+          "who": "prae",
+          "name": "แพร",
+          "line": "ลูกสาว อายุ 15"
+        },
+        "mode": "bulb",
+        "light": "lamp",
+        "lightAt": [
+          900,
+          300
+        ],
+        "cam": [
+          4.06,
+          4.27,
+          798,
+          491
+        ],
+        "cast": [
+          "prae@857,814 h=406 scared"
+        ],
+        "key": "255,214,140"
+      },
+      "beats": 6.125
+    },
+    {
+      "scene": "room5",
+      "view": "napa-low",
+      "note": "มุมต่ำจากฟูก นภาสูงเหนือกล้อง หลอดไฟอยู่หลังหัว แก้มตอบ มือกางบังลูก เสียงกระซิบแต่ดุ",
+      "text": "\"ปิดเข้าไป เร็ว อย่าส่งเสียง มันจะได้ยิน\"",
+      "who": "napa",
+      "voice": "villain_female",
+      "tone": "whispers, urgent, hoarse",
+      "mood": 0.85,
+      "data": {
+        "mode": "bulb",
+        "light": "lamp",
+        "lightAt": [
+          900,
+          300
+        ],
+        "cam": [
+          0.88,
+          0.92,
+          807,
+          687
+        ],
+        "cast": [
+          "napa@927,1047 h=642 talk angry armR=out armL=out"
+        ]
+      },
+      "beats": 4.125
+    },
+    {
+      "scene": "room5",
+      "view": "rin-door-med",
+      "note": "medium รินอยู่ในกรอบประตู ไฟฉายลดต่ำเพื่อไม่ส่องตาพวกเขา มือว่างยกขึ้นบอกว่าไม่มีอะไร ลิ่มไม้เห็นที่ขอบล่าง",
+      "text": "\"ฉันมาช่วยค่ะ ออกมาเถอะ ใครขังพวกคุณไว้\"",
+      "who": "rin",
+      "voice": "lead_female",
+      "tone": "whispers, gentle",
+      "mood": 0.8,
+      "data": {
+        "mode": "bulb",
+        "light": "lamp",
+        "lightAt": [
+          900,
+          300
+        ],
+        "cam": [
+          1.57,
+          1.65,
+          1095,
+          600
+        ],
+        "cast": [
+          "rin@1273,958 h=560 talk worried yaw=-0.35 armR=chest"
+        ]
+      },
+      "beats": 5.375
+    },
+    {
+      "scene": "room5",
+      "view": "napa-close",
+      "note": "close นภาจ้องตรงกล้อง ขมวดคิ้วเหมือนได้ยินคำผิด แสงเหลืองด้านเดียว อีกแก้มจมเงา",
+      "text": "\"ไม่มีใครขังเรา เราไม่ได้ถูกขัง\nเรา[ซ่อนอยู่]\"",
+      "who": "napa",
+      "voice": "villain_female",
+      "cues": [
+        [
+          0,
+          "hit"
+        ]
+      ],
+      "hold": 1,
+      "tone": "hoarse, certain",
+      "mood": 0.9,
+      "data": {
+        "mode": "bulb",
+        "light": "lamp",
+        "lightAt": [
+          900,
+          300
+        ],
+        "cam": [
+          3.6,
+          3.78,
+          919,
+          497
+        ],
+        "cast": [
+          "napa@852,862 h=458 talk wary"
+        ],
+        "key": "255,214,140"
+      },
+      "beats": 8
+    },
+    {
+      "scene": "ins",
+      "view": "block-note-ins",
+      "note": "โน้ตกระดาษสมุดหลายใบเสียบรวมที่ผนัง ตัวบล็อกดินสอ เจ้าหนี้ยังเฝ้า อย่าส่งเสียง เคาะสองทีสองที เท่ากับข้าว แสงหลอดเหลือง",
+      "text": "โน้ตตัวบล็อกที่มากับข้าวบอกแบบนั้นมาตลอด\nเจ้าหนี้ยังเฝ้าบ้าน ห้ามส่งเสียง",
+      "cues": [
+        [
+          0.2,
+          "flip"
+        ]
+      ],
+      "mood": 0.75,
+      "data": {},
+      "beats": 7.375
+    },
+    {
+      "scene": "past",
+      "view": "manop-panel-close",
+      "note": "อดีตซีดอุ่น กรอบแคบ มานพโผล่หน้าจากช่องแผ่นไม้ที่กำลังปิด ยิ้มฝืน สร้อยพระ มือหนึ่งจับขอบ นภาเห็นจากข้างใน",
+      "text": "\"พี่มานพปิดผนังให้เอง เขาบอกแค่อาทิตย์เดียว\nจะกลับมาเคาะสามที แล้วเปิดให้\"",
+      "who": "napa",
+      "voice": "villain_female",
+      "tone": "hoarse, tender",
+      "mood": 0.6,
+      "data": {
+        "hud": "เจ็ดเดือนก่อน",
+        "past": true,
+        "cast": [
+          "manop@760,1400 h=1100 happy yaw=0.2"
+        ]
+      },
+      "beats": 7.625
+    },
+    {
+      "scene": "room5",
+      "view": "rin-tell-close",
+      "note": "close รินกลืนน้ำลาย ไฟเหลืองจากหน้า เม้มปากก่อนพูด น้ำตาไม่ไหลแต่คลอ",
+      "text": "\"คุณนภาคะ คุณมานพเสียชีวิตแล้ว\nตกน้ำที่ท่าน้ำ คืนเดียวกับที่ปิดผนังนั้น\"",
+      "who": "rin",
+      "voice": "lead_female",
+      "tone": "whispers, breaking",
+      "mood": 0.8,
+      "data": {
+        "mode": "bulb",
+        "light": "lamp",
+        "lightAt": [
+          900,
+          300
+        ],
+        "cam": [
+          3.56,
+          3.73,
+          1030,
+          493
+        ],
+        "cast": [
+          "rin@1097,862 h=464 talk sad yaw=-0.25"
+        ],
+        "key": "255,214,140"
+      },
+      "beats": 9.625
+    },
+    {
+      "scene": "room5",
+      "view": "napa-fall-high",
+      "note": "มุมสูง นภาทรุดลงบนฟูก มือยังกางค้าง แพรเอื้อมมาจับไหล่ เด็กชายตัวเล็กนอนนิ่งข้างผนัง พัดลมหันไปมา ห้องแคบจนคนเต็มเฟรม",
+      "text": "เจ็ดเดือนที่เธอนับวันรอเสียงเคาะสามที\nคนเคาะตายไปตั้งแต่ขีดแรก",
+      "hold": 1,
+      "mood": 0.85,
+      "data": {
+        "mode": "bulb",
+        "light": "lamp",
+        "lightAt": [
+          900,
+          300
+        ],
+        "cam": [
+          0.94,
+          0.98,
+          960,
+          580
+        ],
+        "cast": [
+          "ton@634,764 h=279 lie tired",
+          "prae@951,770 h=362 sad armL=reach",
+          "napa@766,788 h=385 crouch cry"
+        ]
+      },
+      "beats": 8.875
+    },
+    {
+      "scene": "room5",
+      "view": "napa-ecu",
+      "note": "ECU ตานภาแห้งเบิกค้าง หันช้า ๆ มองช่องเล็กที่ผนังใกล้พื้น แสงหลอดจับน้ำตาหยดเดียว",
+      "text": "\"แล้วใครส่งข้าวมาให้เราตลอดเจ็ดเดือน\"",
+      "who": "napa",
+      "voice": "villain_female",
+      "tone": "barely a whisper",
+      "voLead": 0.5,
+      "mood": 0.95,
+      "data": {
+        "mode": "bulb",
+        "light": "noir",
+        "lightAt": [
+          900,
+          300
+        ],
+        "cam": [
+          5.4,
+          5.67,
+          919,
+          485
+        ],
+        "cast": [
+          "napa@875,862 h=458 talk shock look=-0.6 yaw=-0.2"
+        ],
+        "key": "255,214,140"
+      },
+      "beats": 4.375
+    },
+    {
+      "scene": "ins",
+      "view": "hatch-inside-ins",
+      "note": "มองจากข้างในช่องส่งของใกล้พื้น บานไม้เล็กปิดสนิท มีรอยมือดำจากการรับถาดทุกวัน ถุงพลาสติกเปล่าวางซ้อนกันข้าง ๆ แต่ละใบมีหนังยางแดง",
+      "text": "คนคนนั้นเคาะสองทีสองที เลื่อนช่องนี้\nแล้วก็ไป ไม่เคยพูด ไม่เคยเปิดประตู",
+      "hold": 0.5,
+      "mood": 0.85,
+      "data": {},
+      "beats": 11.25
+    },
+    {
+      "chapter": "คนที่ปากซอย",
+      "scene": "room5",
+      "view": "rin-urge-close",
+      "note": "close รินพูดกับนภา แสงหลอดไฟจากบน ใบหน้าเร่ง ผนังขีดเบลอข้างหลัง",
+      "text": "\"รถฉันจอดอยู่หน้าบ้าน ออกไปเดี๋ยวนี้เลยค่ะ\"",
+      "who": "rin",
+      "voice": "lead_female",
+      "tone": "whispers, urgent",
+      "mood": 0.65,
+      "data": {
+        "hud": "พฤหัส · 00:20",
+        "mode": "bulb",
+        "light": "lamp",
+        "lightAt": [
+          900,
+          300
+        ],
+        "cam": [
+          3.22,
+          3.38,
+          1019,
+          503
+        ],
+        "cast": [
+          "rin@1094,911 h=513 talk worried yaw=-0.25"
+        ],
+        "key": "255,214,140"
+      },
+      "beats": 4.25
+    },
+    {
+      "scene": "room5",
+      "view": "slat-fif",
+      "note": "ด้านในบานที่ห้า แพรหันหลังยืนมองลอดร่องไม้ แสงถนนเป็นเส้นบนไม้ ผนังขีดอยู่ข้าง ๆ",
+      "text": "\"หนูมองจากร่องนี้ทุกคืน เขายังมาอยู่เลย\"",
+      "who": "prae",
+      "voice": "young_female",
+      "tone": "small, flat",
+      "mood": 0.7,
+      "data": {
+        "mode": "bulb",
+        "light": "dim",
+        "lightAt": [
+          1240,
+          340
+        ],
+        "cam": [
+          1.6,
+          1.66,
+          1130,
+          440
+        ],
+        "cast": [
+          "prae@1239,754 h=347 back"
+        ]
+      },
+      "beats": 5.75
+    },
+    {
+      "scene": "ext",
+      "view": "slat-pov",
+      "note": "มุมมองผ่านร่องไม้บานเกล็ด ไกลสุดซอย ไฟท้ายแดงรถกระบะเก่า มีคนยืนเรืองแสงจอมือถือเล็ก ๆ ซอยเดียวไม่มีทางอื่น",
+      "text": "ซอยตัน ทางออกเดียว รถกระบะคันนั้นจอดขวางอยู่",
+      "cues": [
+        [
+          0,
+          "truck"
+        ]
+      ],
+      "mood": 0.75,
+      "data": {},
+      "beats": 6.625
+    },
+    {
+      "scene": "room5",
+      "view": "napa-gun-close",
+      "note": "close นภาหันหน้าไปทางบาน แสงเส้นบางจากร่องพาดหน้าผาก เล่าเรียบ ไม่ร้องไห้",
+      "text": "\"ธวัชเคยเอาปืนจ่อหัวพี่มานพต่อหน้าลูก\nออกไปตอนนี้ มันเห็นเราหมดทุกคน\"",
+      "who": "napa",
+      "voice": "villain_female",
+      "tone": "hoarse, flat",
+      "mood": 0.65,
+      "data": {
+        "mode": "bulb",
+        "light": "lamp",
+        "lightAt": [
+          900,
+          300
+        ],
+        "cam": [
+          3.6,
+          3.78,
+          942,
+          497
+        ],
+        "cast": [
+          "napa@875,862 h=458 talk tired yaw=0.3 look=0.5"
+        ],
+        "key": "255,214,140"
+      },
+      "beats": 7.25
+    },
+    {
+      "scene": "room5",
+      "view": "ton-ins",
+      "note": "เด็กชายแปดขวบนอนหนุนแขนพี่ ขาลีบใต้ผ้าห่มลายการ์ตูน ตาเปิดมองพัดลม ไม่พูด",
+      "text": "[ต้น] อายุแปดขวบ ขาลีบจนยืนไม่ไหว",
+      "hold": 0.5,
+      "mood": 0.7,
+      "data": {},
+      "beats": 5.875
+    },
+    {
+      "scene": "yard",
+      "view": "pier-night-high",
+      "note": "มุมสูงหลังบ้านคืนนั้น ท่าน้ำผุลงคลองดำ ไม่มีเรือ น้ำนิ่งสะท้อนจันทร์ ระยะจากประตูหลังถึงน้ำเล็กนิดเดียวแต่ไม่มีอะไรรอ",
+      "text": "ทางคลองก็ไม่มีเรือ เธอคนเดียว\nอุ้มเด็กลงท่าน้ำผุตอนเที่ยงคืนไม่ได้",
+      "cues": [
+        [
+          0,
+          "canal"
+        ]
+      ],
+      "mood": 0.6,
+      "data": {
+        "tone": "moon",
+        "light": "night",
+        "lightAt": [
+          1490,
+          100
+        ],
+        "cam": [
+          0.82,
+          0.84,
+          1000,
+          520
+        ],
+        "cast": []
+      },
+      "beats": 7.75
+    },
+    {
+      "scene": "room5",
+      "view": "rin-promise-ots",
+      "note": "ข้ามไหล่นภามืด รินในแสงหลอด มองตรง มือวางบนลิ่มไม้ข้างตัว",
+      "text": "\"เช้านี้ฉันพาตำรวจมาเอง ทนอีกไม่กี่ชั่วโมงนะคะ\"",
+      "who": "rin",
+      "voice": "lead_female",
+      "tone": "steady, whispers",
+      "mood": 0.65,
+      "data": {
+        "mode": "bulb",
+        "light": "lamp",
+        "lightAt": [
+          900,
+          300
+        ],
+        "cam": [
+          1.93,
+          2.03,
+          927,
+          562
+        ],
+        "cast": [
+          "rin@1072,853 h=455 talk wary yaw=-0.3"
+        ],
+        "foreShoulder": "l",
+        "foreColor": "#6e5a5c",
+        "foreHair": "#1d181b"
+      },
+      "beats": 5.5
+    },
+    {
+      "scene": "room5",
+      "view": "prae-rice-close",
+      "note": "close แพรยื่นถุงข้าวเปล่าผูกหนังยางแดงให้ดู จมูกย่นเล็กน้อยเป็นครั้งแรก มีแสงเหลืองด้านเดียว",
+      "text": "\"ข้าวทุกวันมีกลิ่น[ธูป]ค่ะ หนูไม่กล้าบอกแม่\"",
+      "who": "prae",
+      "voice": "young_female",
+      "hold": 0.5,
+      "tone": "small, puzzled",
+      "mood": 0.6,
+      "data": {
+        "mode": "bulb",
+        "light": "lamp",
+        "lightAt": [
+          900,
+          300
+        ],
+        "cam": [
+          3.65,
+          3.83,
+          941,
+          502
+        ],
+        "cast": [
+          "prae@875,862 h=452 talk worried armR=offer"
+        ],
+        "ricebag": [
+          1025,
+          600
+        ]
+      },
+      "beats": 5.75
+    },
+    {
+      "scene": "room5",
+      "view": "napa-rule-close",
+      "note": "close นภายื่นมือมาจับข้อมือริน หน้าจริงจัง แสงเหลืองด้านเดียว",
+      "text": "\"สองทีสองทีคือข้าว สามทีคือพ่อเขา\nถ้าไม่ใช่สองอย่างนี้ เราจะไม่ตอบใครทั้งนั้น\"",
+      "who": "napa",
+      "voice": "villain_female",
+      "tone": "hoarse, urgent",
+      "mood": 0.65,
+      "data": {
+        "mode": "bulb",
+        "light": "lamp",
+        "lightAt": [
+          900,
+          300
+        ],
+        "cam": [
+          3.06,
+          3.21,
+          928,
+          507
+        ],
+        "cast": [
+          "napa@849,890 h=486 talk angry armR=reach yaw=0.3"
+        ]
+      },
+      "beats": 9.125
+    },
+    {
+      "scene": "ins",
+      "view": "wardrobe-cam-ins",
+      "note": "กล้องเล็กกลมเท่าฝาขวดแปะมุมบนในตู้ มือรินจัดเลนส์ให้มองลงที่ช่องเล็กกับสลัก ไม้แขวนบังครึ่งหนึ่ง ไฟเขียวจิ๋ว",
+      "text": "ก่อนออกจากตู้ เธอปิดสลักกลับเหมือนเดิม\nแล้วแปะกล้องอีกตัวไว้เหนือช่องส่งข้าว",
+      "cues": [
+        [
+          0.2,
+          "latch"
+        ],
+        [
+          1.6,
+          "cam"
+        ]
+      ],
+      "mood": 0.7,
+      "data": {},
+      "beats": 6.25
+    },
+    {
+      "scene": "car",
+      "view": "dawn-phone-close",
+      "note": "รุ่งสางในรถ ฟ้าเทาจาง รินหน้าซีดข้างจอมือถือ ขอบตาดำ แก้วกาแฟกระดาษบนคอนโซล",
+      "text": "ฟ้าเริ่มสาง เธอเปิดภาพจากกล้องตัวแรกบนเสารั้ว",
+      "mood": 0.5,
+      "data": {
+        "hud": "พฤหัส · 05:40",
+        "tone": "dawn",
+        "phone": [
+          760,
+          640
+        ],
+        "light": "dawn",
+        "lightAt": [
+          1200,
+          120
+        ],
+        "cam": [
+          1.9,
+          2,
+          830,
+          460
+        ],
+        "cast": [
+          "rin@740 tired armR=hold prop=phone head=6"
+        ]
+      },
+      "beats": 5.375
+    },
+    {
+      "scene": "cctv",
+      "view": "gate-cctv",
+      "note": "ภาพกล้องวงจรปิดขาวดำบนเสารั้ว เวลา 22:05 ผู้ชายรองเท้าหนังเดินเข้ามาใกล้รั้ว ยกมือถือถ่ายประตู เงยหน้ามองบ้าน มือจับโซ่",
+      "text": "[22:05] เมื่อคืน ธวัชเดินมาเขย่าโซ่รั้ว\nห้านาทีหลังเสียงเคาะ เหมือนคืนก่อนไม่มีผิด",
+      "cues": [
+        [
+          0,
+          "cam"
+        ]
+      ],
+      "hold": 1,
+      "mood": 0.7,
+      "data": {
+        "cast": [
+          "thawat@900,900 h=332 yaw=-0.2 armR=raise prop=phone"
+        ]
+      },
+      "beats": 11.125
+    },
+    {
+      "scene": "cctv",
+      "view": "gate-cctv-ecu",
+      "note": "ภาพซูมจากกล้องตัวเดียวกัน เม็ดหยาบ หน้าธวัชครึ่งหนึ่ง ตาจับจ้องบ้าน จอมือถือสว่างในมือสักลาย",
+      "text": "คนที่ครอบครัวนี้กลัวมากที่สุด\nมายืนหน้ารั้วตรงเวลาทุกคืน",
+      "mood": 0.75,
+      "data": {
+        "cast": [
+          "thawat@1160,900 h=332 wary yaw=-0.2 armR=raise prop=phone"
+        ]
+      },
+      "beats": 5.75
+    },
+    {
+      "scene": "ins",
+      "view": "text-appraiser-ins",
+      "note": "จอมือถือรินข้อความจากผู้ประเมินคนก่อน ยางรถแบนสองคืนติด ลงท้ายอย่าเสียเวลากับบ้านนั้น ไฟฟ้าเช้า นิ้วค้าง",
+      "text": "เธอส่งข้อความหาผู้ประเมินคนก่อน คำตอบสั้นมาก\nยางรถเขาถูกเจาะสองคืนติด ก่อนจะถอนตัว",
+      "cues": [
+        [
+          0,
+          "cam"
+        ]
+      ],
+      "mood": 0.55,
+      "data": {},
+      "beats": 9.125
+    },
+    {
+      "scene": "living",
+      "view": "photo-take-ots",
+      "note": "เช้าในห้องนั่งเล่น ข้ามไหล่รินถือมือถือถ่ายรูปครอบครัวบนผนัง แดดเช้าเฉียงบนกระจก มือถือเห็นรอยตัดในจอ",
+      "text": "ก่อนไปโรงพัก เธอถ่ายรูปตัดขอบใบนั้นเก็บไว้\nใครบางคนตัดตัวเองออกจากครอบครัวนี้",
+      "mood": 0.5,
+      "data": {
+        "hud": "พฤหัส · 07:30",
+        "time": "morning",
+        "light": "morning",
+        "lightAt": [
+          210,
+          440
+        ],
+        "cam": [
+          1.8,
+          1.86,
+          1010,
+          470
+        ],
+        "cast": [
+          "rin@1194,840 h=412 back arm=r-raise prop=phone"
+        ]
+      },
+      "beats": 7.625
+    },
+    {
+      "chapter": "คนรับศพ",
+      "scene": "station",
+      "view": "wide",
+      "note": "เปิดฉากโรงพักกลางวัน โถงนีออนขาวเย็น แสงเท่าทั้งห้องแต่มาจากหลอดเพดานชัด บอร์ดคดีหลังโต๊ะ โต๊ะไม้กองแฟ้ม พัดลมตั้งโต๊ะ รินนั่งหน้าหมวดในเครื่องแบบ",
+      "text": "สภ.คลองหมอก แสงนีออนขาวเท่ากันทั้งห้อง\nหลังจากสามคืนในความมืด ที่นี่สว่างจนแสบตา",
+      "cues": [
+        [
+          0,
+          "neon"
+        ]
+      ],
+      "mood": 0.4,
+      "data": {
+        "hud": "พฤหัส · 09:20",
+        "light": "day",
+        "lightAt": [
+          800,
+          180
+        ],
+        "seat": true,
+        "cam": [
+          1,
+          1.04,
+          900,
+          540
+        ],
+        "behind": [
+          "wichai@889,754 h=363 sit acc=square-glasses tired yaw=0.1"
+        ],
+        "cast": [
+          "rin@1198,942 h=516 sit back"
+        ]
+      },
+      "beats": 11.25
+    },
+    {
+      "scene": "station",
+      "view": "rin-report-ots",
+      "note": "ข้ามไหล่หมวดมีบ่าเครื่องแบบเบลอ รินเอนมาข้างหน้า วางมือถือบนโต๊ะมีรูปแปลนในจอ แสงนีออนจากบน",
+      "text": "\"มีแม่กับลูกสองคนอยู่ในผนังบ้านเลขที่ห้าค่ะ\nอยู่มาเจ็ดเดือน เด็กเดินไม่ไหวแล้ว\"",
+      "who": "rin",
+      "voice": "lead_female",
+      "tone": "urgent, controlled",
+      "mood": 0.4,
+      "data": {
+        "light": "day",
+        "lightAt": [
+          800,
+          180
+        ],
+        "cam": [
+          2,
+          2.1,
+          914,
+          579
+        ],
+        "cast": [
+          "rin@1054,860 h=439 talk worried armR=offer prop=phone yaw=-0.2"
+        ],
+        "foreShoulder": "l",
+        "foreColor": "#8b7355",
+        "foreHair": "#1c202a"
+      },
+      "beats": 9.5
+    },
+    {
+      "scene": "station",
+      "view": "wichai-close",
+      "note": "close หมวดวิชัยแว่นกรอบดำ ไฝแก้มขวา ปากกาหมุนในมือ มองรินเหมือนเห็นคนนอนไม่พอ",
+      "text": "\"บ้านของคุณมานพ ที่ตกน้ำใช่ไหมครับ\nคดีนั้นผมปิดไปแล้ว อุบัติเหตุ\"",
+      "who": "wichai",
+      "voice": "officer",
+      "tone": "calm, official",
+      "mood": 0.4,
+      "data": {
+        "tag": {
+          "who": "wichai",
+          "name": "หมวดวิชัย",
+          "line": "ร้อยเวร สภ.คลองหมอก"
+        },
+        "light": "day",
+        "lightAt": [
+          800,
+          180
+        ],
+        "cam": [
+          3.8,
+          3.99,
+          962,
+          478
+        ],
+        "cast": [
+          "wichai@899,824 h=434 talk tired acc=square-glasses yaw=0.2"
+        ],
+        "shade": false
+      },
+      "beats": 7.75
+    },
+    {
+      "scene": "station",
+      "view": "rin-close",
+      "note": "close รินหน้าตึง ขยับมือถือเข้าไปอีกนิด แสงนีออนแบนทำให้หน้าเธอซีดกว่าเดิม",
+      "text": "\"ฉันไม่ได้มาแจ้งเรื่องคุณมานพ\nฉันเพิ่งคุยกับเมียเขาเมื่อคืนนี้\"",
+      "who": "rin",
+      "voice": "lead_female",
+      "tone": "firm",
+      "mood": 0.4,
+      "data": {
+        "light": "day",
+        "lightAt": [
+          800,
+          180
+        ],
+        "cam": [
+          3.36,
+          3.53,
+          1144,
+          525
+        ],
+        "cast": [
+          "rin@1215,916 h=491 talk angry yaw=-0.25"
+        ],
+        "shade": false
+      },
+      "beats": 6
+    },
+    {
+      "scene": "ins",
+      "view": "notebook-ins",
+      "note": "macro สมุดปกดำเปิดบนโต๊ะ มือหมวดพลิกหน้า ลายมือเรียบร้อย แฟ้มคดีปิด แสงนีออน",
+      "text": "\"ถ้าเขาสมัครใจซ่อนจากเจ้าหนี้ ก็ไม่ใช่ลักพาตัวนะครับ\nแล้วบ้านเป็นของธนาคาร ผมต้องเข้าให้ถูกต้อง\"",
+      "who": "wichai",
+      "voice": "officer",
+      "cues": [
+        [
+          0.2,
+          "flip"
+        ]
+      ],
+      "tone": "calm, official",
+      "mood": 0.4,
+      "data": {},
+      "beats": 10.75
+    },
+    {
+      "scene": "station",
+      "view": "rin-kids-close",
+      "note": "close รินกำขอบโต๊ะ เสียงต่ำลง ตาไม่ละจากหมวด",
+      "text": "\"มีเด็กนะคะ หมวด\"",
+      "who": "rin",
+      "voice": "lead_female",
+      "tone": "low, shaking",
+      "mood": 0.4,
+      "data": {
+        "light": "day",
+        "lightAt": [
+          800,
+          180
+        ],
+        "cam": [
+          4.03,
+          4.23,
+          1155,
+          519
+        ],
+        "cast": [
+          "rin@1215,916 h=491 talk sad yaw=-0.25"
+        ],
+        "shade": false
+      },
+      "beats": 3
+    },
+    {
+      "scene": "station",
+      "view": "wichai-med",
+      "note": "medium หมวดยกหูโทรศัพท์ตั้งโต๊ะ วางปากกา มองนาฬิกาบนผนัง สีหน้าไม่ได้ใจร้าย แค่ตามระเบียบ บอร์ดเบลอข้างหลัง",
+      "text": "\"ผมจดแล้ว พรุ่งนี้เก้าโมง ผมเข้าเองพร้อมคนของธนาคาร\nเดี๋ยวผมให้นายหน้าแจ้งช่างกุญแจกับคนดูแลบ้านไว้\"",
+      "who": "wichai",
+      "voice": "officer",
+      "tone": "calm, decided",
+      "mood": 0.4,
+      "data": {
+        "light": "day",
+        "lightAt": [
+          800,
+          180
+        ],
+        "cam": [
+          2.46,
+          2.59,
+          1048,
+          521
+        ],
+        "behind": [
+          "wichai@934,749 h=357 talk wary acc=square-glasses arm=r-phone prop=phone-ear look=0.3"
+        ],
+        "cast": []
+      },
+      "beats": 10.5
+    },
+    {
+      "scene": "ins",
+      "view": "notebook-name-ecu",
+      "note": "ECU หน้าสมุดปกดำจากมุมริน บรรทัด ผู้รับศพ นายเฉลิม น้องชาย เป็นตัวแดง ตราปิดคดี นิ้วหมวดเลื่อนผ่าน ไฟนีออนเท่ากันทั้งหน้า",
+      "text": "รินอ่านหนังสือกลับหัวเป็นอาชีพ\nผู้รับศพ {นายเฉลิม} น้องชายผู้ตาย",
+      "cues": [
+        [
+          0,
+          "hit"
+        ]
+      ],
+      "hold": 1,
+      "mood": 0.7,
+      "data": {},
+      "beats": 7.875
+    },
+    {
+      "scene": "station",
+      "view": "rin-ecu",
+      "note": "ECU ตารินหลุดจากหมวดไปค้างที่สมุด แสงนีออนในตาเป็นเส้นตรง ฉากโรงพักเบลอหมด",
+      "text": "คนที่ชงชาให้เธอ คนที่ถือปลายสายวัดให้เธอ\nเป็นน้องชายแท้ ๆ ของเจ้าของบ้าน",
+      "mood": 0.7,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          800,
+          180
+        ],
+        "cam": [
+          5.04,
+          5.29,
+          1167,
+          512
+        ],
+        "cast": [
+          "rin@1215,916 h=491 shock look=-0.5"
+        ],
+        "shade": false
+      },
+      "beats": 7.625
+    },
+    {
+      "scene": "ins",
+      "view": "meter-ins-thu",
+      "note": "กรอบเดิมของ meter-ins แสงบ่าย เลข 18,408 จานหมุน รินยืนบังแดดเงาทาบ",
+      "text": "บ่ายวันพฤหัส มิเตอร์อ่านได้ [18,408]\nเหลืออีกคืนเดียว",
+      "cues": [
+        [
+          0,
+          "day"
+        ],
+        [
+          0.3,
+          "meter"
+        ]
+      ],
+      "mood": 0.55,
+      "data": {
+        "hud": "พฤหัส · 15:00",
+        "meter": 18408
+      },
+      "beats": 6
+    },
+    {
+      "scene": "bedroom",
+      "view": "hatch-food-ins",
+      "note": "มือรินเลื่อนสลักช่องเล็กในตู้ ส่งกล่องข้าวกับน้ำเกลือแร่เข้าไป มือผอมของแพรรับจากข้างใน แสงบ่ายจากหน้าต่างห้องเฉียงเข้าตู้",
+      "text": "เธอเคาะสามที แล้วส่งข้าวกล่องกับน้ำเกลือแร่เข้าช่อง\nบอกว่าตำรวจจะมาเก้าโมงเช้าพรุ่งนี้",
+      "cues": [
+        [
+          0,
+          "knock3"
+        ],
+        [
+          1.4,
+          "hatch"
+        ]
+      ],
+      "mood": 0.55,
+      "data": {},
+      "beats": 7.5
+    },
+    {
+      "scene": "nim",
+      "view": "number-med",
+      "note": "ประตูบ้านป้านิ่มแสงบ่าย รินยัดกระดาษเบอร์โทรใส่มือป้าแล้วกำมือป้าไว้ ด้านหลังในห้องแมวดำนั่งหันหน้าเข้าผนังทั้งที่ยังไม่ค่ำ ป้าส่ายหน้า",
+      "text": "เธอแวะบ้านป้านิ่มก่อนเข้าไปที่นั่น\nยัดเบอร์หมวดวิชัยใส่มือป้า",
+      "mood": 0.5,
+      "data": {
+        "time": "sun",
+        "light": "day",
+        "lightAt": [
+          1400,
+          620
+        ],
+        "cat": [
+          1160,
+          720,
+          0.34
+        ],
+        "cam": [
+          1.2,
+          1.24,
+          700,
+          500
+        ],
+        "cast": [
+          "nim@606,930 h=453 worried yaw=0.3",
+          "rin@987,908 h=461 wary yaw=-0.3 armR=offer prop=paper"
+        ]
+      },
+      "beats": 7.375
+    },
+    {
+      "scene": "nim",
+      "view": "rin-nim-close",
+      "note": "close รินก้มลงมองตาป้า พูดช้าชัด หนึ่งนิ้วชี้ไปทางผนังเขียวที่เบลอข้างหลัง",
+      "text": "\"ถ้าได้ยินเคาะ[สามที]จากผนังนั้น ไม่ใช่ผีนะคะป้า\nเคาะตอบ แล้วโทรเบอร์นี้\"",
+      "who": "rin",
+      "voice": "lead_female",
+      "tone": "slow, clear",
+      "mood": 0.55,
+      "data": {
+        "time": "sun",
+        "light": "day",
+        "lightAt": [
+          1400,
+          620
+        ],
+        "cam": [
+          3.42,
+          3.59,
+          984,
+          545
+        ],
+        "cast": [
+          "rin@1054,930 h=483 talk wary armR=point yaw=-0.2"
+        ]
+      },
+      "beats": 7.5
+    },
+    {
+      "scene": "nim",
+      "view": "nim-afraid-close",
+      "note": "close ป้านิ่มเม้มปาก มองกระดาษในมือตัวเอง ไม่พยักหน้า ไม่ส่ายหน้า แดดด้านเดียว",
+      "text": "\"ป้าไม่กล้าหรอกหนู\"",
+      "who": "nim",
+      "voice": "old_female",
+      "tone": "trembling, small",
+      "mood": 0.55,
+      "data": {
+        "time": "sun",
+        "light": "day",
+        "lightAt": [
+          1400,
+          620
+        ],
+        "cam": [
+          3.73,
+          3.92,
+          781,
+          567
+        ],
+        "cast": [
+          "nim@717,919 h=442 talk scared armR=chest yaw=-0.2"
+        ]
+      },
+      "beats": 2.625
+    },
+    {
+      "scene": "yard",
+      "view": "pier-confront-wide",
+      "note": "หลังบ้านแสงบ่ายแก่ เฉลิมนั่งยองซ่อมเชือกเรือบนท่าน้ำ หันหลังให้กล้อง รินยืนห่างที่ลานปูน กำแฟ้มไว้ เงาทั้งสองยาวไปทางคลอง",
+      "text": "เธอพบเฉลิมที่ท่าน้ำ ไม่ได้เข้าไปใกล้กว่าลานปูน\nและเปิดหน้าจอโทรหาหมวดค้างไว้ในกระเป๋า",
+      "cues": [
+        [
+          0,
+          "canal"
+        ]
+      ],
+      "mood": 0.6,
+      "data": {
+        "hud": "พฤหัส · 16:10",
+        "tone": "dusk",
+        "light": "dusk",
+        "lightAt": [
+          1500,
+          330
+        ],
+        "cam": [
+          1,
+          1.05,
+          960,
+          540
+        ],
+        "cast": [
+          "chaloem2@900,720 h=388 crouch tired",
+          "rin@340,860 h=454 yaw=0.35 armR=chest prop=book wary"
+        ]
+      },
+      "beats": 8.25
+    },
+    {
+      "scene": "yard",
+      "view": "rin-ask-ots",
+      "note": "ข้ามไหล่เฉลิมเล็กน้อย แดดเย็นทางซ้าย รินยืนสูงกว่า ตามองตรงเป็นครั้งแรก ไม่ยิ้ม",
+      "text": "\"ทำไมไม่บอกว่าเป็นน้องชายคุณมานพคะ\"",
+      "who": "rin",
+      "voice": "lead_female",
+      "tone": "cold, even",
+      "mood": 0.55,
+      "data": {
+        "tone": "dusk",
+        "light": "dusk",
+        "lightAt": [
+          1500,
+          330
+        ],
+        "cam": [
+          1.53,
+          1.6,
+          803,
+          581
+        ],
+        "cast": [
+          "rin@620,950 h=576 talk angry yaw=0.3 armR=chest prop=book"
+        ],
+        "foreShoulder": "r",
+        "foreColor": "#36494e",
+        "foreHair": "#25212b"
+      },
+      "beats": 3.75
+    },
+    {
+      "scene": "yard",
+      "view": "chaloem-still-close",
+      "note": "close เฉลิมหยุดมือ ไม่หันทันที เหงื่อที่ขมับ น้ำคลองสะท้อนแสงขึ้นใต้คาง",
+      "text": "มือที่ผูกเชือกหยุด เขาไม่หันมาอยู่นาน",
+      "hold": 0.5,
+      "mood": 0.7,
+      "data": {
+        "tone": "dusk",
+        "light": "dusk",
+        "lightAt": [
+          1500,
+          330
+        ],
+        "cam": [
+          3.24,
+          3.4,
+          926,
+          494
+        ],
+        "cast": [
+          "chaloem@1000,900 h=510 tired yaw=-0.3 look=-0.5"
+        ],
+        "key": "255,170,110",
+        "shade": "l"
+      },
+      "beats": 5.125
+    },
+    {
+      "scene": "yard",
+      "view": "chaloem-tear-close",
+      "note": "close เฉลิมหันมา น้ำตาคลอใต้แว่น ปากสั่น นิ้วโป้งไม่ได้ถูกุญแจ มือตกข้างตัว",
+      "text": "\"ผมอายครับ ผมเป็นหนี้ธวัช พี่เซ็นค้ำให้ผม\nบ้านพี่พังเพราะผมคนเดียว\"",
+      "who": "chaloem",
+      "voice": "father",
+      "tone": "broken, warm",
+      "mood": 0.65,
+      "data": {
+        "tone": "dusk",
+        "light": "dusk",
+        "lightAt": [
+          1500,
+          330
+        ],
+        "cam": [
+          3.24,
+          3.4,
+          926,
+          494
+        ],
+        "cast": [
+          "chaloem@1000,900 h=510 talk cry yaw=-0.1"
+        ],
+        "key": "255,170,110",
+        "shade": "l"
+      },
+      "beats": 6.5
+    },
+    {
+      "scene": "ins",
+      "view": "hand-eye-ins",
+      "note": "มือขวาเฉลิมยกปาดน้ำตา นิ้วก้อยสั้นชัดเต็มเฟรม หน้าเขาเบลออยู่ข้างหลังในแสงเย็น หยดน้ำตาบนแก้ม",
+      "text": "\"ผมเลยมาเฝ้าบ้านเขา ไม่มีใครเฝ้าแล้ว\nอย่างน้อยก็ได้จ่ายค่าไฟให้\"",
+      "who": "chaloem",
+      "voice": "father",
+      "tone": "broken, quiet",
+      "mood": 0.6,
+      "data": {},
+      "beats": 6.375
+    },
+    {
+      "scene": "past",
+      "view": "pier-false-wide",
+      "note": "อดีตซีดอุ่นตามคำเล่าของเฉลิม ท่าน้ำกลางคืน เงาดำคนรองเท้าหนังยืนชิดมานพที่ขอบท่า แขนยื่นออก มานพเอนหลังลงน้ำ ภาพจากฝั่ง (กรอบนี้จะถูก mirror ตอนเฉลยจริง)",
+      "text": "\"คืนนั้นผมมาถึงช้าไป เห็นคนรองเท้าหนังยืนตรงนี้\nแล้วพี่ผมก็อยู่ในน้ำแล้ว ผมไม่กล้าบอกตำรวจ\"",
+      "who": "chaloem",
+      "voice": "father",
+      "cues": [
+        [
+          1.2,
+          "splash"
+        ]
+      ],
+      "tone": "whispers, shaking",
+      "mood": 0.75,
+      "data": {
+        "hud": "คำบอกเล่าของเฉลิม",
+        "past": true,
+        "mirror": "pier",
+        "light": "lamp",
+        "lightAt": [
+          1490,
+          100
+        ],
+        "cam": [
+          1.9,
+          1.95,
+          1120,
+          470
+        ],
+        "cast": [
+          "manop@1040,590 h=266 shock"
+        ],
+        "sil": [
+          "hunter-sil@1190,600 h=275 armL=reach"
+        ]
+      },
+      "beats": 8.375
+    },
+    {
+      "scene": "yard",
+      "view": "rin-believe-close",
+      "note": "close รินหน้าอ่อนลงเล็กน้อย ลดแฟ้มลง แสงเย็นจับข้างตา เธอกำลังจะเชื่อ",
+      "text": "เรื่องที่เขาเล่า ลงกับทุกอย่างที่เธอเห็น\nรองเท้าหนัง รูปในมือถือ และคนที่เขย่าโซ่ทุกคืน",
+      "mood": 0.55,
+      "data": {
+        "tone": "dusk",
+        "light": "dusk",
+        "lightAt": [
+          1500,
+          330
+        ],
+        "cam": [
+          3.07,
+          3.22,
+          698,
+          502
+        ],
+        "cast": [
+          "rin@620,930 h=538 sad armR=lap prop=book yaw=0.25"
+        ],
+        "key": "255,170,110"
+      },
+      "beats": 10.375
+    },
+    {
+      "scene": "yard",
+      "view": "chaloem-next-med",
+      "note": "medium เฉลิมลุกขึ้นปัดกางเกง ยิ้มซีด ๆ หันไปทางบ้าน บู๊ตเขียวจมโคลนริมตลิ่ง",
+      "text": "\"พรุ่งนี้หมวดจะเข้ามาเก้าโมงใช่ไหมครับ\nนายหน้าโทรบอกผมแล้ว ผมจะเตรียมกุญแจไว้ให้\"",
+      "who": "chaloem",
+      "voice": "father",
+      "tone": "warm, tired",
+      "mood": 0.65,
+      "data": {
+        "tone": "dusk",
+        "light": "dusk",
+        "lightAt": [
+          1500,
+          330
+        ],
+        "cam": [
+          1.82,
+          1.91,
+          866,
+          551
+        ],
+        "cast": [
+          "chaloem@1020,860 h=483 talk tired yaw=-0.35 armR=hold"
+        ]
+      },
+      "beats": 6.875
+    },
+    {
+      "scene": "ins",
+      "view": "boots-mud-low",
+      "note": "มุมพื้นกรอบเดียวกับ boots-low บู๊ตเขียวเดินผ่านกล้องทิ้งรอยโคลน แสงเย็นแทนแดด",
+      "text": "เธอมองรอยโคลนจากบู๊ตคู่นั้น\nแล้วถามตัวเองว่า ธวัชฆ่ามานพจริงหรือเปล่า",
+      "mood": 0.65,
+      "data": {},
+      "beats": 7
+    },
+    {
+      "chapter": "ชาแก้วที่สอง",
+      "scene": "kitchen",
+      "view": "tea2-wide",
+      "note": "mirror ของ tea-wide ครัวตอนค่ำ แสงส้มหายไป เหลือตะเกียงแบตเตอรี่บนโต๊ะ เฉลิมเทชาจากกระติกลงแก้วเดียวกัน รินนั่งเก้าอี้เดิม กอดสมุดไว้",
+      "text": "ค่ำนั้น เฉลิมชงชาให้เธอเหมือนทุกวัน",
+      "cues": [
+        [
+          0.2,
+          "tea"
+        ]
+      ],
+      "mood": 0.45,
+      "data": {
+        "hud": "พฤหัส · 19:30",
+        "mirror": "tea",
+        "time": "night",
+        "lampOn": true,
+        "lightAt": [
+          1060,
+          560
+        ],
+        "seat": true,
+        "light": "lamp",
+        "tea": [
+          0.5,
+          0.6
+        ],
+        "cam": [
+          1,
+          1.05,
+          960,
+          560
+        ],
+        "cast": [
+          "chaloem@639,862 h=453 yaw=0.4 armR=hold prop=bottle tired",
+          "rin@1223,914 h=477 sit yaw=-0.4 armR=chest prop=book wary"
+        ]
+      },
+      "beats": 4
+    },
+    {
+      "scene": "ins",
+      "view": "tea2-ins",
+      "note": "mirror กรอบเดียวกับ tea-ins มือขวาเฉลิมวางแก้วชา เงาตะเกียงแทนแสงส้ม นิ้วก้อยสั้นเห็นชัด",
+      "text": "เธอรับแก้วมา แต่ไม่ได้ดื่ม",
+      "mood": 0.5,
+      "data": {
+        "mirror": "tea"
+      },
+      "beats": 3.875
+    },
+    {
+      "scene": "kitchen",
+      "view": "chaloem-tea-close",
+      "note": "close เฉลิมยิ้มเหนื่อย หลังแก้วชา แสงตะเกียงจากล่าง ดูเหมือนคนใจดีที่สุดในอำเภอ",
+      "text": "\"คืนนี้กลับเร็วเถอะครับ พรุ่งนี้หมวดก็มาแล้ว\"",
+      "who": "chaloem",
+      "voice": "father",
+      "tone": "warm, gentle",
+      "mood": 0.55,
+      "data": {
+        "time": "night",
+        "lampOn": true,
+        "lightAt": [
+          1060,
+          560
+        ],
+        "light": "lamp",
+        "cam": [
+          3.26,
+          3.42,
+          881,
+          511
+        ],
+        "cast": [
+          "chaloem@807,914 h=506 talk happy armR=hold prop=glass yaw=0.25"
+        ],
+        "key": "255,226,170"
+      },
+      "beats": 4
+    },
+    {
+      "scene": "kitchen",
+      "view": "chaloem-slip-ecu",
+      "note": "ECU ปากเฉลิมยิ้มพูดสบาย ๆ ขณะก้มปิดฝากระติก แก้มในแสงตะเกียง ไม่รู้ตัว",
+      "text": "\"ถ้าได้ยินเสียงเคาะ{สองทีสองที}ก็อย่าตกใจ ท่อมันเก่า\"",
+      "who": "chaloem",
+      "voice": "father",
+      "style": "red",
+      "cues": [
+        [
+          0,
+          "hit"
+        ]
+      ],
+      "hold": 1,
+      "tone": "warm, casual",
+      "mood": 0.9,
+      "data": {
+        "time": "night",
+        "lampOn": true,
+        "lightAt": [
+          1060,
+          560
+        ],
+        "light": "noir",
+        "cam": [
+          4.89,
+          5.14,
+          856,
+          498
+        ],
+        "cast": [
+          "chaloem@807,914 h=506 talk happy yaw=0.15 look=-0.5"
+        ],
+        "key": "255,226,170"
+      },
+      "beats": 6.125
+    },
+    {
+      "scene": "kitchen",
+      "view": "rin-still-close",
+      "note": "close รินไม่ขยับ แก้วชาค้างกลางอากาศ ตาต่ำลงมองชา คลื่นในแก้วสั่นเล็กน้อย",
+      "text": "",
+      "hush": true,
+      "vo": "",
+      "mood": 0.9,
+      "data": {
+        "time": "night",
+        "lampOn": true,
+        "lightAt": [
+          1060,
+          560
+        ],
+        "seat": true,
+        "light": "noir",
+        "cam": [
+          2.9,
+          2.96,
+          1014,
+          622
+        ],
+        "cast": [
+          "rin@1094,925 h=488 sit worried armR=hold prop=glass look=-0.5 head=6"
+        ],
+        "key": "255,226,170"
+      },
+      "beats": 2.5
+    },
+    {
+      "scene": "ins",
+      "view": "note-22-mirror-ins",
+      "note": "กรอบเดิมของ note-22-ins สมุดวัดลายมือ 22:00 / 2+2 ขีดเส้นใต้ แสงตะเกียงแทนไฟฉาย",
+      "text": "เธอบอกเขาแค่ว่าได้ยินเสียงเคาะ\nเลขสองทีสองที อยู่ในสมุดเล่มนี้เล่มเดียว",
+      "mood": 0.85,
+      "data": {},
+      "beats": 8.375
+    },
+    {
+      "scene": "nim",
+      "view": "nim-mirror-close",
+      "note": "แทรกสั้น ป้านิ่มจากฉาก nim-tear-close แสงส้มเดิม ปากปิด หลบตา",
+      "text": "กับป้านิ่ม ที่เจ็ดเดือนมานี้ ไม่กล้าบอกใครเลย",
+      "mood": 0.8,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          840,
+          300
+        ],
+        "cam": [
+          3.64,
+          3.82,
+          707,
+          569
+        ],
+        "cast": [
+          "nim@641,930 h=453 cry head=4"
+        ],
+        "key": "255,170,90"
+      },
+      "beats": 4.25
+    },
+    {
+      "scene": "kitchen",
+      "view": "tap-dutch",
+      "note": "กล้องเอียงเล็กน้อย ก๊อกแห้งเดิมในแสงตะเกียง ท่อเหล็กวิ่งเข้าผนังคนละฝั่งกับห้องนอนเล็กโดยสิ้นเชิง",
+      "text": "และน้ำบ้านนี้ถูกตัดมาเจ็ดเดือน\nท่อเปล่าที่ไม่มีน้ำไหล เคาะเองไม่ได้",
+      "mood": 0.85,
+      "data": {},
+      "beats": 7.75
+    },
+    {
+      "scene": "ins",
+      "view": "receipt-ecu",
+      "note": "ECU ใบเสร็จค่าไฟโผล่จากกระเป๋าเสื้อเฉลิมขณะก้มเก็บกระติก ที่อยู่บ้านเลขที่ 5 วันที่อาทิตย์ก่อน กระดาษยับ",
+      "text": "ในกระเป๋าเสื้อเขามีใบเสร็จค่าไฟอาทิตย์ก่อน\nบ้านที่ปิดเมนแล้ว เขาจ่ายค่าไฟให้ใคร",
+      "mood": 0.75,
+      "data": {},
+      "beats": 7.375
+    },
+    {
+      "scene": "kitchen",
+      "view": "rin-calm-dutch",
+      "note": "กล้องเอียงทางเดิม รินยิ้มนิดเดียววางแก้วเต็มลงบนโต๊ะ มือไม่สั่นแล้ว เธอลุกขึ้น แสงตะเกียงด้านเดียว",
+      "text": "\"ค่ะ งั้นฉันกลับก่อนนะคะ\"",
+      "who": "rin",
+      "voice": "lead_female",
+      "tone": "light, too even",
+      "mood": 0.8,
+      "data": {
+        "time": "night",
+        "lampOn": true,
+        "lightAt": [
+          1060,
+          560
+        ],
+        "light": "noir",
+        "tilt": -6,
+        "cam": [
+          1.96,
+          2.05,
+          1269,
+          598
+        ],
+        "cast": [
+          "rin@1126,886 h=450 talk happy armR=hold"
+        ],
+        "key": "255,226,170"
+      },
+      "beats": 3.375
+    },
+    {
+      "scene": "car",
+      "view": "rin-call-close",
+      "note": "close รินในรถล็อกประตู มือถือแนบหู ไฟถนนส้มครึ่งหน้า ตาจับบ้านเลขที่ห้า (เสียงในสาย รินไม่ขยับปาก)",
+      "text": "\"ผมอยู่ถนนสิบเอ็ด รถชนกันอยู่ อีกชั่วโมงผมเข้าไป\nคุณอยู่ในรถ ห้ามเข้าบ้านคนเดียวเด็ดขาด\"",
+      "who": "wichai",
+      "voice": "officer",
+      "cues": [
+        [
+          0,
+          "night"
+        ]
+      ],
+      "fx": "phone",
+      "tone": "firm, hurried",
+      "mood": 0.75,
+      "data": {
+        "hud": "พฤหัส · 21:40",
+        "tone": "night",
+        "light": "lamp",
+        "lightAt": [
+          420,
+          300
+        ],
+        "key": "255,176,96",
+        "shade": "r",
+        "cam": [
+          2,
+          2.1,
+          840,
+          430
+        ],
+        "cast": [
+          "rin@740 wary arm=r-phone prop=phone-ear look=0.3"
+        ]
+      },
+      "beats": 7.25
+    },
+    {
+      "scene": "car",
+      "view": "phone-glow-ecu",
+      "note": "ECU จอมือถือในรถขึ้นภาพมุมสูงจากในตู้ เห็นช่องเล็กกับสลัก ขาวดำเม็ดหยาบ ไฟเขียวจิ๋ว นาฬิกาเดินเข้า 21:59",
+      "text": "เธอเปิดกล้องตัวในตู้ แล้วรอให้ถึงสี่ทุ่ม",
+      "cues": [
+        [
+          0,
+          "tick"
+        ]
+      ],
+      "mood": 0.85,
+      "data": {},
+      "beats": 4.25
+    },
+    {
+      "scene": "cctv",
+      "view": "hatch-cctv-reveal",
+      "note": "MIRROR ของ key-ots กรอบเดิม มือขวาเข้าเฟรมจากขวาเหมือนช็อตยื่นกุญแจ ภาพกล้องขาวดำในตู้มืดที่สุดของเรื่อง นิ้วก้อยสั้นหนึ่งข้อเลื่อนสลักช่องส่งของ ถุงข้าวหนังยางแดงในมือ",
+      "text": "มือนี้เธอเห็นมาแล้วตั้งแต่วันแรก",
+      "cues": [
+        [
+          0,
+          "bighit"
+        ],
+        [
+          0.9,
+          "knock22"
+        ]
+      ],
+      "hold": 3,
+      "voLead": 0.6,
+      "mood": 1,
+      "data": {
+        "mirror": "key"
+      },
+      "beats": 6.75
+    },
+    {
+      "scene": "ins",
+      "view": "twist-card-ecu",
+      "note": "ECU นิ้วก้อยขวาสั้นบนบานช่องส่งของ ขยายเม็ดภาพหยาบ เสียงเคาะยังก้อง",
+      "text": "มือที่ส่งข้าวมาเจ็ดเดือน คือมือที่{ยื่นกุญแจ}ให้เธอ\nคนเดียวกับที่ช่วยเธอทุกอย่าง",
+      "style": "red",
+      "hold": 1,
+      "mood": 1,
+      "data": {},
+      "beats": 7.75
+    },
+    {
+      "scene": "ins",
+      "view": "rice-mirror-ins",
+      "note": "กรอบเดียวกับ rice-ins แต่บนฝ่ามือในตู้ ถุงข้าวเซ่นผูกหนังยางแดง ควันธูปยังติดกลิ่นในแสงเขียว",
+      "text": "ถุงข้าวที่ป้านิ่มเซ่นให้ผีทุกเย็น เขาเก็บจากศาล\nแล้วเอามาป้อนลูกของพี่ชาย",
+      "mood": 0.85,
+      "data": {
+        "mirror": "rice"
+      },
+      "beats": 6.875
+    },
+    {
+      "scene": "past",
+      "view": "pier-true-wide",
+      "note": "MIRROR ของ pier-false-wide กรอบเดิมเป๊ะ ท่าน้ำกลางคืน แต่คนที่ยืนชิดมานพสวมบู๊ตเขียว แว่นเหลี่ยม สองมือยื่นออก มานพกอดซองเงินไว้กับอก เอนลงน้ำ",
+      "text": "คืนนั้นไม่มีรองเท้าหนังอยู่บนท่าน้ำ\nมีแค่พี่น้องสองคน กับซองเงินก้อนสุดท้าย",
+      "cues": [
+        [
+          0.4,
+          "whoosh"
+        ]
+      ],
+      "mood": 0.9,
+      "data": {
+        "hud": "เจ็ดเดือนก่อน · คืนจริง",
+        "past": true,
+        "mirror": "pier",
+        "light": "lamp",
+        "lightAt": [
+          1490,
+          100
+        ],
+        "cam": [
+          1.9,
+          1.95,
+          1120,
+          470
+        ],
+        "cast": [
+          "manop@1040,590 h=266 shock armR=chest prop=paper",
+          "chaloem@1190,600 h=272 angry armL=reach armR=reach yaw=-0.4"
+        ]
+      },
+      "beats": 7.75
+    },
+    {
+      "scene": "past",
+      "view": "pier-push-close",
+      "note": "อดีตกรอบแคบ มือสองมือที่นิ้วก้อยขวาสั้นผลักอกมานพ ซองเงินร่วงจากมือลงน้ำ น้ำสาด หน้ามานพไม่โกรธ แค่ตกใจ",
+      "text": "เงินนั้นมานพเก็บไว้พาลูกเมียหนี\nเฉลิมขอไปจ่ายหนี้ตัวเอง",
+      "cues": [
+        [
+          0.1,
+          "splash"
+        ]
+      ],
+      "mood": 0.9,
+      "data": {
+        "past": true
+      },
+      "beats": 5.625
+    },
+    {
+      "scene": "past",
+      "view": "chaloem-alone-high",
+      "note": "อดีต ภาพกว้าง เฉลิมตัวเล็กยืนหันหลังคนเดียวบนท่าน้ำ น้ำนิ่งแล้ว ฟ้าคืนจันทร์ ฝั่งตรงข้ามมืด",
+      "text": "เฉลิม{ผลัก}พี่ชายตกท่าน้ำเพราะพี่ไม่ให้เงินก้อนสุดท้าย\nแล้วไม่กล้าเปิดห้องที่พี่ซ่อนลูกไว้",
+      "hold": 0.5,
+      "mood": 0.8,
+      "data": {
+        "past": true,
+        "light": "night",
+        "lightAt": [
+          1490,
+          100
+        ],
+        "cam": [
+          0.96,
+          0.98,
+          980,
+          480
+        ],
+        "cast": [
+          "chaloem@1200,560 h=223 back"
+        ]
+      },
+      "beats": 10.5
+    },
+    {
+      "scene": "past",
+      "view": "tire-ins",
+      "note": "อดีตกรอบแคบกลางคืน ล้อรถเก๋งแบนหน้ารั้ว บู๊ตเขียวยืนข้างล้อ มือขวานิ้วก้อยสั้นถือเหล็กแหลม ไฟถนนซีดจากไกล",
+      "text": "ยางรถของผู้ประเมินสองคนก่อนหน้าก็ฝีมือเขา\nบ้านที่ขายได้ คือผนังที่จะถูกทุบ",
+      "mood": 0.75,
+      "data": {
+        "hud": "สามเดือนก่อน",
+        "past": true
+      },
+      "beats": 8.25
+    },
+    {
+      "scene": "cctv",
+      "view": "cover-cctv",
+      "note": "ภาพจากกล้องในตู้ เฉลิมเงยหน้าขึ้นมาตรงเลนส์เป็นครั้งแรก แว่นสะท้อนไฟเขียว มองนาน แล้วฝ่ามือเข้ามาปิดกล้อง จอดำ",
+      "text": "ในจอมือถือ มือนั้นยังไม่ไป เขาเงยหน้าขึ้นมา\nแล้วฝ่ามือก็ปิดเลนส์ จอดำ",
+      "cues": [
+        [
+          0.4,
+          "cam"
+        ]
+      ],
+      "hold": 0.5,
+      "mood": 0.95,
+      "data": {},
+      "beats": 10.125
+    },
+    {
+      "scene": "ext",
+      "view": "windows-off-fif",
+      "note": "กรอบเดียวกับ windows-fif ตอนเปิดเรื่อง เส้นแสงเหลืองบนบานที่ห้าหรี่แล้วดับต่อหน้าต่อตา บ้านดำทั้งหลัง ไม่เหลือจุดสว่าง",
+      "text": "",
+      "cues": [
+        [
+          0.4,
+          "breaker"
+        ]
+      ],
+      "hush": true,
+      "vo": "",
+      "mood": 0.95,
+      "data": {
+        "mirror": "coldopen",
+        "tone": "night",
+        "light": "night",
+        "lightAt": [
+          -120,
+          520
+        ],
+        "five": "off",
+        "cam": [
+          1,
+          1.04,
+          930,
+          560
+        ],
+        "cast": []
+      },
+      "beats": 2.75
+    },
+    {
+      "scene": "ext",
+      "view": "window5-dark-ecu",
+      "note": "ECU บานที่ห้าไม่มีแสงแล้ว ไม้สีดำบนดำ เห็นแค่ขอบตะปูจากไฟถนนไกล ๆ",
+      "text": "แสงที่ไม่เคยดับมาเจ็ดเดือน {ดับ}\nพร้อมพัดลมตัวเดียวในห้องปิดตาย",
+      "cues": [
+        [
+          0,
+          "fanoff"
+        ]
+      ],
+      "mood": 0.92,
+      "data": {},
+      "beats": 7.875
+    },
+    {
+      "scene": "car",
+      "view": "rin-decide-low",
+      "note": "มุมต่ำจากคอนโซล รินเปิดประตูรถ มือถือแนบหูพูดเร็ว กำลิ่มไม้กับไฟฉาย หน้าแน่วแน่ ไฟเพดานรถขึ้น",
+      "text": "เขาไม่กล้าฆ่าใครด้วยมือ เขาแค่{ปิดสวิตช์}\nรินโทรบอกหมวดว่าเข้าไปแล้ว ต้นรอไม่ไหว",
+      "mood": 0.85,
+      "data": {
+        "motion": "fx",
+        "tone": "night",
+        "roof": true,
+        "light": "lamp",
+        "lightAt": [
+          740,
+          120
+        ],
+        "cam": [
+          1.4,
+          1.52,
+          740,
+          600
+        ],
+        "cast": [
+          "rin@740 angry yaw=0.2 arm=r-phone prop=phone-ear"
+        ]
+      },
+      "beats": 9.125
+    },
+    {
+      "scene": "room5",
+      "view": "lantern-close",
+      "note": "ห้องมืด ตะเกียงแบตเตอรี่ดวงเล็กในมือนภา หน้าต้นเหงื่อท่วมอ้าปากหายใจ แพรเอาสมุดพัดให้ พัดลมนิ่ง รินเข้ามาในกรอบแผ่นไม้ ลิ่มอยู่ใต้บาน",
+      "text": "ในห้อง ร้อนจนหายใจไม่เต็มปอด ต้นตัวเปียก\nเธอยกต้นขึ้นพาดไหล่ แล้วหันกลับไปทางประตู",
+      "cues": [
+        [
+          0.3,
+          "step"
+        ]
+      ],
+      "mood": 0.9,
+      "data": {
+        "hud": "พฤหัส · 22:18",
+        "mode": "lamp",
+        "lamp": [
+          760,
+          700
+        ],
+        "light": "dark",
+        "lightAt": [
+          760,
+          700
+        ],
+        "cam": [
+          1,
+          1.05,
+          960,
+          560
+        ],
+        "cast": [
+          "prae@797,814 h=406 crouch scared",
+          "ton@953,788 h=297 lie tired",
+          "rin@1128,880 h=482 worried yaw=-0.3"
+        ],
+        "lampHeld": [
+          760,
+          700
+        ]
+      },
+      "beats": 9.375
+    },
+    {
+      "scene": "ins",
+      "view": "wedge-boot-low",
+      "note": "มุมพื้นกรอบเดียวกับ boots-low บู๊ตยางเขียวเข้าเฟรมจากขวาในตู้มืด ปลายเท้าเตะลิ่มไม้กระเด็น แสงตะเกียงลอดเป็นเส้นจากในห้อง",
+      "text": "เธอเห็นบู๊ตเขียวก่อนได้ยินเสียง",
+      "cues": [
+        [
+          0.2,
+          "scrape"
+        ]
+      ],
+      "mood": 0.95,
+      "data": {},
+      "beats": 2.75
+    },
+    {
+      "scene": "room5",
+      "view": "trap-dark-ew",
+      "note": "เฟรมมืดที่สุดในเรื่อง แผ่นไม้ปิดกระแทก เหลือตะเกียงดวงเดียวแสงเล็ก ๆ สี่คนเบียดกันในมุม กำแพงกลืนหมด เสียงสลักดังสนิท",
+      "text": "ห้องนี้เปิดได้{จากข้างนอกเท่านั้น}",
+      "style": "red",
+      "cues": [
+        [
+          0,
+          "latchshut"
+        ]
+      ],
+      "hold": 2,
+      "voLead": 0.5,
+      "mood": 1,
+      "data": {
+        "mode": "lamp",
+        "lamp": [
+          860,
+          680
+        ],
+        "light": "noir",
+        "lightAt": [
+          860,
+          680
+        ],
+        "cam": [
+          0.96,
+          1.01,
+          960,
+          520
+        ],
+        "cast": [
+          "ton@1017,814 h=317 lie tired",
+          "prae@876,837 h=428 crouch scared",
+          "rin@1142,862 h=464 shock yaw=-0.2",
+          "napa@734,822 h=418 crouch scared"
+        ],
+        "lampHeld": [
+          860,
+          680
+        ],
+        "rim": "red"
+      },
+      "beats": 6.5
+    },
+    {
+      "chapter": "ผนังซ้าย",
+      "scene": "room5",
+      "view": "hatch-mouth-ecu",
+      "note": "ECU บานช่องส่งของแง้มกว้างเท่าปากถุง แสงเล็กลอด เห็นแค่แก้มกับแว่นเฉลิมนั่งอยู่อีกฝั่งบนพื้นตู้ (ภาพจากในห้อง)",
+      "text": "\"ผมไม่ได้อยากทำอะไรใครเลยนะครับ\nผมแค่ไม่รู้จะเปิดยังไง\"",
+      "who": "chaloem",
+      "voice": "father",
+      "tone": "whispers, broken",
+      "voLead": 0.4,
+      "mood": 0.9,
+      "data": {
+        "mode": "lamp",
+        "light": "noir",
+        "cast": []
+      },
+      "beats": 5.5
+    },
+    {
+      "scene": "room5",
+      "view": "prae-turn-close",
+      "note": "close แพรหันมาทางช่องช้า ๆ แสงตะเกียงขึ้นใต้คาง จำเสียงได้ หน้าไม่ได้โกรธ ยังไม่เชื่อ",
+      "text": "แพรไม่เคยได้ยินคนส่งข้าวพูดมาก่อน แต่เสียงนี้เธอรู้จัก",
+      "mood": 0.8,
+      "data": {
+        "mode": "lamp",
+        "lamp": [
+          868,
+          773
+        ],
+        "light": "noir",
+        "lightAt": [
+          868,
+          773
+        ],
+        "cam": [
+          3.72,
+          3.9,
+          973,
+          499
+        ],
+        "cast": [
+          "prae@908,853 h=444 wary yaw=-0.25 look=-0.6"
+        ],
+        "shade": false
+      },
+      "beats": 5.875
+    },
+    {
+      "scene": "ins",
+      "view": "full-photo-ecu",
+      "note": "MIRROR ของ photo-ecu รูปเต็มที่หัวฟูกในแสงตะเกียง มือแพรยกออกจากผนัง คนที่รูปตัดไปคือเฉลิมวัยหนุ่มกว่า ยิ้มกว้าง มือขวานิ้วก้อยสั้นวางบนไหล่มานพ",
+      "text": "รูปครอบครัวใบเต็มที่หัวฟูก มือบนไหล่พ่อ\nคือมือของเขาเอง มือที่ผลักพี่ชายคืนนั้น",
+      "cues": [
+        [
+          0,
+          "hit"
+        ]
+      ],
+      "hold": 1,
+      "mood": 0.9,
+      "data": {
+        "mirror": "photo"
+      },
+      "beats": 9.625
+    },
+    {
+      "scene": "room5",
+      "view": "prae-hatch-low",
+      "note": "มุมต่ำจากพื้นข้างช่องส่งของ แพรคุกเข่าตรงหน้าช่อง ถือรูปไว้ สายตามองลงช่อง เงาใหญ่บนผนังด้านหลังจากตะเกียง",
+      "text": "\"อาเฉลิม\"",
+      "who": "prae",
+      "voice": "young_female",
+      "tone": "small, flat",
+      "voLead": 0.4,
+      "mood": 0.9,
+      "data": {
+        "mode": "lamp",
+        "lamp": [
+          1025,
+          870
+        ],
+        "light": "noir",
+        "lightAt": [
+          1025,
+          870
+        ],
+        "cam": [
+          1,
+          1.04,
+          905,
+          770
+        ],
+        "cast": [
+          "prae@865,1030 h=618 crouch talk sad look=-0.5"
+        ]
+      },
+      "beats": 3.125
+    },
+    {
+      "scene": "room5",
+      "view": "prae-line-close",
+      "note": "close แพรน้ำตาไม่ไหล เสียงเบา แสงตะเกียงด้านเดียว จ้องตรงเข้ากล้องผ่านช่องไม้",
+      "text": "\"อาให้ข้าวหนูทุกวัน แต่ไม่เคยเปิดประตูสักครั้ง\"",
+      "who": "prae",
+      "voice": "young_female",
+      "hold": 1,
+      "tone": "quiet, steady, tears held",
+      "mood": 0.95,
+      "data": {
+        "mode": "lamp",
+        "lamp": [
+          1088,
+          662
+        ],
+        "light": "noir",
+        "lightAt": [
+          1088,
+          662
+        ],
+        "cam": [
+          4.2,
+          4.41,
+          965,
+          497
+        ],
+        "cast": [
+          "prae@908,862 h=452 talk sad"
+        ],
+        "key": "255,226,170"
+      },
+      "beats": 7.5
+    },
+    {
+      "scene": "ins",
+      "view": "hand-bolt-ecu",
+      "note": "ECU จากฝั่งตู้ มือขวาเฉลิมสั่นแตะสลักเหล็ก นิ้วก้อยสั้น นิ้วกำไม่ลง แล้วชักกลับช้า ๆ ไม่ได้เลื่อน",
+      "text": "เสียงร้องไห้ของผู้ชายดังอยู่หลังผนัง\nเขาวางมือบนสลัก แล้ว{ชักกลับ}",
+      "hold": 0.5,
+      "mood": 0.85,
+      "data": {},
+      "beats": 7.5
+    },
+    {
+      "scene": "room5",
+      "view": "rin-tape-ots",
+      "note": "ข้ามไหล่นภาที่มืด รินยกมือคลำผนังซ้ายในแสงตะเกียง คิ้วตั้ง กำลังนับระยะจากที่เคยวัด",
+      "text": "มือถือไม่มีสัญญาณในผนังหนาสองชั้น\nแต่รินเป็นคนวัดบ้านหลังนี้ และรู้ว่าผนังซ้ายติดกับใคร",
+      "cues": [
+        [
+          0.2,
+          "tape"
+        ]
+      ],
+      "mood": 0.75,
+      "data": {
+        "mode": "lamp",
+        "lamp": [
+          806,
+          573
+        ],
+        "light": "noir",
+        "lightAt": [
+          806,
+          573
+        ],
+        "cam": [
+          2.02,
+          2.12,
+          508,
+          555
+        ],
+        "cast": [
+          "rin@646,833 h=435 wary yaw=-0.35 armR=reach"
+        ],
+        "foreShoulder": "r",
+        "foreColor": "#3e3436",
+        "foreHair": "#1d181b"
+      },
+      "beats": 8.75
+    },
+    {
+      "scene": "ins",
+      "view": "fist-wall-ecu",
+      "note": "ECU กำปั้นรินทุบผนังเขียวจากด้านในสามครั้ง ปูนร่วง เลือดซึมข้อนิ้วเล็กน้อย ตะเกียงเฉียง",
+      "text": "เธอกำมือแน่น แล้วเคาะ หนึ่ง สอง สาม",
+      "cues": [
+        [
+          0,
+          "knock3"
+        ]
+      ],
+      "hold": 1,
+      "mood": 0.9,
+      "data": {},
+      "beats": 6.75
+    },
+    {
+      "scene": "nim",
+      "view": "nim-wall-wide",
+      "note": "บ้านป้านิ่ม ไฟส้มดวงเดียว แมวดำลุกยืนหน้าผนัง ป้านิ่มนั่งแคร่ถือกระดาษเบอร์โทรยับในมือ หันช้า ๆ มองผนังเดียวกันจากอีกฝั่ง",
+      "text": "อีกฝั่งของผนัง ป้านิ่มนั่งถือกระดาษเบอร์โทรอยู่ทั้งคืน\nเจ็ดเดือนที่เธอนึกว่าเสียงนี้คือผี",
+      "mood": 0.8,
+      "data": {
+        "hud": "พฤหัส · 22:31",
+        "light": "lamp",
+        "lightAt": [
+          840,
+          300
+        ],
+        "seat": true,
+        "cat": [
+          1120,
+          720,
+          0.34
+        ],
+        "cam": [
+          1,
+          1.03,
+          960,
+          540
+        ],
+        "cast": [
+          "nim@592,908 h=432 sit scared armR=lap prop=paper yaw=0.25"
+        ]
+      },
+      "beats": 9.75
+    },
+    {
+      "scene": "nim",
+      "view": "nim-fist-close",
+      "note": "close ป้านิ่มกำปั้นเหี่ยวสั่นค้างหน้าผนัง ปากสวดพึมพำเงียบ น้ำตาลงร่อง ไฟส้มข้างแก้ม",
+      "text": "ครั้งสุดท้ายที่เธอกล้าเคาะตอบ มันเงียบไปสามวัน",
+      "hold": 0.5,
+      "mood": 0.85,
+      "data": {
+        "light": "noir",
+        "lightAt": [
+          840,
+          300
+        ],
+        "cam": [
+          4.16,
+          4.36,
+          987,
+          553
+        ],
+        "cast": [
+          "nim@929,869 h=397 cry yaw=0.3 armR=raise"
+        ],
+        "key": "255,170,90"
+      },
+      "beats": 5.875
+    },
+    {
+      "scene": "ins",
+      "view": "nim-knock-ecu",
+      "note": "ECU กรอบเดียวกับ nim-hand-ins มือป้านิ่มเคาะผนังเขียวสามครั้ง ฝุ่นปูนร่วง แมวดำเบลอที่ขอบ",
+      "text": "หนึ่ง สอง สาม",
+      "cues": [
+        [
+          0,
+          "knock3far"
+        ]
+      ],
+      "hold": 1.5,
+      "mood": 0.85,
+      "data": {
+        "mirror": "nimhand"
+      },
+      "beats": 4.375
+    },
+    {
+      "scene": "room5",
+      "view": "napa-hear-high",
+      "note": "ห้องแคบในแสงตะเกียงจากมุมสูงเล็กน้อย ทุกคนหยุดนิ่งเงยหน้าไปทางผนังซ้าย นภาร้องไห้ครั้งแรกตั้งแต่ได้ยินข่าว",
+      "text": "เสียงเคาะสามที ที่นภารอมาเจ็ดเดือน\nมาจากคนที่ไม่เคยรู้จักชื่อเธอ",
+      "hold": 1,
+      "mood": 0.75,
+      "data": {
+        "mode": "lamp",
+        "lamp": [
+          900,
+          650
+        ],
+        "light": "noir",
+        "lightAt": [
+          900,
+          650
+        ],
+        "cam": [
+          0.94,
+          0.98,
+          960,
+          560
+        ],
+        "cast": [
+          "prae@917,801 h=392 crouch shock",
+          "napa@695,782 h=379 crouch cry",
+          "rin@1117,814 h=416 wary yaw=-0.3"
+        ]
+      },
+      "beats": 8.375
+    },
+    {
+      "scene": "bedroom",
+      "view": "nim-door-wide",
+      "note": "ห้องนอนเล็กมืด ป้านิ่มชุดนอนถือไฟฉายเล็กเดินเข้ามาหยุดตรงตู้ เฉลิมนั่งกองกับพื้นอยู่ปากตู้ หัวก้ม มือกุมเข่า ไม่เงยไม่ขวาง",
+      "text": "ป้าโทรหาหมวดจากกระดาษใบนั้น\nแล้วเดินเข้าบ้านที่เธอกลัว เฉลิมนั่งอยู่หน้าตู้ ไม่ขวางแล้ว",
+      "cues": [
+        [
+          0.2,
+          "step"
+        ],
+        [
+          1.2,
+          "siren"
+        ]
+      ],
+      "mood": 0.7,
+      "data": {
+        "hud": "พฤหัส · 22:44",
+        "time": "night",
+        "light": "dim",
+        "torch": [
+          984,
+          714,
+          460
+        ],
+        "lightAt": [
+          984,
+          714
+        ],
+        "cam": [
+          1,
+          1.03,
+          960,
+          560
+        ],
+        "cast": [
+          "nim@864,934 h=459 scared yaw=0.4 arm=r-hold prop=flashlight",
+          "chaloem2@1138,1038 h=629 crouch tired"
+        ]
+      },
+      "beats": 9.75
+    },
+    {
+      "scene": "ins",
+      "view": "nim-bolt-ins",
+      "note": "mirror ของ bolt-ins กรอบเดิม มือเหี่ยวของป้านิ่มเลื่อนสลักเหล็ก ลำแสงไฟฉายสั่น ไม่มีลิ่ม",
+      "text": "คนเดียวที่ไม่เคยเปิดประตูบานนี้ คือคนที่มีกุญแจ\nคนเปิดคือป้าแก่ ๆ ที่ไม่กล้าบอกใคร",
+      "cues": [
+        [
+          0,
+          "latch"
+        ]
+      ],
+      "hold": 0.5,
+      "mood": 0.6,
+      "data": {
+        "mirror": "bolt"
+      },
+      "beats": 10.125
+    },
+    {
+      "chapter": "บ้านว่าง",
+      "scene": "ext",
+      "view": "morning-wide",
+      "note": "เช้าวันศุกร์ แสงแรกทองจากปลายซอย รถพยาบาลกับรถตำรวจจอดหน้ารั้ว ประตูเปิดกว้าง ป้ายประมูลถูกปลดวางพิงรั้ว คนซอยยืนไกล บ้านดูเล็กลง",
+      "text": "เช้าวันศุกร์ ไม่มีการประมูล",
+      "cues": [
+        [
+          0,
+          "morning"
+        ]
+      ],
+      "mood": 0.3,
+      "data": {
+        "hud": "ศุกร์ · 06:30",
+        "tone": "morning",
+        "five": "open",
+        "light": "morning",
+        "lightAt": [
+          -300,
+          500
+        ],
+        "cam": [
+          0.74,
+          0.76,
+          900,
+          560
+        ],
+        "cast": [
+          "wichai@600,900 h=332 yaw=0.2 armR=hold prop=book",
+          "nim@1600,880 h=268 yaw=-0.3",
+          "rin@860,930 h=342 back"
+        ],
+        "car": [
+          240,
+          1000
+        ]
+      },
+      "beats": 3.375
+    },
+    {
+      "scene": "ext",
+      "view": "prae-sun-close",
+      "note": "close แพรยกมือบังแดด ครั้งแรกในเจ็ดเดือน ผ้าห่มคลุมไหล่ แสงทองทั้งหน้า ตาหรี่ น้ำตาเพราะแสง",
+      "text": "แพรยกมือบังแดด เธอลืมไปแล้วว่ามันแสบตาแบบนี้",
+      "mood": 0.3,
+      "data": {
+        "tone": "morning",
+        "five": "open",
+        "light": "morning",
+        "lightAt": [
+          -300,
+          500
+        ],
+        "cam": [
+          3.65,
+          3.83,
+          834,
+          680
+        ],
+        "cast": [
+          "prae@900,1040 h=452 tired armR=face head=-4"
+        ],
+        "shade": "r",
+        "key": "255,216,150"
+      },
+      "beats": 5.875
+    },
+    {
+      "scene": "ext",
+      "view": "wichai-book-med",
+      "note": "medium หมวดวิชัยยืนหน้ารั้วปิดสมุดปกดำ ไม่สบตาริน ถอดแว่นเช็ด แสงเช้าฝั่งเดียว มีเฉลิมใส่กุญแจมือหลังเขาเบลอในรถ",
+      "text": "\"คดีคุณมานพ ผมเปิดใหม่แล้วครับ\nผมเซ็นปิดมันโดยดูจากท่าน้ำ\"",
+      "who": "wichai",
+      "voice": "officer",
+      "tone": "quiet, ashamed",
+      "mood": 0.3,
+      "data": {
+        "tone": "morning",
+        "five": "open",
+        "light": "morning",
+        "lightAt": [
+          -300,
+          500
+        ],
+        "cam": [
+          1.81,
+          1.9,
+          715,
+          718
+        ],
+        "cast": [
+          "wichai@560,1030 h=487 guilty talk armR=hold prop=book acc=square-glasses yaw=0.2"
+        ]
+      },
+      "beats": 6.125
+    },
+    {
+      "scene": "ext",
+      "view": "rin-hear-close",
+      "note": "close รินได้ยินคำนั้น พยักหน้าครั้งเดียว ข้อนิ้วพันผ้า แดดเช้าข้างแก้ม สมุดวัดอยู่ในมือ",
+      "text": "รินรู้ดีว่าประโยคนั้นหนักแค่ไหน",
+      "mood": 0.4,
+      "data": {
+        "tone": "morning",
+        "five": "open",
+        "light": "morning",
+        "lightAt": [
+          -300,
+          500
+        ],
+        "cam": [
+          3.64,
+          3.82,
+          1034,
+          669
+        ],
+        "cast": [
+          "rin@1100,1030 h=453 sad yaw=-0.3 armR=chest prop=book"
+        ],
+        "shade": "r",
+        "key": "255,216,150"
+      },
+      "beats": 3.125
+    },
+    {
+      "scene": "ext",
+      "view": "thawat-phone-med",
+      "note": "medium ธวัชยืนนอกเชือกตำรวจแสงเช้า ไม่น่ากลัวเท่ากลางคืน ยื่นมือถือให้ตำรวจ รูปผู้ชายหันหลังบนจอ",
+      "text": "\"ผมตามหาเฉลิม เจ็ดเดือนแล้ว เขาเป็นหนี้ผม\nผมไม่เคยรู้เลยว่ามีใครอยู่ในบ้าน\"",
+      "who": "thawat",
+      "voice": "villain_male",
+      "tone": "deep, flat",
+      "mood": 0.35,
+      "data": {
+        "tone": "morning",
+        "five": "open",
+        "light": "morning",
+        "lightAt": [
+          -300,
+          500
+        ],
+        "cam": [
+          1.81,
+          1.9,
+          1045,
+          718
+        ],
+        "cast": [
+          "thawat@1200,1030 h=487 talk tired armR=offer prop=phone yaw=-0.25"
+        ]
+      },
+      "beats": 9
+    },
+    {
+      "scene": "ins",
+      "view": "thawat-photo-ecu",
+      "note": "ECU รูปในมือถือธวัช กรอบเดียวกับ thawat-phone-ins หลังคนที่เบลอคือเสื้อเชิ้ตเขียวเทากับบู๊ตเขียวที่ท่าน้ำ",
+      "text": "ทุกคืนที่เขามาถ่ายรูป เขาถ่ายได้แค่หลังของเฉลิม\nคนร้ายที่เธอกลัว ที่แท้ก็แค่เจ้าหนี้",
+      "mood": 0.35,
+      "data": {
+        "mirror": "thawat"
+      },
+      "beats": 8.875
+    },
+    {
+      "scene": "nim",
+      "view": "rice-give-med",
+      "note": "ลานหน้าบ้านป้านิ่ม ป้าวางถุงข้าวร้อนผูกหนังยางแดงในมือแพร ควันข้าวลอยจริง ต้นนอนบนเปลรถพยาบาลใกล้ ๆ นภานั่งข้าง แมวดำนอนผึ่งแดดหันหลังให้ผนัง",
+      "text": "ป้านิ่มเอาข้าวมาให้เหมือนทุกวัน\nคราวนี้ยื่นใส่มือคนกิน ไม่ต้องผ่านศาล",
+      "music": true,
+      "mood": 0.25,
+      "data": {
+        "street": true,
+        "tone": "morning",
+        "five": "open",
+        "light": "morning",
+        "lightAt": [
+          -300,
+          500
+        ],
+        "cat": [
+          1600,
+          860,
+          0.34
+        ],
+        "ricebag": [
+          990,
+          830
+        ],
+        "cam": [
+          1.1,
+          1.14,
+          960,
+          620
+        ],
+        "cast": [
+          "nim@840,1000 h=393 happy yaw=0.3 armR=offer",
+          "prae@1120,1000 h=409 tired yaw=-0.3 armL=reach"
+        ]
+      },
+      "beats": 6.25
+    },
+    {
+      "scene": "ins",
+      "view": "meter-stop-ecu",
+      "note": "กรอบเดิมของ meter-ins แสงเช้าทอง จานโลหะนิ่งสนิท เลข 18,408 ไฟฉายไม่ต้องใช้แล้ว",
+      "text": "รินกลับมาอ่านมิเตอร์เป็นครั้งสุดท้าย [18,408]\nจานข้างในหยุดแล้ว",
+      "hold": 1,
+      "music": true,
+      "mood": 0.3,
+      "data": {
+        "meter": 18408
+      },
+      "beats": 8.5
+    },
+    {
+      "scene": "ins",
+      "view": "form-sign-ins",
+      "note": "mirror ของ signed-ins แบบฟอร์มบนฝากระโปรงรถ มือเดิมเขียนคำว่า ว่าง ในช่องเดิม บ้านจริงเต็มเฟรมข้างหลัง หน้าต่างห้าบานเปิดรับแดด",
+      "text": "เธอนับห้องครบห้าห้องด้วยตัวเอง แล้วเซ็นคำว่า [ว่าง]",
+      "music": true,
+      "mood": 0.3,
+      "data": {
+        "mirror": "signed"
+      },
+      "beats": 5.875
+    },
+    {
+      "scene": "ext",
+      "view": "house-open-ew",
+      "note": "ภาพกว้างปิดเรื่องจากปลายซอยกรอบเดียวกับ house-ew แต่กลางวัน บานที่ห้าถูกงัดไม้ออกแล้ว แดดส่องเข้าห้องเล็ก ๆ ข้างใน กล้องถอยช้า",
+      "text": "เจ็ดเดือนแล้ว ที่บ้านหลังนี้เพิ่งว่างจริงเป็นครั้งแรก",
+      "hold": 1,
+      "music": true,
+      "mood": 0.28,
+      "data": {
+        "motion": "push",
+        "mirror": "coldopen",
+        "tone": "morning",
+        "five": "open",
+        "light": "morning",
+        "lightAt": [
+          -300,
+          500
+        ],
+        "cam": [
+          0.8,
+          0.72,
+          960,
+          560
+        ],
+        "cast": []
+      },
+      "beats": 6.75
+    },
+    {
+      "scene": "ins",
+      "view": "line-card",
+      "note": "มิเตอร์นิ่งเบลออยู่หลังตัวอักษรกลางจอ เส้นแสงเหลืองบาง ๆ แบบร่องไม้พาดหลังประโยคแล้วค่อยจางลงเป็นแสงเช้า",
+      "text": "บ้านว่าง ไฟต้องเป็น[ศูนย์]\nบ้านหลังนี้ไม่เคยเป็นศูนย์",
+      "hold": 1,
+      "music": true,
+      "mood": 0.28,
+      "data": {},
+      "beats": 7.375
+    },
+    {
+      "scene": "endcard",
+      "text": "",
+      "music": true,
+      "voLead": 0.4,
+      "vo": "เรื่องนี้เป็นเรื่องแต่ง ถ้าเป็นคุณ คุณจะเซ็นคำว่าว่างไหม บอกกันในคอมเมนต์นะครับ",
+      "mood": 0.25,
+      "data": {
+        "title": "บ้านว่าง ไฟต้องเป็นศูนย์",
+        "sub": "เรื่องแต่ง ตัวละคร ธนาคาร และตำรวจเป็นเรื่องสมมติ",
+        "cta": "คอมเมนต์คุยกัน แล้วเจอกันเรื่องหน้า",
+        "step": "done",
+        "note": "เรื่องแต่ง ตัวละคร ธนาคาร และตำรวจเป็นเรื่องสมมติ"
+      },
+      "beats": 7.5
+    }
+  ]
+}

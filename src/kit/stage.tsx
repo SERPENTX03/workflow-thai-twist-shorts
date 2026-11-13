@@ -36,6 +36,8 @@ export type Actor = {
   /** pose rig tokens, raw (tweened per frame in ActorView) */
   rig?: {yaw?: string; armL?: string; armR?: string; head?: string; look?: string};
   faces?: string;
+  /** lie only: a blanket over the body in this colour */
+  cover?: string;
 };
 
 const RIG_KEYS = new Set(['yaw', 'armL', 'armR', 'head', 'look']);
@@ -62,6 +64,7 @@ export function parseActor(s: string): Actor {
       else if (k === 'rim') a.rim = v;
       else if (k === 'hair') a.hair = v;
       else if (k === 'faces') a.faces = v;
+      else if (k === 'cover') a.cover = v.startsWith('#') || /^[a-z]+$/.test(v) ? v : '#' + v;
       else if (RIG_KEYS.has(k)) a.rig = {...a.rig, [k]: v};
     } else if (POSES.has(t)) a.pose = t;
     else if (FACES.has(t)) a.face = t;
@@ -79,6 +82,8 @@ export type RosterEntry = {
   vars?: Record<string, string>;
   /** extra layers on top (accessories, a trait) — function of the symbol so a sit pose can shift them */
   extra?: (symbol: string) => React.ReactNode;
+  /** layers on the face itself, in the face's own frame (over the eyes and mouth): eye tape, a bandage, face paint */
+  face?: (symbol: string) => React.ReactNode;
   /** silhouette: every colour var black */
   sil?: boolean;
   noShadow?: boolean;
@@ -281,7 +286,7 @@ export const ActorView: React.FC<ActorProps> = ({a: a0, roster, floor, pxPerCm, 
         watch={accIds.includes('acc-wristwatch')} bodyEnd={end} armsFront={kind === 'sit' || kind === 'crouch' || undefined}
         propR={held?.side === 'r' ? held.id : undefined} propL={held?.side === 'l' ? held.id : undefined}
         under={<>{kind === 'lie' && <LieLegs plan={plan} />}{useAcc('under')}</>}
-        face={<><g transform={lt}>{faceUse}{talkUse}{useAcc('face')}</g>{lids}</>}
+        face={<><g transform={lt}>{faceUse}{talkUse}{useAcc('face')}{r.face?.(sym)}</g>{lids}</>}
         hat={<><g transform={lt}>{useAcc('hat')}</g>{a.mark && kind !== 'lie' && <g transform={lt}><use width={200} height={520} href={`#mark-${a.mark}`} /></g>}</>}
         body={<><ClipBelow end={end}><g transform={lt}>{useAcc('body')}</g></ClipBelow>{kind && kind !== 'lie' && <BodyLegs plan={plan} kind={kind} yaw={yaw0} />}{extraNode}</>}
         over={legacy && (
@@ -314,6 +319,7 @@ export const ActorView: React.FC<ActorProps> = ({a: a0, roster, floor, pxPerCm, 
               {swapHair && <HairLayer hair={activeHair!} />}
               {faceUse}
               {talkUse}
+              {r.face?.(sym)}
               {acc && acc !== 'none' && !fakeBack && <use width={200} height={outfit ? CAST_SIZE['acc-' + acc][1] : 520} href={`#acc-${acc}`} />}
               {accessory && !fakeBack && <use width={200} height={520} href={`#acc-${accessory}`} />}
               {!fakeBack && a.acc !== 'none' && (defaults.defaultAccessories ?? []).filter(id => id !== 'acc-' + accessory && !(id === 'acc-wristwatch' && (body || a.arm?.startsWith('l-') || sym.endsWith('-sit') || sym === 'man-crouch' || sym === 'man-lie'))).map(id => <use key={id} width={200} height={520} href={`#${id}`} />)}
@@ -331,10 +337,21 @@ export const ActorView: React.FC<ActorProps> = ({a: a0, roster, floor, pxPerCm, 
             {lids}
           </>
         )}
+        {kind === 'lie' && a.cover && <LieCover color={a.cover} w={w} />}
       </svg>
     </div>
   );
 };
+
+/** `cover=<colour>` on a lying actor: a blanket pulled up to the chest, the knees a soft bump under it, the hem hanging
+ *  over the mattress edge. A patient in a ward bed, a sleeper at home: the body under it, the head and arms out. */
+const LieCover: React.FC<{color: string; w: number}> = ({color, w}) => (
+  <g>
+    <path d={`M150 96 Q200 84 270 88 Q340 92 370 70 Q400 52 430 74 Q470 96 ${w + 14} 104 L${w + 18} 214 L146 214 Q138 150 150 96 Z`} fill={color} stroke="rgba(0,0,0,.35)" strokeWidth={3} />
+    <path d={`M150 96 Q200 84 270 88`} stroke="#ffffff" strokeOpacity={0.55} strokeWidth={9} fill="none" strokeLinecap="round" />
+    <path d={`M200 120 Q260 150 250 200 M330 110 Q360 150 350 205`} stroke="rgba(0,0,0,.18)" strokeWidth={4} fill="none" />
+  </g>
+);
 
 /** Camera over a world of size W×H: zoom z, world point (cx, cy) at the frame centre. */
 export const Cam: React.FC<{W: number; H: number; z: number; cx: number; cy: number; children: React.ReactNode; shake?: {x: number; y: number}}> = ({W, H, z, cx, cy, children, shake}) => (
@@ -411,13 +428,67 @@ export type ActorsProps = {
   p: ShotProps; roster: Record<string, RosterEntry>; speaking: ReturnType<typeof makeSpeaking>;
   cast?: string[]; floor: number; pxPerCm: number; tint?: string;
   /** draw a chair behind every seated actor (front-facing sit pose: knees together, hands in the lap) */
-  chairs?: boolean | {wood?: string; dark?: string; edge?: string};
+  chairs?: boolean | {kind?: ChairKind; wood?: string; dark?: string; edge?: string};
+};
+
+/** which chair: `wood` (a home dining chair, the last resort), `office` (a swivel chair at a desk, counter or nurse
+ *  station), `steel` (a hospital / clinic visitor chair, grey tube and vinyl), `plastic` (a monobloc: police front desk,
+ *  a food stall, a temple fair). A set with a seat of its own (bench, bed, sofa, platform) seats people on it, no chair. */
+export type ChairKind = 'wood' | 'office' | 'steel' | 'plastic';
+const CHAIR_C: Record<ChairKind, {wood: string; dark: string; edge: string}> = {
+  wood: {wood: '#6b4a2f', dark: '#3e2a1b', edge: '#8a6440'},
+  office: {wood: '#2b2e34', dark: '#16181c', edge: '#4a4f58'},
+  steel: {wood: '#4f7a72', dark: '#8e979b', edge: '#6f9a91'},
+  plastic: {wood: '#3f6fb0', dark: '#2a4f82', edge: '#6a95d0'},
 };
 
 /** Front-view chair behind a seated actor, drawn in the actor's 200x520 frame so it always matches the sit pose:
  *  backrest behind the shoulders, seat edge under the knees, legs to the floor line. */
-export const SeatChair: React.FC<{x: number; y: number; h: number; wood?: string; dark?: string; edge?: string; o?: number; side?: -1 | 0 | 1}> = ({x, y, h, wood = '#6b4a2f', dark = '#3e2a1b', edge = '#8a6440', o, side = 0}) => {
+export const SeatChair: React.FC<{x: number; y: number; h: number; kind?: ChairKind; wood?: string; dark?: string; edge?: string; o?: number; side?: -1 | 0 | 1}> = ({x, y, h, kind = 'wood', o, side = 0, ...c}) => {
   const s = h / 520;
+  const {wood, dark, edge} = {...CHAIR_C[kind], ...Object.fromEntries(Object.entries(c).filter(([, v]) => v))};
+  const box = {position: 'absolute' as const, left: x - 100 * s, top: y - 520 * s, overflow: 'visible' as const, opacity: o, pointerEvents: 'none' as const};
+  if (kind === 'office') return (
+    // swivel chair: padded back on a stem, seat pad, gas column, five-star base on casters
+    <svg width={200 * s} height={520 * s} viewBox="0 0 200 520" style={box}>
+      <g transform={side < 0 ? 'translate(200 0) scale(-1 1)' : undefined}>
+        {side ? <>
+          <rect x="44" y="232" width="30" height="150" rx="12" fill={wood} />
+          <rect x="54" y="380" width="10" height="56" fill={dark} />
+          <rect x="50" y="430" width="140" height="22" rx="9" fill={wood} />
+        </> : <>
+          <rect x="28" y="236" width="144" height="150" rx="22" fill={wood} />
+          <rect x="42" y="250" width="116" height="122" rx="16" fill={edge} opacity=".35" />
+          <rect x="18" y="440" width="164" height="24" rx="10" fill={wood} />
+        </>}
+        <rect x={side ? 112 : 94} y="452" width="12" height="40" fill="#8b9097" />
+        <path d={side ? 'M118 494 L52 508 M118 494 L184 508 M118 494 L118 510' : 'M100 494 L24 508 M100 494 L176 508 M100 494 L62 514 M100 494 L138 514'} stroke={dark} strokeWidth="9" strokeLinecap="round" />
+        {(side ? [52, 184, 118] : [24, 176, 62, 138]).map(cx => <circle key={cx} cx={cx} cy={514} r={6} fill="#111" />)}
+      </g>
+    </svg>
+  );
+  if (kind === 'steel' || kind === 'plastic') {
+    const tube = kind === 'steel' ? dark : wood, w2 = kind === 'steel' ? 8 : 14;
+    if (side) return (
+      <svg width={200 * s} height={520 * s} viewBox="0 0 200 520" style={box}>
+        <g transform={side < 0 ? 'translate(200 0) scale(-1 1)' : undefined}>
+          <rect x="46" y="240" width="26" height="140" rx="8" fill={wood} />
+          <path d={`M60 250 L60 516 M186 440 L186 516 M60 440 L190 440`} stroke={tube} strokeWidth={w2} strokeLinecap="round" fill="none" />
+          <rect x="50" y="424" width="146" height="22" rx="8" fill={wood} />
+          <path d="M54 427 H192" stroke={edge} strokeWidth="3" strokeLinecap="round" />
+        </g>
+      </svg>
+    );
+    return (
+      <svg width={200 * s} height={520 * s} viewBox="0 0 200 520" style={box}>
+        <path d="M26 252 L22 516 M174 252 L178 516" stroke={tube} strokeWidth={w2} strokeLinecap="round" />
+        <rect x="24" y="244" width="152" height={kind === 'plastic' ? 150 : 110} rx={kind === 'plastic' ? 30 : 14} fill={wood} />
+        {kind === 'plastic' && [0, 1, 2].map(i => <rect key={i} x={60 + i * 30} y="270" width="14" height="80" rx="7" fill={dark} opacity=".5" />)}
+        <rect x="14" y="444" width="172" height="26" rx="10" fill={wood} />
+        <path d="M22 448 H178" stroke={edge} strokeWidth="3" strokeLinecap="round" />
+      </svg>
+    );
+  }
   // a three-quarter sit: the chair side-on under the thighs, its back behind the hips, facing the way the person faces
   if (side) return (
     <svg width={200 * s} height={520 * s} viewBox="0 0 200 520" style={{position: 'absolute', left: x - 100 * s, top: y - 520 * s, overflow: 'visible', opacity: o, pointerEvents: 'none'}}>
