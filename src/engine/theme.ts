@@ -7,7 +7,7 @@ export const T = {
   red: '#e5383b', gold: '#f6c445', ok: '#3fa66b',
   day0: '#e9e2d2', day1: '#cfc4ad', wood0: '#6b4a2f', wood1: '#3e2a1b',
   skin: '#e7b38c', skinD: '#c98f6b', hair: '#16161c', shirt: '#2f5f8f', pants: '#1d2736',
-  display: 'Kanit, sans-serif', ui: '"Plex Thai", sans-serif',
+  display: 'Kanit, sans-serif', title: 'Chonburi, serif', accent: 'Srisakdi, cursive', ui: '"Plex Thai", sans-serif',
   captionY: 1390,
 } as const;
 

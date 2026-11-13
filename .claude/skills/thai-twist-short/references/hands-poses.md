@@ -5,7 +5,7 @@ Read before drawing any shot where a hand does something (hand over, hold, point
 ## Hard rules
 
 1. **One arm = one sleeve + one hand.** Two arms per character, so at most **two hands visible per figure**. Count them in every frame you check.
-2. **Never draw a loose hand or arm next to a resting one.** Each character symbol in `cast.svg` already draws both arms hanging down. To pose an arm: set `hideArmL` / `hideArmR` on the `Sprite` (hides that resting arm), then add one pose symbol (`arm-r-hold` …) to `layers`. Stage actor strings (`arm=r-hold`) do both.
+2. **Never draw a loose hand or arm next to a resting one.** Each character symbol in `cast.svg` already draws both arms hanging down. To pose an arm: set `hideArmL` / `hideArmR` on the `Sprite` (hides that resting arm), then add one pose symbol (`arm-r-hold` …) to `layers`. Stage actor strings (`arm=r-hold`) do both. On the **pose rig** (`armL=` / `armR=`, `cast-library.md` → Pose rig) the rig draws both arms itself, shoulder → elbow → hand, and switches both resting arms off: still one sleeve + one hand per arm, and a `prop=` goes in a posed hand.
 3. **The hand belongs to the arm.** The pose arm is drawn shoulder → elbow → hand as one continuous stroke, so the hand can never float. Do not move a hand separately from its arm; animate the whole `Sprite` or swap pose symbols on a cut.
 4. **Props sit on the hand anchor** with a grip prop (`prop-glass`, `-coin`, `-phone`, `-paper`, `-key`, `-flashlight`): place the prop Sprite at the anchor, e.g. (88,244) for `arm-l-hold`; stage strings do it with `prop=glass`. The prop draws the object and then the hand over its lower part — the hand is in front of what it holds, and there is still only one hand. A new prop must do the same (object first, hand circle `r=19` last, origin at the hand centre).
 5. **A hand holding something never also hangs at the side.** A hand with nothing to do either rests (default arm) or is hidden on purpose (`arm-*-pocket`, behind the back = `hideArm*` with no pose).
@@ -13,7 +13,12 @@ Read before drawing any shot where a hand does something (hand over, hold, point
 7. **Facing and side.** r = screen-right arm, l = screen-left arm. The `offer` arm points away from the body, so use the arm on the side of the receiver. Never cross an arm over the face.
 8. **Hands stay in the action zone** (y 160–1180) and ≥ 38 px across on screen (the `r=19` circle at scale 1). For a close-up, draw the hand big (≥ 200 px) on its own shot: palm circle + thumb nub, no fingers (flat style).
 9. **Silhouettes keep the poses** — `silhouette` already blacks out the pose arms and props' skin (`--sleeve`, `--skin`); a prop's own colours are not blacked out, so give a silhouette shot only `arm-*-pocket`/`raise`, or no prop.
-10. **Reuse before inventing.** Take a pose from the library below. A new gesture goes into `src/cast/source/cast.svg` (right-arm version + mirrored left) and into this table, not into one episode.
+10. **Pose the arm, never add one.** Before drawing any arm or hand near a cast member, ask which of the two it is, and take that one away (`arm=`, `armR=`/`armL=`). If no pose exists, add it to `cast.svg` (rule 11).
+11. **Reuse before inventing.** Take a pose from the library below. A new gesture goes into `src/cast/source/cast.svg` (right-arm version + mirrored left) and into this table, not into one episode.
+
+## Phone to the ear, glasses, anything held to the face
+
+A call is a pose of the actor's own arm: `jay@700 sit arm=r-phone` (or `arm=l-phone`, standing or sitting). It takes the resting arm and its hand away, so there are still two. Drawing an arm or `<Hand>` over a posed sprite gives three: rear-cam shots 240–247 did exactly that, and `npm run story` now warns when a scene draws `<Hand>` next to an actor. Glasses are the sprite's own accessory (`acc=glasses`, `src/cast.json`) and sit on the eyes in every pose; never draw a second pair by hand, and if a beat needs them off, drop the accessory for that shot rather than floating a drawing beside a hand.
 
 ## Pose library (`src/cast/source/cast.svg`, "Pose library")
 
@@ -29,13 +34,16 @@ Frame 200 × 520. `Sprite` sets the sleeve colour per character itself (`SLEEVE`
 | pocket | `arm-r-pocket` `arm-l-pocket` | hand hidden | hand in pocket, hiding a hand (a clue device) |
 | rest | (default arm) | — | nothing to do |
 | carry | `arm-r-carry` + `arm-l-carry` | (150,262) / (50,262) | both hands on one big object: `prop-box` at (100,262) draws both hands |
+| wheel | `arm-b-wheel` + `prop-wheel` | (100,297) | both hands on a steering wheel, driver seen from the front: stage string `arm=b-wheel prop=wheel` on a **stand** pose (the dashboard in the scene hides the legs). `b` = both arms; the prop draws the rim, spokes, hub and then both hands over the rim. For a driver who is not driving (phone, notebook) use `arm=r-hold prop=…` and draw the wheel in the scene |
 
 Grip props (origin = hand centre): `prop-glass`, `-coin`, `-phone`, `-paper`, `-key`, `-flashlight`, `-bottle`, `-radio`, `-candle`, `-map`, `-rope`, `-sack` (hangs below the hand), `-bowl`, `-bandage`. Accessories that sit on a hand (`acc-watch`, `acc-hand-bandage`) use the same anchors — see `cast-library.md`.
 
-Example (a woman hands a coin):
+Close-up hands in inserts (no figure in frame) use `Hand` from `src/kit/inserts.tsx`: `mode` = `grip`, `open`, `flat`, `fist` (knocking), `point` (pressing, tracing), `pinch` (a key, a coin, the corner of a photo); skin and sleeve in the owner's colours.
+
+Example (a woman hands a coin; a bare `Sprite` — on the stage write only the actor string in the last line):
 
 ```tsx
-<Sprite id="woman" hideArmR layers={['arm-r-offer']} layerTransform="translate(0 4)" />
+<Sprite id="lead-female-A" hideArmR layers={['arm-r-offer']} />
 // + a prop-coin Sprite at the offer anchor (214,222)
 // stage actor string: "porn@700 arm=r-offer prop=coin"
 ```

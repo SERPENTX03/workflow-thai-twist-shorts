@@ -44,8 +44,8 @@
          so every face-* fits with no offset. A person = body + head-bare + hair-* + ears + eyes-dot.
          Clothes are plain colours (shirt, pants, skirt, shorts vars); a uniform or a raincoat is an acc-* layer on top
          (Sprite layers acc-school, stage acc=school), never drawn into the body. -->
-    <g id="head-bare"><rect x="88" y="118" width="24" height="26" fill="var(--skin-d, #c98f6b)"/><circle cx="100" cy="65" r="65" fill="var(--skin, #e7b38c)"/></g>
-    <g id="ears"><circle cx="35" cy="78" r="10" fill="var(--skin-d, #c98f6b)"/><circle cx="165" cy="78" r="10" fill="var(--skin-d, #c98f6b)"/></g>
+    <g id="head-bare" style="display:var(--skull-rest,inline)"><rect x="88" y="118" width="24" height="26" fill="var(--skin-d, #c98f6b)"/><circle cx="100" cy="65" r="65" fill="var(--skin, #e7b38c)"/></g>
+    <g id="ears"><circle cx="35" cy="78" r="10" fill="var(--skin-d, #c98f6b)" style="display:var(--ear-l,inline)"/><circle cx="165" cy="78" r="10" fill="var(--skin-d, #c98f6b)" style="display:var(--ear-r,inline)"/></g>
     <!-- hair: drawn after head-bare, before ears (the bob covers the ears: skip them) -->
     <g id="hair-quiff"><path d="M29 79 Q16 52 36 26 Q17 22 21 1 Q42 11 57 3 Q76 -22 121 -13 Q177 -12 173 76 L157 52 Q145 32 124 34 Q73 59 48 40Z" fill="var(--hair, #24212a)"/></g>
     <g id="hair-curtain"><path d="M30 86 Q12 2 81 -7 Q96 -9 101 4 Q129 -19 154 0 Q184 17 174 90 L154 69 Q155 38 116 26 L101 13 Q97 43 72 52 L49 66 L47 87Z" fill="var(--hair, #24212a)"/></g>
@@ -541,10 +541,10 @@
     <g style="display:var(--arm-l-rest,inline)"><line x1="60" y1="160" x2="54" y2="310" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/><line x1="60" y1="160" x2="54" y2="310" stroke="rgba(255,255,255,.07)" stroke-width="32" stroke-linecap="round"/><g transform="translate(54 318) rotate(2.3)"><ellipse cx="9" cy="-2.7" rx="5.6" ry="9" transform="rotate(-30 9 -2.7)" fill="var(--skin, #e7b38c)"/><ellipse cx="0" cy="1.8" rx="12.6" ry="14.8" fill="var(--skin, #e7b38c)"/></g></g>
     <g style="display:var(--arm-r-rest,inline)"><line x1="140" y1="160" x2="146" y2="310" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/><line x1="140" y1="160" x2="146" y2="310" stroke="rgba(255,255,255,.07)" stroke-width="32" stroke-linecap="round"/><g transform="translate(146 318) rotate(-2.3)"><ellipse cx="-9" cy="-2.7" rx="5.6" ry="9" transform="rotate(30 -9 -2.7)" fill="var(--skin, #e7b38c)"/><ellipse cx="0" cy="1.8" rx="12.6" ry="14.8" fill="var(--skin, #e7b38c)"/></g></g>
         <rect x="60" y="140" width="80" height="160" rx="30" fill="var(--top, #d9c9a8)"/>
-    <rect x="89" y="118" width="22" height="26" fill="var(--skin-d, #c98f6b)"/>
-    <circle cx="100" cy="68" r="60" fill="var(--skin, #e7b38c)"/>
+    <g style="display:var(--skull-rest,inline)"><rect x="89" y="118" width="22" height="26" fill="var(--skin-d, #c98f6b)"/>
+    <circle cx="100" cy="68" r="60" fill="var(--skin, #e7b38c)"/></g>
     <!-- centre-parted hair framing the face, over the long back hair -->
-    <path d="M34 90 C24 20 70 0 100 0 C134 0 178 20 166 90 C160 64 148 46 128 36 C116 52 108 56 100 56 C92 56 84 52 72 36 C52 46 40 64 34 90Z" fill="var(--hair, #2a1d18)"/>
+    <g style="display:var(--hair-rest,inline)"><path d="M34 90 C24 20 70 0 100 0 C134 0 178 20 166 90 C160 64 148 46 128 36 C116 52 108 56 100 56 C92 56 84 52 72 36 C52 46 40 64 34 90Z" fill="var(--hair, #2a1d18)"/></g>
     <g style="display:var(--face-rest,inline)"><circle cx="78" cy="76" r="6" fill="var(--eye, #1a1a22)"/><circle cx="122" cy="76" r="6" fill="var(--eye, #1a1a22)"/></g>
     <g style="display:var(--face-rest,inline)"><g style="display:var(--mouth-rest,inline)"><ellipse cx="100" cy="99" rx="8" ry="3" fill="var(--eye, #7a3b34)"/></g></g>
   </symbol>
@@ -712,6 +712,7 @@
     <g id="pose-r-hold"><path d="M142 160 L156 250" fill="none" stroke="rgba(0,0,0,.26)" stroke-width="34" stroke-linecap="round" stroke-linejoin="round" transform="translate(3 6)"/><path d="M142 160 L156 250" fill="none" stroke="var(--sleeve, var(--shirt, #2f5f8f))" stroke-width="34" stroke-linecap="round"/><path d="M142 160 L156 250" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/><path d="M156 250 L123.9 245.6" fill="none" stroke="rgba(0,0,0,.26)" stroke-width="29" stroke-linecap="round" stroke-linejoin="round" transform="translate(3 6)"/><path d="M156 250 L123.9 245.6" fill="none" stroke="var(--forearm, var(--sleeve, var(--shirt, #2f5f8f)))" stroke-width="29" stroke-linecap="round"/><path d="M142 160 L156 250 L123.9 245.6" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="29" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(112 244) rotate(-262.3)"><ellipse cx="9.5" cy="-2.8" rx="5.9" ry="9.5" transform="rotate(-30 9.5 -2.8)" fill="var(--skin, #e7b38c)"/><ellipse cx="0" cy="1.9" rx="13.3" ry="15.7" fill="var(--skin, #e7b38c)"/></g></g>
     <g id="pose-r-chest"><path d="M142 160 L154 252" fill="none" stroke="rgba(0,0,0,.26)" stroke-width="34" stroke-linecap="round" stroke-linejoin="round" transform="translate(3 6)"/><path d="M142 160 L154 252" fill="none" stroke="var(--sleeve, var(--shirt, #2f5f8f))" stroke-width="34" stroke-linecap="round"/><path d="M142 160 L154 252" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/><path d="M154 252 L122.7 205.9" fill="none" stroke="rgba(0,0,0,.26)" stroke-width="29" stroke-linecap="round" stroke-linejoin="round" transform="translate(3 6)"/><path d="M154 252 L122.7 205.9" fill="none" stroke="var(--forearm, var(--sleeve, var(--shirt, #2f5f8f)))" stroke-width="29" stroke-linecap="round"/><path d="M142 160 L154 252 L122.7 205.9" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="29" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(116 196) rotate(-214.2)"><ellipse cx="9.5" cy="-2.8" rx="5.9" ry="9.5" transform="rotate(-30 9.5 -2.8)" fill="var(--skin, #e7b38c)"/><ellipse cx="0" cy="1.9" rx="13.3" ry="15.7" fill="var(--skin, #e7b38c)"/></g></g>
     <g id="pose-r-offer"><path d="M142 160 L178 236" fill="none" stroke="rgba(0,0,0,.26)" stroke-width="34" stroke-linecap="round" stroke-linejoin="round" transform="translate(3 6)"/><path d="M142 160 L178 236" fill="none" stroke="var(--sleeve, var(--shirt, #2f5f8f))" stroke-width="34" stroke-linecap="round"/><path d="M142 160 L178 236" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/><path d="M178 236 L202.8 226.3" fill="none" stroke="rgba(0,0,0,.26)" stroke-width="29" stroke-linecap="round" stroke-linejoin="round" transform="translate(3 6)"/><path d="M178 236 L202.8 226.3" fill="none" stroke="var(--forearm, var(--sleeve, var(--shirt, #2f5f8f)))" stroke-width="29" stroke-linecap="round"/><path d="M142 160 L178 236 L202.8 226.3" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="29" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(214 222) rotate(-111.2)"><ellipse cx="9.5" cy="-2.8" rx="5.9" ry="9.5" transform="rotate(-30 9.5 -2.8)" fill="var(--skin, #e7b38c)"/><ellipse cx="0" cy="1.9" rx="13.3" ry="15.7" fill="var(--skin, #e7b38c)"/></g></g>
+    <g id="pose-r-phone"><path d="M142 160 L180 212" fill="none" stroke="rgba(0,0,0,.26)" stroke-width="34" stroke-linecap="round" stroke-linejoin="round" transform="translate(3 6)"/><path d="M142 160 L180 212" fill="none" stroke="var(--sleeve, var(--shirt, #2f5f8f))" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/><path d="M180 212 L170 118" fill="none" stroke="var(--forearm, var(--sleeve, var(--shirt, #2f5f8f)))" stroke-width="29" stroke-linecap="round" stroke-linejoin="round"/><path d="M142 160 L180 212 L170 118" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="29" stroke-linecap="round" stroke-linejoin="round"/><g transform="rotate(7 168 80)"><rect x="150" y="26" width="36" height="88" rx="7" fill="#16181c" stroke="#2c3036" stroke-width="2.5"/><circle cx="168" cy="36" r="2" fill="#2c3036"/></g><g transform="translate(168 104) rotate(-173)"><ellipse cx="-11" cy="-3" rx="6" ry="10" transform="rotate(30 -11 -3)" fill="var(--skin, #e7b38c)"/><ellipse cx="0" cy="1.9" rx="15" ry="18" fill="var(--skin, #e7b38c)"/></g><path d="M156 92 L180 90 M155 99 L181 97" stroke="var(--skin-d, #c98f6b)" stroke-width="2" stroke-linecap="round" fill="none"/></g>
     <g id="pose-r-raise"><path d="M142 160 L178 208" fill="none" stroke="rgba(0,0,0,.26)" stroke-width="34" stroke-linecap="round" stroke-linejoin="round" transform="translate(3 6)"/><path d="M142 160 L178 208" fill="none" stroke="var(--sleeve, var(--shirt, #2f5f8f))" stroke-width="34" stroke-linecap="round"/><path d="M142 160 L178 208" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/><path d="M178 208 L188.5 121.9" fill="none" stroke="rgba(0,0,0,.26)" stroke-width="29" stroke-linecap="round" stroke-linejoin="round" transform="translate(3 6)"/><path d="M178 208 L188.5 121.9" fill="none" stroke="var(--forearm, var(--sleeve, var(--shirt, #2f5f8f)))" stroke-width="29" stroke-linecap="round"/><path d="M142 160 L178 208 L188.5 121.9" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="29" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(190 110) rotate(-173.1)"><ellipse cx="9.5" cy="-2.8" rx="5.9" ry="9.5" transform="rotate(-30 9.5 -2.8)" fill="var(--skin, #e7b38c)"/><ellipse cx="0" cy="1.9" rx="13.3" ry="15.7" fill="var(--skin, #e7b38c)"/></g></g>
     <g id="pose-r-pocket"><path d="M142 160 L158 250 L130 304" fill="none" stroke="var(--sleeve, var(--shirt, #2f5f8f))" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/><path d="M142 160 L158 250 L130 304" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/></g>
   </defs>
@@ -719,13 +720,28 @@
   <symbol id="arm-r-chest" viewBox="0 0 200 520" overflow="visible"><use href="#pose-r-chest"/></symbol>
   <symbol id="arm-r-offer" viewBox="0 0 200 520" overflow="visible"><use href="#pose-r-offer"/></symbol>
   <symbol id="arm-r-raise" viewBox="0 0 200 520" overflow="visible"><use href="#pose-r-raise"/></symbol>
+  <symbol id="arm-r-phone" viewBox="0 0 200 520" overflow="visible"><use href="#pose-r-phone"/></symbol>
   <symbol id="arm-r-pocket" viewBox="0 0 200 520" overflow="visible"><use href="#pose-r-pocket"/></symbol>
   <!-- left arms are the right arms mirrored about x = 100 -->
   <symbol id="arm-l-hold" viewBox="0 0 200 520" overflow="visible"><g transform="matrix(-1 0 0 1 200 0)"><use href="#pose-r-hold"/></g></symbol>
   <symbol id="arm-l-chest" viewBox="0 0 200 520" overflow="visible"><g transform="matrix(-1 0 0 1 200 0)"><use href="#pose-r-chest"/></g></symbol>
   <symbol id="arm-l-offer" viewBox="0 0 200 520" overflow="visible"><g transform="matrix(-1 0 0 1 200 0)"><use href="#pose-r-offer"/></g></symbol>
   <symbol id="arm-l-raise" viewBox="0 0 200 520" overflow="visible"><g transform="matrix(-1 0 0 1 200 0)"><use href="#pose-r-raise"/></g></symbol>
+  <symbol id="arm-l-phone" viewBox="0 0 200 520" overflow="visible"><g transform="matrix(-1 0 0 1 200 0)"><use href="#pose-r-phone"/></g></symbol>
   <symbol id="arm-l-pocket" viewBox="0 0 200 520" overflow="visible"><g transform="matrix(-1 0 0 1 200 0)"><use href="#pose-r-pocket"/></g></symbol>
+  <!-- wheel: both arms forward onto a steering wheel. arm-b-wheel draws both arms down to the wrists at (62,270) / (138,270);
+       prop-wheel (origin (100,297) = the hands' anchor 'b-wheel') draws the rim, spokes, hub and then both hands over the rim.
+       stage string: "phak@740 arm=b-wheel prop=wheel" (stand pose; the dashboard in the scene hides the legs) -->
+  <symbol id="arm-b-wheel" viewBox="0 0 200 520" overflow="visible"><path d="M58 160 L50 232 L62 268" fill="none" stroke="rgba(0,0,0,.26)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" transform="translate(3 6)"/><path d="M58 160 L50 232 L62 268" fill="none" stroke="var(--sleeve, var(--shirt, #2f5f8f))" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/><path d="M58 160 L50 232 L62 268" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/><path d="M142 160 L150 232 L138 268" fill="none" stroke="rgba(0,0,0,.26)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" transform="translate(3 6)"/><path d="M142 160 L150 232 L138 268" fill="none" stroke="var(--sleeve, var(--shirt, #2f5f8f))" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/><path d="M142 160 L150 232 L138 268" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="prop-wheel" overflow="visible">
+    <ellipse cx="0" cy="40" rx="104" ry="66" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="20" transform="translate(3 6)"/>
+    <ellipse cx="0" cy="40" rx="104" ry="66" fill="none" stroke="#1c1f24" stroke-width="18"/>
+    <ellipse cx="0" cy="40" rx="104" ry="66" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="3"/>
+    <path d="M-92 52 Q0 70 92 52" fill="none" stroke="#1c1f24" stroke-width="14" stroke-linecap="round"/>
+    <path d="M0 52 L0 100" stroke="#1c1f24" stroke-width="16" stroke-linecap="round"/>
+    <ellipse cx="0" cy="46" rx="30" ry="22" fill="#2a2e35" stroke="#3a3f48" stroke-width="3"/>
+    <circle cx="-38" cy="-21" r="19" fill="var(--skin, #e7b38c)"/><circle cx="38" cy="-21" r="19" fill="var(--skin, #e7b38c)"/>
+  </symbol>
 
   <!-- grip props: origin (0,0) = the hand centre. Draw with transform="translate(x y)" at a hand anchor above. -->
   <symbol id="prop-glass" overflow="visible"><rect x="-17" y="-64" width="34" height="76" rx="5" fill="#dfe9ee" opacity=".85"/><rect x="-15" y="-34" width="30" height="44" rx="3" fill="#8fc4e6" opacity=".9"/><rect x="-17" y="-64" width="34" height="76" rx="5" fill="none" stroke="#9fb4c0" stroke-width="3"/><circle cx="0" cy="0" r="15" fill="var(--skin, #e7b38c)"/></symbol>
@@ -734,6 +750,10 @@
   <symbol id="prop-paper" overflow="visible"><rect x="-34" y="-84" width="68" height="92" rx="3" fill="#f6f1e4" stroke="#cfc6b0" stroke-width="3"/><path d="M-22 -66 H22 M-22 -50 H22 M-22 -34 H8" stroke="#8d8672" stroke-width="4" stroke-linecap="round"/><circle cx="0" cy="0" r="15" fill="var(--skin, #e7b38c)"/></symbol>
   <symbol id="prop-key" overflow="visible"><circle cx="0" cy="-48" r="16" fill="none" stroke="#d9a91c" stroke-width="8"/><rect x="-4" y="-34" width="8" height="40" rx="3" fill="#d9a91c"/><path d="M4 -10 h12 M4 -2 h9" stroke="#d9a91c" stroke-width="6" stroke-linecap="round"/><circle cx="0" cy="0" r="15" fill="var(--skin, #e7b38c)"/></symbol>
   <symbol id="prop-flashlight" overflow="visible"><rect x="-14" y="-62" width="28" height="70" rx="6" fill="#3a3f4a"/><rect x="-20" y="-82" width="40" height="22" rx="5" fill="#d7dbe0"/><ellipse cx="0" cy="-82" rx="16" ry="5" fill="#fff2b8"/><circle cx="0" cy="0" r="15" fill="var(--skin, #e7b38c)"/></symbol>
+  <!-- revolver held side-on, barrel toward +x (flip the actor to aim the other way); grip in the hand -->
+  <symbol id="prop-revolver" overflow="visible"><path d="M-9 8 L-3 -26 L14 -26 L9 6 Z" fill="#4a3426"/><rect x="-6" y="-46" width="36" height="21" rx="4" fill="#2a2c30"/><circle cx="11" cy="-35" r="12" fill="#3d4047" stroke="#16171a" stroke-width="2"/><rect x="28" y="-42" width="50" height="9" rx="2" fill="#2a2c30"/><rect x="72" y="-46" width="5" height="5" fill="#2a2c30"/><path d="M3 -24 q4 13 15 10" fill="none" stroke="#16171a" stroke-width="3"/><circle cx="0" cy="0" r="15" fill="var(--skin, #e7b38c)"/></symbol>
+  <!-- small portable cassette player, front: two reels behind a window, green play button -->
+  <symbol id="prop-cassette" overflow="visible"><rect x="-32" y="-70" width="64" height="46" rx="6" fill="#1e2024"/><rect x="-24" y="-63" width="48" height="20" rx="3" fill="#5a5e66"/><circle cx="-11" cy="-53" r="6" fill="#d8d2c4"/><circle cx="11" cy="-53" r="6" fill="#d8d2c4"/><rect x="-24" y="-38" width="11" height="7" fill="#3a9a52"/><rect x="-9" y="-38" width="11" height="7" fill="#7a7e86"/><circle cx="0" cy="0" r="15" fill="var(--skin, #e7b38c)"/></symbol>
   <!-- ===== Face library (expressions) =====
        A face = eyes + brows + mouth (+ cheeks, tears, sweat). Every character symbol already draws a neutral face.
        To change the mood: add face-off on the svg (hides the neutral eyes and mouth), then layer ONE face symbol
@@ -942,6 +962,25 @@
   <symbol id="talk-e" viewBox="0 0 200 520" overflow="visible"><rect x="86" y="94" width="28" height="11" rx="5.5" fill="var(--mouth, #7a3b34)"/></symbol>
   <symbol id="talk-o" viewBox="0 0 200 520" overflow="visible"><ellipse cx="100" cy="100" rx="7" ry="9" fill="var(--mouth, #7a3b34)"/></symbol>
   <symbol id="talk-m" viewBox="0 0 200 520" overflow="visible"><path d="M90 98 H110" stroke="var(--mouth, #7a3b34)" stroke-width="4" stroke-linecap="round"/></symbol>
+  <!-- talking mouths by mood (kit/stage.tsx talkShape): the mouth takes its shape from the face it sits on. All centred on the face mouth, y about 104 -->
+  <symbol id="talk-smile-a" viewBox="0 0 200 520" overflow="visible"><path d="M82 96 Q100 92 118 96 Q116 120 100 120 Q84 120 82 96Z" fill="var(--mouth, #7a3b34)"/><path d="M85 97 Q100 94 115 97 L114 102 Q100 100 86 102Z" fill="#f4efe6"/><ellipse cx="100" cy="113" rx="8" ry="4" fill="#c45a5a"/></symbol>
+  <symbol id="talk-smile-e" viewBox="0 0 200 520" overflow="visible"><path d="M82 98 Q100 95 118 98 Q114 113 100 113 Q86 113 82 98Z" fill="var(--mouth, #7a3b34)"/><path d="M85 99 Q100 96 115 99 L113 105 Q100 103 87 105Z" fill="#f4efe6"/></symbol>
+  <symbol id="talk-smile-o" viewBox="0 0 200 520" overflow="visible"><path d="M90 98 Q100 95 110 98 Q110 114 100 114 Q90 114 90 98Z" fill="var(--mouth, #7a3b34)"/></symbol>
+  <symbol id="talk-smile-m" viewBox="0 0 200 520" overflow="visible"><path d="M86 101 Q100 112 114 101" fill="none" stroke="var(--mouth, #7a3b34)" stroke-width="5" stroke-linecap="round"/></symbol>
+  <symbol id="talk-down-a" viewBox="0 0 200 520" overflow="visible"><path d="M84 112 Q84 94 100 94 Q116 94 116 112 Q100 106 84 112Z" fill="var(--mouth, #7a3b34)"/><ellipse cx="100" cy="106" rx="7" ry="3" fill="#c45a5a"/></symbol>
+  <symbol id="talk-down-e" viewBox="0 0 200 520" overflow="visible"><path d="M85 110 Q100 95 115 110" fill="none" stroke="var(--mouth, #7a3b34)" stroke-width="8" stroke-linecap="round"/></symbol>
+  <symbol id="talk-down-o" viewBox="0 0 200 520" overflow="visible"><ellipse cx="100" cy="104" rx="7" ry="9" fill="var(--mouth, #7a3b34)"/></symbol>
+  <symbol id="talk-down-m" viewBox="0 0 200 520" overflow="visible"><path d="M88 108 Q100 99 112 108" fill="none" stroke="var(--mouth, #7a3b34)" stroke-width="5" stroke-linecap="round"/></symbol>
+  <symbol id="talk-tense-a" viewBox="0 0 200 520" overflow="visible"><path d="M83 95 H117 L112 116 H88Z" fill="var(--mouth, #7a3b34)" stroke="var(--mouth, #7a3b34)" stroke-width="3" stroke-linejoin="round"/><rect x="86" y="96" width="28" height="6" rx="1.5" fill="#f4efe6"/><rect x="92" y="110" width="16" height="4" rx="1.5" fill="#f4efe6" opacity=".85"/></symbol>
+  <symbol id="talk-tense-e" viewBox="0 0 200 520" overflow="visible"><rect x="82" y="96" width="36" height="14" rx="4" fill="var(--mouth, #7a3b34)"/><rect x="85" y="99" width="30" height="8" rx="1.5" fill="#f4efe6"/><path d="M100 99 V107 M93 99 V107 M107 99 V107" stroke="var(--mouth, #7a3b34)" stroke-width="1.6"/></symbol>
+  <symbol id="talk-tense-o" viewBox="0 0 200 520" overflow="visible"><rect x="89" y="96" width="22" height="16" rx="6" fill="var(--mouth, #7a3b34)"/></symbol>
+  <symbol id="talk-tense-m" viewBox="0 0 200 520" overflow="visible"><path d="M86 104 H114" stroke="var(--mouth, #7a3b34)" stroke-width="5.5" stroke-linecap="round"/></symbol>
+  <symbol id="talk-shock-a" viewBox="0 0 200 520" overflow="visible"><ellipse cx="100" cy="108" rx="13" ry="17" fill="var(--mouth, #7a3b34)"/><ellipse cx="100" cy="116" rx="7" ry="5" fill="#c45a5a"/></symbol>
+  <symbol id="talk-shock-e" viewBox="0 0 200 520" overflow="visible"><ellipse cx="100" cy="106" rx="11" ry="13" fill="var(--mouth, #7a3b34)"/></symbol>
+  <symbol id="talk-shock-o" viewBox="0 0 200 520" overflow="visible"><ellipse cx="100" cy="106" rx="8" ry="11" fill="var(--mouth, #7a3b34)"/></symbol>
+  <symbol id="talk-shock-m" viewBox="0 0 200 520" overflow="visible"><ellipse cx="100" cy="105" rx="6" ry="7" fill="var(--mouth, #7a3b34)"/></symbol>
+  <!-- eyes shut, face at rest: asleep, or not asleep -->
+  <symbol id="face-sleep" viewBox="0 0 200 520" overflow="visible"><path d="M64 74 Q77 81 90 74 M110 74 Q123 81 136 74" fill="none" stroke="var(--eye, #1a1a22)" stroke-width="4.5" stroke-linecap="round"/><path d="M66 58 Q78 55 88 58 M112 58 Q122 55 134 58" fill="none" stroke="var(--brow, #1a1a22)" stroke-width="4" stroke-linecap="round"/><path d="M92 101 Q100 104 108 101" fill="none" stroke="var(--mouth, #7a3b34)" stroke-width="4" stroke-linecap="round"/></symbol>
 
   <!-- ===== Body poses =====
        Whole-figure poses in the 200 x 520 frame (man-lie: 520 x 200). Each has a face transform: put the SAME
@@ -981,10 +1020,8 @@
     <path d="M62 408 Q78 400 94 408 M106 408 Q122 400 138 408" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="5" stroke-linecap="round"/>
     <path d="M100 404 V452" stroke="rgba(0,0,0,.3)" stroke-width="3"/>
     <g transform="translate(0 110)">
-      <g style="display:var(--arm-l-rest,inline)"><path d="M60 162 Q30 236 90 300" fill="none" stroke="var(--shirt, #2f5f8f)" stroke-width="34" stroke-linecap="round"/><path d="M60 162 Q30 236 90 300" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="34" stroke-linecap="round"/></g>
-      <g style="display:var(--arm-r-rest,inline)"><path d="M140 162 Q170 236 110 300" fill="none" stroke="var(--shirt, #2f5f8f)" stroke-width="34" stroke-linecap="round"/><path d="M140 162 Q170 236 110 300" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="34" stroke-linecap="round"/></g>
-      <ellipse cx="92" cy="308" rx="17" ry="14" fill="var(--skin, #e7b38c)"/><ellipse cx="108" cy="308" rx="17" ry="14" fill="var(--skin, #e7b38c)"/>
-      <path d="M94 300 Q100 312 106 300" fill="none" stroke="var(--skin-d, #c98f6b)" stroke-width="3" stroke-linecap="round"/>
+      <g style="display:var(--arm-l-rest,inline)"><path d="M60 162 Q30 236 90 300" fill="none" stroke="var(--shirt, #2f5f8f)" stroke-width="34" stroke-linecap="round"/><path d="M60 162 Q30 236 90 300" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="34" stroke-linecap="round"/><ellipse cx="92" cy="308" rx="17" ry="14" fill="var(--skin, #e7b38c)"/></g>
+      <g style="display:var(--arm-r-rest,inline)"><path d="M140 162 Q170 236 110 300" fill="none" stroke="var(--shirt, #2f5f8f)" stroke-width="34" stroke-linecap="round"/><path d="M140 162 Q170 236 110 300" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="34" stroke-linecap="round"/><ellipse cx="108" cy="308" rx="17" ry="14" fill="var(--skin, #e7b38c)"/><path d="M94 300 Q100 312 106 300" fill="none" stroke="var(--skin-d, #c98f6b)" stroke-width="3" stroke-linecap="round"/></g>
     </g>
   </symbol>
   <symbol id="man-crouch" viewBox="0 0 200 520" overflow="visible">
@@ -1028,10 +1065,8 @@
     <path d="M50 388 H150 L156 450 Q100 464 44 450Z" fill="var(--skirt, #3b4c5e)"/>
     <path d="M64 440 Q100 450 136 440" fill="none" stroke="rgba(0,0,0,.22)" stroke-width="4" stroke-linecap="round"/>
     <g transform="translate(0 100)">
-      <g style="display:var(--arm-l-rest,inline)"><path d="M62 164 Q34 236 90 300" fill="none" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/><path d="M62 164 Q34 236 90 300" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="32" stroke-linecap="round"/></g>
-      <g style="display:var(--arm-r-rest,inline)"><path d="M138 164 Q166 236 110 300" fill="none" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/><path d="M138 164 Q166 236 110 300" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="32" stroke-linecap="round"/></g>
-      <ellipse cx="92" cy="308" rx="16" ry="13" fill="var(--skin, #e7b38c)"/><ellipse cx="108" cy="308" rx="16" ry="13" fill="var(--skin, #e7b38c)"/>
-      <path d="M94 300 Q100 312 106 300" fill="none" stroke="var(--skin-d, #c98f6b)" stroke-width="3" stroke-linecap="round"/>
+      <g style="display:var(--arm-l-rest,inline)"><path d="M62 164 Q34 236 90 300" fill="none" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/><path d="M62 164 Q34 236 90 300" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="32" stroke-linecap="round"/><ellipse cx="92" cy="308" rx="16" ry="13" fill="var(--skin, #e7b38c)"/></g>
+      <g style="display:var(--arm-r-rest,inline)"><path d="M138 164 Q166 236 110 300" fill="none" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/><path d="M138 164 Q166 236 110 300" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="32" stroke-linecap="round"/><ellipse cx="108" cy="308" rx="16" ry="13" fill="var(--skin, #e7b38c)"/><path d="M94 300 Q100 312 106 300" fill="none" stroke="var(--skin-d, #c98f6b)" stroke-width="3" stroke-linecap="round"/></g>
     </g>
   </symbol>
   <symbol id="woman-run" viewBox="0 0 200 520" overflow="visible">
@@ -1305,15 +1340,13 @@
     <path d="M50 388 H150 L156 450 Q100 464 44 450Z" fill="var(--skirt, #3b4c5e)"/>
     <path d="M64 440 Q100 450 136 440" fill="none" stroke="rgba(0,0,0,.22)" stroke-width="4" stroke-linecap="round"/>
     <g transform="translate(0 100)">
-      <g style="display:var(--arm-l-rest,inline)"><path d="M62 164 Q34 236 90 300" fill="none" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/><path d="M62 164 Q34 236 90 300" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="32" stroke-linecap="round"/></g>
-      <g style="display:var(--arm-r-rest,inline)"><path d="M138 164 Q166 236 110 300" fill="none" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/><path d="M138 164 Q166 236 110 300" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="32" stroke-linecap="round"/></g>
-      <ellipse cx="92" cy="308" rx="16" ry="13" fill="var(--skin, #e7b38c)"/><ellipse cx="108" cy="308" rx="16" ry="13" fill="var(--skin, #e7b38c)"/>
-      <path d="M94 300 Q100 312 106 300" fill="none" stroke="var(--skin-d, #c98f6b)" stroke-width="3" stroke-linecap="round"/>
+      <g style="display:var(--arm-l-rest,inline)"><path d="M62 164 Q34 236 90 300" fill="none" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/><path d="M62 164 Q34 236 90 300" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="32" stroke-linecap="round"/><ellipse cx="92" cy="308" rx="16" ry="13" fill="var(--skin, #e7b38c)"/></g>
+      <g style="display:var(--arm-r-rest,inline)"><path d="M138 164 Q166 236 110 300" fill="none" stroke="var(--top, #d9c9a8)" stroke-width="32" stroke-linecap="round"/><path d="M138 164 Q166 236 110 300" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="32" stroke-linecap="round"/><ellipse cx="108" cy="308" rx="16" ry="13" fill="var(--skin, #e7b38c)"/><path d="M94 300 Q100 312 106 300" fill="none" stroke="var(--skin-d, #c98f6b)" stroke-width="3" stroke-linecap="round"/></g>
     </g>
   </symbol>
   <!-- hanging oil lantern (ตะเกียงรั้ว) grip prop: origin = hand centre, lantern hangs below the hand -->
   <symbol id="prop-lantern" overflow="visible">
-    <circle cx="0" cy="64" r="56" fill="var(--lamp, #ffcf8a)" opacity=".22"/>
+    <circle cx="0" cy="58" r="60" fill="var(--lamp, #ffcf8a)" opacity=".06"/><circle cx="0" cy="58" r="46" fill="var(--lamp, #ffcf8a)" opacity=".08"/><circle cx="0" cy="58" r="34" fill="var(--lamp, #ffcf8a)" opacity=".1"/>
     <path d="M-16 0 Q0 -14 16 0" fill="none" stroke="#3a3f4a" stroke-width="5"/>
     <rect x="-20" y="14" width="40" height="10" rx="3" fill="#3a3f4a"/>
     <path d="M-18 24 Q-30 60 -18 92 H18 Q30 60 18 24Z" fill="#f6e2b0" opacity=".9" stroke="#3a3f4a" stroke-width="4"/>
@@ -1336,6 +1369,17 @@
     <rect x="-28" y="-70" width="56" height="18" fill="#3b66a8" opacity=".35"/>
     <path d="M-20 -42 H20 M-20 -28 H20 M-20 -14 H10" stroke="#4a5568" stroke-width="3.5" stroke-linecap="round"/>
     <circle cx="0" cy="0" r="15" fill="var(--skin, #e7b38c)"/>
+  </symbol>
+  <symbol id="prop-phone-ear" overflow="visible">
+    <rect x="-20" y="-82" width="40" height="92" rx="8" fill="#15171c" stroke="#9fd0ff" stroke-width="2.5"/>
+    <circle cx="-8" cy="-70" r="4.5" fill="#3a3e47"/>
+    <circle cx="0" cy="0" r="15" fill="var(--skin, #e7b38c)"/>
+  </symbol>
+  <symbol id="prop-fan" overflow="visible">
+    <path d="M0 2 L-58 -82 A100 100 0 0 1 58 -82 Z" fill="#f7f4ea" stroke="#b9b39e" stroke-width="3"/>
+    <path d="M0 2 L-40 -92 M0 2 L-20 -98 M0 2 L0 -100 M0 2 L20 -98 M0 2 L40 -92" stroke="#c9c3ae" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="15" fill="var(--skin, #e7b38c)"/>
+    <circle cx="0" cy="-4" r="4" fill="#c79a35"/>
   </symbol>
   <symbol id="prop-mug" overflow="visible">
     <path d="M16 -50 Q38 -48 37 -28 Q36 -10 16 -10" fill="none" stroke="#2b6a42" stroke-width="7"/>
@@ -1514,7 +1558,7 @@
   <path d="M100 152 L90 147 L92 157 Z M100 152 L110 147 L108 157 Z" fill="#2d3646"/>
   <circle cx="100" cy="152" r="3" fill="#2d3646"/>
   <g transform="translate(0 4)">
-    <use href="#hair-bob"/>
+    <g style="display:var(--hair-rest,inline)"><use href="#hair-bob"/></g>
     <path d="M66 58 Q78 55 88 58 M112 58 Q122 55 134 58" fill="none" stroke="var(--hair,#20191a)" stroke-width="3.8" stroke-linecap="round" style="display:var(--face-rest,inline)"/>
   </g>
 </symbol>

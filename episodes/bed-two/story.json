@@ -1,0 +1,5934 @@
+{
+  "title": "พยาบาลเวรดึก ชั้นสี่ตึกปิด",
+  "format": "landscape",
+  "target": [
+    1320,
+    1500
+  ],
+  "bpm": 75,
+  "voice": "narrator",
+  "voices": {
+    "narrator": "eleven:weRAVUYgqjjfUEEu5BsB",
+    "lead_male": "eleven:xYmBpJREC3WfqEFpbPvO",
+    "lead_female": "eleven:MYZYcGOqrkYQcwDunXl7",
+    "male": "eleven:xYmBpJREC3WfqEFpbPvO",
+    "female": "eleven:MYZYcGOqrkYQcwDunXl7",
+    "old_male": "eleven:5KvpaGteYkNayiswuX2h",
+    "old_female": "eleven:p2Wol3C7j3rHbfOrbL18",
+    "boy": "eleven:yq05eeRaHPMGuWTVpqeP",
+    "young_female": "eleven:cgSgspJ2msm6clMCkdW9",
+    "father": "eleven:KhBRXgEQjvfdIyXOu7G3",
+    "officer": "eleven:JTfQv1rq84UdcXVunY5m",
+    "casual_male": "eleven:RwilAvCC3o05RLuACpAn",
+    "villain_male": "eleven:Vl27Cllkuw8BhyPqus2n",
+    "villain_female": "eleven:EXAVITQu4vr4xnSDxMaL"
+  },
+  "voiceModel": "eleven_v3",
+  "captionMode": "phrase",
+  "voiceTone": "calm",
+  "voiceTempo": 1,
+  "breath": 0.2,
+  "switchBreath": 0.25,
+  "minBeats": 2,
+  "fitStep": 0.125,
+  "captionLook": "bold",
+  "sfx": {
+    "wardnight": {
+      "prompt": "old empty hospital ward at night, a ventilator pushing air in a slow steady rhythm every five seconds, soft monitor beeps, distant fluorescent hum, no voices",
+      "dur": 10,
+      "influence": 0.5,
+      "gain": 0.25
+    },
+    "vent": {
+      "prompt": "medical ventilator cycle close up, soft mechanical push of air then gentle exhale hiss, one cycle",
+      "dur": 5,
+      "influence": 0.6,
+      "gain": 0.3
+    },
+    "canteen": {
+      "prompt": "busy Thai hospital canteen at lunchtime, cutlery on steel trays, murmuring crowd indistinct, a TV news voice far away unintelligible",
+      "dur": 8,
+      "influence": 0.5,
+      "gain": 0.25
+    },
+    "dusk": {
+      "prompt": "hospital parking lot at dusk in a small Thai town, distant motorbikes, crickets starting, a far ambulance siren fading",
+      "dur": 8,
+      "influence": 0.5,
+      "gain": 0.25
+    },
+    "night": {
+      "prompt": "quiet hospital grounds at night, crickets, a distant dog, faint generator hum, no voices",
+      "dur": 8,
+      "influence": 0.5,
+      "gain": 0.25
+    },
+    "morning": {
+      "prompt": "early morning outside a hospital window, birds, a broom sweeping far away, soft traffic",
+      "dur": 8,
+      "influence": 0.5,
+      "gain": 0.25
+    },
+    "day": {
+      "prompt": "quiet Thai police station office in the morning, ceiling fan, a far typewriter-like keyboard, distant traffic",
+      "dur": 8,
+      "influence": 0.5,
+      "gain": 0.25
+    },
+    "knock3": {
+      "prompt": "three slow knocks with a knuckle on a frosted glass hospital door, glass rattles slightly in its metal frame, empty corridor echo",
+      "dur": 3,
+      "influence": 0.7,
+      "gain": 0.75
+    },
+    "knockfast": {
+      "prompt": "rapid urgent knocking with a palm and knuckles on a frosted glass door in a metal frame, glass rattling, echoing corridor",
+      "dur": 3,
+      "influence": 0.7,
+      "gain": 0.8
+    },
+    "knockfar": {
+      "prompt": "urgent knocking on a glass door heard from across a dark hospital ward, slightly muffled",
+      "dur": 3,
+      "influence": 0.6,
+      "gain": 0.5
+    },
+    "cough": {
+      "prompt": "two dry raspy coughs of an old person behind a cloth curtain, slightly muffled, quiet room",
+      "dur": 2,
+      "influence": 0.7,
+      "gain": 0.55
+    },
+    "curtainrip": {
+      "prompt": "hospital privacy curtain yanked open hard, metal hooks scraping fast along a ceiling rail, fabric whoosh",
+      "dur": 1.5,
+      "influence": 0.7,
+      "gain": 0.85
+    },
+    "breaker": {
+      "prompt": "building power cut, a heavy electrical clunk then every hum in the room dies at once into silence",
+      "dur": 2,
+      "influence": 0.7,
+      "gain": 0.85
+    },
+    "ventalarm": {
+      "prompt": "medical ventilator battery alarm, repeating high electronic beep pattern, urgent",
+      "dur": 3,
+      "influence": 0.7,
+      "gain": 0.6
+    },
+    "ambu": {
+      "prompt": "manual resuscitator bag squeezed once by hand, rubbery squeeze and air rush through a valve, close",
+      "dur": 1,
+      "influence": 0.7,
+      "gain": 0.55
+    },
+    "vials": {
+      "prompt": "a dozen small empty glass medicine vials tipped out of a plastic bin onto a cloth, clinking and rolling",
+      "dur": 2,
+      "influence": 0.7,
+      "gain": 0.6
+    },
+    "clink": {
+      "prompt": "small glass vials clinking together inside a coat pocket with each footstep",
+      "dur": 1,
+      "influence": 0.6,
+      "gain": 0.5
+    },
+    "tapepeel": {
+      "prompt": "medical tape peeled slowly off skin, soft sticky tearing sound, very close, silence around",
+      "dur": 2,
+      "influence": 0.7,
+      "gain": 0.5
+    },
+    "bedroll": {
+      "prompt": "heavy hospital bed rolling fast on old tile floor, wheels rattling, IV pole clinking",
+      "dur": 4,
+      "influence": 0.6,
+      "gain": 0.55
+    },
+    "keys": {
+      "prompt": "a huge ring of old keys shaken and tried one by one in a padlock, frantic metallic jingle",
+      "dur": 3,
+      "influence": 0.6,
+      "gain": 0.6
+    },
+    "chain": {
+      "prompt": "padlock snaps open and a heavy chain slides off a steel door and drops on the floor, door swings open",
+      "dur": 2,
+      "influence": 0.7,
+      "gain": 0.7
+    },
+    "polecrash": {
+      "prompt": "metal IV pole thrown down onto a concrete ramp, loud clattering crash and rolling",
+      "dur": 2,
+      "influence": 0.7,
+      "gain": 0.75
+    },
+    "cuff": {
+      "prompt": "handcuffs ratcheting closed on a wrist, crisp metal clicks",
+      "dur": 1,
+      "influence": 0.7,
+      "gain": 0.6
+    }
+  },
+  "clues": {
+    "vials": {
+      "label": "ขวดยาเปล่าฉลากแดงในถังทิ้งเข็ม",
+      "cover": "ถังเต็มเร็ว ไม่มีคนมาเปลี่ยน เมย์ทิ้งเข็มทุกชั่วโมง"
+    },
+    "tape": {
+      "label": "เทปปิดตาคนไข้ (กฎข้อ 4)",
+      "cover": "กันกระจกตาแห้งในคนโคม่า ทำกันจริงในวอร์ด"
+    },
+    "redlight": {
+      "label": "ไฟแดงกะพริบหลังม่านเตียงสอง",
+      "cover": "ตาผีเตียงสอง ตามคำเล่า"
+    },
+    "ghostsync": {
+      "label": "ผีพูดทุกครั้งที่เมย์เข้าใกล้หน้าคนไข้",
+      "cover": "ผีเตียงสอง"
+    },
+    "clip": {
+      "label": "คลิปขอโทษ ผอ. ฉากหลังเป็นม่านปั๊ม ตึกเมตตา 4",
+      "cover": "ข่าวเบื้องหลังเรื่องงบตึกถูกอายัด"
+    },
+    "portrait": {
+      "label": "หน้า ผอ. ไฝเหนือคิ้วขวา (รูปล็อบบี้ คลิป หนังสือพิมพ์)",
+      "cover": "ล็อบบี้ทางผ่าน เมย์ไหว้ตามนิสัย ข่าวประจำวัน"
+    },
+    "ink": {
+      "label": "ตลับหมึกม่วงของทนาย + คราบหมึกที่นิ้วโป้งคนไข้",
+      "cover": "ใบยินยอมรักษา / คราบหมึกป้ายข้อมือ"
+    },
+    "sign": {
+      "label": "ลายเซ็นพยานและบันทึกการฉีดทุกเข็มของเมย์",
+      "cover": "เอกสารปกติของงานเฝ้าไข้"
+    },
+    "watch": {
+      "label": "นาฬิกาห้อยอกช้าห้านาที / เมย์ฉีดช้ายี่สิบนาที",
+      "cover": "นาฬิกาเก่าของแม่"
+    },
+    "green": {
+      "label": "ลายมือหมึกเขียวบนใบกฎ = บนฉลากเข็ม",
+      "cover": "หัวหน้าเวรเขียนใบกฎ ห้องยาเขียนฉลาก (คำของนวล)"
+    },
+    "ton": {
+      "label": "หมอต้นเข้าห้องยาเก่า กระเป๋าเสื้อดังกริ๊ก",
+      "decoy": true
+    },
+    "phon": {
+      "label": "ลุงพรโกหกว่าไม่มีใครขึ้นไป แบงก์พันในกระเป๋า",
+      "decoy": true
+    },
+    "contractor": {
+      "label": "คนไข้คือผู้รับเหมาที่ตกนั่งร้าน ลูกสาวโล่งใจที่พ่อไม่ขยับ",
+      "decoy": true
+    }
+  },
+  "shots": [
+    {
+      "scene": "ward",
+      "view": "curtain-hand-ecu",
+      "note": "ECU มือเมย์ในถุงมือยางจับขอบม่านเตียงสองสีซีด ไฟแดงจุดเล็กกะพริบลอดรอยต่อม่าน โคมเคาน์เตอร์อุ่นจากซ้ายเป็นแสงเดียว",
+      "text": "พยาบาลจบใหม่ รับงานเฝ้าไข้กะดึก",
+      "cues": [
+        [
+          0,
+          "wardnight"
+        ]
+      ],
+      "mood": 0.7,
+      "clue": "redlight",
+      "data": {
+        "hud": "คืนที่ 3 · 03:00",
+        "mirror": "coldopen",
+        "light": "lamp"
+      },
+      "beats": 3.5,
+      "tempo": 1.12
+    },
+    {
+      "scene": "ins",
+      "view": "rules-sheet-ins",
+      "note": "macro ใบกฎเขียนมือหมึกเขียวบนคลิปบอร์ด ไฟฉายมือถือส่องเฉียง มุมบนเขียนค่าจ้าง 5,000 x 3",
+      "text": "ค่าจ้าง[คืนละห้าพัน] สามคืน",
+      "mood": 0.6,
+      "clue": "green",
+      "beats": 3.375,
+      "tempo": 1.12,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "bed1-high",
+      "note": "มุมสูงจากเพดานลงบนเตียงหนึ่ง ชายผมหงอกนอนนิ่ง ท่อเจาะคอต่อเครื่องช่วยหายใจ เทปขาวปิดตาสองข้าง แสงจอมอนิเตอร์เขียวจับหน้า",
+      "text": "คนไข้คนเดียว โคม่า บนชั้นที่ปิดปรับปรุง",
+      "mood": 0.6,
+      "clue": "tape",
+      "data": {
+        "mirror": "still",
+        "light": "lamp",
+        "lightAt": [
+          -98,
+          1001
+        ],
+        "room": "high",
+        "cam": [
+          1.45,
+          1.566,
+          551.6666666666667,
+          560
+        ],
+        "cast": [
+          "woraT@492,783 h=346 lie sleep acc=none cover=dfe8ee"
+        ]
+      },
+      "beats": 4.5,
+      "tempo": 1.12
+    },
+    {
+      "scene": "ward",
+      "view": "beds-wide",
+      "note": "wide วอร์ดสองเตียงจากหลังเคาน์เตอร์ เตียงหนึ่งซ้ายในแอ่งไฟโคม เตียงสองขวาถูกม่านล้อมมิด ไฟแดงจุดเดียวลอดม่าน",
+      "text": "แต่ห้องนี้มีสองเตียง และ[กฎข้อสอง] คือ {ห้ามเปิดม่านเตียงสอง}",
+      "mood": 0.7,
+      "clue": "redlight",
+      "beats": 7.125,
+      "tempo": 1.08,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          0.98,
+          1.058,
+          900,
+          520
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "may-red-close",
+      "note": "close เมย์ หน้าซีดในแสงไฟแดงจากขวา ตาเหลือบมาทางกล้อง มือซ้ายยังจับม่าน ข้างหลังเบลอเป็นวอร์ดมืด",
+      "text": "ถ้าเป็นคุณ… จะรับไหม",
+      "style": "red",
+      "cues": [
+        [
+          0,
+          "hit"
+        ]
+      ],
+      "mood": 0.8,
+      "beats": 4.125,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          1519,
+          542
+        ],
+        "key": "255,60,44",
+        "cam": [
+          2.89,
+          3.121,
+          1103,
+          489
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@1193,937 h=547 scared yaw=0.45 look=0.5 armR=reach"
+        ]
+      }
+    },
+    {
+      "scene": "ins",
+      "view": "phone-debt-ins",
+      "note": "จอมือถือในมือเมย์ แอป กยศ. ยอดค้าง 200,000 บาท ข้อความน้องเด้งขึ้น \"พี่ ค่าเทอมสิ้นเดือนนะ\" แสงจอจับนิ้ว",
+      "text": "เธอชื่อ[เมย์] อายุยี่สิบสาม หนี้ กยศ. สองแสน กับค่าเทอมน้อง ที่ต้องจ่ายสิ้นเดือนนี้",
+      "mood": 0.5,
+      "beats": 8.375,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "door-fif",
+      "note": "จากในวอร์ดมืดผ่านวงกบเคาน์เตอร์ ประตูกระจกขุ่นปลายทางเดิน ไฟทางเดินเย็นด้านนอก เงาคนสองคนบนกระจก ข้อนิ้วเคาะ",
+      "text": "ตีสามตรง ชั้นสี่ ตึกเมตตา",
+      "cues": [
+        [
+          0.4,
+          "knock3"
+        ]
+      ],
+      "mood": 0.7,
+      "beats": 5.125,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "curtain-low",
+      "note": "มุมต่ำระดับพื้นข้างเตียงสอง ชายม่านลอยเหนือพื้นนิดเดียว รองเท้าพยาบาลขาวของเมย์อยู่ฝั่งนี้ ข้างในม่านมืด ไฟแดงสะท้อนพื้นหินขัด",
+      "text": "คืนนี้คือคืนที่สาม และมือเธอ อยู่บนม่านแล้ว",
+      "cues": [
+        [
+          2.5,
+          "knockfast"
+        ]
+      ],
+      "mood": 0.85,
+      "beats": 6.625,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          155
+        ],
+        "room": "low",
+        "cam": [
+          1.6,
+          1.728,
+          1444,
+          700
+        ],
+        "cast": [
+          "woraT@464,722 h=657 lie sleep acc=none cover=dfe8ee",
+          "may@1343,909 h=1076 worried back"
+        ]
+      }
+    },
+    {
+      "scene": "title",
+      "view": "title",
+      "note": "การ์ดชื่อเรื่องบนพื้นดำ ตัวอักษรขาวซีด มีแสงแดงจุดเดียวกะพริบที่มุม",
+      "text": "",
+      "vo": "",
+      "beats": 2.5,
+      "mood": 0.5,
+      "data": {
+        "title": "พยาบาลเวรดึก",
+        "sub": "ชั้นสี่ตึกปิด",
+        "note": "เรื่องแต่ง โรงพยาบาล ตำรวจ และเหตุการณ์ทั้งหมดในเรื่องนี้เป็นเรื่องสมมติ"
+      }
+    },
+    {
+      "chapter": "งานคืนละห้าพัน",
+      "scene": "card",
+      "view": "chapter",
+      "note": "การ์ดบทบนพื้นดำ ชื่อบทตัวใหญ่ เลขบทเล็กข้างบน ไฟแดงจุดเดียวกะพริบมุมขวา",
+      "text": "",
+      "vo": "บทที่หนึ่ง งานคืนละห้าพัน",
+      "data": {
+        "name": "งานคืนละห้าพัน"
+      },
+      "beats": 3.75,
+      "mood": 0.5
+    },
+    {
+      "scene": "canteen",
+      "view": "canteen-wide",
+      "note": "โรงอาหารโรงพยาบาลตอนเที่ยง แดดจากหน้าต่างบานยาวซ้าย โต๊ะสแตนเลสเรียง คนกินข้าวแน่น ทีวีติดผนังมุมขวาบน เมย์นั่งคนเดียวโต๊ะริมหน้าต่างบนเส้นสามส่วนซ้าย",
+      "text": "สามวันก่อนหน้านั้น โรงพยาบาลคลองหมอก ตอนเที่ยง",
+      "cues": [
+        [
+          0,
+          "canteen"
+        ]
+      ],
+      "mood": 0.25,
+      "data": {
+        "hud": "สามวันก่อน · 12:10",
+        "light": "day",
+        "motion": "push",
+        "lightAt": [
+          200,
+          520
+        ],
+        "cam": [
+          0.98,
+          1.058,
+          1000,
+          520
+        ],
+        "cast": [
+          "may@182,936 h=567 sit tired yaw=0.3 look=-0.3"
+        ],
+        "behind": [
+          "diner3@640,773 h=379 sit yaw=0.35 look=0.7",
+          "diner4@1418,773 h=413 sit yaw=-0.3",
+          "diner5@1709,857 h=478 sit yaw=-0.4 look=0.6"
+        ]
+      },
+      "beats": 6.75
+    },
+    {
+      "scene": "canteen",
+      "view": "may-close",
+      "note": "close เมย์ก้มดูมือถือ หัน 3/4 ไปทางหน้าต่าง ข้าวมันไก่จานเดียวยังไม่แตะ แดดเฉียงจับแก้มซ้าย นาฬิกาห้อยอกซ้ายอยู่ในเฟรม",
+      "text": "เมย์เพิ่งสอบใบประกอบวิชาชีพผ่าน ย้ายมาจากอุดรได้เดือนเดียว",
+      "mood": 0.25,
+      "clue": "watch",
+      "beats": 6.25,
+      "data": {
+        "light": "day",
+        "lightAt": [
+          200,
+          520
+        ],
+        "shade": "r",
+        "cam": [
+          2.79,
+          3.013,
+          89,
+          592
+        ],
+        "cast": [
+          "may@182,936 h=567 sit tired yaw=0.45 look=-0.3 arm=r-hold prop=phone"
+        ]
+      }
+    },
+    {
+      "scene": "ins",
+      "view": "mail-ins",
+      "note": "จออีเมลในมือเมย์ หัวข้อซ้ำกันห้าฉบับ \"ขณะนี้ยังไม่มีตำแหน่งว่าง\" นิ้วโป้งเลื่อนลงช้าๆ แดดสะท้อนจอ",
+      "text": "ทุกเช้าเธอส่งใบสมัคร ทุกเย็นเธอได้คำตอบเดิม ว่ายังไม่มีตำแหน่งว่าง",
+      "mood": 0.25,
+      "beats": 7.75,
+      "data": {}
+    },
+    {
+      "scene": "ins",
+      "view": "watch-ins",
+      "note": "macro นาฬิกาพยาบาลห้อยอกสีเงินเก่าบนเสื้อขาว หน้าปัดกลับหัว เข็มชี้ 12:05 ทั้งที่จอมือถือข้างๆ บอก 12:10 แดดจากซ้าย",
+      "text": "นาฬิกาห้อยอกเรือนเก่าของแม่ เดินช้า[ห้านาที] มาตั้งแต่เธอจำความได้",
+      "mood": 0.25,
+      "clue": "watch",
+      "data": {
+        "mirror": "watch"
+      },
+      "beats": 8.5
+    },
+    {
+      "scene": "canteen",
+      "view": "tv-ins",
+      "note": "ทีวีติดผนังมุมสูง ข่าวเที่ยง ตัววิ่งล่างจอ \"ยาหายจากคลัง รพ. 80 ล้าน\" ภาพเล็กในจอเป็นชายผมหงอก คนกินข้าวหันมองเป็นเงาข้างล่าง",
+      "text": "ทีวีในโรงอาหาร เปิดข่าวเดิมทุกวัน ยาหายจากคลังของโรงพยาบาลนี้ [แปดสิบล้าน]",
+      "mood": 0.3,
+      "beats": 10.875,
+      "data": {}
+    },
+    {
+      "scene": "canteen",
+      "view": "tv-clip-ins",
+      "note": "คลิปเต็มจอทีวี ผอ.วรเทพ ผมหงอกแว่นทอง หน้าซีด ก้มมองต่ำไม่สบกล้อง แสงแฟลชมือถือแข็งจากหน้า ฉากหลังม่านซีดเบลอ ชายม่านมีรอยปั๊มเลือนอ่านไม่ออก",
+      "text": "\"ผมขอโทษ… ผมรับผิดเอง ผมจะไม่กลับไป\"",
+      "who": "wora",
+      "voice": "casual_male",
+      "fx": "phone",
+      "tone": "tired",
+      "mood": 0.35,
+      "clue": [
+        "clip",
+        "portrait"
+      ],
+      "data": {
+        "mirror": "clip"
+      },
+      "beats": 4.875
+    },
+    {
+      "scene": "canteen",
+      "view": "diners-wide",
+      "note": "wide โต๊ะข้างๆ ป้าแม่บ้านสองคนหันไปทางทีวีที่ยังเล่นคลิปเดิมอยู่มุมบน คนหนึ่งชี้ตะเกียบ อีกคนส่ายหัว แดดเที่ยงเต็มโต๊ะ เมย์เล็กอยู่ไกลริมหน้าต่าง",
+      "text": "คนทั้งโรงอาหารเชื่อเหมือนกัน ว่าผอ.วรเทพโกงแล้วหนีไปสบาย",
+      "mood": 0.3,
+      "clue": "clip",
+      "beats": 8.5,
+      "data": {
+        "light": "day",
+        "lightAt": [
+          200,
+          520
+        ],
+        "cam": [
+          1.35,
+          1.458,
+          1200,
+          520
+        ],
+        "cast": [
+          "may@182,936 h=567 sit tired yaw=0.3"
+        ],
+        "behind": [
+          "diner1@935,847 h=497 sit yaw=0.45 look=0.8",
+          "diner2@1091,847 h=462 sit yaw=0.45 look=0.8 armR=point",
+          "diner3@640,773 h=379 sit yaw=0.35 look=0.7",
+          "diner4@1418,773 h=413 sit yaw=-0.3",
+          "diner5@1709,857 h=478 sit yaw=-0.4 look=0.6"
+        ]
+      }
+    },
+    {
+      "scene": "ext",
+      "view": "scaffold-ins",
+      "note": "นั่งร้านไม้ไผ่ข้างตึกเก่าคลุมผ้าเขียวขาดวิ่น ป้ายสังกะสี \"ระงับโครงการชั่วคราว\" แดดบ่ายแรง",
+      "text": "งานปรับปรุงตึกเก่าที่ผอ.เซ็นอนุมัติไว้ เลยถูกแช่แข็ง เพราะงบถูกอายัดทั้งก้อน",
+      "mood": 0.3,
+      "data": {
+        "light": "day"
+      },
+      "beats": 8.375
+    },
+    {
+      "scene": "canteen",
+      "view": "nuan-arrive-two",
+      "note": "two-shot นวลวางถาดลงฝั่งตรงข้ามเมย์ ยิ้ม หมวกพยาบาลขีดดำสองขีด แว่นสายคล้องคอ แดดจากหน้าต่างหลังเมย์เป็น rim ให้ทั้งสองคน",
+      "text": "แล้วหัวหน้าเวรคนหนึ่ง ก็วางถาดลงตรงข้ามเธอ",
+      "mood": 0.3,
+      "data": {
+        "motion": "push",
+        "light": "day",
+        "lightAt": [
+          200,
+          520
+        ],
+        "cam": [
+          2.6,
+          2.808,
+          312,
+          587
+        ],
+        "cast": [
+          "may@182,936 h=567 sit worried yaw=0.45 look=0.4",
+          "nuan@441,936 h=578 happy yaw=-0.45 armR=hold prop=bowl"
+        ]
+      },
+      "beats": 5
+    },
+    {
+      "scene": "canteen",
+      "view": "nuan-dossier-med",
+      "note": "medium นวลนั่ง หยิบช้อน หัน 3/4 หาเมย์ เส้นคำบรรยายบางสามเส้นชี้ที่หมวก แว่น และป้ายชื่อ ปากกาเมจิกเขียวเหน็บกระเป๋าเสื้อขวา",
+      "text": "นวล หัวหน้าเวรดึก อยู่ที่นี่มายี่สิบเจ็ดปี คนที่น้องพยาบาลทั้งตึก เรียกว่าพี่",
+      "mood": 0.3,
+      "clue": "green",
+      "data": {
+        "callouts": [
+          "หัวหน้าเวรดึก",
+          "27 ปีในวิชาชีพ",
+          "แว่นสายคล้องคอ"
+        ],
+        "tag": "นวล · 48",
+        "light": "day",
+        "lightAt": [
+          200,
+          520
+        ],
+        "cam": [
+          1.54,
+          1.663,
+          636,
+          721
+        ],
+        "cast": [
+          "nuan@441,936 h=578 sit happy yaw=-0.45 look=-0.4 armR=hold prop=spoon"
+        ]
+      },
+      "beats": 9
+    },
+    {
+      "scene": "canteen",
+      "view": "nuan-warm-close",
+      "note": "close นวลยิ้มแบบรุ่นพี่ ดันจานไข่เจียวของตัวเองไปทางเมย์ แดดจากหน้าต่างจับขอบหมวก",
+      "text": "\"กินข้าวคนเดียวอีกแล้วเหรอน้อง พี่เห็นมาหลายวันแล้วนะ\"",
+      "who": "nuan",
+      "voice": "villain_female",
+      "mood": 0.3,
+      "beats": 6.5,
+      "data": {
+        "light": "day",
+        "lightAt": [
+          200,
+          520
+        ],
+        "cam": [
+          2.74,
+          2.959,
+          536,
+          585
+        ],
+        "cast": [
+          "nuan@441,936 h=578 sit happy yaw=-0.45 look=-0.4 talk armR=offer"
+        ]
+      }
+    },
+    {
+      "scene": "canteen",
+      "view": "nuan-close",
+      "note": "close นวลหัน 3/4 หาเมย์ ยิ้มอ่อน มือขวาเลื่อนกระดาษพับข้ามโต๊ะ ฉากหลังโรงอาหารเบลอ แดดซ้าย",
+      "text": "\"มีงานเฝ้าไข้พิเศษ กะดึกสามคืน ญาติจ่ายเงินสด คืนละห้าพัน สนใจไหมจ๊ะ\"",
+      "who": "nuan",
+      "voice": "villain_female",
+      "mood": 0.3,
+      "beats": 8.875,
+      "data": {
+        "light": "day",
+        "lightAt": [
+          200,
+          520
+        ],
+        "cam": [
+          3.24,
+          3.499,
+          361,
+          580
+        ],
+        "cast": [
+          "nuan@441,936 h=578 sit happy yaw=-0.5 look=-0.5 talk armR=offer prop=paper"
+        ]
+      }
+    },
+    {
+      "scene": "canteen",
+      "view": "may-ots",
+      "note": "ข้ามไหล่นวล (หมวกขีดดำเบลอเป็น FG ขวา) เมย์ตาโต วางมือถือลงบนโต๊ะ",
+      "text": "\"ห้าพัน… ต่อคืนเลยเหรอคะพี่\"",
+      "who": "may",
+      "voice": "lead_female",
+      "mood": 0.3,
+      "beats": 5,
+      "data": {
+        "light": "day",
+        "lightAt": [
+          200,
+          520
+        ],
+        "foreShoulder": "r",
+        "foreColor": "#eef0ee",
+        "foreHair": "#422f28",
+        "cam": [
+          2.4,
+          2.592,
+          290,
+          597
+        ],
+        "cast": [
+          "may@182,936 h=567 sit shock yaw=0.45 look=0.5 talk armR=chest"
+        ]
+      }
+    },
+    {
+      "scene": "ins",
+      "view": "folder-ins",
+      "note": "macro แฟ้มคนไข้บนโต๊ะสแตนเลส ป้ายชื่อ \"สมศักดิ์ 72\" รูปชายใส่หมวกนิรภัยเหลืองยืนหน้านั่งร้าน ปลายนิ้วนวลแตะรูป",
+      "text": "\"คนไข้ชื่อคุณสมศักดิ์ เจ็ดสิบสอง เคยเป็นผู้รับเหมาตึกเมตตา\"",
+      "who": "nuan",
+      "voice": "villain_female",
+      "mood": 0.3,
+      "clue": "contractor",
+      "beats": 5.875,
+      "data": {}
+    },
+    {
+      "scene": "canteen",
+      "view": "nuan-sad-close",
+      "note": "close นวลหลุบตาลงมองแฟ้ม ส่ายหัวช้าๆ แบบคนสงสาร แดดจากหน้าต่างหลังเมย์เป็นขอบสว่าง",
+      "text": "\"ตกนั่งร้านตอนเขาเริ่มรื้อ โคม่ามาสองเดือนแล้ว น่าสงสาร\"",
+      "who": "nuan",
+      "voice": "villain_female",
+      "mood": 0.3,
+      "beats": 6.75,
+      "data": {
+        "light": "day",
+        "lightAt": [
+          200,
+          520
+        ],
+        "cam": [
+          2.74,
+          2.959,
+          346,
+          585
+        ],
+        "cast": [
+          "nuan@441,936 h=578 sit sad yaw=-0.35 look=-0.7 talk"
+        ]
+      }
+    },
+    {
+      "scene": "canteen",
+      "view": "nuan-tray-med",
+      "note": "medium นวลจากมุมเยื้องอีกข้าง ตักข้าวเข้าปาก พูดเรื่องธรรมดา ข้างหลังทีวียังเปิดข่าว",
+      "text": "\"ลูกสาวเขาไม่อยากให้ย้ายพ่อ ห้องยาจะส่งถาดยาขึ้นไปให้ทุกเย็น น้องแค่ฉีดตามเวลา\"",
+      "who": "nuan",
+      "voice": "villain_female",
+      "mood": 0.3,
+      "beats": 9.875,
+      "data": {
+        "light": "day",
+        "lightAt": [
+          200,
+          520
+        ],
+        "cam": [
+          1.4,
+          1.512,
+          227,
+          738
+        ],
+        "cast": [
+          "nuan@441,936 h=578 sit yaw=-0.35 talk armR=hold prop=spoon"
+        ]
+      }
+    },
+    {
+      "scene": "ins",
+      "view": "rules-unfold-ins",
+      "note": "มือนวลกางใบกฎเขียนมือหมึกเขียวบนโต๊ะ ปากกาเมจิกเขียวเหน็บกระเป๋าเสื้อขวาโผล่ขอบเฟรม ช้อนกับแก้วน้ำแข็งข้างๆ",
+      "text": "\"แต่มีกฎนะ ตึกนั้นมันเก่า ใครเฝ้าต้องทำตามทุกข้อ\"",
+      "who": "nuan",
+      "voice": "villain_female",
+      "mood": 0.35,
+      "clue": "green",
+      "beats": 6.625,
+      "data": {}
+    },
+    {
+      "scene": "rules",
+      "view": "rule1",
+      "text": "ข้อหนึ่ง ฉีดยาตามเวลา ทุกชั่วโมง ห้ามข้าม",
+      "cues": [
+        [
+          0.3,
+          "stamp"
+        ]
+      ],
+      "mood": 0.4,
+      "data": {
+        "no": 1,
+        "hud": "กฎข้อ 1 / 5"
+      },
+      "beats": 5.5
+    },
+    {
+      "scene": "rules",
+      "view": "rule2",
+      "text": "ข้อสอง ห้ามเปิดม่านเตียงสอง เด็ดขาด",
+      "cues": [
+        [
+          0.3,
+          "stamp"
+        ]
+      ],
+      "mood": 0.45,
+      "data": {
+        "no": 2,
+        "hud": "กฎข้อ 2 / 5"
+      },
+      "beats": 4.75
+    },
+    {
+      "scene": "canteen",
+      "view": "sheet-may-ots",
+      "note": "ข้ามไหล่เมย์ลงบนใบกฎในมือเธอ ปลายนิ้วหยุดที่ข้อสอง แดดเที่ยงทาบกระดาษ",
+      "text": "เมย์อ่านข้อสองซ้ำ สองรอบ",
+      "mood": 0.45,
+      "beats": 3.75,
+      "data": {
+        "light": "day",
+        "lightAt": [
+          200,
+          520
+        ],
+        "foreShoulder": "l",
+        "foreColor": "#eef0ee",
+        "foreHair": "#1c1714",
+        "cam": [
+          2.4,
+          2.592,
+          73,
+          597
+        ],
+        "cast": [
+          "may@182,936 h=567 sit worried yaw=0.2 look=-0.8 armR=hold prop=paper"
+        ]
+      }
+    },
+    {
+      "scene": "rules",
+      "view": "rule3",
+      "text": "ข้อสาม หลังตีสาม ถ้ามีเสียงเคาะประตูกระจกหน้าวอร์ด อย่าขานรับ",
+      "cues": [
+        [
+          0.3,
+          "stamp"
+        ]
+      ],
+      "mood": 0.45,
+      "data": {
+        "no": 3,
+        "hud": "กฎข้อ 3 / 5"
+      },
+      "beats": 7
+    },
+    {
+      "scene": "rules",
+      "view": "rule4",
+      "text": "ข้อสี่ ห้ามแกะเทปปิดตาคนไข้",
+      "cues": [
+        [
+          0.3,
+          "stamp"
+        ]
+      ],
+      "mood": 0.45,
+      "clue": "tape",
+      "data": {
+        "no": 4,
+        "hud": "กฎข้อ 4 / 5"
+      },
+      "beats": 5.625
+    },
+    {
+      "scene": "canteen",
+      "view": "nuan-eye-close",
+      "note": "close นวลแตะใต้ตาตัวเองด้วยนิ้วชี้ อธิบายแบบพยาบาลรุ่นพี่ แดดจากหน้าต่างจับครึ่งหน้า",
+      "text": "\"คนโคม่าหลับตาไม่สนิทนะ ปล่อยไว้กระจกตาแห้ง เป็นแผล\"",
+      "who": "nuan",
+      "voice": "villain_female",
+      "mood": 0.4,
+      "beats": 6.625,
+      "data": {
+        "light": "day",
+        "lightAt": [
+          200,
+          520
+        ],
+        "cam": [
+          2.74,
+          2.959,
+          536,
+          585
+        ],
+        "cast": [
+          "nuan@441,936 h=578 sit yaw=-0.45 look=-0.4 talk armR=face"
+        ]
+      }
+    },
+    {
+      "scene": "rules",
+      "view": "rule5",
+      "text": "ข้อห้า ถ้าคนไข้ขยับ ให้ฉีดเข็มถัดไปทันที ไม่ต้องรอเวลา",
+      "cues": [
+        [
+          0.3,
+          "stamp"
+        ]
+      ],
+      "mood": 0.5,
+      "data": {
+        "no": 5,
+        "hud": "กฎข้อ 5 / 5"
+      },
+      "beats": 7.25
+    },
+    {
+      "scene": "canteen",
+      "view": "may-ask-close",
+      "note": "close เมย์ เอียงหัว มือจับขอบใบกฎ แดดจากหลังเป็นขอบสว่างที่ผม",
+      "text": "\"ทำไมต้องห้ามเปิดม่านล่ะคะพี่\"",
+      "who": "may",
+      "voice": "lead_female",
+      "mood": 0.4,
+      "beats": 3.875,
+      "data": {
+        "light": "day",
+        "lightAt": [
+          200,
+          520
+        ],
+        "cam": [
+          2.79,
+          3.013,
+          89,
+          592
+        ],
+        "cast": [
+          "may@182,936 h=567 sit worried yaw=0.45 look=0.5 talk armR=hold prop=paper head=-8"
+        ]
+      }
+    },
+    {
+      "scene": "canteen",
+      "view": "nuan-lean-close",
+      "note": "close นวลโน้มตัวเข้ามา เสียงลง ตาไม่สบตา มือกำช้อน เมฆบังแดดจนแสงจางลงครึ่งหน้า",
+      "text": "\"เตียงสองเคยมีคนไข้ตาย ตอนเขาเริ่มรื้อตึก ตั้งแต่นั้นมา… ก็ไม่มีใครเปิดม่านนั้นอีก\"",
+      "who": "nuan",
+      "voice": "villain_female",
+      "tone": "whispers",
+      "mood": 0.55,
+      "beats": 10.25,
+      "data": {
+        "light": "day",
+        "lightAt": [
+          200,
+          520
+        ],
+        "cam": [
+          3.07,
+          3.316,
+          526,
+          582
+        ],
+        "cast": [
+          "nuan@441,936 h=578 sit worried yaw=-0.3 look=0.5 talk armR=hold prop=spoon head=10"
+        ]
+      }
+    },
+    {
+      "scene": "canteen",
+      "view": "nuan-warn-two",
+      "note": "two-shot ข้ามโต๊ะ นวลเหลือบไปทางประตูโรงอาหาร ชายเสื้อกาวน์คนหนึ่งเดินผ่านไกลๆ เบลอ เมย์มองตาม",
+      "text": "\"อีกเรื่อง ระวังหมอต้นนะ ช่วงนี้ยาหายจากห้องยาบ่อย\"",
+      "who": "nuan",
+      "voice": "villain_female",
+      "mood": 0.45,
+      "clue": "ton",
+      "beats": 5.875,
+      "data": {
+        "light": "day",
+        "lightAt": [
+          200,
+          520
+        ],
+        "cam": [
+          2.53,
+          2.732,
+          312,
+          650
+        ],
+        "cast": [
+          "ton@1298,744 h=375 walk yaw=0.4",
+          "may@182,936 h=567 sit wary yaw=0.45 look=0.8",
+          "nuan@441,936 h=578 sit wary yaw=-0.2 look=0.8 talk"
+        ],
+        "motion": "walk"
+      }
+    },
+    {
+      "scene": "canteen",
+      "view": "may-fold-med",
+      "note": "medium เมย์พับใบกฎใส่กระเป๋าเสื้อ ตาลงต่ำ แล้วเงยขึ้นพยักหน้า แดดกลับมาเต็มหน้า",
+      "text": "หนี้สองแสน กับค่าเทอมน้อง ทำให้เมย์ ไม่ถามต่อ",
+      "mood": 0.35,
+      "beats": 6.75,
+      "data": {
+        "light": "day",
+        "lightAt": [
+          200,
+          520
+        ],
+        "cam": [
+          1.57,
+          1.696,
+          -10,
+          725
+        ],
+        "cast": [
+          "may@182,936 h=567 sit worried yaw=0.4 look=0.3 armR=chest"
+        ]
+      }
+    },
+    {
+      "scene": "ext",
+      "view": "metta-low",
+      "note": "มุมต่ำจากลานจอดรถ ตึกเก่าสี่ชั้นสีครีมหมอง นั่งร้านไม้ไผ่ค้างคลุมผ้าเขียวครึ่งตึก หน้าต่างดำทุกบาน ยกเว้นชั้นสี่บานเดียวมีไฟอุ่น ฟ้าพลบส้ม",
+      "text": "หนึ่งทุ่มคืนนั้น เธอมาถึงตึกเมตตา ตึกเก่าสี่ชั้น ที่นั่งร้านยังค้างอยู่ครึ่งตึก",
+      "cues": [
+        [
+          0,
+          "dusk"
+        ]
+      ],
+      "mood": 0.4,
+      "data": {
+        "hud": "คืนที่ 1 · 19:00",
+        "light": "dusk",
+        "motion": "push",
+        "lightAt": [
+          1700,
+          300
+        ],
+        "cam": [
+          1,
+          1.08,
+          960,
+          520
+        ],
+        "cast": []
+      },
+      "beats": 8.125
+    },
+    {
+      "scene": "lobby",
+      "view": "phon-dossier-med",
+      "note": "medium ลุงพรในป้อมไม้หน้าล็อบบี้ โคมโต๊ะอุ่น ไฟฉายเลนส์แดงมือขวา พวงกุญแจใหญ่ห้อยเอว ยิ้มกว้างเห็นฟัน เส้นคำบรรยายสามเส้น",
+      "text": "ลุงพร ยามตึกเก่า เปิดประตูรับเธอ ด้วยพวงกุญแจพวงใหญ่ที่สุด ที่เมย์เคยเห็น",
+      "mood": 0.4,
+      "clue": "phon",
+      "data": {
+        "callouts": [
+          "ยามตึกเมตตา",
+          "19 ปี",
+          "กุญแจทุกชั้น"
+        ],
+        "tag": "ลุงพร · 61",
+        "light": "dusk",
+        "time": "dusk",
+        "lightAt": [
+          1426,
+          468
+        ],
+        "cam": [
+          2.01,
+          2.171,
+          1631,
+          536
+        ],
+        "cast": [
+          "phon@1482,794 h=443 happy yaw=-0.45 arm=r-hold prop=flashlight"
+        ]
+      },
+      "beats": 9.25
+    },
+    {
+      "scene": "lobby",
+      "view": "lobby-wide",
+      "note": "wide ล็อบบี้มืด พื้นหินขัด ลิฟต์ติดป้ายปิดซ่อม ผนังซ้ายแขวนกรอบรูปใหญ่ ไฟฉายแดงลุงพรกวาดนำ เมย์เดินตามสามก้าว แสงพลบจากประตูหลังทั้งสองคน",
+      "text": "ลิฟต์ปิดซ่อม ต้องเดินบันได ผ่านล็อบบี้ ที่ไฟดับไปครึ่งหนึ่ง",
+      "mood": 0.45,
+      "clue": "portrait",
+      "data": {
+        "motion": "walk",
+        "move": [
+          1500,
+          700
+        ],
+        "light": "dusk",
+        "time": "dusk",
+        "lightAt": [
+          2279,
+          500
+        ],
+        "cam": [
+          0.98,
+          1.058,
+          960,
+          520
+        ],
+        "cast": [
+          "phon@752,870 h=537 walk yaw=-0.3 arm=r-hold prop=flashlight",
+          "may@980,910 h=537 walk yaw=-0.3"
+        ]
+      },
+      "beats": 6.875
+    },
+    {
+      "scene": "lobby",
+      "view": "portrait-wai-med",
+      "note": "medium เมย์ยกมือไหว้ขณะเดินผ่านกรอบรูปบนผนัง ไฟฉายแดงผ่านกรอบแวบเดียว ในรูปเป็นแค่ชายใส่สูทเงาๆ อ่านหน้าไม่ออก",
+      "text": "เธอยกมือไหว้ตามนิสัย อย่างที่แม่สอน ไหว้ทุกรูปที่แขวนสูงกว่าหัว",
+      "mood": 0.4,
+      "clue": "portrait",
+      "data": {
+        "mirror": "portrait",
+        "light": "lamp",
+        "time": "dusk",
+        "lightAt": [
+          608,
+          300
+        ],
+        "cam": [
+          1.7,
+          1.836,
+          633,
+          470
+        ],
+        "cast": [
+          "may@565,800 h=412 yaw=-0.45 look=-0.5 armL=chest armR=chest"
+        ]
+      },
+      "beats": 7.5
+    },
+    {
+      "scene": "stair",
+      "view": "ramp-low",
+      "note": "มุมต่ำจากเชิงทางลาดเข็นเตียงที่วนขึ้นข้างบันได ป้ายไม้ \"ทางลาด\" ซีด ประตูเหล็กข้างตึกคล้องโซ่อยู่ซ้าย ไฟฉุกเฉินเขียว ลุงพรชี้ไฟฉายขึ้นทางลาด",
+      "text": "\"ตึกนี้สร้างก่อนมีลิฟต์ สมัยก่อนเขาเข็นเตียงขึ้นลงทางลาดนี่แหละ ส่วนประตูข้างนั่น ปิดตายแล้ว\"",
+      "who": "phon",
+      "voice": "old_male",
+      "mood": 0.45,
+      "beats": 9.75,
+      "data": {
+        "light": "night",
+        "lightAt": [
+          1182,
+          300
+        ],
+        "cam": [
+          1.1,
+          1.188,
+          1000,
+          580
+        ],
+        "cast": [
+          "may@260,1108 h=753 worried yaw=0.4",
+          "phon@568,1163 h=895 happy yaw=0.45 look=0.5 talk arm=r-hold prop=flashlight"
+        ]
+      }
+    },
+    {
+      "scene": "stair",
+      "view": "phon-legend-close",
+      "note": "close ลุงพรบนขั้นบันได ไฟฉายแดงส่องจากใต้คาง หันกลับมามองเมย์ ข้างหลังบันไดมืดวนขึ้น",
+      "text": "\"คนก่อนหนูอยู่ได้สี่คืนนะ เขาว่าได้ยินเตียงสองไอ ทั้งคืน\"",
+      "who": "phon",
+      "voice": "old_male",
+      "tone": "whispers",
+      "mood": 0.55,
+      "beats": 9.25,
+      "data": {
+        "light": "night",
+        "lightAt": [
+          561,
+          525
+        ],
+        "key": "255,80,60",
+        "cam": [
+          2.43,
+          2.624,
+          394,
+          442
+        ],
+        "cast": [
+          "phon@501,975 h=651 wary yaw=0.45 look=0.6 talk arm=r-hold prop=flashlight"
+        ]
+      }
+    },
+    {
+      "scene": "stair",
+      "view": "window-close",
+      "note": "หน้าต่างชานพักบันไดชั้นสี่ แสงไฟถนนสีส้มลอดเข้า เมย์ยกมือถือขึ้น ขีดสัญญาณขึ้นหนึ่งขีด ข้างนอกไกลๆ คือหลังคาตึกฉุกเฉินที่สว่างทั้งคืน",
+      "text": "ชั้นสี่ไม่มีสัญญาณมือถือ ที่เดียวที่โทรออกได้ คือหน้าต่างบานนี้ บนชานพักบันได",
+      "mood": 0.45,
+      "beats": 9.625,
+      "data": {
+        "light": "night",
+        "lightAt": [
+          1182,
+          300
+        ],
+        "key": "255,170,90",
+        "cam": [
+          2.97,
+          3.208,
+          1295,
+          488
+        ],
+        "cast": [
+          "may@1208,854 h=453 worried yaw=-0.3 look=0.6 arm=r-phone prop=phone"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "ward-entry-wide",
+      "note": "wide วอร์ดชั้นสี่จากประตูกระจก ทางเดินมืด เคาน์เตอร์พยาบาลมีโคมอุ่นดวงเดียว นวลยืนรอข้างเคาน์เตอร์ เตียงหนึ่งซ้ายเครื่องช่วยหายใจไฟเขียว เตียงสองขวาล้อมม่าน เมย์ยืนที่ประตูเป็นเงาหลังตรงหน้ากล้อง",
+      "text": "แล้วเธอก็มาถึงวอร์ดชั้นสี่ สองเตียง คนไข้หนึ่งคน และพี่นวล ที่ขึ้นมารอส่งเวรให้เอง",
+      "cues": [
+        [
+          0,
+          "wardnight"
+        ]
+      ],
+      "mood": 0.5,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          1,
+          1.08,
+          860,
+          520
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may-sil@125,802 h=402 back",
+          "nuan@229,950 h=572 yaw=0.4 armR=wave"
+        ]
+      },
+      "beats": 10
+    },
+    {
+      "scene": "ward",
+      "view": "handover-two",
+      "note": "two-shot ข้างเตียงหนึ่งใต้โคม นวลชี้ข้อต่อสายน้ำเกลือที่หลังมือคนไข้ เมย์ยืนจดลงสมุดเล่มเล็ก เครื่องช่วยหายใจไฟเขียวข้างหลัง",
+      "text": "\"ฉีดตรงข้อต่อนี้ ตรงเวลาทุกชั่วโมง แล้วเซ็นชื่อลงสมุดทุกเข็มนะ ห้ามลืม\"",
+      "who": "nuan",
+      "voice": "villain_female",
+      "mood": 0.45,
+      "clue": "sign",
+      "beats": 8.25,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          2.6,
+          2.808,
+          642,
+          545
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "nuan@513,901 h=517 yaw=-0.45 armR=point talk",
+          "may@770,924 h=534 worried yaw=-0.4 armL=hold prop=paper"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "may-handover-close",
+      "note": "close เมย์พยักหน้าเร็วๆ ตาเหลือบไปทางม่านเตียงสองข้างหลังนวล มือกำปากกา",
+      "text": "\"แล้วถ้ามีอะไรฉุกเฉิน หนูโทรหาพี่ได้ไหมคะ\"",
+      "who": "may",
+      "voice": "lead_female",
+      "mood": 0.45,
+      "beats": 4.625,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          2.97,
+          3.208,
+          858,
+          488
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@770,924 h=534 worried yaw=-0.45 look=0.5 talk armL=hold prop=paper",
+          "nuan@513,901 h=517 yaw=-0.45"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "nuan-handover-close",
+      "note": "close นวลแตะไหล่เมย์ ยิ้ม หันไปทางประตูกระจก โคมอุ่นจับครึ่งหน้า ครึ่งหนึ่งอยู่ในเงา",
+      "text": "\"โทรได้ทุกเวลา แต่ต้องไปยืนที่หน้าต่างบันไดนะจ๊ะ ตรงนี้สัญญาณไม่มี\"",
+      "who": "nuan",
+      "voice": "villain_female",
+      "mood": 0.45,
+      "beats": 7.5,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "shade": "r",
+        "cam": [
+          3.06,
+          3.305,
+          428,
+          477
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "nuan@513,901 h=517 happy yaw=0.45 look=0.3 talk armR=offer",
+          "may@770,924 h=534 worried yaw=-0.4"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "curtain-close",
+      "note": "close ม่านเตียงสองระดับสายตา ผ้าซีดนิ่ง แล้วไฟแดงจุดเล็กจุดหนึ่งกะพริบลอดรอยต่อม่าน",
+      "text": "และหลังม่านเตียงสอง ไฟแดงดวงเล็ก {กะพริบขึ้น} เป็นครั้งแรก",
+      "cues": [
+        [
+          1.5,
+          "shriek"
+        ]
+      ],
+      "mood": 0.65,
+      "clue": "redlight",
+      "beats": 6.875,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          2.3,
+          2.484,
+          1519,
+          499
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee"
+        ]
+      }
+    },
+    {
+      "chapter": "คืนแรก",
+      "scene": "card",
+      "view": "chapter",
+      "note": "การ์ดบทบนพื้นดำ ชื่อบทตัวใหญ่ เลขบทเล็กข้างบน ไฟแดงจุดเดียวกะพริบมุมขวา",
+      "text": "",
+      "vo": "บทที่สอง คืนแรก",
+      "data": {
+        "name": "คืนแรก"
+      },
+      "beats": 3.375,
+      "mood": 0.5
+    },
+    {
+      "scene": "ward",
+      "view": "counter-ots",
+      "note": "ข้ามไหล่เมย์ที่เคาน์เตอร์ โคมอุ่นส่องสมุดบันทึก เตียงหนึ่งอยู่พื้นหลังซ้าย เครื่องช่วยหายใจกะพริบไฟเขียวตามจังหวะ",
+      "text": "คุณสมศักดิ์หายใจด้วยเครื่อง ผ่านท่อที่เจาะคอ เครื่องดันลมเข้าทุกห้าวินาที ไม่เคยพลาดสักครั้ง",
+      "cues": [
+        [
+          0,
+          "vent"
+        ]
+      ],
+      "mood": 0.45,
+      "data": {
+        "hud": "คืนที่ 1 · 22:00",
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "foreShoulder": "l",
+        "foreColor": "#e8eae8",
+        "foreHair": "#1c1714",
+        "cam": [
+          1.45,
+          1.566,
+          520,
+          600
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee"
+        ]
+      },
+      "beats": 10.125
+    },
+    {
+      "scene": "ward",
+      "view": "bed1-close",
+      "note": "close หน้าคุณสมศักดิ์บนหมอน หันเฉียงเล็กน้อย ผมหงอกสั้น เทปขาวปิดตาสองข้าง ท่อเจาะคอ แสงจอมอนิเตอร์เขียวจับครึ่งหน้า",
+      "text": "หน้าของเขาซูบ ตาถูกปิดด้วยเทปขาว ตามกฎข้อสี่",
+      "mood": 0.45,
+      "clue": "tape",
+      "beats": 7.875,
+      "data": {
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee"
+        ]
+      }
+    },
+    {
+      "scene": "ins",
+      "view": "fridge-ins",
+      "note": "ตู้เย็นเก่าเปิดอ้า ไฟในตู้ขาวเย็น ถาดพลาสติกซีลเก้าช่อง เข็มเตรียมยาเรียงพร้อม สติกเกอร์ \"ห้องยา\" ที่มุมถาด",
+      "text": "ยาทั้งคืนเตรียมมาแล้ว เก้าเข็มในถาดซีล ติดสติกเกอร์ห้องยา วางไว้ในตู้เย็นเก่า",
+      "mood": 0.4,
+      "beats": 8.875,
+      "data": {}
+    },
+    {
+      "scene": "ins",
+      "view": "syringe-label-ecu",
+      "note": "ECU ฉลากบนเข็มหนึ่งอัน ลายมือหมึกเขียว \"ยากันชัก 22:00\" ไฟตู้เย็นส่องจากล่าง น้ำยาใสในกระบอก",
+      "text": "ฉลากเขียนว่า [ยากันชัก] ทุกเข็มบอกเวลาไว้แล้ว",
+      "mood": 0.4,
+      "clue": "green",
+      "beats": 5.625,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "inject-close",
+      "note": "close มือซ้ายเมย์ดันเข็มเข้าข้อต่อสายน้ำเกลือที่หลังมือคนไข้ ตาจับที่นาฬิกาผนังนอกเฟรม โคมเคาน์เตอร์อุ่นจากหลัง",
+      "text": "เข็มแรก สี่ทุ่มตรง ตามนาฬิกาบนผนัง ไม่ใช่นาฬิกาของแม่",
+      "mood": 0.45,
+      "data": {
+        "hud": "เข็มที่ 1 · 22:00",
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee"
+        ]
+      },
+      "beats": 6.625
+    },
+    {
+      "scene": "ward",
+      "view": "bin-med",
+      "note": "medium เมย์หย่อนเข็มใช้แล้วลงถังทิ้งเข็มแดงข้างเตียง ฝาเปิด ขวดยาเล็กกับเข็มล้นขึ้นมาถึงขอบ เธอขมวดคิ้วนิดหนึ่ง",
+      "text": "ถังทิ้งเข็มข้างเตียงเกือบเต็มแล้ว ไม่มีใครมาเปลี่ยนเลย",
+      "mood": 0.4,
+      "clue": "vials",
+      "beats": 5.625,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          1.75,
+          1.89,
+          649,
+          605
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@821,901 h=508 yaw=-0.3 look=-0.4 armL=reach worried"
+        ]
+      }
+    },
+    {
+      "scene": "ins",
+      "view": "log-ins",
+      "note": "สมุดบันทึกการให้ยาบนเคาน์เตอร์ใต้โคม ช่องเวลา 22:00 เมย์เซ็นชื่อตัวเองลงไป ช่องต่อๆ ไปว่างเรียงลงล่าง",
+      "text": "ทุกเข็มต้องเซ็นชื่อกำกับ เธอเซ็นชื่อตัวเองลงไป ด้วยลายมือที่ตั้งใจที่สุด",
+      "mood": 0.4,
+      "clue": "sign",
+      "beats": 8.25,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "may-snack-med",
+      "note": "medium เมย์นั่งเก้าอี้สำนักงานหลังเคาน์เตอร์พยาบาล เคาน์เตอร์บังตั้งแต่อกลงไป กัดขนมปัง สมุดบันทึกการให้ยาเปิดอยู่บนเคาน์เตอร์ใต้โคม ม่านเตียงสองเป็นแผ่นสีซีดด้านหลังขวา",
+      "text": "เที่ยงคืนผ่านไปอย่างเงียบ เงียบจนได้ยินแค่เครื่องช่วยหายใจ กับเสียงตัวเองเคี้ยวขนมปัง",
+      "mood": 0.4,
+      "clue": "sign",
+      "data": {
+        "hud": "คืนที่ 1 · 00:10",
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "seat": "office",
+        "cam": [
+          1.4,
+          1.512,
+          -260,
+          560
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@-330,965 h=577 sit tired yaw=0.35 armR=mouth"
+        ]
+      },
+      "beats": 9.25
+    },
+    {
+      "scene": "ward",
+      "view": "turn-med",
+      "note": "medium เมย์พลิกตัวคนไข้ตะแคง เอาหมอนรองหลัง ปลายสายดูดเสมหะพาดราวเตียง ทำด้วยมือเดียวอย่างคล่อง โคมอุ่นจากหลัง",
+      "text": "ทุกสองชั่วโมง เธอพลิกตัวเขากันแผลกดทับ ดูดเสมหะ เช็ดปาก แบบที่ถูกสอนมาสี่ปี",
+      "mood": 0.4,
+      "beats": 9,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          1.61,
+          1.739,
+          708,
+          617
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@522,890 h=496 yaw=-0.4 armL=reach armR=reach"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "may-chat-close",
+      "note": "close เมย์นั่งเก้าอี้ข้างเตียง ศอกเท้าราว คุยเบาๆ กับคนไข้ที่ตาปิดเทป บนโต๊ะข้างเตียงมีรูปชายใส่หมวกนิรภัยเหลืองเบลออยู่ขอบเฟรม",
+      "text": "\"หนูชื่อเมย์นะคะคุณลุง มาจากอุดร ที่บ้านมีแม่กับน้องชาย น้องเพิ่งขึ้นปีหนึ่ง\"",
+      "who": "may",
+      "voice": "lead_female",
+      "mood": 0.35,
+      "clue": "contractor",
+      "beats": 9.5,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "seat": "steel",
+        "cam": [
+          2.97,
+          3.208,
+          627,
+          601
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@540,924 h=534 sit happy yaw=-0.45 look=-0.4 talk armR=chin"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "may-chat2-close",
+      "note": "close เมย์มุมเยื้องอีกข้าง ยิ้มเขินๆ กับตัวเอง มือจัดผ้าห่มที่อกคนไข้",
+      "text": "\"ถ้าหนูได้งานประจำ จะพาแม่มาอยู่ด้วย… ลุงคงเบื่อแล้วสินะ ฟังเด็กพูดอยู่คนเดียว\"",
+      "who": "may",
+      "voice": "lead_female",
+      "mood": 0.35,
+      "beats": 11.5,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "seat": "steel",
+        "shade": "r",
+        "cam": [
+          3.41,
+          3.683,
+          464,
+          597
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@540,924 h=534 sit happy yaw=-0.3 look=-0.6 talk armL=reach"
+        ]
+      }
+    },
+    {
+      "scene": "ins",
+      "view": "photo-bedside-ins",
+      "note": "รูปถ่ายในกรอบพลาสติกบนโต๊ะข้างเตียง ชายใส่หมวกนิรภัยเหลืองยืนยิ้มหน้านั่งร้าน แสงโคมอุ่นสะท้อนกระจกกรอบ",
+      "text": "รูปข้างเตียง เป็นชายใส่หมวกนิรภัย ยืนยิ้มหน้านั่งร้าน เมย์คุยกับรูปนั้น เหมือนคุยกับเขา",
+      "mood": 0.35,
+      "clue": "contractor",
+      "beats": 8.75,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "lean-bed1-med",
+      "note": "medium เมย์ก้มลงใกล้หน้าคนไข้ มือแตะขอบเทปปิดตาเช็ก ด้านหลังขวา ม่านเตียงสองโป่งนิดหนึ่ง",
+      "text": "ตีหนึ่ง เธอก้มลงเช็กเทปปิดตา ว่ายังติดแน่นดี",
+      "mood": 0.5,
+      "clue": "tape",
+      "data": {
+        "hud": "คืนที่ 1 · 01:00",
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          1.56,
+          1.685,
+          66,
+          622
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@258,879 h=485 worried yaw=-0.5 look=-0.5 armL=reach head=12"
+        ]
+      },
+      "beats": 5
+    },
+    {
+      "scene": "ward",
+      "view": "curtain-cough-close",
+      "note": "close ม่านเตียงสองระดับสายตา ผ้าสะเทือนเล็กน้อย ไฟแดงลอดรอยต่อกะพริบเร็วขึ้น",
+      "text": "แล้วหลังม่านเตียงสอง ก็มีเสียง… [ไอ]",
+      "cues": [
+        [
+          1.6,
+          "cough"
+        ]
+      ],
+      "hold": 0.5,
+      "mood": 0.7,
+      "clue": "ghostsync",
+      "beats": 6,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          2.6,
+          2.9,
+          1559,
+          499
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "may-shock-close",
+      "note": "close เมย์ยืดตัวขึ้นจากเตียงหนึ่ง มือซ้ายปิดปาก หน้าหัน 3/4 ไปทางม่าน แสงแดงจากขวาบนแก้ม",
+      "text": "ไอแห้งๆ สองครั้ง เหมือนคนคอแห้ง มาทั้งคืน",
+      "mood": 0.7,
+      "beats": 5.625,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "shade": "l",
+        "key": "255,80,60",
+        "cam": [
+          3.19,
+          3.445,
+          441,
+          484
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@522,890 h=496 shock yaw=0.5 look=0.6 armL=mouth"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "curtain-pov",
+      "note": "มุมมองเมย์ผ่านช่องแคบระหว่างม่านสองผืน เห็นแค่ความมืดกับไฟแดงจุดเดียว กะพริบช้าลงจนนิ่ง",
+      "text": "เธอยืนอยู่ตรงนั้นนาน จนไฟแดงกะพริบช้าลง แล้วทุกอย่างก็เงียบ",
+      "mood": 0.65,
+      "clue": "redlight",
+      "beats": 7.375,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "counter-high",
+      "note": "มุมสูงจากเพดาน เมย์นั่งตัวลีบบนเก้าอี้หลังเคาน์เตอร์ สองมือกอดอกตัวเอง วงไฟโคมเล็กรอบตัว ที่เหลือของวอร์ดมืด",
+      "text": "เธอบอกตัวเองว่ามันคือผี และกฎมีไว้กันผี เธอแค่ต้องทำตามกฎ",
+      "mood": 0.55,
+      "beats": 7.125,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -98,
+          1001
+        ],
+        "room": "high",
+        "seat": "office",
+        "cam": [
+          1.5,
+          1.62,
+          108,
+          998
+        ],
+        "cast": [
+          "woraT@492,783 h=346 lie sleep acc=none cover=dfe8ee",
+          "may@120,1158 h=451 sit scared armL=chest armR=chest"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "door-knock-fif",
+      "note": "จากหลังเคาน์เตอร์ ผ่านวงกบมืด ประตูกระจกขุ่นปลายทางเดิน ไฟทางเดินเย็น เงาคนสองคนบนกระจก ข้อนิ้วเคาะสามที",
+      "text": "ตีสามตรง [กฎข้อสาม] เสียงเคาะประตูกระจก",
+      "cues": [
+        [
+          0.6,
+          "knock3"
+        ]
+      ],
+      "mood": 0.8,
+      "data": {
+        "hud": "คืนที่ 1 · 03:00 · กฎข้อ 3 / 5"
+      },
+      "beats": 5.5
+    },
+    {
+      "scene": "ward",
+      "view": "hide-low",
+      "note": "มุมต่ำระดับพื้นใต้เคาน์เตอร์ เมย์หมอบกอดเข่า ปิดปากตัวเอง ไฟทางเดินจากประตูกระจกเป็นแถบเย็นยาวบนพื้น",
+      "text": "",
+      "vo": "",
+      "hush": true,
+      "beats": 3,
+      "cues": [
+        [
+          0.5,
+          "knock3"
+        ]
+      ],
+      "mood": 0.85,
+      "data": {
+        "light": "night",
+        "lightAt": [
+          1300,
+          900
+        ],
+        "cast": [
+          "may@900,900 h=520 crouch scared armL=mouth"
+        ],
+        "cam": [
+          1.7,
+          1.78,
+          960,
+          700
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "lamp-off-ins",
+      "note": "มือเมย์เอื้อมขึ้นกดสวิตช์โคมเคาน์เตอร์ วอร์ดดำลงเหลือแสงจอมอนิเตอร์เขียวกับไฟทางเดินที่กระจก",
+      "text": "เธอไม่ขานรับ แล้วเอื้อมมือปิดโคม เสียงเคาะ ก็หยุดลงพอดี",
+      "mood": 0.75,
+      "beats": 6.25,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "dawn-wide",
+      "note": "wide วอร์ดตอนเช้า แสงอาทิตย์อ่อนลอดหน้าต่างซ้าย ฝุ่นลอยในลำแสง เมย์หลับคาเคาน์เตอร์ ทนายสูทเทากับผู้หญิงชุดดำยืนที่ประตูกระจกที่เปิดแล้ว",
+      "text": "เช้าวันนั้น ญาติคนไข้มาตามนัด",
+      "cues": [
+        [
+          0,
+          "morning"
+        ]
+      ],
+      "mood": 0.3,
+      "data": {
+        "hud": "คืนที่ 1 · 07:30",
+        "light": "day",
+        "time": "day",
+        "lamp": "off",
+        "lightAt": [
+          930,
+          394
+        ],
+        "seat": "office",
+        "cam": [
+          0.98,
+          1.058,
+          900,
+          520
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "prae@208,770 h=374 yaw=0.4",
+          "pakorn@153,789 h=424 yaw=0.4",
+          "may@-89,965 h=577 sit sleep"
+        ]
+      },
+      "beats": 4.5
+    },
+    {
+      "scene": "ward",
+      "view": "pakorn-dossier-med",
+      "note": "medium ทนายปกรณ์สูทเทา ยืนห่างเตียง ยิ้มตามมารยาท กระเป๋าหนังน้ำตาลเปิดอ้าบนเคาน์เตอร์ข้างตัว ตลับหมึกม่วงอยู่ในกระเป๋า แสงเช้าซ้าย เส้นคำบรรยายสามเส้น",
+      "text": "ทนายปกรณ์ ทนายของญาติ จ่ายเงินสดทุกเช้า และไม่เคยนั่ง",
+      "mood": 0.3,
+      "clue": "ink",
+      "data": {
+        "callouts": [
+          "ทนายของญาติ",
+          "จ่ายเงินสดทุกเช้า",
+          "ไม่เคยนั่ง"
+        ],
+        "tag": "ทนายปกรณ์ · 45",
+        "light": "day",
+        "time": "day",
+        "lamp": "off",
+        "lightAt": [
+          930,
+          300
+        ],
+        "cam": [
+          1.45,
+          1.566,
+          264,
+          593
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "pakorn@472,950 h=614 yaw=0.35 armR=pocket"
+        ]
+      },
+      "beats": 7.125
+    },
+    {
+      "scene": "ward",
+      "view": "prae-dossier-med",
+      "note": "medium แพรเดรสดำยืนชิดผนังไกลจากเตียง ถือทิชชูเปียกเช็ดมือ ไม่มองหน้าคนไข้ แสงเช้าทาบผนังข้างหลัง เส้นคำบรรยายสามเส้น",
+      "text": "และแพร ลูกสาวคนเดียว ขับรถมาจากกรุงเทพฯ",
+      "mood": 0.3,
+      "clue": "contractor",
+      "data": {
+        "callouts": [
+          "ลูกสาวคนเดียว",
+          "มาจากกรุงเทพฯ",
+          "ทิชชูเปียกในมือ"
+        ],
+        "tag": "แพร · 28",
+        "light": "day",
+        "time": "day",
+        "lamp": "off",
+        "lightAt": [
+          930,
+          300
+        ],
+        "cam": [
+          2.58,
+          2.786,
+          1197,
+          543
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "prae@1081,743 h=344 yaw=0.45 look=0.6 armL=chest wary"
+        ]
+      },
+      "beats": 5.25
+    },
+    {
+      "scene": "ward",
+      "view": "prae-close",
+      "note": "close แพร หน้าเลี่ยงไปทางหน้าต่าง ตาเหลือบมาที่เตียงแวบเดียว มือขยำทิชชู แสงเช้าจับขอบหน้า",
+      "text": "\"พ่อ… ขยับบ้างไหมคะ\"",
+      "who": "prae",
+      "voice": "young_female",
+      "tone": "quiet",
+      "mood": 0.35,
+      "beats": 4,
+      "data": {
+        "light": "day",
+        "seat": "steel",
+        "lightAt": [
+          400,
+          300
+        ],
+        "cam": [
+          3.17,
+          3.424,
+          1297,
+          612
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "prae@1215,916 h=500 sit cry yaw=-0.4 look=-0.5 armL=chest"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "may-reply-close",
+      "note": "close เมย์ตาบวมจากอดนอน ยิ้มปลอบ ถือกระติกน้ำ หัน 3/4 หาแพร",
+      "text": "\"ไม่เลยค่ะ คุณพ่อนิ่งทั้งคืน\"",
+      "who": "may",
+      "voice": "lead_female",
+      "mood": 0.3,
+      "beats": 4,
+      "data": {
+        "light": "day",
+        "time": "day",
+        "lamp": "off",
+        "lightAt": [
+          930,
+          300
+        ],
+        "cam": [
+          3.19,
+          3.445,
+          655,
+          484
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@737,890 h=496 tired yaw=0.45 look=0.5 talk armL=hold prop=bottle"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "prae-relief-close",
+      "note": "close แพรจากมุมต่ำเยื้องอีกข้าง หลับตาสั้นๆ ถอนหายใจ ไหล่ลดลง",
+      "text": "แพรพยักหน้า ไหล่ที่เกร็งอยู่ ตกลงเหมือนคนโล่งใจ",
+      "mood": 0.4,
+      "beats": 7.375,
+      "data": {
+        "light": "day",
+        "time": "day",
+        "lamp": "off",
+        "lightAt": [
+          930,
+          300
+        ],
+        "cam": [
+          4.6,
+          4.968,
+          1024,
+          461
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "prae@1081,743 h=344 sad yaw=0.3 look=0.5 armL=chest faces=worried@0,sleep@20,sad@34"
+        ]
+      }
+    },
+    {
+      "scene": "ins",
+      "view": "cash-ins",
+      "note": "มือทนายวางธนบัตรพันบาทห้าใบบนเคาน์เตอร์ ข้างกันคือแฟ้มเอกสารหลายแผ่นมีช่องลายเซ็นพยาน แสงเช้าเฉียง",
+      "text": "\"ค่าจ้างคืนแรกครับ แล้วรบกวน เซ็นเป็นพยาน ในใบยินยอมรักษาให้หน่อย ญาติเซ็นครบแล้ว\"",
+      "who": "pakorn",
+      "voice": "father",
+      "mood": 0.35,
+      "clue": "sign",
+      "beats": 8.375,
+      "data": {}
+    },
+    {
+      "scene": "ins",
+      "view": "briefcase-ins",
+      "note": "มองลงบนกระเป๋าหนังที่เปิดอ้าบนเคาน์เตอร์ แฟ้มสีฟ้า ปากกา ตลับหมึกพิมพ์นิ้วมือสีม่วงอยู่มุมใน มือเมย์เซ็นชื่อบนแผ่นแรกด้านหน้า",
+      "text": "เมย์เซ็นทีละแผ่นโดยไม่ได้อ่าน เพราะยังง่วงเกินกว่าจะอ่านภาษาทนายออก",
+      "mood": 0.35,
+      "clue": [
+        "ink",
+        "sign"
+      ],
+      "beats": 6.125,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "door-leave-close",
+      "note": "close ประตูกระจกปิดตาม เงาแพรกับทนายเดินห่างไปในทางเดินสว่าง เมย์ถือธนบัตรยืนข้างในเบลออยู่ FG ซ้าย",
+      "text": "ทำไมลูกสาวคนหนึ่ง ถึงโล่งใจ ที่พ่อของเธอไม่ขยับ",
+      "mood": 0.45,
+      "beats": 7.875,
+      "data": {
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee"
+        ]
+      }
+    },
+    {
+      "chapter": "คนที่ไม่มีชื่อในเวร",
+      "scene": "card",
+      "view": "chapter",
+      "note": "การ์ดบทบนพื้นดำ ชื่อบทตัวใหญ่ เลขบทเล็กข้างบน ไฟแดงจุดเดียวกะพริบมุมขวา",
+      "text": "",
+      "vo": "บทที่สาม คนที่ไม่มีชื่อในเวร",
+      "data": {
+        "name": "คนที่ไม่มีชื่อในเวร"
+      },
+      "beats": 4.125,
+      "mood": 0.5
+    },
+    {
+      "scene": "ins",
+      "view": "line-chat-ins",
+      "note": "จอมือถือแชตไลน์ \"ฝน ER\" ข้อความเด้งทีละอัน \"รอดคืนแรกไหมแก\" \"ตึกเมตตาเตียงสองผีดุนะเว้ย\" เมย์พิมพ์ตอบ \"ห้าพันอะแก\" แดดบ่ายจากหน้าต่างห้องเช่าทาบจอ",
+      "text": "บ่ายวันนั้น ฝน เพื่อนร่วมรุ่นที่ห้องฉุกเฉิน ส่งไลน์มาถามว่ารอดไหม ทั้งโรงพยาบาลรู้ ว่าเตียงสองผีดุ",
+      "mood": 0.3,
+      "data": {
+        "hud": "บ่ายวันที่สอง",
+        "light": "day"
+      },
+      "beats": 12.875
+    },
+    {
+      "scene": "booth",
+      "view": "radio-close",
+      "note": "ป้อมยามตอนหัวค่ำ วิทยุทรานซิสเตอร์เก่าบนโต๊ะใต้โคม ลุงพรเอนพิงเก้าอี้ฟัง มือถือของลุงวางหงายเปิดคลิปข่าว",
+      "text": "คืนที่สอง วิทยุในป้อมยามรายงานซ้ำว่า ตำรวจจับสัญญาณมือถือของผอ.วรเทพ ได้ที่ฝั่ง[กัมพูชา]",
+      "cues": [
+        [
+          0,
+          "night"
+        ]
+      ],
+      "mood": 0.35,
+      "data": {
+        "hud": "คืนที่ 2 · 21:40",
+        "light": "lamp",
+        "seat": "office",
+        "lightAt": [
+          657,
+          509
+        ],
+        "cam": [
+          2.4,
+          2.592,
+          722,
+          587
+        ],
+        "cast": [
+          "phon@830,925 h=566 sit tired yaw=0.3 look=0.5"
+        ]
+      },
+      "beats": 11.75
+    },
+    {
+      "scene": "booth",
+      "view": "phone-clip-ins",
+      "note": "จอมือถือลุงพรบนโต๊ะ คลิปเดิมเล่นซ้ำ ภาพเล็กแตก ผอ.ก้มหน้า ม่านข้างหลังเป็นแค่สีซีด",
+      "text": "\"…ผมจะไม่กลับไป\"",
+      "who": "wora",
+      "voice": "casual_male",
+      "fx": "phone",
+      "tone": "tired",
+      "mood": 0.35,
+      "clue": "clip",
+      "beats": 2.75,
+      "data": {}
+    },
+    {
+      "scene": "booth",
+      "view": "phon-close",
+      "note": "close ลุงพรส่ายหัว เอื้อมปิดจอมือถือ ไฟฉายแดงวางบนโต๊ะส่องเพดานป้อม",
+      "text": "\"หนีไปสบายแล้วมั้ง คนรวยมันก็เงี้ย\"",
+      "who": "phon",
+      "voice": "old_male",
+      "mood": 0.35,
+      "beats": 4.625,
+      "data": {
+        "light": "lamp",
+        "seat": "office",
+        "lightAt": [
+          657,
+          509
+        ],
+        "cam": [
+          2.8,
+          3.024,
+          923,
+          582
+        ],
+        "cast": [
+          "phon@830,925 h=566 sit smirk yaw=0.45 look=0.6 talk armR=reach"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "iv-change-med",
+      "note": "medium เมย์ยืนที่เตียงหนึ่งเปลี่ยนถุงน้ำเกลือบนเสา ยกแขนสูง นาฬิกาห้อยอกแกว่ง ถังทิ้งเข็มแดงล้นอยู่ FG ล่างซ้าย เครื่องช่วยหายใจไฟเขียว",
+      "text": "ห้าทุ่มสี่สิบ ระหว่างที่เมย์เปลี่ยนถุงน้ำเกลือ",
+      "cues": [
+        [
+          0,
+          "vent"
+        ]
+      ],
+      "mood": 0.4,
+      "clue": "vials",
+      "data": {
+        "hud": "คืนที่ 2 · 23:40",
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          1.43,
+          1.544,
+          860,
+          637
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@651,890 h=496 yaw=-0.2 armR=raise look=0.6"
+        ]
+      },
+      "beats": 4.5
+    },
+    {
+      "scene": "ward",
+      "view": "door-ton-sil",
+      "note": "ประตูกระจกเปิดเข้า ไฟทางเดินจ้าหลังร่างชายเสื้อกาวน์ เป็นเงาดำทั้งตัว ไฟฉายในมือส่องกวาดพื้นวอร์ด",
+      "text": "ประตูกระจกเปิดออก ใครบางคนเดินเข้ามา โดยไม่เคาะ",
+      "cues": [
+        [
+          0.2,
+          "creak"
+        ]
+      ],
+      "mood": 0.65,
+      "beats": 6,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "ton-dossier-med",
+      "note": "medium หมอต้นใต้โคมเคาน์เตอร์ เสื้อกาวน์ยับ บัตรห้อยคอหันหลัง ตาแดง ยิ้มแห้ง เส้นคำบรรยายสามเส้น",
+      "text": "หมอต้น แพทย์ใช้ทุนปีสอง คนที่พี่นวลบอกให้ระวัง",
+      "mood": 0.5,
+      "clue": "ton",
+      "data": {
+        "callouts": [
+          "แพทย์ใช้ทุนปี 2",
+          "ขึ้นเวรติดกัน 36 ชม.",
+          "บัตรห้อยคอหันหลัง"
+        ],
+        "tag": "หมอต้น · 29",
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          1.41,
+          1.523,
+          -175,
+          613
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "ton@38,980 h=630 tired yaw=0.35 armR=pocket"
+        ]
+      },
+      "beats": 5.75
+    },
+    {
+      "scene": "ward",
+      "view": "ton-close",
+      "note": "close หมอต้นหัน 3/4 มองเลยเมย์ไปทางประตูห้องยาเก่าปลายวอร์ด มือล้วงกระเป๋าเสื้อกาวน์",
+      "text": "\"อ้าว มีคนอยู่ด้วยเหรอ พี่มาเช็กเครื่องปั่นไฟน่ะ\"",
+      "who": "ton",
+      "voice": "lead_male",
+      "mood": 0.5,
+      "beats": 4.875,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "shade": "r",
+        "cam": [
+          2.51,
+          2.711,
+          -66,
+          464
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "ton@38,980 h=630 wary yaw=0.5 look=0.6 talk armR=pocket"
+        ]
+      }
+    },
+    {
+      "scene": "pharm",
+      "view": "ton-fif",
+      "note": "มองผ่านช่องจ่ายยากระจกของห้องยาเก่า หมอต้นอยู่ข้างใน ไฟฉายคาบปาก หยิบขวดเล็กจากชั้นใส่กระเป๋าเสื้อ ฝุ่นลอยในลำไฟฉาย",
+      "text": "แต่เขาไม่ได้เดินไปทางห้องเครื่อง เขาเข้าห้องยาเก่า ที่ปลายวอร์ด",
+      "mood": 0.6,
+      "clue": "ton",
+      "beats": 6.625,
+      "data": {
+        "light": "dark",
+        "torch": [
+          965,
+          404,
+          360
+        ],
+        "cam": [
+          1.15,
+          1.242,
+          960,
+          520
+        ],
+        "cast": [
+          "ton@965,799 h=406 back arm=r-hold prop=flashlight"
+        ]
+      }
+    },
+    {
+      "scene": "ins",
+      "view": "pocket-ins",
+      "note": "ECU กระเป๋าเสื้อกาวน์ ขวดยาแก้วสามสี่ใบชนกัน ขอบฉลากโผล่ ไฟฉายสะท้อนแก้ว",
+      "text": "กระเป๋าเสื้อของเขา ดังกริ๊ก ทุกก้าวที่เดินกลับออกมา",
+      "cues": [
+        [
+          0.3,
+          "clink"
+        ],
+        [
+          1.4,
+          "clink"
+        ]
+      ],
+      "mood": 0.55,
+      "clue": "ton",
+      "beats": 5.625,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "ton-may-two",
+      "note": "two-shot ข้างเตียงหนึ่ง หมอต้นยืนปลายเตียงเอียงหัวมองคนไข้ เมย์ยืนกันระหว่างเขากับเตียง โคมเคาน์เตอร์อยู่หลังทั้งคู่",
+      "text": "\"ชั้นนี้ไม่มีคนไข้ในระบบนะ น้องมาเฝ้าใคร\"",
+      "who": "ton",
+      "voice": "lead_male",
+      "mood": 0.55,
+      "beats": 5.25,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          2.6,
+          2.808,
+          639,
+          535
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@504,912 h=520 worried yaw=0.45 armL=reach",
+          "ton@774,912 h=553 wary yaw=-0.45 look=-0.5 talk armR=pocket"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "may-guard-close",
+      "note": "close เมย์ยืดตัว มือซ้ายวางบนราวเตียงกันไว้ หน้าแข็ง หัน 3/4 หาหมอต้น",
+      "text": "\"ญาติจ้างมาค่ะ\"",
+      "who": "may",
+      "voice": "lead_female",
+      "mood": 0.5,
+      "beats": 2.375,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          3.04,
+          3.283,
+          418,
+          486
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@504,912 h=520 wary yaw=0.5 look=0.6 talk armL=reach"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "ton-chart-ots",
+      "note": "ข้ามไหล่หมอต้น (ไหล่เสื้อกาวน์เบลอ FG) ลงบนแฟ้มที่ปลายเตียงในแสงไฟฉาย ช่องแพทย์เจ้าของไข้ว่าง เมย์ยืนเบลออีกฝั่งเตียง",
+      "text": "\"ใส่เครื่องช่วยหายใจ แต่ไม่มีชื่อหมอเจ้าของไข้… แล้วใครสั่งยาล่ะ\"",
+      "who": "ton",
+      "voice": "lead_male",
+      "mood": 0.55,
+      "beats": 8.875,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "foreShoulder": "r",
+        "foreColor": "#eef0ee",
+        "cam": [
+          2.44,
+          2.635,
+          880,
+          465
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "ton@774,912 h=553 wary yaw=-0.5 look=-0.6 talk armR=hold prop=paper",
+          "may@504,912 h=520 worried yaw=0.4"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "may-answer-close",
+      "note": "close เมย์มุมเยื้องอีกข้าง ตอบเร็ว เหมือนชื่อนั้นเป็นเกราะ มือยังวางบนราวเตียง",
+      "text": "\"หัวหน้าเวรนวล จัดการให้ค่ะ\"",
+      "who": "may",
+      "voice": "lead_female",
+      "mood": 0.5,
+      "beats": 4,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "shade": "l",
+        "cam": [
+          3.04,
+          3.283,
+          589,
+          486
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@504,912 h=520 wary yaw=0.45 look=0.4 talk armL=reach head=-6"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "ton-leave-close",
+      "note": "medium หมอต้นเดินเลี้ยวออกจากเคาน์เตอร์ไปทางประตูกระจกซ้าย หน้าเบี่ยงหนีกล้อง ตาหลบ กระเป๋าสะพายแกว่ง ฝีเท้าเร็ว เตียงหนึ่งกับคนไข้ยังนอนอยู่ข้างหลัง",
+      "text": "ชื่อของหัวหน้าเวร ทำให้หมอต้นเงียบไป แล้วเขาก็รีบออกไป เร็วกว่าตอนเข้ามา",
+      "mood": 0.5,
+      "beats": 9.625,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          1.3,
+          1.4,
+          420,
+          600
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "ton@520,901 h=480 walk wary"
+        ],
+        "motion": "walk",
+        "move": [
+          520,
+          150
+        ]
+      }
+    },
+    {
+      "scene": "ins",
+      "view": "thumb-ins",
+      "note": "มือขวาคนไข้บนผ้าห่มใต้แสงโคม ป้ายข้อมือ \"สมศักดิ์ 72\" นิ้วโป้งมีคราบหมึกม่วงจางติดร่องลายนิ้ว นิ้วเมย์พลิกป้ายอ่าน",
+      "text": "เมย์อ่านป้ายข้อมือคนไข้ทุกครั้งก่อนฉีด ชื่อ อายุ ตรงกับแฟ้ม",
+      "mood": 0.4,
+      "clue": "ink",
+      "beats": 7.125,
+      "data": {}
+    },
+    {
+      "scene": "ins",
+      "view": "log2-ins",
+      "note": "สมุดบันทึกการให้ยา สองหน้าเต็มไปด้วยลายเซ็นเมย์ช่องละเวลา ไล่ลงมาจนถึงช่องว่าง 01:00",
+      "text": "สองคืน สิบห้าเข็ม สิบห้าลายเซ็น ทุกช่องเป็นชื่อเธอ",
+      "mood": 0.4,
+      "clue": "sign",
+      "data": {
+        "hud": "คืนที่ 2 · 00:50"
+      },
+      "beats": 6.25
+    },
+    {
+      "scene": "ward",
+      "view": "phon-round-med",
+      "note": "medium ลุงพรยืนที่ประตูกระจกเปิดครึ่ง ไฟฉายแดงในมือขวา กระเป๋าเสื้อยามตุง ขอบธนบัตรพันบาทโผล่",
+      "text": "ตีสองครึ่ง ลุงพรขึ้นมาเดินตรวจ ตามรอบ",
+      "mood": 0.45,
+      "clue": "phon",
+      "data": {
+        "hud": "คืนที่ 2 · 02:30",
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          2.06,
+          2.225,
+          27,
+          544
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "phon@173,795 h=431 happy yaw=0.45 arm=r-hold prop=flashlight"
+        ]
+      },
+      "beats": 6.25
+    },
+    {
+      "scene": "ward",
+      "view": "may-ask2-close",
+      "note": "close เมย์หลังเคาน์เตอร์ หน้าคลายลงเมื่อเห็นคนคุ้นหน้า หัน 3/4 ไปทางประตู",
+      "text": "\"ลุงคะ คืนนี้มีใครขึ้นมาอีกไหม\"",
+      "who": "may",
+      "voice": "lead_female",
+      "mood": 0.4,
+      "beats": 4.625,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          2.74,
+          2.959,
+          6,
+          492
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@-89,965 h=577 worried yaw=-0.45 look=-0.6 talk"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "phon-lie-close",
+      "note": "close ลุงพรยิ้ม มือซ้ายตบกระเป๋าเสื้อให้แบน ตาเลี่ยงไปทางบันได",
+      "text": "\"ไม่มีใครขึ้นไปข้างบนหรอกหนู ทั้งตึกมีลุงคนเดียว\"",
+      "who": "phon",
+      "voice": "old_male",
+      "mood": 0.45,
+      "beats": 5.5,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "shade": "l",
+        "cam": [
+          3.67,
+          3.964,
+          102,
+          442
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "phon@173,795 h=431 happy yaw=0.35 look=-0.7 talk armL=pocket arm=r-hold prop=flashlight"
+        ]
+      }
+    },
+    {
+      "scene": "ins",
+      "view": "cash-pocket-ins",
+      "note": "ECU กระเป๋าเสื้อยามสีกากี ขอบธนบัตรพันบาทหลายใบ ฝ่ามือตบให้แบน แสงไฟฉายแดงสะท้อนกระดุม",
+      "text": "กระเป๋าเสื้อของลุง ตุงด้วยแบงก์พัน ที่เมื่อหัวค่ำยังไม่มี",
+      "mood": 0.5,
+      "clue": "phon",
+      "beats": 7.875,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "stair-phon-wide",
+      "note": "wide จากประตูกระจกวอร์ด เมย์ยืนเล็กที่ขอบประตูมองตามลุงพรที่เดินลงบันได ไฟฉายแดงหายไปตามโค้ง หน้าเธอค่อยๆ ขมวด",
+      "text": "และหมอต้น เพิ่งเดินลงบันไดนั้นไป เมื่อสามชั่วโมงก่อน",
+      "mood": 0.5,
+      "beats": 6.25,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          1.6,
+          1.728,
+          288,
+          520
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "phon-sil@144,770 h=402 back",
+          "may@63,841 h=444 back"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "door-knock2-fif",
+      "note": "ซ้ำกรอบประตูกระจกจากหลังเคาน์เตอร์ เงาสองเงาบนกระจกขุ่น ข้อนิ้วเคาะสามที",
+      "text": "แล้วตีสามคืนที่สอง เสียงเคาะ ก็มาตรงเวลาอีกครั้ง",
+      "cues": [
+        [
+          0.6,
+          "knock3"
+        ]
+      ],
+      "mood": 0.8,
+      "data": {
+        "hud": "คืนที่ 2 · 03:00 · กฎข้อ 3 / 5"
+      },
+      "beats": 7.75
+    },
+    {
+      "scene": "ward",
+      "view": "hide-watch-close",
+      "note": "close เมย์หมอบใต้เคาน์เตอร์ ยกนาฬิกาห้อยอกขึ้นดูในแสงจอมือถือ หน้าซีด หูเอียงฟังเสียงประตู",
+      "text": "เธอหมอบรอจนเสียงเงียบ สิบห้านาที นาฬิกาของแม่บอกว่ายังไม่สาย แต่นาฬิกาของแม่ เดินช้าห้านาทีเสมอ",
+      "mood": 0.75,
+      "clue": "watch",
+      "beats": 11.875,
+      "data": {
+        "light": "night",
+        "lightAt": [
+          1300,
+          900
+        ],
+        "cast": [
+          "may@960,900 h=520 crouch worried armR=hold prop=phone look=0.3"
+        ],
+        "cam": [
+          3,
+          3.24,
+          960,
+          560
+        ]
+      }
+    },
+    {
+      "scene": "ins",
+      "view": "clock-wall-ins",
+      "note": "นาฬิกาผนังเหนือเคาน์เตอร์ เข็ม 03:20 ในแสงจอมอนิเตอร์ ตัดกับนาฬิกาห้อยอกในมือเมย์ที่ขอบล่าง 03:15",
+      "text": "เข็มตีสาม ช้าไป[ยี่สิบนาที]",
+      "mood": 0.7,
+      "clue": "watch",
+      "data": {
+        "hud": "เข็มที่ 6 · 03:20"
+      },
+      "beats": 5
+    },
+    {
+      "scene": "ward",
+      "view": "bed1-low",
+      "note": "มุมต่ำจากปลายเตียงหนึ่ง ผ้าห่มขาว มือคนไข้บนผ้า นิ้วชี้กระดิกนิดเดียว แสงจอมอนิเตอร์เขียว",
+      "text": "ยี่สิบนาทีที่เธอมาสาย… มีบางอย่างบนเตียงหนึ่ง {เปลี่ยนไป}",
+      "cues": [
+        [
+          1.2,
+          "shriek"
+        ]
+      ],
+      "mood": 0.8,
+      "beats": 7.375,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          155
+        ],
+        "room": "low",
+        "cam": [
+          1.7,
+          1.85,
+          604,
+          642
+        ],
+        "cast": [
+          "woraT@464,722 h=657 lie sleep acc=none cover=dfe8ee"
+        ]
+      }
+    },
+    {
+      "chapter": "ขอน้ำหน่อย",
+      "scene": "card",
+      "view": "chapter",
+      "note": "การ์ดบทบนพื้นดำ ชื่อบทตัวใหญ่ เลขบทเล็กข้างบน ไฟแดงจุดเดียวกะพริบมุมขวา",
+      "text": "",
+      "vo": "บทที่สี่ ขอน้ำหน่อย",
+      "data": {
+        "name": "ขอน้ำหน่อย"
+      },
+      "beats": 3,
+      "mood": 0.5
+    },
+    {
+      "scene": "ward",
+      "view": "tape-ecu",
+      "note": "ECU เทปขาวบนตาขวาคนไข้ ขอบเทปยกขึ้นลงเบาๆ เหมือนมีอะไรกะพริบอยู่ข้างใต้ แสงเขียวจากจอ",
+      "text": "เทปบนตาของคนไข้ ขยับ ขึ้นลง เบาๆ",
+      "cues": [
+        [
+          0,
+          "vent"
+        ]
+      ],
+      "mood": 0.75,
+      "clue": "tape",
+      "data": {
+        "hud": "คืนที่ 2 · 03:24",
+        "light": "lamp"
+      },
+      "beats": 5.625
+    },
+    {
+      "scene": "ins",
+      "view": "hand-twitch-ins",
+      "note": "มือขวาคนไข้บนผ้าห่ม นิ้วชี้กับนิ้วกลางกระตุกสองครั้ง แล้วนิ่ง เงาสายน้ำเกลือพาดหลังมือ",
+      "text": "นิ้วมือกระตุก สองครั้ง",
+      "mood": 0.75,
+      "beats": 3.125,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "may-rule-close",
+      "note": "close เมย์ยืนข้างเตียง ตาโต มือขวาจับใบกฎในกระเป๋าเสื้อ หัน 3/4 มองนิ้วคนไข้",
+      "text": "เธอนึกถึงกฎข้อห้า คนโคม่ากระตุกได้ ถ้าขยับ ให้ฉีดทันที",
+      "mood": 0.7,
+      "beats": 7.625,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          3.19,
+          3.445,
+          604,
+          484
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@522,890 h=496 scared yaw=-0.45 look=-0.6 armR=chest"
+        ]
+      }
+    },
+    {
+      "scene": "rules",
+      "view": "rule5",
+      "text": "[กฎข้อห้า] ถ้าคนไข้ขยับ ให้ฉีดเข็มถัดไปทันที",
+      "cues": [
+        [
+          0.3,
+          "stamp"
+        ]
+      ],
+      "mood": 0.7,
+      "data": {
+        "no": 5,
+        "hud": "กฎข้อ 5 / 5",
+        "mark": "ok"
+      },
+      "beats": 5.375
+    },
+    {
+      "scene": "ward",
+      "view": "inject2-close",
+      "note": "close มือซ้ายเมย์ดันก้านเข็มเข้าข้อต่อสายน้ำเกลือเร็วกว่าคืนก่อน มือขวาวางบนแขนคนไข้ปลอบ",
+      "text": "เธอฉีดเข็มตีสามทันที แล้ววางมือบนแขนเขา บอกว่า ไม่เป็นไรนะคะ",
+      "mood": 0.65,
+      "beats": 7.375,
+      "data": {
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "bed1-still-high",
+      "note": "มุมสูงกรอบเดียวกับช็อตเปิดเรื่อง คนไข้นิ่งสนิท เทปเรียบ เครื่องช่วยหายใจดันลมตามจังหวะ",
+      "text": "ภายในหนึ่งนาที ทุกอย่างก็นิ่ง เหมือนเดิม",
+      "mood": 0.6,
+      "data": {
+        "mirror": "still",
+        "light": "lamp",
+        "lightAt": [
+          -98,
+          1001
+        ],
+        "room": "high",
+        "cam": [
+          1.45,
+          1.566,
+          551.6666666666667,
+          560
+        ],
+        "cast": [
+          "woraT@492,783 h=346 lie sleep acc=none cover=dfe8ee"
+        ]
+      },
+      "beats": 5.125
+    },
+    {
+      "scene": "ward",
+      "view": "may-sit-cctv",
+      "note": "ภาพจากหลังม่านเตียงสองผ่านรอยต่อผ้า (มุมของเลนส์ที่ซ่อนอยู่ ยังไม่บอก) ขอบม่านเบลอสองข้าง เมย์นั่งลงบนเก้าอี้ข้างเตียงหนึ่ง เอนหลังถอนหายใจ ใกล้หน้าคนไข้ที่สุด",
+      "text": "เมย์นั่งลงข้างเตียง ใกล้หน้าเขาที่สุด ตั้งแต่มาทำงานนี้",
+      "mood": 0.55,
+      "beats": 5.5,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "seat": "steel",
+        "cam": [
+          1.7,
+          1.836,
+          470,
+          560
+        ],
+        "cast": [
+          "may@293,901 h=508 sit tired yaw=-0.3 look=-0.4",
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "curtain-whisper-close",
+      "note": "close ม่านเตียงสองข้างหลังเก้าอี้ ผ้านิ่ง ไฟแดงลอดรอยต่อกะพริบช้า เสียงกระซิบมาจากข้างใน",
+      "text": "\"ขอน้ำ… หน่อย…\"",
+      "who": "ghost",
+      "voice": "old_female",
+      "tone": "whispers",
+      "mood": 0.9,
+      "clue": "ghostsync",
+      "beats": 3.5,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          2.3,
+          2.5,
+          1380,
+          499
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "may-freeze-close",
+      "note": "close เมย์แข็งค้างบนเก้าอี้ ไม่หันหลัง ตาเหลือบไปทางม่านที่อยู่ข้างหลัง มือปิดปาก แสงแดงจางบนไหล่",
+      "text": "เสียงแหบแห้งของคนที่ไม่ได้กินน้ำมานาน อยู่ห่างจากหลังเธอ ไม่ถึงสองเมตร",
+      "mood": 0.85,
+      "beats": 7,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "seat": "steel",
+        "key": "255,70,50",
+        "cam": [
+          3.12,
+          3.37,
+          293,
+          592
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@293,901 h=508 sit scared yaw=0.15 look=0.8 armL=mouth"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "between-wide",
+      "note": "wide วอร์ดมืด เมย์ลุกถอยมายืนกลางระหว่างสองเตียง ตัวเล็ก เตียงหนึ่งในแอ่งไฟโคมซ้าย ม่านเตียงสองขวาสูงทึบ ไฟแดงจุดเดียว",
+      "text": "ถ้าหลังม่านเป็นผี กฎบอกว่าอย่าเปิด แต่ถ้าเป็นคน… คนที่ขอน้ำ คือคนที่กำลังขาดน้ำ",
+      "mood": 0.75,
+      "beats": 10.375,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          1,
+          1.08,
+          900,
+          520
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@954,912 h=520 scared yaw=0.3 look=0.5 armL=chest"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "may-nurse-close",
+      "note": "close เมย์หันกลับมาทางเตียงหนึ่งช้าๆ หน้าเปลี่ยนจากกลัวเป็นตั้งใจ ไฟโคมกลับมาจับหน้า",
+      "text": "และเธอ… เป็น[พยาบาล]",
+      "mood": 0.6,
+      "beats": 4.375,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          3.04,
+          3.283,
+          1039,
+          486
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@954,912 h=520 yaw=0.4>-0.45 faces=scared@0,wary@30 look=-0.5"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "may-doubt-close",
+      "note": "close เมย์มองนิ้วคนไข้แล้วมองถาดยา คิ้วขมวด ข้างหลังเบลอเป็นตู้เย็นเก่า",
+      "text": "ก่อนจะแตะม่าน เธออยากรู้อย่างเดียว ยากันชักที่ฉีดทุกชั่วโมง ทำไมยังมีกฎ ให้ฉีดซ้ำตอนเขากระตุก",
+      "mood": 0.6,
+      "beats": 11.375,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "shade": "r",
+        "cam": [
+          3.12,
+          3.37,
+          684,
+          485
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@601,901 h=508 wary yaw=-0.5 look=-0.6 armR=chin"
+        ]
+      }
+    },
+    {
+      "scene": "ins",
+      "view": "chart-ins",
+      "note": "แฟ้มคนไข้เปิดบนเคาน์เตอร์ใต้โคม ช่องแพทย์เจ้าของไข้ว่างเปล่า ช่องวินิจฉัยเขียนแค่ \"โคม่า\" ไม่มีใบผลแล็บ",
+      "text": "แฟ้มของคนไข้ ไม่มีชื่อแพทย์เจ้าของไข้ ไม่มีผลแล็บ ไม่มีแม้แต่ชื่อยาจริงๆ",
+      "cues": [
+        [
+          0.2,
+          "flip"
+        ]
+      ],
+      "mood": 0.6,
+      "beats": 9.125,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "bin-low",
+      "note": "มุมต่ำระดับพื้น ถังทิ้งเข็มแดงล้นอยู่ FG เมย์คุกเข่าข้างถัง ไฟฉายมือถือในมือ ส่องลงไปในถัง",
+      "text": "ถ้าในแฟ้มไม่มี ก็ยังเหลือที่หนึ่ง ที่บอกได้ ถังทิ้งเข็ม",
+      "mood": 0.65,
+      "clue": "vials",
+      "beats": 6.5,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          155
+        ],
+        "room": "low",
+        "cam": [
+          1.9,
+          2.052,
+          786,
+          772
+        ],
+        "cast": [
+          "woraT@464,722 h=657 lie sleep acc=none cover=dfe8ee",
+          "may@863,897 h=805 crouch worried yaw=-0.4 arm=r-hold prop=phone"
+        ]
+      }
+    },
+    {
+      "scene": "ins",
+      "view": "vials-spill-ins",
+      "note": "มือในถุงมือยางคว่ำถังลงบนผ้าขาว ขวดยาแก้วเล็กสิบกว่าใบกลิ้งออกมา ฝาแดง ไฟฉายส่องเฉียง",
+      "text": "ขวดยาเปล่าสิบกว่าขวด ไม่ใช่ยากันชัก สักขวดเดียว",
+      "cues": [
+        [
+          0.2,
+          "vials"
+        ]
+      ],
+      "mood": 0.75,
+      "beats": 5.875,
+      "data": {}
+    },
+    {
+      "scene": "ins",
+      "view": "vial-label-ecu",
+      "note": "ECU ฉลากขวด VECURONIUM ตัวแดง \"WARNING: PARALYZING AGENT\" ไฟฉายมือถือส่องเฉียง นิ้วโป้งเมย์จับขวด",
+      "text": "[เวคูโรเนียม] ฉลากแดงเขียนว่า {ยาทำให้เป็นอัมพาต}",
+      "cues": [
+        [
+          0,
+          "hit"
+        ]
+      ],
+      "mood": 0.85,
+      "pay": "vials",
+      "beats": 6.125,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "may-realize-close",
+      "note": "close เมย์ยกขวดขึ้นในแสงไฟฉาย หน้าเปลี่ยนจากงงเป็นตกใจ ปากเผยอ",
+      "text": "ยาคลายกล้ามเนื้อที่ใช้ตอนผ่าตัด ทำให้ขยับไม่ได้ พูดไม่ได้",
+      "mood": 0.85,
+      "beats": 6.375,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          3.04,
+          3.283,
+          778,
+          646
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@864,912 h=520 crouch shock yaw=-0.3 look=0.3 armR=hold prop=bottle"
+        ]
+      }
+    },
+    {
+      "scene": "ins",
+      "view": "vial-turn-ecu",
+      "note": "ECU ขวดในนิ้วเมย์หมุนช้าๆ ใต้ไฟฉาย ฉลากด้านหลังตัวเล็กเรียงบรรทัด เงาขวดยาวบนผ้าขาว",
+      "text": "ในห้องผ่าตัด หมอจะให้ยานอนหลับก่อนเสมอ แต่ยานี้ [ไม่ได้ทำให้หลับ] และไม่ได้ทำให้หายเจ็บ",
+      "mood": 0.9,
+      "beats": 10.625,
+      "data": {}
+    },
+    {
+      "scene": "ins",
+      "view": "syringe-compare-ins",
+      "note": "ในมือเมย์ เข็มฉลาก \"ยากันชัก\" ลายมือเขียว แนบคู่กับขวดเวคูโรเนียมฝาแดง ไฟฉายส่องทั้งสอง",
+      "text": "ฉลากบนเข็มเขียนว่ายากันชัก แต่ยาที่ผสมลงไปในเข็ม คือขวดพวกนี้ ทุกชั่วโมง สองคืน",
+      "mood": 0.8,
+      "clue": "green",
+      "beats": 9.125,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "may-turn-med",
+      "note": "medium เมย์ลุกจากพื้น หันไปทางเตียงหนึ่ง ก้าวเข้าไปหนึ่งก้าว ไฟฉายมือถือส่องขึ้นที่หน้าคนไข้",
+      "text": "ถ้ายาไม่ทำให้หลับ คนที่นอนอยู่ตรงนั้น…",
+      "mood": 0.85,
+      "data": {
+        "hud": "กฎข้อ 4 / 5 ✗",
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          1.49,
+          1.609,
+          847,
+          631
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@645,901 h=508 shock yaw=-0.45 look=-0.6 arm=r-hold prop=phone"
+        ]
+      },
+      "beats": 4.25
+    },
+    {
+      "scene": "ins",
+      "view": "tape-peel-ecu",
+      "note": "ECU ปลายนิ้วเมย์ค่อยๆ ลอกเทปออกจากตาขวาคนไข้ ขอบเทปดึงผิวเปลือกตา ไฟฉายจากล่าง",
+      "text": "",
+      "vo": "",
+      "hush": true,
+      "beats": 3,
+      "cues": [
+        [
+          0.4,
+          "tapepeel"
+        ]
+      ],
+      "mood": 0.9,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "eye-ecu",
+      "note": "ECU ตาขวาคนไข้เปิดโพลง ตาขาวแดงช้ำ น้ำตาไหลลงขมับ กะพริบถี่ๆ ไฟฉายสะท้อนในลูกตา",
+      "text": "เขาไม่ได้โคม่า… {เขาตื่นอยู่ทุกเข็ม}",
+      "style": "red",
+      "cues": [
+        [
+          0,
+          "hit"
+        ]
+      ],
+      "hold": 0.5,
+      "mood": 0.95,
+      "pay": "tape",
+      "beats": 5.625,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "may-horror-close",
+      "note": "close เมย์ปิดปากสองมือ น้ำตาคลอ เข่าอ่อนพิงราวเตียง ไฟฉายมือถือตกส่องพื้น",
+      "text": "สองคืนที่เธอฉีดยาให้เขาทุกชั่วโมง เขาได้ยินทุกคำ รู้สึกทุกเข็ม และตะโกนไม่ได้ แม้แต่ครั้งเดียว",
+      "mood": 0.9,
+      "beats": 9.875,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          3.19,
+          3.445,
+          646,
+          484
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@565,890 h=496 cry yaw=-0.3 look=-0.5 armL=mouth armR=mouth"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "rule5-reread-close",
+      "note": "close เมย์มองใบกฎที่ตกบนพื้นในแสงไฟฉาย ตัวหนังสือข้อห้าเห็นชัด มือสั่นหยิบขึ้นมา",
+      "text": "ทุกครั้งที่ยาหมดฤทธิ์ เขาจะเริ่มขยับ และทุกครั้งที่เขาขยับ กฎข้อห้า ก็สั่งให้เธอฉีดซ้ำ ทันที",
+      "mood": 0.85,
+      "beats": 11.125,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          3.12,
+          3.37,
+          518,
+          641
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@601,901 h=508 crouch cry yaw=0.2 look=0.6 armR=hold prop=paper"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "aftermath-high",
+      "note": "มุมสูงเยื้องจากเพดาน เมย์ยืนข้างเตียงหนึ่งตัวเล็ก ขวดยาเกลื่อนผ้าขาวบนพื้น ใบกฎตกอยู่ข้างเท้า ม่านเตียงสองมืดด้านขวา",
+      "text": "แล้วใคร เป็นคนสั่งให้เธอฉีดมัน ทุกชั่วโมง",
+      "mood": 0.8,
+      "beats": 4.75,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -98,
+          1001
+        ],
+        "room": "high",
+        "bin": "spilled",
+        "cam": [
+          1,
+          1.08,
+          860,
+          470
+        ],
+        "cast": [
+          "woraT@492,783 h=346 lie sleep acc=none cover=dfe8ee",
+          "may@630,1020 h=390 worried"
+        ]
+      }
+    },
+    {
+      "chapter": "กะพริบหนึ่งครั้ง แปลว่าใช่",
+      "scene": "card",
+      "view": "chapter",
+      "note": "การ์ดบทบนพื้นดำ ชื่อบทตัวใหญ่ เลขบทเล็กข้างบน ไฟแดงจุดเดียวกะพริบมุมขวา",
+      "text": "",
+      "vo": "บทที่ห้า กะพริบหนึ่งครั้ง แปลว่าใช่",
+      "data": {
+        "name": "กะพริบหนึ่งครั้ง แปลว่าใช่"
+      },
+      "beats": 7.625,
+      "mood": 0.5
+    },
+    {
+      "scene": "ward",
+      "view": "may-eye-two",
+      "note": "two-shot ใกล้มาก เมย์โน้มหน้าเข้าหาคนไข้ ตาเขาเปิดค้าง ไฟฉายมือถือพิงหมอนส่องขึ้นทั้งสองหน้า",
+      "text": "\"ถ้าได้ยินหนู กะพริบตาหนึ่งครั้งนะคะ\"",
+      "who": "may",
+      "voice": "lead_female",
+      "tone": "whispers",
+      "mood": 0.7,
+      "data": {
+        "hud": "คืนที่ 2 · 03:40",
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          3,
+          3.24,
+          212,
+          620
+        ],
+        "cast": [
+          "wora@464,699 h=435 lie shock acc=none cover=dfe8ee",
+          "may@252,869 h=474 crouch worried yaw=-0.5 look=-0.6 talk"
+        ]
+      },
+      "beats": 4.625
+    },
+    {
+      "scene": "ward",
+      "view": "blink-ecu",
+      "note": "ECU ตาคนไข้ ปิดลงช้าๆ หนึ่งครั้ง แล้วเปิด แสงไฟฉายในลูกตา",
+      "text": "หนึ่งครั้ง",
+      "mood": 0.75,
+      "beats": 2,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "may-code-close",
+      "note": "close เมย์ น้ำตาไหลแต่ยิ้ม พยักหน้าเร็วๆ มือจับมือคนไข้",
+      "text": "\"หนึ่งครั้งแปลว่าใช่ สองครั้งแปลว่าไม่ คุณเจ็บไหมคะ\"",
+      "who": "may",
+      "voice": "lead_female",
+      "mood": 0.7,
+      "beats": 7.375,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          3.34,
+          3.607,
+          330,
+          627
+        ],
+        "cast": [
+          "wora@464,699 h=435 lie shock acc=none cover=dfe8ee",
+          "may@252,869 h=474 crouch cry yaw=-0.4 look=-0.6 talk armL=reach"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "blink2-ecu",
+      "note": "ECU ตาคนไข้มุมเยื้องกว่าเดิม กะพริบหนึ่งครั้ง น้ำตาเม็ดใหม่ไหล",
+      "text": "หนึ่งครั้ง",
+      "mood": 0.75,
+      "beats": 2,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "bed1-ots",
+      "note": "ข้ามไหล่คนไข้ (หมอนและท่อเจาะคอเบลอเป็น FG) เมย์ก้มลงถามใกล้ๆ เสียงสั่น",
+      "text": "\"มีคนทำร้ายคุณ… ใช่ไหม\"",
+      "who": "may",
+      "voice": "lead_female",
+      "mood": 0.8,
+      "beats": 4,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "foreShoulder": "l",
+        "foreColor": "#e9edee",
+        "foreHair": "#cfcfcf",
+        "cam": [
+          2.81,
+          3.035,
+          201,
+          488
+        ],
+        "cast": [
+          "wora@464,699 h=435 lie shock acc=none cover=dfe8ee",
+          "may@293,901 h=508 worried yaw=-0.3 look=-0.7 talk head=10"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "blink3-ecu",
+      "note": "ECU ตาคนไข้ ปิดลงช้ามาก นานกว่าทุกครั้ง แล้วเปิด",
+      "text": "หนึ่งครั้ง… ช้ากว่าเดิม เหมือนกลัวว่าเธอจะไม่เห็น",
+      "mood": 0.85,
+      "beats": 7,
+      "data": {}
+    },
+    {
+      "scene": "rules",
+      "view": "rule1",
+      "text": "เธอตัดสินใจฝ่า[กฎข้อหนึ่ง] ไม่ฉีดเข็มต่อไปอีกแล้ว",
+      "cues": [
+        [
+          0.3,
+          "scratch"
+        ]
+      ],
+      "mood": 0.7,
+      "data": {
+        "no": 1,
+        "hud": "กฎข้อ 1 / 5 ✗",
+        "mark": "x"
+      },
+      "beats": 5
+    },
+    {
+      "scene": "ward",
+      "view": "vent-may-med",
+      "note": "medium เมย์ปรับหน้าจอเครื่องช่วยหายใจ เช็กสายต่อท่อเจาะคอ มือมั่นคง ไฟเขียวจากจอจับหน้า",
+      "text": "ยาที่หยุด ไม่ได้ทำให้เขาตาย ตราบใดที่เครื่องยังหายใจแทน และเธอดูแลเครื่องนี้เองได้",
+      "mood": 0.6,
+      "beats": 9,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          1.59,
+          1.717,
+          -59,
+          618
+        ],
+        "cast": [
+          "wora@464,699 h=435 lie shock acc=none cover=dfe8ee",
+          "may@129,869 h=474 wary yaw=-0.5 look=-0.5 armL=reach"
+        ]
+      }
+    },
+    {
+      "scene": "pharm",
+      "view": "shelf-ins",
+      "note": "ไฟฉายมือถือส่องชั้นในห้องยาเก่า กล่องเวคูโรเนียมเปิดค้าง ขวดเรียงหายไปครึ่งแถว เลขล็อตบนข้างกล่องตรงกับขวดในมือเมย์",
+      "text": "ในห้องยาเก่าที่หมอต้นเข้าไป เธอเจอกล่องเวคูโรเนียม เลขล็อตเดียวกับขวดในถัง",
+      "mood": 0.65,
+      "clue": "ton",
+      "beats": 8.125,
+      "data": {}
+    },
+    {
+      "scene": "pharm",
+      "view": "may-dark-close",
+      "note": "close เมย์ในห้องยามืด ไฟฉายจากล่างจับหน้า ตาเลื่อนไปทางประตูห้องยา",
+      "text": "ทุกอย่างชี้ไปที่คนเดียว คนที่เข้ามาโดยไม่เคาะ คนที่กระเป๋าเสื้อ ดังกริ๊ก",
+      "mood": 0.65,
+      "beats": 7.75,
+      "data": {
+        "light": "dark",
+        "torch": [
+          1029,
+          667,
+          300
+        ],
+        "key": "255,244,210",
+        "cam": [
+          3.48,
+          3.758,
+          895,
+          495
+        ],
+        "cast": [
+          "may@969,867 h=455 wary yaw=0.45 look=0.7 arm=r-hold prop=phone"
+        ]
+      }
+    },
+    {
+      "scene": "ins",
+      "view": "photo-send-ins",
+      "note": "จอมือถือเมย์ แชตกับ \"ฝน ER\" รูปขวดยา รูปตาคนไข้ แถบอัปโหลดค้างที่ 40% ขีดสัญญาณว่าง ข้างบนมีแจ้งเตือนข่าว \"คลิป ผอ. ยอดวิว 3 ล้าน\" ภาพเล็กของคลิปเดิม",
+      "text": "เธอถ่ายรูปทุกอย่าง ส่งให้ฝน เพื่อนร่วมรุ่นที่อยู่ห้องฉุกเฉิน แต่รูปค้างอยู่ที่สี่สิบเปอร์เซ็นต์",
+      "mood": 0.55,
+      "clue": "clip",
+      "beats": 9.25,
+      "data": {}
+    },
+    {
+      "scene": "stair",
+      "view": "window-call-close",
+      "note": "เมย์ที่หน้าต่างชานพักบันได มือถือแนบหู อีกมือกำขวดยา ไฟถนนส้มจับหน้า ฟ้าข้างนอกยังมืด สัญญาณขีดเดียว",
+      "text": "สัญญาณขีดเดียวที่หน้าต่าง พอแค่โทรได้ และคนแรกที่เธอโทรหา คือคนที่เธอไว้ใจที่สุด ในตึกนี้",
+      "mood": 0.55,
+      "data": {
+        "hud": "คืนที่ 2 · 04:10",
+        "light": "night",
+        "lightAt": [
+          1182,
+          300
+        ],
+        "key": "255,170,90",
+        "cam": [
+          3.5,
+          3.78,
+          1134,
+          483
+        ],
+        "cast": [
+          "may@1208,854 h=453 worried yaw=-0.3 look=0.6 arm=r-phone prop=phone-ear"
+        ]
+      },
+      "beats": 11.125
+    },
+    {
+      "scene": "phone",
+      "view": "call-split",
+      "note": "แบ่งจอเฉียง ซ้ายเมย์ที่หน้าต่างบันไดแสงส้ม ขวานวลลุกขึ้นนั่งบนเตียงที่บ้าน เปิดไฟหัวเตียง ผมยุ่ง",
+      "text": "\"พี่นวล ยาที่ห้องยาส่งมา ไม่ใช่ยากันชักค่ะ หมอต้นเอาไป…\"",
+      "who": "may",
+      "voice": "lead_female",
+      "mood": 0.6,
+      "beats": 7.125,
+      "data": {}
+    },
+    {
+      "scene": "phone",
+      "view": "nuan-call-close",
+      "note": "close นวลบนเตียงที่บ้าน ไฟหัวเตียงอุ่น ผมยุ่ง มือถือแนบหู อีกมือจับหน้าผาก",
+      "text": "\"ใจเย็นนะเมย์ อย่าบอกใคร อย่าแตะอะไรทั้งนั้น คืนพรุ่งนี้ พี่ขึ้นไปเอง ตีสาม\"",
+      "who": "nuan",
+      "voice": "villain_female",
+      "fx": "phone",
+      "mood": 0.6,
+      "beats": 9.125,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          1363,
+          606
+        ],
+        "cam": [
+          3.1,
+          3.348,
+          1040,
+          618
+        ],
+        "cast": [
+          "nuan3@956,928 h=512 sit worried yaw=-0.45 look=-0.4 talk arm=r-phone prop=phone-ear"
+        ]
+      }
+    },
+    {
+      "scene": "stair",
+      "view": "may-relief-med",
+      "note": "medium เมย์ที่หน้าต่าง ลดมือถือลง หลับตา หน้าผากพิงกระจก ไฟถนนส้ม",
+      "text": "เมย์โล่งใจ เพราะมีคนรู้แล้ว และคนที่รู้ คือหัวหน้าเวร",
+      "mood": 0.5,
+      "beats": 7.375,
+      "data": {
+        "light": "night",
+        "lightAt": [
+          1182,
+          300
+        ],
+        "key": "255,170,90",
+        "cam": [
+          1.96,
+          2.117,
+          1361,
+          590
+        ],
+        "cast": [
+          "may@1208,854 h=453 sad yaw=0.3 look=0.4 faces=sad@0,sleep@20"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "day-chair-high",
+      "note": "มุมสูงจากเพดาน วอร์ดตอนกลางวัน แดดลอดหน้าต่างเป็นแถบ เมย์หลับนั่งบนเก้าอี้ข้างเตียงหนึ่ง มือจับมือคนไข้ไว้ ถาดยาเย็นชืดบนเคาน์เตอร์ไม่ถูกแตะ",
+      "text": "เธอไม่ยอมกลับห้อง นั่งหลับบนเก้าอี้ข้างเตียง และไม่ฉีดอีกเลย สักเข็มเดียว",
+      "cues": [
+        [
+          0,
+          "morning"
+        ]
+      ],
+      "mood": 0.4,
+      "data": {
+        "hud": "คืนที่ 2 · 07:00",
+        "light": "day",
+        "time": "day",
+        "lamp": "off",
+        "room": "high",
+        "seat": "steel",
+        "lightAt": [
+          930,
+          300
+        ],
+        "cam": [
+          1.2,
+          1.296,
+          640,
+          460
+        ],
+        "cast": [
+          "may@338,1040 h=399 sit sleep armL=reach",
+          "woraT@492,783 h=346 lie sleep acc=none cover=dfe8ee"
+        ]
+      },
+      "beats": 8.375
+    },
+    {
+      "scene": "ins",
+      "view": "tape-back-ins",
+      "note": "มือเมย์ติดเทปขาวกลับลงบนตาคนไข้อย่างเบามือ ขอบตาเปียก แดดเช้าเฉียง",
+      "text": "ก่อนเจ็ดโมงครึ่ง เธอติดเทปปิดตาเขากลับเหมือนเดิม แล้วกระซิบว่า อีกนิดเดียวนะคะ",
+      "mood": 0.45,
+      "beats": 9,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "prae2-close",
+      "note": "close แพรยืนชิดผนังที่เดิม ทิชชูเปียกในมือ ตาไม่มองเตียง แสงเช้าจับขอบหน้า",
+      "text": "\"พ่อ… ยังนิ่งอยู่ใช่ไหมคะ\"",
+      "who": "prae",
+      "voice": "young_female",
+      "tone": "quiet",
+      "mood": 0.5,
+      "beats": 4.75,
+      "data": {
+        "light": "day",
+        "time": "day",
+        "lamp": "off",
+        "lightAt": [
+          930,
+          300
+        ],
+        "cam": [
+          4.6,
+          4.968,
+          1024,
+          461
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "prae@1081,743 h=344 wary yaw=0.45 look=-0.4 talk armL=chest"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "may-lie-close",
+      "note": "close เมย์ยิ้มแบบเดียวกับเมื่อวาน แต่มือที่จับกระติกน้ำกำแน่นจนข้อนิ้วขาว",
+      "text": "\"นิ่งค่ะ… นิ่งทั้งคืน\"",
+      "who": "may",
+      "voice": "lead_female",
+      "mood": 0.55,
+      "beats": 4.25,
+      "data": {
+        "light": "day",
+        "time": "day",
+        "lamp": "off",
+        "lightAt": [
+          930,
+          300
+        ],
+        "cam": [
+          3.19,
+          3.445,
+          655,
+          484
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@737,890 h=496 happy yaw=0.45 look=0.5 talk armL=hold prop=bottle"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "pakorn-watch-close",
+      "note": "close ทนายปกรณ์ยืนที่เคาน์เตอร์ มองเมย์นิ่งๆ นานกว่าปกติ แล้วยิ้มตามมารยาท หยิบธนบัตรออกจากกระเป๋า",
+      "text": "เธอโกหกครั้งแรก ในชีวิตการทำงาน ด้วยรอยยิ้มแบบเดียวกับเมื่อวาน",
+      "mood": 0.55,
+      "beats": 7,
+      "data": {
+        "light": "day",
+        "time": "day",
+        "lamp": "off",
+        "lightAt": [
+          930,
+          300
+        ],
+        "cam": [
+          2.4,
+          2.592,
+          -43,
+          449
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "pakorn@66,995 h=668 wary yaw=0.4 look=0.5 armR=pocket"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "nuan-morning-two",
+      "note": "two-shot ที่ประตูกระจกตอนแปดโมง นวลในชุดขาวถือถุงกับข้าวมาให้ จับแขนเมย์ไว้ เสียงเบา แดดจากทางเดิน",
+      "text": "\"พี่แจ้งรักษาการผอ.แล้ว คืนนี้ตีสาม พี่พาตำรวจขึ้นมาเอง อย่าให้หมอต้นรู้ตัวนะ\"",
+      "who": "nuan",
+      "voice": "villain_female",
+      "tone": "whispers",
+      "mood": 0.5,
+      "data": {
+        "hud": "คืนที่ 2 · 08:00",
+        "light": "day",
+        "time": "day",
+        "lamp": "off",
+        "lightAt": [
+          110,
+          416
+        ],
+        "cam": [
+          2.6,
+          2.808,
+          213,
+          540
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "nuan@145,810 h=417 worried yaw=0.45 talk armR=offer",
+          "may@280,825 h=426 tired yaw=-0.45"
+        ]
+      },
+      "beats": 9
+    },
+    {
+      "scene": "ward",
+      "view": "may-trust-med",
+      "note": "medium เมย์รับถุงกับข้าวจากนวลที่ประตูกระจก ตาแดงแต่ยิ้มได้ครั้งแรกตั้งแต่ตีสาม แดดเช้าจับผม",
+      "text": "เมย์เชื่อ เพราะพี่นวล คือคนแรกในโรงพยาบาลนี้ ที่ยอมนั่งกินข้าวกับเธอ",
+      "mood": 0.4,
+      "beats": 8,
+      "data": {
+        "light": "day",
+        "time": "day",
+        "lamp": "off",
+        "lightAt": [
+          110,
+          416
+        ],
+        "cam": [
+          2.08,
+          2.246,
+          136,
+          577
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@280,825 h=426 happy yaw=-0.4 look=-0.4 armR=hold prop=bowl"
+        ]
+      }
+    },
+    {
+      "scene": "ins",
+      "view": "log3-ins",
+      "note": "สมุดบันทึกการให้ยาหน้าใหม่ ช่องเวลาตลอดวันมีลายเซ็นเมย์เรียงลงมา ข้างสมุดคือเข็มเต็มที่ยังไม่ถูกใช้ วางเรียงในถาด",
+      "text": "ทั้งวันนั้น เธอยังเซ็นชื่อลงสมุดทุกชั่วโมง เหมือนฉีดไปแล้ว เพื่อไม่ให้ใครสงสัย",
+      "mood": 0.45,
+      "clue": "sign",
+      "beats": 8.125,
+      "data": {}
+    },
+    {
+      "scene": "lobby",
+      "view": "lobby-night3-wide",
+      "note": "ล็อบบี้มืดกรอบเดียวกับคืนแรก เมย์เดินผ่านกรอบรูปบนผนังเร็วกว่าเดิม ถือถุงข้าว ไม่ไหว้ ไฟฉายแดงลุงพรอยู่ไกลในป้อม",
+      "text": "หัวค่ำคืนที่สาม เธอลงไปซื้อข้าวหน้าโรงพยาบาลแค่สิบนาที เดินผ่านทุกอย่างในล็อบบี้ โดยไม่หันมอง",
+      "cues": [
+        [
+          0,
+          "night"
+        ]
+      ],
+      "mood": 0.5,
+      "clue": "portrait",
+      "data": {
+        "hud": "คืนที่ 3 · 20:30",
+        "light": "lamp",
+        "motion": "walk",
+        "move": [
+          1500,
+          700
+        ],
+        "lightAt": [
+          1426,
+          500
+        ],
+        "cam": [
+          0.98,
+          1.058,
+          960,
+          520
+        ],
+        "cast": [
+          "may@980,899 h=525 walk yaw=-0.3 arm=r-hold prop=bowl"
+        ]
+      },
+      "beats": 10.25
+    },
+    {
+      "scene": "ins",
+      "view": "newspaper-ins",
+      "note": "หนังสือพิมพ์พับบนเคาน์เตอร์พยาบาล พาดหัว \"ตร.ยันสัญญาณมือถือ ผอ.อยู่กัมพูชา\" รูปเล็ก ผอ.แว่นทอง ถ้วยกาแฟทับมุม",
+      "text": "หนังสือพิมพ์ที่ใครทิ้งไว้บนเคาน์เตอร์ ยังเล่นข่าวผอ.หนี เหมือนทุกวัน",
+      "mood": 0.45,
+      "clue": "portrait",
+      "beats": 7,
+      "data": {}
+    },
+    {
+      "scene": "ins",
+      "view": "thumb2-ins",
+      "note": "นิ้วโป้งขวาคนไข้ใต้ไฟฉาย คราบหมึกม่วงเข้มกว่าเมื่อคืน มีรอยใหม่ซ้อน ผ้าเปียกในมือเมย์เช็ดอยู่",
+      "text": "เธอเช็ดตัวให้เขา ล้างคราบหมึกจากป้ายข้อมือ ที่ติดนิ้วมาทุกวัน",
+      "cues": [
+        [
+          0,
+          "vent"
+        ]
+      ],
+      "mood": 0.5,
+      "clue": "ink",
+      "data": {
+        "hud": "คืนที่ 3 · 21:00",
+        "light": "lamp"
+      },
+      "beats": 8
+    },
+    {
+      "scene": "ins",
+      "view": "alphabet-ins",
+      "note": "มือเมย์ถือกระดาษ ก–ฮ ที่เขียนเองด้วยปากกาลูกลื่นน้ำเงิน ปลายนิ้วไล่ทีละแถวเหนือหน้าคนไข้ ไฟฉายพิงหมอน",
+      "text": "เธอเขียนพยัญชนะ ก ถึง ฮ ลงกระดาษ ไล่นิ้วทีละตัว ให้เขากะพริบ ตอนถึงตัวที่ต้องการ",
+      "mood": 0.6,
+      "beats": 8.25,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "letter-ecu",
+      "note": "ECU ตาคนไข้กะพริบหนึ่งครั้ง เงาสะท้อนแผ่นตัวอักษรในลูกตา",
+      "text": "[ห]",
+      "mood": 0.7,
+      "beats": 2,
+      "data": {}
+    },
+    {
+      "scene": "ins",
+      "view": "alphabet2-ins",
+      "note": "ปลายนิ้วเมย์หยุดที่ตัว น บนกระดาษ แล้วเลื่อนไปที่สระอีที่เขียนแถวล่าง",
+      "text": "[น]… แล้วก็[สระอี]",
+      "mood": 0.75,
+      "beats": 4.25,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "may-spell-close",
+      "note": "close เมย์ทวนคำเบาๆ ตาจ้องคนไข้ หน้าซีด ปากกาค้างกลางแผ่น",
+      "text": "\"หนี…\"",
+      "who": "may",
+      "voice": "lead_female",
+      "tone": "whispers",
+      "mood": 0.85,
+      "beats": 2,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          3.34,
+          3.607,
+          330,
+          627
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@252,869 h=474 crouch scared yaw=-0.45 look=-0.6 talk armR=hold prop=paper"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "patient-ots",
+      "note": "ข้ามไหล่เมย์ (FG เบลอ) หน้าคนไข้ตาเปิดในแอ่งไฟฉาย ม่านเตียงสองเบลออยู่หลังเตียง ไฟแดงจุดเดียว",
+      "text": "เขาไม่ได้บอกชื่อ เขาบอกให้เธอหนี… หนีจากอะไร",
+      "mood": 0.8,
+      "clue": "redlight",
+      "beats": 6.5,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "foreShoulder": "r",
+        "foreColor": "#eef0ee",
+        "foreHair": "#1c1714",
+        "cam": [
+          2.4,
+          2.592,
+          404,
+          613
+        ],
+        "cast": [
+          "wora@464,699 h=435 lie shock acc=none cover=dfe8ee"
+        ]
+      }
+    },
+    {
+      "chapter": "เตียงสอง",
+      "scene": "card",
+      "view": "chapter",
+      "note": "การ์ดบทบนพื้นดำ ชื่อบทตัวใหญ่ เลขบทเล็กข้างบน ไฟแดงจุดเดียวกะพริบมุมขวา",
+      "text": "",
+      "vo": "บทที่หก เตียงสอง",
+      "data": {
+        "name": "เตียงสอง"
+      },
+      "beats": 3.5,
+      "mood": 0.5
+    },
+    {
+      "scene": "ward",
+      "view": "curtain-dont-close",
+      "note": "close ม่านเตียงสอง ไฟแดงกะพริบเร็ว เสียงกระซิบดังจากข้างใน",
+      "text": "\"อย่า…\"",
+      "who": "ghost",
+      "voice": "old_female",
+      "tone": "whispers",
+      "mood": 0.9,
+      "clue": "ghostsync",
+      "data": {
+        "hud": "คืนที่ 3 · 02:40",
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          2.6,
+          2.8,
+          1489,
+          499
+        ],
+        "cast": [
+          "wora@464,699 h=435 lie shock acc=none cover=dfe8ee"
+        ]
+      },
+      "beats": 2
+    },
+    {
+      "scene": "ward",
+      "view": "may-turn-close",
+      "note": "close เมย์หันหัวขวับ 3/4 ไปทางม่าน มือยังถือแผ่นตัวอักษร แสงแดงจับแก้ม",
+      "text": "เสียงหลังม่าน ดังขึ้นตอนที่คนไข้ กะพริบพอดี",
+      "mood": 0.85,
+      "beats": 6.375,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "key": "255,70,50",
+        "cam": [
+          3.34,
+          3.607,
+          174,
+          627
+        ],
+        "cast": [
+          "wora@464,699 h=435 lie shock acc=none cover=dfe8ee",
+          "may@252,869 h=474 crouch shock yaw=0.5 look=0.7 armR=hold prop=paper"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "may-recall-med",
+      "note": "medium เมย์นั่งนิ่งข้างเตียง สายตาวนจากคนไข้ไปที่ม่าน แล้วกลับมาที่คนไข้ ไฟฉายพิงหมอน",
+      "text": "เมย์นึกย้อน เสียงไอคืนแรก ดังตอนเธอก้มดูหน้าเขา",
+      "mood": 0.75,
+      "beats": 6.5,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "seat": "steel",
+        "cam": [
+          1.57,
+          1.696,
+          103,
+          729
+        ],
+        "cast": [
+          "wora@464,699 h=435 lie shock acc=none cover=dfe8ee",
+          "may@293,901 h=508 sit wary yaw=0.3 look=0.6"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "recall-past-high",
+      "note": "มุมสูงจากเพดาน ภาพซ้ำแบบหรี่สีจากคืนแรก เมย์ก้มใกล้หน้าคนไข้ มือแตะเทป ม่านเตียงสองโป่งข้างหลัง แสงแดงวาบ",
+      "text": "เสียงขอน้ำ ดังตอนเธอนั่งใกล้เขาที่สุด และคำว่าอย่า ดังตอนเขาสะกดคำว่าหนี",
+      "mood": 0.8,
+      "data": {
+        "past": true,
+        "light": "lamp",
+        "lightAt": [
+          -98,
+          1001
+        ],
+        "room": "high",
+        "cam": [
+          1.4,
+          1.512,
+          463,
+          520
+        ],
+        "cast": [
+          "woraT@492,783 h=346 lie sleep acc=none cover=dfe8ee",
+          "may@303,1000 h=382 worried yaw=-0.5 armL=reach head=12"
+        ]
+      },
+      "beats": 10.875
+    },
+    {
+      "scene": "ward",
+      "view": "may-think-close",
+      "note": "close เมย์มองตรงไปที่ม่าน คิ้วขมวด กลัวน้อยลง หูเอียงฟัง",
+      "text": "ผีตัวไหน จะสนใจว่าเธอ อยู่ใกล้หน้าคนไข้แค่ไหน",
+      "mood": 0.7,
+      "beats": 6.375,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "seat": "steel",
+        "cam": [
+          3.12,
+          3.37,
+          210,
+          592
+        ],
+        "cast": [
+          "wora@464,699 h=435 lie shock acc=none cover=dfe8ee",
+          "may@293,901 h=508 sit wary yaw=0.45 look=0.7 head=-8"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "test-med",
+      "note": "medium เมย์ยืนขึ้นชูเข็มเปล่าในแสงโคม พูดเสียงดังให้ทั้งห้องได้ยิน ตาจับที่ม่าน",
+      "text": "\"ได้เวลาเข็มแล้วนะคะ หนูจะฉีดยาให้\"",
+      "who": "may",
+      "voice": "lead_female",
+      "mood": 0.7,
+      "beats": 5,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          1.75,
+          1.89,
+          341,
+          605
+        ],
+        "cast": [
+          "wora@464,699 h=435 lie shock acc=none cover=dfe8ee",
+          "may@513,901 h=508 angry yaw=0.45 look=0.6 talk armR=raise prop=paper"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "curtain-quiet-low",
+      "note": "มุมต่ำจากพื้น ม่านเตียงสองนิ่งสูงทึบ ไฟแดงกะพริบช้าเป็นจังหวะปกติ",
+      "text": "หลังม่าน… [เงียบสนิท]",
+      "hold": 0.5,
+      "mood": 0.75,
+      "beats": 4.5,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          155
+        ],
+        "room": "low",
+        "cam": [
+          1.5,
+          1.62,
+          1519,
+          560
+        ],
+        "cast": [
+          "wora@464,722 h=657 lie shock acc=none cover=dfe8ee"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "may-tape-close",
+      "note": "close เมย์เอื้อมมือไปที่เทปตาซ้ายคนไข้ช้าๆ ตายังจับที่ม่าน",
+      "text": "\"ไม่ฉีดแล้ว… หนูจะแกะเทปอีกข้าง\"",
+      "who": "may",
+      "voice": "lead_female",
+      "mood": 0.8,
+      "beats": 4.625,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          3.27,
+          3.532,
+          179,
+          482
+        ],
+        "cast": [
+          "wora@464,699 h=435 lie shock acc=none cover=dfe8ee",
+          "may@258,879 h=485 wary yaw=-0.3 look=0.7 talk armL=reach head=8"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "curtain-dont2-close",
+      "note": "close ม่านเตียงสองมุมต่ำกว่าเดิม ไฟแดงกะพริบรัว",
+      "text": "\"อย่า…\"",
+      "who": "ghost",
+      "voice": "old_female",
+      "tone": "whispers",
+      "mood": 0.9,
+      "beats": 2,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          155
+        ],
+        "room": "low",
+        "cam": [
+          2.2,
+          2.5,
+          1519,
+          501
+        ],
+        "cast": [
+          "wora@464,722 h=657 lie shock acc=none cover=dfe8ee"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "may-know-med",
+      "note": "medium เมย์ลดมือลงยืนตรงข้างเตียง หน้านิ่ง ตาแข็ง หันมองม่านเต็มหน้า",
+      "text": "ไม่ใช่ผี มีคนฟังเธออยู่ และคนคนนั้น ไม่อยากให้เธอเห็นหน้าคนไข้",
+      "mood": 0.85,
+      "beats": 8.875,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          1.75,
+          1.89,
+          561,
+          605
+        ],
+        "cast": [
+          "wora@464,699 h=435 lie shock acc=none cover=dfe8ee",
+          "may@733,901 h=508 angry yaw=0.5 look=0.6"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "curtain-hand2-ecu",
+      "note": "กรอบเดียวกับช็อตแรกของเรื่อง มือเมย์ในถุงมือยางจับขอบม่าน ไฟแดงกะพริบ แสงโคมอุ่นจากซ้าย",
+      "text": "ตีสามตรง คืนที่สาม มือเธออยู่บนม่าน",
+      "mood": 0.9,
+      "data": {
+        "hud": "คืนที่ 3 · 03:00 · กฎข้อ 2 / 5",
+        "mirror": "coldopen"
+      },
+      "beats": 6.25
+    },
+    {
+      "scene": "ward",
+      "view": "rip-wide",
+      "note": "wide จากหลังเคาน์เตอร์ เมย์กระชากม่านเตียงสองเปิดเต็มแรง ผ้าสะบัดเป็นคลื่น ไฟโคมส่องเข้าไปข้างในครั้งแรก",
+      "text": "",
+      "vo": "",
+      "hush": true,
+      "beats": 2.5,
+      "cues": [
+        [
+          0.2,
+          "curtainrip"
+        ]
+      ],
+      "mood": 0.95,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          1.05,
+          1.12,
+          1050,
+          520
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@1193,937 h=547 shock yaw=0.4 armR=raise"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "bed2-reveal-wide",
+      "note": "wide เตียงสองว่างเปล่า ผ้าปูเรียบไม่มีรอยนั่ง บนเสาน้ำเกลือมีมือถือเก่าเทปติดจอสว่าง บนหมอนลำโพงบลูทูธกลมไฟแดงกะพริบ",
+      "text": "เตียงสอง… {ไม่มีใครเลย}",
+      "style": "red",
+      "cues": [
+        [
+          0,
+          "hit"
+        ]
+      ],
+      "hold": 0.5,
+      "mood": 0.95,
+      "pay": [
+        "redlight",
+        "ghostsync"
+      ],
+      "beats": 5.375,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          -198,
+          591
+        ],
+        "cam": [
+          1.55,
+          1.674,
+          1420,
+          520
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@1104,950 h=562 shock yaw=0.45 look=0.3"
+        ]
+      }
+    },
+    {
+      "scene": "ins",
+      "view": "speaker-ins",
+      "note": "macro ลำโพงบลูทูธสีดำบนหมอน ไฟแดงดวงเล็กกะพริบ ตรงกับจุดแดงที่ลอดม่านมาทุกคืน",
+      "text": "ไฟแดงที่เธอเห็นลอดม่านมาสามคืน คือไฟของลำโพงตัวนี้",
+      "mood": 0.85,
+      "beats": 6.75,
+      "data": {}
+    },
+    {
+      "scene": "ins",
+      "view": "phone-pole-ins",
+      "note": "มือถือเก่าเทปกาวติดเสาน้ำเกลือ กล้องหันไปทางเตียงหนึ่ง กล่องไวไฟพกพาไฟเขียววางข้างหมอน สายอากาศลากไปติดกระจกหน้าต่าง จอเปิดวิดีโอคอลค้าง เวลาสายบนจอ 19:12:40",
+      "text": "และมือถือเครื่องนี้ หันกล้องมาที่เตียงหนึ่ง ต่อไวไฟพกพาที่สายอากาศติดกระจกหน้าต่าง เปิดวิดีโอคอลค้างไว้",
+      "mood": 0.85,
+      "beats": 10.75,
+      "data": {}
+    },
+    {
+      "scene": "phone",
+      "view": "call-pov",
+      "note": "จอมือถือเต็มเฟรม ภาพจากอีกฝั่งของสาย กล้องเดินอยู่ในทางลาดมืด ไฟฉุกเฉินเขียว แว่นสายคล้องคอแกว่งเข้าเฟรม",
+      "text": "อีกฝั่งของสาย ไม่ใช่ที่ไหนไกล มันคือทางลาดข้างตึกนี้ กำลังขึ้นมาชั้นสี่",
+      "mood": 0.9,
+      "beats": 9,
+      "data": {}
+    },
+    {
+      "scene": "phone",
+      "view": "call-faces-pov",
+      "note": "จอมือถือ กล้องหมุนกลับเห็นหน้าคนถือ นวลในชุดพยาบาลหมวกขีดดำ ข้างหลังคือทนายปกรณ์ถือแฟ้ม แสงไฟฉุกเฉินเขียวจากล่าง",
+      "text": "หัวหน้าเวรนวล กับทนายปกรณ์",
+      "style": "red",
+      "cues": [
+        [
+          0,
+          "hit"
+        ]
+      ],
+      "mood": 0.95,
+      "beats": 3.5,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "may-betrayed-close",
+      "note": "close เมย์ถือมือถือในแสงจอ หน้าซีด ปากเม้ม ตาเปลี่ยนจากตกใจเป็นเข้าใจ",
+      "text": "คนที่เธอโทรไปขอความช่วยเหลือ คือคนที่ส่งยา มาให้เธอฉีด",
+      "mood": 0.9,
+      "beats": 7.25,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          1685,
+          391
+        ],
+        "key": "130,180,255",
+        "cam": [
+          2.89,
+          3.121,
+          1425,
+          489
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@1335,937 h=547 shock yaw=0.3 look=0.6 arm=r-hold prop=phone"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "may-watched-close",
+      "note": "close เมย์เงยหน้าจากจอขึ้นมองกล้องมือถือบนเสา เลนส์จ้องกลับมา แสงจอฟ้าจับหน้า",
+      "text": "ทุกอย่างที่เธอทำตั้งแต่ตีสามเมื่อคืน หยุดยา คุยกับเขา สะกดตัวอักษร พวกเขาเห็นผ่านเลนส์นี้ ทั้งหมด",
+      "mood": 0.9,
+      "beats": 11.125,
+      "data": {
+        "light": "lamp",
+        "lightAt": [
+          1685,
+          391
+        ],
+        "key": "130,180,255",
+        "shade": "l",
+        "cam": [
+          3.18,
+          3.434,
+          1253,
+          486
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@1335,937 h=547 scared yaw=0.5 look=0.8 arm=r-hold prop=phone"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "blackout-wide",
+      "note": "wide วอร์ดดับวูบทั้งชั้น เหลือแค่จอมือถือบนเสากับไฟแบตเครื่องช่วยหายใจสีส้ม เมย์เป็นเงาดำกลางห้อง",
+      "text": "",
+      "vo": "",
+      "hush": true,
+      "beats": 2.5,
+      "cues": [
+        [
+          0.1,
+          "breaker"
+        ]
+      ],
+      "mood": 1,
+      "data": {
+        "light": "dark",
+        "cam": [
+          1,
+          1.02,
+          900,
+          520
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may-sil@1193,937 h=547 scared"
+        ]
+      }
+    },
+    {
+      "scene": "ins",
+      "view": "vent-alarm-ins",
+      "note": "ECU จอเครื่องช่วยหายใจ ไอคอนแบต \"BATTERY 30 MIN\" กะพริบส้ม ตัวเลขนับถอยหลัง",
+      "text": "เครื่องช่วยหายใจ สลับไปใช้แบตเตอรี่สำรอง ได้อีก[สามสิบนาที]",
+      "cues": [
+        [
+          0,
+          "ventalarm"
+        ]
+      ],
+      "mood": 0.9,
+      "beats": 8,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "door-dark-fif",
+      "note": "กรอบประตูกระจกเดิม แต่ทางเดินดับ มีแค่ไฟฉายสองดวงส่องผ่านกระจกขุ่น เงาสองเงาใหญ่ขึ้น เคาะรัว",
+      "text": "แล้วเสียงเคาะ ก็ดังขึ้น",
+      "cues": [
+        [
+          0.3,
+          "knockfast"
+        ]
+      ],
+      "mood": 0.95,
+      "data": {
+        "hud": "กฎข้อ 3 / 5"
+      },
+      "beats": 4
+    },
+    {
+      "scene": "ward",
+      "view": "door-nuan-sil",
+      "note": "close ประตูกระจกจากข้างใน เงานวลแนบกระจก ฝ่ามือแบะบนกระจก ไฟฉายจ้ากลางกระจก",
+      "text": "\"เมย์ เปิดประตู… พี่เอง\"",
+      "who": "nuan",
+      "voice": "villain_female",
+      "fx": "muffled",
+      "mood": 0.95,
+      "beats": 3.5,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "may-dark-close",
+      "note": "close เมย์ในความมืด แสงจอมือถือส้มจับครึ่งหน้า มือหนึ่งจับราวเตียงคนไข้ เสียงเคาะยังดัง",
+      "text": "เปิด… หรือไม่เปิด",
+      "mood": 0.95,
+      "beats": 2.75,
+      "data": {
+        "light": "dark",
+        "torch": [
+          1029,
+          667,
+          300
+        ],
+        "key": "255,244,210",
+        "cam": [
+          3.48,
+          3.758,
+          895,
+          495
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@969,867 h=455 wary yaw=0.45 look=0.7 arm=r-hold prop=phone"
+        ]
+      }
+    },
+    {
+      "chapter": "ทางลาด",
+      "scene": "card",
+      "view": "chapter",
+      "note": "การ์ดบทบนพื้นดำ ชื่อบทตัวใหญ่ เลขบทเล็กข้างบน ไฟแดงจุดเดียวกะพริบมุมขวา",
+      "text": "",
+      "vo": "บทที่เจ็ด ทางลาด",
+      "data": {
+        "name": "ทางลาด"
+      },
+      "beats": 3.25,
+      "mood": 0.5
+    },
+    {
+      "scene": "ward",
+      "view": "may-back-close",
+      "note": "close เมย์หันหลังให้ประตูกระจก มองไปที่ประตูหนีไฟอีกด้านของวอร์ด ป้าย EXIT เขียวสะท้อนตา",
+      "text": "กฎข้อสามบอกว่า อย่าขานรับ เป็นข้อเดียวที่คืนนี้ เธอจะทำตาม",
+      "cues": [
+        [
+          0,
+          "knockfar"
+        ]
+      ],
+      "mood": 0.85,
+      "data": {
+        "light": "dark",
+        "power": "off",
+        "curtain": "open",
+        "lightAt": [
+          2282,
+          88
+        ],
+        "key": "60,230,120",
+        "cam": [
+          2.97,
+          3.208,
+          867,
+          488
+        ],
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee",
+          "may@955,924 h=534 wary yaw=0.55 look=0.7"
+        ]
+      },
+      "beats": 7.875
+    },
+    {
+      "scene": "ins",
+      "view": "ambu-ins",
+      "note": "มือเมย์ถอดสายเครื่องช่วยหายใจออกจากท่อเจาะคอ ต่อถุงแอมบูสีส้มเข้าแทน บีบครั้งแรก ไฟฉายคาบปากส่อง",
+      "text": "เธอถอดเครื่องที่แบตกำลังจะหมด ต่อถุงแอมบู แล้วบีบ ทุกห้าวินาที",
+      "cues": [
+        [
+          0.6,
+          "ambu"
+        ],
+        [
+          3,
+          "ambu"
+        ]
+      ],
+      "mood": 0.85,
+      "beats": 9,
+      "data": {}
+    },
+    {
+      "scene": "ins",
+      "view": "cart-ins",
+      "note": "รถเข็นฉุกเฉินเก่าสีแดงลิ้นชักเปิด ไฟฉายส่องขวดนีโอสติกมีนกับอะโทรปีน วันหมดอายุพิมพ์ชัด ถังออกซิเจนเขียวเล็กเสียบอยู่ชั้นล่าง",
+      "text": "รถเข็นฉุกเฉินที่ถูกทิ้งไว้ ยังมีถังออกซิเจนเล็ก กับยาแก้ฤทธิ์สองขวด นีโอสติกมีน และอะโทรปีน ที่ยังไม่หมดอายุ",
+      "mood": 0.8,
+      "beats": 11,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "inject3-close",
+      "note": "close มือซ้ายเมย์ฉีดยาเข้าสายน้ำเกลือ มือขวาบีบแอมบู ไฟฉายคาบปาก หน้าคนไข้ตาเปิดอยู่ขอบเฟรม",
+      "text": "เข็มนี้ เป็นเข็มแรกในสามคืน ที่เธอฉีดเพื่อให้เขา ขยับได้",
+      "cues": [
+        [
+          1,
+          "ambu"
+        ]
+      ],
+      "mood": 0.75,
+      "beats": 8.5,
+      "data": {
+        "cast": [
+          "woraT@464,699 h=435 lie sleep acc=none cover=dfe8ee"
+        ]
+      }
+    },
+    {
+      "scene": "ward",
+      "view": "bed-push-wide",
+      "note": "wide ไฟดับ วอร์ดมืดมีแต่ไฟฉุกเฉินเขียวจากป้าย EXIT ขวา เมย์ดันเตียงหนึ่งที่มีผอ.นอนอยู่ ห่มผ้าฟ้า ไปทางประตูหนีไฟ มือหนึ่งบีบถุงแอมบูส้มที่หน้าเขา เสาน้ำเกลือติดหัวเตียงโยก เตียงหนึ่งที่ว่างเหลือแต่ที่ว่าง ม่านเตียงสองเปิด",
+      "text": "ประตูหนีไฟอยู่อีกฝั่งของวอร์ด และหลังประตูนั้น คือทางลาดเข็นเตียง ที่ลุงพรชี้ให้ดูคืนแรก",
+      "cues": [
+        [
+          0.5,
+          "bedroll"
+        ]
+      ],
+      "mood": 0.85,
+      "data": {
+        "motion": "walk",
+        "light": "dark",
+        "power": "off",
+        "curtain": "open",
+        "lightAt": [
+          2282,
+          88
+        ],
+        "cam": [
+          1.1,
+          1.18,
+          860,
+          600
+        ],
+        "cast": [
+          "wora@464,699 h=435 lie shock acc=none cover=dfe8ee",
+          "may@777,901 h=508 walk"
+        ],
+        "gurney": {
+          "x0": 700,
+          "x1": 1150,
+          "y": 865,
+          "s": 1.3,
+          "dir": 1
+        }
+      },
+      "beats": 9
+    },
+    {
+      "scene": "stair",
+      "view": "ramp-high",
+      "note": "มุมสูงจากชั้นบนลงทางลาดวน เตียงที่มีผอ.นอนห่มผ้าฟ้าเอียงไหลลงโค้งแรก เมย์อยู่หัวเตียงด้านบนเนิน สองมือดึงราวเตียงไว้ ถุงแอมบูส้มที่หน้าเขา ไฟฉุกเฉินเขียวที่ผนัง",
+      "text": "เตียงหนักกว่าตัวเธอสามเท่า บนทางลาด มันอยากไหลลง เร็วกว่าที่เธอจะคุมได้",
+      "cues": [
+        [
+          0,
+          "bedroll"
+        ]
+      ],
+      "mood": 0.9,
+      "data": {
+        "motion": "pan",
+        "light": "dark",
+        "cast": [
+          "wora@0,0 lie shock acc=none cover=dfe8ee",
+          "may@0,0 h=520 worried armL=reach armR=reach"
+        ],
+        "lightAt": [
+          558,
+          300
+        ],
+        "cam": [
+          1,
+          1.08,
+          960,
+          560
+        ],
+        "torches": [
+          [
+            1000,
+            640
+          ]
+        ],
+        "gurney": {
+          "x0": 880,
+          "x1": 820,
+          "y": 760,
+          "s": 1,
+          "tilt": -14,
+          "dir": -1
+        }
+      },
+      "beats": 8.5
+    },
+    {
+      "scene": "stair",
+      "view": "ramp-wheel-low",
+      "note": "มุมต่ำที่โค้งทางลาด ล้อเตียงครูดผนังเป็นประกายไฟ รองเท้าขาวของเมย์ยันผนังเบรก ขอบเตียงด้านบนมีผ้าห่มฟ้า แขนคนไข้ห้อย ถุงแอมบูส้มยุบพอง",
+      "text": "ห้า… สิบ… สิบห้า เธอนับวินาทีการบีบ ไม่ได้นับชั้น",
+      "cues": [
+        [
+          0.2,
+          "scrape"
+        ],
+        [
+          1.5,
+          "ambu"
+        ]
+      ],
+      "mood": 0.9,
+      "beats": 12,
+      "data": {
+        "light": "dark",
+        "cast": [
+          "wora@0,0 lie shock acc=none cover=dfe8ee"
+        ],
+        "lightAt": [
+          1400,
+          300
+        ],
+        "cam": [
+          1.2,
+          1.3,
+          1000,
+          640
+        ]
+      }
+    },
+    {
+      "scene": "ins",
+      "view": "msg-sent-ins",
+      "note": "จอมือถือในกระเป๋าเสื้อเมย์ ข้อความถึงฝนขึ้นติ๊กสองสีน้ำเงิน สัญญาณสองขีด ไฟฉุกเฉินเขียวสะท้อนจอ",
+      "text": "ชั้นสอง สัญญาณกลับมา ข้อความถึงฝน ส่งออกไปแล้ว",
+      "mood": 0.8,
+      "beats": 6.875,
+      "data": {}
+    },
+    {
+      "scene": "stair",
+      "view": "ramp-top-sil",
+      "note": "มองขึ้นทางลาดจากโค้งล่าง ลำไฟฉายสองลำพาดลงมาตามทางลาด ปลายบนมีเงาดำสองร่างวิ่งลงมา หลังไฟฉายของตัวเอง",
+      "text": "\"มันลงทางลาด!\"",
+      "who": "pakorn",
+      "voice": "father",
+      "mood": 0.95,
+      "beats": 3.5,
+      "data": {
+        "light": "dark",
+        "cast": [
+          "nuan-sil@1339,424 h=404 run",
+          "pakorn-sil@1422,425 h=427 run"
+        ],
+        "lightAt": [
+          1400,
+          300
+        ],
+        "cam": [
+          1.1,
+          1.18,
+          1150,
+          460
+        ],
+        "motion": "walk",
+        "beams": [
+          [
+            1339,
+            364,
+            820,
+            820,
+            260
+          ],
+          [
+            1422,
+            355,
+            1000,
+            880,
+            240
+          ]
+        ]
+      }
+    },
+    {
+      "scene": "stair",
+      "view": "pole-block-med",
+      "note": "medium บนทางลาด เมย์ดึงเสาน้ำเกลืออันที่สองออกจากหัวเตียง เหวี่ยงขวางทางลาดข้างหลัง เสาล้มกระแทกผนัง ไฟฉายสองดวงด้านบนใกล้เข้ามา",
+      "text": "เธอดึงเสาน้ำเกลืออันที่ไม่ได้ใช้ เหวี่ยงขวางทางลาดไว้ข้างหลัง ไม่ได้หวังจะหยุดใคร แค่ซื้อเวลาสิบวินาที",
+      "cues": [
+        [
+          0.6,
+          "polecrash"
+        ]
+      ],
+      "mood": 0.95,
+      "beats": 11,
+      "data": {
+        "light": "dark",
+        "pole": true,
+        "torches": [
+          [
+            1339,
+            364
+          ]
+        ],
+        "cast": [
+          "wora@0,0 lie shock acc=none cover=dfe8ee",
+          "may@913,901 h=665 angry yaw=0.45 armR=raise"
+        ],
+        "lightAt": [
+          1400,
+          300
+        ],
+        "cam": [
+          1.25,
+          1.35,
+          1000,
+          560
+        ],
+        "gurney": {
+          "x0": 625,
+          "x1": 600,
+          "y": 900,
+          "s": 1.1,
+          "tilt": -14,
+          "dir": -1,
+          "push": false
+        }
+      }
+    },
+    {
+      "scene": "lobby",
+      "view": "phon-block-low",
+      "note": "มุมต่ำที่เชิงทางลาดชั้นล่าง ลุงพรยืนขวางประตูข้างตึก ไฟฉายแดงส่องหน้าเมย์ พวงกุญแจในมือ",
+      "text": "แต่ที่ปลายทางลาด ลุงพร ยืนรออยู่ตรงประตูข้าง",
+      "mood": 0.9,
+      "beats": 6.625,
+      "data": {
+        "light": "dark",
+        "torch": [
+          139,
+          434,
+          260
+        ],
+        "lightAt": [
+          139,
+          500
+        ],
+        "cam": [
+          1.5,
+          1.62,
+          179,
+          654
+        ],
+        "cast": [
+          "phon@19,933 h=616 wary yaw=0.45 arm=r-hold prop=flashlight"
+        ]
+      }
+    },
+    {
+      "scene": "lobby",
+      "view": "phon-confess-close",
+      "note": "close ลุงพร ไฟฉายแดงจากล่าง ตาไปที่ถุงแอมบูในมือเมย์ แล้วไปที่หน้าคนไข้ ปากสั่น",
+      "text": "\"ลุงรับเงินเขาคืนละห้าร้อย ปิดกล้อง แล้วเปิดประตูนี้ตอนตีสาม ลุงนึกว่าเขาขนของ…\"",
+      "who": "phon",
+      "voice": "old_male",
+      "mood": 0.8,
+      "pay": "phon",
+      "beats": 8.625,
+      "data": {
+        "light": "dark",
+        "torch": [
+          99,
+          474,
+          260
+        ],
+        "lightAt": [
+          99,
+          500
+        ],
+        "key": "255,80,60",
+        "cam": [
+          2.57,
+          2.776,
+          -82,
+          429
+        ],
+        "cast": [
+          "phon@19,933 h=616 cry yaw=0.45 look=0.4 talk arm=r-hold prop=flashlight"
+        ]
+      }
+    },
+    {
+      "scene": "lobby",
+      "view": "may-plead-close",
+      "note": "close เมย์บีบแอมบูไม่หยุด เหงื่อเต็มหน้า หัน 3/4 หาลุงพร",
+      "text": "\"เขายังหายใจอยู่ค่ะลุง เพราะหนูบีบให้\"",
+      "who": "may",
+      "voice": "lead_female",
+      "cues": [
+        [
+          0.5,
+          "ambu"
+        ]
+      ],
+      "mood": 0.85,
+      "beats": 5.125,
+      "data": {
+        "light": "dark",
+        "torch": [
+          54,
+          440,
+          260
+        ],
+        "lightAt": [
+          54,
+          500
+        ],
+        "cam": [
+          2.54,
+          2.743,
+          356,
+          476
+        ],
+        "cast": [
+          "may@254,987 h=625 cry yaw=-0.45 look=-0.5 talk armL=reach"
+        ]
+      }
+    },
+    {
+      "scene": "ins",
+      "view": "keys-ins",
+      "note": "มือสั่นของลุงพรไล่กุญแจพวงใหญ่ทีละดอกที่แม่กุญแจโซ่ประตูข้าง ไฟฉายแดงคาบปาก",
+      "text": "แต่กุญแจพวงใหญ่ที่สุดที่เมย์เคยเห็น มีดอกที่ใช่ แค่ดอกเดียว",
+      "cues": [
+        [
+          0.3,
+          "keys"
+        ]
+      ],
+      "mood": 0.9,
+      "beats": 6.5,
+      "data": {}
+    },
+    {
+      "scene": "lobby",
+      "view": "nuan-arrive-low",
+      "note": "มุมต่ำจากพื้นล็อบบี้ นวลก้าวลงจากทางลาดในแสงไฟฉาย หมวกขีดดำ หน้าตึง ทนายปกรณ์อยู่ข้างหลังถือแฟ้ม",
+      "text": "นวลลงมาถึงก่อน",
+      "mood": 0.95,
+      "beats": 2.5,
+      "data": {
+        "light": "dark",
+        "torch": [
+          386,
+          553,
+          240
+        ],
+        "lightAt": [
+          386,
+          500
+        ],
+        "cam": [
+          1.4,
+          1.5,
+          366,
+          653
+        ],
+        "cast": [
+          "pakorn-sil@288,765 h=407 yaw=0.4",
+          "nuan@246,800 h=420 wary yaw=0.45 arm=r-hold prop=flashlight"
+        ]
+      }
+    },
+    {
+      "scene": "lobby",
+      "view": "nuan-plead-close",
+      "note": "close นวลยื่นมือออกมาข้างหน้า เสียงสั่น หน้ายังพยายามเป็นพี่ที่ใจดี ไฟฉายของทนายจากหลัง",
+      "text": "\"เมย์ ฟังพี่ เธอไม่เข้าใจ… อย่าทำให้เขาตายนะ!\"",
+      "who": "nuan",
+      "voice": "villain_female",
+      "mood": 0.9,
+      "beats": 6.75,
+      "data": {
+        "light": "dark",
+        "torch": [
+          338,
+          433,
+          260
+        ],
+        "lightAt": [
+          338,
+          500
+        ],
+        "cam": [
+          3.57,
+          3.856,
+          165,
+          458
+        ],
+        "cast": [
+          "nuan@238,821 h=443 worried yaw=0.45 look=0.5 talk armL=offer"
+        ]
+      }
+    },
+    {
+      "scene": "lobby",
+      "view": "nuan-slip-close",
+      "note": "close นวลจากมุมเยื้องอีกข้าง ตะโกนแล้วชะงัก มือยกขึ้นปิดปากตัวเองช้าไปครึ่งจังหวะ",
+      "text": "\"เขาต้องอยู่ถึง[แปดโมงครึ่ง]!\"",
+      "who": "nuan",
+      "voice": "villain_female",
+      "mood": 0.95,
+      "beats": 3.25,
+      "data": {
+        "light": "dark",
+        "torch": [
+          338,
+          433,
+          260
+        ],
+        "lightAt": [
+          338,
+          500
+        ],
+        "shade": "l",
+        "cam": [
+          3.86,
+          4.169,
+          305,
+          456
+        ],
+        "cast": [
+          "nuan@238,821 h=443 angry yaw=0.3 look=0.6 talk armL=mouth"
+        ]
+      }
+    },
+    {
+      "scene": "lobby",
+      "view": "may-hear-close",
+      "note": "close เมย์หยุดหายใจครึ่งจังหวะ มือยังบีบแอมบู ตาจับที่นวล",
+      "text": "แปดโมงครึ่ง… คนที่อยากให้เขาเงียบ กลับกลัวที่สุด ว่าเขาจะตายก่อนเวลานั้น",
+      "mood": 0.9,
+      "beats": 8.125,
+      "data": {
+        "light": "dark",
+        "torch": [
+          54,
+          440,
+          260
+        ],
+        "lightAt": [
+          54,
+          500
+        ],
+        "cam": [
+          2.54,
+          2.743,
+          356,
+          476
+        ],
+        "cast": [
+          "may@254,987 h=625 shock yaw=-0.45 look=-0.6"
+        ]
+      }
+    },
+    {
+      "scene": "lobby",
+      "view": "torch-swing-wide",
+      "note": "wide ล็อบบี้มืด ไฟฉายของทนายกวาดผ่านผนังแล้วหยุดบนกรอบรูปผู้อำนวยการ เมย์ยืนข้างเตียงกลางล็อบบี้ ลุงพรที่ประตูข้าง",
+      "text": "ไฟฉายของทนาย กวาดผ่านผนังล็อบบี้ แล้วหยุดลงบนรูป ที่เธอยกมือไหว้ทุกคืน",
+      "mood": 0.9,
+      "beats": 9.25,
+      "data": {
+        "light": "dark",
+        "torch": [
+          608,
+          373,
+          200
+        ],
+        "lightAt": [
+          608,
+          300
+        ],
+        "cam": [
+          1,
+          1.08,
+          860,
+          520
+        ],
+        "cast": [
+          "pakorn@310,800 h=450 yaw=0.3 arm=r-hold prop=flashlight",
+          "phon@23,910 h=587 wary yaw=0.4",
+          "may@521,959 h=593 shock yaw=-0.4 look=-0.5"
+        ]
+      }
+    },
+    {
+      "scene": "lobby",
+      "view": "portrait-lit-med",
+      "note": "กรอบเดียวกับช็อตไหว้คืนแรก ไฟฉายส่องเต็มรูป ชายสูทแว่นทอง ผมหงอก ไฝเหนือคิ้วขวา ป้ายใต้รูป \"นพ.วรเทพ ผู้อำนวยการ\"",
+      "text": "",
+      "vo": "",
+      "hush": true,
+      "beats": 2.5,
+      "mood": 1,
+      "data": {
+        "mirror": "portrait"
+      }
+    },
+    {
+      "scene": "lobby",
+      "view": "face-ecu",
+      "note": "ECU หน้าคนไข้บนเตียงใต้ไฟฉายเดียวกัน ผมหงอก ไฝเหนือคิ้วขวา ตาเปิดมองกลับมาที่เมย์",
+      "text": "คนที่ทั้งประเทศตามล่า… {นอนให้เธอฉีดยา ทุกชั่วโมง}",
+      "style": "red",
+      "cues": [
+        [
+          0,
+          "bighit"
+        ]
+      ],
+      "hold": 0.5,
+      "mood": 1,
+      "pay": "portrait",
+      "beats": 8.125,
+      "data": {}
+    },
+    {
+      "scene": "ins",
+      "view": "clip-mirror-ins",
+      "note": "คลิปขอโทษกรอบเดียวกับในทีวีโรงอาหาร หยุดภาพ ซูมเข้าที่ชายม่านข้างหลังผอ. รอยปั๊ม \"ตึกเมตตา 4\" อ่านออกชัด",
+      "text": "คลิปขอโทษที่ทั้งประเทศได้ฟัง อัดในคืนแรกที่เขาถูกพาขึ้นชั้นสี่ หน้าม่านเตียงสอง",
+      "mood": 0.85,
+      "pay": "clip",
+      "data": {
+        "mirror": "clip"
+      },
+      "beats": 8.875
+    },
+    {
+      "scene": "past",
+      "view": "board-past-wide",
+      "note": "แฟลชแบ็กห้องประชุมบอร์ด โต๊ะยาวไม้เข้มทอดลึก เก้าอี้พนักสูงว่างสองข้าง ผอ.วรเทพยืนหัวโต๊ะด้านหน้า ชี้แฟ้มบัญชียาแดงที่เพิ่งตบลงบนโต๊ะ นวลยืนก้มหน้ามุมซ้าย ประธานบอร์ดเป็นเงาดำยืนหันหลังให้หน้าต่างบานใหญ่ที่สว่าง",
+      "text": "ผอ.วรเทพ จับได้ว่ายาแปดสิบล้านถูกยักยอกออกจากคลัง ผ่านมือของหัวหน้าเวรนวล ไปถึงประธานบอร์ด",
+      "mood": 0.7,
+      "data": {
+        "past": true,
+        "light": "warm",
+        "lightAt": [
+          1300,
+          300
+        ],
+        "cam": [
+          1,
+          1.08,
+          960,
+          520
+        ],
+        "cast": [
+          "worasuit@1217,931 h=557 angry yaw=-0.4 armR=point acc=glasses",
+          "nuan@443,798 h=396 guilty yaw=0.4",
+          "chair-sil@1290,782 h=401 back"
+        ]
+      },
+      "beats": 10.75
+    },
+    {
+      "scene": "past",
+      "view": "ramp-past-high",
+      "note": "แฟลชแบ็กมุมสูง ทางลาดตึกเมตตากลางคืน นวลกับทนายเข็นเตียงขึ้น ชายบนเตียงมีผ้าปิดครึ่งหน้า แขนห้อยข้างเตียง",
+      "text": "บอร์ดจึงใส่ร้ายว่า เขาเป็นคนโกงแล้วหนี และขังเขาไว้ บนชั้นที่ไม่มีใครขึ้นมา",
+      "mood": 0.75,
+      "data": {
+        "past": true,
+        "light": "night",
+        "cast": [
+          "wora@0,0 lie sleep acc=none cover=dfe8ee",
+          "nuan@980,662 h=510 walk",
+          "pakorn@1243,587 h=520 walk"
+        ],
+        "lightAt": [
+          1300,
+          300
+        ],
+        "cam": [
+          1.05,
+          1.134,
+          1000,
+          520
+        ],
+        "motion": "walk",
+        "gurney": {
+          "x0": 1060,
+          "x1": 1140,
+          "y": 600,
+          "s": 0.85,
+          "tilt": -14,
+          "dir": -1,
+          "bag": false
+        }
+      },
+      "beats": 8.125
+    },
+    {
+      "scene": "past",
+      "view": "border-past-wide",
+      "note": "แฟลชแบ็กกลางคืน ด่านชายแดน รถตู้คันหนึ่งผ่านไม้กั้น มือคนขับยื่นมือถือของผอ.ที่เปิดเครื่องไว้ใส่ช่องเก็บของ ไฟด่านส้ม",
+      "text": "มือถือของเขาถูกขนข้ามด่านไปตั้งแต่คืนแรก ไม่มีใครคิดจะหาเขา ในโรงพยาบาลของเขาเอง",
+      "mood": 0.7,
+      "data": {
+        "past": true,
+        "light": "night",
+        "lightAt": [
+          1050,
+          300
+        ],
+        "cam": [
+          1,
+          1.08,
+          960,
+          540
+        ],
+        "cast": []
+      },
+      "beats": 9
+    },
+    {
+      "scene": "ins",
+      "view": "poa-ins",
+      "note": "แฟ้มทนายหล่นเปิดบนพื้นหินขัด หนังสือมอบอำนาจ ช่องผู้มอบเป็นลายพิมพ์นิ้วโป้งสีม่วง ช่องพยานมีลายเซ็น \"เมย์\" ไฟฉายส่อง",
+      "text": "พรุ่งนี้แปดโมงครึ่ง ลายนิ้วมือของเขา จะขายบ้านและที่ดินทุกแปลงของเขาเอง",
+      "mood": 0.85,
+      "pay": "ink",
+      "beats": 8.5,
+      "data": {}
+    },
+    {
+      "scene": "ins",
+      "view": "land-deed-ins",
+      "note": "โฉนดที่ดินหลายฉบับซ้อนกันในแฟ้ม ชื่อเจ้าของ \"นพ.วรเทพ\" ตัวพิมพ์ ใต้แสงไฟฉาย กระดาษสั่นเพราะมือคนถือ",
+      "text": "ให้ทั้งประเทศเห็นว่า คนหนี กำลังขนเงินออก",
+      "mood": 0.85,
+      "beats": 5.75,
+      "data": {}
+    },
+    {
+      "scene": "lobby",
+      "view": "why-tonight-close",
+      "note": "close ทนายปกรณ์ในแสงไฟฉายของตัวเอง ยืนนิ่งที่เชิงทางลาด แฟ้มกอดแน่นที่อก เหงื่อเต็มขมับ",
+      "text": "โฉนดทุกแปลงจำนองอยู่กับธนาคาร บอร์ดใช้เวลาสิบแปดวันไถ่ถอนออกมา และนัดโอนที่เร็วที่สุด คือแปดโมงครึ่งพรุ่งนี้",
+      "mood": 0.85,
+      "beats": 12.5,
+      "data": {
+        "light": "dark",
+        "torch": [
+          430,
+          406,
+          420
+        ],
+        "lightAt": [
+          430,
+          400
+        ],
+        "cam": [
+          3.52,
+          3.802,
+          236,
+          432
+        ],
+        "cast": [
+          "pakorn@310,800 h=450 wary yaw=0.45 look=0.3 arm=r-hold prop=paper"
+        ]
+      }
+    },
+    {
+      "scene": "lobby",
+      "view": "nuan-still-wide",
+      "note": "wide ล็อบบี้มืด นวลตัวเล็กยืนนิ่งที่เชิงทางลาดในแสงไฟฉาย ไม่เข้ามาใกล้ เมย์กับเตียงอยู่กลางล็อบบี้ มือที่ยื่นออกมาตกลงข้างตัว",
+      "text": "ถ้าเขาตายก่อนนั้น ใบมอบอำนาจ ก็เป็นโมฆะ เขาจึงต้องมีชีวิต แค่ถึงแปดโมงครึ่ง",
+      "mood": 0.85,
+      "beats": 9,
+      "data": {
+        "light": "dark",
+        "torch": [
+          298,
+          433,
+          220
+        ],
+        "lightAt": [
+          298,
+          500
+        ],
+        "cam": [
+          1.05,
+          1.134,
+          700,
+          520
+        ],
+        "cast": [
+          "nuan@238,821 h=443 sad",
+          "may@521,959 h=593 wary yaw=-0.4"
+        ]
+      }
+    },
+    {
+      "scene": "lobby",
+      "view": "why-sleep-close",
+      "note": "close นวลจากมุมต่ำ หน้าครึ่งหนึ่งในแสงไฟฉาย ครึ่งหนึ่งมืด ปากเม้ม ตาไม่หลบเมย์อีกแล้ว",
+      "text": "ยานอนหลับที่มากพอจะทำให้เขาเงียบ ก็มากพอจะทำให้เขาตายก่อนเวลา ยาที่ทำให้ขยับไม่ได้ ทำให้เขาเงียบ และยังหายใจผ่านเครื่อง",
+      "mood": 0.85,
+      "beats": 14.25,
+      "data": {
+        "light": "noir",
+        "torch": [
+          378,
+          433,
+          200
+        ],
+        "lightAt": [
+          378,
+          400
+        ],
+        "shade": "l",
+        "shadeA": 0.8,
+        "cam": [
+          3.93,
+          4.244,
+          172,
+          456
+        ],
+        "cast": [
+          "nuan@238,821 h=443 hollow yaw=0.3 look=0.6"
+        ]
+      }
+    },
+    {
+      "scene": "lobby",
+      "view": "why-may-med",
+      "note": "medium เมย์บีบแอมบูข้างเตียงกลางล็อบบี้ ลุงพรถือกุญแจค้าง ทุกคนหยุดนิ่ง ไฟฉายสองดวงไขว้กัน",
+      "text": "สามคืนสุดท้าย ต้องเป็นลายเซ็นของคนอื่น พยาบาลคนก่อนกลัวผีจนลาออกไปก่อน เมย์ จึงเป็นคนที่สอง",
+      "mood": 0.85,
+      "beats": 10.5,
+      "data": {
+        "light": "dark",
+        "torch": [
+          521,
+          440,
+          300
+        ],
+        "lightAt": [
+          521,
+          400
+        ],
+        "cam": [
+          1.8,
+          1.944,
+          272,
+          551
+        ],
+        "cast": [
+          "phon@23,910 h=587 sad yaw=0.4 arm=r-hold prop=key",
+          "may@521,959 h=593 cry yaw=-0.3 armL=reach"
+        ]
+      }
+    },
+    {
+      "scene": "lobby",
+      "view": "may-cost-close",
+      "note": "close เมย์บีบแอมบูไม่หยุด น้ำตาไหล ตาลงไปที่ลายเซ็นตัวเองบนกระดาษที่พื้น",
+      "text": "หลังจากนั้น เขาจะตายเป็นศพไร้ญาติชื่อสมศักดิ์ และชื่อคนฉีดยาทุกเข็มในสมุด คือ[เมย์]",
+      "mood": 0.9,
+      "pay": "sign",
+      "beats": 10,
+      "data": {
+        "light": "dark",
+        "torch": [
+          641,
+          440,
+          260
+        ],
+        "lightAt": [
+          641,
+          400
+        ],
+        "cam": [
+          2.67,
+          2.884,
+          618,
+          474
+        ],
+        "cast": [
+          "may@521,959 h=593 cry yaw=-0.3 look=0.8 armL=reach"
+        ]
+      }
+    },
+    {
+      "scene": "lobby",
+      "view": "pakorn-flee-med",
+      "note": "medium ทนายปกรณ์ก้มคว้าแฟ้มจากพื้น หันวิ่งออกประตูหน้าล็อบบี้ นวลยังยืนนิ่ง ไฟฉายของเขาส่ายไปตามทาง",
+      "text": "ทนายคว้าแฟ้มคืนแล้ววิ่งออกไปทางประตูหน้า ส่วนนวล ไม่ขยับ",
+      "mood": 0.8,
+      "data": {
+        "motion": "walk",
+        "move": [
+          900,
+          1700
+        ],
+        "light": "dark",
+        "torch": [
+          1293,
+          395,
+          420
+        ],
+        "lightAt": [
+          1293,
+          400
+        ],
+        "cam": [
+          1.15,
+          1.242,
+          1100,
+          540
+        ],
+        "cast": [
+          "nuan@238,821 h=443 sad",
+          "pakorn@1193,921 h=602 run yaw=0.4 arm=r-hold prop=paper"
+        ]
+      },
+      "beats": 6.125
+    },
+    {
+      "scene": "ins",
+      "view": "hand-squeeze-ins",
+      "note": "มือขวาของผอ.บนผ้าห่ม นิ้วงอขึ้นช้าๆ บีบนิ้วของเมย์ที่วางอยู่ใต้มือ แสงไฟฉายจากบน",
+      "text": "แล้วนิ้วของเขา ก็บีบมือเธอ เป็นครั้งแรก ยาแก้ฤทธิ์ เริ่มทำงานแล้ว",
+      "mood": 0.75,
+      "beats": 9.625,
+      "data": {}
+    },
+    {
+      "scene": "lobby",
+      "view": "door-dawn-wide",
+      "note": "wide ล็อบบี้ ประตูข้างเปิดออก แสงเช้าฟ้าสาดเข้ามาเป็นทาง เงาคนกลุ่มหนึ่งวิ่งมาจากตึกฉุกเฉิน ฝนนำหน้า เมย์กับเตียงอยู่ในทางแสง",
+      "text": "ฝนเห็นรูปตอนตีห้าครึ่ง แล้ววิ่งข้ามลานจอดรถมา พร้อมยามตึกฉุกเฉินอีกสามคน",
+      "cues": [
+        [
+          0,
+          "chain"
+        ],
+        [
+          0.5,
+          "morning"
+        ]
+      ],
+      "mood": 0.6,
+      "data": {
+        "hud": "คืนที่ 3 · 05:50",
+        "light": "dawn",
+        "time": "dawn",
+        "doorOpen": true,
+        "lightAt": [
+          228,
+          500
+        ],
+        "cam": [
+          1,
+          1.08,
+          840,
+          520
+        ],
+        "cast": [
+          "police2-sil@122,852 h=515 run",
+          "fon@181,870 h=485 run yaw=0.4",
+          "may@521,959 h=593 tired yaw=-0.4"
+        ],
+        "motion": "walk"
+      },
+      "beats": 9.875
+    },
+    {
+      "scene": "lobby",
+      "view": "may-light-close",
+      "note": "close เมย์ในทางแสงเช้า หลับตา น้ำตาแห้งบนแก้ม มือยังบีบแอมบูต่อเป็นจังหวะ",
+      "text": "กฎทุกข้อ ไม่ได้มีไว้กันผี… มันมีไว้กันไม่ให้เธอ เป็นพยาบาล",
+      "cues": [
+        [
+          0.5,
+          "ambu"
+        ]
+      ],
+      "hold": 0.5,
+      "mood": 0.6,
+      "beats": 7.375,
+      "data": {
+        "light": "dawn",
+        "time": "dawn",
+        "doorOpen": true,
+        "lightAt": [
+          228,
+          500
+        ],
+        "key": "200,220,255",
+        "cam": [
+          2.67,
+          2.884,
+          618,
+          474
+        ],
+        "cast": [
+          "may@521,959 h=593 sad yaw=-0.45 look=-0.3 faces=sad@0,sleep@30,sad@60"
+        ]
+      }
+    },
+    {
+      "chapter": "ขอบคุณที่มาสาย",
+      "scene": "card",
+      "view": "chapter",
+      "note": "การ์ดบทบนพื้นดำ ชื่อบทตัวใหญ่ เลขบทเล็กข้างบน ไฟแดงจุดเดียวกะพริบมุมขวา",
+      "text": "",
+      "vo": "บทที่แปด ขอบคุณที่มาสาย",
+      "data": {
+        "name": "ขอบคุณที่มาสาย"
+      },
+      "beats": 3.875,
+      "mood": 0.5
+    },
+    {
+      "scene": "station",
+      "view": "wichai-med",
+      "note": "สภ.คลองหมอกตอนเช้า แสงแดดผ่านมู่ลี่เป็นแถบ หมวดวิชัยนั่งโต๊ะจดลงสมุดปกดำ มือถือของฝนวางบนโต๊ะเปิดรูปขวดยา",
+      "text": "รูปที่เมย์ส่งให้ฝน ไปถึงโต๊ะของหมวดวิชัย ก่อนหกโมงเช้า",
+      "cues": [
+        [
+          0,
+          "day"
+        ]
+      ],
+      "mood": 0.35,
+      "data": {
+        "hud": "เช้าวันที่สี่ · 06:10",
+        "light": "day",
+        "seat": "office",
+        "lightAt": [
+          400,
+          300
+        ],
+        "cam": [
+          1.64,
+          1.771,
+          696,
+          728
+        ],
+        "cast": [
+          "wichai@879,928 h=541 sit wary yaw=0.3 look=0.5 armR=hold prop=book"
+        ]
+      },
+      "beats": 7.125
+    },
+    {
+      "scene": "ins",
+      "view": "evidence-ins",
+      "note": "โต๊ะตำรวจ ใบกฎกับเข็มฉลาก \"ยากันชัก\" วางคู่กันในถุงหลักฐาน ลายมือหมึกเขียวเดียวกัน ปากกาเมจิกเขียวของนวลอยู่ในถุงข้างๆ แดดเช้าเฉียง",
+      "text": "ลายมือเขียวบนใบกฎ กับลายมือบนฉลากเข็มทุกอัน เป็นลายมือเดียวกัน มาตั้งแต่คืนแรก",
+      "mood": 0.35,
+      "pay": "green",
+      "beats": 8.25,
+      "data": {}
+    },
+    {
+      "scene": "ins",
+      "view": "cuff-ins",
+      "note": "สำนักงานที่ดิน มือทนายถูกกุญแจมือหน้าเคาน์เตอร์ แฟ้มหล่นเปิดบนพื้น หนังสือมอบอำนาจลายนิ้วโป้งม่วงหงายขึ้น",
+      "text": "แปดโมงครึ่ง ทนายปกรณ์ถูกจับที่สำนักงานที่ดิน พร้อมลายนิ้วมือสีม่วง ที่กลายเป็นหลักฐานชิ้นแรก",
+      "cues": [
+        [
+          0.2,
+          "cuff"
+        ]
+      ],
+      "mood": 0.35,
+      "beats": 9.375,
+      "data": {}
+    },
+    {
+      "scene": "station",
+      "view": "nuan-room-close",
+      "note": "ห้องสอบสวน หลอดไฟดวงเดียวเหนือโต๊ะ นวลนั่งไม่มีหมวก ผมหลุดลุ่ย มือกุมกันบนโต๊ะ เงาตกลงข้างหลัง",
+      "text": "นวลไม่สู้คดี เธอบอกว่าสิบปีก่อน เธอให้ยาผิดจนคนไข้เกือบตาย",
+      "mood": 0.55,
+      "data": {
+        "light": "noir",
+        "lightAt": [
+          980,
+          300
+        ],
+        "cam": [
+          2.4,
+          2.592,
+          980,
+          560
+        ],
+        "cast": [
+          "nuan2@980,980 h=600 sit sad armL=chest armR=chest"
+        ],
+        "seat": "steel"
+      },
+      "beats": 7.375
+    },
+    {
+      "scene": "past",
+      "view": "error-past-close",
+      "note": "แฟลชแบ็กเกรดอดีต นวลอายุน้อยกว่า ยืนตัวสั่นข้างเตียงคนไข้ที่หมอรุมปั๊มหัวใจ ชายสูทคนหนึ่งยืนนิ่งที่ประตูเงาดำ",
+      "text": "ประธานบอร์ดกลบเรื่องนั้นให้ แล้วก็ถือชีวิตเธอไว้ ตั้งแต่วันนั้น",
+      "mood": 0.6,
+      "data": {
+        "past": true,
+        "light": "day",
+        "lightAt": [
+          960,
+          300
+        ],
+        "cam": [
+          1.6,
+          1.728,
+          700,
+          560
+        ],
+        "cast": [
+          "nuan@557,901 h=517 scared yaw=-0.3 armL=mouth",
+          "chair-sil@170,789 h=416 yaw=0.3",
+          "wora@464,699 h=435 lie sleep acc=none cover=dfe8ee"
+        ]
+      },
+      "beats": 7.75
+    },
+    {
+      "scene": "rules",
+      "view": "rule1",
+      "text": "กฎข้อหนึ่ง ฉีดทุกชั่วโมง เพราะยาออกฤทธิ์ไม่ถึงชั่วโมง",
+      "cues": [
+        [
+          0.3,
+          "flip"
+        ]
+      ],
+      "mood": 0.45,
+      "data": {
+        "no": 1,
+        "hud": "กฎข้อ 1 / 5",
+        "mark": "truth"
+      },
+      "beats": 5.875
+    },
+    {
+      "scene": "rules",
+      "view": "rule2",
+      "text": "กฎข้อสอง ม่านไม่ได้ซ่อนผี มันซ่อนกล้องกับลำโพง",
+      "cues": [
+        [
+          0.3,
+          "flip"
+        ]
+      ],
+      "mood": 0.45,
+      "data": {
+        "no": 2,
+        "hud": "กฎข้อ 2 / 5",
+        "mark": "truth"
+      },
+      "beats": 5.875
+    },
+    {
+      "scene": "rules",
+      "view": "rule3",
+      "text": "ข้อสาม ตีสามคือเวลาที่พวกเขาขึ้นมาดู ว่าเธอยังกลัวอยู่ไหม",
+      "cues": [
+        [
+          0.3,
+          "flip"
+        ]
+      ],
+      "mood": 0.45,
+      "data": {
+        "no": 3,
+        "hud": "กฎข้อ 3 / 5",
+        "mark": "truth"
+      },
+      "beats": 7
+    },
+    {
+      "scene": "station",
+      "view": "nuan-collapse-close",
+      "note": "close นวลก้มหน้า น้ำตาหยดลงบนมือ หัวไหล่สั่น หลอดไฟดวงเดียวจากบน",
+      "text": "\"พี่บอกตัวเองทุกคืน ว่าเขาไม่รู้สึกอะไร… เทปปิดตานั่น พี่ติดไว้ ไม่ให้พี่ต้องเห็น\"",
+      "who": "nuan",
+      "voice": "villain_female",
+      "tone": "crying",
+      "mood": 0.6,
+      "beats": 11.125,
+      "data": {
+        "light": "noir",
+        "lightAt": [
+          980,
+          300
+        ],
+        "shade": "l",
+        "cam": [
+          3.4,
+          3.672,
+          1020,
+          560
+        ],
+        "cast": [
+          "nuan2@980,980 h=600 sit cry talk armL=face"
+        ],
+        "seat": "steel"
+      }
+    },
+    {
+      "scene": "rules",
+      "view": "rule4",
+      "text": "กฎข้อสี่ เทปไม่ได้กันตาแห้ง มันกันไม่ให้ใคร เห็นว่าเขาตื่น",
+      "cues": [
+        [
+          0.3,
+          "flip"
+        ]
+      ],
+      "mood": 0.45,
+      "data": {
+        "no": 4,
+        "hud": "กฎข้อ 4 / 5",
+        "mark": "truth"
+      },
+      "beats": 7.625
+    },
+    {
+      "scene": "rules",
+      "view": "rule5",
+      "text": "กฎข้อห้า ขยับแปลว่ายาหมดฤทธิ์ ต้องฉีดซ้ำ ก่อนเขาจะขอความช่วยเหลือได้",
+      "cues": [
+        [
+          0.3,
+          "flip"
+        ]
+      ],
+      "mood": 0.5,
+      "data": {
+        "no": 5,
+        "hud": "กฎข้อ 5 / 5",
+        "mark": "truth"
+      },
+      "beats": 8.625
+    },
+    {
+      "scene": "station",
+      "view": "ton-med",
+      "note": "ทางเดินโรงพยาบาลสว่าง หมอต้นถอดเสื้อกาวน์พับวาง ยื่นบัตรประจำตัวให้หัวหน้าแพทย์ ข้างหลังป้ายศูนย์บำบัด",
+      "text": "หมอต้นขโมยมอร์ฟีนจริง ให้ตัวเอง หลังเวรติดกันสามสิบหกชั่วโมง เขาสารภาพ และเข้าบำบัด",
+      "mood": 0.35,
+      "pay": "ton",
+      "beats": 9.5,
+      "data": {
+        "light": "day",
+        "lightAt": [
+          1100,
+          300
+        ],
+        "cam": [
+          1.6,
+          1.728,
+          900,
+          560
+        ],
+        "cast": [
+          "ton@820,940 h=520 sad yaw=0.4 armR=offer prop=paper",
+          "police2@1150,920 h=520 wary yaw=-0.4"
+        ]
+      }
+    },
+    {
+      "scene": "ins",
+      "view": "pharm-log-ins",
+      "note": "สมุดเบิกยาห้องยาเก่า แถวเวคูโรเนียมเรียงลงมาสิบกว่าแถว ช่องผู้เบิกเป็นรหัสเดียวกันทุกแถว นิ้วตำรวจไล่ลง",
+      "text": "และเป็นพยานว่า เวคูโรเนียมทุกขวด ถูกเบิกด้วยรหัสของนวล ห้องยาไม่เคยส่งถาดขึ้นตึกเมตตา สักใบ",
+      "mood": 0.35,
+      "beats": 11.5,
+      "data": {}
+    },
+    {
+      "scene": "station",
+      "view": "prae-close",
+      "note": "ห้องรับแจ้งความ แพรนั่งเก้าอี้พลาสติก กำทิชชูเปียก ร้องไห้ กาแฟกระป๋องตรงหน้ายังไม่เปิด",
+      "text": "แพรไม่ใช่ลูกสาวใคร เธอเป็นเสมียนสำนักงานทนาย รับจ้างสามพันบาทมาเล่นเป็นญาติ และไม่รู้เลยว่า คนบนเตียงตื่นอยู่",
+      "mood": 0.4,
+      "beats": 12.125,
+      "data": {
+        "light": "day",
+        "seat": "plastic",
+        "lightAt": [
+          400,
+          300
+        ],
+        "cam": [
+          3.17,
+          3.424,
+          1297,
+          612
+        ],
+        "cast": [
+          "prae@1215,916 h=500 sit cry yaw=-0.4 look=-0.5 armL=chest"
+        ]
+      }
+    },
+    {
+      "scene": "ins",
+      "view": "real-somsak-ins",
+      "note": "รูปถ่ายใหม่ ชายชราใส่หมวกนิรภัยเหลืองยิ้มหน้าบ้านไม้ต่างจังหวัด แขนซ้ายเข้าเฝือก",
+      "text": "ส่วนคุณสมศักดิ์ตัวจริง ตกนั่งร้านเมื่อสองเดือนก่อนจริง หายดีแล้ว และไม่รู้เลยว่าชื่อตัวเองถูกใช้",
+      "mood": 0.3,
+      "pay": "contractor",
+      "beats": 9.75,
+      "data": {}
+    },
+    {
+      "scene": "ward",
+      "view": "bed2-day-wide",
+      "note": "wide วอร์ดชั้นสี่ในแสงเช้า ม่านเตียงสองถูกรวบไปข้าง เตียงว่างสองเตียง ฝุ่นลอยในลำแดด เทปกั้นที่เกิดเหตุสีเหลืองพาดประตู",
+      "text": "ทะเบียนตึกเมตตาบอกว่า เตียงสองไม่เคยมีคนไข้ ตั้งแต่ปิดตึก ไม่เคยมีใครตายบนนั้น",
+      "cues": [
+        [
+          0,
+          "morning"
+        ]
+      ],
+      "mood": 0.3,
+      "data": {
+        "light": "day",
+        "time": "day",
+        "lamp": "off",
+        "curtain": "tied",
+        "bed1": "empty",
+        "lightAt": [
+          930,
+          300
+        ],
+        "cam": [
+          1,
+          1.08,
+          900,
+          520
+        ],
+        "cast": []
+      },
+      "beats": 8.75
+    },
+    {
+      "scene": "canteen",
+      "view": "arrest-cctv",
+      "note": "ภาพกล้องวงจรปิดสนามบินขาวดำในทีวีโรงอาหาร มีเวลาบันทึกมุมจอ ตำรวจล้อมชายสูทหน้าเคาน์เตอร์เช็กอิน ตัววิ่ง \"ผอ.วรเทพ ไม่ได้หนี ถูกขังในตึกเมตตา 19 วัน\" ภาพประธานบอร์ดถูกคุมตัวที่สนามบิน",
+      "text": "ข่าวเที่ยงวันนั้น พลิกกลับทั้งหมด ประธานบอร์ดถูกคุมตัวที่สนามบิน ก่อนขึ้นเครื่องสองชั่วโมง",
+      "cues": [
+        [
+          0,
+          "canteen"
+        ]
+      ],
+      "mood": 0.3,
+      "beats": 8,
+      "data": {}
+    },
+    {
+      "scene": "icu",
+      "view": "wora-day-med",
+      "note": "ห้องไอซียูตึกใหม่ แดดเช้าเต็มห้อง ผอ.วรเทพนั่งพิงหัวเตียงที่ยกขึ้น ยังมีท่อเจาะคอ เมย์ยืนข้างเตียงในชุดพยาบาลธรรมดา ถือกระดานไวท์บอร์ดเล็ก",
+      "text": "สามวันต่อมา ผอ.วรเทพ ยกมือได้ เป็นครั้งแรก",
+      "mood": 0.25,
+      "data": {
+        "light": "day",
+        "lightAt": [
+          665,
+          300
+        ],
+        "cam": [
+          1.73,
+          1.868,
+          1499,
+          551
+        ],
+        "cast": [
+          "wora@1207,679 h=464 sit tired yaw=0.3",
+          "may@1791,893 h=502 happy yaw=-0.45 armR=hold prop=book"
+        ]
+      },
+      "beats": 6.25
+    },
+    {
+      "scene": "ins",
+      "view": "board-write-ins",
+      "note": "มือสั่นของผอ.จับปากกาเมจิก เขียนบนไวท์บอร์ดเล็กบนตัก ตัวหนังสือโย้เย้ แดดจากหน้าต่าง",
+      "text": "สิ่งแรกที่เขาเขียน ไม่ใช่ชื่อคนร้าย",
+      "mood": 0.3,
+      "beats": 4.75,
+      "data": {}
+    },
+    {
+      "scene": "ins",
+      "view": "board-text-ecu",
+      "note": "ECU ไวท์บอร์ด ลายมือโย้ \"ขอบคุณที่มาสาย\" หมึกยังเปียก",
+      "text": "\"ขอบคุณ… [ที่มาสาย]\"",
+      "hold": 0.5,
+      "mood": 0.35,
+      "pay": "watch",
+      "beats": 3.875,
+      "data": {}
+    },
+    {
+      "scene": "icu",
+      "view": "wora-look-close",
+      "note": "close ผอ.วรเทพมองเมย์ ตาแดงแต่ยิ้มที่มุมปาก ท่อเจาะคอยังอยู่ แดดเช้าจับครึ่งหน้า ไฝเหนือคิ้วขวา",
+      "text": "เขาจำได้ทุกคำที่เธอเล่าให้ฟังในคืนแรก เรื่องแม่ เรื่องน้องชาย เรื่องงานประจำที่ยังไม่มีใครให้",
+      "mood": 0.3,
+      "beats": 10.75,
+      "data": {
+        "light": "day",
+        "lightAt": [
+          665,
+          300
+        ],
+        "shade": "r",
+        "cam": [
+          3.42,
+          3.694,
+          1131,
+          398
+        ],
+        "cast": [
+          "wora@1207,679 h=464 sit happy yaw=0.45 look=0.6"
+        ]
+      }
+    },
+    {
+      "scene": "icu",
+      "view": "may-tears-close",
+      "note": "close เมย์ยิ้มทั้งน้ำตา มือแตะนาฬิกาห้อยอก หัน 3/4 หาเตียง แดดเช้าจากหน้าต่างหลังเธอเป็นขอบสว่าง",
+      "text": "ยี่สิบนาทีที่เธอมาสาย คือยี่สิบนาทีแรกในสิบเก้าวัน ที่ยาจางพอ ให้เขากะพริบตาได้",
+      "mood": 0.35,
+      "beats": 10.125,
+      "data": {
+        "light": "day",
+        "lightAt": [
+          665,
+          300
+        ],
+        "cam": [
+          3.16,
+          3.413,
+          1874,
+          482
+        ],
+        "cast": [
+          "may@1791,893 h=502 cry yaw=-0.45 look=-0.5 armR=chest"
+        ]
+      }
+    },
+    {
+      "scene": "icu",
+      "view": "badge-ins",
+      "note": "บัตรพนักงานใหม่ห้อยบนเสื้อขาว \"เมย์ · พยาบาลวิชาชีพ ไอซียู\" ข้างนาฬิกาห้อยอกเรือนเก่า แดดเช้า",
+      "text": "เดือนต่อมา โรงพยาบาลคลองหมอก บรรจุเธอเป็นพยาบาลไอซียู ตำแหน่งแรกที่ตอบกลับมา",
+      "mood": 0.25,
+      "beats": 8.25,
+      "data": {}
+    },
+    {
+      "scene": "ins",
+      "view": "watch-day-ins",
+      "note": "กรอบเดียวกับนาฬิกาห้อยอกช่วงต้นเรื่องในแสงเช้า เข็มยังช้าห้านาทีกับนาฬิกาผนังข้างหลัง",
+      "text": "เธอไม่เคยตั้งนาฬิกาเรือนนั้นใหม่ อีกเลย",
+      "mood": 0.3,
+      "data": {
+        "mirror": "watch"
+      },
+      "beats": 5.5
+    },
+    {
+      "scene": "ext",
+      "view": "metta-day-low",
+      "note": "มุมต่ำจากลานจอดรถกรอบเดียวกับคืนแรก ตึกเมตตาตอนสาย นั่งร้านถูกรื้อ หน้าต่างชั้นสี่เปิดรับลม ม่านสีซีดปลิวออกมานอกหน้าต่าง",
+      "text": "ผีไม่เคยฉีดยาใคร คนต่างหาก ที่ใช้ความกลัวผี ทำให้คนดีๆ ไม่กล้าเป็นคนดี",
+      "music": true,
+      "mood": 0.3,
+      "data": {
+        "light": "day",
+        "lightAt": [
+          1700,
+          200
+        ],
+        "cam": [
+          1,
+          1.08,
+          960,
+          520
+        ],
+        "cast": []
+      },
+      "beats": 9.875
+    },
+    {
+      "scene": "endcard",
+      "text": "",
+      "music": true,
+      "voLead": 0.4,
+      "vo": "เรื่องนี้เป็นเรื่องแต่ง ถ้าคุณเป็นเมย์ คุณจะเปิดม่านเตียงสอง ตั้งแต่คืนแรกไหม บอกกันในคอมเมนต์นะครับ",
+      "mood": 0.25,
+      "data": {
+        "title": "พยาบาลเวรดึก",
+        "sub": "เรื่องแต่ง โรงพยาบาล ตำรวจ และเหตุการณ์ทั้งหมดเป็นเรื่องสมมติ",
+        "cta": "คอมเมนต์คุยกัน แล้วเจอกันเรื่องหน้า",
+        "step": "done",
+        "note": "เรื่องแต่ง โรงพยาบาล ตำรวจ และเหตุการณ์ทั้งหมดเป็นเรื่องสมมติ"
+      },
+      "beats": 11.25
+    }
+  ]
+}

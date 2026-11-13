@@ -4,6 +4,8 @@ import React from 'react';
 import {CAST_ANCHORED, CAST_SIZE, type CastId} from './CastSprite';
 import {HEIGHT_CM} from '../engine/theme';
 import {inkFor, rimFilter} from '../kit/light';
+import {layerRole, PoseFigure, restPose, type Pose} from './Pose';
+import {rigPlan} from './Rig';
 
 export type SpriteVars = Partial<{
   skin: string; skinD: string; hair: string; shirt: string; pants: string; top: string; skirt: string;
@@ -41,6 +43,12 @@ export type SpriteProps = {
   hair?: string;
   /** transform for the front layers, e.g. 'translate(0 160)' for faces on `man-crouch` (see cast-library.md → poses) */
   layerTransform?: string;
+  /** the pose rig (cast/Pose.tsx): turn three-quarter and move the arms, on any standing person —
+   *  {yaw: 0.4, armR: ARM_PRESETS.raise, headTilt: 6} or a frame of poseAt(). Missing fields stay at rest. */
+  pose?: Partial<Pose>;
+  /** grip prop (prop-* without the prefix) in the posed right / left hand */
+  propR?: string;
+  propL?: string;
 };
 
 /** layers drawn BEHIND the figure (before the body symbol) */
@@ -60,7 +68,7 @@ const SIL = ['skin', 'skin-d', 'hair', 'shirt', 'pants', 'top', 'skirt', 'exo', 
   'sleeve', 'forearm', 'uniform', 'shorts', 'sock', 'tie', 'badge', 'cap', 'cap-d', 'mask', 'bandage', 'blood', 'scarf', 'bag', 'bag-d',
   'detail', 'vest', 'trim', 'apron', 'bag-strap', 'pack', 'roll', 'strap', 'frame', 'brow', 'mouth', 'blush', 'tear', 'coat', 'coat-d', 'fur', 'fur-patch', 'nose', 'bow', 'tattoo', 'jewel', 'red'];
 
-export const Sprite: React.FC<SpriteProps> = ({id, height, vars, hideFace, hideMouth, hideArmL, hideArmR, flip, silhouette, style, layers = [], outfit: outfitOverride, accessories, layerTransform, rim, light = 'night', outline, outlineColor, hair}) => {
+export const Sprite: React.FC<SpriteProps> = ({id, height, vars, hideFace, hideMouth, hideArmL, hideArmR, flip, silhouette, style, layers = [], outfit: outfitOverride, accessories, layerTransform, rim, light = 'night', outline, outlineColor, hair, pose, propR, propL}) => {
   const defaults = castDefaults(id);
   const garment = outfitOverride === 'none' ? undefined : outfitOverride ?? defaults.defaultOutfit;
   if (garment && !layers.some(l => wardrobe[l])) layers = [garment as CastId, ...layers];
@@ -104,6 +112,27 @@ export const Sprite: React.FC<SpriteProps> = ({id, height, vars, hideFace, hideM
   const rimCss = rim && !silhouette ? rimFilter(rim, light, (height ?? h) / 500) : undefined;
   const lineCss = outline ? outlineFilter(outline === true ? 4 : outline, (height ?? h) / 500, outlineColor ?? inkFor(light)) : undefined;
   const filter = [lineCss, rimCss].filter(Boolean).join(' ') || undefined;
+  const plan = pose ? rigPlan(id) : undefined;
+  let content: React.ReactNode;
+  if (plan && pose) {
+    // posed: the same layers, sorted onto the face, the skull or the body (cast/Pose.tsx)
+    const full: Pose = {...restPose(plan), ...pose};
+    if (hideArmL && pose.armL === undefined) full.armL = null;
+    if (hideArmR && pose.armR === undefined) full.armR = null;
+    const pick = (role: string) => layers.filter(l => layerRole(l) === role && !BEHIND.includes(l)).map(l => (
+      <use key={l} href={`#${l}`} width={wardrobe[l] ? CAST_SIZE[l][0] : undefined} height={wardrobe[l] ? CAST_SIZE[l][1] : undefined} />
+    ));
+    content = (
+      <PoseFigure sym={id} pose={full} hair={swapHair ? hair : undefined} lt={layerTransform}
+        ownFace={!hideFace && !layers.some(l => l.startsWith('face-'))} watch={layers.includes('acc-wristwatch' as CastId) && !hideArmL}
+        propR={propR} propL={propL}
+        under={layers.filter(l => BEHIND.includes(l)).map(l => <use key={l} href={`#${l}`} />)}
+        face={<g transform={layerTransform}>{pick('face')}</g>}
+        hat={<g transform={layerTransform}>{pick('hat')}</g>}
+        body={<g transform={layerTransform}>{pick('body')}</g>}
+        over={<g transform={layerTransform}>{pick('arm')}</g>} />
+    );
+  }
   return (
     <svg
       viewBox={anchored ? '-90 -90 180 180' : `0 0 ${w} ${h}`}
@@ -111,12 +140,16 @@ export const Sprite: React.FC<SpriteProps> = ({id, height, vars, hideFace, hideM
       height={h * scale}
       style={{overflow: 'visible', transform: flip ? 'scaleX(-1)' : undefined, filter, ...(css as React.CSSProperties), ...style}}
     >
-      {layers.filter(l => BEHIND.includes(l)).map(l => <use key={l} href={`#${l}`} />)}
-      <use href={`#${id}`} />
-      <g transform={layerTransform}>
-        {swapHair && <HairLayer hair={hair!} />}
-        {layers.filter(l => !BEHIND.includes(l)).map(l => <use key={l} href={`#${l}`} width={wardrobe[l] ? CAST_SIZE[l][0] : undefined} height={wardrobe[l] ? CAST_SIZE[l][1] : undefined} />)}
-      </g>
+      {content ?? (
+        <>
+          {layers.filter(l => BEHIND.includes(l)).map(l => <use key={l} href={`#${l}`} />)}
+          <use href={`#${id}`} />
+          <g transform={layerTransform}>
+            {swapHair && <HairLayer hair={hair!} />}
+            {layers.filter(l => !BEHIND.includes(l)).map(l => <use key={l} href={`#${l}`} width={wardrobe[l] ? CAST_SIZE[l][0] : undefined} height={wardrobe[l] ? CAST_SIZE[l][1] : undefined} />)}
+          </g>
+        </>
+      )}
     </svg>
   );
 };

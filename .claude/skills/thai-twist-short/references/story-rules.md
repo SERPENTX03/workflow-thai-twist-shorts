@@ -52,10 +52,20 @@ Survival is the default: it combines a twist with **useful knowledge**, which is
 
 ### Staging & Dialogue Continuity (Never vanish or jump)
 
-- **Two-shot baseline for dialogues**: When two characters converse in the same room (e.g. sitting in a sala), keep both characters in `data.cast` for all shots of that dialogue sequence. The speaker gets `talk`; the partner gets an appropriate listening/reaction pose (`wary`, `worried`, `shock`, `sad`). Never remove the partner from `cast` unless they explicitly walk out (`exit`, `move`).
-- **True close-ups vs. fake close-ups**: A close-up view (`view: "*-close"`) must actually frame the character closely via `data.cam` (zoom $\ge 1.7$) or use scene presets. Never isolate an actor in the same wide room shot by simply deleting the partner from `cast`.
-- **Coordinate consistency**: Keep each character's $x$-coordinate consistent (e.g., Lead at 900, Partner at 1120). Do not let a character jump chairs/positions between consecutive cuts in the same room.
-- **Preflight check**: `npm run story episodes/<slug>` will warn on any vanishing actors, coordinate jumps, or unframed close-ups.
+- **Coverage, not a fixed two-shot** (`directing.md` §2): a dialogue does not need both people in every shot. Cut between the speaker close, the listener's reaction, a hand, the object they talk about and a wide when the situation changes. In a shot that does show both, the speaker gets `talk` and the partner a listening face (`wary`, `worried`, `shock`, `sad`).
+- **Same view, same people**: within one `view` (the same camera on the same place) nobody disappears and nobody changes seat between consecutive cuts, unless they walk (`data.move`). To show one person alone, change the camera (a real close-up, `directing.md` §5.1), don't delete the partner from the wide.
+- **True close-ups**: a `*-close` view frames the head at about half the frame (z ≈ 3–3.6 in 16:9, `directing.md` §2). z 1.7–1.9 is a medium.
+- **Preflight check**: `npm run story -- episodes/<slug>` warns on position jumps within one view and on a `-close` with no camera; `npm run shots` counts stiff standing figures and face-on close-ups.
+
+## Shot plan & visual variety (มิติภาพ)
+
+The camera is part of the story: it stays plain while the story gives information and changes when truth, power or safety changes. Full guide, setup vocabulary and per-scene patterns: `cinematography.md`.
+
+- **Name the setup in `view`** with a suffix from `cinematography.md` §1 (`-close` `-ecu` `-ins` `-low` `-high` `-top` `-dutch` `-ots` `-pov` `-fif` `-sil` `-split` `-mirror` `-cctv` `-snap`). A view with no suffix counts as a flat eye-level side view (EYE).
+- **Story beat decides the angle** (`cinematography.md` §4.2): a lie gets an `-ecu`/`-ins` on the liar's tell; a clue gets a macro insert framed the same way every time; a villain reveal goes `-sil` → `-low`; a cornered or guilty character goes `-high`; paranoia gets `-fif` or empty space behind them; a flashback gets `data.past` and **mirror framing** (the reveal reuses the planting shot's `data.cam` and staging, with the missing piece now visible).
+- **Layers** in every set shot: sharp lit midground (cast and clue), soft `Far` background, air between them; a dark blurred foreground (door edge, mosquito net, shoulder) when the picture has a reason for one — watched, over the shoulder, trapped — about a third of shots. `cinematography.md` §5.
+- **One hard rule**: no two neighbouring shots with the same size and angle. **Guides for a Short** that `npm run shots` prints as ✗ — each a question to answer with a fix or one line about the frame, not a quota to fill (CLAUDE.md rule 14): EYE ≤ 40 % of camera shots; close/insert 30–60 %; ≥ 3 angle shots (a low and a high/top); ≥ 2 device shots; ≥ 6 distinct setups; ≤ 2 dutch; level-3 shots (`-snap`, the reveal frame) only on the 2–4 red-box lines.
+- **Contrast before impact**: the shot before a twist, a jump or a villain reveal is its opposite: wide, still and quiet before tight, fast and loud.
 
 ## Twist types that work
 
@@ -81,13 +91,27 @@ Good clue devices:
 - **The animal reacts first** — the dog growls at someone who seems fine; the cat won't go near the door.
 - **Eyes that pass through** — another character's sightline goes past the protagonist.
 
-Name each clue in the outline next to the shots that plant it and the shot that pays it off.
+Name each clue in the outline next to the shots that plant it and the shot that pays it off, then tag them in story.json (`clues` at the top, `clue` / `pay` on the shots — `story-json.md` → *Clues and mirror pairs*): `npm run story` counts the plantings and prints the ledger.
+
+## Hiding the twist (fair is not enough)
+
+The clue rules above make a twist fair. On their own they also make it easy: a detail the camera isolates three times and the caption remarks on is a signpost. A twist the viewer calls at shot 8 is a plot summary. These rules hide what the clue rules plant; long-form adds more in `thai-long-story` → `longform-rules.md` → *Concealment*.
+
+1. **Every clue has a cover job.** Before the turn the story gives the viewer an ordinary reason for the detail to be on screen (long sleeves: "แอร์ห้องนี้หนาว"; the dog growling: "มันหิว"), so they file it under something else. In the outline's clue table write the cover next to the clue. A clue with no cover is a spoiler.
+2. **The caption never points.** Before the turn no line says a detail is odd, repeats it, or explains it ("เขาใส่แขนยาวทั้งที่ร้อน" is pointing; a thermometer at 36 °C in the same frame as the sleeves is planting). Show it; let the line be about something else. No red ring on a real clue before the turn.
+3. **At least one planting is in passing**: inside a shot that is about something else, not in its own insert. The other plantings may be inserts, framed the same way each time.
+4. **One decoy.** One detail gets the same camera weight as the real clues and points at the wrong answer (the friend who keeps looking at the door). It is explained in one line at or after the reveal, never left hanging.
+5. **Write down the first guess.** In the outline: "what a viewer guesses by shot 5". If the twist is that guess, change the twist or change which question it answers. The six twist types above are well known; a stock type needs a turn the type does not predict (the viewer guesses "he is the ghost"; the reveal is who has been keeping him there).
+6. **The hook, title and cover sell the question, never half the answer.** They may use only what the first two shots show.
+7. **Cold read before voice** (`.claude/story/cold-read.md`): a reader who has not seen the outline gets the captions up to the shot before the turn and guesses. Too easy → fix with rules 1–5 and test again with a new reader, twice at most; then the result goes to the user.
 
 ## Twist checklist (gate for step 1)
 
 - [ ] Format family chosen; logline in one sentence, twist in one sentence.
 - [ ] Every event before the reveal still makes sense after it.
 - [ ] 3–5 clues planted, each visible 3+ times, none spoken before the turn.
+- [ ] Hidden as well as fair (*Hiding the twist*): every clue has a cover job; no caption points at a clue; one planting in passing; one decoy that is explained; the viewer's first guess is written down and is not the twist; hook, title and cover give away nothing past shot 2.
+- [ ] Cold read done on the finished captions before voice (step 2 → 5), result shown to the user.
 - [ ] Survival/folklore: at least one checked fact every 3–5 shots, each with a visual.
 - [ ] The twist line is short (≤ 20 Thai characters) and lands on its own 4-beat shot.
 - [ ] Hook is on screen at frame 0 and contains a place + a threat or a number.
@@ -95,11 +119,23 @@ Name each clue in the outline next to the shots that plant it and the shot that 
 - [ ] Narrative clarity: no obscure subtext leap; motives paired with actions; the twist punchline is unmistakable.
 - [ ] No plot hole a commenter would point at in one sentence.
 
+## Shot-plan checklist (gate for step 2 → 3, before any scene is drawn)
+
+- [ ] Every camera shot has a `note`: the picture in one sentence — who does what with what, from where, lit by what (`directing.md` §1). A shot whose note you cannot write is not ready.
+- [ ] Every shot's `view` names what the picture is (a setup suffix, or the scene is an insert/card).
+- [ ] Every cut changes size or angle; each place is seen from several positions, with real close-ups and inserts.
+- [ ] Every `npm run shots -- episodes/<slug>` `✗` is fixed or answered in one line (the numbers are guides; the picture wins).
+- [ ] Every trigger in the story (lie, clue found, villain reveal, paranoia, cornered, flashback, off-screen voice) has the setup `cinematography.md` §4.2 gives it.
+- [ ] Each clue is framed the same way each time it appears; the reveal shot names the planting shot it mirrors, or uses a setup not seen in the 10 shots before it.
+- [ ] The shot before each impact moment is its opposite (wide/still/quiet).
+- [ ] After drawing: on the Board frames each view looks like its name (a `-low` that reads flat fails, whatever the audit says), and the midground separates from the background at 360 px wide.
+
 ## Narrative clarity (ความชัดเจนในการสื่อสาร)
 
 - **One-punchline rule:** คนดูฟังเสียงแค่รอบเดียว ห้ามทิ้งปมที่ต้องอนุมานเกิน 1 ทอดไว้ลอยๆ ต้องมีประโยคสรุปตรรกะหรือแรงจูงใจที่ชัดเจนเสมอ
 - **Action-Motive pair:** เมื่อตัวละครทำสิ่งผิดปกติ (โกหก, แอบซ่อน, ละเมิดกฎ) ต้องบอกความกลัว/แรงจูงใจประกบคู่ทันที ไม่ปล่อยให้คนดูสงสัยว่า "ทำไปทำไม"
 - **Narrator clarity:** คำบรรยายช่วยเสริมความเข้าใจ ไม่ปล่อยให้บทสนทนากำกวมจนคนดูหลุดโฟกัส
+- **Load (ภาระความจำ):** Shorts ถือได้น้อยกว่าเรื่องยาว: ผู้พูด ≤ 3, ชื่อ ≤ 4 (ที่เหลือเป็นบทบาท "ยามกะดึก", กลุ่มเป็นคำเดียวพร้อมตัวเลข), กฎของโลก ≤ 2 ข้อ และกฎหลักพูดตรงๆ ในฮุกหรือภายใน 25 % แรก (`rule` tag, `story-json.md`), คนที่ตามหาเห็นหน้าก่อนครึ่งเรื่อง, ถ้าใครเป็นผีแต่ไม่ใช่หักมุม ให้รู้ตั้งแต่ฉากที่สองของเขา บทเรียนจาก `same-child` (เรื่องยาวที่ผู้ชมบอกว่าดูไม่รู้เรื่อง): `thai-long-story/references/longform-rules.md` → *Comprehension load*
 
 ## Thai caption voice
 

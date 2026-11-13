@@ -117,22 +117,26 @@ const Shoe: React.FC<{s: Seg; dir: 1 | -1; w: number; h: number}> = ({s, dir, w,
   );
 };
 
+/** The same mitten as cast.svg's hands, centred on (x, y): local +y runs down the forearm (`ang` = forearm direction
+ *  − 90°), the thumb (±1) toward the body's centre line, k = size (1 at a 20-unit adult hand). Shared with cast/Pose.tsx. */
+export const Mitten: React.FC<{x: number; y: number; ang: number; k: number; thumb: 1 | -1}> = ({x, y, ang, k, thumb}) => (
+  <g transform={`translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${ang.toFixed(1)}) scale(${k})`} fill="var(--skin, #e7b38c)">
+    <ellipse cx={thumb * 10} cy={-3} rx={6.2} ry={10} transform={`rotate(${thumb * -30} ${thumb * 10} -3)`} />
+    <ellipse cx={0} cy={2} rx={14} ry={16.5} />
+  </g>
+);
+
 const Arm: React.FC<{seg: Seg; color: string; w: number; hand: number; side: 'l' | 'r'}> = ({seg, color, w, hand, side}) => {
   const len = Math.hypot(seg.end.x - seg.mid.x, seg.end.y - seg.mid.y) || 1;
   const hx = seg.end.x + ((seg.end.x - seg.mid.x) / len) * 10, hy = seg.end.y + ((seg.end.y - seg.mid.y) / len) * 10;
-  // the same mitten as cast.svg's hands: local +y runs down the forearm, thumb toward the body's centre line
   const ang = (Math.atan2(seg.end.y - seg.mid.y, seg.end.x - seg.mid.x) * 180) / Math.PI - 90;
   const thumb = (100 - hx) * Math.cos(rad(ang)) > 0 ? 1 : -1;
-  const k = hand / 20;
   return (
     <g style={{display: `var(--arm-${side}-rest, inline)`}}>
       <path d={d(seg)} fill="none" stroke={color} strokeWidth={w} strokeLinecap="round" strokeLinejoin="round" />
       {/* every arm in cast.svg is a touch lighter than the torso, so one crossing the body still reads */}
       <path d={d(seg)} fill="none" stroke="rgba(255,255,255,.07)" strokeWidth={w} strokeLinecap="round" strokeLinejoin="round" />
-      <g transform={`translate(${hx.toFixed(1)} ${hy.toFixed(1)}) rotate(${ang.toFixed(1)}) scale(${k})`} fill="var(--skin, #e7b38c)">
-        <ellipse cx={thumb * 10} cy={-3} rx={6.2} ry={10} transform={`rotate(${thumb * -30} ${thumb * 10} -3)`} />
-        <ellipse cx={0} cy={2} rx={14} ry={16.5} />
-      </g>
+      <Mitten x={hx} y={hy} ang={ang} k={hand / 20} thumb={thumb} />
     </g>
   );
 };

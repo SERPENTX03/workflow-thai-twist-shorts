@@ -11,6 +11,7 @@ argument-hint: "[episodes/<slug> ของตอนล่าสุด]"
 - The episode: `episodes/<slug>/story.json` (if not given, the most recently modified folder in `episodes/`). Read all captions, `series` (`name`, `ep`, `next`) and the last two shots (the cliffhanger and the card).
 - The bible: `story.json → bible`, else `series/<series-name>.md`. If there is none, create one first with `/twist-series` using this episode as EP 1.
 - Rules: `.claude/skills/thai-twist-short/references/story-rules.md` and `ref-library.md`.
+- The universe: `universe/bible.md` and `universe/canon.json` (CLAUDE.md rule 17). A series is link level 4 inside it: its world rules may add to the universe's, never contradict them; places and canon characters keep their `state` and status.
 
 Summarise in 5 lines: what the viewer knows, what they don't, the open question (`series.next`), the cast still alive, rules already taught.
 
@@ -27,6 +28,6 @@ Summarise in 5 lines: what the viewer knows, what they don't, the open question 
 
 For each: ชื่อตอน · ฮุก (frame-0 text) · คำตอบของ cliffhanger เดิม · ความรู้ใหม่ 3 ข้อ · หักมุม · cliffhanger ใหม่. Recommend one.
 
-After the user picks: write the full outline (same shape as `/twist-idea` step 3), then update the bible (episode list, open threads, cast status). Create the folder with `npm run new -- <slug>-ep<N> "ชื่อตอน"` and set `"series": { "name", "ep": N, "next" }` and `"bible"` in its `story.json`, copying `voice`, `voices`, `voiceStyle`, `captionLook` and `bpm` from the previous episode. Then continue with the `thai-twist-short` workflow.
+After the user picks: write the full outline (same shape as `/twist-idea` step 3), then update the bible (episode list, open threads, cast status) and `universe/canon.json` (`episodes.<slug>`, place `state` and `episodes`, events, threads, canon character status) with what the user approved. Create the folder with `npm run new -- <slug>-ep<N> "ชื่อตอน"` and set `"series": { "name", "ep": N, "next" }` and `"bible"` in its `story.json`, copying `voice`, `voices`, `voiceStyle`, `captionLook` and `bpm` from the previous episode. Then continue with the `thai-twist-short` workflow.
 
-Scenes that recur (the same room, the map) may be imported from the previous episode's `src/episodes/<slug>/` (or promoted into `src/kit/` when a third episode needs them) — say which ones you reused.
+Scenes that recur (the same room, the map) come from the place's `set` in `universe/canon.json` (the previous episode's `src/episodes/<slug>/`, or `archive/<slug>/src/` once archived); when a second story shoots a kept place, promote it into `src/kit/` and `src/gallery.json` (CLAUDE.md rules 6 and 17) and point `set` there — say which ones you reused.

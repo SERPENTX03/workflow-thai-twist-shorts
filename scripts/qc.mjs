@@ -4,7 +4,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { episodeDir, loadStory, die } from './lib.mjs';
+import { episodeDir, loadStory, die, deadAir, DEAD_AIR } from './lib.mjs';
 
 const dir = episodeDir(process.argv[2]);
 const S = loadStory(dir);
@@ -44,7 +44,16 @@ const checks = [
   ['True peak ≤ −1.0 dBTP', tp <= -1.0, `${tp} dBTP`],
   ['Duration matches story', Math.abs(dur - S.total) <= 0.5, `${dur.toFixed(2)}s vs ${S.total.toFixed(2)}s`],
   [`Runtime in ${S.target[0]}–${S.target[1]}s target`, S.total >= S.target[0] && S.total <= S.target[1], `${S.total.toFixed(1)}s`],
-  ['No dead air > 1.2s', sil.length === 0, sil.length ? sil.map(s => `${s.at.toFixed(1)}s (+${s.len.toFixed(1)})`).join(', ') : 'none'],
+  ['No dead air > 1.2s in the mix (silence under -50 dB)', sil.length === 0, sil.length ? sil.map(s => `${s.at.toFixed(1)}s (+${s.len.toFixed(1)})`).join(', ') : 'none'],
+  ...(voice.length && S.format === 'landscape' ? (() => {
+    // the music bed fills every gap, so the mix meter above never fires: dead air = no VOICE (lib.mjs deadAir)
+    const d = deadAir(voice, S), mm = t => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, '0')}`;
+    return [
+      [`No voice gap over ${DEAD_AIR.gapMax}s (${DEAD_AIR.hushMax}s on a hush)`, d.tooLong.length === 0, d.tooLong.length ? d.tooLong.slice(0, 8).map(g => `${mm(g.from)} +${g.len.toFixed(1)}s`).join(', ') + (d.tooLong.length > 8 ? ` ... ${d.tooLong.length} in all` : '') : 'none'],
+      [`Voice-free time <= ${DEAD_AIR.freeMax * 100}%`, d.free <= DEAD_AIR.freeMax, `${Math.round(d.free * 100)}%`],
+      [`Gaps over ${DEAD_AIR.longGap}s <= ${DEAD_AIR.longPerMin}/min`, d.perMin <= DEAD_AIR.longPerMin, `${d.long.length} (${d.perMin.toFixed(2)}/min)`],
+    ];
+  })() : []),
   ['No voice line past its cut', over.length === 0, over.length ? 'shots ' + over.join(', ') : voice.length ? 'ok' : 'no voice index'],
   ['No rushed voice (>1.15×)', rushed.length === 0, rushed.length ? 'shots ' + rushed.join(', ') : 'ok'],
 ];

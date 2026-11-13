@@ -82,7 +82,7 @@ export const EndCardScene: React.FC<{p: ShotProps}> = ({p}) => {
     <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 40%, #2a2420 0%, #0c0b0d 70%)', overflow: 'hidden'}}>
       <div style={{position: 'absolute', inset: 0, opacity: t}}>
         {d.title && (
-          <div style={{position: 'absolute', left: 0, right: 0, top: 170, textAlign: 'center', fontFamily: T.display, fontWeight: 700, fontSize: 84, color: T.white,
+          <div style={{position: 'absolute', left: 0, right: 0, top: 170, textAlign: 'center', fontFamily: T.title, fontWeight: 400, fontSize: 80, color: T.white,
             textShadow: '0 6px 30px rgba(0,0,0,.7)'}}>{d.title}</div>
         )}
         <div style={{position: 'absolute', left: 0, right: 0, top: d.title ? 300 : 250, textAlign: 'center', fontFamily: T.ui, fontWeight: 500, fontSize: 34, color: 'rgba(246,242,234,.7)'}}>

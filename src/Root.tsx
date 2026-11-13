@@ -6,9 +6,11 @@ import {CastSheet, GALLERY_COMPS} from './Gallery';
 import {RunPreview, RUN_PREVIEW_FRAMES} from './RunPreview';
 import {EPISODES} from './episodes';
 
-
-
-import {GhostMoneyCoverA, GhostMoneyCoverB, GhostMoneyCoverC} from './episodes/ghost-money/cover';
+// An episode's covers: export COVERS from src/episodes/<slug>/cover.tsx. Found by webpack rather than imported by name,
+// so `npm run archive` can move the episode out without touching this file.
+type CoverStill = {id: string; component: React.FC};
+const coverFiles = (require as unknown as {context: (dir: string, deep: boolean, re: RegExp) => {keys(): string[]; (k: string): {COVERS?: CoverStill[]}}}).context('./episodes', true, /\/cover\.tsx$/);
+const COVERS: CoverStill[] = coverFiles.keys().flatMap(k => coverFiles(k).COVERS ?? []);
 
 export const Root: React.FC = () => (
   <>
@@ -18,9 +20,6 @@ export const Root: React.FC = () => (
         <Composition id={`${e.id}Board`} component={e.Board} durationInFrames={e.plan.shots.length} fps={FPS} width={e.plan.W} height={e.plan.H} />
       </React.Fragment>
     ))}
-    <Still id="GhostMoneyCoverA" component={GhostMoneyCoverA} width={1920} height={1080} />
-    <Still id="GhostMoneyCoverB" component={GhostMoneyCoverB} width={1920} height={1080} />
-    <Still id="GhostMoneyCoverC" component={GhostMoneyCoverC} width={1920} height={1080} />
 
 
 
@@ -30,6 +29,7 @@ export const Root: React.FC = () => (
 
     <Composition id="RunPreview" component={RunPreview} durationInFrames={RUN_PREVIEW_FRAMES} fps={FPS} width={1920} height={1080} />
     <Still id="Cast" component={CastSheet} width={1920} height={1080} />
+    {COVERS.map(c => <Still key={c.id} id={c.id} component={c.component} width={1920} height={1080} />)}
     {GALLERY_COMPS.map(g => (
       <Composition key={g.id} id={g.id} component={g.component} durationInFrames={g.count} fps={FPS} width={g.width} height={g.height} />
     ))}

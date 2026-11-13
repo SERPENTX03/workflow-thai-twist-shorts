@@ -18,17 +18,20 @@ const KEEP = [...new Set([
   // whole-body poses
   'man-walk', 'man-run', 'man-sit', 'man-crouch', 'man-back', 'man-lie', 'woman-back', 'woman-sit', 'woman-run',
   // arms
-  ...['r', 'l'].flatMap(s => ['hold', 'chest', 'offer', 'raise', 'pocket', 'carry', 'reach'].map(p => `arm-${s}-${p}`)),
+  ...['r', 'l'].flatMap(s => ['hold', 'chest', 'offer', 'raise', 'pocket', 'carry', 'reach', 'phone'].map(p => `arm-${s}-${p}`)),
+  'arm-b-wheel', 'prop-wheel',
   // faces + mouths
   ...['happy', 'laugh', 'sad', 'cry', 'angry', 'scared', 'shock', 'worried', 'smirk', 'tired', 'hollow', 'wary', 'guilty', 'grin'].map(f => `face-${f}`),
   'talk-a', 'talk-e', 'talk-o', 'talk-m',
+  'talk-smile-a', 'talk-smile-e', 'talk-smile-o', 'talk-smile-m', 'talk-down-a', 'talk-down-e', 'talk-down-o', 'talk-down-m', 'talk-tense-a', 'talk-tense-e', 'talk-tense-o', 'talk-tense-m', 'talk-shock-a', 'talk-shock-e', 'talk-shock-o', 'talk-shock-m',
+  'face-sleep',
   // accessories + marks
   "acc-wristwatch", "acc-beads", "acc-necklace", "acc-square-glasses", "acc-bucket-hat", "acc-tote",
   ...['glasses', 'cap', 'mask', 'headband', 'scarf', 'bag', 'amulet', 'backpack', 'straps', 'watch', 'hand-bandage',
     'field-vest', 'shop-apron', 'school', 'school-kid', 'bow', 'raincoat', 'hood', 'pakama'].map(a => `acc-${a}`),
   ...['question', 'exclaim', 'anger', 'drops', 'zzz', 'dizzy', 'idea', 'shiver', 'gloom'].map(m => `mark-${m}`),
   // frequently used props, icons, set pieces
-  ...['glass', 'coin', 'phone', 'paper', 'key', 'flashlight', 'bowl', 'box', 'lantern', 'mug', 'spoon', 'book'].map(p => `prop-${p}`),
+  ...['glass', 'bottle', 'coin', 'phone', 'paper', 'key', 'flashlight', 'bowl', 'box', 'lantern', 'mug', 'fan', 'phone-ear', 'spoon', 'book', 'revolver', 'cassette'].map(p => `prop-${p}`),
   ...['clock', 'warn', 'check', 'cross', 'arrow', 'pin', 'fire'].map(i => `icon-${i}`),
   ...['door', 'door-open', 'window', 'table', 'chair', 'bulb'].map(s => `set-${s}`),
 ])];
@@ -107,6 +110,61 @@ const build = Object.fromEntries(ids.flatMap(id => {
   return b ? [[id, b]] : [];
 }));
 const vb = Object.fromEntries(ids.map(id => [id, (symbols.get(id).getAttribute('viewBox') || '0 0 200 520').trim().split(/\s+/).slice(2).map(Number)]));
+
+// Pose rig parts (cast/Pose.tsx): a person's skull, hair, back hair and arm marks (tattoos, bracelets) as symbols of
+// their own, `<id>--skull` `<id>--hair` `<id>--backhair` `<id>--marks-l|r`, so the rig can turn the head (skull, hair and
+// face slide apart) and carry the marks on a jointed forearm. Found by walking the symbol through its <use>s:
+// skull = <use href="#head-bare"> or a display:var(--skull-rest) group; hair / back hair = the --hair-rest /
+// --backhair-rest group; marks = --arm-l/r-rest groups drawn in the symbol itself on top of a shared arm.
+const hrefOf = n => (n.getAttribute('href') || n.getAttribute('xlink:href') || '').slice(1);
+const styleHas = (n, v) => (n.getAttribute('style') || '').includes(v);
+const SHARED_ARMS = new Set(['arm-l-down', 'arm-r-down', 'arm-l-short', 'arm-r-short', 'body-wide', 'body-wide-short', 'body-skirt', 'body-kid']);
+const partSyms = [];
+const parts = {};
+for (const id of ids) {
+  if (!build[id]) continue;
+  const found = {skull: [], hair: [], backhair: []}; const marks = {l: [], r: []}; const used = new Set();
+  const visit = (n, tf, inDef) => {
+    for (const c of kids(n)) {
+      const t = c.getAttribute('transform'); const tf2 = t ? [...tf, t] : tf;
+      if (c.tagName === 'use') {
+        const r = hrefOf(c); used.add(r);
+        if (r === 'head-bare') found.skull.push({ref: r, tf: tf2});
+        else if (r === 'ears') found.ears = true;
+        else if (defs.has(r)) visit(defs.get(r), tf2, true);
+        else if (symbols.has(r)) visit(symbols.get(r), tf2, true);
+        continue;
+      }
+      // a part keeps its own group (fill, stroke, transform); `tf` = the transforms of the groups around it
+      const side = styleHas(c, '--arm-l-rest') ? 'l' : styleHas(c, '--arm-r-rest') ? 'r' : '';
+      if (styleHas(c, '--skull-rest')) found.skull.push({node: c, tf});
+      else if (styleHas(c, '--hair-rest')) found.hair.push({node: c, tf});
+      else if (styleHas(c, '--backhair-rest')) found.backhair.push({node: c, tf});
+      else if (side) { if (!inDef) marks[side].push({node: c, tf}); }
+      else visit(c, tf2, inDef);
+    }
+  };
+  visit(symbols.get(id), [], false);
+  if (!found.skull.length) continue;
+  const [w, h] = vb[id];
+  const emit = (name, list) => {
+    const body = list.map(({node, ref, tf}) => {
+      let inner = `<use href="#${ref}" />`;
+      if (node) { const g = node.cloneNode(true); g.removeAttribute('style'); inner = jsx(g, 4); }
+      return tf.length ? `<g transform=${JSON.stringify(tf.join(' '))}>\n${inner}\n</g>` : inner;
+    }).join('\n');
+    partSyms.push(`    <symbol id="${id}--${name}" viewBox="0 0 ${w} ${h}" overflow="visible">\n${body}\n    </symbol>`);
+  };
+  const p = {};
+  for (const k of ['skull', 'hair', 'backhair']) if (found[k].length) { emit(k, found[k]); p[k] = 1; }
+  if (found.ears) p.ears = 1;
+  const shared = [...used].some(u => SHARED_ARMS.has(u));
+  const ms = [];
+  for (const s of ['l', 'r']) if (shared && marks[s].length) { emit(`marks-${s}`, marks[s]); ms.push(s); }
+  if (ms.length) p.marks = ms;
+  if ([...used].some(u => /^(arm-[lr]|body-[a-z]+)-short$/.test(u))) p.short = 1;
+  parts[id] = p;
+}
 fs.writeFileSync(OUT, `// GENERATED by scripts/svg-to-tsx.mjs from ${SRC} — edit the keep list there, not this file.
 import React from 'react';
 
@@ -117,11 +175,15 @@ export const CAST_ANCHORED: readonly string[] = ${JSON.stringify(ids.filter(id =
 export type CastId = (typeof CAST_IDS)[number];
 /** the jointed build each body walks / runs with (cast/Rig.tsx) */
 export const CAST_BUILD: Record<string, 'pants' | 'wide' | 'skirt' | 'kid' | 'robe'> = ${JSON.stringify(build)};
+/** pose-rig parts per person (cast/Pose.tsx): which <id>--skull / --hair / --backhair / --marks-l|r symbols exist,
+ *  whether the head has the shared ears, and short sleeves */
+export const CAST_PARTS: Record<string, {skull?: 1; hair?: 1; backhair?: 1; ears?: 1; short?: 1; marks?: ('l' | 'r')[]}> = ${JSON.stringify(parts)};
 
 /** Mount once at the top of a composition; <Sprite id="man"/> then references these symbols. */
 export const CastSprite: React.FC = () => (
   <svg width="0" height="0" style={{ position: 'absolute' }} aria-hidden>
 ${body}
+${partSyms.join('\n')}
   </svg>
 );
 `);

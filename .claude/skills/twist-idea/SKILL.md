@@ -6,7 +6,7 @@ argument-hint: "[ธีม หรือ สถานที่ เช่น 'น�
 
 # ช่วยคิดไอเดีย
 
-Read first: `.claude/skills/thai-twist-short/references/ref-library.md` and `story-rules.md`. Also list `episodes/` and `series/` so you don't repeat a premise that already exists.
+Read first: `.claude/skills/thai-twist-short/references/ref-library.md` and `story-rules.md`. Also list `episodes/` and `series/` so you don't repeat a premise that already exists. Read `universe/bible.md` and `universe/canon.json` (CLAUDE.md rule 17): ideas may sit anywhere, a place in canon or a new one; never score an idea higher just because it links.
 
 ## 1. Generate 8 raw premises, keep the best 5
 
@@ -24,12 +24,12 @@ Mix the families: at least 3 survival "ถ้า…", 1 haunting twist, 1 ตำ
 | Hook | place + threat in ≤ 12 Thai characters, readable at frame 0 |
 | Relatable | most Thai viewers have stood in that place |
 | Knowledge | ≥ 5 true, checkable facts or rules the story can show as visuals |
-| Twist | fair, physical clue, re-read works |
+| Twist | fair, physical clue, re-read works, **and it is not what a viewer guesses from the hook** (write the first guess next to the twist; if they match, score 0 — `story-rules.md` → *Hiding the twist*) |
 | Visual variety | needs ≥ 4 shot types (set, close-up, diagram, map, card…) |
 | Series potential | the ending opens an obvious next question |
 | Fresh | not already in `episodes/` or a stock creepypasta |
 
-Show the user a table: ชื่อเรื่อง · ครอบครัว (survival/haunting/ตำนาน) · ฮุก (frame 0 text) · หักมุมใน 1 ประโยค · คะแนน. Mark your pick and why in one line.
+Show the user a table: ชื่อเรื่อง · ครอบครัว (survival/haunting/ตำนาน) · ฮุก (frame 0 text) · หักมุมใน 1 ประโยค · จักรวาล (ระดับ 0–4 + สถานที่ canon หรือ "ใหม่") · คะแนน. Mark your pick and why in one line.
 
 ## 3. After the user picks one
 
@@ -39,9 +39,10 @@ Write a one-screen outline:
 - Format family, target length, `captionLook`
 - Cast: lead, ≤ 2 named friends, the animal companion, each with one trackable trait
 - Rules (กฎข้อ 1–3) and **facts** — mark each fact `✓ checked` (search when unsure) or drop it
-- Clues: 3–5, each with where it is planted (×3) and where it pays off
+- Clues: 3–5, each with its cover job (the ordinary reason the story gives for it), where it is planted (×3, one in passing) and where it pays off; one decoy and the line that explains it; the viewer's first guess
 - Act-by-act beats (≈ shot count per act, per `story-rules.md`)
 - Ending: twist line (≤ 20 characters) + cliffhanger + ตอนต่อไป title if it is a series
+- Universe: link level · place (canon id, or new + where on the map + keep or not, `bible.md` §3.1) · canon characters who appear · what goes into canon (user ticks); after the yes, update `universe/canon.json`
 
 Get a yes, then hand off to the `thai-twist-short` workflow at step 0 (`npm run new -- <slug> "ชื่อเรื่อง"`). If the user wants a series, run `/twist-series` before writing `story.json`.
 

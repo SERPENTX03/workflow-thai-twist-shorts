@@ -9,6 +9,7 @@ const RIM_TONE: Record<string, [string, string]> = {
   night: ['rgba(170,200,255,.95)', 'rgba(120,160,255,.28)'],
   dim: ['rgba(160,190,250,.85)', 'rgba(110,150,240,.24)'],
   dark: ['rgba(150,180,240,.8)', 'rgba(100,140,230,.22)'],
+  noir: ['rgba(165,195,250,.9)', 'rgba(110,150,240,.26)'],
   dawn: ['rgba(200,210,255,.8)', 'rgba(150,170,255,.2)'],
   morning: ['rgba(255,245,220,.6)', 'rgba(255,240,200,.12)'],
   dusk: ['rgba(255,190,140,.9)', 'rgba(255,140,90,.26)'],
@@ -26,7 +27,10 @@ export function rimFilter(rim: string | number | boolean | undefined, light = 'n
   if (!tone) return undefined;
   const side = rim === 'l' ? -1 : 1;
   const px = (n: number) => `${(n * k).toFixed(1)}px`;
-  return `drop-shadow(${px(side * 3.5)} ${px(-1.5)} ${px(1.2)} ${tone[0]}) drop-shadow(0 0 ${px(16)} ${tone[1]})`;
+  // Both layers lean to the light side. The soft one used to be `0 0 16px`, a glow all the way round the figure:
+  // on a dark set that reads as a sticker's white border, not as light (fifth-room shot 126). Offset by about its
+  // own blur, it spills on the lit side only and the far side stays in the dark.
+  return `drop-shadow(${px(side * 3.5)} ${px(-1.5)} ${px(1.2)} ${tone[0]}) drop-shadow(${px(side * 9)} ${px(-3)} ${px(8)} ${tone[1]})`;
 }
 
 /** The ink of an outline under a light grade: the grade's own light colour pulled halfway to black, so a line

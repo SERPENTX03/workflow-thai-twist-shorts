@@ -17,5 +17,7 @@ for (const [name, fn] of steps) {
   const r = fn();
   if (r.status) { console.error(`✖ ${name} failed`); bad = r.status; break; }
 }
+// light & depth numbers of the fresh Board frames (advisory, never fails the check): depth-light.md
+if (!bad) { console.log(''); spawnSync(process.execPath, ['scripts/look-audit.mjs', dir], { cwd: ROOT, stdio: 'inherit' }); }
 console.log(`\nboard frames: out/${slug}-board/  (one per shot; look at them before any render)`);
 process.exit(bad);

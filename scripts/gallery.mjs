@@ -1,6 +1,6 @@
 // Studio gallery: renders every gallery item (src/Gallery.tsx G* compositions) and each episode's Board with Remotion,
 // then writes studio/manifest.js for studio/index.html. Voice previews come from `npm run voices` (studio/audio).
-// Landscape stage kit (src/kit/world, temple, inserts + light grades): GWorld, GInserts, GGrades, listed in src/gallery.json.
+// Landscape stage kit (src/kit/world, temple, inserts + light grades): GWorld, GInserts, GCamera, GGrades, listed in src/gallery.json.
 //   npm run gallery [-- --no-render] [-- --boards] [-- --only=GCast,GUi,GWorld,GPlaces,GInserts,GGrades]
 // View: launch config "gallery" (serves the repo root on :3431) -> /studio/index.html
 import fs from 'node:fs';
@@ -24,18 +24,19 @@ const V = readJson('voices.json');
 const LISTS = {
   GCast: CAST.map(([id]) => `cast-${id}`),
   GFaces: G.faces,
-  GPoses: [...G.poses, ...G.arms],
+  GTalk: G.talk.map((t, i) => `talk-${i}-${t.face || 'plain'}`),
   GGait: G.gait,
+  GRig: G.rig.map(r => `rig-${r.id}`),
   GProps: G.props,
   GMarks: G.marks,
   GUi: G.ui.map(u => `ui-${u.id}`),
-  GScenes: G.scenes.map((s, i) => `scene-${i}-${s.scene}${s.view ? '-' + s.view : ''}`),
-  GWorld: G.world.map(w => `world-${w.id}`),
   GPlaces: G.places.map(w => `place-${w.id}`),
+  GParts: G.parts.map(w => `part-${w.id}`),
   GInserts: G.inserts.map(w => `insert-${w.id}`),
+  GCamera: G.camera.map(w => `camera-${w.id}`),
   GGrades: G.grades.map(w => `grade-${w.id}`),
 };
-const SCALE = { GScenes: 0.4, GUi: 0.75, GWorld: 0.3, GPlaces: 0.3, GInserts: 0.3, GGrades: 0.3 };
+const SCALE = { GUi: 0.75, GPlaces: 0.5, GParts: 0.3, GInserts: 0.3, GCamera: 0.3, GGrades: 0.3 };
 
 const episodes = withBoards ? fs.readdirSync(path.join(ROOT, 'episodes'), { withFileTypes: true })
   .filter(d => d.isDirectory() && fs.existsSync(path.join(ROOT, 'episodes', d.name, 'story.json')))
@@ -90,6 +91,17 @@ if (!process.argv.includes('--no-render')) {
   }
 }
 
+// which episodes actually import each kit piece (src/episodes + archive): shown on its card, so a choice is made on evidence
+const walk = (d, o = []) => { if (!fs.existsSync(d)) return o; for (const e of fs.readdirSync(d, { withFileTypes: true })) { const p = path.join(d, e.name); if (e.isDirectory()) { if (!['assets', 'renders', 'public', 'node_modules'].includes(e.name)) walk(p, o); } else if (/\.tsx?$/.test(e.name)) o.push(p); } return o; };
+const episodeSrc = [];
+for (const base of ['src/episodes', 'archive']) {
+  const dir = path.join(ROOT, base);
+  if (!fs.existsSync(dir)) continue;
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) if (e.isDirectory()) episodeSrc.push({ slug: e.name, text: walk(path.join(dir, e.name)).map(f => fs.readFileSync(f, 'utf8')).join('\n') });
+}
+const usedIn = sym => (sym ? episodeSrc.filter(e => new RegExp(`\\b${sym}\\b`).test(e.text)).map(e => e.slug) : []);
+const withUse = w => ({ ...w, usedIn: usedIn(w.uses) });
+
 const img = f => (fs.existsSync(path.join(R, f)) ? `renders/${f}` : null);
 const audio = f => (fs.existsSync(path.join(OUT, 'audio', f)) ? `audio/${f}` : null);
 const sfxIdx = path.join(ROOT, 'sfx-library', 'index.json');
@@ -102,19 +114,21 @@ const manifest = {
     model: V.model, settings: V.settings, default: V.default,
     roles: Object.entries(V.roles).map(([role, r]) => ({ role, ...r, audio: audio(`role-${role}.mp3`), cast: CAST.filter(([, c]) => c.role === role).map(([k]) => k) })),
   },
-  faces: G.faces.map(id => ({ id, image: img(`${id}.png`) })),
+  faces: G.faces.map(id => ({ id, image: img(`${id}.png`), code: `"who@900 ${id.replace('face-', '')}"` })),
   gait: G.gait.map(id => {
     const [, who, pose, step] = id.match(/^(.+)-(walk|run)-(\d)$/);
     return { id, image: img(`${id}.png`), code: `<Actors cast={["who@900 ${pose}"]} />  // จังหวะ ${step} (แทน who ด้วย id ตัวละคร)` };
   }),
-  poses: [...G.poses, ...G.arms].map(id => ({ id, image: img(`${id}.png`), code: id.startsWith('arm-') ? `<Sprite id="man" hideArm${id[4].toUpperCase()} layers={['${id}']} />` : `<Sprite id="${id}" />` })),
-  props: G.props.map(id => ({ id, image: img(`${id}.png`), code: `<Sprite id="${id}" />` })),
+  rig: G.rig.map(r => ({ id: r.id, label: r.label, image: img(`rig-${r.id}.png`), code: r.figures.filter(Boolean).map(f => `"${r.who}@960 ${f}"`).join('  ') })),
+  talk: G.talk.map((t, i) => ({ ...t, id: `talk-${i}`, image: img(`${LISTS.GTalk[i]}.png`), code: `"${t.who}@900 ${t.face ? t.face + ' ' : ''}talk"` })),
+  props: G.props.map(id => ({ id, image: img(`${id}.png`), code: `"who@900 armR=hold prop=${id.replace('prop-', '')}"` })),
   marks: G.marks.map(id => ({ id, label: wardrobe[id]?.label, image: img(`${id}.png`), code: id.startsWith('hair-') ? `hair="${id.slice(5)}"` : `layers={['${id}']}` })),
   ui: G.ui.map(u => ({ ...u, image: img(`ui-${u.id}.png`) })),
-  scenes: G.scenes.map((s, i) => ({ ...s, image: img(`${LISTS.GScenes[i]}.png`), code: JSON.stringify({ scene: s.scene, ...(s.view ? { view: s.view } : {}), data: s.data }) })),
-  world: G.world.map(w => ({ ...w, image: img(`world-${w.id}.png`) })),
-  places: G.places.map(w => ({ ...w, image: img(`place-${w.id}.png`) })),
-  inserts: G.inserts.map(w => ({ ...w, image: img(`insert-${w.id}.png`) })),
+  places: G.places.map(w => ({ ...withUse(w), image: img(`place-${w.id}.png`) })),
+  parts: G.parts.map(w => ({ ...withUse(w), image: img(`part-${w.id}.png`) })),
+  inserts: G.inserts.map(w => ({ ...withUse(w), image: img(`insert-${w.id}.png`) })),
+  camera: G.camera.map(w => ({ ...withUse(w), image: img(`camera-${w.id}.png`) })),
+  retired: G.retired,
   grades: G.grades.map(w => ({ ...w, image: img(`grade-${w.id}.png`) })),
   episodes: episodes.map(({ slug, S }) => ({
     slug, id: compId(slug), title: S.title, format: S.format, seconds: Math.round(S.total),

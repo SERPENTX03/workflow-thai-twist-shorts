@@ -30,3 +30,5 @@ out/
 # Studio renders
 studio/renders/
 public/*/*.wav
+.remotion-temp/
+build/

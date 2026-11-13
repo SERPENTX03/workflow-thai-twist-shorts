@@ -1,5 +1,5 @@
 window.STUDIO = {
- "built": "2026-11-04T06:33:37.976Z",
+ "built": "2026-11-08T16:57:29.242Z",
  "castSheet": "renders/cast-sheet.png",
  "cast": [
   {
@@ -1742,291 +1742,339 @@ window.STUDIO = {
  "faces": [
   {
    "id": "face-happy",
-   "image": "renders/face-happy.png"
+   "image": "renders/face-happy.png",
+   "code": "\"who@900 happy\""
   },
   {
    "id": "face-laugh",
-   "image": "renders/face-laugh.png"
+   "image": "renders/face-laugh.png",
+   "code": "\"who@900 laugh\""
   },
   {
    "id": "face-sad",
-   "image": "renders/face-sad.png"
+   "image": "renders/face-sad.png",
+   "code": "\"who@900 sad\""
   },
   {
    "id": "face-cry",
-   "image": "renders/face-cry.png"
+   "image": "renders/face-cry.png",
+   "code": "\"who@900 cry\""
   },
   {
    "id": "face-angry",
-   "image": "renders/face-angry.png"
+   "image": "renders/face-angry.png",
+   "code": "\"who@900 angry\""
   },
   {
    "id": "face-scared",
-   "image": "renders/face-scared.png"
+   "image": "renders/face-scared.png",
+   "code": "\"who@900 scared\""
   },
   {
    "id": "face-shock",
-   "image": "renders/face-shock.png"
+   "image": "renders/face-shock.png",
+   "code": "\"who@900 shock\""
   },
   {
    "id": "face-worried",
-   "image": "renders/face-worried.png"
+   "image": "renders/face-worried.png",
+   "code": "\"who@900 worried\""
   },
   {
    "id": "face-smirk",
-   "image": "renders/face-smirk.png"
+   "image": "renders/face-smirk.png",
+   "code": "\"who@900 smirk\""
   },
   {
    "id": "face-tired",
-   "image": "renders/face-tired.png"
+   "image": "renders/face-tired.png",
+   "code": "\"who@900 tired\""
   },
   {
    "id": "face-hollow",
-   "image": "renders/face-hollow.png"
+   "image": "renders/face-hollow.png",
+   "code": "\"who@900 hollow\""
   },
   {
    "id": "face-wary",
-   "image": "renders/face-wary.png"
+   "image": "renders/face-wary.png",
+   "code": "\"who@900 wary\""
   },
   {
    "id": "face-guilty",
-   "image": "renders/face-guilty.png"
+   "image": "renders/face-guilty.png",
+   "code": "\"who@900 guilty\""
   },
   {
    "id": "face-grin",
-   "image": "renders/face-grin.png"
+   "image": "renders/face-grin.png",
+   "code": "\"who@900 grin\""
   },
   {
-   "id": "talk-a",
-   "image": "renders/talk-a.png"
-  },
-  {
-   "id": "talk-e",
-   "image": "renders/talk-e.png"
-  },
-  {
-   "id": "talk-o",
-   "image": "renders/talk-o.png"
-  },
-  {
-   "id": "talk-m",
-   "image": "renders/talk-m.png"
+   "id": "face-sleep",
+   "image": "renders/face-sleep.png",
+   "code": "\"who@900 sleep\""
   }
  ],
  "gait": [
   {
-   "id": "man-walk-0",
-   "image": "renders/man-walk-0.png",
+   "id": "lead-male-A-walk-0",
+   "image": "renders/lead-male-A-walk-0.png",
    "code": "<Actors cast={[\"who@900 walk\"]} />  // จังหวะ 0 (แทน who ด้วย id ตัวละคร)"
   },
   {
-   "id": "man-walk-1",
-   "image": "renders/man-walk-1.png",
+   "id": "lead-male-A-walk-1",
+   "image": "renders/lead-male-A-walk-1.png",
    "code": "<Actors cast={[\"who@900 walk\"]} />  // จังหวะ 1 (แทน who ด้วย id ตัวละคร)"
   },
   {
-   "id": "man-walk-2",
-   "image": "renders/man-walk-2.png",
+   "id": "lead-male-A-walk-2",
+   "image": "renders/lead-male-A-walk-2.png",
    "code": "<Actors cast={[\"who@900 walk\"]} />  // จังหวะ 2 (แทน who ด้วย id ตัวละคร)"
   },
   {
-   "id": "man-run-0",
-   "image": "renders/man-run-0.png",
+   "id": "lead-male-A-run-0",
+   "image": "renders/lead-male-A-run-0.png",
    "code": "<Actors cast={[\"who@900 run\"]} />  // จังหวะ 0 (แทน who ด้วย id ตัวละคร)"
   },
   {
-   "id": "man-run-1",
-   "image": "renders/man-run-1.png",
+   "id": "lead-male-A-run-1",
+   "image": "renders/lead-male-A-run-1.png",
    "code": "<Actors cast={[\"who@900 run\"]} />  // จังหวะ 1 (แทน who ด้วย id ตัวละคร)"
   },
   {
-   "id": "man-run-2",
-   "image": "renders/man-run-2.png",
+   "id": "lead-male-A-run-2",
+   "image": "renders/lead-male-A-run-2.png",
    "code": "<Actors cast={[\"who@900 run\"]} />  // จังหวะ 2 (แทน who ด้วย id ตัวละคร)"
   }
  ],
- "poses": [
+ "rig": [
   {
-   "id": "man-sit",
-   "image": "renders/man-sit.png",
-   "code": "<Sprite id=\"man-sit\" />"
+   "id": "lead-male-A-body",
+   "label": "นั่งหันหน้า · นั่ง 3/4 ถือโทรศัพท์ · ย่อกอดเข่า · แจ็กเก็ตมาเอง",
+   "image": "renders/rig-lead-male-A-body.png",
+   "code": "\"lead-male-A@960 sit worried\"  \"lead-male-A@960 sit yaw=0.55 armR=hold prop=phone wary\"  \"lead-male-A@960 crouch scared\""
   },
   {
-   "id": "man-crouch",
-   "image": "renders/man-crouch.png",
-   "code": "<Sprite id=\"man-crouch\" />"
+   "id": "lead-male-A-lie",
+   "label": "นอนหงาย ชันเข่า · flip = หัวไปทางขวา · ใส่ mark=zzz ได้",
+   "image": "renders/rig-lead-male-A-lie.png",
+   "code": "\"lead-male-A@960 lie sleep mark=zzz\"  \"lead-male-A@960 lie worried armR=chest\""
   },
   {
-   "id": "man-back",
-   "image": "renders/man-back.png",
-   "code": "<Sprite id=\"man-back\" />"
+   "id": "lead-female-A-body",
+   "label": "นั่ง · นั่ง 3/4 ถือหนังสือ · ย่อร้องไห้ · กระโปรงคลุมเข่า",
+   "image": "renders/rig-lead-female-A-body.png",
+   "code": "\"lead-female-A@960 sit sad\"  \"lead-female-A@960 sit yaw=-0.55 armL=hold prop=book@l worried\"  \"lead-female-A@960 crouch cry\""
   },
   {
-   "id": "man-lie",
-   "image": "renders/man-lie.png",
-   "code": "<Sprite id=\"man-lie\" />"
+   "id": "villain-male-A-body",
+   "label": "แขนสั้น รอยสักไปกับแขน",
+   "image": "renders/rig-villain-male-A-body.png",
+   "code": "\"villain-male-A@960 sit smirk\"  \"villain-male-A@960 sit yaw=0.55 angry armR=out\"  \"villain-male-A@960 crouch wary\""
   },
   {
-   "id": "woman-back",
-   "image": "renders/woman-back.png",
-   "code": "<Sprite id=\"woman-back\" />"
+   "id": "police-A-body",
+   "label": "เครื่องแบบครบทุกท่า",
+   "image": "renders/rig-police-A-body.png",
+   "code": "\"police-A@960 sit tired\"  \"police-A@960 sit yaw=-0.5 armL=hold prop=paper wary\"  \"police-A@960 lie sleep\""
   },
   {
-   "id": "woman-sit",
-   "image": "renders/woman-sit.png",
-   "code": "<Sprite id=\"woman-sit\" />"
+   "id": "mother-B-body",
+   "label": "กระโปรงยาว · แว่น",
+   "image": "renders/rig-mother-B-body.png",
+   "code": "\"mother-B@960 sit worried\"  \"mother-B@960 sit yaw=0.5 armR=chest sad\"  \"mother-B@960 crouch scared\""
   },
   {
-   "id": "monk-sit",
-   "image": "renders/monk-sit.png",
-   "code": "<Sprite id=\"monk-sit\" />"
+   "id": "younger-sister-A-body",
+   "label": "เด็ก · โครง 200×420",
+   "image": "renders/rig-younger-sister-A-body.png",
+   "code": "\"younger-sister-A@960 sit happy\"  \"younger-sister-A@960 sit yaw=0.55 worried\"  \"younger-sister-A@960 crouch scared\""
   },
   {
-   "id": "auntie-sit",
-   "image": "renders/auntie-sit.png",
-   "code": "<Sprite id=\"auntie-sit\" />"
+   "id": "maternal-grandfather-A-body",
+   "label": "หมอฮ้อม ผ้าขาวม้า · ผู้สูงอายุ",
+   "image": "renders/rig-maternal-grandfather-A-body.png",
+   "code": "\"maternal-grandfather-A@960 sit tired\"  \"maternal-grandfather-A@960 sit yaw=0.5 armR=chin worried\"  \"maternal-grandfather-A@960 lie sleep\""
   },
   {
-   "id": "arm-r-hold",
-   "image": "renders/arm-r-hold.png",
-   "code": "<Sprite id=\"man\" hideArmR layers={['arm-r-hold']} />"
+   "id": "lead-male-A-turn",
+   "label": "หัน 3/4 · แจ็กเก็ต กระเป๋าอก นาฬิกา",
+   "image": "renders/rig-lead-male-A-turn.png",
+   "code": "\"lead-male-A@960 yaw=-0.5\"  \"lead-male-A@960 yaw=0.5\""
   },
   {
-   "id": "arm-r-chest",
-   "image": "renders/arm-r-chest.png",
-   "code": "<Sprite id=\"man\" hideArmR layers={['arm-r-chest']} />"
+   "id": "lead-male-A-act",
+   "label": "ยก / ถือโทรศัพท์ · โบก · เอื้อม ชี้",
+   "image": "renders/rig-lead-male-A-act.png",
+   "code": "\"lead-male-A@960 yaw=-0.5 armR=raise armL=hold prop=phone worried\"  \"lead-male-A@960 armR=wave armL=chest happy\"  \"lead-male-A@960 yaw=0.5 armR=reach armL=point head=-6 look=0.8\""
   },
   {
-   "id": "arm-r-offer",
-   "image": "renders/arm-r-offer.png",
-   "code": "<Sprite id=\"man\" hideArmR layers={['arm-r-offer']} />"
+   "id": "lead-female-A-turn",
+   "label": "หัน 3/4 · ผมบ๊อบ ผมยาวด้านหลัง",
+   "image": "renders/rig-lead-female-A-turn.png",
+   "code": "\"lead-female-A@960 yaw=-0.5\"  \"lead-female-A@960 yaw=0.5\""
   },
   {
-   "id": "arm-r-raise",
-   "image": "renders/arm-r-raise.png",
-   "code": "<Sprite id=\"man\" hideArmR layers={['arm-r-raise']} />"
+   "id": "lead-female-A-act",
+   "label": "ปิดปาก · เท้าเอว · ยื่นกุญแจ",
+   "image": "renders/rig-lead-female-A-act.png",
+   "code": "\"lead-female-A@960 yaw=-0.45 armL=mouth shock\"  \"lead-female-A@960 armL=hip armR=face sad\"  \"lead-female-A@960 yaw=0.5 armR=offer prop=key armL=rest\""
   },
   {
-   "id": "arm-r-pocket",
-   "image": "renders/arm-r-pocket.png",
-   "code": "<Sprite id=\"man\" hideArmR layers={['arm-r-pocket']} />"
+   "id": "villain-male-B-act",
+   "label": "แขนสั้น · รอยสักตามแขน",
+   "image": "renders/rig-villain-male-B-act.png",
+   "code": "\"villain-male-B@960 yaw=-0.4 armL=reach armR=hip angry\"  \"villain-male-B@960 armR=150,-30 armL=pocket smirk\"  \"villain-male-B@960 yaw=0.5 armR=out armL=chest wary\""
   },
   {
-   "id": "arm-r-carry",
-   "image": "renders/arm-r-carry.png",
-   "code": "<Sprite id=\"man\" hideArmR layers={['arm-r-carry']} />"
+   "id": "father-A-act",
+   "label": "ชุด cotton · แว่น · นาฬิกาข้อมือซ้าย",
+   "image": "renders/rig-father-A-act.png",
+   "code": "\"father-A@960 yaw=-0.5 armR=chin armL=hold prop=paper\"  \"father-A@960 armR=head armL=rest tired\"  \"father-A@960 yaw=0.5 armL=offer armR=hold prop=glass\""
   },
   {
-   "id": "arm-r-reach",
-   "image": "renders/arm-r-reach.png",
-   "code": "<Sprite id=\"man\" hideArmR layers={['arm-r-reach']} />"
+   "id": "mother-B-act",
+   "label": "กระโปรง · กระเป๋าผ้า · แว่น",
+   "image": "renders/rig-mother-B-act.png",
+   "code": "\"mother-B@960 yaw=-0.5 armR=lap armL=lap worried\"  \"mother-B@960 armR=wave armL=hip\"  \"mother-B@960 yaw=0.5 armR=reach head=8 scared\""
+  },
+  {
+   "id": "younger-sister-A-act",
+   "label": "เด็ก · โครง 200×420",
+   "image": "renders/rig-younger-sister-A-act.png",
+   "code": "\"younger-sister-A@960 yaw=-0.5 armR=raise armL=raise happy\"  \"younger-sister-A@960 armR=mouth armL=chest scared\"  \"younger-sister-A@960 yaw=0.5 armR=point armL=rest\""
+  },
+  {
+   "id": "police-A-act",
+   "label": "ชุดตำรวจ · นาฬิกา",
+   "image": "renders/rig-police-A-act.png",
+   "code": "\"police-A@960 yaw=-0.5 armR=raise armL=rest angry\"  \"police-A@960 armR=hold armL=hold prop=flashlight\"  \"police-A@960 yaw=0.5 armR=point armL=hip wary\""
+  },
+  {
+   "id": "elder-turn",
+   "label": "หัวที่วาดเอง: หันทั้งหัว · มือขวาถือเทียน",
+   "image": "renders/rig-elder-turn.png",
+   "code": "\"elder@960 yaw=-0.5 armL=chest\"  \"elder@960 armL=wave\"  \"elder@960 yaw=0.5 armL=hold\""
+  }
+ ],
+ "talk": [
+  {
+   "face": "",
+   "who": "lead-male-A",
+   "label": "ปกติ · ไม่ใส่สีหน้า",
+   "id": "talk-0",
+   "image": "renders/talk-0-plain.png",
+   "code": "\"lead-male-A@900 talk\""
+  },
+  {
+   "face": "happy",
+   "who": "lead-male-A",
+   "label": "ยิ้มพูด · happy laugh smirk grin",
+   "id": "talk-1",
+   "image": "renders/talk-1-happy.png",
+   "code": "\"lead-male-A@900 happy talk\""
+  },
+  {
+   "face": "sad",
+   "who": "lead-female-A",
+   "label": "เศร้า ห่วง กลัว · sad cry worried scared guilty tired",
+   "id": "talk-2",
+   "image": "renders/talk-2-sad.png",
+   "code": "\"lead-female-A@900 sad talk\""
+  },
+  {
+   "face": "angry",
+   "who": "villain-male-A",
+   "label": "ตึง โกรธ · angry wary",
+   "id": "talk-3",
+   "image": "renders/talk-3-angry.png",
+   "code": "\"villain-male-A@900 angry talk\""
+  },
+  {
+   "face": "shock",
+   "who": "lead-male-A",
+   "label": "ตกใจ · shock",
+   "id": "talk-4",
+   "image": "renders/talk-4-shock.png",
+   "code": "\"lead-male-A@900 shock talk\""
   }
  ],
  "props": [
   {
-   "id": "prop-glass",
-   "image": "renders/prop-glass.png",
-   "code": "<Sprite id=\"prop-glass\" />"
-  },
-  {
-   "id": "prop-coin",
-   "image": "renders/prop-coin.png",
-   "code": "<Sprite id=\"prop-coin\" />"
-  },
-  {
    "id": "prop-phone",
    "image": "renders/prop-phone.png",
-   "code": "<Sprite id=\"prop-phone\" />"
-  },
-  {
-   "id": "prop-paper",
-   "image": "renders/prop-paper.png",
-   "code": "<Sprite id=\"prop-paper\" />"
-  },
-  {
-   "id": "prop-key",
-   "image": "renders/prop-key.png",
-   "code": "<Sprite id=\"prop-key\" />"
+   "code": "\"who@900 armR=hold prop=phone\""
   },
   {
    "id": "prop-flashlight",
    "image": "renders/prop-flashlight.png",
-   "code": "<Sprite id=\"prop-flashlight\" />"
+   "code": "\"who@900 armR=hold prop=flashlight\""
+  },
+  {
+   "id": "prop-book",
+   "image": "renders/prop-book.png",
+   "code": "\"who@900 armR=hold prop=book\""
+  },
+  {
+   "id": "prop-paper",
+   "image": "renders/prop-paper.png",
+   "code": "\"who@900 armR=hold prop=paper\""
+  },
+  {
+   "id": "prop-key",
+   "image": "renders/prop-key.png",
+   "code": "\"who@900 armR=hold prop=key\""
+  },
+  {
+   "id": "prop-lantern",
+   "image": "renders/prop-lantern.png",
+   "code": "\"who@900 armR=hold prop=lantern\""
+  },
+  {
+   "id": "prop-mug",
+   "image": "renders/prop-mug.png",
+   "code": "\"who@900 armR=hold prop=mug\""
+  },
+  {
+   "id": "prop-fan",
+   "image": null,
+   "code": "\"who@900 armR=hold prop=fan\""
+  },
+  {
+   "id": "prop-phone-ear",
+   "image": null,
+   "code": "\"who@900 armR=hold prop=phone-ear\""
+  },
+  {
+   "id": "prop-glass",
+   "image": "renders/prop-glass.png",
+   "code": "\"who@900 armR=hold prop=glass\""
   },
   {
    "id": "prop-bowl",
    "image": "renders/prop-bowl.png",
-   "code": "<Sprite id=\"prop-bowl\" />"
+   "code": "\"who@900 armR=hold prop=bowl\""
+  },
+  {
+   "id": "prop-spoon",
+   "image": "renders/prop-spoon.png",
+   "code": "\"who@900 armR=hold prop=spoon\""
+  },
+  {
+   "id": "prop-coin",
+   "image": "renders/prop-coin.png",
+   "code": "\"who@900 armR=hold prop=coin\""
   },
   {
    "id": "prop-box",
    "image": "renders/prop-box.png",
-   "code": "<Sprite id=\"prop-box\" />"
+   "code": "\"who@900 armR=hold prop=box\""
   },
   {
-   "id": "icon-clock",
-   "image": "renders/icon-clock.png",
-   "code": "<Sprite id=\"icon-clock\" />"
-  },
-  {
-   "id": "icon-warn",
-   "image": "renders/icon-warn.png",
-   "code": "<Sprite id=\"icon-warn\" />"
-  },
-  {
-   "id": "icon-check",
-   "image": "renders/icon-check.png",
-   "code": "<Sprite id=\"icon-check\" />"
-  },
-  {
-   "id": "icon-cross",
-   "image": "renders/icon-cross.png",
-   "code": "<Sprite id=\"icon-cross\" />"
-  },
-  {
-   "id": "icon-arrow",
-   "image": "renders/icon-arrow.png",
-   "code": "<Sprite id=\"icon-arrow\" />"
-  },
-  {
-   "id": "icon-pin",
-   "image": "renders/icon-pin.png",
-   "code": "<Sprite id=\"icon-pin\" />"
-  },
-  {
-   "id": "icon-fire",
-   "image": "renders/icon-fire.png",
-   "code": "<Sprite id=\"icon-fire\" />"
-  },
-  {
-   "id": "set-door",
-   "image": "renders/set-door.png",
-   "code": "<Sprite id=\"set-door\" />"
-  },
-  {
-   "id": "set-door-open",
-   "image": "renders/set-door-open.png",
-   "code": "<Sprite id=\"set-door-open\" />"
-  },
-  {
-   "id": "set-window",
-   "image": "renders/set-window.png",
-   "code": "<Sprite id=\"set-window\" />"
-  },
-  {
-   "id": "set-table",
-   "image": "renders/set-table.png",
-   "code": "<Sprite id=\"set-table\" />"
-  },
-  {
-   "id": "set-chair",
-   "image": "renders/set-chair.png",
-   "code": "<Sprite id=\"set-chair\" />"
-  },
-  {
-   "id": "set-bulb",
-   "image": "renders/set-bulb.png",
-   "code": "<Sprite id=\"set-bulb\" />"
+   "id": "prop-wheel",
+   "image": "renders/prop-wheel.png",
+   "code": "\"who@900 armR=hold prop=wheel\""
   }
  ],
  "marks": [
@@ -2278,274 +2326,609 @@ window.STUDIO = {
    "image": "renders/ui-tags.png"
   }
  ],
- "scenes": [
-  {
-   "scene": "room",
-   "nameTh": "ห้องกลางคืน + กระจก",
-   "data": {
-    "hud": "03:00"
-   },
-   "use": "ฉากในห้อง เงาในกระจกคือเครื่องมือหักมุม",
-   "image": "renders/scene-0-room.png",
-   "code": "{\"scene\":\"room\",\"data\":{\"hud\":\"03:00\"}}"
-  },
-  {
-   "scene": "rules",
-   "view": "card",
-   "nameTh": "กฎ (การ์ด)",
-   "data": {
-    "no": "กฎข้อ 1",
-    "lines": [
-     "อย่าวิ่งลงบันได",
-     "ตามเพื่อน"
-    ]
-   },
-   "use": "ฉากกลางวัน + ป้ายชื่อ + การ์ดกฎตกลงมา",
-   "image": "renders/scene-1-rules-card.png",
-   "code": "{\"scene\":\"rules\",\"view\":\"card\",\"data\":{\"no\":\"กฎข้อ 1\",\"lines\":[\"อย่าวิ่งลงบันได\",\"ตามเพื่อน\"]}}"
-  },
-  {
-   "scene": "rules",
-   "view": "numbers",
-   "nameTh": "กฎ (ตัวเลข)",
-   "data": {},
-   "use": "ตัวเลขนับถอยหลัง มิเตอร์ เช็กลิสต์",
-   "image": "renders/scene-2-rules-numbers.png",
-   "code": "{\"scene\":\"rules\",\"view\":\"numbers\",\"data\":{}}"
-  },
-  {
-   "scene": "map",
-   "nameTh": "แผนที่มุมบน",
-   "data": {},
-   "use": "god view: จุดทึบ = คนเป็น, จุดประ = คุณ",
-   "image": "renders/scene-3-map.png",
-   "code": "{\"scene\":\"map\",\"data\":{}}"
-  },
-  {
-   "scene": "news",
-   "nameTh": "ข่าว/หลักฐาน",
-   "data": {},
-   "use": "ภาพเบลอค่อยชัด + วงแดง (เฉลย)",
-   "image": "renders/scene-4-news.png",
-   "code": "{\"scene\":\"news\",\"data\":{}}"
-  },
-  {
-   "scene": "next",
-   "nameTh": "ตอนต่อไป",
-   "data": {
-    "ep": "เมื่อไฟดับทั้งเมือง · EP 2"
-   },
-   "use": "การ์ดปิดซีรีส์ ปล่อยซับว่าง",
-   "image": "renders/scene-5-next.png",
-   "code": "{\"scene\":\"next\",\"data\":{\"ep\":\"เมื่อไฟดับทั้งเมือง · EP 2\"}}"
-  }
- ],
- "world": [
-  {
-   "id": "sky-night",
-   "nameTh": "ท้องฟ้ากลางคืน + แนวต้นไม้",
-   "code": "<Sky tone=\"night\" />",
-   "use": "dusk · night · dawn · morning (คนละ tone)",
-   "image": "renders/world-sky-night.png"
-  },
-  {
-   "id": "sky-dusk",
-   "nameTh": "ท้องฟ้าเย็น",
-   "code": "<Sky tone=\"dusk\" />",
-   "use": "ย้อนเวลา / ก่อนค่ำ",
-   "image": "renders/world-sky-dusk.png"
-  },
-  {
-   "id": "sky-dawn",
-   "nameTh": "ท้องฟ้ารุ่งเช้า",
-   "code": "<Sky tone=\"dawn\" />",
-   "use": "ฉากจบ / เช้าวันใหม่",
-   "image": "renders/world-sky-dawn.png"
-  },
-  {
-   "id": "sky-morning",
-   "nameTh": "ท้องฟ้าเช้า",
-   "code": "<Sky tone=\"morning\" />",
-   "use": "ฉากโล่ง หลังเรื่องจบ",
-   "image": "renders/world-sky-morning.png"
-  },
-  {
-   "id": "planks-boards",
-   "nameTh": "ผนังไม้ + พื้นไม้",
-   "code": "<Planks /><Boards />",
-   "use": "พื้นฐานของห้อง / กุฏิ / ทางเดิน",
-   "image": "renders/world-planks-boards.png"
-  },
-  {
-   "id": "gate-dusk",
-   "nameTh": "ประตูวัด (เย็น)",
-   "code": "<Gate tone=\"dusk\" sign=\"วัดโคกตะเคียน\" />",
-   "use": "sign = ชื่อวัด · year 0–9 = ไทม์แลปส์ผนังเก่า/ต้นไม้โต · open = ประตูเปิดกว้างแค่ไหน",
-   "image": "renders/world-gate-dusk.png"
-  },
-  {
-   "id": "gate-night",
-   "nameTh": "ประตูวัด (กลางคืน)",
-   "code": "<Gate tone=\"night\" sign=\"…\" />",
-   "use": "ฉากหน้าประตูตอนค่ำ",
-   "image": "renders/world-gate-night.png"
-  },
-  {
-   "id": "gate-morning",
-   "nameTh": "ประตูวัด (เช้า)",
-   "code": "<Gate tone=\"morning\" sign=\"…\" />",
-   "use": "ฉากจบ",
-   "image": "renders/world-gate-morning.png"
-  },
-  {
-   "id": "road",
-   "nameTh": "ถนนมองออกจากประตู",
-   "code": "<Road tone=\"dusk\" />",
-   "use": "มองจากในวัดออกไป · voided = ไม่มีอะไรอยู่ข้างนอกเลย",
-   "image": "renders/world-road.png"
-  },
-  {
-   "id": "road-voided",
-   "nameTh": "ถนนว่างเปล่า",
-   "code": "<Road tone=\"night\" voided />",
-   "use": "เสาไฟหายไป ท้องฟ้าสีดำ",
-   "image": "renders/world-road-voided.png"
-  },
-  {
-   "id": "sala",
-   "nameTh": "ศาลา",
-   "code": "<Sala />",
-   "use": "ศาลาโล่ง หลังคากระเบื้อง เสาขาว เสื่อ",
-   "image": "renders/world-sala.png"
-  },
-  {
-   "id": "path",
-   "nameTh": "ทางเดินในวัดตอนกลางคืน",
-   "code": "<Path f={f} mud={0} />",
-   "use": "ต้นตะเคียนผูกผ้าแดง เสาไฟ ทางคอนกรีต · mud = พื้นเปียกโคลน",
-   "image": "renders/world-path.png"
-  },
-  {
-   "id": "bench",
-   "nameTh": "ม้านั่งหน้าครัว",
-   "code": "<BenchSet f={f} tower />",
-   "use": "tower = เห็นหอระฆังไกล ๆ ด้านขวา",
-   "image": "renders/world-bench.png"
-  },
-  {
-   "id": "tower",
-   "nameTh": "หอระฆัง",
-   "code": "<TowerShape x={960} y={100} f={f} swing={4} ropeSwing={2} />",
-   "use": "swing = ระฆังแกว่ง · ropeSwing = เชือก · far = เงาไกล",
-   "image": "renders/world-tower.png"
-  },
-  {
-   "id": "well",
-   "nameTh": "บ่อน้ำเก่า",
-   "code": "<WellSet f={f} />",
-   "use": "ตะแกรงเหล็ก ใบกล้วย ใบไม้เปียกรอบขอบบ่อ",
-   "image": "renders/world-well.png"
-  },
-  {
-   "id": "corridor",
-   "nameTh": "ทางเดินระหว่างกุฏิ",
-   "code": "<Corridor f={f} drip={0.5} />",
-   "use": "หลอดไฟกะพริบ · drip = พื้นเปียก",
-   "image": "renders/world-corridor.png"
-  },
-  {
-   "id": "porch",
-   "nameTh": "ระเบียงกุฏิ",
-   "code": "<Porch f={f} />",
-   "use": "ผนังไม้ ประตู ราวระเบียง",
-   "image": "renders/world-porch.png"
-  }
- ],
  "places": [
   {
+   "id": "gas-station",
+   "nameTh": "ปั๊มน้ำมันริมถนนหลวง",
+   "code": "<GasStation f={f} view=\"front\" tone=\"night\" neon=\"on\" />  // view=\"back\" gate=\"opening\" · truck · patrol · kit/gasstation.tsx",
+   "uses": "GasStation",
+   "cams": "ถนนกว้าง · ข้ามไหล่สองคน · ใกล้ · CCTV ใต้หลังคา · ผ่านสายหัวจ่าย",
+   "good": "ไฟนีออนเป็นแสงหลัก ใช้ neon=\"flick\" ก่อนเกิดเรื่อง",
+   "bad": "ฉากกลางวันสว่างจ้า: ของเด่นคือป้ายไฟ",
+   "tier": "a",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/place-gas-station.png"
+  },
+  {
+   "id": "gas-station-back",
+   "nameTh": "ปั๊ม: หลังร้าน ประตูสังกะสี",
+   "code": "<GasStation f={f} view=\"back\" gate=\"opening\" />",
+   "uses": "GasStation",
+   "cams": "จากหัวจ่ายมองประตูหลัง · ผ่านช่องประตู",
+   "good": "ทางเข้าที่ไม่ควรเปิด คนมาจากข้างหลัง",
+   "bad": "ฉากที่ต้องเห็นหน้าคนชัด: แสงอยู่หลังเขา",
+   "tier": "a",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/place-gas-station-back.png"
+  },
+  {
+   "id": "checkpoint",
+   "nameTh": "ด่านตำรวจปากซอย",
+   "code": "<Checkpoint f={f} raise={0} />  // empty · beaconColor(f) ไฟหมุน · kit/checkpoint.tsx",
+   "uses": "Checkpoint",
+   "cams": "ต่ำจากกรวย · ข้ามไหล่ตำรวจ · สายตาตำรวจมองท้ายรถ",
+   "good": "ไฟไซเรนแดง-น้ำเงินกวาดหน้า สลับสีทุกช็อตได้",
+   "bad": "งานเดินกล้องยาว: ไฟหมุนกะพริบทั้งเฟรม",
+   "tier": "a",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/place-checkpoint.png"
+  },
+  {
+   "id": "cemetery-road",
+   "nameTh": "ถนนลูกรังเข้าสุสาน + ซุ้มประตู",
+   "code": "<CemeteryRoad f={f} tone=\"night\" horizon={470} fog /><CemeteryGate x y s aged />  // tone: night | day | dawn · kit/cemetery.tsx",
+   "uses": "CemeteryRoad",
+   "cams": "กว้างในหมอก · ต่ำจากล้อ · ซุ้มจากล่าง · แสงไฟหน้ารถ",
+   "good": "แสงจากไฟหน้ารถเท่านั้น ฉากหลังหายในหมอก",
+   "bad": "ฉากต้องเล่าเยอะ: โล่งมาก ต้องมีคนหรือรถเป็นจุดเด่น",
+   "tier": "a",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/place-cemetery-road.png"
+  },
+  {
+   "id": "sala-8",
+   "nameTh": "ศาลาแปดเหลี่ยมในป่าช้า",
+   "code": "<Sala8 x y s tone=\"night\" box=\"placed\" lit={0.8} />  // box: none | placed | open | can",
+   "uses": "Sala8",
+   "cams": "กว้างผ่านหมอก · ผ่านเสา · โต๊ะจากบน · มุมสูงจากหลังคา",
+   "good": "ที่วางของ จุดนัดพบ แสงตกที่โต๊ะกลาง",
+   "bad": "บทสนทนาหลายคน: พื้นที่เล็ก",
+   "tier": "a",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/place-sala-8.png"
+  },
+  {
+   "id": "caretaker-hut",
+   "nameTh": "กระท่อมคนเฝ้าสุสาน (กลางวัน)",
+   "code": "<CaretakerHut x y s tone=\"day\" door=\"open\" lantern={0} />  <HutBench />  <Dapple />  <SunRake />  // hutAt() ให้จุดยืน · tone: day | dusk | night",
+   "uses": "CaretakerHut",
+   "cams": "กว้างใต้ต้นไม้ · ต่ำจากประตู · ใกล้ · ข้ามไหล่บนแคร่",
+   "good": "พักความมืดให้คนดู แดดลอดใบไม้ ของในบ้านเป็นเบาะแส",
+   "bad": "ฉากที่ต้องน่ากลัวตลอด: เป็นฉากสว่าง ถ้ากลางคืนใช้ lantern",
+   "tier": "a",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/place-caretaker-hut.png"
+  },
+  {
+   "id": "rented-room",
+   "nameTh": "ห้องเช่าแคบ (ในมุมมองจริง)",
+   "code": "<RentedRoom r={RENTED_ROOM.ROOM} screen tube={false} dawn={0} />  // HIGH · CORNER = ตำแหน่งกล้อง · BED_EDGE = จุดนั่ง · kit/rentedroom.tsx",
+   "uses": "RentedRoom",
+   "cams": "จากประตู · จากเพดาน · จากมุมห้อง · ใกล้ขอบเตียง",
+   "good": "แสงเลือกได้ 3 แหล่ง: จอโน้ตบุ๊ก หลอดนีออน หน้าต่างรุ่งสาง",
+   "bad": "บ้านฐานะดี ครอบครัวหลายคน: แคบ คนเดียวเท่านั้น",
+   "tier": "a",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/place-rented-room.png"
+  },
+  {
+   "id": "highway-road",
+   "nameTh": "ถนนทางหลวงกลางคืน + คนขี่",
+   "code": "<SideRoadSet tone=\"night\" frame={f} moving />  <Motorcycle x y rider={{...}} />  // tone: dusk | night | day · กฎข้อ 11",
+   "uses": "SideRoadSet",
+   "cams": "ข้างถนน · ต่ำจากล้อ · ไหล่คนขี่ · ไฟหน้าบนถนน · กระจกมองข้าง",
+   "good": "ฉากเดินทาง เล่าเวลาผ่าน คนขี่ท่าเดียวกันทุกเรื่อง",
+   "bad": "มุมหน้าตรง: รถวาดด้านข้าง ใช้มุมต่ำหรือ POV แทน",
+   "tier": "a",
+   "usedIn": [
+    "ghost-money",
+    "rear-cam"
+   ],
+   "image": "renders/place-highway-road.png"
+  },
+  {
    "id": "shop-row",
-   "nameTh": "ร้านค้าแถว / ตลาด",
-   "code": "<ShopRow tone=\"day\" />  // หรือ tone=\"dusk\" | \"night\"",
-   "use": "ร้านค้าห้องแถว ตลาดสดริมทาง · เปลี่ยน tone กลางวัน/พลบค่ำ/กลางคืนได้",
+   "nameTh": "ห้องแถว / ตลาด",
+   "code": "<ShopRow tone=\"night\" f={f} signs={[...]} open={[...]} />  // tone: day | dusk | night",
+   "uses": "ShopRow",
+   "cams": "กว้างจากถนน · ต่ำจากประตูเหล็กม้วน · ใกล้",
+   "good": "ถนนร้านปิดตอนดึก คนหนึ่งคนยืนใต้ไฟ",
+   "bad": "ฉากในร้าน: เป็นภาพหน้าร้านด้านเดียว ต้องสร้างห้องเพิ่ม",
+   "tier": "a",
+   "usedIn": [
+    "rain-night",
+    "rear-cam"
+   ],
    "image": "renders/place-shop-row.png"
+  },
+  {
+   "id": "child-room",
+   "nameTh": "ห้องนอนเด็ก",
+   "code": "<ChildRoom f={f} wall=\"#cfa98a\" blanket=\"rocket\" under=\"shoe\" reflect=\"girl\" door=\"closed\" />  // CHILD_ROOM_CAMS",
+   "uses": "ChildRoom",
+   "cams": "ตาม CHILD_ROOM_CAMS: room · bed · frame · ใต้เตียง",
+   "good": "ห้องเดิมหลายบ้าน เปลี่ยนสีฝา ผ้าห่ม ของใต้เตียง",
+   "bad": "ห้องวัยรุ่น ผู้ใหญ่: ของในห้องเป็นของเด็ก",
+   "tier": "b",
+   "usedIn": [
+    "same-child"
+   ],
+   "image": "renders/place-child-room.png"
+  },
+  {
+   "id": "wood-kitchen",
+   "nameTh": "บ้านไม้: ครัว",
+   "code": "<WoodRoom view=\"kitchen\" paper={...} />  // view: kitchen | dining | hall | closet · kit/village.tsx",
+   "uses": "WoodRoom",
+   "cams": "ระยะกลาง ใกล้ · ภาพกว้างยังแบน ใช้เป็นฉากหลังระยะใกล้",
+   "good": "บ้านไม้ชนบท ฉากครอบครัวคุยกัน",
+   "bad": "ภาพกว้างเปิดเรื่อง: เป็นภาพด้านหน้าแบน ควรสร้างด้วย room.tsx",
+   "tier": "b",
+   "usedIn": [
+    "same-child"
+   ],
+   "image": "renders/place-wood-kitchen.png"
+  },
+  {
+   "id": "wood-closet",
+   "nameTh": "บ้านไม้: ตู้เสื้อผ้า",
+   "code": "<WoodRoom view=\"closet\" jacket />",
+   "uses": "WoodRoom",
+   "cams": "ใกล้ · ผ่านประตูตู้",
+   "good": "ของในตู้เป็นเบาะแส jacket = เสื้อมีรอยปะ",
+   "bad": "ใช้เป็นฉากหลังยาวนาน: มีจุดสนใจจุดเดียว",
+   "tier": "b",
+   "usedIn": [
+    "same-child"
+   ],
+   "image": "renders/place-wood-closet.png"
+  },
+  {
+   "id": "house-front",
+   "nameTh": "หน้าบ้านไม้ ประตูแง้ม",
+   "code": "<HouseFront c=\"#b98a62\" open={0.6} night />",
+   "uses": "HouseFront",
+   "cams": "จากรั้ว · ใกล้คนหน้าประตู · ผ่านตาแมว (Pov)",
+   "good": "มาถึงบ้าน ประตูเปิดค้าง แสงจากในบ้าน",
+   "bad": "บ้านในเมือง: เป็นบ้านไม้ชนบท",
+   "tier": "b",
+   "usedIn": [
+    "same-child"
+   ],
+   "image": "renders/place-house-front.png"
+  },
+  {
+   "id": "car-cabin",
+   "nameTh": "ในรถเก๋ง: คนขับ",
+   "code": "<CarInterior view=\"drive\" f={f} night moving />  <CarWheel />  <Actors floor={DRIVER.floor} pxPerCm={DRIVER.pxPerCm} />  <CarKnee />  // arm=b-wheel prop=wheel",
+   "uses": "CarInterior",
+   "cams": "จากฝากระโปรง · กระจกมองหลัง (MirrorFrame)",
+   "good": "คุยกันในรถ เดินทางกลางคืน",
+   "bad": "มุมจากเบาะหลัง: ยังไม่มี ต้องวาดเพิ่ม",
+   "tier": "b",
+   "usedIn": [
+    "same-child"
+   ],
+   "image": "renders/place-car-cabin.png"
+  },
+  {
+   "id": "car-seat",
+   "nameTh": "ในรถเก๋ง: เบาะข้างคนขับ",
+   "code": "<CarInterior view=\"seat\" f={f} seat=\"torn\" />  // seat=\"new\"",
+   "uses": "CarInterior",
+   "cams": "ใกล้ · insert บนเบาะ",
+   "good": "เบาะแสที่เบาะ ใช้ seat=\"new\"/\"torn\" เล่าเวลาที่ผ่าน",
+   "bad": "ฉากมีคนนั่ง: วาดไว้ไม่มีคน",
+   "tier": "b",
+   "usedIn": [
+    "same-child"
+   ],
+   "image": "renders/place-car-seat.png"
+  },
+  {
+   "id": "car-outside",
+   "nameTh": "รถเก๋ง + กระบะตำรวจ",
+   "code": "<CarOutside x={1360} camera />  <PoliceTruck x={300} f={f} />",
+   "uses": "CarOutside",
+   "cams": "ด้านข้างเท่านั้น",
+   "good": "ตำรวจมาถึง รถจอดหน้าบ้าน",
+   "bad": "รถวิ่งเข้าหากล้อง: วาดด้านข้าง",
+   "tier": "b",
+   "usedIn": [
+    "same-child"
+   ],
+   "image": "renders/place-car-outside.png"
+  },
+  {
+   "id": "school-front",
+   "nameTh": "โรงเรียนชนบท: หน้าอาคาร",
+   "code": "<SchoolFront sign=\"โรงเรียนบ้านท่าน้อย\" />  <StaffBoard />",
+   "uses": "SchoolFront",
+   "cams": "กว้างเปิดฉาก · ป้ายชื่อใกล้",
+   "good": "ฉากเปิดสถานที่ กลางวัน",
+   "bad": "ฉากกลางคืน: ไม่มีไฟในภาพ",
+   "tier": "b",
+   "usedIn": [
+    "same-child"
+   ],
+   "image": "renders/place-school-front.png"
+  },
+  {
+   "id": "school-office",
+   "nameTh": "โรงเรียน: ห้องธุรการ",
+   "code": "<SchoolRoom view=\"office\" f={f} />  // view=\"hall\" · <OfficeDesk /> หน้าคน",
+   "uses": "SchoolRoom",
+   "cams": "ระยะกลาง ใกล้",
+   "good": "ค้นเอกสาร คุยกับครู",
+   "bad": "ภาพกว้าง: ผนังโล่ง แบน",
+   "tier": "b",
+   "usedIn": [
+    "same-child"
+   ],
+   "image": "renders/place-school-office.png"
+  },
+  {
+   "id": "school-store",
+   "nameTh": "โรงเรียน: ห้องเก็บอุปกรณ์",
+   "code": "<SchoolStore f={f} camera envelopes={6} />  // reach = มือล้วงหลังตู้",
+   "uses": "SchoolStore",
+   "cams": "ใกล้ตู้ · insert ของในตู้",
+   "good": "ฉากค้นหา เบาะแสในตู้กระจก",
+   "bad": "ห้องทั่วไป: ของเฉพาะเรื่องเยอะ",
+   "tier": "b",
+   "usedIn": [
+    "same-child"
+   ],
+   "image": "renders/place-school-store.png"
+  },
+  {
+   "id": "copy-shop",
+   "nameTh": "ร้านถ่ายเอกสาร",
+   "code": "<CopyCounter f={f} />",
+   "uses": "CopyCounter",
+   "cams": "ข้ามเคาน์เตอร์ ระยะกลาง",
+   "good": "คุยกับคนขาย ตามหาเอกสาร",
+   "bad": "ภาพกว้าง: ฉากหน้าตรง",
+   "tier": "b",
+   "usedIn": [
+    "same-child"
+   ],
+   "image": "renders/place-copy-shop.png"
+  },
+  {
+   "id": "dark-passage",
+   "nameTh": "ทางเดินมืดหลังผนัง",
+   "code": "<DarkPassage f={f} view=\"passage\" from=\"left\" />  // view: passage | line | deep | meet",
+   "uses": "DarkPassage",
+   "cams": "ทุก view เป็นคนละตำแหน่งกล้องในทางเดินเดียว",
+   "good": "เผยที่ซ่อน แสงเข้าทางเดียว มืดที่สุดของเรื่อง",
+   "bad": "ฉากที่ต้องเห็นรายละเอียด",
+   "tier": "b",
+   "usedIn": [
+    "same-child"
+   ],
+   "image": "renders/place-dark-passage.png"
   },
   {
    "id": "stilt-house",
    "nameTh": "บ้านไม้ใต้ถุนสูง",
-   "code": "<StiltHouse tone=\"night\" />  // หรือ tone=\"day\" | \"dusk\"",
-   "use": "บ้านไม้ชนบทไทย ชานเรือน บันไดไม้ · เปลี่ยน tone ได้",
+   "code": "<StiltHouse tone=\"night\" f={f} far />",
+   "uses": "StiltHouse",
+   "cams": "จากลานไกล ๆ เท่านั้น",
+   "good": "ภาพเปิดฉากชนบทกลางคืน ไฟจากในบ้าน",
+   "bad": "ระยะใกล้: เป็นฉากไกล ไม่มีรายละเอียด",
+   "tier": "b",
+   "usedIn": [
+    "same-child"
+   ],
    "image": "renders/place-stilt-house.png"
   },
   {
    "id": "canal",
-   "nameTh": "ริมคลอง / สะพานปูน",
-   "code": "<Canal tone=\"dusk\" />  // หรือ tone=\"day\" | \"night\"",
-   "use": "คลองไทย สะพานปูน เสาไฟและเสาโทรเลข · เปลี่ยน tone ได้",
+   "nameTh": "ริมคลอง สะพานปูน",
+   "code": "<Canal tone=\"dusk\" f={f} />",
+   "uses": "Canal",
+   "cams": "จากฝั่ง ระยะกลาง",
+   "good": "เรื่องน้ำ คนหาย เย็นย่ำ",
+   "bad": "เล่นฉากต่อเนื่องยาว: เป็นฉากด้านเดียว",
+   "tier": "b",
+   "usedIn": [
+    "rain-night",
+    "same-child"
+   ],
    "image": "renders/place-canal.png"
+  }
+ ],
+ "parts": [
+  {
+   "id": "graves",
+   "nameTh": "หลุมศพไทย",
+   "code": "<Grave x y s tone kind={0} lean={-5} />",
+   "uses": "Grave",
+   "use": "kind 0-2 · ใส่ ink สำหรับภาพกล้องหลัง · วางเรียงตามแนวถนน",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/part-graves.png"
   },
   {
-   "id": "spirit-house",
-   "nameTh": "ศาลพระภูมิ",
-   "code": "<SpiritHouse tone=\"night\" />  // หรือ tone=\"day\" | \"dusk\"",
-   "use": "ศาลพระภูมิริมรั้ว จานเครื่องเซ่น ธูปเทียน · เปลี่ยน tone ได้",
-   "image": "renders/place-spirit-house.png"
+   "id": "tamarind",
+   "nameTh": "ต้นมะขามใหญ่",
+   "code": "<Tamarind x y s tone seed={1} />",
+   "uses": "Tamarind",
+   "use": "seed เปลี่ยนทรงต้น · ใช้กรอบฉากหน้าเป็นเงาดำได้",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/part-tamarind.png"
   },
   {
-   "id": "minimart",
-   "nameTh": "ร้านสะดวกซื้อ",
-   "code": "<Minimart tone=\"night\" />  // มืดไฟดับ: <Minimart tone=\"night\" dark />",
-   "use": "เคาน์เตอร์ กระจกร้านสะดวกซื้อ · มีโหมด dark สำหรับฉากไฟดับหรือสยองขวัญ",
-   "image": "renders/place-minimart.png"
+   "id": "cemetery-gate",
+   "nameTh": "ซุ้มประตูสุสาน",
+   "code": "<CemeteryGate x y s tone aged />",
+   "uses": "CemeteryGate",
+   "use": "aged = ไทม์แลปส์ปูนเก่า",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/part-cemetery-gate.png"
   },
   {
-   "id": "hospital",
-   "nameTh": "ทางเดินโรงพยาบาล",
-   "code": "<HospitalHall />  // ไฟกะพริบ/มีเตียง: <HospitalHall flick bed />",
-   "use": "โถงโรงพยาบาล ป้ายฉุกเฉิน ม้านั่ง · รองรับไฟกะพริบและเตียงเข็น",
-   "image": "renders/place-hospital.png"
+   "id": "sala-8-part",
+   "nameTh": "ศาลาแปดเหลี่ยม + โต๊ะ",
+   "code": "<Sala8 x y s tone box=\"open\" lit={0.7} />",
+   "uses": "Sala8",
+   "use": "salaTable(x, y, s) ให้จุดกลางโต๊ะ",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/part-sala-8-part.png"
   },
   {
-   "id": "classroom",
-   "nameTh": "ห้องเรียน",
-   "code": "<Classroom tone=\"day\" />  // หรือ tone=\"night\"",
-   "use": "กระดานดำ โต๊ะเรียนไม้ หน้าต่างเปิด · เปลี่ยน tone กลางวันหรือกลางคืนได้",
-   "image": "renders/place-classroom.png"
+   "id": "memorial",
+   "nameTh": "ป้ายไม้ข้างทาง",
+   "code": "<RoadsideMemorial x y s tone fresh name=\"ต้อม\" />",
+   "uses": "RoadsideMemorial",
+   "use": "fresh = ดอกไม้สด · ป้ายบอกเหตุเก่า",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/part-memorial.png"
   },
   {
-   "id": "dorm",
-   "nameTh": "หอพัก / ทางเดินห้องพัก",
-   "code": "<DormHall />",
-   "use": "ทางเดินหอพัก ประตูห้องเรียงแถว ป้ายเลขห้อง แสงไฟหลอดนีออน",
-   "image": "renders/place-dorm.png"
+   "id": "pressure-lantern",
+   "nameTh": "ตะเกียงเจ้าพายุ",
+   "code": "<PressureLantern x y s lit={1} soot />",
+   "uses": "PressureLantern",
+   "use": "lit 0-1 คือแหล่งแสงในเฟรม",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/part-pressure-lantern.png"
   },
   {
-   "id": "rice-field",
-   "nameTh": "ทุ่งนาชนบท",
-   "code": "<RiceField tone=\"dusk\" ripe />  // หรือ tone=\"day\"",
-   "use": "ท้องนา คันดิน รวงข้าวสุกสีทองและกระท่อมปลายนา · เปลี่ยน tone ได้",
-   "image": "renders/place-rice-field.png"
+   "id": "raincoat",
+   "nameTh": "เสื้อกันฝนแขวน",
+   "code": "<Raincoat x y s logo=\"17\" tag mud />",
+   "uses": "Raincoat",
+   "use": "logo · tag เป็นเบาะแสได้",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/part-raincoat.png"
   },
   {
-   "id": "bus-stop",
-   "nameTh": "ศาลารอรถเมล์",
-   "code": "<BusStop tone=\"night\" />  // หรือ tone=\"day\" | \"dusk\"",
-   "use": "ป้ายรถเมล์ริมถนน ม้านั่ง ป้ายตารางเดินรถ · เปลี่ยน tone ได้",
-   "image": "renders/place-bus-stop.png"
+   "id": "hut-bench",
+   "nameTh": "แคร่ไม้",
+   "code": "<HutBench x y s tone />",
+   "uses": "HutBench",
+   "use": "ให้ตัวละครนั่งบนแคร่ ใส่ sit",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/part-hut-bench.png"
   },
   {
-   "id": "highway-road",
-   "nameTh": "ถนนทางหลวง (ถนนเปลี่ยว)",
-   "code": "<SideRoadSet tone=\"dusk\" />  // หรือ tone=\"night\" | \"day\"",
-   "use": "ถนนทางหลวงชนบท เสาหลักกิโลและต้นไม้ · ใช้เดี่ยวๆ หรือนำ Prop มอเตอร์ไซค์มาวางซ้อนได้",
-   "image": "renders/place-highway-road.png"
+   "id": "helmet-shell",
+   "nameTh": "หมวกกันน็อก + กล้องติดหมวก",
+   "code": "<HelmetShell shield fog={0.2} />  <HelmetCams side rec f={f} />  // วาดในเฟรม 200×520",
+   "uses": "HelmetShell",
+   "use": "ซ้อนบนหัวตัวละคร · side = มุมข้าง · dead = ไฟกล้องดับ",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/part-helmet-shell.png"
+  },
+  {
+   "id": "helmet-back",
+   "nameTh": "หมวกจากด้านหลังเต็มเฟรม",
+   "code": "<HelmetBack f={f} rec cable tilt={-4} />",
+   "uses": "HelmetBack",
+   "use": "ภาพเต็มเฟรม · wet = เม็ดฝน",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/part-helmet-back.png"
+  },
+  {
+   "id": "helmet-seat",
+   "nameTh": "หมวกวางบนเบาะ",
+   "code": "<HelmetOnSeat f={f} rec rearDead />",
+   "uses": "HelmetOnSeat",
+   "use": "insert เต็มเฟรม",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/part-helmet-seat.png"
+  },
+  {
+   "id": "bar-screen",
+   "nameTh": "จอติดแฮนด์",
+   "code": "<BarScreen f={f} signal road=\"gravel\" label=\"● REAR\">{ภาพ}</BarScreen>",
+   "uses": "BarScreen",
+   "use": "ใส่ภาพในจอผ่าน children · signal=false จอดับ",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/part-bar-screen.png"
+  },
+  {
+   "id": "gold-pile",
+   "nameTh": "กองทอง",
+   "code": "<GoldPile x y s f={f} />",
+   "uses": "GoldPile",
+   "use": "ของจับแสงเอง",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/part-gold-pile.png"
+  },
+  {
+   "id": "motorcycle-parked",
+   "nameTh": "มอเตอร์ไซค์จอด",
+   "code": "<Motorcycle x y scale color helmetOnBike />",
+   "uses": "Motorcycle",
+   "use": "ไม่มี rider = รถจอด · กฎข้อ 11 ถ้ามีคนขี่",
+   "usedIn": [
+    "ghost-money",
+    "night-shift-rules",
+    "rear-cam"
+   ],
+   "image": "renders/part-motorcycle-parked.png"
+  },
+  {
+   "id": "sedan",
+   "nameTh": "รถเก๋งด้านข้าง (มืด)",
+   "code": "<Sedan x y s c lights />",
+   "uses": "Sedan",
+   "use": "kit/vehicles.tsx · จากแฟลชแบ็ก rear-cam",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/part-sedan.png"
+  },
+  {
+   "id": "fallen-bike",
+   "nameTh": "รถล้ม",
+   "code": "<FallenBike x y s rot={-78} />",
+   "uses": "FallenBike",
+   "use": "ภาพที่เกิดเหตุ",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/part-fallen-bike.png"
+  },
+  {
+   "id": "police-truck",
+   "nameTh": "กระบะตำรวจ",
+   "code": "<PoliceTruck x f={f} />",
+   "uses": "PoliceTruck",
+   "use": "ไฟไซเรนกะพริบตาม f · ยืนบน FLOOR",
+   "usedIn": [
+    "same-child"
+   ],
+   "image": "renders/part-police-truck.png"
+  },
+  {
+   "id": "car-side",
+   "nameTh": "รถเก๋งกล้องบนฝากระโปรง",
+   "code": "<CarOutside x camera />",
+   "uses": "CarOutside",
+   "use": "camera = กล้องหน้ารถ",
+   "usedIn": [
+    "same-child"
+   ],
+   "image": "renders/part-car-side.png"
+  },
+  {
+   "id": "child-things",
+   "nameTh": "ของเด็ก: รูป รองเท้า รถของเล่น",
+   "code": "<ChildPhoto kind=\"girl\" />  <KidShoe />  <ToyCar />",
+   "uses": "KidShoe",
+   "use": "insert เบาะแส · knot · missing เปลี่ยนรายละเอียดได้",
+   "usedIn": [
+    "same-child"
+   ],
+   "image": "renders/part-child-things.png"
+  },
+  {
+   "id": "wall-clock-part",
+   "nameTh": "นาฬิกาแขวน",
+   "code": "<WallClock x y t=\"03:52\" r={330} tick={1.2} />",
+   "uses": "WallClock",
+   "use": "เวลาเป็นเบาะแส",
+   "usedIn": [
+    "ghost-money",
+    "rain-night",
+    "temple-boy"
+   ],
+   "image": "renders/part-wall-clock-part.png"
+  },
+  {
+   "id": "office-chair",
+   "nameTh": "เก้าอี้สำนักงานล้อเลื่อน",
+   "code": "<OfficeChair x y s coat />",
+   "uses": "OfficeChair",
+   "use": "x,y = พื้นใต้เก้าอี้ · coat = เสื้อกาวน์พาดพนัก · วาดหลังตัวละครที่นั่ง (ฐานล้อกับพนักต้องโผล่ข้างตัว)",
+   "usedIn": [
+    "father-ledger"
+   ],
+   "image": null
+  },
+  {
+   "id": "iv-stand",
+   "nameTh": "เสาน้ำเกลือพร้อมหูฟังแพทย์",
+   "code": "<IvStand x y s />",
+   "uses": "IvStand",
+   "use": "x,y = พื้น · สูงราว 2 ม. ที่ s=1 · ใช้เป็นของประจำห้องพยาบาล/คลินิก",
+   "usedIn": [
+    "father-ledger"
+   ],
+   "image": null
   }
  ],
  "inserts": [
+  {
+   "id": "live-stream",
+   "nameTh": "ไลฟ์สด / จอร้าว / กองทอง",
+   "code": "<LiveBadge viewers={214} s f />  <LiveComments items x y faint={i} />  <CrackedGlass w h seed />  <GoldPile x y s f />  // kit/live.tsx",
+   "use": "ภาพไลฟ์จากโทรศัพท์: ป้าย LIVE + จำนวนผู้ชม (viewersAt ไล่ตัวเลขได้), คอมเมนต์ไต่ข้างจอ (faint = คอมเมนต์เล็กจางไว้ซ่อนเบาะแส), รอยร้าวทับจอ, กองเครื่องทองที่จับแสง",
+   "uses": "LiveBadge",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/insert-live-stream.png"
+  },
   {
    "id": "hand-grip",
    "nameTh": "มือ: กำของ (ปรับสีผิวและแขนเสื้อได้)",
    "code": "<Hand mode=\"grip\" skin=\"#e2b08a\" sleeve=\"#2f5f8f\" />\n// หรือมือเปล่า (แขนสั้น / พับแขน):\n<Hand mode=\"grip\" skin=\"#e2b08a\" />",
    "use": "กำของแนวนอน (ถือไฟฉาย, ปากกา, พวงมาลัย) · ปรับ sleeve ตามสีเสื้อของตัวละคร หรือละเว้นเพื่อแสดงมือเปล่า",
+   "uses": "Hand",
+   "usedIn": [
+    "father-ledger",
+    "dont-open-curtain",
+    "ghost-money",
+    "night-shift-rules",
+    "rain-night",
+    "rear-cam",
+    "same-child",
+    "temple-boy"
+   ],
    "image": "renders/insert-hand-grip.png"
   },
   {
@@ -2553,6 +2936,17 @@ window.STUDIO = {
    "nameTh": "มือ: แบ / เอื้อม (ปรับสีผิวและแขนเสื้อได้)",
    "code": "<Hand mode=\"open\" skin=\"#e2b08a\" sleeve=\"#2f5f8f\" />\n// ใส่รอยย่นมือผู้สูงวัย:\n<Hand mode=\"open\" skin=\"#e2b08a\" wrinkles />",
    "use": "ยื่นมือ, รับของ, แตะไหล่, วางมือ · ใส่ wrinkles={true} เพื่อแสดงมือผู้สูงวัย",
+   "uses": "Hand",
+   "usedIn": [
+    "father-ledger",
+    "dont-open-curtain",
+    "ghost-money",
+    "night-shift-rules",
+    "rain-night",
+    "rear-cam",
+    "same-child",
+    "temple-boy"
+   ],
    "image": "renders/insert-hand-open.png"
   },
   {
@@ -2560,6 +2954,11 @@ window.STUDIO = {
    "nameTh": "เส้นฝนทับ close-up",
    "code": "<RainStreaks f={f} />",
    "use": "ใช้ในฉาก close-up (ฝนในฉากด้านข้างคือ Rain ใน fx.tsx)",
+   "uses": "RainStreaks",
+   "usedIn": [
+    "rain-night",
+    "temple-boy"
+   ],
    "image": "renders/insert-rain.png"
   },
   {
@@ -2567,6 +2966,10 @@ window.STUDIO = {
    "nameTh": "หยดน้ำ",
    "code": "<Drips x={960} y={300} f={f} n={3} to={900} />",
    "use": "หยดตก วนทุก 40 เฟรม",
+   "uses": "Drips",
+   "usedIn": [
+    "temple-boy"
+   ],
    "image": "renders/insert-drips.png"
   },
   {
@@ -2574,6 +2977,13 @@ window.STUDIO = {
    "nameTh": "สมุด + ลายมือ",
    "code": "<Page x y w h rot><Ink text=\"…\" /></Page>",
    "use": "บันทึก / กฎ · Ink shake 0–1 = ลายมือสั่น",
+   "uses": "Ink",
+   "usedIn": [
+    "night-shift-rules",
+    "rain-night",
+    "same-child",
+    "temple-boy"
+   ],
    "image": "renders/insert-notebook.png"
   },
   {
@@ -2581,6 +2991,11 @@ window.STUDIO = {
    "nameTh": "การ์ดกฎเต็มจอ",
    "code": "{\"scene\": \"rule\",\"data\": {\"no\": \"กฎข้อ 1\",\"text\": \"บรรทัด 1\nบรรทัด 2\"}}",
    "use": "RuleCardScene · การ์ดตกลงมา มีเส้นแดงด้านบน",
+   "uses": "RuleCardScene",
+   "usedIn": [
+    "ghost-money",
+    "temple-boy"
+   ],
    "image": "renders/insert-rule-card.png"
   },
   {
@@ -2588,21 +3003,262 @@ window.STUDIO = {
    "nameTh": "การ์ดท้าย: กดไลค์ กดติดตาม",
    "code": "{\"scene\": \"endcard\", \"data\": {\"step\": \"like\", \"title\": \"ชื่อเรื่อง\", \"note\": \"เรื่องแต่ง\"}}",
    "use": "EndCardScene · step like → subscribe → done ลูกศรกดปุ่มให้เอง",
+   "uses": "EndCardScene",
+   "usedIn": [
+    "father-ledger",
+    "ghost-money",
+    "night-shift-rules",
+    "rain-night",
+    "same-child"
+   ],
    "image": "renders/insert-end-card.png"
-  },
-  {
-   "id": "wall-clock",
-   "nameTh": "นาฬิกาแขวน",
-   "code": "<WallClock x y t=\"03:52\" r={330} tick={…} />",
-   "use": "เวลาเป็นเบาะแส · tick = เข็มวินาที (เรเดียน)",
-   "image": "renders/insert-wall-clock.png"
   },
   {
    "id": "flashlight",
    "nameTh": "ไฟฉาย",
    "code": "<Beam x y angle len spread a /> · beamAt(f,len,keys)",
    "use": "แสงกรวย + ตำแหน่งดวงไฟที่เคลื่อน (LightMask ใน horror.tsx)",
+   "uses": "Beam",
+   "usedIn": [
+    "ghost-money",
+    "temple-boy"
+   ],
    "image": "renders/insert-flashlight.png"
+  },
+  {
+   "id": "phone-voice",
+   "nameTh": "โทรศัพท์ในมือ (ข้อความเสียง/แชต/โทร)",
+   "code": "<PhoneScene p={p} photo={v => ...} />  // src/kit/phone.tsx · view: voice | chat | call | calls | send",
+   "use": "ข้อความทุกคำมาจาก shot.data · view อื่น ๆ (รูปบนจอ) ส่ง photo มาวาดเอง",
+   "uses": "PhoneScene",
+   "usedIn": [
+    "father-ledger",
+    "ghost-money",
+    "night-shift-rules",
+    "rain-night",
+    "rear-cam",
+    "same-child",
+    "temple-boy"
+   ],
+   "image": "renders/insert-phone-voice.png"
+  },
+  {
+   "id": "memory-notebook",
+   "nameTh": "สมุดจดความจำ (tracked device)",
+   "code": "<MemoryNotebook p={p} title=\"สิ่งที่รู้แน่ ๆ\" counter={n => `จำได้ ${n} ข้อ`} />",
+   "use": "data.facts = [[ข้อความ, ok|bad|lost]] · ข้อใหม่เขียนตัวเอง ข้อปลอมสีแดง ข้อที่หายขีดฆ่า + ชิปนับจำนวน",
+   "uses": "MemoryNotebook",
+   "usedIn": [
+    "same-child"
+   ],
+   "image": "renders/insert-memory-notebook.png"
+  }
+ ],
+ "camera": [
+  {
+   "id": "dutch",
+   "nameTh": "กล้องเอียง (Dutch tilt)",
+   "code": "\"data\": {\"tilt\": -6}   // หรือ [0, -7] = ค่อยๆ เอียงตลอดช็อต\n// ฉากที่ไม่ใช้ Stage: <Tilt deg={-6} W={W} H={H}>…</Tilt>",
+   "use": "ความระแวง, หลังรู้ว่ามีคนโกหก · 5–8° เอียงทางเดียวทั้งฉาก · การ์ด/HUD ไม่เอียง (S9)",
+   "uses": "Tilt",
+   "usedIn": [],
+   "image": "renders/camera-dutch.png"
+  },
+  {
+   "id": "fore",
+   "nameTh": "ฉากหน้า FG + parallax",
+   "code": "<Stage p={p} world={set} fore={<DoorEdge />} foreK={0.4} />\n// ฉากที่ไม่ใช้ Stage: <Fore shift={[dx, dy]} blur={7} dark={0.45}>…</Fore>",
+   "use": "วงกบ, มุ้ง, ไหล่ OTS, เสาไฟ · เบลอ+มืด เลื่อน 1.4× ของกล้อง · ห้ามบังหน้า/เบาะแส (§5)",
+   "uses": "Fore",
+   "usedIn": [
+    "night-shift-rules",
+    "rear-cam"
+   ],
+   "image": "renders/camera-fore.png"
+  },
+  {
+   "id": "peephole",
+   "nameTh": "ตาแมวประตู",
+   "code": "<Pov kind=\"peephole\" W={W} H={H} f={f}>{view}</Pov>",
+   "use": "มองผ่านตาแมว เลนส์โป่ง ขอบดำ · ใช้กับคนยืนหน้าประตู (S13)",
+   "uses": "Pov",
+   "usedIn": [
+    "same-child"
+   ],
+   "image": "renders/camera-peephole.png"
+  },
+  {
+   "id": "keyhole",
+   "nameTh": "รูกุญแจ",
+   "code": "<Pov kind=\"keyhole\" W={W} H={H} f={f}>{view}</Pov>",
+   "use": "แอบมองห้องต้องห้าม (S13)",
+   "uses": "Pov",
+   "usedIn": [
+    "same-child"
+   ],
+   "image": "renders/camera-keyhole.png"
+  },
+  {
+   "id": "crack",
+   "nameTh": "ประตูแง้ม",
+   "code": "<Pov kind=\"crack\" open={0.4} W={W} H={H} f={f}>{view}</Pov>",
+   "use": "ช่องประตูแคบ · animate open 0→1 = ประตูค่อยๆ เปิด (S13)",
+   "uses": "Pov",
+   "usedIn": [
+    "same-child"
+   ],
+   "image": "renders/camera-crack.png"
+  },
+  {
+   "id": "binoculars",
+   "nameTh": "กล้องส่องทางไกล",
+   "code": "<Pov kind=\"binoculars\" W={W} H={H} f={f}>{view}</Pov>",
+   "use": "สะกดรอยจากระยะไกล (S13)",
+   "uses": "Pov",
+   "usedIn": [
+    "same-child"
+   ],
+   "image": "renders/camera-binoculars.png"
+  },
+  {
+   "id": "blinds",
+   "nameTh": "ผ่านบานเกล็ด / มู่ลี่",
+   "code": "<Pov kind=\"blinds\" open={0.5} sway={0} W={W} H={H} f={f}>{view}</Pov>",
+   "use": "แอบดูจากในบ้าน, voyeur (S12)",
+   "uses": "Pov",
+   "usedIn": [
+    "same-child"
+   ],
+   "image": "renders/camera-blinds.png"
+  },
+  {
+   "id": "phone-cam",
+   "nameTh": "กล้องมือถือ (REC)",
+   "code": "<Pov kind=\"phone\" rec=\"00:01:42\" W={W} H={H} f={f}>{view}</Pov>",
+   "use": "คลิปที่ตัวละครถ่าย, ไลฟ์, หลักฐานวิดีโอ (S13)",
+   "uses": "Pov",
+   "usedIn": [
+    "same-child"
+   ],
+   "image": "renders/camera-phone-cam.png"
+  },
+  {
+   "id": "split",
+   "nameTh": "แบ่งจอ (โทรศัพท์)",
+   "code": "<Split W={W} H={H} angle={8} a={<CallerA />} b={<CallerB />} />",
+   "use": "16:9 ซ้าย/ขวา · 9:16 บน/ล่าง (อัตโนมัติ) · แต่ละช่องจัดเฟรมเหมือนเป็นช็อตเต็ม (S14)",
+   "uses": "Split",
+   "usedIn": [],
+   "image": "renders/camera-split.png"
+  },
+  {
+   "id": "cctv",
+   "nameTh": "กล้องวงจรปิด",
+   "code": "<Cctv W={W} H={H} f={f} cam=\"CAM 03\" time=\"02:14:07\">{view(cctvFrame(f))}</Cctv>",
+   "use": "หลักฐานวิดีโอ · เวลาเดินเอง ต้องตรงกับ HUD · cctvFrame ทำให้ภาพกระตุก (S16)",
+   "uses": "Cctv",
+   "usedIn": [
+    "rear-cam",
+    "same-child"
+   ],
+   "image": "renders/camera-cctv.png"
+  },
+  {
+   "id": "mirror",
+   "nameTh": "กระจก / กระจกมองหลัง",
+   "code": "<MirrorFrame x={1200} y={120} w={560} h={220} W={W} H={H}>{backSeat}</MirrorFrame>",
+   "use": "ภาพสะท้อนกลับด้าน ซีด · สิ่งที่ต่างจากห้องจริงคือเบาะแส (S15)",
+   "uses": "MirrorFrame",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/camera-mirror.png"
+  },
+  {
+   "id": "anti-flat",
+   "nameTh": "เฟรม 4 ชั้น (กันภาพแบน)",
+   "code": "\"data\": {\"light\": \"noir\", \"lightAt\": [1420, 250], \"cast\": [\"lead-male-A@620\"]}\n<Stage p={p} fore={<Post />} world={<><Far blur={3}><ShopRow tone=\"night\" f={f} /></Far><PerspFloor vx={1250} vy={560} /><Haze y={800} f={f} /><Cone x={1420} y={250} floor={FLOOR} f={f} /><Actors … /></>} />",
+   "use": "FG เสาไฟเบลอ · MG ตัวละครที่ 1/3 + rim + เงายาว · BG ตึกแถวเบลอ + พื้นสอบเข้า · ATMO หมอก · ไฟดวงเดียว มืด ≥ 60 % (depth-light.md)",
+   "uses": "Haze",
+   "usedIn": [
+    "father-ledger",
+    "night-shift-rules",
+    "rear-cam"
+   ],
+   "image": "renders/camera-anti-flat.png"
+  },
+  {
+   "id": "cast-shadow",
+   "nameTh": "เงาทอดยาวจากไฟดวงเดียว",
+   "code": "\"data\": {\"lightAt\": [260, 740]}   // Actors วาด CastShadow + rim ฝั่งไฟให้ทุกคน\n<CastShadow x={820} y={FLOOR} h={515} light={[260, 740]} />",
+   "use": "ไฟต่ำ/ไกล = เงายาว, ไฟเหนือหัว = เงาสั้น · ทุกคนในช็อตชี้ไปทางเดียวกัน · ผีไม่มีเงา (noShadow)",
+   "uses": "CastShadow",
+   "usedIn": [
+    "rear-cam"
+   ],
+   "image": "renders/camera-cast-shadow.png"
+  },
+  {
+   "id": "persp-room",
+   "nameTh": "ห้องมีมิติ (ผนังข้าง + พื้นสอบเข้า)",
+   "code": "<SideWall side=\"l\" x={420} top={180} vx={960} vy={500} opening={[0.35, 0.6]} />\n<SideWall side=\"r\" x={1500} top={180} vx={960} vy={500} light={0.7} />\n<PerspFloor vx={960} vy={500} c0=\"#6a4a32\" c1=\"#33251a\" />",
+   "use": "จุดรวมสายตา (vx, vy) เดียวกันทุกชิ้น · vy = ระดับสายตากล้อง (ต่ำ = มุมช้อน) · ใส่ PerspFloor ทับพื้นเดิมของ set ไหนก็ได้",
+   "uses": "SideWall",
+   "usedIn": [],
+   "image": "renders/camera-persp-room.png"
+  },
+  {
+   "id": "room-wide",
+   "nameTh": "ห้องสามมิติ (room kit) · ภาพกว้าง",
+   "code": "const R = makeRoom({x: 700, y: 470}, {x0: 520, x1: 1500, y0: 220, y1: 760}, 3.4);\n<RoomShell r={R} id=\"sh7\" />\n<RFace r={R} pts={[[0.62,0.2,0],[0.86,0.2,0],[0.86,0.55,0],[0.62,0.55,0]]} fill=\"#8fb0d8\" />\n<RBox r={R} u={[0.04,0.4]} v={[0.82,1]} w={[0.12,0.6]} front=\"#4a3020\" top=\"#d8d2c4\" />\n<LightVeil id=\"sh7\" lights={[[x, y, 300]]} o={0.55} />\nconst s = standAt(R, 0.7, 0.45); // เท้า + สเกล · roomPxPerCm(R, 0.45)",
+   "use": "ห้องที่กล้องเดินเข้าไปได้: วาดครั้งเดียว แล้วถ่ายกว้าง/กลาง/ใกล้/มุมต่ำ/มุมสูงได้ทุกมุม โดยผนัง พื้น เฟอร์นิเจอร์ยังถูกต้อง · LightVeil กดโทนกลางให้มืด เหลือแสงตรงที่แสงตก (directing.md §3–4)",
+   "uses": "makeRoom",
+   "usedIn": [
+    "father-ledger",
+    "dont-open-curtain",
+    "night-shift-rules"
+   ],
+   "image": "renders/camera-room-wide.png"
+  },
+  {
+   "id": "room-close",
+   "nameTh": "ห้องเดิม · ภาพใกล้ (z 3)",
+   "code": "\"data\": {\"cam\": [3, 3.15, 1500, 470]}   // ห้องเดียวกับ room-wide แค่ย้ายกล้อง",
+   "use": "close จริงคือ z ≈ 3–4.5 (หัวกินครึ่งเฟรม) ไม่ใช่ 1.8 · ฉากหลังของ close คือส่วนหนึ่งของห้องเดิม — หน้าต่าง/แสงเดิม ต่อเนื่อง",
+   "uses": "makeRoom",
+   "usedIn": [
+    "father-ledger",
+    "dont-open-curtain",
+    "night-shift-rules"
+   ],
+   "image": "renders/camera-room-close.png"
+  }
+ ],
+ "retired": [
+  {
+   "what": "ฉากสำเร็จรูป 6 แบบ (room rules map news next)",
+   "why": "แนวตั้ง คนยืนกลาง มีแค่ npm run new ที่ยังเรียก",
+   "where": "src/scenes/ ยังเก็บไว้ให้ templates/story.json"
+  },
+  {
+   "what": "ฉากหลัง 17 แบบ (Sky Gate Road Sala Path Bench Tower Well Corridor Porch)",
+   "why": "ภาพแบนมุมเดียว เรื่องวัดเก่าใช้เท่านั้น",
+   "where": "src/kit/temple.tsx ยังเก็บไว้ให้ ghost-money กับเรื่องในคลังเก่า"
+  },
+  {
+   "what": "สถานที่แบน 7 แบบ (ศาลพระภูมิ มินิมาร์ท โรงพยาบาล ห้องเรียน หอพัก ทุ่งนา ป้ายรถเมล์)",
+   "why": "ไม่มีเรื่องไหนเคยใช้ ภาพด้านหน้าแบน แสงเท่ากันทั้งฉาก",
+   "where": "retired/kit/places-flat.tsx · เรื่องใหม่สร้างใหม่ด้วย room.tsx"
+  },
+  {
+   "what": "ไอคอน 7 ชิ้น + ชิ้นฉาก 6 ชิ้น (ประตู หน้าต่าง โต๊ะ เก้าอี้ หลอดไฟ)",
+   "why": "ภาพไอคอนแบน ไม่เข้าแสงของฉาก ฉากจริงใช้ RBox ของ room.tsx",
+   "where": "symbol ยังอยู่ใน cast.svg เพราะ ghost-money ใช้"
+  },
+  {
+   "what": "ท่า man-sit woman-sit auntie-sit man-crouch man-lie + แขน 9 ภาพ",
+   "why": "เสื้อฟ้าทั่วไป ต้องปะชุดเองทุกเรื่อง แทนด้วยท่าบนตัวละครจริง (cast/Body.tsx)",
+   "where": "symbol ยังอยู่เป็นชื่อให้ roster เดิมเรียก ระบบวาดจากตัวละครแทนอัตโนมัติ"
   }
  ],
  "grades": [
@@ -2675,6 +3331,13 @@ window.STUDIO = {
    "code": "\"data\": {\"light\": \"dawn\"}",
    "use": "Grade: สีทับ + วิกเนตต์",
    "image": "renders/grade-dawn.png"
+  },
+  {
+   "id": "noir",
+   "nameTh": "แสงเงาตัดจัด (chiaroscuro)",
+   "code": "\"data\": {\"light\": \"noir\", \"focus\": [0.35, 0.5]}",
+   "use": "แสงวงเดียว ที่เหลือดำ · คู่กับ data.focus หรือ data.lightAt ให้วงแสงอยู่บนหน้า/เบาะแส · ฉากสารภาพ ซักถาม เฉลย",
+   "image": "renders/grade-noir.png"
   },
   {
    "id": "past",
@@ -3340,6 +4003,401 @@ window.STUDIO = {
    "name": "morning",
    "prompt": "bright morning ambience on a quiet Thai village road, birds chirping, distant motorbike, light breeze",
    "src": "../sfx-library/7b5d915a0e8f3c6d.mp3"
+  },
+  {
+   "name": "knock1",
+   "prompt": "one soft knuckle knock on a thin wooden wall inside a quiet Thai house at night, close, dry",
+   "src": "../sfx-library/c0cfb5c2aa0e8e84.mp3"
+  },
+  {
+   "name": "knock2",
+   "prompt": "two soft knuckle knocks on a thin wooden wall inside a quiet Thai house at night, evenly spaced, close, dry",
+   "src": "../sfx-library/47599e48f4f9c787.mp3"
+  },
+  {
+   "name": "knock3",
+   "prompt": "three slow knocks of a metal spoon tapping a wooden cabinet back, quiet room at night, close",
+   "src": "../sfx-library/92f51bd837620fbb.mp3"
+  },
+  {
+   "name": "shutter",
+   "prompt": "single smartphone camera shutter click, close, quiet room",
+   "src": "../sfx-library/7d45e7e017b1a8ac.mp3"
+  },
+  {
+   "name": "rec",
+   "prompt": "smartphone voice message playback start beep, short soft tone",
+   "src": "../sfx-library/1e1c4e79d4e61e41.mp3"
+  },
+  {
+   "name": "drip",
+   "prompt": "slow water drops falling onto a cotton blanket in a silent wooden bedroom, soft dull taps",
+   "src": "../sfx-library/0981dcf50a053688.mp3"
+  },
+  {
+   "name": "cloth",
+   "prompt": "a cotton blanket pulled back off a small bed, short cloth slide",
+   "src": "../sfx-library/089d0be1097f4ed4.mp3"
+  },
+  {
+   "name": "bowl",
+   "prompt": "ceramic bowl of rice porridge with a spoon, set down softly on a wooden shelf, one clink",
+   "src": "../sfx-library/ba3335440b8b4391.mp3"
+  },
+  {
+   "name": "night",
+   "prompt": "quiet night ambience by a rural Thai canal, crickets, frogs, distant dog, light water lapping",
+   "src": "../sfx-library/12a352c112e91c6c.mp3"
+  },
+  {
+   "name": "morning",
+   "prompt": "bright early morning ambience in a Thai canal village, birds, distant rooster, light breeze",
+   "src": "../sfx-library/7bcb61746048a214.mp3"
+  },
+  {
+   "name": "engine",
+   "prompt": "small Thai motorcycle (110cc scooter) revving and pulling away on a gravel road at night, dust, mid distance",
+   "src": "../sfx-library/b13110218dd94cd7.mp3"
+  },
+  {
+   "name": "night",
+   "prompt": "quiet rural Thai night ambience by an old cemetery, crickets, distant dog, light wind through trees",
+   "src": "../sfx-library/6c511e722e1ed3fb.mp3"
+  },
+  {
+   "name": "neon",
+   "prompt": "old fluorescent neon tube buzzing and flickering off and on once, gas station at night",
+   "src": "../sfx-library/de0130f0380dfb7f.mp3"
+  },
+  {
+   "name": "can",
+   "prompt": "aluminium energy drink can tossed and caught in a hand, then cracked open with a fizz",
+   "src": "../sfx-library/a035895bc6870d59.mp3"
+  },
+  {
+   "name": "glitch",
+   "prompt": "small digital video screen glitch, short static crackle and signal dropout",
+   "src": "../sfx-library/ff6bfa54ec7f0b18.mp3"
+  },
+  {
+   "name": "knock3",
+   "prompt": "three knuckle knocks on a rolled-down steel shop shutter at night, metallic rattle, empty street",
+   "src": "../sfx-library/96ccd71a278ba601.mp3"
+  },
+  {
+   "name": "clink",
+   "prompt": "small heavy metal objects clinking inside a styrofoam food box when it tilts, muffled, close",
+   "src": "../sfx-library/7661681c8f335b8f.mp3"
+  },
+  {
+   "name": "idle",
+   "prompt": "small motorcycle engine idling steadily at night in fog, close, low putter",
+   "src": "../sfx-library/0b7befb9c81284cd.mp3"
+  },
+  {
+   "name": "truck",
+   "prompt": "big Thai trailer truck turning into an old gas station at night, air brakes hiss, diesel rumble",
+   "src": "../sfx-library/c574afeef4656639.mp3"
+  },
+  {
+   "name": "tape",
+   "prompt": "black electrical tape pulled fast off a roll and wrapped around a styrofoam box, sticky rip",
+   "src": "../sfx-library/6091d326372eb079.mp3"
+  },
+  {
+   "name": "station",
+   "prompt": "empty Thai roadside gas station at 2am: fluorescent hum, distant highway traffic, crickets",
+   "src": "../sfx-library/c8ab7b5c153f7867.mp3"
+  },
+  {
+   "name": "chime",
+   "prompt": "small convenience store door chime, two-tone electronic ding dong, late night, quiet",
+   "src": "../sfx-library/ee40d90bf74102c2.mp3"
+  },
+  {
+   "name": "siren",
+   "prompt": "Thai police patrol pickups switching on high beams and a short siren whoop at once, at night in a quiet cemetery",
+   "src": "../sfx-library/afff87768fc5e025.mp3"
+  },
+  {
+   "name": "morning",
+   "prompt": "early morning in rural Thailand, birds waking up, distant rooster, light breeze, calm",
+   "src": "../sfx-library/3b27d9b89b2938e3.mp3"
+  },
+  {
+   "name": "hum",
+   "prompt": "flickering fluorescent tube buzz and a low refrigeration compressor hum in a narrow back corridor of a convenience store at night",
+   "src": "../sfx-library/bc9d235e66b8d5d2.mp3"
+  },
+  {
+   "name": "thump",
+   "prompt": "heavy muffled thud from behind a thick insulated stainless steel walk-in freezer door, something heavy dropped inside, close",
+   "src": "../sfx-library/fdd3ae632c1eee97.mp3"
+  },
+  {
+   "name": "chime",
+   "prompt": "small convenience store door chime, two-tone electronic ding dong, late night, quiet",
+   "src": "../sfx-library/6de1710e7f56dcc0.mp3"
+  },
+  {
+   "name": "engine",
+   "prompt": "white panel van engine starting and pulling into an empty parking lot at night, tyres on concrete, mid distance",
+   "src": "../sfx-library/f217258a52057051.mp3"
+  },
+  {
+   "name": "truck",
+   "prompt": "big truck passing fast on an empty highway at night, doppler whoosh, distant",
+   "src": "../sfx-library/5e8d01cec2f22ea1.mp3"
+  },
+  {
+   "name": "night",
+   "prompt": "empty Thai roadside at night by a lone convenience store: crickets, distant highway traffic, faint neon hum",
+   "src": "../sfx-library/f8d57b0afdddcd2a.mp3"
+  },
+  {
+   "name": "scanner",
+   "prompt": "muffled police radio scanner chatter and static coming from inside a closed van, unintelligible voices, eerie, close",
+   "src": "../sfx-library/bd47ddba376d6b13.mp3"
+  },
+  {
+   "name": "radio",
+   "prompt": "police shoulder radio crackle and squelch, short burst of distorted voice, close",
+   "src": "../sfx-library/4c20d9733191b441.mp3"
+  },
+  {
+   "name": "click",
+   "prompt": "single ballpoint pen click, close and crisp, quiet room",
+   "src": "../sfx-library/12f63dfb60822e99.mp3"
+  },
+  {
+   "name": "lock",
+   "prompt": "electric magnetic door lock clunking shut on a glass shop door, metallic click and low buzz",
+   "src": "../sfx-library/d2b52c0e52dad4af.mp3"
+  },
+  {
+   "name": "cutter",
+   "prompt": "box cutter blade being pushed out notch by notch, ratcheting clicks, close",
+   "src": "../sfx-library/8b7e4f612e87b8f3.mp3"
+  },
+  {
+   "name": "spray",
+   "prompt": "trigger spray bottle squirted hard three times, close",
+   "src": "../sfx-library/9d345063b1cc2df8.mp3"
+  },
+  {
+   "name": "breaker",
+   "prompt": "heavy main circuit breaker lever thrown down, loud clunk, refrigerators and lights powering down with a falling hum",
+   "src": "../sfx-library/37621ee9eeeaa08a.mp3"
+  },
+  {
+   "name": "fizz",
+   "prompt": "shaken soda can bursting open and fizzing hard on a metal floor inside a cold room, echo",
+   "src": "../sfx-library/c3a09c71f54f9b78.mp3"
+  },
+  {
+   "name": "shake",
+   "prompt": "aluminium soda can shaken hard in a hand, liquid sloshing",
+   "src": "../sfx-library/3555708e5f5e3282.mp3"
+  },
+  {
+   "name": "roll",
+   "prompt": "aluminium can rolling across a tiled floor into a metal room",
+   "src": "../sfx-library/a77ce06028d50760.mp3"
+  },
+  {
+   "name": "siren",
+   "prompt": "Thai police pickup sirens arriving fast in an empty parking lot, tyres braking, at night",
+   "src": "../sfx-library/82a990fe0314d254.mp3"
+  },
+  {
+   "name": "alarm",
+   "prompt": "shop emergency alarm bell ringing loudly inside a dark convenience store",
+   "src": "../sfx-library/1d7ab293d1e02a64.mp3"
+  },
+  {
+   "name": "cold",
+   "prompt": "walk-in freezer door seal breaking, cold air hissing out, compressor hum louder",
+   "src": "../sfx-library/f62dcb47d5d41be2.mp3"
+  },
+  {
+   "name": "ring",
+   "prompt": "mobile phone ringtone muffled inside a closed metal locker, vibrating against steel",
+   "src": "../sfx-library/bdb1e3969e35b4ff.mp3"
+  },
+  {
+   "name": "ping",
+   "prompt": "single short smartphone message notification ping",
+   "src": "../sfx-library/27cda28458701648.mp3"
+  },
+  {
+   "name": "flash",
+   "prompt": "smartphone camera shutter sound, single click",
+   "src": "../sfx-library/bc18683b6ca787f0.mp3"
+  },
+  {
+   "name": "unlock",
+   "prompt": "small heavy steel padlock clicking open with a key, close",
+   "src": "../sfx-library/5435e82319dae4f6.mp3"
+  },
+  {
+   "name": "slam",
+   "prompt": "heavy insulated stainless steel door slammed shut, metal latch thrown",
+   "src": "../sfx-library/1e91ee5baa7371c2.mp3"
+  },
+  {
+   "name": "tear",
+   "prompt": "notebook page torn out slowly, long paper rip",
+   "src": "../sfx-library/9002ba301adf9bf0.mp3"
+  },
+  {
+   "name": "morning",
+   "prompt": "early morning by a Thai highway, birds waking up, distant rooster, light traffic, calm",
+   "src": "../sfx-library/3cdc5f697633b7ef.mp3"
+  },
+  {
+   "name": "knock",
+   "prompt": "single dull muffled knock of a small metal belt buckle tapping on thick laminated window glass, heard from inside a quiet dark bedroom, close, short, no music",
+   "src": "../sfx-library/15d4a865aef60666.mp3"
+  },
+  {
+   "name": "knockweak",
+   "prompt": "single very faint weak tap of a metal buckle on thick window glass, barely audible, heard from inside a quiet room at night",
+   "src": "../sfx-library/13a0b72c15777c85.mp3"
+  },
+  {
+   "name": "expressway",
+   "prompt": "distant elevated expressway at night heard through a closed window, sparse cars passing, low city hum, very quiet",
+   "src": "../sfx-library/f291769908e048ec.mp3"
+  },
+  {
+   "name": "car",
+   "prompt": "one car engine climbing a steep expressway ramp at night and passing by, distant, heard through a closed window",
+   "src": "../sfx-library/73266281f8cd2ef2.mp3"
+  },
+  {
+   "name": "daycity",
+   "prompt": "bright daytime Bangkok traffic roar heard through a closed apartment window, steady, distant horns",
+   "src": "../sfx-library/57bb2c08b3529567.mp3"
+  },
+  {
+   "name": "tape",
+   "prompt": "black duct tape pulled off a roll in long screeching strips and pressed onto a window frame",
+   "src": "../sfx-library/33f5e427550703f4.mp3"
+  },
+  {
+   "name": "rip",
+   "prompt": "violent rip of a curtain torn down together with duct tape, tape tearing, curtain rings clatter on a metal rail",
+   "src": "../sfx-library/5dfb8482e63f8880.mp3"
+  },
+  {
+   "name": "rope",
+   "prompt": "rescue rope whizzing down a building facade, carabiners clinking, wind at height, daytime",
+   "src": "../sfx-library/34cc1bfe507de303.mp3"
+  },
+  {
+   "name": "doorknock",
+   "prompt": "three slow heavy knocks on a wooden apartment door at night, heard from inside a dark silent room, ominous",
+   "src": "../sfx-library/9662887f4a21e10a.mp3"
+  },
+  {
+   "name": "glassscrape",
+   "prompt": "slow faint scrape dragging down a glass window pane from outside, like fingernails or a metal buckle, muffled through the glass, quiet room",
+   "src": "../sfx-library/741250c25dd8a2fc.mp3"
+  },
+  {
+   "name": "fire",
+   "prompt": "deep steady roar of a brick crematorium furnace burning inside a Thai temple, low flames, no voices",
+   "src": "../sfx-library/75f4e0371043be64.mp3"
+  },
+  {
+   "name": "temple",
+   "prompt": "quiet Thai temple at dusk, distant small bell, soft wind, faint insects, no voices",
+   "src": "../sfx-library/da220185bf49bcc9.mp3"
+  },
+  {
+   "name": "market",
+   "prompt": "early morning Thai fresh market ambience, distant vendors murmuring indistinct, plastic bags, motorcycle far away",
+   "src": "../sfx-library/85ad7cd308dd7bb3.mp3"
+  },
+  {
+   "name": "cleaver",
+   "prompt": "one heavy cleaver chop into a thick wooden butcher block, close, dry",
+   "src": "../sfx-library/fd58b3c064621314.mp3"
+  },
+  {
+   "name": "coldhum",
+   "prompt": "old walk-in freezer compressor humming in a concrete underground room, low steady electrical hum, faint drips",
+   "src": "../sfx-library/60388d81cfc445b9.mp3"
+  },
+  {
+   "name": "coffin",
+   "prompt": "heavy wooden coffin set down onto a brick platform, dull thud with a slight wood creak",
+   "src": "../sfx-library/39bd4b014eee38f2.mp3"
+  },
+  {
+   "name": "key",
+   "prompt": "small old brass key turning in a padlock, click and release, close",
+   "src": "../sfx-library/7c5886ecc360b32b.mp3"
+  },
+  {
+   "name": "latch",
+   "prompt": "heavy stainless steel freezer door latch unlocked, seal breaking with a soft hiss of cold air",
+   "src": "../sfx-library/198b18fd86e1ada7.mp3"
+  },
+  {
+   "name": "taperec",
+   "prompt": "single chunky mechanical button press on an old cassette recorder, close",
+   "src": "../sfx-library/8b5d31699f0c4142.mp3"
+  },
+  {
+   "name": "tapehiss",
+   "prompt": "soft continuous cassette tape hiss with slow wobble, old recorder playing silence",
+   "src": "../sfx-library/c4a7cbfc57492bd0.mp3"
+  },
+  {
+   "name": "radio",
+   "prompt": "small transistor radio tuning, brief static crackle, no words",
+   "src": "../sfx-library/8c340bb387eeef51.mp3"
+  },
+  {
+   "name": "wheel",
+   "prompt": "old wheelchair rolling slowly over concrete, one squeaky wheel, close",
+   "src": "../sfx-library/c2a23d04bef1a309.mp3"
+  },
+  {
+   "name": "rip",
+   "prompt": "a paper cheque torn in half slowly, close, crisp",
+   "src": "../sfx-library/0053ab4a71b7a617.mp3"
+  },
+  {
+   "name": "siren",
+   "prompt": "Thai police car siren approaching from a distance, heard from inside a concrete room",
+   "src": "../sfx-library/d8d6dbf7bb66833b.mp3"
+  },
+  {
+   "name": "benz",
+   "prompt": "large luxury car rolling slowly on gravel and stopping, soft engine idle, door opening",
+   "src": "../sfx-library/4e28813666805e1a.mp3"
+  },
+  {
+   "name": "knock",
+   "prompt": "three firm knocks on a corrugated metal shutter door, close",
+   "src": "../sfx-library/2d04c3e076f9a426.mp3"
+  },
+  {
+   "name": "coconut",
+   "prompt": "thin stream of coconut water poured slowly, soft trickle onto wood, close",
+   "src": "../sfx-library/545fdfadb40eead2.mp3"
+  },
+  {
+   "name": "morning",
+   "prompt": "calm early morning in a Thai temple yard, birds, distant rooster, light breeze",
+   "src": "../sfx-library/c33c0d313e9784c4.mp3"
+  },
+  {
+   "name": "ring",
+   "prompt": "single short hospital ward phone ringing twice, quiet corridor",
+   "src": "../sfx-library/8a526c424b61011f.mp3"
   }
  ]
 };

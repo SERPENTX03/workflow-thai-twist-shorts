@@ -84,26 +84,27 @@ All active adult characters use `viewBox="0 0 200 520"` (height ≈ cm × 2.6 px
 > ห้ามใช้ตัวละครเหล่านี้เป็นโมเดลหลักในเรื่องใหม่อีกต่อไป:
 > `man`, `woman`, `auntie`, `elder`, `raincoat`, `student`, `kid`, `kid-girl`, `teen-girl`, `uncle`, `young-woman`, `grandpa`, `grandma`, `M1`–`B1`, `din`
 
-### Whole-body Pose Primitives
-สัญลักษณ์ท่าทางด้านล่างนี้เป็น **รูปทรงเรขาคณิตของท่าทาง (Pose geometry primitives)** เท่านั้น ใช้เมื่อตัวละครนั่ง หมอบ หันหลัง หรือนอน:
-* ชาย: `man-sit`, `man-crouch`, `man-back`, `man-lie`
-* หญิง: `woman-sit`, `woman-back`, `woman-run`, `auntie-sit`
-* พระ: `monk-sit`
+### Whole-body poses come with the costume
 
-เวลาเขียน `ROSTER` ใน `cast.tsx` ให้ใช้ฟังก์ชันแมปท่าทาง โดยค่าเริ่มต้น (Default / Standing) **ต้องเป็นโมเดลตัวละครใหม่จาก `src/cast.json` เสมอ**:
-```tsx
-const poseMale = (standing: CastId) => (p: string): CastId =>
-  (({sit: 'man-sit', back: 'man-back', walk: 'man-walk', run: 'man-run', crouch: 'man-crouch', lie: 'man-lie'} as Record<string, CastId>)[p] ?? standing);
+`sit`, `crouch` and `lie` are drawn on the character's own symbol (`src/cast/Body.tsx`), so the jacket, pockets, uniform, tattoos, hair and face come along, and the rig tokens work on them: `win@900 sit yaw=0.5 armR=hold prop=phone worried`.
 
-const poseFemale = (standing: CastId) => (p: string): CastId =>
-  (({sit: 'woman-sit', back: 'woman-back'} as Record<string, CastId>)[p] ?? standing);
+| Token | What it draws |
+|---|---|
+| `sit` | facing us: knees apart, hands on the thighs. Must have something under it (CLAUDE.md rule 16): the set's own seat first (`BenchTable`, bed, sofa, behind a counter), else `Actors chairs={{kind}}` with the kind the place has (`office` · `steel` · `plastic`; `wood` only a home dining chair) |
+| `sit yaw=0.5` | three-quarter: thighs out to the side, shins hanging. The seat reads in silhouette, prefer it |
+| `crouch` | knees up, arms around the shins: against a wall, under a table |
+| `lie` | on the back, head at frame left (`flip` for right), one knee up, hand on the stomach. Frame 520×200, the floor is its bottom edge. Faces `sleep` and `mark=zzz` go with it |
+| `back` | the shared back view in the character's colours (`man-back`, `woman-back`); kids and robes hide the face instead |
+| `walk` `run` | jointed legs and arms, `src/cast/Rig.tsx` |
 
-export const ROSTER: Record<string, RosterEntry> = {
-  tham: { cm: 172, symbol: poseMale('lead-male-A'), vars: { shirt: C.tham, ... } },
-  mek:  { cm: 170, symbol: poseMale('lead-male-B'), vars: { shirt: C.mek, ... } },
-  tik:  { cm: 160, symbol: poseFemale('sister-A'),   vars: { top: C.tik, ... } },
-};
-```
+The roster only has to name the standing symbol: `symbol: () => 'lead-male-A'`. Rosters that still map `sit: 'man-sit'` keep working: those names now only tell an `extra` overlay which frame it is in, and it stays aligned (sit 110, crouch 160). Robes (`monk`, `novice`) keep their own drawn `monk-sit`.
+
+> [!CAUTION]
+> Do not re-draw a costume over a pose in an episode. What still needs the character's colours and details passed by hand is whatever draws its own person: `Motorcycle rider`, `CarInterior`, a shot written as its own SVG (CLAUDE.md rule 13). A trait of one story (a numbered vest, a scar) goes in that episode's roster `extra`.
+
+### Talking mouths follow the face
+
+`worried talk`: the mouth set comes from the face. smile (`happy laugh smirk grin`) · down (`sad cry worried scared guilty tired`) · tense (`angry wary`) · shock (`shock`) · plain (no face, `hollow`). Symbols `talk-<set>-a|e|o|m`; `talkShape(f, on, face)` in `src/kit/stage.tsx` picks them on an uneven cycle. A hand-drawn talker (a rider, an own-SVG shot) should pass its face the same way.
 
 ## Layer order inside one figure (`<Sprite layers={…}>`)
 
@@ -111,24 +112,53 @@ export const ROSTER: Record<string, RosterEntry> = {
 behind pieces (acc-backpack) → body (lead-male-A, man-sit…) → face-* / talk-* → acc-* → arm-* → props on the hand → mark-*
 ```
 
-## Whole-body poses
+## Drawing frames (when you write a Sprite by hand)
 
-Anything layered on a posed body (face, talk mouth, accessory, mark) takes the **same transform** as the pose:
-
-| Pose | Frame | Overlay transform | Pose arms? |
-|---|---|---|---|
-| `man-walk` | 200×520 | none | yes |
-| `man-run` | 200×520 | `rotate(8 100 300)` | no (arms are part of the stride) |
-| `man-sit` | 200×520 (legs reach x ≈ 255) | `translate(0 110)` | yes, with `translate(0 110)` |
-| `man-crouch` | 200×520 | `translate(0 160)` | no (hugging knees) |
-| `man-back` | 200×520 | — (no face) | rest only |
-| `man-lie` | **520×200** | `translate(0 234) rotate(-90)` | no |
-| `woman-sit` | 200×520 | `translate(0 104)` | yes, with `translate(0 100)` |
-| `woman-run` | 200×520 | `rotate(8 100 300) translate(0 4)` | no |
-| `woman-back` | 200×520 | — | rest only |
-| carry | `man` + `arm-l-carry` + `arm-r-carry` + `prop-box` at `translate(100 262)` | none | it is a pose-arm pair |
+Anything layered on a posed body takes the same offset as the upper body: sit `translate(0 110)` (kid 56), crouch `translate(0 160)` (kid 92), lie `translate(0 234) rotate(-90)` in a 520×200 frame. `man-walk` none, `man-run` `rotate(8 100 300)`. Carry: `arm-l-carry` + `arm-r-carry` + `prop-box` at `translate(100 262)`.
 
 On the landscape stage, pose `walk` / `run` works for **every person** in the cast: `src/cast/Rig.tsx` redraws legs and arms from joints and puts the figure's own symbol (head, hair, outfit) on top, so faces, `arm=`, `prop=` and `acc=` still fit. The build comes from the body the symbol uses (`legs-pants`, `body-wide`, `body-skirt`, `body-kid`; the monk shuffles under his robe). A new hand-drawn person needs its standing legs in a `display:var(--legs-rest,inline)` group and `data-rig="pants|wide|skirt|kid|robe"` on the symbol. Pets and `crowd` have no rig. Gallery: `GGait`.
+
+## Pose rig — turn three-quarter, act with the arms (`src/cast/Pose.tsx`)
+
+Every **standing** person in `src/cast.json` can turn and gesture without a new drawing. The rig draws the character's own symbol in passes and moves each one its own way, so the costume is the real one (rules 12–13): jacket, collar, chest pocket, outfit `acc-*`, glasses, hats, bags, the wristwatch (moved onto the jointed left wrist), short sleeves, and tattoos / bracelets (carried on the forearm). After what-if-studio's `rig.tsx`, adapted to our drawn cast.
+
+| Field | Range | What it does |
+|---|---|---|
+| `yaw` | −1 … 1, use ±0.3–0.6 | 0.5 = three-quarter toward screen-right. The body narrows and a darker copy shows its turned-away side; the face (eyes, brows, mouth, moles, glasses) slides toward the turn, the hair slides back, the near ear comes onto the cheek, the far ear goes behind the skull, a shade crescent darkens the back of the head. Past ±0.7 the front-view face slides off the skull (story-check warns): use `back` or a silhouette instead. |
+| `armL` / `armR` | `{a, b}` degrees, or a preset | **a** = upper arm from hanging straight down, **+ out** to that arm's own side, − in across the body. **b** = elbow, added to a for the forearm: − folds back in / up. l = screen-left arm. One arm = one sleeve + one hand (`hands-poses.md` rule 1): the rig draws both arms itself, the resting arms are switched off. `null` / `none` = no arm on that side. |
+| presets | `rest hold chest offer raise reach pocket` (= the `arm-*` symbols) · `wave point face mouth chin head hip lap out` | solved once from hand anchors (`ANCHOR_R`, elbows hang down and out), so they fit every build — adults, kids, skirts. `pocket` has no hand. |
+| `headTilt` | degrees, + toward screen-right | the head rocks on the neck |
+| `look` | −1 … 1 | the dot eyes glance inside the face (the character's own face only, not a `face-*`) |
+
+Draw order is automatic: arms hang behind the torso's edge as the drawings do (and over the legs / skirt), a hand across the chest is drawn in front, a hand at the mouth / cheek in front of the head.
+
+**On the stage (actor strings, `data.cast`):**
+
+```
+"phak@820 yaw=0.4 armR=reach armL=hold prop=phone worried"
+"prae@1200 yaw=-0.5 armL=mouth shock head=-6"
+"phak@820 yaw=0>0.5 armR=rest>wave@6-20"        // ">" tweens across the shot, "@from-to" = those frames
+"mali@700 armL=chest faces=worried@0,shock@40"  // face swaps on frame 40 through a blink ("own" = their own face)
+"pho@900 armR=150,-30 armL=pocket prop=key@r"   // prop@l / @r picks the hand
+```
+
+`prop=` goes into a posed hand: the one named with `@l` / `@r`, else the arm in a holding preset (hold offer reach raise out lap point), else the posed arm, else the right. Old `arm=r-hold` strings still work on a posed actor (the rig draws hold / chest / offer / raise / reach / pocket itself; `carry` and `b-wheel` stay symbols and take their arms off the rig). They work on `stand`, `sit`, `crouch` and `lie`; on `back`, `walk` and `run` the words are ignored and `npm run story` says so.
+
+**In a custom shot (TSX):**
+
+```tsx
+import {ARM_PRESETS, faceAt, poseAt} from '../../cast/Pose';
+// one pose
+<Sprite id="lead-male-A" height={620} pose={{yaw: 0.45, armR: ARM_PRESETS.reach, headTilt: -4}} propL="phone" />
+// keyed: every number eases between keys, a key carries the earlier values forward
+const pose = poseAt(f, [{f: 0, p: {yaw: 0}}, {f: 18, p: {yaw: 0.5, armR: ARM_PRESETS.raise}}, {f: 40, p: {armR: {a: 160, b: -20}}}]);
+const {face, blink} = faceAt(f, [[0, 'worried'], [40, 'shock']]); // swaps through a two-frame blink
+<Sprite id="lead-female-A" pose={pose} hideFace layers={[`face-${face}` as CastId]} />
+```
+
+Helpers: `reachLimb(side, shoulder, target, upper, fore)` solves an arm to a point in the frame (a hand on a door handle), `shouldersOf(plan, yaw)` gives the shoulders, `turnOf(yaw)` the slides. `<PoseFigure>` is the drawing itself, for a hand-built figure.
+
+How it works (for a new character): `scripts/svg-to-tsx.mjs` finds each person's skull (`head-bare` or a `display:var(--skull-rest)` group), hair (`--hair-rest`), back hair (`--backhair-rest`) and arm marks (`--arm-l/r-rest` groups on top of a shared arm) and writes them out as `<id>--skull` / `--hair` / `--backhair` / `--marks-l|r` with `CAST_PARTS`. Ears switch one at a time with `--ear-l` / `--ear-r`. Build a new person from `head-bare` + a hair group in `--hair-rest` and the rig works with no extra step. A hand-drawn head without those groups (`elder`, `monk`, `novice`, `aunt-family-B`) turns as one piece, which reads much weaker: stage those with arms, `back` or close-ups, or give the head the groups. Gallery: `GRig` (studio → ท่าทาง → pose rig).
 
 Any standing figure can lie down: draw it rotated with `translate(0 234) rotate(-90)` in a 520×200 frame (the stage `lie` pose does this). Change pose **on a cut or a beat**, never by morphing.
 

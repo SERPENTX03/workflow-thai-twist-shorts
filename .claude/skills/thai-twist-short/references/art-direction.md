@@ -2,9 +2,11 @@
 
 The look: flat 2D vector illustration like a storybook, with clean UI cards, counters and diagrams laid on top. Calm frames, precise motion. Colour accents are rationed so they mean something. Evidence: `ref-library.md`.
 
+Flat fills, **not flat pictures**: places in perspective that the camera goes inside, light that pools from a lamp or a window, faces that fill the frame in close-up. How to direct each shot: `directing.md`. Everything in this file is the house style; the composition of each shot is yours.
+
 ## Palette (tokens `T` in `src/engine/theme.ts`)
 
-Pick a **set palette per scene**, not one for the whole film. Bright sets are normal; darkness is saved for the turn.
+Pick a **set palette per scene**, not one for the whole film. Bright sets are normal; darkness is saved for the turn. Bright is not flat: even a noon set has light from one side, shadows thrown away from it and lines in perspective (`depth-light.md`).
 
 | Set | Tokens | Use for |
 |---|---|---|
@@ -40,11 +42,13 @@ Arc: open bright or warm → drift darker each act → the reveal is the darkest
 
 ## Shot vocabulary (rotate them: no two consecutive shots of the same type)
 
+These are shot *types*. Camera angle, framing and layering for each one (low, high, OTS, POV, silhouette, frame-in-frame…) and when to use which: `cinematography.md`.
+
 | Type | Example | Use for |
 |---|---|---|
-| Side-view set + cast | generic `room` | most story beats |
+| Set shot: a place built in perspective, framed for this moment (wide / medium / close / low / high / over the shoulder) | room kit (`src/kit/room.tsx`) or a per-shot component; generic `room` only for a quick test | most story beats — the same place seen from several positions, not one backdrop zoomed |
 | Rules / numbers over a set | generic `rules` | "กฎข้อ N", stat tile, meter, checklist |
-| Close-up object or face | (draw per episode) | ~1 in 4 shots: hand on the tap, dog nose, sweating face, bandage — the clue shots |
+| Close-up object or face | (draw per episode) | ~1 in 3 shots: hand on the tap, dog nose, sweating face, bandage — the clue shots. A face close-up has the head about half the frame, not waist-up |
 | Diagram / cross-section | (draw per episode) | how something works: pipe from pump to floor 23, door open-in vs open-out, crowd per m² from above |
 | Top-down map | generic `map` | who is where, distance rings, the final sting |
 | Evidence card | generic `news` | newspaper, calendar, phone alert — the reveal's proof |
@@ -65,7 +69,7 @@ Generic scenes: `src/scenes/`, their `data` in `scene-kit.md`.
 ## Camera and motion
 
 - Every shot has motion: slow push (scale 1 → 1.08), a pan, or an entrance. Never a dead frame for a full shot.
-- **Depth**: put the far set inside `<Far>` (soft blur, `src/kit/fx.tsx`); keep the cast and props sharp; foreground objects may cross the frame edge.
+- **Depth** (`depth-light.md`): layers — the sharp cast and props, the far set inside `<Far>` (soft blur, `dim` at night, `src/kit/fx.tsx`) with its floor and walls in perspective, and air (`Haze`, dust, rain); a blurred dark foreground crossing the frame edge when the picture has a reason for one (about a third of shots). The lead stands on a third, not dead centre; the vignette leans toward the light, not the middle.
 - Entrances: slide-up through a mask, back-out pops for chips/rings/ticks, drop-in for cards, count-up for numbers. **Banned**: everything fading in, centred title on a gradient, glow on UI, generic particle bursts, frame borders.
 - Hard cuts between shots (on the beat). Camera continuity inside a scene clip.
 - Highlight with **dashed red rings** that pop in (`backOut`), not arrows.
@@ -76,11 +80,12 @@ Generic scenes: `src/scenes/`, their `data` in `scene-kit.md`.
 
 - **Single Source of Truth:** Characters and metadata come from `src/cast.json` (full list: `cast-library.md`, studio: `npm run gallery`). Always cast from active (non-retired) symbols (`lead-male-A/B`, `lead-female-A/B`, `villain-male-A/B`, `father-A/B`, `mother-A/B`, `police-A/B`, etc.). Legacy symbols (`man`, `woman`, `auntie`, `elder`, `M1`–`B1`, `din`) are retired (`"retired": true` in `src/cast.json`). To add new symbols, add them in `src/cast/source/cast.svg`, register in `src/cast.json`, and regenerate `CastSprite.tsx` with `node scripts/svg-to-tsx.mjs`.
 - **Prototype 1 cast** (design canvas https://claude.ai/artifact/TuLAda3PXVngzNaWVrjR1S): pets `cat-black`, `cat-orange`, `beagle`, `dog-patch` (300×340 frame; the old `dog` stays for the temple dog in flood-canal). Share one look: big round head, dot or round glossy eyes, soft pink cheeks.
-- **Relative height**: keep one px-per-cm per shot — `personHeight(id, pxPerCm)` in `src/cast/Sprite.tsx` reads `HEIGHT_CM` (man 170, raincoat 165, student 165, elder 160, monk 160, woman 158, auntie 150, kid / kid-girl 120 in their own 200×420 frame). Pets at the same scale (at 2.6 px/cm: cat 150 px, beagle 205, dog-patch 225). Never stretch every character to one height.
+- **Relative height**: keep one px-per-cm per shot — `personHeight(id, pxPerCm)` in `src/cast/Sprite.tsx` reads `HEIGHT_CM`, which comes from each character's height in `src/cast.json` (adults about 150–175 cm, children about 120 in their own 200×420 frame). Pets at the same scale (at 2.6 px/cm: cat 150 px, beagle 205, dog-patch 225). Never stretch every character to one height.
 - **Hands (hard rule):** one arm = one sleeve + one hand; hide the resting arm before posing it; use the pose library and grip props. Full rules, anchors and checklist: `hands-poses.md`.
 - **Faces:** pick the mood from the face library (`face-*` in `cast.svg`, gallery: `npm run gallery`); hide the neutral face with `hideFace` first — never draw a second pair of eyes over it. Match the mood to the caption line; `hollow` is saved for the turn.
 - Give each named character **one trackable trait** (long sleeves, cap, glasses) — it doubles as a clue device.
 - The animal companion appears in at least 3 shots and reacts before the humans do.
-- The living cast a `<ShadowBlob>`; a ghost protagonist never does (stage roster: `noShadow`).
+- The living cast a `<ShadowBlob>` and, when the shot has one light, a long `CastShadow` away from it (stage: `data.lightAt`); a ghost protagonist never does (stage roster: `noShadow`).
 - Silhouettes / reflections / crowds = the same symbol with `<Sprite silhouette>` (stage roster: `sil`).
-- Close-up faces: draw the head big (≥ 500 px) with sweat drops or wide eyes; full figures that matter ≥ 600 px tall.
+- Close-up faces: the head big (≥ 500 px in 9:16, about half the frame height in 16:9) with sweat drops or wide eyes. Full figures are for wides and are allowed to be small in a big place (isolation); the person who matters in a shot is the brightest, sharpest thing near them, whatever their size.
+- The cast are front-facing sprites today: favour framings that don't show a stiff full-body stand (close-ups, inserts of hands, over the shoulder, backs, sitting / crouching, silhouettes) — `directing.md` §5.

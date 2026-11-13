@@ -87,14 +87,33 @@
   .tile-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
   .tile .pic { aspect-ratio: 1; }
   .tile.tall .pic { aspect-ratio: 400 / 560; }
+  .tile.rig .pic { aspect-ratio: 1200 / 560; }
   .tile .body { padding: 8px 10px 10px; gap: 6px; font-family: var(--mono); font-size: 12.5px; }
   .tile .body .copy { font-size: 11px; }
 
   .wide-grid { grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); }
   .wide .pic { aspect-ratio: 1080 / 700; }
-  .scene-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
-  .scene .pic { aspect-ratio: 9 / 16; }
-  .scene .body { gap: 6px; }
+  .tile.face .pic { aspect-ratio: 640 / 400; }
+  .tile.talk .pic { aspect-ratio: 1200 / 300; }
+  .face-grid { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+  .talk-grid { grid-template-columns: repeat(auto-fill, minmax(460px, 1fr)); }
+  .place-grid { grid-template-columns: repeat(auto-fill, minmax(560px, 1fr)); }
+  .place .pic { aspect-ratio: 1920 / 720; }
+  .place .body { gap: 6px; }
+  .place .body .copy { font-family: var(--mono); font-size: 11.5px; text-align: left; white-space: normal; overflow-wrap: anywhere; }
+  .fit { display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; font-size: 13.5px; margin: 0; }
+  .fit dt { color: var(--gold); white-space: nowrap; }
+  .fit dd { margin: 0; color: var(--muted); }
+  .fit dt.bad { color: #ef8a7a; }
+  .used { font-size: 12.5px; color: var(--muted); }
+  .used b { color: var(--ok); font-weight: 500; }
+  .used.none b { color: var(--muted); }
+  .note { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 10px; padding: 10px 14px; margin: 0 0 16px; font-size: 14px; }
+  details.gone { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 18px; }
+  details.gone summary { cursor: pointer; font-weight: 700; }
+  details.gone table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 13.5px; }
+  details.gone td, details.gone th { text-align: left; padding: 8px 10px 8px 0; border-top: 1px solid var(--line); vertical-align: top; }
+  details.gone th { color: var(--muted); font-weight: 500; }
   .land-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
   .land .pic { aspect-ratio: 16 / 9; }
   .land .body { gap: 6px; }
@@ -134,7 +153,7 @@
     .top-inner { gap: 12px; }
     .wide-grid { grid-template-columns: 1fr; }
     .cast-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
-    .scene-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+    .place-grid, .talk-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -147,11 +166,13 @@
       <a href="#voices">เสียงพากย์</a>
       <a href="#faces">สีหน้า</a>
       <a href="#poses">ท่าทาง</a>
-      <a href="#props">Props</a>
+      <a href="#props">ของถือ</a>
       <a href="#marks">เครื่องหมาย</a>
+      <a href="#places">สถานที่</a>
+      <a href="#parts">ชิ้นส่วน</a>
       <a href="#ui">UI ไทย</a>
-      <a href="#scenes">ฉาก</a>
-      <a href="#stage">ฉากแนวนอน</a>
+      <a href="#stage">กล้อง แสง Close-up</a>
+      <a href="#retired">ออกจากคลัง</a>
 
       <a href="#sfx">เสียงประกอบ</a>
     </nav>
@@ -229,31 +250,34 @@
       </div>
     </article>`).join('');
 
-  const scenesHTML = S.scenes.map((s) => `
-    <article class="card scene">
-      <div class="pic">${pic(s.image, s.scene)}</div>
-      <div class="body">
-        <div class="name"><b>${esc(s.nameTh)}</b><span class="en">${esc(s.scene)}${s.view ? ' · ' + esc(s.view) : ''}</span></div>
-        <p class="desc">${esc(s.use)}</p>
-        ${copyBtn(s.code, 'คัดลอก shot')}
-      </div>
-    </article>`).join('');
-
   const clock = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
   // landscape stage kit: backdrops, close-ups and light grades (src/kit/world, temple, inserts, stage)
+  // where a piece has really been used, read from the episodes' code by npm run gallery
+  const usedLine = (x) => x.uses ? `<div class="used ${(x.usedIn || []).length ? '' : 'none'}">ใช้จริง: <b>${(x.usedIn || []).length ? esc(x.usedIn.join(' · ')) : 'ยังไม่มีเรื่องไหนใช้'}</b></div>` : '';
+  const placeCard = (x) => `
+    <article class="card place">
+      <div class="pic">${pic(x.image, x.id)}</div>
+      <div class="body">
+        <div class="name"><b>${esc(x.nameTh)}</b><span class="en">${esc(x.id)}</span></div>
+        <dl class="fit"><dt>เล่าอะไร</dt><dd>${esc(x.good)}</dd><dt>ถ่ายจาก</dt><dd>${esc(x.cams)}</dd><dt class="bad">อย่าใช้กับ</dt><dd>${esc(x.bad)}</dd></dl>
+        ${usedLine(x)}
+        ${copyBtn(x.code, 'คัดลอกโค้ด')}
+      </div>
+    </article>`;
   const landCard = (x, label) => `
     <article class="card land">
       <div class="pic">${pic(x.image, x.id)}</div>
       <div class="body">
         <div class="name"><b>${esc(x.nameTh)}</b><span class="en">${esc(label ?? x.id)}</span></div>
         <p class="desc">${esc(x.use)}</p>
+        ${usedLine(x)}
         ${copyBtn(x.code, 'คัดลอกโค้ด')}
       </div>
     </article>`;
   const landGrid = (list, label) => `<div class="grid land-grid">${list.map((x) => landCard(x, label?.(x))).join('')}</div>`;
 
-  const arms = S.poses.filter((p) => p.id.startsWith('arm-'));
-  const bodies = S.poses.filter((p) => !p.id.startsWith('arm-'));
+  const bodies = (S.rig || []).filter((x) => /-(body|lie)$/.test(x.id));
+  const acting = (S.rig || []).filter((x) => !/-(body|lie)$/.test(x.id));
 
   app.innerHTML = `
     <section id="cast">
@@ -274,23 +298,28 @@
     </section>
 
     <section id="faces">
-      <div class="sec-head"><h2>สีหน้า &amp; ปาก<small>${S.faces.length} แบบ</small></h2><p class="hint"><code>&lt;Sprite id="man" hideFace layers={['face-shock']} /&gt;</code> · ปากพูด: <code>hideMouth</code> + <code>talk-*</code></p></div>
-      <div class="grid tile-grid">${S.faces.map((x) => tile(x)).join('')}</div>
+      <div class="sec-head"><h2>สีหน้า &amp; ปาก<small>${S.faces.length} สีหน้า · ปากพูด ${(S.talk || []).length} อารมณ์</small></h2><p class="hint">ใส่ชื่อสีหน้าใน actor string เช่น <code>"win@900 worried talk"</code></p></div>
+      <div class="grid face-grid">${S.faces.map((x) => tile(x, 'face')).join('')}</div>
+      <h3>ปากพูดตามสีหน้า</h3>
+      <p class="hint">ใส่ <code>talk</code> ปากจะเลือกชุดให้เองตามสีหน้า · ตัวอย่างแสดง 4 รูปปากที่ระบบสลับไปมา · พูดได้เฉพาะคนที่เป็นเจ้าของบท (กฎข้อ 10)</p>
+      <div class="grid talk-grid">${(S.talk || []).map((x) => tile(x, 'talk')).join('')}</div>
     </section>
 
     <section id="poses">
-      <div class="sec-head"><h2>ท่าทาง<small>${bodies.length} ท่าเต็มตัว · ${arms.length} แขน</small></h2><p class="hint">แสดงบน <code>man</code> ตัวเดียว · แขน: ซ่อนแขนพัก แล้วซ้อนแขนท่า (กฎมือเดียว <code>hands-poses.md</code>) · แขนซ้าย = <code>arm-l-*</code></p></div>
-      <h3>เดิน / วิ่ง (rig ข้อต่อ — ที่ใช้จริงในทุกเรื่อง)</h3>
-      <p class="hint">pose <code>walk</code> / <code>run</code> ใน <code>data.cast</code> วาดจาก <code>src/cast/Rig.tsx</code> ทุกเฟรม ไม่ใช้ภาพนิ่ง <code>man-walk</code> / <code>man-run</code> · ภาพนี้คือ 3 จังหวะของก้าวเดียว</p>
+      <div class="sec-head"><h2>ท่าทาง<small>${(S.rig || []).length} ชุด · วาดบนตัวละครจริงทุกท่า</small></h2><p class="hint">ชุด แผลเป็น รอยสัก ผม ตามตัวละครมาเอง ไม่ต้องปะเพิ่มใน episode (<code>src/cast/Body.tsx</code>, <code>Pose.tsx</code>)</p></div>
+      <h3>นั่ง · ย่อ · นอน</h3>
+      <p class="hint"><code>sit</code> หันหน้า · <code>sit yaw=0.5</code> นั่งสามส่วนสี่เห็นต้นขา · <code>crouch</code> กอดเข่า · <code>lie</code> นอนหงาย (<code>flip</code> = หัวไปทางขวา) · ทุกท่ารับ <code>armL=</code> <code>armR=</code> <code>prop=</code> <code>head=</code> ได้เหมือนท่ายืน</p>
+      <div class="grid wide-grid">${bodies.map((x) => tile(x, 'rig')).join('')}</div>
+      <h3>ยืน: หัน 3/4 + แขนข้อต่อ</h3>
+      <p class="hint"><code>yaw=-1…1</code> · <code>armL=</code> / <code>armR=</code> ชื่อท่า (hold chest offer raise reach wave point face mouth chin head hip pocket lap out) หรือองศา <code>a,b</code> · <code>head=</code> เอียงหัว · <code>look=</code> เหลือบตา · <code>yaw=0&gt;0.5</code> ขยับในช็อต · <code>faces=worried@0,shock@40</code> เปลี่ยนหน้าผ่านการกะพริบ</p>
+      <div class="grid wide-grid">${acting.map((x) => tile(x, 'rig')).join('')}</div>
+      <h3>เดิน / วิ่ง</h3>
+      <p class="hint">pose <code>walk</code> / <code>run</code> วาดจากข้อต่อทุกเฟรม (<code>src/cast/Rig.tsx</code>) · ภาพนี้คือ 3 จังหวะของก้าวเดียว</p>
       <div class="grid tile-grid">${S.gait.map((x) => tile(x, 'tall')).join('')}</div>
-      <h3>ท่าเต็มตัว (ภาพนิ่ง)</h3>
-      <div class="grid tile-grid">${bodies.map((x) => tile(x, 'tall')).join('')}</div>
-      <h3>แขน (ถือของ / ยื่น / ยก)</h3>
-      <div class="grid tile-grid">${arms.map((x) => tile(x, 'tall')).join('')}</div>
     </section>
 
     <section id="props">
-      <div class="sec-head"><h2>Props · ไอคอน · ชิ้นฉาก<small>${S.props.length} ชิ้น</small></h2><p class="hint">props จุดยึดอยู่ที่มือ (0,0) · กดโค้ดเพื่อคัดลอก</p></div>
+      <div class="sec-head"><h2>ของถือในมือ<small>${S.props.length} ชิ้น</small></h2><p class="hint">อยู่ในมือตัวละครเสมอ นับมือได้สองข้าง · <code>prop=phone</code> คู่กับ <code>armR=hold</code> · <code>prop=book@l</code> ระบุมือซ้าย</p></div>
       <div class="grid tile-grid">${S.props.map((x) => tile(x)).join('')}</div>
     </section>
 
@@ -301,27 +330,41 @@
       <div class="grid tile-grid">${S.marks.filter(x => x.label).map((x) => tile(x)).join('')}</div>
     </section>
 
+    <section id="places">
+      <div class="sec-head"><h2>สถานที่<small>${S.places.length} แห่ง · แต่ละการ์ดคือที่เดียวกันจาก 3 ตำแหน่งกล้อง</small></h2></div>
+      <p class="note">เขียน <code>note</code> ของช็อตก่อนว่าใครทำอะไร มองจากไหน แสงมาจากอะไร แล้วค่อยมาหาว่ามีอะไรในคลังที่ใช้ได้ ถ้าไม่มีที่ตรงเรื่อง ให้สร้างใหม่ใน episode อย่าดัดเรื่องให้เข้าฉาก (<code>directing.md</code>)</p>
+      <h3>มาตรฐาน rear-cam: มีแหล่งแสงในภาพ ถ่ายได้หลายมุม</h3>
+      <div class="grid place-grid">${S.places.filter((x) => x.tier === 'a').map(placeCard).join('')}</div>
+      <h3>ใช้ได้ในระยะกลางและใกล้: ภาพกว้างยังแบน ควรยกระดับก่อนใช้เปิดฉาก</h3>
+      <div class="grid place-grid">${S.places.filter((x) => x.tier !== 'a').map(placeCard).join('')}</div>
+    </section>
+
+    <section id="parts">
+      <div class="sec-head"><h2>ชิ้นส่วน<small>${S.parts.length} ชิ้น · หยิบไปประกอบฉากใหม่</small></h2><p class="hint">จัดแสงและวางใหม่ตามช็อต · ตัวไหนเป็นภาพเต็มเฟรมจะบอกไว้</p></div>
+      ${landGrid(S.parts)}
+    </section>
+
     <section id="ui">
       <div class="sec-head"><h2>UI ภาษาไทย<small>${S.ui.length} แบบ · Kanit + IBM Plex Sans Thai</small></h2><p class="hint">อยู่ใน <code>src/kit/ui.tsx</code> · <code>[คำ]</code> = ทอง, <code>{คำ}</code> = แดง</p></div>
       <div class="grid wide-grid">${uiHTML}</div>
     </section>
 
-    <section id="scenes">
-      <div class="sec-head"><h2>ฉากสำเร็จรูป<small>${S.scenes.length} แบบ</small></h2><p class="hint">ใช้ชื่อใน <code>story.json</code> ได้เลย · อยู่ใน <code>src/scenes/</code> · กดคัดลอก shot</p></div>
-      <div class="grid scene-grid">${scenesHTML}</div>
-    </section>
-
     <section id="stage">
-      <div class="sec-head"><h2>ฉากแนวนอน (คลิปยาว)<small>${S.world.length} ฉากหลัง · ${S.places.length} ฉากสำเร็จ · ${S.inserts.length} close-up · ${S.grades.length} แสง</small></h2>
-        <p class="hint">1920×1080 · <code>thai-long-story</code> · ชิ้นส่วนใน <code>src/kit/world.tsx</code> · <code>temple.tsx</code> · <code>places.tsx</code> · <code>inserts.tsx</code> · <code>stage.tsx</code> · คนในภาพ = <code>man</code> 170 ซม. ไว้เทียบขนาด</p></div>
-      <h3>ฉากหลัง (วาดครั้งเดียว ใช้ซ้ำด้วย <code>view</code> + <code>data.cam</code>)</h3>
-      ${landGrid(S.world)}
-      <h3>ฉากสำเร็จ: สถานที่ไทยใช้บ่อย <span class="hint">· <code>src/kit/places.tsx</code> · <code>tone</code> = day / dusk / night</span></h3>
-      ${landGrid(S.places)}
-      <h3>Close-up และของประกอบ (มือไดนามิกและของแทรก)</h3>
+      <div class="sec-head"><h2>กล้อง แสง Close-up<small>${S.inserts.length} close-up · ${(S.camera || []).length} มุมกล้อง · ${S.grades.length} แสง</small></h2>
+        <p class="hint">เครื่องมือของคนกำกับ ใช้ได้กับทุกฉาก · คู่มือ <code>cinematography.md</code> · <code>depth-light.md</code></p></div>
+      <h3>มุมกล้องและอุปกรณ์ภาพ</h3>
+      ${landGrid(S.camera || [])}
+      <h3>Close-up และของแทรก</h3>
       ${landGrid(S.inserts)}
       <h3>แสงและความทรงจำ <span class="hint">· <code>data.light</code> / <code>data.past</code> ใน story.json</span></h3>
       ${landGrid(S.grades, (x) => (x.id === 'past' ? 'past' : 'light: ' + x.id))}
+    </section>
+
+    <section id="retired">
+      <details class="gone">
+        <summary>ออกจากคลังแล้ว ${(S.retired || []).length} กลุ่ม: ห้ามใช้ในเรื่องใหม่</summary>
+        <table><tr><th>อะไร</th><th>ทำไม</th><th>อยู่ที่ไหน</th></tr>${(S.retired || []).map((r) => `<tr><td>${esc(r.what)}</td><td>${esc(r.why)}</td><td>${esc(r.where)}</td></tr>`).join('')}</table>
+      </details>
     </section>
 
     <section id="sfx">
