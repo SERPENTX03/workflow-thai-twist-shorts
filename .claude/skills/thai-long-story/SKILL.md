@@ -21,7 +21,7 @@ Reference builds: `fifth-room` and `father-ledger` (`episodes/<slug>/brief.md`, 
 | 5 | **One-pass review** (CLAUDE.md rule 5; no per-chapter scoring) | `npm run review -- episodes/<slug> --board` → suspect list + `out/<slug>-review.html` (`references/review-long.md`) | audit ✗ fixed or answered; suspect/changed frames looked at full size; the user scrolls the page once, flags odd shots, they are fixed once; `--accept` |
 | 6 | Timing check = the single final render; a chapter preview only if the user asks or a chapter is in doubt | `npm run chapter -- episodes/<slug> <n> --render` (optional) | the user has seen the frames first (CLAUDE.md rule 4) |
 | 7 | Final render + loudness + QC | `npm run final -- episodes/<slug>` | `renders/<slug>-final.mp4`, QC all ✓ |
-| 8 | Packaging: cover stills, title, description with YouTube chapters (`npm run chapter` prints them) | `references/review-long.md` → *Packaging* | user picks a title and cover |
+| 8 | Packaging: cover stills (always with the `LongPill` "เรื่องยาว · ตอนจบหักมุม" at the bottom centre and a keyword chip top left, `src/kit/cover.tsx`), title, description with YouTube chapters (`npm run chapter` prints them) | `references/review-long.md` → *Packaging* | user picks a title and cover |
 
 ## What changes from Shorts
 

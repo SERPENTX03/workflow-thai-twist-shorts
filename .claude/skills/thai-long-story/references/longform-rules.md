@@ -10,6 +10,8 @@ Evidence: `temple-boy` (the first long film; QC 10/10; now in `archive/temple-bo
 
 ## Structure — acts with timestamps
 
+**Pick the engine, the structure and the flavour first** (`.claude/story/twist-engines.md`). The table below is the `hunt` structure (a mystery with a culprit, suspects, a slip and an arrest), the one this channel has used most. It is one of six. A `contract`, `irony`, `rule-game` or `two-time` film keeps the cold open, the hook contract, the chapter blocks, the reframe near the midpoint and the aftermath, and replaces Act 2b, the slip and the culprit with the layers it declares in `twist.layers`. Every long film has **at least two layers**: the first (≈ 40–55 %) answers the question the hook asked, the second (≈ 75–90 %) changes the question. Do not use `hunt` in more than two films in a row.
+
 | Part | Share | temple-boy | Job |
 |---|---|---|---|
 | Cold open | first 20–40 s | 0:00–0:42 | The strongest strange image (names carved under the bed) + the **hook contract** below. No logo, no "สวัสดี", no aphorism ("มีคนเคยบอกว่า…"), no mood-only shots before the premise. |
@@ -18,7 +20,8 @@ Evidence: `temple-boy` (the first long film; QC 10/10; now in `archive/temple-bo
 | Act 2a — escalation | ~20–30 % | ~4:30–11:00 | The tracked device advances (rule 3, 4, 5…); each step followed by an event that makes it matter. A **mini-reveal every 2–3 min**. |
 | Midpoint reframe | ~50–60 % | 11:56 | A reveal that changes what everything so far meant ("นนท์เสียไปเมื่อสิบเอ็ดปีก่อน"). Red box. |
 | Act 2b — the wrong answer | ~25 % | ~12:00–17:00 | Suspicion moves; the characters (and viewer) commit to a wrong explanation; the real culprit stays in frame, helpful. |
-| Slip → reveal | ~85–90 % | 17:22 → 18:12 | One character says one thing they could not know; then the proof (flashback in `past` grade); the twist line on its own shot, `bighit`. |
+| Slip → reveal | ~85–90 % | 17:22 → 18:12 | One character says one thing they could not know; then the proof (flashback in `past` grade); the twist line on its own shot, `bighit`. Picture first, a `hush` beat, then one line that changes what an old scene meant (`twist-engines.md` §6); the clue recap comes after it, at most 3–4 one-line items. |
+| (other structures) | | | Layer 2 lands here instead of the slip; then the peak of the film's flavour (a choice, a sacrifice, the rule turned back), not only an arrest. |
 | Aftermath | 1–2 min | 18:12–19:44 | What it costs; loose threads closed (each clue paid off on screen). Not a lecture. |
 | End card | last 30–40 s | 19:44–20:30 | Outcome card + fiction note + next story / subscribe line. |
 
@@ -42,7 +45,7 @@ The twist stays hidden: the contract states the premise, never the answer (*Conc
 - **Average shot 2.5–4 s** (*temple-boy 2.8 s*, 21 shots/min). Long holds (> 12 beats, `story` warns) only on purpose: inspecting a clue, a silence (`hush`).
 - **Dialogue coverage**: alternate wide two-shot → speaker close (or `-ots`) → listener reaction → insert of what they talk about. Never more than 4 shots of the same `view` in a row, never more than 3 of the same setup (`cinematography.md` §6).
 - **The tracked device**: one list or count the viewer follows across the film (10 rules, years returned, nights left). Show progress on screen each time it moves ("กฎข้อ 4 / 10"). This is the long-form knowledge layer.
-- **Chapter blocks of 2–4 min.** The film stays one story, cut into blocks the way the benchmark cuts its 11 min into 5 two-minute episodes. Each block **ends on a line that opens the next question** (a mini cliffhanger, not a recap). The next one opens on a chapter card of ≤ 2 s (`บทที่ 3 · <name as a question>`, no spoilers, the same names as the YouTube chapters). The card resets attention. The cliffhanger gives a reason to cross it.
+- **Chapter blocks of 2–4 min.** The film stays one story, cut into blocks the way the benchmark cuts its 11 min into 5 two-minute episodes. Each block **ends on a line that opens the next question** (a mini cliffhanger, not a recap). **No on-screen chapter card, no "บทที่ N" title** (owner decision 2026-11-14): the story runs straight on. A chapter is only a timestamp: mark its first shot with `chapter` in story.json for the YouTube chapter list (the name has no spoilers). The next block opens on a new image and a time/place line in the narration, not a card. The cliffhanger gives the reason to cross the cut.
 - **Motion inside the shot.** Measured: ~60 % of the benchmark's frames move against 13–20 % of ours. Every camera shot of ≥ 2 s has a slow push or drift (≥ 6 % over the shot) **and**, wherever the beat allows, one action that completes inside it: a hand passes the bun, a head turns, a face changes, a tag or callout pops in, a light flickers. A held still frame is a choice, kept for `hush` beats and inspecting a clue, and its `note` says so. `npm run shots` flags a film with more than 30 % still camera shots.
 - **Dossier callouts.** When a suspect is introduced, 2–3 thin-line labels on their traits (หัวโล้น · แผลเป็นพาดคิ้ว · รอยสักมังกร) plus a name/age tag. Every suspect gets them with the same weight, the culprit no more than anyone (*Concealment* rule 4), and the culprit's real clue is never among the labelled traits.
 
@@ -55,6 +58,8 @@ The twist stays hidden: the contract states the premise, never the answer (*Conc
 - Fair-play test: after the reveal, every earlier scene must still make sense.
 
 ## Concealment (กฎซ่อนหักมุม) — fair is not enough
+
+Rules 3–5 are for a `hunt` (a culprit hidden among suspects). The other structures keep rules 1, 2 and 6–9 and replace 3–5 with the rotation in `twist-engines.md` §1: a film whose answer is not a person needs no field of suspects. Rule 5 now reads across the whole channel. The role type, the engine and whether the ghost is fake are checked against `universe/canon.json` by `npm run story`.
 
 The rules above make the twist fair. On their own they also make it easy to call: one character who is always there and always helpful, one physical trait the narrator remarks on, one wrong suspect who looks like a villain. `fifth-room` shows it: the caretaker enters at 1:27 and within 20 seconds the narrator says he came from behind the house and not the lane, that his right little finger is a joint short, and that his boots have fresh mud though it has not rained in a week. All three are the evidence of the reveal at 80 %. A viewer has the answer at 9 % of the film. These rules hide what the clue rules plant.
 
@@ -108,7 +113,7 @@ The twist itself (the kind aunt is the boy's mother) was fair and well hidden. T
 4. **The person we are looking for has a face.** In a search or rescue story, show the missing person alive and specific (a flashback, a video, the photo before it is erased) inside the first 2 minutes, and again in each act. Empathy needs a face; a voice and an empty wall do not carry 25 minutes.
 5. **Say what someone is.** If being dead, a ghost or not human is *not* the twist, the viewer knows it by that character's second scene (a line, `hollow`, a look nobody else gets). If it *is* the twist, it is a clue and goes under Concealment. Leaving it vague in between gives the viewer no feeling to have: fear, pity or suspicion.
 6. **Places tell apart at phone size.** Each recurring place has its own exterior, colour or landmark, and every return to it opens on a shot or tag that says where we are ("บ้านมะลิ · หลังที่ 2"). When the premise *is* sameness (identical rooms), everything around the sameness must differ, or the viewer cannot tell which house they are in.
-7. **Few open questions at once.** At most ~3 open at a time, each tied in words to the main one. `same-child` ran eight together (where is Phrae, why identical rooms, who is Ton, who wrote in the notebook, the bus, the girl in the mirror, Chan's envelopes, the knock). Close one before opening the fourth. The chapter card's last line before it (and the recap line after it) restates goal + law + what just changed in one sentence.
+7. **Few open questions at once.** At most ~3 open at a time, each tied in words to the main one. `same-child` ran eight together (where is Phrae, why identical rooms, who is Ton, who wrote in the notebook, the bus, the girl in the mirror, Chan's envelopes, the knock). Close one before opening the fourth. The last line of a chapter block (and the recap line that opens the next one) restates goal + law + what just changed in one sentence.
 8. **How did they get there?** Every move the plot needs is said on screen in one line: how the sister ended up behind the door, why she went in, who closed it. "The viewer can work it out" is two hops; that is a cold-read hole.
 9. **The three-sentence test.** The brief opens with the story told to a friend in three sentences (who wants what · what stands in the way and how this world works · what turns), using at most three names. If it needs more, the story is too intricate for one hearing: cut threads before writing shots. The cold read checks the same thing from the viewer's side (`.claude/story/cold-read.md` → *Comprehension*).
 
@@ -201,8 +206,9 @@ A 20 min film shot mostly from one flat eye-level side view feels like a slidesh
 ## Long-form checklist (gate for step 1)
 
 - [ ] Logline (1 sentence), twist (1 sentence), runtime target set.
+- [ ] `twist` declared: engine · structure · flavour · supernatural · culprit · ending · line · **≥ 2 layers**, the second changing the question (`twist-engines.md`). No repeat of the last two films, or a one-line reason. Hook gate and regular-viewer gate planned (`cold-read.md`).
 - [ ] Cold open: strongest image + question inside 30 s, before the title. **Hook contract by 0:15** (who · deal or threat · a number · the question) written out in the brief and timed aloud.
-- [ ] Chapter plan with target timestamps: blocks of **2–4 min**, each ending on an open-question line and opened by a ≤ 2 s chapter card (marked with `chapter` in story.json); midpoint reframe at 45–60 %; reveal at 80–90 %.
+- [ ] Chapter plan with target timestamps: blocks of **2–4 min**, each ending on an open-question line, with no chapter card on screen (the block is only marked with `chapter` in story.json for the YouTube list); midpoint reframe at 45–60 %; reveal at 80–90 %.
 - [ ] `"captionMode": "phrase"` set; narration written with a space at every breath.
 - [ ] Light plan meets *Dark is for turns*: at least one bright chapter, first minute not the darkest stretch.
 - [ ] Each suspect gets the same dossier callouts; the culprit's real clue is not one of them.

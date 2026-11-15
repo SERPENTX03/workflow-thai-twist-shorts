@@ -55,6 +55,12 @@ Renders the whole film once, normalises to −14 LUFS and runs `qc` (`renders/<s
 ## 4. Packaging
 
 - **Cover**: export `COVERS` (`[{id, component}]`) from `src/episodes/<slug>/cover.tsx`; `src/Root.tsx` finds it by itself, so archiving an episode leaves Root alone (`father-ledger` has `FatherLedgerCoverA–C`, each a real set and cast with `<CastSprite />` mounted); render 2–3 variants with `npx remotion still src/index.ts <StillId> episodes/<slug>/renders/<slug>-cover-A.jpg` and let the user pick. Big face or the key object, ≤ 4 words of text, readable at 320 px wide. The cover uses only what the cold open shows (`longform-rules.md` → *Concealment* rule 8).
+- **Every long-form cover has this layout** (built from `src/kit/cover.tsx`; `tiger-platform` and `banana-soi` covers are the examples):
+  - **Bottom centre: the `<LongPill />` "เรื่องยาว · ตอนจบหักมุม", always, on every variant.** The owner finds it lifts clicks (2026-11-15). It comes from ผู้เช่าที่จำบ้านได้, the channel's most-viewed cover. Don't move it, re-word it or leave it out.
+  - Top left: a `<Chip>` with one keyword from the cold open (≤ ~20 characters, a number when the story has one, e.g. "คนหายเมื่อ 20 ปีก่อน").
+  - Left: two big `<Line>`s (white, then a coloured line with glow), over `<LeftShade>`.
+  - Right third: one big face.
+  - Bottom-right corner: empty, for the duration badge.
 - **Keep the cover pattern**: CTR is 7 % (`channel-playbook.md`), so covers are not the problem. Change titles before covers.
 - **Title**: 3 options in `renders/<slug>-description.md`, at least one in the benchmark form `<ชื่อสั้น จำง่าย> | <กติกา/ผลลัพธ์ที่ชัด> (เต็มเรื่อง)`, e.g. "กฎกะดึก ร้าน 24 ชั่วโมง | ทำผิดกฎข้อเดียว = หายตัว"; the others put the question or the strangest number first. Suggest running them through YouTube Studio's *Test & Compare*, and log the winner in `channel-playbook.md`.
 - **Description**: 2–3 lines of hook (no spoiler), a comment prompt, the fiction note, hashtags, and **YouTube chapters** — paste the lines `npm run chapter -- episodes/<slug>` prints (they start at 0:00; YouTube needs ≥ 3 chapters of ≥ 10 s). Chapter names are viewer-facing: no spoilers in them.

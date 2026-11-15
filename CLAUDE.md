@@ -43,6 +43,11 @@ This repo makes Thai vertical (9:16) and landscape twist-ending short stories wi
     - **Fixed things are drawn once in the place** (`ward.tsx`: windows, signs, beds, the curtain, the counter) and never per shot, so a count or a position cannot change between camera positions. A thing that changes (a curtain opened, a lamp off, a bed emptied) changes through a named `data` state on the shot where the story changes it, and stays changed in every later shot.
     - A close-up may leave a thing out of frame; it may not draw it differently. `npm run story` lists a lying actor missing from later shots of their place as `continuity:`; fix it or declare the exit.
 
+19. **A person in a photo, poster, screen, memory or a drawing on a wall is the cast's own sprite, never a shape drawn for the occasion.** Framing an existing character is quicker than drawing one, and it keeps a face the same everywhere: the viewer learns a face in the photo and must find the same face in the flashback and at the reveal (`tiger-platform` shots 15/16 were circles and boxes, and read as an emoji, not a person).
+    - Use the real sprite: `<FaceEcu>` (`src/kit/ecu.tsx`) for a face as big as the frame, `<Actors>` with roster strings for people in a picture.
+    - Make it a picture with `src/kit/photo.tsx`: `PhotoPrint` (a print standing in the frame: paper border, shadow) or `PhotoFilter` (the whole frame is the photo). Both apply the faded-sepia `PHOTO_FILTER`, dust, scratches, a light crease and a vignette, so an old picture looks old.
+    - A younger or older version of a character is a roster variant of the same symbol (`boon3` = the same body with black hair), never a new drawing. If the story needs a face the library has no symbol for, add the symbol (rule 12) instead of drawing circles.
+
 ## Layout
 
 ```

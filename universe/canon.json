@@ -9,18 +9,199 @@
     "3": "shared event referenced",
     "4": "direct sequel (series)"
   },
+  "_twistFields": "twist = the episode's twist ledger (.claude/story/twist-engines.md §8): engine · structure · flavour · supernatural · culprit · ending · line (one-sentence spoiler, used by the regular-viewer cold read) · layers · guess. npm run story checks rotation in file order, so keep episodes in release order.",
   "_placeFields": "name (on screen) · zone · set (drawing file; archive/<slug>/src/... once archived, src/kit/... once promoted) · cams (views that passed review) · tells (what stories it can hold) · state (latest condition) · episodes · keep · guess (inferred, owner to confirm)",
   "places": {
-    "police-station": { "name": "สภ.คลองหมอก", "zone": "ตัวอำเภอ", "set": "src/kit/policestation.tsx", "cams": ["station:wide", "station:rin-report-ots", "station:wichai-close"], "tells": "รับแจ้งความ สอบปากคำ บอร์ดคดี ที่ทำงานหมวดวิชัย", "state": "ปกติ", "episodes": ["night-shift-rules", "rain-night", "rear-cam", "same-child", "ghost-money", "father-ledger", "fifth-room"], "keep": true, "guess": true },
-    "market": { "name": "ตลาดสดคลองหมอก", "zone": "ตัวอำเภอ", "set": "src/episodes/father-ledger/stall.tsx", "cams": [], "tells": "ข่าวลือ หนี้ ร้านประจำ คนทั้งอำเภอผ่าน", "state": "ปกติ", "episodes": ["father-ledger"], "keep": true, "guess": true },
-    "temple-kok": { "name": "วัดโคกตะเคียน", "zone": "ชานอำเภอ", "set": "archive/temple-boy/src/sets.tsx", "cams": [], "tells": "ตำนานเด็กวัด ต้นตะเคียน งานประจำปี", "state": "ปกติ", "episodes": ["temple-boy"], "keep": true, "guess": false },
-    "temple-dong": { "name": "วัดดงสะเดา", "zone": "ชนบท ปลายถนน 11", "set": "archive/ghost-money/src/sets.tsx", "cams": [], "tells": "งานศพ สวดกะดึก ศาลา", "state": "ปกติ", "episodes": ["ghost-money"], "keep": true, "guess": true },
-    "canal-village": { "name": "หมู่บ้านริมคลองเจ็ดหลัง + โรงเรียน", "zone": "ริมคลอง", "set": "archive/same-child/src/sets.tsx", "cams": [], "tells": "ครอบครัว เด็กหาย ท่าน้ำ คืนฝนตก", "state": "ปกติ", "episodes": ["same-child", "rain-night"], "keep": true, "guess": true },
-    "road-11": { "name": "ถนนสาย 11 + ปั๊มเก่า + สุสานท้ายซอย 11", "zone": "ถนน 11", "set": "archive/rear-cam/src/night.tsx", "cams": [], "tells": "ขับรถกลางคืน ไรเดอร์ วิน สุสาน", "state": "ปกติ", "episodes": ["rear-cam"], "keep": true, "guess": true },
-    "highway-shop": { "name": "ร้านสะดวกซื้อริมทางหลวง", "zone": "ทางหลวงทางเข้าอำเภอ", "set": "archive/night-shift-rules/src/store.tsx", "cams": [], "tells": "กะดึก คนแปลกหน้าผ่านทาง กล้องวงจรปิด", "state": "ปกติ", "episodes": ["night-shift-rules"], "keep": true, "guess": true },
-    "dorm-tower": { "name": "หอพักตึกสูง (ห้อง 808)", "zone": "ชานเมือง", "set": "archive/dont-open-curtain/src/dorm.tsx", "cams": [], "tells": "คนต่างถิ่น เด็กมหาลัย กฎหอ", "state": "ปกติ (ซีรีส์หอชั้น 8 จะเปลี่ยนเป็นไหม้ ถ้าทำ)", "episodes": ["dont-open-curtain"], "keep": true, "guess": true },
-    "house-5": { "name": "บ้านเลขที่ 5 ซอยตันหลังตลาด", "zone": "ตัวอำเภอ หลังตลาด ด้านหลังติดคลอง", "set": "src/episodes/fifth-room/ext.tsx, rooms.tsx, room5.tsx, yard.tsx", "cams": ["ext:windows-fif", "ext:windows-wide", "ext:gate-low", "living:wide", "kitchen:tea-wide", "bedroom:wardrobe-low", "room5:reveal-fif", "room5:napa-fall-high", "yard:pier-confront-wide"], "tells": "บ้านแฝดเก่าของธนาคาร ห้องลับที่ซ่อนไว้ ผนังติดบ้านข้างเคียง ท่าน้ำหลังบ้าน", "state": "หลังเรื่องจบ ห้องที่ห้าถูกเปิด ประมูลยกเลิก ไม่มีคนอยู่", "episodes": ["fifth-room"], "keep": true, "guess": true },
-    "hospital": { "name": "โรงพยาบาลคลองหมอก (ตึกเมตตา)", "zone": "ตัวอำเภอ", "set": "src/episodes/bed-two/ward.tsx, places.tsx (lobby, stair, booth, pharm, canteen)", "cams": [], "tells": "โรงพยาบาลรัฐของอำเภอ ตึกเมตตาเก่าสี่ชั้นปิดปรับปรุง (วอร์ดชั้น 4, ทางลาดเข็นเตียง, ล็อบบี้รูป ผอ., ป้อมยาม) ใช้ได้กับห้องฉุกเฉิน ห้องเก็บศพ เวรดึก คดียา", "state": "หลัง bed-two: ตึกเมตตายังปิด ชั้น 4 เป็นที่เกิดเหตุ ผอ.วรเทพกลับมาทำงาน", "episodes": ["bed-two"], "keep": true, "guess": false }
+    "police-station": {
+      "name": "สภ.คลองหมอก",
+      "zone": "ตัวอำเภอ",
+      "set": "src/kit/policestation.tsx",
+      "cams": [
+        "station:wide",
+        "station:rin-report-ots",
+        "station:wichai-close"
+      ],
+      "tells": "รับแจ้งความ สอบปากคำ บอร์ดคดี ที่ทำงานหมวดวิชัย",
+      "state": "ปกติ",
+      "episodes": [
+        "night-shift-rules",
+        "rain-night",
+        "rear-cam",
+        "same-child",
+        "ghost-money",
+        "father-ledger",
+        "fifth-room"
+      ],
+      "keep": true,
+      "guess": true
+    },
+    "market": {
+      "name": "ตลาดสดคลองหมอก",
+      "zone": "ตัวอำเภอ",
+      "set": "src/episodes/father-ledger/stall.tsx",
+      "cams": [],
+      "tells": "ข่าวลือ หนี้ ร้านประจำ คนทั้งอำเภอผ่าน",
+      "state": "ปกติ",
+      "episodes": [
+        "father-ledger"
+      ],
+      "keep": true,
+      "guess": true
+    },
+    "temple-kok": {
+      "name": "วัดโคกตะเคียน",
+      "zone": "ชานอำเภอ",
+      "set": "archive/temple-boy/src/sets.tsx",
+      "cams": [],
+      "tells": "ตำนานเด็กวัด ต้นตะเคียน งานประจำปี",
+      "state": "ปกติ",
+      "episodes": [
+        "temple-boy"
+      ],
+      "keep": true,
+      "guess": false
+    },
+    "temple-dong": {
+      "name": "วัดดงสะเดา",
+      "zone": "ชนบท ปลายถนน 11",
+      "set": "archive/ghost-money/src/sets.tsx",
+      "cams": [],
+      "tells": "งานศพ สวดกะดึก ศาลา",
+      "state": "ปกติ",
+      "episodes": [
+        "ghost-money"
+      ],
+      "keep": true,
+      "guess": true
+    },
+    "canal-village": {
+      "name": "หมู่บ้านริมคลองเจ็ดหลัง + โรงเรียน",
+      "zone": "ริมคลอง",
+      "set": "archive/same-child/src/sets.tsx",
+      "cams": [],
+      "tells": "ครอบครัว เด็กหาย ท่าน้ำ คืนฝนตก",
+      "state": "ปกติ",
+      "episodes": [
+        "same-child",
+        "rain-night"
+      ],
+      "keep": true,
+      "guess": true
+    },
+    "road-11": {
+      "name": "ถนนสาย 11 + ปั๊มเก่า + สุสานท้ายซอย 11",
+      "zone": "ถนน 11",
+      "set": "archive/rear-cam/src/night.tsx",
+      "cams": [],
+      "tells": "ขับรถกลางคืน ไรเดอร์ วิน สุสาน",
+      "state": "ปกติ",
+      "episodes": [
+        "rear-cam"
+      ],
+      "keep": true,
+      "guess": true
+    },
+    "highway-shop": {
+      "name": "ร้านสะดวกซื้อริมทางหลวง",
+      "zone": "ทางหลวงทางเข้าอำเภอ",
+      "set": "archive/night-shift-rules/src/store.tsx",
+      "cams": [],
+      "tells": "กะดึก คนแปลกหน้าผ่านทาง กล้องวงจรปิด",
+      "state": "ปกติ",
+      "episodes": [
+        "night-shift-rules"
+      ],
+      "keep": true,
+      "guess": true
+    },
+    "dorm-tower": {
+      "name": "หอพักตึกสูง (ห้อง 808)",
+      "zone": "ชานเมือง",
+      "set": "archive/dont-open-curtain/src/dorm.tsx",
+      "cams": [],
+      "tells": "คนต่างถิ่น เด็กมหาลัย กฎหอ",
+      "state": "ปกติ (ซีรีส์หอชั้น 8 จะเปลี่ยนเป็นไหม้ ถ้าทำ)",
+      "episodes": [
+        "dont-open-curtain"
+      ],
+      "keep": true,
+      "guess": true
+    },
+    "house-5": {
+      "name": "บ้านเลขที่ 5 ซอยตันหลังตลาด",
+      "zone": "ตัวอำเภอ หลังตลาด ด้านหลังติดคลอง",
+      "set": "src/episodes/fifth-room/ext.tsx, rooms.tsx, room5.tsx, yard.tsx",
+      "cams": [
+        "ext:windows-fif",
+        "ext:windows-wide",
+        "ext:gate-low",
+        "living:wide",
+        "kitchen:tea-wide",
+        "bedroom:wardrobe-low",
+        "room5:reveal-fif",
+        "room5:napa-fall-high",
+        "yard:pier-confront-wide"
+      ],
+      "tells": "บ้านแฝดเก่าของธนาคาร ห้องลับที่ซ่อนไว้ ผนังติดบ้านข้างเคียง ท่าน้ำหลังบ้าน",
+      "state": "หลังเรื่องจบ ห้องที่ห้าถูกเปิด ประมูลยกเลิก ไม่มีคนอยู่",
+      "episodes": [
+        "fifth-room"
+      ],
+      "keep": true,
+      "guess": true
+    },
+    "hospital": {
+      "name": "โรงพยาบาลคลองหมอก (ตึกเมตตา)",
+      "zone": "ตัวอำเภอ",
+      "set": "src/episodes/bed-two/ward.tsx, places.tsx (lobby, stair, booth, pharm, canteen)",
+      "cams": [],
+      "tells": "โรงพยาบาลรัฐของอำเภอ ตึกเมตตาเก่าสี่ชั้นปิดปรับปรุง (วอร์ดชั้น 4, ทางลาดเข็นเตียง, ล็อบบี้รูป ผอ., ป้อมยาม) ใช้ได้กับห้องฉุกเฉิน ห้องเก็บศพ เวรดึก คดียา",
+      "state": "หลัง bed-two: ตึกเมตตายังปิด ชั้น 4 เป็นที่เกิดเหตุ ผอ.วรเทพกลับมาทำงาน",
+      "episodes": [
+        "bed-two"
+      ],
+      "keep": true,
+      "guess": false
+    },
+    "soi-banana": {
+      "name": "ซอยสวนกล้วย",
+      "zone": "ชานอำเภอ",
+      "set": "src/episodes/banana-soi/ (ยังไม่วาด)",
+      "cams": [],
+      "tells": "ซอยบ้านไม้ 5 หลัง + สวนกล้วยท้ายซอย + ปากซอยติดถนนใหญ่ ใช้กับคดีลักขโมย ชุมชนชานเมือง ข่าวลือผีในสวน คนเช่าบ้านราคาถูก",
+      "state": "ก่อนเรื่อง: หลัง 1-2 ว่างหลังโดนงัด",
+      "episodes": [
+        "banana-soi"
+      ],
+      "keep": true,
+      "guess": false
+    },
+    "mok-forest": {
+      "name": "ป่าเขาท้ายอำเภอคลองหมอก (ห้างเก่าริมหุบ + บ้านลุงหมานปากทางขึ้นเขา)",
+      "zone": "ชายอำเภอ ป่าเขาท้ายอำเภอ",
+      "set": "src/episodes/tiger-platform/ (ยังไม่วาด)",
+      "cams": [],
+      "tells": "ป่าที่มีสมิงตามกฎ (เท้าไม่แตะดินปลอดภัย), ห้างนอนกลางป่า, บ้านปากทางที่ทุกคนเข้าป่าต้องผ่าน, หุบเหว ลำห้วย ใช้กับเรื่องหลงป่า คนหาย นอนห้าง เสียงเรียก",
+      "state": "หลัง tiger-platform: ห้างยังอยู่ ลุงหมานยังอยู่ปากทาง กระดูกเริงถูกนำกลับบ้าน ป่ามีสมิงตัวใหม่ (บุญ)",
+      "episodes": [
+        "tiger-platform"
+      ],
+      "keep": true,
+      "guess": false
+    },
+    "soi-rongsi-shop": {
+      "name": "ร้านสะดวกซื้อปลายซอยโรงสี",
+      "zone": "ถนน 11 (ซอยแยก)",
+      "set": "src/episodes/name-tag/ (ยังไม่วาด)",
+      "cams": [],
+      "tells": "ร้านเล็กเปิดยี่สิบสี่ชั่วโมงปลายซอยเปลี่ยว ไม่มีบ้านคนในหนึ่งกิโล: กะดึกคนเดียว กล้องวงจรปิด ลูกค้าประจำ ประตูอัตโนมัติ ใช้กับเรื่องคนเดียวทั้งคืน ข่าวลือ ทางผ่านไปถนน 11",
+      "state": "หลัง name-tag: โอ๊ตเลิกเข้ากะ ร้านยังเปิด เจ๊หาคนเฝ้ากะดึกไม่ได้",
+      "episodes": [
+        "name-tag"
+      ],
+      "keep": true,
+      "guess": false
+    }
   },
   "characters": {
     "wichai": {
@@ -29,10 +210,25 @@
       "status": "alive",
       "cast": "police-A",
       "voiceRole": "officer",
-      "traits": ["ไฝแก้มขวา", "สมุดปกดำ", "แว่นกรอบดำ"],
+      "traits": [
+        "ไฝแก้มขวา",
+        "สมุดปกดำ",
+        "แว่นกรอบดำ"
+      ],
       "role": "ร้อยเวร สภ.คลองหมอก ตัวประกอบข้ามเรื่อง ไม่แก้คดีบนจอ",
-      "appears": ["fifth-room", "bed-two"],
-      "mayAppear": ["night-shift-rules", "rain-night", "rear-cam", "same-child", "ghost-money", "father-ledger"]
+      "appears": [
+        "fifth-room",
+        "bed-two",
+        "banana-soi"
+      ],
+      "mayAppear": [
+        "night-shift-rules",
+        "rain-night",
+        "rear-cam",
+        "same-child",
+        "ghost-money",
+        "father-ledger"
+      ]
     }
   },
   "events": {
@@ -47,6 +243,30 @@
       "when": "19 วันจนถึงเช้าวันที่ 20 ของเรื่อง bed-two",
       "place": "hospital",
       "episode": "bed-two"
+    },
+    "soi-banana-burglaries": {
+      "text": "แก๊งย่องเบาใช้โดรนติดไฟ LED แดง-เขียวปลอมเป็นกระสือ โดยมีป้าแม้นเพื่อนบ้านดูต้นทาง งัดบ้านในซอยสวนกล้วยสามหลัง ตะวันวางกับดัก หมวดวิชัยจับแก๊งและป้าแม้น เอกเจ้าของบ้านเช่าถูกตั้งข้อหาปล่อยกู้ดอกเบี้ยเกินอัตรา",
+      "when": "6 เดือนก่อนเรื่อง จนถึงเช้าวันที่ 5 ของเรื่อง banana-soi",
+      "place": "soi-banana",
+      "episode": "banana-soi"
+    },
+    "reng-taken": {
+      "text": "ยี่สิบปีก่อน ตีสอง บนห้างเก่าริมหุบ บุญกลัวจนทนไม่ไหว ยัดตะเกียงใส่มือเริงแล้วส่งเขาลงไปก่อน เริงถูกสมิงเอาไปและกลายเป็นสมิงตัวต่อไป บุญบอกทุกคนว่าเริงพลัดตกหุบ",
+      "when": "20 ปีก่อนเรื่อง tiger-platform",
+      "place": "mok-forest",
+      "episode": "tiger-platform"
+    },
+    "boon-night": {
+      "text": "ทีมสำรวจเจอกระดูกเริงที่ก้นหุบ บุญกับต้าลูกชายค้างคืนบนห้างเดิม สมิง (เริง) ขึ้นห้างมานอนข้างต้า รอให้บุญเรียกลูกลงมา บุญสารภาพแล้วยอมไปแทน ต้ารอดถึงเช้า บุญตายที่ลำห้วยและกลายเป็นสมิงตัวใหม่ ลุงหมานได้รู้ความจริงและนำกระดูกน้องกลับบ้าน",
+      "when": "หนึ่งคืนของเรื่อง tiger-platform",
+      "place": "mok-forest",
+      "episode": "tiger-platform"
+    },
+    "phum-curve": {
+      "text": "ภูมิ อายุ 24 ขี่มอเตอร์ไซค์ของโอ๊ต (เบรกหน้าอ่อน) ใส่เสื้อพนักงานของโอ๊ต ไปเข้ากะดึกแทนเพื่อนคืนเดียว เสียหลักที่โค้งถนนสาย 11 ตีหนึ่งห้าสิบห้า เสียชีวิต ข่าวแรกระบุผิดว่าเป็นโอ๊ต แก้ชื่อสองวันต่อมา มีศาลข้างทางที่โค้ง โอ๊ตจำตัวเองเป็นภูมิและมาเข้ากะทุกคืนสี่สิบเอ็ดคืน ประตูร้านเปิดเองทุกคืนตีหนึ่งห้าสิบห้า (ผีภูมิ)",
+      "when": "41 วันก่อนเรื่อง จนถึงเช้าของเรื่อง name-tag",
+      "place": "soi-rongsi-shop",
+      "episode": "name-tag"
     }
   },
   "threads": {
@@ -57,18 +277,276 @@
     "rule-author": {
       "text": "กฎที่โผล่หลายเรื่องมีผู้เขียนคนเดียวหรือไม่",
       "answered": false
+    },
+    "new-tiger": {
+      "text": "ป่าท้ายอำเภอมีสมิงตัวใหม่ที่ยังจำชื่อตัวเองได้ (บุญ) เสียงของมันพูดว่า อย่าขาน",
+      "answered": false
     }
   },
   "episodes": {
-    "dont-open-curtain": { "link": 0, "place": "dorm-tower", "era": null, "status": "rendered, archived" },
-    "temple-boy": { "link": 0, "place": "temple-kok", "era": null, "status": "archived" },
-    "ghost-money": { "link": 0, "place": "temple-dong", "era": null, "status": "archived" },
-    "night-shift-rules": { "link": 0, "place": "highway-shop", "era": null, "status": "archived" },
-    "rain-night": { "link": 0, "place": "canal-village", "era": null, "status": "archived" },
-    "rear-cam": { "link": 0, "place": "road-11", "era": null, "status": "archived" },
-    "same-child": { "link": 0, "place": "canal-village", "era": null, "status": "archived" },
-    "father-ledger": { "link": 0, "place": "market", "era": null, "status": "in progress" },
-    "fifth-room": { "link": 2, "place": "house-5", "era": null, "status": "frames reviewed, voice and sound done, not rendered" },
-    "bed-two": { "link": 2, "place": "hospital", "era": null, "status": "brief approved" }
+    "dont-open-curtain": {
+      "link": 0,
+      "place": "dorm-tower",
+      "era": null,
+      "status": "rendered, archived",
+      "twist": {
+        "engine": "fake-ghost",
+        "structure": "survival",
+        "flavour": "shock",
+        "supernatural": "none",
+        "culprit": "none",
+        "ending": "open",
+        "line": "เสียงเคาะกระจกตีสามไม่ใช่ผี แต่เป็นช่างทาสีที่ติดอยู่นอกหน้าต่าง เคาะขอชีวิตมาสามวัน",
+        "guess": true
+      }
+    },
+    "temple-boy": {
+      "link": 0,
+      "place": "temple-kok",
+      "era": null,
+      "status": "archived",
+      "twist": {
+        "engine": "who",
+        "structure": "hunt",
+        "flavour": "grief",
+        "supernatural": "real",
+        "culprit": "helper",
+        "ending": "justice",
+        "line": "เด็กวัดที่กลับมาทุกปีตายไปแล้วสิบเอ็ดปี และผู้ใหญ่ที่มารับเขาทุกปีคือคนที่ทำให้เขาตก",
+        "guess": true
+      }
+    },
+    "ghost-money": {
+      "link": 0,
+      "place": "temple-dong",
+      "era": null,
+      "status": "archived",
+      "twist": {
+        "engine": "fake-ghost",
+        "structure": "hunt",
+        "flavour": "shock",
+        "supernatural": "fake",
+        "culprit": "employer",
+        "ending": "justice",
+        "line": "งานนั่งฟังสวดกะดึกคือพิธีของตระกูลผู้มีอิทธิพล ที่หลอกคนรับจ้างมารับเคราะห์แทนคนป่วย",
+        "guess": true
+      }
+    },
+    "night-shift-rules": {
+      "link": 0,
+      "place": "highway-shop",
+      "era": null,
+      "status": "archived",
+      "twist": {
+        "engine": "rule-for",
+        "structure": "hunt",
+        "flavour": "shock",
+        "supernatural": "fake",
+        "culprit": "employer",
+        "ending": "justice",
+        "line": "กฎกะดึกของร้านสะดวกซื้อคือสัญญาที่ผู้จัดการทำกับฆาตกร และกฎข้อสุดท้ายฆาตกรเขียนเพิ่มเอง",
+        "guess": true
+      }
+    },
+    "rain-night": {
+      "link": 0,
+      "place": "canal-village",
+      "era": null,
+      "status": "archived",
+      "twist": {
+        "engine": "who",
+        "structure": "hunt",
+        "flavour": "grief",
+        "supernatural": "none",
+        "culprit": "helper",
+        "ending": "justice",
+        "line": "พี่ชายไม่ได้ขับรถชนเด็กแล้วหนี แม่ของเด็กเป็นคนขับ และพ่อของเด็กที่ส่งข้าวให้แม่ตัวเอกมาตลอดเป็นคนผลักเขาลงบ่อ",
+        "guess": true
+      }
+    },
+    "rear-cam": {
+      "link": 0,
+      "place": "road-11",
+      "era": null,
+      "status": "archived",
+      "twist": {
+        "engine": "fake-ghost",
+        "structure": "hunt",
+        "flavour": "shock",
+        "supernatural": "fake",
+        "culprit": "employer",
+        "ending": "justice",
+        "line": "กฎห้ามหันกลับไปมองของผีไรเดอร์ คือระบบขนทองที่คนจ่ายงานสร้างขึ้นจากตำนานการตายของน้องชายตัวเอง",
+        "guess": true
+      }
+    },
+    "same-child": {
+      "link": 0,
+      "place": "canal-village",
+      "era": null,
+      "status": "archived",
+      "twist": {
+        "engine": "who",
+        "structure": "hunt",
+        "flavour": "grief",
+        "supernatural": "real",
+        "culprit": "helper",
+        "ending": "justice",
+        "line": "ป้าผู้ใจดีคือแม่ของเด็กที่ตาย เธอสอนทั้งหมู่บ้านให้เรียกลูกเธอเป็นลูกตัวเอง และขังคนที่มาถามไว้หลังประตู",
+        "guess": true
+      }
+    },
+    "father-ledger": {
+      "link": 0,
+      "place": "market",
+      "era": null,
+      "status": "in progress",
+      "twist": {
+        "engine": "victim",
+        "structure": "hunt",
+        "flavour": "grief",
+        "supernatural": "none",
+        "culprit": "employer",
+        "ending": "loss",
+        "line": "เนื้อคนที่พ่อขายให้เศรษฐีนีคือเนื้อของพ่อเอง และคนซื้อคือเจ้าหนี้ที่บีบให้พ่อต้องขาย",
+        "guess": false
+      }
+    },
+    "fifth-room": {
+      "link": 2,
+      "place": "house-5",
+      "era": null,
+      "status": "frames reviewed, voice and sound done, not rendered",
+      "twist": {
+        "engine": "who",
+        "structure": "hunt",
+        "flavour": "shock",
+        "supernatural": "fake",
+        "culprit": "helper",
+        "ending": "justice",
+        "line": "ห้องที่ห้าที่เคาะตอบคือครอบครัวที่ซ่อนอยู่ และลุงที่ช่วยตัวเอกทุกอย่างคือคนผลักพ่อตกน้ำแล้วส่งข้าวให้พวกเขาทุกคืน",
+        "guess": false
+      }
+    },
+    "locker-104": {
+      "link": 1,
+      "place": null,
+      "era": null,
+      "status": "brief approved (its canon checklist in brief.md is not ticked yet; this row is the twist ledger only)",
+      "twist": {
+        "engine": "what-lead",
+        "structure": "hunt",
+        "flavour": "grief",
+        "supernatural": "none",
+        "culprit": "lead",
+        "ending": "choice",
+        "line": "ไม่มีคนร้าย นายสถานีเมาหลับจนรถไฟชนบ้านที่ลูกนอนอยู่ และชายที่เขาต้องยิงทุกปีคือเพื่อนรักที่มาเป็นเป้ากระสุนหลอก",
+        "guess": true
+      }
+    },
+    "bed-two": {
+      "link": 2,
+      "place": "hospital",
+      "era": null,
+      "status": "brief approved",
+      "twist": {
+        "engine": "fake-ghost",
+        "structure": "hunt",
+        "flavour": "shock",
+        "supernatural": "fake",
+        "culprit": "employer",
+        "ending": "justice",
+        "line": "ผีเตียงสองคือลำโพงของหัวหน้าเวรที่จ้างตัวเอก และคนไข้เตียงหนึ่งคือผู้อำนวยการที่ทั้งประเทศเชื่อว่าหนีไปแล้ว",
+        "guess": false,
+        "layers": [
+          {
+            "at": 50,
+            "flips": "ไม่มีผี มีคนฟังอยู่หลังม่าน"
+          },
+          {
+            "at": 72,
+            "flips": "คนไข้คือผู้อำนวยการที่ถูกขังเพื่อเอาลายนิ้วมือ"
+          }
+        ]
+      }
+    },
+    "banana-soi": {
+      "link": 2,
+      "place": "soi-banana",
+      "era": null,
+      "status": "brief approved",
+      "twist": {
+        "engine": "who",
+        "structure": "hunt",
+        "flavour": "clever",
+        "supernatural": "fake",
+        "culprit": "victim",
+        "ending": "justice",
+        "line": "ป้าที่สอนกฎกันกระสือเป็นคนดูต้นทางโดยไม่รู้ตัว ส่วนคนบังคับโดรนคือคนเช่าที่ทั้งซอยเชื่อว่าโดนงัดแล้วหนีไป",
+        "layers": [
+          {
+            "at": 81,
+            "flips": "ป้าแม้นคือคนดูต้นทางให้โจร"
+          },
+          {
+            "at": 86,
+            "flips": "ป้าไม่รู้ตัว ปลายวิทยุคือคนเช่าหลังสองที่ทั้งซอยคิดว่าเป็นเหยื่อ"
+          }
+        ],
+        "guess": false
+      }
+    },
+    "tiger-platform": {
+      "link": 1,
+      "place": "mok-forest",
+      "era": null,
+      "status": "brief approved",
+      "twist": {
+        "engine": "trap-exit",
+        "structure": "rule-game",
+        "flavour": "choice",
+        "supernatural": "real",
+        "culprit": "family",
+        "ending": "sacrifice",
+        "line": "เสียงพ่อที่เรียกให้ลงจากห้างตอนตีสองคือพ่อตัวจริง ส่วนสมิงที่นอนข้างตัวคือเพื่อนที่พ่อส่งลงไปตายเมื่อยี่สิบปีก่อน มันรอให้พ่อเรียกลูกลงมาเหมือนกัน แล้วพ่อเลือกไปแทนลูก",
+        "layers": [
+          {
+            "at": 50,
+            "flips": "คนที่นอนคลุมโปงข้างตัวคือสมิง ต้าหย่อนบันไดให้มันขึ้นมาเองตอนโพล้เพล้"
+          },
+          {
+            "at": 84,
+            "flips": "เสียงเรียกตีสองคือพ่อจริง สมิงคือเริงที่พ่อส่งลงไปตาย มันไม่ได้มาเอาตัวต้า มันรอให้พ่อเรียกลูกลงมาตายด้วยเสียงตัวเอง"
+          }
+        ],
+        "guess": false
+      }
+    },
+    "name-tag": {
+      "link": 1,
+      "place": "soi-rongsi-shop",
+      "era": null,
+      "status": "brief approved",
+      "twist": {
+        "engine": "what-lead",
+        "structure": "contract",
+        "flavour": "grief",
+        "supernatural": "real",
+        "culprit": "lead",
+        "ending": "reunion",
+        "line": "คนที่ตายระหว่างทางมาเข้ากะคือเพื่อนที่ถูกขอให้มาแทน ส่วนพนักงานที่ยังมาทุกคืนคือคนขอ ที่จำตัวเองเป็นเพื่อนที่ตาย",
+        "layers": [
+          {
+            "at": 55,
+            "flips": "ไม่มีใครมาส่งเวร เขามาคนเดียวสี่สิบเอ็ดคืน แชตส่งหาตัวเอง ข่าวบอกว่าคนชื่อโอ๊ตที่ป้ายชื่อเขียนไว้ตายแล้ว"
+          },
+          {
+            "at": 80,
+            "flips": "เขายังมีชีวิต คนที่ตายในเสื้อของเขาคือภูมิ เพื่อนที่เขาขอให้มาแทน และเขาใช้ชื่อภูมิมาตลอด"
+          }
+        ],
+        "guess": false
+      }
+    }
   }
 }
