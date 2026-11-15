@@ -30,6 +30,8 @@
 | `voiceStyle` | — | Gemini only: delivery instruction (e.g. calm everyday narration). `voiceRate`/`voicePitch` apply to edge-tts only. |
 | `voiceRate`, `voicePitch` | `-8%`, `-6Hz` | Slightly slower and lower reads as more ominous. |
 | `captionLook` | `bold` | `bold` = 74 px Kanit (survival, haunting). `folk` = 56 px line on a dark pill (slow folklore tales). |
+| `twist` | from canon | `{ "engine", "structure", "flavour", "supernatural", "culprit", "ending", "line", "layers": [{ "at": 45, "flips": "…" }] }`, the twist ledger (`.claude/story/twist-engines.md` §8). Copy it to `universe/canon.json → episodes.<slug>.twist` too: `npm run story` checks the rotation against earlier episodes, and `npm run coldread` builds `regular.txt` from their `line`. |
+| `speakers` | — | `{ "<who>": "label" }`: the name `npm run coldread` prints for each speaker instead of the raw `who` id. Use the label a viewer could give from the face and voice alone ("ผู้หญิงชุดดำ", "เสียงผู้ชายอีกคน"), never one that names a secret: an id like `phum` on a caller who is introduced as someone else hands the reader the twist. |
 | `series` | — | `{ "name": "เมื่อไฟดับทั้งเมือง", "ep": 1, "next": "ใครอยู่หน้าประตู" }`. Put the same words in the `next` end card's `data`; `/twist-next` reads it. |
 | `bible` | — | Optional path to the series bible, e.g. `"series/blackout.md"` (cast, rules, open threads). |
 

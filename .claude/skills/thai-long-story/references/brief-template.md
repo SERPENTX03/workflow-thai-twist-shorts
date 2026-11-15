@@ -49,7 +49,7 @@ Write the opening lines as spoken, then time them aloud (`longform-rules.md` →
 
 ## Chapters
 
-Mark each chapter's first shot in story.json with `"chapter": "<name>"` (viewer-facing: the names become YouTube chapters, so no spoilers). `npm run chapter -- episodes/<slug>` fills the real times and shot ranges. Blocks of **2–4 min**: split an act into two or three chapters when it runs longer, and give each block its own last line, an open question that leads into the next card.
+Mark each chapter's first shot in story.json with `"chapter": "<name>"` (the names become YouTube chapters, so no spoilers). **Never draw a chapter card or a "บทที่ N" title on screen** (owner decision 2026-11-14); the mark is invisible and the story runs straight on. `npm run chapter -- episodes/<slug>` fills the real times and shot ranges. Blocks of **2–4 min**: split an act into two or three chapters when it runs longer, and give each block its own last line, an open question that leads into the next card.
 
 | # | Part | Target time | Shots (fill after writing) | Re-hook / mini-reveal | Ends on (open question) |
 |---|---|---|---|---|---|
@@ -69,7 +69,21 @@ Mark each chapter's first shot in story.json with `"chapter": "<name>"` (viewer-
 
 The same table lives in story.json as tags (`clues`, `clue`, `pay`, `data.mirror`); fill the shot numbers here from the ledger `npm run story` prints.
 
-## Suspects and concealment (`longform-rules.md` → *Concealment*)
+## Twist engine (`.claude/story/twist-engines.md`)
+
+| | This film | <slug −1> | <slug −2> | <slug −3> | <slug −4> |
+|---|---|---|---|---|---|
+| engine · structure | | | | | |
+| flavour · supernatural | | | | | |
+| culprit · ending | | | | | |
+
+- **Line** (one sentence, goes to canon for the regular-viewer read): <…>
+- **Layers:** 1 at <%>: <what it answers: the question the hook asked> · 2 at <%>: <the new question it opens>. Cut layer 2 — does the film still end? (if yes, it is not a layer)
+- **The peak after the truth** (flavour): <the choice / cost / rule turned back that the lead acts on>
+- **Repeats and why:** <each rotation warning, answered in one line, or "none">
+- **Hook gate** (`cold-read.md`): <kind guessed 1st + confidence · is the last layer among the three kinds?>
+
+## Suspects and concealment (`longform-rules.md` → *Concealment*; a `hunt` fills all of it, other structures only the guess map, earliest-know and narrator lines)
 
 | Character | Real secret | Lie the viewer can catch | Tell / trait (drawn every time) | Secret paid off in (shot) |
 |---|---|---|---|---|
@@ -81,7 +95,7 @@ The same table lives in story.json as tags (`clues`, `clue`, `pay`, `data.mirror
 - **Guess map** (what the viewer believes; each wrong, reasonable, different): 25 % <…> · 50 % <…> · 75 % <…>
 - **Earliest a careful viewer can know:** <shot, %> → reveal at <%>; question that carries the gap: <…>
 - **Lines where the narrator must stay quiet:** <the culprit's details that are shown but never remarked on before the slip>
-- **Cold read** (after story.json, before voice — `.claude/story/cold-read.md`): <date, table: cut · first guess + confidence · rank of the real answer · the line that gave it away; fair? holes?>
+- **Cold read** (after story.json, before voice — `.claude/story/cold-read.md`): <date, table: gate (normal / regular viewer) · cut · first guess + confidence · rank of the real answer · the line that gave it away; fair? holes?>
 
 ## Sets and inserts
 

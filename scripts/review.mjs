@@ -142,7 +142,7 @@ const cards = S.shots.map(s => {
   const img = f ? `<img loading="lazy" src="${esc(slug)}-board/${esc(path.basename(f))}" alt="shot ${i}">` : '<div class="noframe">ยังไม่มีเฟรม — รัน --board</div>';
   const tags = `${isNew ? '<b class="new">ใหม่</b>' : ''}${why.length ? '<b class="sus">✗</b>' : ''}`;
   return `${head}<figure data-i="${i}" data-new="${isNew ? 1 : 0}" data-sus="${why.length ? 1 : 0}">
-<label class="pick"><input type="checkbox"> <span>#${i}</span></label> <span class="t">${clock(s.start)} · ${esc(s.scene)}${s.view ? ':' + esc(s.view) : ''}</span> ${tags}
+<label class="pick"><input type="checkbox"> <span>#${i}</span></label> <button class="zoom" title="ดูภาพใหญ่">🔍</button> <span class="t">${clock(s.start)} · ${esc(s.scene)}${s.view ? ':' + esc(s.view) : ''}</span> ${tags}
 ${img}
 <figcaption>${r.note ? `<p class="note">${esc(r.note)}</p>` : ''}${s.text ? `<p class="cap">${esc(String(s.text).replace(/[[\]{}]/g, '').replace(/\n/g, ' / '))}</p>` : ''}${why.map(w => `<p class="why">✗ ${esc(w)}</p>`).join('')}
 <input class="memo" placeholder="บอกว่าแปลกตรงไหน (ไม่บังคับ)"></figcaption></figure>`;
@@ -160,7 +160,12 @@ main{padding:8px 16px 80px;display:grid;grid-template-columns:repeat(auto-fill,m
 h2{grid-column:1/-1;margin:18px 0 0;font-size:16px}
 figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:6px}
 figure.on{outline:3px solid var(--acc)}
-figure img{width:100%;display:block;cursor:zoom-in;margin-top:4px;background:#000;min-height:40px}
+figure{cursor:pointer;user-select:none}
+figure img{width:100%;display:block;cursor:pointer;margin-top:4px;background:#000;min-height:40px}
+figure.on img{opacity:.75}
+.pick input{width:20px;height:20px;vertical-align:-4px}
+.zoom{float:right;font-size:14px;padding:0 6px;cursor:zoom-in}
+header .hint{color:var(--mut);font-size:12px}
 .t{color:var(--mut);font-size:12px}.pick{font-weight:600}
 .new{background:#2a7;color:#fff;border-radius:3px;padding:0 5px;font-size:11px}.sus{background:var(--acc);color:#fff;border-radius:3px;padding:0 5px;font-size:11px}
 figcaption p{margin:3px 0;font-size:12px}.note{color:var(--mut)}.cap{font-weight:600}.why{color:var(--acc)}
@@ -174,7 +179,11 @@ figcaption p{margin:3px 0;font-size:12px}.note{color:var(--mut)}.cap{font-weight
 <b>${esc(slug)}</b> · ${N} shots
 <select id="flt"><option value="all">ทุกช็อต</option><option value="sus">เฉพาะที่ audit ธง (${ids.length})</option><option value="new">เฉพาะที่ใหม่/แก้ (${unseen.length})</option></select>
 <span id="cnt">ติดธง 0</span>
+<button id="allsus">ติดธงทุกช็อตที่ audit ธง</button>
+<button id="allvis">ติดธงทุกช็อตที่แสดงอยู่</button>
+<button id="none">ล้างธงทั้งหมด</button>
 <button id="copy">คัดลอกเลขที่ติดธง</button>
+<span class="hint">คลิกภาพ = ติด/เอาธงออก · Shift+คลิก = ติดธงเป็นช่วง · 🔍 = ดูภาพใหญ่</span>
 <span id="msg"></span>
 </header>
 <main>
@@ -185,13 +194,25 @@ ${cards}
 const KEY='review-${esc(slug)}';
 let st={};try{st=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}};
-const figs=[...document.querySelectorAll('figure')];
+const figs=[...document.querySelectorAll('figure')];let last=-1;
 function upd(){const n=figs.filter(f=>f.querySelector('input[type=checkbox]').checked).length;document.getElementById('cnt').textContent='ติดธง '+n}
 figs.forEach(f=>{const i=f.dataset.i,cb=f.querySelector('input[type=checkbox]'),memo=f.querySelector('.memo');
  const s=st[i]||{};cb.checked=!!s.on;memo.value=s.m||'';f.classList.toggle('on',cb.checked);
  const w=()=>{st[i]={on:cb.checked,m:memo.value};f.classList.toggle('on',cb.checked);save();upd()};
- cb.onchange=w;memo.oninput=w;
- const im=f.querySelector('img');if(im)im.onclick=()=>{const b=document.getElementById('big');b.querySelector('img').src=im.src;b.style.display='flex'}});
+ cb.onchange=w;memo.oninput=w;f._w=w;
+ memo.onclick=e=>e.stopPropagation();
+ const im=f.querySelector('img');
+ f.querySelector('.zoom').onclick=e=>{e.stopPropagation();e.preventDefault();if(!im)return;const b=document.getElementById('big');b.querySelector('img').src=im.src;b.style.display='flex'};
+ f.onclick=e=>{if(e.target.tagName==='INPUT')return;e.preventDefault();
+  const k=figs.indexOf(f);
+  if(e.shiftKey&&last>=0){const a=Math.min(k,last),b=Math.max(k,last),to=!cb.checked;
+   for(let j=a;j<=b;j++){const g=figs[j];if(g.classList.contains('hide'))continue;g.querySelector('input[type=checkbox]').checked=to;g._w()}}
+  else{cb.checked=!cb.checked;w()}
+  last=k}});
+function setAll(pick,on){figs.forEach(f=>{if(!pick(f))return;f.querySelector('input[type=checkbox]').checked=on;f._w()})}
+document.getElementById('allsus').onclick=()=>setAll(f=>f.dataset.sus==='1',true);
+document.getElementById('allvis').onclick=()=>setAll(f=>!f.classList.contains('hide'),true);
+document.getElementById('none').onclick=()=>{if(confirm('ล้างธงทุกช็อต?'))setAll(()=>true,false)};
 document.getElementById('big').onclick=e=>e.currentTarget.style.display='none';
 document.getElementById('flt').onchange=e=>{const v=e.target.value;figs.forEach(f=>f.classList.toggle('hide',v==='sus'&&f.dataset.sus!=='1'||v==='new'&&f.dataset.new!=='1'))};
 document.getElementById('copy').onclick=async()=>{

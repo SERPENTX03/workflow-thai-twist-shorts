@@ -303,6 +303,48 @@ const ledger = [];
   }
 }
 
+// Twist rotation (.claude/story/twist-engines.md §1): what the twist flips, measured against the episodes before this one
+// in universe/canon.json (file order = release order). The channel's viewers learn its habits: 5 of the first 11 long films
+// were "the ghost was a person" and most culprits were the helper or the employer. Questions, not bans: a repeat needs a
+// one-line reason in the brief.
+{
+  const ENUM = {
+    engine: ['who', 'fake-ghost', 'what-lead', 'rule-for', 'time', 'whose-story', 'victim', 'trap-exit'],
+    structure: ['hunt', 'contract', 'irony', 'rule-game', 'two-time', 'survival'],
+    flavour: ['shock', 'dread', 'grief', 'clever', 'choice'],
+    supernatural: ['real', 'fake', 'ambiguous', 'none'],
+    culprit: ['helper', 'employer', 'family', 'authority', 'lead', 'stranger', 'victim', 'none'],
+    ending: ['justice', 'choice', 'sacrifice', 'escape', 'loss', 'reunion', 'open'],
+  };
+  const slug = path.basename(dir);
+  const RAW = JSON.parse(fs.readFileSync(path.join(dir, 'story.json'), 'utf8'));
+  const canonFile = path.join(ROOT, 'universe', 'canon.json');
+  const eps = fs.existsSync(canonFile) ? JSON.parse(fs.readFileSync(canonFile, 'utf8')).episodes ?? {} : {};
+  const order = Object.keys(eps), me = order.indexOf(slug);
+  const t = RAW.twist ?? eps[slug]?.twist;
+  if (!t) warn(null, 'no "twist": declare engine · structure · flavour · supernatural · culprit · ending · line (· layers) at the top of story.json (twist-engines.md §8), so the rotation against earlier episodes can be checked');
+  else {
+    for (const [k, vals] of Object.entries(ENUM)) if (t[k] !== undefined && !vals.includes(t[k])) err(null, `twist.${k} "${t[k]}" is not one of: ${vals.join(', ')}`);
+    for (const k of ['engine', 'flavour', 'supernatural', 'culprit', 'ending', 'line']) if (t[k] === undefined) warn(null, `twist.${k} is missing (twist-engines.md §8)`);
+    const prior = (me < 0 ? order : order.slice(0, me)).map(k => [k, eps[k]?.twist]).filter(([, x]) => x);
+    const last = n => prior.slice(-n);
+    const names = xs => xs.map(([k]) => k).join(', ');
+    const same = (n, key) => last(n).filter(([, x]) => x[key] === t[key]);
+    if (t.engine && same(2, 'engine').length) warn(null, `twist engine "${t.engine}" repeats ${names(same(2, 'engine'))} (one of the last two): change what the twist flips, or write the reason in the brief`);
+    if (t.flavour && same(2, 'flavour').length) warn(null, `flavour "${t.flavour}" repeats ${names(same(2, 'flavour'))}: pick another peak (twist-engines.md §3)`);
+    if (t.culprit && t.culprit !== 'none' && same(1, 'culprit').length) warn(null, `culprit role "${t.culprit}" is the same as the previous episode (${names(same(1, 'culprit'))})`);
+    const fake = x => x.engine === 'fake-ghost' || x.supernatural === 'fake';
+    if (fake(t)) { const f = last(3).filter(([, x]) => fake(x)); if (f.length) warn(null, `"the uncanny was a person" again: ${names(f)} in the last three did it too (max 1 in 4)`); }
+    const hire = x => x.culprit === 'helper' || x.culprit === 'employer';
+    if (hire(t)) { const h = last(2).filter(([, x]) => hire(x)); if (h.length) warn(null, `culprit is the ${t.culprit} again: ${names(h)} in the last two had a helper or employer culprit (max 1 in 3)`); }
+    if (t.ending === 'justice' && last(2).length === 2 && last(2).every(([, x]) => x.ending === 'justice')) warn(null, `third "justice" ending in a row (${names(last(2))}): give the peak to a choice, a cost or an escape`);
+    if (t.structure === 'hunt' && last(2).length === 2 && last(2).every(([, x]) => x.structure === 'hunt')) warn(null, `third "hunt" structure in a row (${names(last(2))}): try contract, irony, rule-game or two-time (twist-engines.md §4)`);
+    const layers = t.layers ?? [];
+    if (S.format === 'landscape' && layers.length < 2) warn(null, `twist has ${layers.length} layer(s): a long film needs ≥ 2, the second changing the question (twist-engines.md §2)`);
+    ledger.push(`  twist ${[t.engine, t.structure, t.flavour, t.supernatural, t.culprit, t.ending].map(x => x ?? '?').join(' · ')}${layers.length ? `   layers ${layers.map(l => `${l.at}%`).join(' → ')}` : ''}${RAW.twist ? '' : '   (from canon)'}`);
+  }
+}
+
 const scenesFile = path.join(ROOT, 'src', 'episodes', path.basename(dir), 'scenes.tsx');
 const scenesSrc = fs.existsSync(scenesFile) ? fs.readFileSync(scenesFile, 'utf8') : '';
 for (const sc of new Set(S.shots.map(s => s.scene))) {

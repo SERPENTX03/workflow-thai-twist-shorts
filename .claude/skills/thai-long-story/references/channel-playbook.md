@@ -22,7 +22,7 @@ What the analytics say:
 | One long film of 18–30 min in the คลองหมอก universe | watch time per view; recurring places and characters make a series without a series |
 | Third-person storyteller narrator | the channel's voice; Real Lens uses first person ("ผม"). We may add one "คุณ" question in the hook, but we do not switch voice |
 | Directed shots: a `note`, places in perspective, light from a source | it is the quality edge over Real Lens, whose shots are mostly front-on sprites dead centre |
-| Cover pattern | CTR 7 % |
+| Cover pattern (incl. the "เรื่องยาว · ตอนจบหักมุม" pill at the bottom centre, `review-long.md` → *Packaging*) | CTR 7 %; the owner finds the pill lifts clicks (2026-11-15) |
 
 ## Delivery: fix it (measured frame by frame at 30 fps)
 
@@ -33,7 +33,7 @@ What the analytics say:
 | Frames that move | ~60 % (push-ins, hands acting, tags popping) | 13–20 % | **Something moves in every shot**; `shots` flags > 30 % still (*Motion inside the shot*) |
 | Brightness (mean luma /255) | 92–97; dark only at turns | 71–83; night-shift first minute 47 | **Dark is for turns**: film mean ≥ 80, first minute ≥ the film median (*Sets, inserts and light*) |
 | Pauses | short real silence between phrases (p5 −59 dB) | the bed fills every gap (p5 −32 dB) | `bed` ≤ 0.3, so phrases breathe; dead-air rules unchanged (*Sound*) |
-| Re-hook structure | 2-min EP blocks, each ending on a title card with the next EP's question | chapters 45 s–5 min, no card | **Chapter blocks of 2–4 min**, each ending on an open-question line, with a ≤ 2 s chapter card (*Retention rules*) |
+| Re-hook structure | 2-min EP blocks, each ending on a title card with the next EP's question (we do not copy the card) | chapters 45 s–5 min, no card | **Chapter blocks of 2–4 min**, each ending on an open-question line, and no on-screen chapter card (owner decision 2026-11-14: cards stop the story; chapters stay only as YouTube timestamps) (*Retention rules*) |
 | Suspect dossier | callout labels on traits (หัวโล้น · แผลเป็นพาดคิ้ว · รอยสัก), name + age tags | name tags only | **Dossier callouts on every suspect alike**, never only the culprit (*Concealment* rule 4) |
 | Title | `ชื่อสั้น | ผลลัพธ์/กติกา (เต็มเรื่อง / ดูรวดเดียวจบ)` | descriptive sentence | Title formula to A/B-test (`review-long.md` → *Packaging*) |
 

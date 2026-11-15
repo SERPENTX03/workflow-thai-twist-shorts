@@ -69,6 +69,10 @@ The camera is part of the story: it stays plain while the story gives informatio
 
 ## Twist types that work
 
+**First pick the engine** (`.claude/story/twist-engines.md`): what the twist flips (`who`, `fake-ghost`, `what-lead`, `rule-for`, `time`, `whose-story`, `victim`, `trap-exit`), the flavour of the peak, and whether the uncanny is real. Don't reuse the engine of the last two episodes. Write it as `twist` in story.json; `npm run story` checks the rotation against `universe/canon.json`. A Short may have one layer. If it has two, the first answers what the hook asked and the second changes the question.
+
+The list below is what the reference clips used:
+
 - **The danger is already inside** — the friend in long sleeves was bitten from the start; someone was already inside the fence.
 - **The rule was protecting the thing, not you** — wrong side of the rule.
 - **The viewer is the ghost / the dead one** (Room 7) — the "you" voice makes it hit.
@@ -108,6 +112,7 @@ The clue rules above make a twist fair. On their own they also make it easy: a d
 ## Twist checklist (gate for step 1)
 
 - [ ] Format family chosen; logline in one sentence, twist in one sentence.
+- [ ] `twist` declared (engine, flavour, supernatural, culprit, ending, line); no repeat of the last two episodes, or a one-line reason (`twist-engines.md` §1). Hook gate passed: a reader given only the title and the hook does not name the *kind* of answer (`cold-read.md` → ด่านฮุก).
 - [ ] Every event before the reveal still makes sense after it.
 - [ ] 3–5 clues planted, each visible 3+ times, none spoken before the turn.
 - [ ] Hidden as well as fair (*Hiding the twist*): every clue has a cover job; no caption points at a clue; one planting in passing; one decoy that is explained; the viewer's first guess is written down and is not the twist; hook, title and cover give away nothing past shot 2.

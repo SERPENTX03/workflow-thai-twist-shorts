@@ -15,9 +15,9 @@ Mix the families: at least 3 survival "ถ้า…", 1 haunting twist, 1 ตำ
 - **A Thai place the viewer knows**: ห้องเรียน ม.4, คอนโดชั้น 23, BTS ค้างกลางราง, ร้านสะดวกซื้อ 24 ชม., หมู่บ้านริมคลอง, รพ.ตอนตีสอง, ค่ายลูกเสือ, หอพักมหาลัย, ตลาดน้ำ, โรงงาน
 - **A threat with rules**: ไฟดับทั้งเมือง, น้ำท่วม, ฝุ่น PM สูงจนออกจากบ้านไม่ได้, ลิฟต์ค้าง, ซอมบี้/โรคระบาด, หลงป่า, คลื่นความร้อน, ผีที่มีกฎ
 - **Usable knowledge** that the story can teach (water, air, doors, crowds, heat, first aid basics, how a building works)
-- **A twist type** from `story-rules.md` (the danger is already inside, the rule protected the thing, you are the ghost, time slip, identity swap)
+- **A twist engine** from `.claude/story/twist-engines.md` (`who`, `fake-ghost`, `what-lead`, `rule-for`, `time`, `whose-story`, `victim`, `trap-exit`) and a **flavour** (`shock`, `dread`, `grief`, `clever`, `choice`). Read `universe/canon.json → episodes[*].twist` first. Of the 5 kept ideas, at most one may use an engine the last two episodes used, at most one may be "the ghost was a person", and at least two must have a real uncanny (`supernatural: real`) or none at all. At least one idea should be an off-pattern premise like `last-ride` (a job with rules where the lead is the answer), without copying it.
 
-## 2. Score each of the 5 (0–2 each, max 14)
+## 2. Score each of the 5 (0–2 each, max 16)
 
 | Criterion | 2 = |
 |---|---|
@@ -27,9 +27,10 @@ Mix the families: at least 3 survival "ถ้า…", 1 haunting twist, 1 ตำ
 | Twist | fair, physical clue, re-read works, **and it is not what a viewer guesses from the hook** (write the first guess next to the twist; if they match, score 0 — `story-rules.md` → *Hiding the twist*) |
 | Visual variety | needs ≥ 4 shot types (set, close-up, diagram, map, card…) |
 | Series potential | the ending opens an obvious next question |
-| Fresh | not already in `episodes/` or a stock creepypasta |
+| Fresh | not already in `episodes/` or a stock creepypasta, **and its engine, culprit role and flavour are not those of the last two episodes** (`twist-engines.md` §1) |
+| Peak | the twist changes the question (a second layer), or the lead must act on the truth (choice, cost, the rule turned back); 0 = the reveal only names someone among the suspects |
 
-Show the user a table: ชื่อเรื่อง · ครอบครัว (survival/haunting/ตำนาน) · ฮุก (frame 0 text) · หักมุมใน 1 ประโยค · จักรวาล (ระดับ 0–4 + สถานที่ canon หรือ "ใหม่") · คะแนน. Mark your pick and why in one line.
+Show the user a table: ชื่อเรื่อง · ครอบครัว (survival/haunting/ตำนาน) · ฮุก (frame 0 text) · หักมุมใน 1 ประโยค · engine / รส / ผีจริงหรือปลอม · จักรวาล (ระดับ 0–4 + สถานที่ canon หรือ "ใหม่") · คะแนน. Mark your pick and why in one line.
 
 ## 3. After the user picks one
 

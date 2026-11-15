@@ -15,8 +15,8 @@ Skill นี้ **ไม่มีกฎของตัวเอง** มัน�
 1. `CLAUDE.md` (ชนะทุกอย่าง)
 2. `.claude/skills/thai-long-story/references/longform-rules.md` — โครง act, retention, clue, Narrative clarity, Pacing, Blind-spot, **Long-form checklist**
 3. `.claude/skills/thai-long-story/references/brief-template.md` — รูปแบบ brief ที่ต้องส่งออก
-4. `.claude/story/fun-pass.md` — เกณฑ์ยกระดับความสนุก และ `.claude/story/cold-read.md` — วิธีทดสอบว่า twist เดาง่ายไหม
-5. `ls episodes/` และ `series/` — อย่าซ้ำ premise ที่มีแล้ว และอ่าน brief ของเรื่องยาวสองเรื่องล่าสุดเพื่อดู role type ของคนร้าย (Concealment ข้อ 5) ถ้าต่อจากเรื่องเดิม ให้อ่าน `story.json` ของเรื่องนั้นด้วย
+4. `.claude/story/twist-engines.md` — หักมุมพลิกอะไร, เฉลยเป็นชั้น, รสหลัก, โครงเรื่อง 6 แบบ, วิธีส่งเฉลย · `.claude/story/fun-pass.md` — เกณฑ์ยกระดับความสนุก · `.claude/story/cold-read.md` — วิธีทดสอบว่า twist เดาง่ายไหม (ด่านฮุก, ด่านปกติ, ด่านคนดูประจำ)
+5. `ls episodes/` และ `series/` — อย่าซ้ำ premise ที่มีแล้ว และอ่าน `universe/canon.json → episodes[*].twist` ของสี่เรื่องล่าสุด (engine, โครง, รส, ผีจริง/ปลอม, บทบาทคนร้าย, ตอนจบ) เพื่อไม่ซ้ำแนวที่ช่องเพิ่งทำ ถ้าต่อจากเรื่องเดิม ให้อ่าน `story.json` ของเรื่องนั้นด้วย
 6. อ้างอิงงานจริง: `episodes/fifth-room/brief.md`, `episodes/father-ledger/brief.md` (เรื่องล่าสุด) และ `archive/temple-boy/episode` (เรื่องยาวเรื่องแรก ที่มาของตัวเลข pacing)
 7. `universe/bible.md` และ `universe/canon.json` — กฎโลก สถานที่ ตัวละคร canon ระดับการเชื่อม (ถ้าไฟล์ไม่มี ข้าม §1.5 แล้วบอกผู้ใช้บรรทัดเดียว)
 
@@ -36,6 +36,10 @@ Skill นี้ **ไม่มีกฎของตัวเอง** มัน�
 5. **สิ่งที่จะลง canon ใหม่** ข้อเท็จจริงและ thread ที่เรื่องนี้เพิ่ม/ตอบ (ต้องให้ผู้ใช้อนุมัติ)
 
 กฎเหล็ก: ปมหลักต้องปิดในตัวเอง ไม่เฉลยปมของเรื่องอื่น ดูเดี่ยวๆ ได้ ถ้าเรื่องต้องดูเรื่องก่อนถึงจะเข้าใจ ให้ลดระดับ และอย่า bend เรื่องให้ตรงสถานที่ที่มีอยู่ ถ้าเรื่องดีกว่าเมื่อเป็นระดับ 0 ก็ปล่อยเป็นระดับ 0
+
+## 1.7 Twist engine — หักมุมพลิกอะไร (ก่อน audit)
+
+ตาม `twist-engines.md` ให้เขียน `twist` ของเรื่อง (engine · structure · flavour · supernatural · culprit · ending · line · layers ≥ 2) แล้วเทียบกับสี่เรื่องล่าสุดใน canon เป็นตารางเล็ก ถ้าซ้ำตามกฎหมุนเวียน §1 (ตัวอย่างที่เจอบ่อยคือ prompt ที่เป็นผีปลอมและคนใจดีเป็นคนร้าย) ให้เสนอทางเลือก **2 ทาง** ที่ยังรักษา premise ของผู้ใช้ไว้ โดยเปลี่ยน engine, ชั้นที่สอง, หรือรสหลัก (เช่น ผีมีจริงและกฎปกป้องผี, ตัวเอกเป็นสิ่งที่ถูกตามหา, จบด้วยการเลือกแทนการจับกุม) แล้วติดป้าย ⚠ ให้ผู้ใช้เลือก จากนั้นทำ **ด่านฮุก** (`cold-read.md`) กับชื่อเรื่องและฮุก 15 วินาที ถ้าผู้อ่านเดาแนวของชั้นสุดท้ายได้ ให้แก้ก่อนไปต่อ
 
 ## 2. Gap audit — วัดกับ Long-form checklist
 
@@ -64,7 +68,7 @@ Skill นี้ **ไม่มีกฎของตัวเอง** มัน�
 2. ข้อเสนอ fun pass ให้ติ๊ก
 3. ร่าง brief ตามรูปแบบ `brief-template.md` ครบทุกหัวข้อ: logline, twist, tracked device, หัวข้อ Comprehension (เรื่อง 3 ประโยค, ตารางกฎของโลก, ตารางชื่อ), ตาราง Speakers (voice role + symbol จาก `src/cast.json` ที่ไม่ retired ตามกฎ 12; ตัวที่เรื่องต้องการจริงแต่ไม่มีในคลัง ให้ระบุเป็น "ตัวใหม่" พร้อมเหตุผลว่าทำไมตัวเดิมใช้ไม่ได้ ดูข้อห้ามด้านล่าง), ตาราง Chapters พร้อมเวลาเป้าหมายและ re-hook, ตาราง Clues (cover → planted → pay-off), ตาราง Suspects and concealment, Sets/inserts (เสนอที่ที่ต้องสร้างเป็น room ใน perspective), Continuity checks, Blind-spot gate และหัวข้อ **Universe** (ระดับการเชื่อม · สถานที่ รหัส canon หรือ "ใหม่" · ตัวละคร canon ที่ปรากฏ · ผลเช็ก hard canon · สิ่งที่จะลง canon ใหม่ให้ติ๊กรับ-ตัด)
 4. **ร่างคำบรรยายเปิด (cold open)** 5–8 บรรทัดภาษาไทย เป็นตัวอย่างน้ำเสียงเรื่อง (ยังไม่ใช่ story.json) บรรทัดละสั้นตามจังหวะแคปชันบรรทัดเดียว และต้องผ่าน hook contract ภายใน 15 วินาที (จับเวลาอ่านออกเสียง) ห้ามเปิดด้วยคำคม/บรรยากาศล้วน
-5. **การซ่อน twist** (แทน scorecard ให้คะแนนตัวเอง ซึ่งคนเขียนตัดสินเองไม่ได้): ตาราง Suspects, guess map 25 / 50 / 75 %, จุดแรกที่คนดูช่างสังเกตรู้คำตอบได้, role type ของคนร้ายเทียบกับสองเรื่องก่อน และผล cold read รอบ A บน beats (`.claude/story/cold-read.md`) เป็นตาราง จุดที่ยังอ่อนให้บอกตรงๆ ว่าติดอะไร ไม่ต้องให้คะแนน
+5. **การซ่อน twist** (แทน scorecard ให้คะแนนตัวเอง ซึ่งคนเขียนตัดสินเองไม่ได้): ตาราง Suspects, guess map 25 / 50 / 75 %, จุดแรกที่คนดูช่างสังเกตรู้คำตอบได้, ตาราง `twist` เทียบสี่เรื่องก่อน พร้อมชั้นเฉลยแต่ละชั้นที่ % เท่าไร และคำถามที่ชั้นนั้นเปลี่ยน, ผลด่านฮุก, และผล cold read รอบ A บน beats (`.claude/story/cold-read.md`) เป็นตาราง จุดที่ยังอ่อนให้บอกตรงๆ ว่าติดอะไร ไม่ต้องให้คะแนน
 
 จบด้วยคำถามเดียว: อนุมัติไหม / ติ๊กข้อเสนอไหนรับ-ตัด
 
@@ -73,7 +77,7 @@ Skill นี้ **ไม่มีกฎของตัวเอง** มัน�
 1. เลือก slug (อังกฤษ เล็ก ขีดกลาง ไม่ซ้ำ `episodes/`) แจ้งผู้ใช้
 2. `npm run new -- <slug> "ชื่อเรื่อง"` แล้วตั้ง `"format": "landscape"` และ `target` ใน story.json (นี่คือ step 0 ของ thai-long-story, แก้เฉพาะสองฟิลด์นี้ ห้ามใส่เนื้อเรื่อง)
 3. เขียน brief ที่อนุมัติลง `episodes/<slug>/brief.md` ตาม template (รวมหัวข้อ Universe)
-3b. อัปเดต `universe/canon.json` เฉพาะส่วนที่ผู้ใช้อนุมัติ: `episodes.<slug>` (link, place, era), `places` ใหม่, `events`, ตัวละคร `appears`, `threads` ที่เปิดหรือตอบ และถ้ามีสถานที่/กฎใหม่ ให้เพิ่มลง `universe/bible.md` ด้วย
+3b. อัปเดต `universe/canon.json` เฉพาะส่วนที่ผู้ใช้อนุมัติ: `episodes.<slug>` (link, place, era, twist, ต่อท้ายตามลำดับออกอากาศ) และใส่ `twist` เดียวกันไว้บนสุดของ story.json, `places` ใหม่, `events`, ตัวละคร `appears`, `threads` ที่เปิดหรือตอบ และถ้ามีสถานที่/กฎใหม่ ให้เพิ่มลง `universe/bible.md` ด้วย
 4. หยุด รายงานว่า brief พร้อม แล้วถามว่าจะเริ่ม step 2 (เขียน story.json ทีละ chapter) ต่อเลยไหม ถ้าใช่ให้ invoke `thai-long-story` และทำตามนั้น (รวม `directing.md` ก่อนวางช็อต)
 
 ## ข้อห้าม
